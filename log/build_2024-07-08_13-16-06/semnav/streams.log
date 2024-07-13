@@ -1,0 +1,275 @@
+[0.032s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.205s] [ 14%] Built target reactive_planner
+[0.373s] [ 19%] [32mBuilding CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o[0m
+[0.383s] [ 23%] [32mBuilding CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o[0m
+[24.582s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:13:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KNavigationNode::[m[K’ on member ‘[01m[KNavigationNode[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[24.582s]    46 |             [01;31m[KNavigationNode[m[K::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {
+[24.582s]       |             [01;31m[K^~~~~~~~~~~~~~[m[K
+[24.627s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:[m[K In constructor ‘[01m[KNavigationNode::[01;32m[KNavigationNode[m[K()[m[K’:
+[24.628s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:91:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::Node()[m[K’
+[24.628s]    46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")[01;31m[K)[m[K {
+[24.629s]       |                                                                                           [01;31m[K^[m[K
+[24.629s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[24.629s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[24.629s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+[24.630s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+[24.630s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25[m[K:
+[24.630s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const rclcpp::Node&, const std::string&)[m[K’
+[24.630s]  1629 |   [01;36m[KNode[m[K(
+[24.631s]       |   [01;36m[K^~~~[m[K
+[24.631s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[24.631s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const std::string&, const std::string&, const rclcpp::NodeOptions&)[m[K’
+[24.632s]   103 |   explicit [01;36m[KNode[m[K(
+[24.632s]       |            [01;36m[K^~~~[m[K
+[24.632s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[24.633s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const std::string&, const rclcpp::NodeOptions&)[m[K’
+[24.633s]    91 |   explicit [01;36m[KNode[m[K(
+[24.633s]       |            [01;36m[K^~~~[m[K
+[24.633s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[24.718s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:13:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KSemanticNavigationNode::[m[K’ on member ‘[01m[KSemanticNavigationNode[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[24.719s]    46 |             [01;31m[KSemanticNavigationNode[m[K::SemanticNavigationNode() : Node("semantic_navigation_node") {
+[24.719s]       |             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[24.756s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:116:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)[m[K’
+[24.756s]   143 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1[01;31m[K)[m[K;
+[24.756s]       |                                                                                                                    [01;31m[K^[m[K
+[24.757s] In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:44[m[K:
+[24.762s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K() [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node][m[K[m[K’
+[24.762s]   224 |   [01;36m[KSubscriber[m[K() = default;
+[24.762s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.762s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[24.762s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.762s]   212 |   [01;36m[KSubscriber[m[K(
+[24.763s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.763s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.763s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.763s]   203 |   [01;36m[KSubscriber[m[K(
+[24.763s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.763s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.766s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.766s]   188 |   [01;36m[KSubscriber[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.766s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.766s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Krclcpp::Node*[m[K’
+[24.766s]   188 |   Subscriber([01;36m[KNodeType * node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.767s]       |              [01;36m[K~~~~~~~~~~~^~~~[m[K
+[24.767s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.767s]   183 |   [01;36m[KSubscriber[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.767s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.767s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+[24.775s]   183 |   Subscriber([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.775s]       |              [01;36m[K~~~~~~~~^~~~[m[K
+[24.775s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:[m[K In constructor ‘[01m[KSemanticNavigationNode::[01;32m[KSemanticNavigationNode[m[K()[m[K’:
+[24.775s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::Node()[m[K’
+[24.775s]    46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node"[01;31m[K)[m[K {
+[24.778s]       |                                                                                               [01;31m[K^[m[K
+[24.778s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[24.778s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[24.778s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+[24.778s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+[24.778s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25[m[K:
+[24.778s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const rclcpp::Node&, const std::string&)[m[K’
+[24.779s]  1629 |   [01;36m[KNode[m[K(
+[24.779s]       |   [01;36m[K^~~~[m[K
+[24.779s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[24.779s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const std::string&, const std::string&, const rclcpp::NodeOptions&)[m[K’
+[24.779s]   103 |   explicit [01;36m[KNode[m[K(
+[24.779s]       |            [01;36m[K^~~~[m[K
+[24.779s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[24.780s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const std::string&, const rclcpp::NodeOptions&)[m[K’
+[24.780s]    91 |   explicit [01;36m[KNode[m[K(
+[24.780s]       |            [01;36m[K^~~~[m[K
+[24.780s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[24.850s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:144:112:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)[m[K’
+[24.850s]   144 |                         message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(nh_, sub_robot_topic_, 1[01;31m[K)[m[K;
+[24.851s]       |                                                                                                                [01;31m[K^[m[K
+[24.851s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K() [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node][m[K[m[K’
+[24.851s]   224 |   [01;36m[KSubscriber[m[K() = default;
+[24.851s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.852s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[24.852s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.852s]   212 |   [01;36m[KSubscriber[m[K(
+[24.853s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.853s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.853s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.854s]   203 |   [01;36m[KSubscriber[m[K(
+[24.854s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.854s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.855s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.855s]   188 |   [01;36m[KSubscriber[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.855s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.857s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Krclcpp::Node*[m[K’
+[24.857s]   188 |   Subscriber([01;36m[KNodeType * node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.857s]       |              [01;36m[K~~~~~~~~~~~^~~~[m[K
+[24.857s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.857s]   183 |   [01;36m[KSubscriber[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.857s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.858s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+[24.862s]   183 |   Subscriber([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.862s]       |              [01;36m[K~~~~~~~~^~~~[m[K
+[24.870s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:143:119:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(SemanticNavigationNode*, const char [17], int)[m[K’
+[24.870s]   143 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(this, "sub_laser_topic_", 1[01;31m[K)[m[K;
+[24.870s]       |                                                                                                                       [01;31m[K^[m[K
+[24.875s] In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:44[m[K:
+[24.875s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K() [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node][m[K[m[K’
+[24.876s]   224 |   [01;36m[KSubscriber[m[K() = default;
+[24.876s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.876s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[24.876s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.876s]   212 |   [01;36m[KSubscriber[m[K(
+[24.877s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.877s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.877s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.877s]   203 |   [01;36m[KSubscriber[m[K(
+[24.877s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.877s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.878s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.878s]   188 |   [01;36m[KSubscriber[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.878s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.878s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:81:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kint[m[K’ to ‘[01m[Krmw_qos_profile_t[m[K’ {aka ‘[01m[Krmw_qos_profile_s[m[K’}
+[24.878s]   188 |   Subscriber(NodeType * node, const std::string& topic, [01;36m[Kconst rmw_qos_profile_t qos = rmw_qos_profile_default[m[K)
+[24.878s]       |                                                         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[24.880s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.881s]   183 |   [01;36m[KSubscriber[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.881s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.881s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KSemanticNavigationNode*[m[K’ to ‘[01m[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+[24.881s]   183 |   Subscriber([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.881s]       |              [01;36m[K~~~~~~~~^~~~[m[K
+[24.938s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:144:103:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(SemanticNavigationNode*, const char [17], int)[m[K’
+[24.938s]   144 |             message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(this, "sub_robot_topic_", 1[01;31m[K)[m[K;
+[24.938s]       |                                                                                                       [01;31m[K^[m[K
+[24.938s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K() [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node][m[K[m[K’
+[24.938s]   224 |   [01;36m[KSubscriber[m[K() = default;
+[24.938s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.939s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[24.939s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.939s]   212 |   [01;36m[KSubscriber[m[K(
+[24.939s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.939s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.941s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[24.942s]   203 |   [01;36m[KSubscriber[m[K(
+[24.942s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.942s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[24.942s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.942s]   188 |   [01;36m[KSubscriber[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.942s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.943s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:81:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kint[m[K’ to ‘[01m[Krmw_qos_profile_t[m[K’ {aka ‘[01m[Krmw_qos_profile_s[m[K’}
+[24.943s]   188 |   Subscriber(NodeType * node, const std::string& topic, [01;36m[Kconst rmw_qos_profile_t qos = rmw_qos_profile_default[m[K)
+[24.943s]       |                                                         [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[24.943s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[24.943s]   183 |   [01;36m[KSubscriber[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.943s]       |   [01;36m[K^~~~~~~~~~[m[K
+[24.945s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KSemanticNavigationNode*[m[K’ to ‘[01m[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+[24.946s]   183 |   Subscriber([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[24.946s]       |              [01;36m[K~~~~~~~~^~~~[m[K
+[24.946s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:152:86:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KSemanticNavigationNode::create_subscription(const char [20], int)[m[K’
+[24.946s]   152 |                         rclcpp::Subscription sub_semantic = [01;31m[Kthis->create_subscription("sub_semantic_topic_", 1)[m[K;
+[24.946s]       |                                                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[24.947s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::[01;32m[Kcreate_subscription[m[K(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[24.947s]   221 |   [01;36m[Kcreate_subscription[m[K(
+[24.947s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[24.947s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[24.947s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:152:86:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 2 provided
+[24.947s]   152 |                         rclcpp::Subscription sub_semantic = [01;36m[Kthis->create_subscription("sub_semantic_topic_", 1)[m[K;
+[24.947s]       |                                                             [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[25.035s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbind[m[K’ is not a member of ‘[01m[Kboost[m[K’; did you mean ‘[01m[Kfind[m[K’?
+[25.036s]   149 |                         sync->registerCallback(boost::[01;31m[Kbind[m[K(&NavigationNode::control_callback, this, _1, _2));
+[25.036s]       |                                                       [01;31m[K^~~~[m[K
+[25.036s]       |                                                       [32m[Kfind[m[K
+[25.042s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:101:[m[K [01;31m[Kerror: [m[K‘[01m[K_1[m[K’ was not declared in this scope
+[25.042s]   149 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, [01;31m[K_1[m[K, _2));
+[25.042s]       |                                                                                                     [01;31m[K^~[m[K
+[25.042s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:101:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[25.043s] In file included from [01m[K/usr/include/boost/mpl/aux_/include_preprocessed.hpp:37[m[K,
+[25.043s]                  from [01m[K/usr/include/boost/mpl/placeholders.hpp:43[m[K,
+[25.043s]                  from [01m[K/usr/include/boost/iterator/iterator_categories.hpp:16[m[K,
+[25.043s]                  from [01m[K/usr/include/boost/iterator/iterator_facade.hpp:13[m[K,
+[25.043s]                  from [01m[K/usr/include/boost/range/iterator_range_core.hpp:27[m[K,
+[25.043s]                  from [01m[K/usr/include/boost/lexical_cast.hpp:48[m[K,
+[25.044s]                  from [01m[K/usr/include/boost/multiprecision/detail/number_base.hpp:29[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/multiprecision/detail/precision.hpp:9[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/multiprecision/number.hpp:11[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/multiprecision/cpp_int.hpp:19[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/multiprecision/cpp_bin_float.hpp:15[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/geometry/core/coordinate_promotion.hpp:16[m[K,
+[25.045s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:30[m[K,
+[25.046s]                  from [01m[K/usr/include/boost/geometry/geometry.hpp:50[m[K,
+[25.046s]                  from [01m[K/usr/include/boost/geometry.hpp:17[m[K,
+[25.046s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26[m[K:
+[25.046s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[25.046s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[25.046s]       |                [01;36m[K^~[m[K
+[25.048s] In file included from [01m[K/usr/include/boost/numeric/conversion/converter_policies.hpp:13[m[K,
+[25.049s]                  from [01m[K/usr/include/boost/numeric/conversion/converter.hpp:14[m[K,
+[25.049s]                  from [01m[K/usr/include/boost/numeric/conversion/cast.hpp:33[m[K,
+[25.049s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:26[m[K:
+[25.049s] [01m[K/usr/include/c++/13/functional:294:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_1[m[K’
+[25.049s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> [01;36m[K_1[m[K;
+[25.049s]       |                                                [01;36m[K^~[m[K
+[25.049s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[25.050s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[25.050s]       |                [01;36m[K^~[m[K
+[25.050s] In file included from [01m[K/usr/include/boost/describe/members.hpp:20[m[K,
+[25.050s]                  from [01m[K/usr/include/boost/container_hash/is_described_class.hpp:11[m[K,
+[25.050s]                  from [01m[K/usr/include/boost/container_hash/hash.hpp:18[m[K,
+[25.050s]                  from [01m[K/usr/include/boost/functional/hash.hpp:6[m[K,
+[25.054s]                  from [01m[K/usr/include/CGAL/Kernel/hash_functions.h:16[m[K,
+[25.055s]                  from [01m[K/usr/include/CGAL/Kernel/global_functions.h:25[m[K,
+[25.055s]                  from [01m[K/usr/include/CGAL/Cartesian/Cartesian_base.h:22[m[K,
+[25.055s]                  from [01m[K/usr/include/CGAL/Simple_cartesian.h:20[m[K,
+[25.055s]                  from [01m[K/usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20[m[K,
+[25.055s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32[m[K,
+[25.055s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52[m[K:
+[25.056s] [01m[K/usr/include/boost/mp11/bind.hpp:45:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_1[m[K’
+[25.056s]    45 | using [01;36m[K_1[m[K = mp_arg<0>;
+[25.056s]       |       [01;36m[K^~[m[K
+[25.056s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[25.056s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[25.056s]       |                [01;36m[K^~[m[K
+[25.059s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:105:[m[K [01;31m[Kerror: [m[K‘[01m[K_2[m[K’ was not declared in this scope
+[25.059s]   149 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, [01;31m[K_2[m[K));
+[25.059s]       |                                                                                                         [01;31m[K^~[m[K
+[25.059s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:105:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[25.059s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[25.059s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[25.059s]       |                [01;36m[K^~[m[K
+[25.060s] [01m[K/usr/include/c++/13/functional:295:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_2[m[K’
+[25.060s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> [01;36m[K_2[m[K;
+[25.060s]       |                                                [01;36m[K^~[m[K
+[25.063s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[25.063s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[25.063s]       |                [01;36m[K^~[m[K
+[25.063s] [01m[K/usr/include/boost/mp11/bind.hpp:46:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_2[m[K’
+[25.063s]    46 | using [01;36m[K_2[m[K = mp_arg<1>;
+[25.063s]       |       [01;36m[K^~[m[K
+[25.063s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[25.064s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[25.064s]       |                [01;36m[K^~[m[K
+[25.064s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:152:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNavigationNode::create_subscription(const char [20], int)[m[K’
+[25.064s]   152 |             rclcpp::Subscription sub_semantic = [01;31m[Kthis->create_subscription("sub_semantic_topic_", 1)[m[K;
+[25.064s]       |                                                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[25.064s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::[01;32m[Kcreate_subscription[m[K(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[25.069s]   221 |   [01;36m[Kcreate_subscription[m[K(
+[25.069s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[25.069s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[25.069s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:152:74:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 2 provided
+[25.069s]   152 |             rclcpp::Subscription sub_semantic = [01;36m[Kthis->create_subscription("sub_semantic_topic_", 1)[m[K;
+[25.069s]       |                                                 [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[25.070s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:[m[K In member function ‘[01m[Kvoid SemanticNavigationNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[25.070s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:443:42:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[Klidar_data[m[K’ from ‘[01m[Kshared_ptr<LaserScan_<[...]>>[m[K’ to ‘[01m[Kshared_ptr<LaserScan_<[...]>>[m[K’
+[25.070s]   443 |                         constructLIDAR2D([01;31m[Klidar_data[m[K, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[25.070s]       |                                          [01;31m[K^~~~~~~~~~[m[K
+[25.070s]       |                                          [01;31m[K|[m[K
+[25.070s]       |                                          [01;31m[Kshared_ptr<LaserScan_<[...]>>[m[K
+[25.173s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:[m[K In member function ‘[01m[Kvoid NavigationNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[25.174s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:404:42:[m[K [01;31m[Kerror: [m[Kcould not convert ‘[01m[Klidar_data[m[K’ from ‘[01m[Kshared_ptr<LaserScan_<[...]>>[m[K’ to ‘[01m[Kshared_ptr<LaserScan_<[...]>>[m[K’
+[25.174s]   404 |                         constructLIDAR2D([01;31m[Klidar_data[m[K, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[25.174s]       |                                          [01;31m[K^~~~~~~~~~[m[K
+[25.175s]       |                                          [01;31m[K|[m[K
+[25.176s]       |                                          [01;31m[Kshared_ptr<LaserScan_<[...]>>[m[K
+[46.785s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+[46.785s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[46.785s] gmake[1]: *** Waiting for unfinished jobs....
+[48.047s] gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+[48.048s] gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+[48.048s] gmake: *** [Makefile:146: all] Error 2
+[48.052s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

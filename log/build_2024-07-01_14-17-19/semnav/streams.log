@@ -1,0 +1,708 @@
+[0.024s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.190s] [ 14%] Built target reactive_planner
+[0.330s] [ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+[0.330s] [ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[6.390s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:366:128: error: macro "RCLCPP_WARN_STREAM" requires 2 arguments, but only 1 given
+[6.390s]   366 |                                 RCLCPP_WARN_STREAM("[Navigation] Updated trees in " << time.seconds()-start_time << " seconds.");
+[6.390s]       |                                                                                                                                ^
+[6.390s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,
+[6.390s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+[6.390s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,
+[6.390s]                  from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:
+[6.391s] /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:1136: note: macro "RCLCPP_WARN_STREAM" defined here
+[6.391s]  1136 | #define RCLCPP_WARN_STREAM(logger, stream_arg) \
+[6.391s]       | 
+[6.391s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:564:284: error: macro "RCLCPP_WARN_STREAM" requires 2 arguments, but only 1 given
+[6.391s]   564 |                         RCLCPP_WARN_STREAM("[Navigation] Diffeomorphism jacobian determinant is " << MatrixDeterminant(RobotPositionTransformedD) << ", robot position is " << bg::dsv(RobotPosition_) << " and robot positon in model space is " << bg::dsv(RobotPositionTransformedPoint));
+[6.391s]       |                                                                                                                                                                                                                                                                                            ^
+[6.391s] /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:1136: note: macro "RCLCPP_WARN_STREAM" defined here
+[6.391s]  1136 | #define RCLCPP_WARN_STREAM(logger, stream_arg) \
+[6.392s]       | 
+[6.392s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:589:98: error: macro "RCLCPP_WARN_STREAM" requires 2 arguments, but only 1 given
+[6.392s]   589 |                                         RCLCPP_WARN_STREAM("[Navigation] Aligning with object...");
+[6.392s]       |                                                                                                  ^
+[6.393s] /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:1136: note: macro "RCLCPP_WARN_STREAM" defined here
+[6.393s]  1136 | #define RCLCPP_WARN_STREAM(logger, stream_arg) \
+[6.393s]       | 
+[6.394s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:591:128: error: macro "RCLCPP_WARN_STREAM" requires 2 arguments, but only 1 given
+[6.394s]   591 |                                         RCLCPP_WARN_STREAM("[Navigation] Successfully navigated to goal and stopped to jump...");
+[6.394s]       |                                                                                                                                ^
+[6.395s] /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:1136: note: macro "RCLCPP_WARN_STREAM" defined here
+[6.395s]  1136 | #define RCLCPP_WARN_STREAM(logger, stream_arg) \
+[6.395s]       | 
+[6.395s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:618:134: error: macro "RCLCPP_WARN_STREAM" requires 2 arguments, but only 1 given
+[6.395s]   618 |                         RCLCPP_WARN_STREAM("[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
+[6.396s]       |                                                                                                                                      ^
+[6.397s] /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:1136: note: macro "RCLCPP_WARN_STREAM" defined here
+[6.397s]  1136 | #define RCLCPP_WARN_STREAM(logger, stream_arg) \
+[6.397s]       | 
+[6.397s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:619:178: error: macro "RCLCPP_WARN_STREAM" requires 2 arguments, but only 1 given
+[6.397s]   619 |                         RCLCPP_WARN_STREAM("[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
+[6.397s]       |                                                                                                                                                                                  ^
+[6.399s] /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:1136: note: macro "RCLCPP_WARN_STREAM" defined here
+[6.399s]  1136 | #define RCLCPP_WARN_STREAM(logger, stream_arg) \
+[6.400s]       | 
+[21.720s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:664:22: error: ‘TransformListener’ in namespace ‘tf2’ does not name a type
+[21.720s]   664 |                 tf2::TransformListener listener_;
+[21.720s]       |                      ^~~~~~~~~~~~~~~~~
+[21.722s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In constructor ‘NavigationNode::NavigationNode()’:
+[21.722s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:47:63: error: no matching function for call to ‘rclcpp::Node::Node()’
+[21.722s]    47 |         NavigationNode() : Node(std::string("navigation_node")) {
+[21.722s]       |                                                               ^
+[21.725s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,
+[21.725s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,
+[21.726s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,
+[21.726s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,
+[21.726s]                  from /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25:
+[21.726s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: ‘rclcpp::Node::Node(const rclcpp::Node&, const std::string&)’
+[21.726s]  1629 |   Node(
+[21.726s]       |   ^~~~
+[21.726s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided
+[21.727s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: ‘rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)’
+[21.727s]   103 |   explicit Node(
+[21.727s]       |            ^~~~
+[21.727s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided
+[21.727s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: ‘rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)’
+[21.727s]    91 |   explicit Node(
+[21.727s]       |            ^~~~
+[21.728s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided
+[21.826s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:626:25: error: ‘NodeHandle’ in namespace ‘rclcpp’ does not name a type
+[21.827s]   626 |                 rclcpp::NodeHandle nh_;
+[21.827s]       |                         ^~~~~~~~~~
+[21.827s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:643:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.827s]   643 |                 rclcpp::Publisher pub_behaviorID_<std_msgs::msg::UInt32>;
+[21.828s]       |                 ^~~~~~
+[21.829s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:643:35: error: expected ‘;’ at end of member declaration
+[21.829s]   643 |                 rclcpp::Publisher pub_behaviorID_<std_msgs::msg::UInt32>;
+[21.830s]       |                                   ^~~~~~~~~~~~~~~
+[21.830s]       |                                                  ;
+[21.830s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:643:50: error: expected unqualified-id before ‘<’ token
+[21.830s]   643 |                 rclcpp::Publisher pub_behaviorID_<std_msgs::msg::UInt32>;
+[21.830s]       |                                                  ^
+[21.831s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:644:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.832s]   644 |                 rclcpp::Publisher pub_behaviorMode_;
+[21.832s]       |                 ^~~~~~
+[21.832s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:645:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.832s]   645 |                 rclcpp::Publisher pub_twist_;
+[21.832s]       |                 ^~~~~~
+[21.833s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:647:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.833s]   647 |                 rclcpp::Publisher pub_semantic_map_;
+[21.834s]       |                 ^~~~~~
+[21.842s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:139:13: error: ‘pub_behaviorID_’ was not declared in this scope; did you mean ‘pub_behaviorID_topic_’?
+[21.843s]   139 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.843s]       |             ^~~~~~~~~~~~~~~
+[21.843s]       |             pub_behaviorID_topic_
+[21.845s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:693:22: error: ‘TransformListener’ in namespace ‘tf2’ does not name a type
+[21.845s]   693 |                 tf2::TransformListener listener_;
+[21.845s]       |                      ^~~~~~~~~~~~~~~~~
+[21.846s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:139:69: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[21.846s]   139 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.846s]       |                                                                     ^~~~~~
+[21.846s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:139:76: error: no matching function for call to ‘NavigationNode::create_publisher<<expression error> >(const char [22], int)’
+[21.846s]   139 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.846s]       |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.846s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note: candidate: ‘template<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)’
+[21.846s]   197 |   create_publisher(
+[21.847s]       |   ^~~~~~~~~~~~~~~~
+[21.847s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note:   template argument deduction/substitution failed:
+[21.847s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:139:76: error: template argument 1 is invalid
+[21.847s]   139 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.849s]       |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.883s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In constructor ‘SemanticNavigationNode::SemanticNavigationNode()’:
+[21.884s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:137:69: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[21.884s]   137 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.884s]       |                                                                     ^~~~~~
+[21.884s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:137:76: error: no matching function for call to ‘SemanticNavigationNode::create_publisher<<expression error> >(const char [22], int)’
+[21.884s]   137 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.884s]       |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.884s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,
+[21.885s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,
+[21.885s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172:
+[21.885s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note: candidate: ‘template<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)’
+[21.885s]   197 |   create_publisher(
+[21.887s]       |   ^~~~~~~~~~~~~~~~
+[21.887s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note:   template argument deduction/substitution failed:
+[21.887s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:137:76: error: template argument 1 is invalid
+[21.888s]   137 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1);
+[21.888s]       |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.889s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:138:71: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[21.889s]   138 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.890s]       |                                                                       ^~~~~~
+[21.891s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:138:78: error: no matching function for call to ‘SemanticNavigationNode::create_publisher<<expression error> >(const char [24], int)’
+[21.892s]   138 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.892s]       |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.892s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note: candidate: ‘template<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)’
+[21.892s]   197 |   create_publisher(
+[21.892s]       |   ^~~~~~~~~~~~~~~~
+[21.892s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note:   template argument deduction/substitution failed:
+[21.892s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:138:78: error: template argument 1 is invalid
+[21.892s]   138 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.893s]       |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.896s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:139:64: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[21.897s]   139 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[21.897s]       |                                                                ^~~~~~
+[21.897s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:139:71: error: no matching function for call to ‘SemanticNavigationNode::create_publisher<<expression error> >(const char [17], int)’
+[21.897s]   139 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[21.897s]       |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[21.897s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note: candidate: ‘template<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)’
+[21.897s]   197 |   create_publisher(
+[21.898s]       |   ^~~~~~~~~~~~~~~~
+[21.898s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note:   template argument deduction/substitution failed:
+[21.898s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:139:71: error: template argument 1 is invalid
+[21.898s]   139 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[21.901s]       |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[21.901s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:142:42: error: ‘message_filters::msg’ has not been declared
+[21.901s]   142 |                         message_filters::msg::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[21.902s]       |                                          ^~~
+[21.902s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:142:85: error: expected primary-expression before ‘>’ token
+[21.902s]   142 |                         message_filters::msg::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[21.902s]       |                                                                                     ^
+[21.929s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:142:97: error: ‘nh_’ was not declared in this scope
+[21.929s]   142 |                         message_filters::msg::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[21.929s]       |                                                                                                 ^~~
+[21.945s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:140:13: error: ‘pub_behaviorMode_’ was not declared in this scope; did you mean ‘pub_behaviorMode_topic_’?
+[21.945s]   140 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.945s]       |             ^~~~~~~~~~~~~~~~~
+[21.945s]       |             pub_behaviorMode_topic_
+[21.950s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:140:71: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[21.950s]   140 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.951s]       |                                                                       ^~~~~~
+[21.951s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:140:78: error: no matching function for call to ‘NavigationNode::create_publisher<<expression error> >(const char [24], int)’
+[21.951s]   140 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.951s]       |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.951s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note: candidate: ‘template<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)’
+[21.951s]   197 |   create_publisher(
+[21.951s]       |   ^~~~~~~~~~~~~~~~
+[21.951s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note:   template argument deduction/substitution failed:
+[21.952s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:140:78: error: template argument 1 is invalid
+[21.952s]   140 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1);
+[21.952s]       |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.984s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:142:87: error: ‘sub_laser’ was not declared in this scope
+[21.985s]   142 |                         message_filters::msg::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[21.985s]       |                                                                                       ^~~~~~~~~
+[21.999s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:13: error: ‘pub_twist_’ was not declared in this scope; did you mean ‘publish_twist’?
+[22.000s]   141 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[22.000s]       |             ^~~~~~~~~~
+[22.000s]       |             publish_twist
+[22.002s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:64: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.002s]   141 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[22.003s]       |                                                                ^~~~~~
+[22.003s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:71: error: no matching function for call to ‘NavigationNode::create_publisher<<expression error> >(const char [17], int)’
+[22.003s]   141 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[22.003s]       |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[22.003s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note: candidate: ‘template<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)’
+[22.003s]   197 |   create_publisher(
+[22.003s]       |   ^~~~~~~~~~~~~~~~
+[22.004s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3: note:   template argument deduction/substitution failed:
+[22.004s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:71: error: template argument 1 is invalid
+[22.004s]   141 |             pub_twist_ = this->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic_", 1);
+[22.004s]       |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+[22.071s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:144:116: error: no matching function for call to ‘message_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)’
+[22.071s]   144 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.071s]       |                                                                                                                    ^
+[22.071s] In file included from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:43:
+[22.071s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber() [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node]’
+[22.071s]   224 |   Subscriber() = default;
+[22.072s]       |   ^~~~~~~~~~
+[22.072s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note:   candidate expects 0 arguments, 3 provided
+[22.072s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]’
+[22.072s]   212 |   Subscriber(
+[22.074s]       |   ^~~~~~~~~~
+[22.074s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note:   candidate expects 4 arguments, 3 provided
+[22.075s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]’
+[22.075s]   203 |   Subscriber(
+[22.075s]       |   ^~~~~~~~~~
+[22.075s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note:   candidate expects 4 arguments, 3 provided
+[22.075s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]’
+[22.075s]   188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.075s]       |   ^~~~~~~~~~
+[22.076s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25: note:   no known conversion for argument 1 from ‘rclcpp::Node’ to ‘rclcpp::Node*’
+[22.076s]   188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.076s]       |              ~~~~~~~~~~~^~~~
+[22.076s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]’
+[22.078s]   183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.078s]       |   ^~~~~~~~~~
+[22.079s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22: note:   no known conversion for argument 1 from ‘rclcpp::Node’ to ‘message_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr’ {aka ‘std::shared_ptr<rclcpp::Node>’}
+[22.079s]   183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.079s]       |              ~~~~~~~~^~~~
+[22.134s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:145:112: error: no matching function for call to ‘message_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)’
+[22.134s]   145 |                         message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(nh_, sub_robot_topic_, 1);
+[22.134s]       |                                                                                                                ^
+[22.134s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber() [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node]’
+[22.135s]   224 |   Subscriber() = default;
+[22.135s]       |   ^~~~~~~~~~
+[22.135s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note:   candidate expects 0 arguments, 3 provided
+[22.135s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]’
+[22.135s]   212 |   Subscriber(
+[22.135s]       |   ^~~~~~~~~~
+[22.135s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note:   candidate expects 4 arguments, 3 provided
+[22.136s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]’
+[22.136s]   203 |   Subscriber(
+[22.136s]       |   ^~~~~~~~~~
+[22.140s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note:   candidate expects 4 arguments, 3 provided
+[22.140s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]’
+[22.141s]   188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.141s]       |   ^~~~~~~~~~
+[22.141s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25: note:   no known conversion for argument 1 from ‘rclcpp::Node’ to ‘rclcpp::Node*’
+[22.141s]   188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.141s]       |              ~~~~~~~~~~~^~~~
+[22.141s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3: note: candidate: ‘message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]’
+[22.141s]   183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.142s]       |   ^~~~~~~~~~
+[22.142s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22: note:   no known conversion for argument 1 from ‘rclcpp::Node’ to ‘message_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr’ {aka ‘std::shared_ptr<rclcpp::Node>’}
+[22.142s]   183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[22.142s]       |              ~~~~~~~~^~~~
+[22.200s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:148:55: error: ‘bind’ is not a member of ‘boost’; did you mean ‘find’?
+[22.201s]   148 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, _2));
+[22.201s]       |                                                       ^~~~
+[22.201s]       |                                                       find
+[22.204s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:148:109: error: ‘_1’ was not declared in this scope
+[22.204s]   148 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, _2));
+[22.204s]       |                                                                                                             ^~
+[22.207s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:148:109: note: suggested alternatives:
+[22.207s] In file included from /usr/include/boost/mpl/aux_/include_preprocessed.hpp:37,
+[22.207s]                  from /usr/include/boost/mpl/placeholders.hpp:43,
+[22.207s]                  from /usr/include/boost/iterator/iterator_categories.hpp:16,
+[22.207s]                  from /usr/include/boost/iterator/iterator_facade.hpp:13,
+[22.207s]                  from /usr/include/boost/range/iterator_range_core.hpp:27,
+[22.208s]                  from /usr/include/boost/lexical_cast.hpp:48,
+[22.208s]                  from /usr/include/boost/multiprecision/detail/number_base.hpp:29,
+[22.208s]                  from /usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9,
+[22.210s]                  from /usr/include/boost/multiprecision/detail/precision.hpp:9,
+[22.210s]                  from /usr/include/boost/multiprecision/number.hpp:11,
+[22.210s]                  from /usr/include/boost/multiprecision/cpp_int.hpp:19,
+[22.211s]                  from /usr/include/boost/multiprecision/cpp_bin_float.hpp:15,
+[22.211s]                  from /usr/include/boost/geometry/core/coordinate_promotion.hpp:16,
+[22.211s]                  from /usr/include/boost/geometry/core/radian_access.hpp:30,
+[22.211s]                  from /usr/include/boost/geometry/geometry.hpp:50,
+[22.211s]                  from /usr/include/boost/geometry.hpp:17,
+[22.211s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26:
+[22.211s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.211s]    29 | typedef arg<1> _1;
+[22.212s]       |                ^~
+[22.212s] In file included from /usr/include/boost/numeric/conversion/converter_policies.hpp:13,
+[22.212s]                  from /usr/include/boost/numeric/conversion/converter.hpp:14,
+[22.212s]                  from /usr/include/boost/numeric/conversion/cast.hpp:33,
+[22.213s]                  from /usr/include/boost/geometry/core/radian_access.hpp:26:
+[22.214s] /usr/include/c++/13/functional:294:48: note:   ‘std::placeholders::_1’
+[22.214s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> _1;
+[22.214s]       |                                                ^~
+[22.214s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.214s]    29 | typedef arg<1> _1;
+[22.214s]       |                ^~
+[22.214s] In file included from /usr/include/boost/describe/members.hpp:20,
+[22.214s]                  from /usr/include/boost/container_hash/is_described_class.hpp:11,
+[22.215s]                  from /usr/include/boost/container_hash/hash.hpp:18,
+[22.215s]                  from /usr/include/boost/functional/hash.hpp:6,
+[22.215s]                  from /usr/include/CGAL/Kernel/hash_functions.h:16,
+[22.215s]                  from /usr/include/CGAL/Kernel/global_functions.h:25,
+[22.218s]                  from /usr/include/CGAL/Cartesian/Cartesian_base.h:22,
+[22.218s]                  from /usr/include/CGAL/Simple_cartesian.h:20,
+[22.218s]                  from /usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20,
+[22.219s]                  from /home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32,
+[22.219s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:51:
+[22.219s] /usr/include/boost/mp11/bind.hpp:45:7: note:   ‘boost::mp11::_1’
+[22.219s]    45 | using _1 = mp_arg<0>;
+[22.219s]       |       ^~
+[22.219s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.219s]    29 | typedef arg<1> _1;
+[22.220s]       |                ^~
+[22.220s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:148:113: error: ‘_2’ was not declared in this scope
+[22.220s]   148 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, _2));
+[22.220s]       |                                                                                                                 ^~
+[22.222s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:148:113: note: suggested alternatives:
+[22.222s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.222s]    42 | typedef arg<2> _2;
+[22.222s]       |                ^~
+[22.222s] /usr/include/c++/13/functional:295:48: note:   ‘std::placeholders::_2’
+[22.223s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> _2;
+[22.223s]       |                                                ^~
+[22.223s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.223s]    42 | typedef arg<2> _2;
+[22.223s]       |                ^~
+[22.223s] /usr/include/boost/mp11/bind.hpp:46:7: note:   ‘boost::mp11::_2’
+[22.223s]    46 | using _2 = mp_arg<1>;
+[22.224s]       |       ^~
+[22.224s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.224s]    42 | typedef arg<2> _2;
+[22.224s]       |                ^~
+[22.227s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:150:33: error: ‘Subscriber’ is not a member of ‘rclcpp’; did you mean ‘message_filters::Subscriber’?
+[22.228s]   150 |                         rclcpp::Subscriber sub_semantic = this->create_subscriber("sub_semantic_topic_", 1);
+[22.228s]       |                                 ^~~~~~~~~~
+[22.228s] In file included from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:43:
+[22.228s] /opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:165:7: note: ‘message_filters::Subscriber’ declared here
+[22.228s]   165 | class Subscriber
+[22.228s]       |       ^~~~~~~~~~
+[22.229s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:154:45: error: no matching function for call to ‘rclcpp::Duration::Duration(double)’
+[22.229s]   154 |                         rclcpp::Duration(5.0).sleep();
+[22.229s]       |                                             ^
+[22.229s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24,
+[22.231s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24,
+[22.231s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38,
+[22.232s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[22.233s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21:
+[22.233s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note: candidate: ‘template<class Rep, class Period> rclcpp::Duration::Duration(const std::chrono::duration<_Rep1, _Period1>&)’
+[22.233s]    49 |   Duration(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[22.233s]       |   ^~~~~~~~
+[22.235s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note:   template argument deduction/substitution failed:
+[22.235s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:154:45: note:   mismatched types ‘const std::chrono::duration<_Rep1, _Period1>’ and ‘double’
+[22.236s]   154 |                         rclcpp::Duration(5.0).sleep();
+[22.236s]       |                                             ^
+[22.236s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note: candidate: ‘rclcpp::Duration::Duration()’
+[22.236s]   159 |   Duration() = default;
+[22.236s]       |   ^~~~~~~~
+[22.236s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note:   candidate expects 0 arguments, 1 provided
+[22.236s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3: note: candidate: ‘rclcpp::Duration::Duration(const rclcpp::Duration&)’
+[22.237s]    62 |   Duration(const Duration & rhs);
+[22.237s]       |   ^~~~~~~~
+[22.237s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29: note:   no known conversion for argument 1 from ‘double’ to ‘const rclcpp::Duration&’
+[22.237s]    62 |   Duration(const Duration & rhs);
+[22.239s]       |            ~~~~~~~~~~~~~~~~~^~~
+[22.239s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12: note: candidate: ‘rclcpp::Duration::Duration(const rcl_duration_t&)’
+[22.240s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.240s]       |            ^~~~~~~~
+[22.240s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44: note:   no known conversion for argument 1 from ‘double’ to ‘const rcl_duration_t&’ {aka ‘const rcl_duration_s&’}
+[22.240s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.240s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+[22.240s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3: note: candidate: ‘rclcpp::Duration::Duration(const builtin_interfaces::msg::Duration&)’
+[22.240s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.241s]       |   ^~~~~~~~
+[22.241s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54: note:   no known conversion for argument 1 from ‘double’ to ‘const builtin_interfaces::msg::Duration&’ {aka ‘const builtin_interfaces::msg::Duration_<std::allocator<void> >&’}
+[22.241s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.241s]       |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[22.243s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12: note: candidate: ‘rclcpp::Duration::Duration(std::chrono::nanoseconds)’
+[22.243s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.243s]       |            ^~~~~~~~
+[22.244s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46: note:   no known conversion for argument 1 from ‘double’ to ‘std::chrono::nanoseconds’ {aka ‘std::chrono::duration<long int, std::ratio<1, 1000000000> >’}
+[22.244s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.244s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[22.244s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note: candidate: ‘rclcpp::Duration::Duration(int32_t, uint32_t)’
+[22.244s]    40 |   Duration(int32_t seconds, uint32_t nanoseconds);
+[22.244s]       |   ^~~~~~~~
+[22.244s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note:   candidate expects 2 arguments, 1 provided
+[22.244s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:161:25: error: ‘ros’ has not been declared
+[22.245s]   161 |                         ros::spin();
+[22.245s]       |                         ^~~
+[22.245s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::publish_behavior_id(uint16_t)’:
+[22.245s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:32: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.246s]   173 |                 std_msgs::msg::UInt32 commandId;
+[22.246s]       |                                ^~~~~~
+[22.270s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:55: error: ‘bind’ is not a member of ‘boost’; did you mean ‘find’?
+[22.270s]   150 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
+[22.270s]       |                                                       ^~~~
+[22.271s]       |                                                       find
+[22.274s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:101: error: ‘_1’ was not declared in this scope
+[22.274s]   150 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
+[22.274s]       |                                                                                                     ^~
+[22.274s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:101: note: suggested alternatives:
+[22.275s] In file included from /usr/include/boost/mpl/aux_/include_preprocessed.hpp:37,
+[22.275s]                  from /usr/include/boost/mpl/placeholders.hpp:43,
+[22.275s]                  from /usr/include/boost/iterator/iterator_categories.hpp:16,
+[22.275s]                  from /usr/include/boost/iterator/iterator_facade.hpp:13,
+[22.275s]                  from /usr/include/boost/range/iterator_range_core.hpp:27,
+[22.276s]                  from /usr/include/boost/lexical_cast.hpp:48,
+[22.276s]                  from /usr/include/boost/multiprecision/detail/number_base.hpp:29,
+[22.276s]                  from /usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9,
+[22.276s]                  from /usr/include/boost/multiprecision/detail/precision.hpp:9,
+[22.276s]                  from /usr/include/boost/multiprecision/number.hpp:11,
+[22.276s]                  from /usr/include/boost/multiprecision/cpp_int.hpp:19,
+[22.276s]                  from /usr/include/boost/multiprecision/cpp_bin_float.hpp:15,
+[22.276s]                  from /usr/include/boost/geometry/core/coordinate_promotion.hpp:16,
+[22.277s]                  from /usr/include/boost/geometry/core/radian_access.hpp:30,
+[22.277s]                  from /usr/include/boost/geometry/geometry.hpp:50,
+[22.277s]                  from /usr/include/boost/geometry.hpp:17,
+[22.277s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26:
+[22.280s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.280s]    29 | typedef arg<1> _1;
+[22.281s]       |                ^~
+[22.281s] In file included from /usr/include/boost/numeric/conversion/converter_policies.hpp:13,
+[22.281s]                  from /usr/include/boost/numeric/conversion/converter.hpp:14,
+[22.281s]                  from /usr/include/boost/numeric/conversion/cast.hpp:33,
+[22.281s]                  from /usr/include/boost/geometry/core/radian_access.hpp:26:
+[22.281s] /usr/include/c++/13/functional:294:48: note:   ‘std::placeholders::_1’
+[22.281s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> _1;
+[22.281s]       |                                                ^~
+[22.282s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.282s]    29 | typedef arg<1> _1;
+[22.282s]       |                ^~
+[22.282s] In file included from /usr/include/boost/describe/members.hpp:20,
+[22.285s]                  from /usr/include/boost/container_hash/is_described_class.hpp:11,
+[22.285s]                  from /usr/include/boost/container_hash/hash.hpp:18,
+[22.285s]                  from /usr/include/boost/functional/hash.hpp:6,
+[22.285s]                  from /usr/include/CGAL/Kernel/hash_functions.h:16,
+[22.285s]                  from /usr/include/CGAL/Kernel/global_functions.h:25,
+[22.285s]                  from /usr/include/CGAL/Cartesian/Cartesian_base.h:22,
+[22.286s]                  from /usr/include/CGAL/Simple_cartesian.h:20,
+[22.286s]                  from /usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20,
+[22.286s]                  from /home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32,
+[22.286s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:51:
+[22.286s] /usr/include/boost/mp11/bind.hpp:45:7: note:   ‘boost::mp11::_1’
+[22.286s]    45 | using _1 = mp_arg<0>;
+[22.286s]       |       ^~
+[22.286s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.287s]    29 | typedef arg<1> _1;
+[22.287s]       |                ^~
+[22.287s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:105: error: ‘_2’ was not declared in this scope
+[22.287s]   150 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
+[22.289s]       |                                                                                                         ^~
+[22.289s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:105: note: suggested alternatives:
+[22.289s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.290s]    42 | typedef arg<2> _2;
+[22.290s]       |                ^~
+[22.290s] /usr/include/c++/13/functional:295:48: note:   ‘std::placeholders::_2’
+[22.290s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> _2;
+[22.290s]       |                                                ^~
+[22.290s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.290s]    42 | typedef arg<2> _2;
+[22.290s]       |                ^~
+[22.291s] /usr/include/boost/mp11/bind.hpp:46:7: note:   ‘boost::mp11::_2’
+[22.291s]    46 | using _2 = mp_arg<1>;
+[22.291s]       |       ^~
+[22.291s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.293s]    42 | typedef arg<2> _2;
+[22.293s]       |                ^~
+[22.293s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:20: error: ‘Subscription’ was not declared in this scope
+[22.294s]   153 |             rclcpp:Subscription sub_semantic = this->create_subscriber(sub_semantic_topic_, 1);
+[22.294s]       |                    ^~~~~~~~~~~~
+[22.294s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:20: note: suggested alternatives:
+[22.294s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25,
+[22.294s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[22.294s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[22.294s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22,
+[22.294s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38,
+[22.295s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[22.295s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21:
+[22.295s] /opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:75:7: note:   ‘rclcpp::Subscription’
+[22.295s]    75 | class Subscription : public SubscriptionBase
+[22.297s]       |       ^~~~~~~~~~~~
+[22.297s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:45,
+[22.297s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24,
+[22.298s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20:
+[22.298s] /opt/ros/jazzy/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:43:3: note:   ‘rclcpp::EndpointType::Subscription’
+[22.298s]    43 |   Subscription = RMW_ENDPOINT_SUBSCRIPTION
+[22.298s]       |   ^~~~~~~~~~~~
+[22.298s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:157:45: error: no matching function for call to ‘rclcpp::Duration::Duration(double)’
+[22.298s]   157 |                         rclcpp::Duration(5.0).sleep();
+[22.298s]       |                                             ^
+[22.298s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24,
+[22.299s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24,
+[22.299s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38:
+[22.299s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note: candidate: ‘template<class Rep, class Period> rclcpp::Duration::Duration(const std::chrono::duration<_Rep1, _Period1>&)’
+[22.299s]    49 |   Duration(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[22.299s]       |   ^~~~~~~~
+[22.301s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note:   template argument deduction/substitution failed:
+[22.302s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:157:45: note:   mismatched types ‘const std::chrono::duration<_Rep1, _Period1>’ and ‘double’
+[22.302s]   157 |                         rclcpp::Duration(5.0).sleep();
+[22.302s]       |                                             ^
+[22.302s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note: candidate: ‘rclcpp::Duration::Duration()’
+[22.302s]   159 |   Duration() = default;
+[22.302s]       |   ^~~~~~~~
+[22.302s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note:   candidate expects 0 arguments, 1 provided
+[22.302s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3: note: candidate: ‘rclcpp::Duration::Duration(const rclcpp::Duration&)’
+[22.303s]    62 |   Duration(const Duration & rhs);
+[22.303s]       |   ^~~~~~~~
+[22.303s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29: note:   no known conversion for argument 1 from ‘double’ to ‘const rclcpp::Duration&’
+[22.303s]    62 |   Duration(const Duration & rhs);
+[22.305s]       |            ~~~~~~~~~~~~~~~~~^~~
+[22.305s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12: note: candidate: ‘rclcpp::Duration::Duration(const rcl_duration_t&)’
+[22.305s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.306s]       |            ^~~~~~~~
+[22.306s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44: note:   no known conversion for argument 1 from ‘double’ to ‘const rcl_duration_t&’ {aka ‘const rcl_duration_s&’}
+[22.306s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.306s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+[22.306s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3: note: candidate: ‘rclcpp::Duration::Duration(const builtin_interfaces::msg::Duration&)’
+[22.306s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.306s]       |   ^~~~~~~~
+[22.307s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54: note:   no known conversion for argument 1 from ‘double’ to ‘const builtin_interfaces::msg::Duration&’ {aka ‘const builtin_interfaces::msg::Duration_<std::allocator<void> >&’}
+[22.307s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.307s]       |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[22.307s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12: note: candidate: ‘rclcpp::Duration::Duration(std::chrono::nanoseconds)’
+[22.309s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.309s]       |            ^~~~~~~~
+[22.309s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46: note:   no known conversion for argument 1 from ‘double’ to ‘std::chrono::nanoseconds’ {aka ‘std::chrono::duration<long int, std::ratio<1, 1000000000> >’}
+[22.310s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.310s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[22.310s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note: candidate: ‘rclcpp::Duration::Duration(int32_t, uint32_t)’
+[22.310s]    40 |   Duration(int32_t seconds, uint32_t nanoseconds);
+[22.310s]       |   ^~~~~~~~
+[22.310s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note:   candidate expects 2 arguments, 1 provided
+[22.317s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:174:25: error: ‘commandId’ was not declared in this scope
+[22.317s]   174 |                         commandId.data = BehaviorIdCmd;
+[22.317s]       |                         ^~~~~~~~~
+[22.321s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:164:38: error: ‘node_ptr’ was not declared in this scope; did you mean ‘mode_t’?
+[22.321s]   164 |                         rclcpp::spin(node_ptr);
+[22.321s]       |                                      ^~~~~~~~
+[22.321s]       |                                      mode_t
+[22.322s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::publish_behavior_mode(uint16_t)’:
+[22.323s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:180:28: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.323s]   180 |             std_msgs::msg::UInt32 commandMode;
+[22.323s]       |                            ^~~~~~
+[22.376s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::publish_twist(double, double)’:
+[22.376s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:171:25: error: ‘pub_twist_’ was not declared in this scope; did you mean ‘publish_twist’?
+[22.377s]   171 |                         pub_twist_.publish(commandTwist);
+[22.377s]       |                         ^~~~~~~~~~
+[22.377s]       |                         publish_twist
+[22.380s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::publish_behavior_id(uint16_t)’:
+[22.380s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:176:28: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.380s]   176 |             std_msgs::msg::UInt32 commandId;
+[22.381s]       |                            ^~~~~~
+[22.388s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:181:25: error: ‘commandMode’ was not declared in this scope
+[22.388s]   181 |                         commandMode.data = BehaviorModeCmd;
+[22.388s]       |                         ^~~~~~~~~~~
+[22.430s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:177:25: error: ‘commandId’ was not declared in this scope
+[22.430s]   177 |                         commandId.data = BehaviorIdCmd;
+[22.430s]       |                         ^~~~~~~~~
+[22.517s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:178:25: error: ‘pub_behaviorID_’ was not declared in this scope; did you mean ‘pub_behaviorID_topic_’?
+[22.517s]   178 |                         pub_behaviorID_.publish(commandId);
+[22.517s]       |                         ^~~~~~~~~~~~~~~
+[22.517s]       |                         pub_behaviorID_topic_
+[22.522s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::publish_behavior_mode(uint16_t)’:
+[22.523s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:183:28: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.523s]   183 |             std_msgs::msg::UInt32 commandMode;
+[22.523s]       |                            ^~~~~~
+[22.561s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >::ConstPtr&)’:
+[22.561s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:366:33: error: ‘RCLCPP_WARN_STREAM’ was not declared in this scope
+[22.561s]   366 |                                 RCLCPP_WARN_STREAM("[Navigation] Updated trees in " << time.seconds()-start_time << " seconds.");
+[22.561s]       |                                 ^~~~~~~~~~~~~~~~~~
+[22.580s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:184:25: error: ‘commandMode’ was not declared in this scope
+[22.580s]   184 |                         commandMode.data = BehaviorModeCmd;
+[22.580s]       |                         ^~~~~~~~~~~
+[22.611s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+[22.611s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:406:33: error: ‘listener_’ was not declared in this scope
+[22.611s]   406 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), ros::Duration(1.0));
+[22.611s]       |                                 ^~~~~~~~~
+[22.612s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:406:110: error: ‘ros’ has not been declared
+[22.612s]   406 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), ros::Duration(1.0));
+[22.612s]       |                                                                                                              ^~~
+[22.657s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:409:33: error: ‘ROS_ERROR’ was not declared in this scope
+[22.657s]   409 |                                 ROS_ERROR("%s",ex.what());
+[22.657s]       |                                 ^~~~~~~~~
+[22.661s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:434:42: error: could not convert ‘lidar_data’ from ‘shared_ptr<LaserScan_<[...]>>’ to ‘shared_ptr<LaserScan_<[...]>>’
+[22.662s]   434 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[22.662s]       |                                          ^~~~~~~~~~
+[22.662s]       |                                          |
+[22.662s]       |                                          shared_ptr<LaserScan_<[...]>>
+[22.677s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:185:25: error: ‘pub_behaviorMode_’ was not declared in this scope; did you mean ‘pub_behaviorMode_topic_’?
+[22.677s]   185 |                         pub_behaviorMode_.publish(commandMode);
+[22.677s]       |                         ^~~~~~~~~~~~~~~~~
+[22.678s]       |                         pub_behaviorMode_topic_
+[22.771s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:564:25: error: ‘RCLCPP_WARN_STREAM’ was not declared in this scope
+[22.771s]   564 |                         RCLCPP_WARN_STREAM("[Navigation] Diffeomorphism jacobian determinant is " << MatrixDeterminant(RobotPositionTransformedD) << ", robot position is " << bg::dsv(RobotPosition_) << " and robot positon in model space is " << bg::dsv(RobotPositionTransformedPoint));
+[22.771s]       |                         ^~~~~~~~~~~~~~~~~~
+[22.773s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:593:41: error: ‘ros’ has not been declared
+[22.773s]   593 |                                         ros::Duration(5.0).sleep();
+[22.773s]       |                                         ^~~
+[22.785s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In function ‘int main(int, char**)’:
+[22.786s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:700:34: error: invalid initialization of reference of type ‘const rclcpp::InitOptions&’ from expression of type ‘const char [20]’
+[22.786s]   700 |         rclcpp::init(argc, argv, "navigation_semantic");
+[22.786s]       |                                  ^~~~~~~~~~~~~~~~~~~~~
+[22.786s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25:
+[22.786s] /opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:78:23: note: in passing argument 3 of ‘void rclcpp::init(int, const char* const*, const InitOptions&, SignalHandlerOptions)’
+[22.786s]    78 |   const InitOptions & init_options = InitOptions(),
+[22.786s]       |   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[22.810s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+[22.810s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:368:33: error: ‘listener_’ was not declared in this scope
+[22.810s]   368 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));
+[22.810s]       |                                 ^~~~~~~~~
+[22.813s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:368:130: error: no matching function for call to ‘rclcpp::Duration::Duration(double)’
+[22.814s]   368 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));
+[22.814s]       |                                                                                                                                  ^
+[22.814s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note: candidate: ‘template<class Rep, class Period> rclcpp::Duration::Duration(const std::chrono::duration<_Rep1, _Period1>&)’
+[22.814s]    49 |   Duration(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[22.814s]       |   ^~~~~~~~
+[22.814s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note:   template argument deduction/substitution failed:
+[22.814s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:368:130: note:   mismatched types ‘const std::chrono::duration<_Rep1, _Period1>’ and ‘double’
+[22.815s]   368 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));
+[22.815s]       |                                                                                                                                  ^
+[22.815s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note: candidate: ‘rclcpp::Duration::Duration()’
+[22.815s]   159 |   Duration() = default;
+[22.817s]       |   ^~~~~~~~
+[22.817s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note:   candidate expects 0 arguments, 1 provided
+[22.818s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3: note: candidate: ‘rclcpp::Duration::Duration(const rclcpp::Duration&)’
+[22.818s]    62 |   Duration(const Duration & rhs);
+[22.818s]       |   ^~~~~~~~
+[22.818s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29: note:   no known conversion for argument 1 from ‘double’ to ‘const rclcpp::Duration&’
+[22.818s]    62 |   Duration(const Duration & rhs);
+[22.818s]       |            ~~~~~~~~~~~~~~~~~^~~
+[22.818s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12: note: candidate: ‘rclcpp::Duration::Duration(const rcl_duration_t&)’
+[22.819s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.819s]       |            ^~~~~~~~
+[22.819s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44: note:   no known conversion for argument 1 from ‘double’ to ‘const rcl_duration_t&’ {aka ‘const rcl_duration_s&’}
+[22.819s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.821s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+[22.821s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3: note: candidate: ‘rclcpp::Duration::Duration(const builtin_interfaces::msg::Duration&)’
+[22.822s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.822s]       |   ^~~~~~~~
+[22.822s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54: note:   no known conversion for argument 1 from ‘double’ to ‘const builtin_interfaces::msg::Duration&’ {aka ‘const builtin_interfaces::msg::Duration_<std::allocator<void> >&’}
+[22.822s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.822s]       |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[22.822s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12: note: candidate: ‘rclcpp::Duration::Duration(std::chrono::nanoseconds)’
+[22.822s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.823s]       |            ^~~~~~~~
+[22.823s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46: note:   no known conversion for argument 1 from ‘double’ to ‘std::chrono::nanoseconds’ {aka ‘std::chrono::duration<long int, std::ratio<1, 1000000000> >’}
+[22.823s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.823s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[22.826s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note: candidate: ‘rclcpp::Duration::Duration(int32_t, uint32_t)’
+[22.826s]    40 |   Duration(int32_t seconds, uint32_t nanoseconds);
+[22.826s]       |   ^~~~~~~~
+[22.826s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note:   candidate expects 2 arguments, 1 provided
+[22.826s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:398:42: error: could not convert ‘lidar_data’ from ‘shared_ptr<LaserScan_<[...]>>’ to ‘shared_ptr<LaserScan_<[...]>>’
+[22.826s]   398 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[22.826s]       |                                          ^~~~~~~~~~
+[22.827s]       |                                          |
+[22.827s]       |                                          shared_ptr<LaserScan_<[...]>>
+[22.835s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:572:53: error: no matching function for call to ‘rclcpp::Duration::Duration(double)’
+[22.835s]   572 |                                 rclcpp::Duration(5.0).sleep();
+[22.835s]       |                                                     ^
+[22.835s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note: candidate: ‘template<class Rep, class Period> rclcpp::Duration::Duration(const std::chrono::duration<_Rep1, _Period1>&)’
+[22.835s]    49 |   Duration(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[22.835s]       |   ^~~~~~~~
+[22.835s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note:   template argument deduction/substitution failed:
+[22.836s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:572:53: note:   mismatched types ‘const std::chrono::duration<_Rep1, _Period1>’ and ‘double’
+[22.836s]   572 |                                 rclcpp::Duration(5.0).sleep();
+[22.836s]       |                                                     ^
+[22.837s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note: candidate: ‘rclcpp::Duration::Duration()’
+[22.837s]   159 |   Duration() = default;
+[22.838s]       |   ^~~~~~~~
+[22.838s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note:   candidate expects 0 arguments, 1 provided
+[22.838s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3: note: candidate: ‘rclcpp::Duration::Duration(const rclcpp::Duration&)’
+[22.838s]    62 |   Duration(const Duration & rhs);
+[22.838s]       |   ^~~~~~~~
+[22.838s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29: note:   no known conversion for argument 1 from ‘double’ to ‘const rclcpp::Duration&’
+[22.838s]    62 |   Duration(const Duration & rhs);
+[22.838s]       |            ~~~~~~~~~~~~~~~~~^~~
+[22.839s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12: note: candidate: ‘rclcpp::Duration::Duration(const rcl_duration_t&)’
+[22.839s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.839s]       |            ^~~~~~~~
+[22.841s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44: note:   no known conversion for argument 1 from ‘double’ to ‘const rcl_duration_t&’ {aka ‘const rcl_duration_s&’}
+[22.841s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.842s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+[22.842s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3: note: candidate: ‘rclcpp::Duration::Duration(const builtin_interfaces::msg::Duration&)’
+[22.842s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.842s]       |   ^~~~~~~~
+[22.842s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54: note:   no known conversion for argument 1 from ‘double’ to ‘const builtin_interfaces::msg::Duration&’ {aka ‘const builtin_interfaces::msg::Duration_<std::allocator<void> >&’}
+[22.842s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.842s]       |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[22.843s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12: note: candidate: ‘rclcpp::Duration::Duration(std::chrono::nanoseconds)’
+[22.843s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.843s]       |            ^~~~~~~~
+[22.843s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46: note:   no known conversion for argument 1 from ‘double’ to ‘std::chrono::nanoseconds’ {aka ‘std::chrono::duration<long int, std::ratio<1, 1000000000> >’}
+[22.845s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.845s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[22.846s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note: candidate: ‘rclcpp::Duration::Duration(int32_t, uint32_t)’
+[22.846s]    40 |   Duration(int32_t seconds, uint32_t nanoseconds);
+[22.846s]       |   ^~~~~~~~
+[22.846s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note:   candidate expects 2 arguments, 1 provided
+[35.527s] gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+[35.527s] gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+[35.528s] gmake[1]: *** Waiting for unfinished jobs....
+[37.965s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+[37.965s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[37.966s] gmake: *** [Makefile:146: all] Error 2
+[37.969s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

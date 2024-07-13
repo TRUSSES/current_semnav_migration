@@ -1,0 +1,392 @@
+[0.034s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.210s] [ 14%] Built target reactive_planner
+[0.315s] [ 23%] Built target navigation
+[0.347s] [ 33%] Built target navigation_semantic
+[0.463s] [ 38%] [32mBuilding CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o[0m
+[0.502s] [ 42%] [32mBuilding CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o[0m
+[26.126s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:416:58:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type
+[26.126s]   416 |                 void control_callback(const sensor_msgs::[01;31m[KLaserScan[m[K::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[26.126s]       |                                                          [01;31m[K^~~~~~~~~[m[K
+[26.126s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:416:77:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+[26.127s]   416 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[26.127s]       |                                                                             [01;31m[K^[m[K
+[26.128s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:416:77:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[26.128s]   416 |                 void control_callback[34m[K([m[Kconst sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[26.128s]       |                                      [34m[K~[m[K                                      [01;31m[K^[m[K
+[26.128s]       |                                                                             [32m[K)[m[K
+[26.129s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:416:77:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[26.129s]   416 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[26.129s]       |                                                                             [01;31m[K^[m[K
+[26.129s]       |                                                                              [32m[K;[m[K
+[26.145s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:416:79:[m[K [01;31m[Kerror: [m[K‘[01m[Klidar_data[m[K’ does not name a type
+[26.145s]   416 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& [01;31m[Klidar_data[m[K, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[26.145s]       |                                                                               [01;31m[K^~~~~~~~~~[m[K
+[26.213s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Khuman_update[m[K(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)[m[K’:
+[26.213s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:301:83:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KfromMsg(const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type&)[m[K’
+[26.213s]   301 |                                             camera_optical_frame_id_, [01;31m[Ktf2::fromMsg(human_data->header.stamp)[m[K,
+[26.213s]       |                                                                       [01;31m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[26.213s] In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:39[m[K,
+[26.214s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25[m[K:
+[26.214s] [01m[K/opt/ros/jazzy/include/tf2/tf2/convert.h:138:6:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class A, class B> void tf2::[01;32m[KfromMsg[m[K(const A&, B&)[m[K’
+[26.214s]   138 | void [01;36m[KfromMsg[m[K(const A & a, B & b);
+[26.214s]       |      [01;36m[K^~~~~~~[m[K
+[26.214s] [01m[K/opt/ros/jazzy/include/tf2/tf2/convert.h:138:6:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[26.214s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:301:83:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[26.214s]   301 |                                             camera_optical_frame_id_, [01;36m[Ktf2::fromMsg(human_data->header.stamp)[m[K,
+[26.215s]       |                                                                       [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[26.232s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:700:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kexample_msgs[m[K’ was not declared in this scope
+[26.232s]   700 |                 rclcpp::Publisher<[01;31m[Kexample_msgs[m[K::msg::UInt32>::SharedPtr pub_behaviorID_;
+[26.232s]       |                                   [01;31m[K^~~~~~~~~~~~[m[K
+[26.232s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:700:60:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[26.233s]   700 |                 rclcpp::Publisher<example_msgs::msg::UInt32[01;31m[K>[m[K::SharedPtr pub_behaviorID_;
+[26.233s]       |                                                            [01;31m[K^[m[K
+[26.233s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:700:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[26.233s]   700 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::[01;31m[KSharedPtr[m[K pub_behaviorID_;
+[26.233s]       |                                                               [01;31m[K^~~~~~~~~[m[K
+[26.233s]       |                                                                        [32m[K;[m[K
+[26.278s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:700:73:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_behaviorID_[m[K’ does not name a type
+[26.279s]   700 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::SharedPtr [01;31m[Kpub_behaviorID_[m[K;
+[26.279s]       |                                                                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[26.352s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:701:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kexample_msgs[m[K’ was not declared in this scope
+[26.353s]   701 |                 rclcpp::Publisher<[01;31m[Kexample_msgs[m[K::msg::UInt32>::SharedPtr pub_behaviorMode_;
+[26.353s]       |                                   [01;31m[K^~~~~~~~~~~~[m[K
+[26.353s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:701:60:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[26.353s]   701 |                 rclcpp::Publisher<example_msgs::msg::UInt32[01;31m[K>[m[K::SharedPtr pub_behaviorMode_;
+[26.353s]       |                                                            [01;31m[K^[m[K
+[26.353s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:701:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[26.353s]   701 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::[01;31m[KSharedPtr[m[K pub_behaviorMode_;
+[26.354s]       |                                                               [01;31m[K^~~~~~~~~[m[K
+[26.354s]       |                                                                        [32m[K;[m[K
+[26.354s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:701:63:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint HumanFollowingNode::SharedPtr[m[K’
+[26.356s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:700:63:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint HumanFollowingNode::SharedPtr[m[K’
+[26.356s]   700 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::[01;36m[KSharedPtr[m[K pub_behaviorID_;
+[26.356s]       |                                                               [01;36m[K^~~~~~~~~[m[K
+[26.417s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:701:73:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_behaviorMode_[m[K’ does not name a type
+[26.418s]   701 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::SharedPtr [01;31m[Kpub_behaviorMode_[m[K;
+[26.418s]       |                                                                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[26.504s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:703:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kexample_msgs[m[K’ was not declared in this scope
+[26.504s]   703 |                 rclcpp::Publisher<[01;31m[Kexample_msgs[m[K::msg::UInt32>::SharedPtr pub_semantic_map_;
+[26.504s]       |                                   [01;31m[K^~~~~~~~~~~~[m[K
+[26.505s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:703:60:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[26.505s]   703 |                 rclcpp::Publisher<example_msgs::msg::UInt32[01;31m[K>[m[K::SharedPtr pub_semantic_map_;
+[26.505s]       |                                                            [01;31m[K^[m[K
+[26.505s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:703:63:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[26.505s]   703 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::[01;31m[KSharedPtr[m[K pub_semantic_map_;
+[26.505s]       |                                                               [01;31m[K^~~~~~~~~[m[K
+[26.505s]       |                                                                        [32m[K;[m[K
+[26.508s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:703:63:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint HumanFollowingNode::SharedPtr[m[K’
+[26.508s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:700:63:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint HumanFollowingNode::SharedPtr[m[K’
+[26.508s]   700 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::[01;36m[KSharedPtr[m[K pub_behaviorID_;
+[26.508s]       |                                                               [01;36m[K^~~~~~~~~[m[K
+[26.554s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:703:73:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_semantic_map_[m[K’ does not name a type
+[26.554s]   703 |                 rclcpp::Publisher<example_msgs::msg::UInt32>::SharedPtr [01;31m[Kpub_semantic_map_[m[K;
+[26.555s]       |                                                                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[26.562s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:732:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+[26.562s]   732 |                 [01;31m[Kros[m[K::Time Goal_camera_stamp_;
+[26.563s]       |                 [01;31m[K^~~[m[K
+[26.580s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:752:17:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+[26.583s]   752 |                 [01;31m[Ktf[m[K::TransformListener listener_;
+[26.583s]       |                 [01;31m[K^~[m[K
+[26.583s]       |                 [32m[Ktm[m[K
+[26.704s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In constructor ‘[01m[KHumanFollowingNode::[01;32m[KHumanFollowingNode[m[K()[m[K’:
+[26.704s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:178:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_behaviorID_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_behaviorID_topic_[m[K’?
+[26.705s]   178 |                         [01;31m[Kpub_behaviorID_[m[K = nh_.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[26.707s]       |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[26.707s]       |                         [32m[Kpub_behaviorID_topic_[m[K
+[26.742s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:178:43:[m[K [01;31m[Kerror: [m[K‘[01m[Knh_[m[K’ was not declared in this scope
+[26.742s]   178 |                         pub_behaviorID_ = [01;31m[Knh_[m[K.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[26.743s]       |                                           [01;31m[K^~~[m[K
+[26.747s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:178:67:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[26.748s]   178 |                         pub_behaviorID_ = nh_.advertise<std_msgs::[01;31m[KUInt32[m[K>(pub_behaviorID_topic_, 1, true);
+[26.748s]       |                                                                   [01;31m[K^~~~~~[m[K
+[26.751s] In file included from [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/u_int32.hpp:7[m[K,
+[26.751s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52[m[K,
+[26.751s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:25[m[K:
+[26.751s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[26.752s]   125 | using [01;36m[KUInt32[m[K =
+[26.752s]       |       [01;36m[K^~~~~~[m[K
+[26.856s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:179:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_behaviorMode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_behaviorMode_topic_[m[K’?
+[26.856s]   179 |                         [01;31m[Kpub_behaviorMode_[m[K = nh_.advertise<std_msgs::UInt32>(pub_behaviorMode_topic_, 1, true);
+[26.856s]       |                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[26.857s]       |                         [32m[Kpub_behaviorMode_topic_[m[K
+[26.861s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:179:69:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[26.861s]   179 |                         pub_behaviorMode_ = nh_.advertise<std_msgs::[01;31m[KUInt32[m[K>(pub_behaviorMode_topic_, 1, true);
+[26.864s]       |                                                                     [01;31m[K^~~~~~[m[K
+[26.864s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[26.864s]   125 | using [01;36m[KUInt32[m[K =
+[26.864s]       |       [01;36m[K^~~~~~[m[K
+[26.865s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:180:77:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[26.865s]   180 |                         pub_twist_ = nh_.advertise<geometry_msgs::msg::Twist[01;31m[K>[m[K(pub_twist_topic_, 1, true);
+[26.865s]       |                                                                             [01;31m[K^[m[K
+[26.868s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:66:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::LaserScan[m[K’?
+[26.869s]   183 |                         message_filters::Subscriber<sensor_msgs::[01;31m[KLaserScan[m[K> sub_laser(nh_, sub_laser_topic_, 1);
+[26.869s]       |                                                                  [01;31m[K^~~~~~~~~[m[K
+[26.872s] In file included from [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/laser_scan.hpp:7[m[K,
+[26.872s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:50[m[K:
+[26.872s] [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::LaserScan[m[K’ declared here
+[26.872s]   250 | using [01;36m[KLaserScan[m[K =
+[26.872s]       |       [01;36m[K^~~~~~~~~[m[K
+[26.873s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:75:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[26.873s]   183 |                         message_filters::Subscriber<sensor_msgs::LaserScan[01;31m[K>[m[K sub_laser(nh_, sub_laser_topic_, 1);
+[26.873s]       |                                                                           [01;31m[K^[m[K
+[26.874s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:111:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[26.875s]   183 |                         message_filters::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1[01;31m[K)[m[K;
+[26.875s]       |                                                                                                               [01;31m[K^[m[K
+[26.877s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:184:63:[m[K [01;31m[Kerror: [m[K‘[01m[KOdometry[m[K’ is not a member of ‘[01m[Knav_msgs[m[K’; did you mean ‘[01m[Knav_msgs::msg::Odometry[m[K’?
+[26.878s]   184 |                         message_filters::Subscriber<nav_msgs::[01;31m[KOdometry[m[K> sub_robot(nh_, sub_robot_topic_, 1);
+[26.878s]       |                                                               [01;31m[K^~~~~~~~[m[K
+[26.879s] In file included from [01m[K/opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/odometry.hpp:7[m[K,
+[26.879s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:51[m[K:
+[26.879s] [01m[K/opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:175:7:[m[K [01;36m[Knote: [m[K‘[01m[Knav_msgs::msg::Odometry[m[K’ declared here
+[26.879s]   175 | using [01;36m[KOdometry[m[K =
+[26.879s]       |       [01;36m[K^~~~~~~~[m[K
+[26.879s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:184:71:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[26.880s]   184 |                         message_filters::Subscriber<nav_msgs::Odometry[01;31m[K>[m[K sub_robot(nh_, sub_robot_topic_, 1);
+[26.880s]       |                                                                       [01;31m[K^[m[K
+[26.880s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:184:107:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[26.882s]   184 |                         message_filters::Subscriber<nav_msgs::Odometry> sub_robot(nh_, sub_robot_topic_, 1[01;31m[K)[m[K;
+[26.882s]       |                                                                                                           [01;31m[K^[m[K
+[26.885s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:185:94:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::LaserScan[m[K’?
+[26.886s]   185 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::[01;31m[KLaserScan[m[K,nav_msgs::Odometry> SyncPolicy;
+[26.886s]       |                                                                                              [01;31m[K^~~~~~~~~[m[K
+[26.886s] [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::LaserScan[m[K’ declared here
+[26.887s]   250 | using [01;36m[KLaserScan[m[K =
+[26.888s]       |       [01;36m[K^~~~~~~~~[m[K
+[26.892s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:185:114:[m[K [01;31m[Kerror: [m[K‘[01m[KOdometry[m[K’ is not a member of ‘[01m[Knav_msgs[m[K’; did you mean ‘[01m[Knav_msgs::msg::Odometry[m[K’?
+[26.892s]   185 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::[01;31m[KOdometry[m[K> SyncPolicy;
+[26.892s]       |                                                                                                                  [01;31m[K^~~~~~~~[m[K
+[26.894s] [01m[K/opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:175:7:[m[K [01;36m[Knote: [m[K‘[01m[Knav_msgs::msg::Odometry[m[K’ declared here
+[26.894s]   175 | using [01;36m[KOdometry[m[K =
+[26.894s]       |       [01;36m[K^~~~~~~~[m[K
+[26.895s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:185:122:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[26.895s]   185 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::Odometry[01;31m[K>[m[K SyncPolicy;
+[26.895s]       |                                                                                                                          [01;31m[K^[m[K
+[26.895s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:185:122:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[26.898s] In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:46[m[K:
+[26.898s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h: In instantiation of ‘[01m[Kclass message_filters::Synchronizer<int>[m[K’:
+[26.899s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:188:64:[m[K   required from here
+[26.899s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:53:7:[m[K [01;31m[Kerror: [m[Kbase type ‘[01m[Kint[m[K’ fails to be a struct or class type
+[26.899s]    53 | class [01;31m[KSynchronizer[m[K : public noncopyable, public Policy
+[26.899s]       |       [01;31m[K^~~~~~~~~~~~[m[K
+[26.899s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:56:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.899s]    56 |   typedef typename Policy::Messages [01;31m[KMessages[m[K;
+[26.902s]       |                                     [01;31m[K^~~~~~~~[m[K
+[26.903s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:57:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.903s]    57 |   typedef typename Policy::Events [01;31m[KEvents[m[K;
+[26.904s]       |                                   [01;31m[K^~~~~~[m[K
+[26.904s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:58:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.904s]    58 |   typedef typename Policy::Signal [01;31m[KSignal[m[K;
+[26.904s]       |                                   [01;31m[K^~~~~~[m[K
+[26.906s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:60:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.907s]    60 |   typedef typename std::tuple_element<0, Messages>::type [01;31m[KM0[m[K;
+[26.907s]       |                                                          [01;31m[K^~[m[K
+[26.908s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:61:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.908s]    61 |   typedef typename std::tuple_element<1, Messages>::type [01;31m[KM1[m[K;
+[26.908s]       |                                                          [01;31m[K^~[m[K
+[26.908s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:62:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.908s]    62 |   typedef typename std::tuple_element<2, Messages>::type [01;31m[KM2[m[K;
+[26.908s]       |                                                          [01;31m[K^~[m[K
+[26.908s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:63:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.909s]    63 |   typedef typename std::tuple_element<3, Messages>::type [01;31m[KM3[m[K;
+[26.912s]       |                                                          [01;31m[K^~[m[K
+[26.912s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:64:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.912s]    64 |   typedef typename std::tuple_element<4, Messages>::type [01;31m[KM4[m[K;
+[26.912s]       |                                                          [01;31m[K^~[m[K
+[26.913s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:65:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.913s]    65 |   typedef typename std::tuple_element<5, Messages>::type [01;31m[KM5[m[K;
+[26.913s]       |                                                          [01;31m[K^~[m[K
+[26.913s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:66:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.913s]    66 |   typedef typename std::tuple_element<6, Messages>::type [01;31m[KM6[m[K;
+[26.915s]       |                                                          [01;31m[K^~[m[K
+[26.915s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:67:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.915s]    67 |   typedef typename std::tuple_element<7, Messages>::type [01;31m[KM7[m[K;
+[26.915s]       |                                                          [01;31m[K^~[m[K
+[26.915s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:68:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.915s]    68 |   typedef typename std::tuple_element<8, Messages>::type [01;31m[KM8[m[K;
+[26.916s]       |                                                          [01;31m[K^~[m[K
+[26.916s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:71:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.916s]    71 |   typedef typename std::tuple_element<0, Events>::type [01;31m[KM0Event[m[K;
+[26.916s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.916s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:72:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.916s]    72 |   typedef typename std::tuple_element<1, Events>::type [01;31m[KM1Event[m[K;
+[26.916s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.920s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:73:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.920s]    73 |   typedef typename std::tuple_element<2, Events>::type [01;31m[KM2Event[m[K;
+[26.920s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.920s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:74:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.920s]    74 |   typedef typename std::tuple_element<3, Events>::type [01;31m[KM3Event[m[K;
+[26.921s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.921s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:75:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.921s]    75 |   typedef typename std::tuple_element<4, Events>::type [01;31m[KM4Event[m[K;
+[26.921s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.921s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:76:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.921s]    76 |   typedef typename std::tuple_element<5, Events>::type [01;31m[KM5Event[m[K;
+[26.921s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.924s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:77:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.924s]    77 |   typedef typename std::tuple_element<6, Events>::type [01;31m[KM6Event[m[K;
+[26.924s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.925s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:78:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.925s]    78 |   typedef typename std::tuple_element<7, Events>::type [01;31m[KM7Event[m[K;
+[26.925s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.925s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:79:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.925s]    79 |   typedef typename std::tuple_element<8, Events>::type [01;31m[KM8Event[m[K;
+[26.925s]       |                                                        [01;31m[K^~~~~~~[m[K
+[26.926s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:325:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, namespace, or enumeration
+[26.927s]   325 |   using Policy::[01;31m[Kadd[m[K;
+[26.927s]       |                 [01;31m[K^~~[m[K
+[26.927s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:328:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.927s]   328 |   void [01;31m[Kadd[m[K(const std::shared_ptr<typename std::tuple_element<i, Messages>::type const>& msg)
+[26.927s]       |        [01;31m[K^~~[m[K
+[26.928s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:344:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[26.928s]   344 |   void [01;31m[Kcb[m[K(const typename std::tuple_element<i, Events>::type& evt)
+[26.928s]       |        [01;31m[K^~[m[K
+[26.928s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:189:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbind[m[K’ is not a member of ‘[01m[Kboost[m[K’; did you mean ‘[01m[Kfind[m[K’?
+[26.928s]   189 |                         sync->registerCallback(boost::[01;31m[Kbind[m[K(&HumanFollowingNode::control_callback, this, _1, _2));
+[26.928s]       |                                                       [01;31m[K^~~~[m[K
+[26.928s]       |                                                       [32m[Kfind[m[K
+[26.933s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:189:105:[m[K [01;31m[Kerror: [m[K‘[01m[K_1[m[K’ was not declared in this scope
+[26.933s]   189 |                         sync->registerCallback(boost::bind(&HumanFollowingNode::control_callback, this, [01;31m[K_1[m[K, _2));
+[26.933s]       |                                                                                                         [01;31m[K^~[m[K
+[26.933s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:189:105:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[26.934s] In file included from [01m[K/usr/include/boost/mpl/aux_/include_preprocessed.hpp:37[m[K,
+[26.934s]                  from [01m[K/usr/include/boost/mpl/placeholders.hpp:43[m[K,
+[26.934s]                  from [01m[K/usr/include/boost/iterator/iterator_categories.hpp:16[m[K,
+[26.934s]                  from [01m[K/usr/include/boost/iterator/iterator_facade.hpp:13[m[K,
+[26.934s]                  from [01m[K/usr/include/boost/range/iterator_range_core.hpp:27[m[K,
+[26.934s]                  from [01m[K/usr/include/boost/lexical_cast.hpp:48[m[K,
+[26.934s]                  from [01m[K/usr/include/boost/multiprecision/detail/number_base.hpp:29[m[K,
+[26.937s]                  from [01m[K/usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9[m[K,
+[26.937s]                  from [01m[K/usr/include/boost/multiprecision/detail/precision.hpp:9[m[K,
+[26.937s]                  from [01m[K/usr/include/boost/multiprecision/number.hpp:11[m[K,
+[26.937s]                  from [01m[K/usr/include/boost/multiprecision/cpp_int.hpp:19[m[K,
+[26.938s]                  from [01m[K/usr/include/boost/multiprecision/cpp_bin_float.hpp:15[m[K,
+[26.938s]                  from [01m[K/usr/include/boost/geometry/core/coordinate_promotion.hpp:16[m[K,
+[26.938s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:30[m[K,
+[26.938s]                  from [01m[K/usr/include/boost/geometry/geometry.hpp:50[m[K,
+[26.938s]                  from [01m[K/usr/include/boost/geometry.hpp:17[m[K,
+[26.938s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26[m[K:
+[26.939s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[26.939s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[26.939s]       |                [01;36m[K^~[m[K
+[26.939s] In file included from [01m[K/usr/include/boost/numeric/conversion/converter_policies.hpp:13[m[K,
+[26.940s]                  from [01m[K/usr/include/boost/numeric/conversion/converter.hpp:14[m[K,
+[26.940s]                  from [01m[K/usr/include/boost/numeric/conversion/cast.hpp:33[m[K,
+[26.940s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:26[m[K:
+[26.940s] [01m[K/usr/include/c++/13/functional:294:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_1[m[K’
+[26.940s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> [01;36m[K_1[m[K;
+[26.940s]       |                                                [01;36m[K^~[m[K
+[26.940s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[26.941s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[26.943s]       |                [01;36m[K^~[m[K
+[26.943s] In file included from [01m[K/usr/include/boost/describe/members.hpp:20[m[K,
+[26.943s]                  from [01m[K/usr/include/boost/container_hash/is_described_class.hpp:11[m[K,
+[26.943s]                  from [01m[K/usr/include/boost/container_hash/hash.hpp:18[m[K,
+[26.943s]                  from [01m[K/usr/include/boost/functional/hash.hpp:6[m[K,
+[26.944s]                  from [01m[K/usr/include/CGAL/Kernel/hash_functions.h:16[m[K,
+[26.944s]                  from [01m[K/usr/include/CGAL/Kernel/global_functions.h:25[m[K,
+[26.944s]                  from [01m[K/usr/include/CGAL/Cartesian/Cartesian_base.h:22[m[K,
+[26.944s]                  from [01m[K/usr/include/CGAL/Simple_cartesian.h:20[m[K,
+[26.944s]                  from [01m[K/usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20[m[K,
+[26.944s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32[m[K,
+[26.944s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:58[m[K:
+[26.945s] [01m[K/usr/include/boost/mp11/bind.hpp:45:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_1[m[K’
+[26.947s]    45 | using [01;36m[K_1[m[K = mp_arg<0>;
+[26.947s]       |       [01;36m[K^~[m[K
+[26.947s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[26.947s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[26.947s]       |                [01;36m[K^~[m[K
+[26.948s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:189:109:[m[K [01;31m[Kerror: [m[K‘[01m[K_2[m[K’ was not declared in this scope
+[26.948s]   189 |                         sync->registerCallback(boost::bind(&HumanFollowingNode::control_callback, this, _1, [01;31m[K_2[m[K));
+[26.948s]       |                                                                                                             [01;31m[K^~[m[K
+[26.948s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:189:109:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[26.948s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[26.948s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[26.948s]       |                [01;36m[K^~[m[K
+[26.948s] [01m[K/usr/include/c++/13/functional:295:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_2[m[K’
+[26.949s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> [01;36m[K_2[m[K;
+[26.949s]       |                                                [01;36m[K^~[m[K
+[26.949s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[26.949s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[26.949s]       |                [01;36m[K^~[m[K
+[26.949s] [01m[K/usr/include/boost/mp11/bind.hpp:46:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_2[m[K’
+[26.949s]    46 | using [01;36m[K_2[m[K = mp_arg<1>;
+[26.949s]       |       [01;36m[K^~[m[K
+[26.950s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[26.950s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[26.950s]       |                [01;36m[K^~[m[K
+[26.950s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:191:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[26.950s]   191 |                         [01;31m[Kros[m[K::Subscriber sub_semantic = nh_.subscribe(sub_semantic_topic_, 1, &HumanFollowingNode::diffeo_tree_update, this);
+[26.950s]       |                         [01;31m[K^~~[m[K
+[26.950s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:193:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[26.951s]   193 |                         [01;31m[Kros[m[K::Subscriber sub_human = nh_.subscribe(sub_human_topic_, 1, &HumanFollowingNode::human_update, this);
+[26.951s]       |                         [01;31m[K^~~[m[K
+[26.951s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:197:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[26.951s]   197 |                         [01;31m[Kros[m[K::Duration(5.0).sleep();
+[26.951s]       |                         [01;31m[K^~~[m[K
+[26.951s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:202:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[26.951s]   202 |                         [01;31m[Kros[m[K::MultiThreadedSpinner spinner(4);
+[26.952s]       |                         [01;31m[K^~~[m[K
+[26.986s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:203:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kspinner[m[K’ was not declared in this scope
+[26.986s]   203 |                         [01;31m[Kspinner[m[K.spin();
+[26.986s]       |                         [01;31m[K^~~~~~~[m[K
+[26.994s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kpublish_twist[m[K(double, double)[m[K’:
+[26.996s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:210:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >[m[K’} has no member named ‘[01m[Kpublish[m[K’
+[26.996s]   210 |                         pub_twist_.[01;31m[Kpublish[m[K(commandTwist);
+[26.996s]       |                                    [01;31m[K^~~~~~~[m[K
+[26.999s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kpublish_behavior_id[m[K(uint16_t)[m[K’:
+[27.000s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:215:35:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[27.002s]   215 |                         std_msgs::[01;31m[KUInt32[m[K commandId;
+[27.002s]       |                                   [01;31m[K^~~~~~[m[K
+[27.002s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[27.002s]   125 | using [01;36m[KUInt32[m[K =
+[27.003s]       |       [01;36m[K^~~~~~[m[K
+[27.060s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:216:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandId[m[K’ was not declared in this scope
+[27.060s]   216 |                         [01;31m[KcommandId[m[K.data = BehaviorIdCmd;
+[27.061s]       |                         [01;31m[K^~~~~~~~~[m[K
+[27.160s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:217:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_behaviorID_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_behaviorID_topic_[m[K’?
+[27.160s]   217 |                         [01;31m[Kpub_behaviorID_[m[K.publish(commandId);
+[27.160s]       |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[27.160s]       |                         [32m[Kpub_behaviorID_topic_[m[K
+[27.164s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kpublish_behavior_mode[m[K(uint16_t)[m[K’:
+[27.164s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:222:35:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[27.164s]   222 |                         std_msgs::[01;31m[KUInt32[m[K commandMode;
+[27.164s]       |                                   [01;31m[K^~~~~~[m[K
+[27.166s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[27.166s]   125 | using [01;36m[KUInt32[m[K =
+[27.166s]       |       [01;36m[K^~~~~~[m[K
+[27.237s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:223:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandMode[m[K’ was not declared in this scope
+[27.237s]   223 |                         [01;31m[KcommandMode[m[K.data = BehaviorModeCmd;
+[27.238s]       |                         [01;31m[K^~~~~~~~~~~[m[K
+[27.344s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:224:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_behaviorMode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kpub_behaviorMode_topic_[m[K’?
+[27.345s]   224 |                         [01;31m[Kpub_behaviorMode_[m[K.publish(commandMode);
+[27.345s]       |                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[27.345s]       |                         [32m[Kpub_behaviorMode_topic_[m[K
+[27.517s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Khuman_update[m[K(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)[m[K’:
+[27.517s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:321:41:[m[K [01;31m[Kerror: [m[K‘[01m[KGoal_camera_stamp_[m[K’ was not declared in this scope; did you mean ‘[01m[KGoal_camera_x[m[K’?
+[27.517s]   321 |                                         [01;31m[KGoal_camera_stamp_[m[K = human_data->header.stamp;
+[27.517s]       |                                         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[27.517s]       |                                         [32m[KGoal_camera_x[m[K
+[27.518s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kdiffeo_tree_update[m[K(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >::ConstPtr&)[m[K’:
+[27.518s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:340:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[27.518s]   340 |                         if ([01;31m[Kros[m[K::Time::now().toSec() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
+[27.518s]       |                             [01;31m[K^~~[m[K
+[27.521s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:344:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[27.521s]   344 |                                 double start_time = [01;31m[Kros[m[K::Time::now().toSec();
+[27.521s]       |                                                     [01;31m[K^~~[m[K
+[27.550s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:408:85:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[27.551s]   408 |                                 ROS_WARN_STREAM("[Navigation] Updated trees in " << [01;31m[Kros[m[K::Time::now().toSec()-start_time << " seconds.");
+[27.551s]       |                                                                                     [01;31m[K^~~[m[K
+[27.650s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:408:33:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_WARN_STREAM[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_WARN_STREAM[m[K’?
+[27.650s]   408 |                                 [01;31m[KROS_WARN_STREAM[m[K("[Navigation] Updated trees in " << ros::Time::now().toSec()-start_time << " seconds.");
+[27.650s]       |                                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+[27.651s]       |                                 [32m[KRCLCPP_WARN_STREAM[m[K
+[27.652s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:411:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[27.652s]   411 |                                 DiffeoTreeUpdateTime_ = [01;31m[Kros[m[K::Time::now().toSec();
+[27.652s]       |                                                         [01;31m[K^~~[m[K
+[36.758s] gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1
+[36.759s] gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2
+[36.759s] gmake[1]: *** Waiting for unfinished jobs....
+[49.486s] gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1
+[49.486s] gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2
+[49.486s] gmake: *** [Makefile:146: all] Error 2
+[49.490s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

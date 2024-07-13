@@ -1,0 +1,766 @@
+[0.000000] (-) TimerEvent: {}
+[0.001206] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.001280] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.017481] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.024281] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.028805] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src/semnav_migration/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1992', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1958,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1958', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9cf301d5_d6eb_4725_bda1_1cffc2fc2c7b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WILDQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099917] (-) TimerEvent: {}
+[0.200156] (-) TimerEvent: {}
+[0.208155] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.301194] (-) TimerEvent: {}
+[0.318388] (semnav) StdoutLine: {'line': b'[ 33%] Built target navigation_semantic\n'}
+[0.318678] (semnav) StdoutLine: {'line': b'[ 33%] Built target navigation\n'}
+[0.401307] (-) TimerEvent: {}
+[0.443361] (semnav) StdoutLine: {'line': b'[ 38%] Building CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o\n'}
+[0.499405] (semnav) StdoutLine: {'line': b'[ 42%] Building CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o\n'}
+[0.502228] (-) TimerEvent: {}
+[0.602430] (-) TimerEvent: {}
+[0.702636] (-) TimerEvent: {}
+[0.802846] (-) TimerEvent: {}
+[0.903132] (-) TimerEvent: {}
+[1.003340] (-) TimerEvent: {}
+[1.103692] (-) TimerEvent: {}
+[1.203898] (-) TimerEvent: {}
+[1.304106] (-) TimerEvent: {}
+[1.405188] (-) TimerEvent: {}
+[1.507189] (-) TimerEvent: {}
+[1.607395] (-) TimerEvent: {}
+[1.707607] (-) TimerEvent: {}
+[1.807813] (-) TimerEvent: {}
+[1.908043] (-) TimerEvent: {}
+[2.008212] (-) TimerEvent: {}
+[2.108421] (-) TimerEvent: {}
+[2.208628] (-) TimerEvent: {}
+[2.308833] (-) TimerEvent: {}
+[2.409036] (-) TimerEvent: {}
+[2.509203] (-) TimerEvent: {}
+[2.611219] (-) TimerEvent: {}
+[2.711551] (-) TimerEvent: {}
+[2.811751] (-) TimerEvent: {}
+[2.911955] (-) TimerEvent: {}
+[3.013188] (-) TimerEvent: {}
+[3.113391] (-) TimerEvent: {}
+[3.213592] (-) TimerEvent: {}
+[3.313794] (-) TimerEvent: {}
+[3.413996] (-) TimerEvent: {}
+[3.514186] (-) TimerEvent: {}
+[3.614389] (-) TimerEvent: {}
+[3.714613] (-) TimerEvent: {}
+[3.814814] (-) TimerEvent: {}
+[3.915020] (-) TimerEvent: {}
+[4.015192] (-) TimerEvent: {}
+[4.117185] (-) TimerEvent: {}
+[4.217379] (-) TimerEvent: {}
+[4.317581] (-) TimerEvent: {}
+[4.417781] (-) TimerEvent: {}
+[4.517985] (-) TimerEvent: {}
+[4.618186] (-) TimerEvent: {}
+[4.718389] (-) TimerEvent: {}
+[4.818590] (-) TimerEvent: {}
+[4.918779] (-) TimerEvent: {}
+[5.018978] (-) TimerEvent: {}
+[5.119183] (-) TimerEvent: {}
+[5.219380] (-) TimerEvent: {}
+[5.320184] (-) TimerEvent: {}
+[5.420381] (-) TimerEvent: {}
+[5.520581] (-) TimerEvent: {}
+[5.620778] (-) TimerEvent: {}
+[5.723185] (-) TimerEvent: {}
+[5.823388] (-) TimerEvent: {}
+[5.923586] (-) TimerEvent: {}
+[6.023782] (-) TimerEvent: {}
+[6.123984] (-) TimerEvent: {}
+[6.224186] (-) TimerEvent: {}
+[6.324386] (-) TimerEvent: {}
+[6.424582] (-) TimerEvent: {}
+[6.524784] (-) TimerEvent: {}
+[6.624979] (-) TimerEvent: {}
+[6.725206] (-) TimerEvent: {}
+[6.825427] (-) TimerEvent: {}
+[6.925647] (-) TimerEvent: {}
+[7.025863] (-) TimerEvent: {}
+[7.126106] (-) TimerEvent: {}
+[7.227195] (-) TimerEvent: {}
+[7.327408] (-) TimerEvent: {}
+[7.427620] (-) TimerEvent: {}
+[7.527849] (-) TimerEvent: {}
+[7.628076] (-) TimerEvent: {}
+[7.730194] (-) TimerEvent: {}
+[7.830413] (-) TimerEvent: {}
+[7.930635] (-) TimerEvent: {}
+[8.030855] (-) TimerEvent: {}
+[8.131071] (-) TimerEvent: {}
+[8.231289] (-) TimerEvent: {}
+[8.331506] (-) TimerEvent: {}
+[8.431728] (-) TimerEvent: {}
+[8.531945] (-) TimerEvent: {}
+[8.633102] (-) TimerEvent: {}
+[8.735201] (-) TimerEvent: {}
+[8.835420] (-) TimerEvent: {}
+[8.935640] (-) TimerEvent: {}
+[9.035862] (-) TimerEvent: {}
+[9.136079] (-) TimerEvent: {}
+[9.236311] (-) TimerEvent: {}
+[9.336527] (-) TimerEvent: {}
+[9.436742] (-) TimerEvent: {}
+[9.536957] (-) TimerEvent: {}
+[9.637187] (-) TimerEvent: {}
+[9.737403] (-) TimerEvent: {}
+[9.839194] (-) TimerEvent: {}
+[9.939407] (-) TimerEvent: {}
+[10.039630] (-) TimerEvent: {}
+[10.139847] (-) TimerEvent: {}
+[10.240063] (-) TimerEvent: {}
+[10.342195] (-) TimerEvent: {}
+[10.442407] (-) TimerEvent: {}
+[10.542661] (-) TimerEvent: {}
+[10.642873] (-) TimerEvent: {}
+[10.743091] (-) TimerEvent: {}
+[10.843311] (-) TimerEvent: {}
+[10.943521] (-) TimerEvent: {}
+[11.043736] (-) TimerEvent: {}
+[11.143956] (-) TimerEvent: {}
+[11.244218] (-) TimerEvent: {}
+[11.344435] (-) TimerEvent: {}
+[11.444653] (-) TimerEvent: {}
+[11.547197] (-) TimerEvent: {}
+[11.647409] (-) TimerEvent: {}
+[11.747623] (-) TimerEvent: {}
+[11.847933] (-) TimerEvent: {}
+[11.948166] (-) TimerEvent: {}
+[12.048378] (-) TimerEvent: {}
+[12.148626] (-) TimerEvent: {}
+[12.248850] (-) TimerEvent: {}
+[12.349070] (-) TimerEvent: {}
+[12.449295] (-) TimerEvent: {}
+[12.549509] (-) TimerEvent: {}
+[12.649730] (-) TimerEvent: {}
+[12.749950] (-) TimerEvent: {}
+[12.851218] (-) TimerEvent: {}
+[12.951438] (-) TimerEvent: {}
+[13.051658] (-) TimerEvent: {}
+[13.151878] (-) TimerEvent: {}
+[13.252102] (-) TimerEvent: {}
+[13.352329] (-) TimerEvent: {}
+[13.453199] (-) TimerEvent: {}
+[13.553410] (-) TimerEvent: {}
+[13.653628] (-) TimerEvent: {}
+[13.755189] (-) TimerEvent: {}
+[13.857201] (-) TimerEvent: {}
+[13.957457] (-) TimerEvent: {}
+[14.057670] (-) TimerEvent: {}
+[14.157882] (-) TimerEvent: {}
+[14.258094] (-) TimerEvent: {}
+[14.358310] (-) TimerEvent: {}
+[14.458506] (-) TimerEvent: {}
+[14.558716] (-) TimerEvent: {}
+[14.658927] (-) TimerEvent: {}
+[14.759192] (-) TimerEvent: {}
+[14.859401] (-) TimerEvent: {}
+[14.961188] (-) TimerEvent: {}
+[15.061389] (-) TimerEvent: {}
+[15.161589] (-) TimerEvent: {}
+[15.261794] (-) TimerEvent: {}
+[15.361992] (-) TimerEvent: {}
+[15.462210] (-) TimerEvent: {}
+[15.562418] (-) TimerEvent: {}
+[15.662632] (-) TimerEvent: {}
+[15.762848] (-) TimerEvent: {}
+[15.863060] (-) TimerEvent: {}
+[15.964195] (-) TimerEvent: {}
+[16.064409] (-) TimerEvent: {}
+[16.164630] (-) TimerEvent: {}
+[16.264853] (-) TimerEvent: {}
+[16.365101] (-) TimerEvent: {}
+[16.467197] (-) TimerEvent: {}
+[16.567407] (-) TimerEvent: {}
+[16.667622] (-) TimerEvent: {}
+[16.767839] (-) TimerEvent: {}
+[16.868058] (-) TimerEvent: {}
+[16.968392] (-) TimerEvent: {}
+[17.068616] (-) TimerEvent: {}
+[17.168831] (-) TimerEvent: {}
+[17.269057] (-) TimerEvent: {}
+[17.369282] (-) TimerEvent: {}
+[17.469491] (-) TimerEvent: {}
+[17.572227] (-) TimerEvent: {}
+[17.672443] (-) TimerEvent: {}
+[17.772664] (-) TimerEvent: {}
+[17.872887] (-) TimerEvent: {}
+[17.973106] (-) TimerEvent: {}
+[18.073328] (-) TimerEvent: {}
+[18.173543] (-) TimerEvent: {}
+[18.273766] (-) TimerEvent: {}
+[18.374024] (-) TimerEvent: {}
+[18.474207] (-) TimerEvent: {}
+[18.574425] (-) TimerEvent: {}
+[18.674642] (-) TimerEvent: {}
+[18.774864] (-) TimerEvent: {}
+[18.875081] (-) TimerEvent: {}
+[18.976202] (-) TimerEvent: {}
+[19.076421] (-) TimerEvent: {}
+[19.176644] (-) TimerEvent: {}
+[19.276858] (-) TimerEvent: {}
+[19.377074] (-) TimerEvent: {}
+[19.477295] (-) TimerEvent: {}
+[19.578236] (-) TimerEvent: {}
+[19.678453] (-) TimerEvent: {}
+[19.778669] (-) TimerEvent: {}
+[19.881190] (-) TimerEvent: {}
+[19.981405] (-) TimerEvent: {}
+[20.081633] (-) TimerEvent: {}
+[20.181850] (-) TimerEvent: {}
+[20.282064] (-) TimerEvent: {}
+[20.382290] (-) TimerEvent: {}
+[20.482505] (-) TimerEvent: {}
+[20.582715] (-) TimerEvent: {}
+[20.682929] (-) TimerEvent: {}
+[20.783154] (-) TimerEvent: {}
+[20.883383] (-) TimerEvent: {}
+[20.983595] (-) TimerEvent: {}
+[21.083826] (-) TimerEvent: {}
+[21.184040] (-) TimerEvent: {}
+[21.286199] (-) TimerEvent: {}
+[21.386414] (-) TimerEvent: {}
+[21.486625] (-) TimerEvent: {}
+[21.586839] (-) TimerEvent: {}
+[21.687074] (-) TimerEvent: {}
+[21.787291] (-) TimerEvent: {}
+[21.887505] (-) TimerEvent: {}
+[21.987719] (-) TimerEvent: {}
+[22.088019] (-) TimerEvent: {}
+[22.188205] (-) TimerEvent: {}
+[22.288416] (-) TimerEvent: {}
+[22.323376] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp: In constructor \xe2\x80\x98NavigationHumansNode::NavigationHumansNode()\xe2\x80\x99:\n'}
+[22.323729] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:135:102: error: no match for \xe2\x80\x98operator=\xe2\x80\x99 (operand types are \xe2\x80\x98rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >::SharedPtr\xe2\x80\x99 {aka \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >\xe2\x80\x99} and \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\xe2\x80\x99)\n'}
+[22.323922] (semnav) StderrLine: {'line': b'  135 |             pub_twist_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_twist_topic", 1);\n'}
+[22.324074] (semnav) StderrLine: {'line': b'      |                                                                                                      ^\n'}
+[22.329199] (semnav) StderrLine: {'line': b'In file included from /usr/include/c++/13/memory:80,\n'}
+[22.329504] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/math/cstdfloat/cstdfloat_cmath.hpp:25,\n'}
+[22.329668] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/cstdfloat.hpp:27,\n'}
+[22.329812] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/detail/float128_functions.hpp:15,\n'}
+[22.329947] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/detail/fpclassify.hpp:13,\n'}
+[22.330080] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/detail/default_ops.hpp:15,\n'}
+[22.330255] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/detail/generic_interconvert.hpp:12,\n'}
+[22.330390] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/number.hpp:12,\n'}
+[22.330521] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/cpp_int.hpp:19,\n'}
+[22.330647] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/cpp_bin_float.hpp:15,\n'}
+[22.330776] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/core/coordinate_promotion.hpp:16,\n'}
+[22.330903] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/core/radian_access.hpp:30,\n'}
+[22.331031] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/geometry.hpp:50,\n'}
+[22.331182] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry.hpp:17,\n'}
+[22.331323] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26,\n'}
+[22.331452] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25:\n'}
+[22.331585] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:418:9: note: candidate: \xe2\x80\x98template<class _Yp> std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.331719] (semnav) StderrLine: {'line': b'  418 |         operator=(const shared_ptr<_Yp>& __r) noexcept\n'}
+[22.331847] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[22.331977] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:418:9: note:   template argument deduction/substitution failed:\n'}
+[22.332137] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h: In substitution of \xe2\x80\x98template<class _Tp> template<class _Arg> using std::shared_ptr<_Tp>::_Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = const std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >&; _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99:\n'}
+[22.332306] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:418:2:   required by substitution of \xe2\x80\x98template<class _Yp> std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >::_Assignable<const std::shared_ptr<_Tp>&> std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >::operator=(const std::shared_ptr<_Tp>&) [with _Yp = rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.332462] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:135:102:   required from here\n'}
+[22.332600] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:183:15: error: no type named \xe2\x80\x98type\xe2\x80\x99 in \xe2\x80\x98struct std::enable_if<false, std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >&>\xe2\x80\x99\n'}
+[22.332736] (semnav) StderrLine: {'line': b'  183 |         using _Assignable = typename enable_if<\n'}
+[22.332865] (semnav) StderrLine: {'line': b'      |               ^~~~~~~~~~~\n'}
+[22.332991] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:429:9: note: candidate: \xe2\x80\x98template<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.335289] (semnav) StderrLine: {'line': b'  429 |         operator=(auto_ptr<_Yp>&& __r)\n'}
+[22.335571] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[22.335719] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:429:9: note:   template argument deduction/substitution failed:\n'}
+[22.335857] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:135:102: note:   \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\xe2\x80\x99 is not derived from \xe2\x80\x98std::auto_ptr<T>\xe2\x80\x99\n'}
+[22.335999] (semnav) StderrLine: {'line': b'  135 |             pub_twist_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_twist_topic", 1);\n'}
+[22.336146] (semnav) StderrLine: {'line': b'      |                                                                                                      ^\n'}
+[22.336297] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:446:9: note: candidate: \xe2\x80\x98template<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.336436] (semnav) StderrLine: {'line': b'  446 |         operator=(shared_ptr<_Yp>&& __r) noexcept\n'}
+[22.336567] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[22.336696] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:446:9: note:   template argument deduction/substitution failed:\n'}
+[22.336825] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h: In substitution of \xe2\x80\x98template<class _Tp> template<class _Arg> using std::shared_ptr<_Tp>::_Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >; _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99:\n'}
+[22.336980] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:446:2:   required by substitution of \xe2\x80\x98template<class _Yp> std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >::_Assignable<std::shared_ptr<_Tp> > std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >::operator=(std::shared_ptr<_Tp>&&) [with _Yp = rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.339314] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:135:102:   required from here\n'}
+[22.339551] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:183:15: error: no type named \xe2\x80\x98type\xe2\x80\x99 in \xe2\x80\x98struct std::enable_if<false, std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >&>\xe2\x80\x99\n'}
+[22.339709] (semnav) StderrLine: {'line': b'  183 |         using _Assignable = typename enable_if<\n'}
+[22.339911] (semnav) StderrLine: {'line': b'      |               ^~~~~~~~~~~\n'}
+[22.340051] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:454:9: note: candidate: \xe2\x80\x98template<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Del = _Yp; _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.340225] (semnav) StderrLine: {'line': b'  454 |         operator=(unique_ptr<_Yp, _Del>&& __r)\n'}
+[22.340361] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[22.340490] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:454:9: note:   template argument deduction/substitution failed:\n'}
+[22.340625] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:135:102: note:   \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\xe2\x80\x99 is not derived from \xe2\x80\x98std::unique_ptr<_Tp, _Dp>\xe2\x80\x99\n'}
+[22.340784] (semnav) StderrLine: {'line': b'  135 |             pub_twist_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_twist_topic", 1);\n'}
+[22.340926] (semnav) StderrLine: {'line': b'      |                                                                                                      ^\n'}
+[22.341059] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:414:19: note: candidate: \xe2\x80\x98std::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.343395] (semnav) StderrLine: {'line': b'  414 |       shared_ptr& operator=(const shared_ptr&) noexcept = default;\n'}
+[22.343580] (semnav) StderrLine: {'line': b'      |                   ^~~~~~~~\n'}
+[22.343730] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:414:29: note:   no known conversion for argument 1 from \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\xe2\x80\x99 to \xe2\x80\x98const std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >&\xe2\x80\x99\n'}
+[22.343896] (semnav) StderrLine: {'line': b'  414 |       shared_ptr& operator=(const shared_ptr&) noexcept = default;\n'}
+[22.344031] (semnav) StderrLine: {'line': b'      |                             ^~~~~~~~~~~~~~~~~\n'}
+[22.344184] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:438:7: note: candidate: \xe2\x80\x98std::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >]\xe2\x80\x99\n'}
+[22.344340] (semnav) StderrLine: {'line': b'  438 |       operator=(shared_ptr&& __r) noexcept\n'}
+[22.344476] (semnav) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[22.344606] (semnav) StderrLine: {'line': b'/usr/include/c++/13/bits/shared_ptr.h:438:30: note:   no known conversion for argument 1 from \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\xe2\x80\x99 to \xe2\x80\x98std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >&&\xe2\x80\x99\n'}
+[22.344748] (semnav) StderrLine: {'line': b'  438 |       operator=(shared_ptr&& __r) noexcept\n'}
+[22.344891] (semnav) StderrLine: {'line': b'      |                 ~~~~~~~~~~~~~^~~\n'}
+[22.391196] (-) TimerEvent: {}
+[22.491411] (-) TimerEvent: {}
+[22.591622] (-) TimerEvent: {}
+[22.691848] (-) TimerEvent: {}
+[22.706470] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:179:75: error: no matching function for call to \xe2\x80\x98rclcpp::executors::MultiThreadedExecutor::MultiThreadedExecutor(int)\xe2\x80\x99\n'}
+[22.706781] (semnav) StderrLine: {'line': b'  179 |                         rclcpp::executors::MultiThreadedExecutor spinner(4);\n'}
+[22.706942] (semnav) StderrLine: {'line': b'      |                                                                           ^\n'}
+[22.707532] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[22.707764] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[22.707910] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32:\n'}
+[22.708043] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:55:12: note: candidate: \xe2\x80\x98rclcpp::executors::MultiThreadedExecutor::MultiThreadedExecutor(const rclcpp::ExecutorOptions&, size_t, bool, std::chrono::nanoseconds)\xe2\x80\x99\n'}
+[22.708216] (semnav) StderrLine: {'line': b'   55 |   explicit MultiThreadedExecutor(\n'}
+[22.708357] (semnav) StderrLine: {'line': b'      |            ^~~~~~~~~~~~~~~~~~~~~\n'}
+[22.709165] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:56:37: note:   no known conversion for argument 1 from \xe2\x80\x98int\xe2\x80\x99 to \xe2\x80\x98const rclcpp::ExecutorOptions&\xe2\x80\x99\n'}
+[22.709412] (semnav) StderrLine: {'line': b'   56 |     const rclcpp::ExecutorOptions & options = rclcpp::ExecutorOptions(),\n'}
+[22.709563] (semnav) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[22.780183] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp: In member function \xe2\x80\x98void NavigationHumansNode::human_update(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[22.780478] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:282:64: error: \xe2\x80\x98PointStamped\xe2\x80\x99 is not a member of \xe2\x80\x98geometry_msgs\xe2\x80\x99\n'}
+[22.780635] (semnav) StderrLine: {'line': b'  282 |                                                 geometry_msgs::PointStamped pointCamera, pointMap;\n'}
+[22.780770] (semnav) StderrLine: {'line': b'      |                                                                ^~~~~~~~~~~~\n'}
+[22.791947] (-) TimerEvent: {}
+[22.799586] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:44:36: error: \xe2\x80\x98ros\xe2\x80\x99 has not been declared\n'}
+[22.799856] (semnav) StderrLine: {'line': b'   44 |                 HumanFollowingNode(ros::NodeHandle* nodehandle) : nh_(*nodehandle) {\n'}
+[22.800038] (semnav) StderrLine: {'line': b'      |                                    ^~~\n'}
+[22.800207] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:44:51: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98*\xe2\x80\x99 token\n'}
+[22.800367] (semnav) StderrLine: {'line': b'   44 |                 HumanFollowingNode(ros::NodeHandle* nodehandle) : nh_(*nodehandle) {\n'}
+[22.800497] (semnav) StderrLine: {'line': b'      |                                   ~               ^\n'}
+[22.800627] (semnav) StderrLine: {'line': b'      |                                                   )\n'}
+[22.803153] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:69: error: \xe2\x80\x98KeypointDetections3D\xe2\x80\x99 in namespace \xe2\x80\x98object_pose_interface_msgs\xe2\x80\x99 does not name a type\n'}
+[22.803383] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[22.803520] (semnav) StderrLine: {'line': b'      |                                                                     ^~~~~~~~~~~~~~~~~~~~\n'}
+[22.803648] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected unqualified-id before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[22.803776] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[22.803902] (semnav) StderrLine: {'line': b'      |                                                                                                   ^\n'}
+[22.804051] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[22.804196] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[22.804327] (semnav) StderrLine: {'line': b'      |                                  ~                                                                ^\n'}
+[22.804461] (semnav) StderrLine: {'line': b'      |                                                                                                   )\n'}
+[22.804585] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[22.804708] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[22.804829] (semnav) StderrLine: {'line': b'      |                                                                                                   ^\n'}
+[22.804950] (semnav) StderrLine: {'line': b'      |                                                                                                    ;\n'}
+[22.819160] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:101: error: \xe2\x80\x98human_data\xe2\x80\x99 does not name a type\n'}
+[22.819437] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[22.819587] (semnav) StderrLine: {'line': b'      |                                                                                                     ^~~~~~~~~~\n'}
+[22.819721] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:75: error: \xe2\x80\x98SemanticMapObjectArray\xe2\x80\x99 in namespace \xe2\x80\x98object_pose_interface_msgs\xe2\x80\x99 does not name a type\n'}
+[22.819853] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[22.819979] (semnav) StderrLine: {'line': b'      |                                                                           ^~~~~~~~~~~~~~~~~~~~~~\n'}
+[22.820105] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected unqualified-id before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[22.820277] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[22.820403] (semnav) StderrLine: {'line': b'      |                                                                                                           ^\n'}
+[22.820524] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[22.820645] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[22.820767] (semnav) StderrLine: {'line': b'      |                                        ~                                                                  ^\n'}
+[22.820890] (semnav) StderrLine: {'line': b'      |                                                                                                           )\n'}
+[22.821014] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[22.823224] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[22.823422] (semnav) StderrLine: {'line': b'      |                                                                                                           ^\n'}
+[22.823560] (semnav) StderrLine: {'line': b'      |                                                                                                            ;\n'}
+[22.851104] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:283:49: error: \xe2\x80\x98pointCamera\xe2\x80\x99 was not declared in this scope\n'}
+[22.851376] (semnav) StderrLine: {'line': b'  283 |                                                 pointCamera.header.stamp = human_data->header.stamp;\n'}
+[22.851522] (semnav) StderrLine: {'line': b'      |                                                 ^~~~~~~~~~~\n'}
+[22.851653] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:283:95: error: \xe2\x80\x98const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::_header_type\xe2\x80\x99 {aka \xe2\x80\x98const struct builtin_interfaces::msg::Time_<std::allocator<void> >\xe2\x80\x99} has no member named \xe2\x80\x98stamp\xe2\x80\x99\n'}
+[22.851788] (semnav) StderrLine: {'line': b'  283 |                                                 pointCamera.header.stamp = human_data->header.stamp;\n'}
+[22.851916] (semnav) StderrLine: {'line': b'      |                                                                                               ^~~~~\n'}
+[22.855185] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:296:90: error: \xe2\x80\x98const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::_header_type\xe2\x80\x99 {aka \xe2\x80\x98const struct builtin_interfaces::msg::Time_<std::allocator<void> >\xe2\x80\x99} has no member named \xe2\x80\x98stamp\xe2\x80\x99\n'}
+[22.855522] (semnav) StderrLine: {'line': b'  296 |                                             camera_optical_frame_id_, human_data->header.stamp,\n'}
+[22.855669] (semnav) StderrLine: {'line': b'      |                                                                                          ^~~~~\n'}
+[22.862166] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:109: error: \xe2\x80\x98semantic_map_data\xe2\x80\x99 does not name a type\n'}
+[22.862444] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[22.862624] (semnav) StderrLine: {'line': b'      |                                                                                                             ^~~~~~~~~~~~~~~~~\n'}
+[22.863052] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:58: error: \xe2\x80\x98LaserScan\xe2\x80\x99 in namespace \xe2\x80\x98sensor_msgs\xe2\x80\x99 does not name a type\n'}
+[22.863257] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[22.863400] (semnav) StderrLine: {'line': b'      |                                                          ^~~~~~~~~\n'}
+[22.863527] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected unqualified-id before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[22.863653] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[22.863778] (semnav) StderrLine: {'line': b'      |                                                                             ^\n'}
+[22.863902] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[22.864026] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[22.864168] (semnav) StderrLine: {'line': b'      |                                      ~                                      ^\n'}
+[22.864304] (semnav) StderrLine: {'line': b'      |                                                                             )\n'}
+[22.864429] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[22.864554] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[22.864678] (semnav) StderrLine: {'line': b'      |                                                                             ^\n'}
+[22.864804] (semnav) StderrLine: {'line': b'      |                                                                              ;\n'}
+[22.879187] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:79: error: \xe2\x80\x98lidar_data\xe2\x80\x99 does not name a type\n'}
+[22.879508] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[22.879668] (semnav) StderrLine: {'line': b'      |                                                                               ^~~~~~~~~~\n'}
+[22.883447] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:643:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[22.883736] (semnav) StderrLine: {'line': b'  643 |                 ros::NodeHandle nh_;\n'}
+[22.883885] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[22.889681] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:662:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[22.889938] (semnav) StderrLine: {'line': b'  662 |                 ros::Publisher pub_behaviorID_;\n'}
+[22.890086] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[22.892045] (-) TimerEvent: {}
+[22.895756] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:663:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[22.896016] (semnav) StderrLine: {'line': b'  663 |                 ros::Publisher pub_behaviorMode_;\n'}
+[22.896209] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[22.902186] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:302:67: error: \xe2\x80\x98pointMap\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98point\xe2\x80\x99?\n'}
+[22.902478] (semnav) StderrLine: {'line': b'  302 |                                                 human_x.push_back(pointMap.point.x);\n'}
+[22.902634] (semnav) StderrLine: {'line': b'      |                                                                   ^~~~~~~~\n'}
+[22.902772] (semnav) StderrLine: {'line': b'      |                                                                   point\n'}
+[22.903075] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:664:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[22.903265] (semnav) StderrLine: {'line': b'  664 |                 ros::Publisher pub_twist_;\n'}
+[22.903404] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[22.904655] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp: In member function \xe2\x80\x98void NavigationHumansNode::diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[22.904929] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:345:45: error: expected unqualified-id before \xe2\x80\x98-\xe2\x80\x99 token\n'}
+[22.905105] (semnav) StderrLine: {'line': b'  345 |                         if (time.seconds(). - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {\n'}
+[22.905276] (semnav) StderrLine: {'line': b'      |                                             ^\n'}
+[22.908583] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:666:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[22.908879] (semnav) StderrLine: {'line': b'  666 |                 ros::Publisher pub_semantic_map_;\n'}
+[22.909032] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[22.917187] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:695:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[22.917480] (semnav) StderrLine: {'line': b'  695 |                 ros::Time Goal_camera_stamp_;\n'}
+[22.917636] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[22.930453] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:715:17: error: \xe2\x80\x98tf\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98tm\xe2\x80\x99?\n'}
+[22.930731] (semnav) StderrLine: {'line': b'  715 |                 tf::TransformListener listener_;\n'}
+[22.930897] (semnav) StderrLine: {'line': b'      |                 ^~\n'}
+[22.931047] (semnav) StderrLine: {'line': b'      |                 tm\n'}
+[22.934918] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function \xe2\x80\x98void HumanFollowingNode::publish_twist(double, double)\xe2\x80\x99:\n'}
+[22.935206] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:166:40: error: \xe2\x80\x98Twist\xe2\x80\x99 is not a member of \xe2\x80\x98geometry_msgs\xe2\x80\x99; did you mean \xe2\x80\x98geometry_msgs::msg::Twist\xe2\x80\x99?\n'}
+[22.935376] (semnav) StderrLine: {'line': b'  166 |                         geometry_msgs::Twist commandTwist;\n'}
+[22.935510] (semnav) StderrLine: {'line': b'      |                                        ^~~~~\n'}
+[22.938188] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:25,\n'}
+[22.938479] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:7,\n'}
+[22.938630] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:49,\n'}
+[22.938785] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39,\n'}
+[22.938916] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42,\n'}
+[22.939047] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40,\n'}
+[22.939201] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:25:\n'}
+[22.939349] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:137:7: note: \xe2\x80\x98geometry_msgs::msg::Twist\xe2\x80\x99 declared here\n'}
+[22.939481] (semnav) StderrLine: {'line': b'  137 | using Twist =\n'}
+[22.939608] (semnav) StderrLine: {'line': b'      |       ^~~~~\n'}
+[22.950385] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp: In member function \xe2\x80\x98void NavigationHumansNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[22.950665] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:469:43: error: \xe2\x80\x98class std::shared_ptr<tf2_ros::TransformListener>\xe2\x80\x99 has no member named \xe2\x80\x98waitForTransform\xe2\x80\x99\n'}
+[22.950818] (semnav) StderrLine: {'line': b'  469 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));\n'}
+[22.950951] (semnav) StderrLine: {'line': b'      |                                           ^~~~~~~~~~~~~~~~\n'}
+[22.951078] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:469:130: error: no matching function for call to \xe2\x80\x98rclcpp::Duration::Duration(double)\xe2\x80\x99\n'}
+[22.951232] (semnav) StderrLine: {'line': b'  469 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));\n'}
+[22.951365] (semnav) StderrLine: {'line': b'      |                                                                                                                                  ^\n'}
+[22.951494] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24,\n'}
+[22.951621] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24,\n'}
+[22.951746] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38,\n'}
+[22.951871] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[22.951998] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[22.954202] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[22.954790] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[22.954940] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22,\n'}
+[22.955072] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38,\n'}
+[22.955222] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25:\n'}
+[22.955352] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note: candidate: \xe2\x80\x98template<class Rep, class Period> rclcpp::Duration::Duration(const std::chrono::duration<_Rep1, _Period1>&)\xe2\x80\x99\n'}
+[22.955494] (semnav) StderrLine: {'line': b'   49 |   Duration(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)\n'}
+[22.955624] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~\n'}
+[22.955745] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note:   template argument deduction/substitution failed:\n'}
+[22.955878] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:469:130: note:   mismatched types \xe2\x80\x98const std::chrono::duration<_Rep1, _Period1>\xe2\x80\x99 and \xe2\x80\x98double\xe2\x80\x99\n'}
+[22.956004] (semnav) StderrLine: {'line': b'  469 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));\n'}
+[22.958189] (semnav) StderrLine: {'line': b'      |                                                                                                                                  ^\n'}
+[22.958453] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note: candidate: \xe2\x80\x98rclcpp::Duration::Duration()\xe2\x80\x99\n'}
+[22.958619] (semnav) StderrLine: {'line': b'  159 |   Duration() = default;\n'}
+[22.958750] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~\n'}
+[22.958875] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note:   candidate expects 0 arguments, 1 provided\n'}
+[22.959002] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3: note: candidate: \xe2\x80\x98rclcpp::Duration::Duration(const rclcpp::Duration&)\xe2\x80\x99\n'}
+[22.959137] (semnav) StderrLine: {'line': b'   62 |   Duration(const Duration & rhs);\n'}
+[22.959274] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~\n'}
+[22.959396] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29: note:   no known conversion for argument 1 from \xe2\x80\x98double\xe2\x80\x99 to \xe2\x80\x98const rclcpp::Duration&\xe2\x80\x99\n'}
+[22.959519] (semnav) StderrLine: {'line': b'   62 |   Duration(const Duration & rhs);\n'}
+[22.959639] (semnav) StderrLine: {'line': b'      |            ~~~~~~~~~~~~~~~~~^~~\n'}
+[22.959772] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12: note: candidate: \xe2\x80\x98rclcpp::Duration::Duration(const rcl_duration_t&)\xe2\x80\x99\n'}
+[22.959898] (semnav) StderrLine: {'line': b'   60 |   explicit Duration(const rcl_duration_t & duration);\n'}
+[22.960022] (semnav) StderrLine: {'line': b'      |            ^~~~~~~~\n'}
+[22.962294] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44: note:   no known conversion for argument 1 from \xe2\x80\x98double\xe2\x80\x99 to \xe2\x80\x98const rcl_duration_t&\xe2\x80\x99 {aka \xe2\x80\x98const rcl_duration_s&\xe2\x80\x99}\n'}
+[22.962528] (semnav) StderrLine: {'line': b'   60 |   explicit Duration(const rcl_duration_t & duration);\n'}
+[22.962672] (semnav) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~\n'}
+[22.962804] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3: note: candidate: \xe2\x80\x98rclcpp::Duration::Duration(const builtin_interfaces::msg::Duration&)\xe2\x80\x99\n'}
+[22.962933] (semnav) StderrLine: {'line': b'   54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)\n'}
+[22.963058] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~\n'}
+[22.963201] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54: note:   no known conversion for argument 1 from \xe2\x80\x98double\xe2\x80\x99 to \xe2\x80\x98const builtin_interfaces::msg::Duration&\xe2\x80\x99 {aka \xe2\x80\x98const builtin_interfaces::msg::Duration_<std::allocator<void> >&\xe2\x80\x99}\n'}
+[22.963335] (semnav) StderrLine: {'line': b'   54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)\n'}
+[22.963457] (semnav) StderrLine: {'line': b'      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~\n'}
+[22.963593] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12: note: candidate: \xe2\x80\x98rclcpp::Duration::Duration(std::chrono::nanoseconds)\xe2\x80\x99\n'}
+[22.963713] (semnav) StderrLine: {'line': b'   43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);\n'}
+[22.963831] (semnav) StderrLine: {'line': b'      |            ^~~~~~~~\n'}
+[22.963952] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46: note:   no known conversion for argument 1 from \xe2\x80\x98double\xe2\x80\x99 to \xe2\x80\x98std::chrono::nanoseconds\xe2\x80\x99 {aka \xe2\x80\x98std::chrono::duration<long int, std::ratio<1, 1000000000> >\xe2\x80\x99}\n'}
+[22.964079] (semnav) StderrLine: {'line': b'   43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);\n'}
+[22.966390] (semnav) StderrLine: {'line': b'      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[22.966560] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note: candidate: \xe2\x80\x98rclcpp::Duration::Duration(int32_t, uint32_t)\xe2\x80\x99\n'}
+[22.966697] (semnav) StderrLine: {'line': b'   40 |   Duration(int32_t seconds, uint32_t nanoseconds);\n'}
+[22.966824] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~\n'}
+[22.966950] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note:   candidate expects 2 arguments, 1 provided\n'}
+[22.967078] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:470:43: error: \xe2\x80\x98class std::shared_ptr<tf2_ros::TransformListener>\xe2\x80\x99 has no member named \xe2\x80\x98transformPose\xe2\x80\x99\n'}
+[22.967232] (semnav) StderrLine: {'line': b'  470 |                                 listener_.transformPose(world_frame_id_, odomPose, mapPose);\n'}
+[22.967364] (semnav) StderrLine: {'line': b'      |                                           ^~~~~~~~~~~~~\n'}
+[22.993194] (-) TimerEvent: {}
+[22.996770] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,\n'}
+[22.997053] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171:\n'}
+[22.997240] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:676:124: error: \xe2\x80\x98now\xe2\x80\x99 is not a member of \xe2\x80\x98rclcpp::Time\xe2\x80\x99\n'}
+[22.997379] (semnav) StderrLine: {'line': b'  676 |                 "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << rclcpp::Time::now().toSec()-before_time << " seconds.");\n'}
+[22.997519] (semnav) StderrLine: {'line': b'      |                                                                                                                            ^~~\n'}
+[23.012171] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:167:25: error: \xe2\x80\x98commandTwist\xe2\x80\x99 was not declared in this scope\n'}
+[23.012468] (semnav) StderrLine: {'line': b'  167 |                         commandTwist.linear.x = LinearCmd;\n'}
+[23.012623] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~\n'}
+[23.069188] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:169:25: error: \xe2\x80\x98pub_twist_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98publish_twist\xe2\x80\x99?\n'}
+[23.069481] (semnav) StderrLine: {'line': b'  169 |                         pub_twist_.publish(commandTwist);\n'}
+[23.069637] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~\n'}
+[23.069773] (semnav) StderrLine: {'line': b'      |                         publish_twist\n'}
+[23.071266] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function \xe2\x80\x98void HumanFollowingNode::publish_behavior_id(uint16_t)\xe2\x80\x99:\n'}
+[23.071557] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:174:35: error: \xe2\x80\x98UInt32\xe2\x80\x99 is not a member of \xe2\x80\x98std_msgs\xe2\x80\x99; did you mean \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99?\n'}
+[23.071721] (semnav) StderrLine: {'line': b'  174 |                         std_msgs::UInt32 commandId;\n'}
+[23.071854] (semnav) StderrLine: {'line': b'      |                                   ^~~~~~\n'}
+[23.073180] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/u_int32.hpp:7,\n'}
+[23.073458] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:51:\n'}
+[23.073609] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7: note: \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99 declared here\n'}
+[23.073746] (semnav) StderrLine: {'line': b'  125 | using UInt32 =\n'}
+[23.073876] (semnav) StderrLine: {'line': b'      |       ^~~~~~\n'}
+[23.093313] (-) TimerEvent: {}
+[23.124357] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:175:25: error: \xe2\x80\x98commandId\xe2\x80\x99 was not declared in this scope\n'}
+[23.124644] (semnav) StderrLine: {'line': b'  175 |                         commandId.data = BehaviorIdCmd;\n'}
+[23.124801] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~\n'}
+[23.193434] (-) TimerEvent: {}
+[23.212879] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:176:25: error: \xe2\x80\x98pub_behaviorID_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98pub_behaviorID_topic_\xe2\x80\x99?\n'}
+[23.213194] (semnav) StderrLine: {'line': b'  176 |                         pub_behaviorID_.publish(commandId);\n'}
+[23.213358] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~~~~\n'}
+[23.213492] (semnav) StderrLine: {'line': b'      |                         pub_behaviorID_topic_\n'}
+[23.216890] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function \xe2\x80\x98void HumanFollowingNode::publish_behavior_mode(uint16_t)\xe2\x80\x99:\n'}
+[23.217193] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:181:35: error: \xe2\x80\x98UInt32\xe2\x80\x99 is not a member of \xe2\x80\x98std_msgs\xe2\x80\x99; did you mean \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99?\n'}
+[23.217357] (semnav) StderrLine: {'line': b'  181 |                         std_msgs::UInt32 commandMode;\n'}
+[23.217493] (semnav) StderrLine: {'line': b'      |                                   ^~~~~~\n'}
+[23.217623] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7: note: \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99 declared here\n'}
+[23.217751] (semnav) StderrLine: {'line': b'  125 | using UInt32 =\n'}
+[23.217875] (semnav) StderrLine: {'line': b'      |       ^~~~~~\n'}
+[23.284519] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:182:25: error: \xe2\x80\x98commandMode\xe2\x80\x99 was not declared in this scope\n'}
+[23.284804] (semnav) StderrLine: {'line': b'  182 |                         commandMode.data = BehaviorModeCmd;\n'}
+[23.284956] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~\n'}
+[23.295191] (-) TimerEvent: {}
+[23.386995] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:25: error: \xe2\x80\x98pub_behaviorMode_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98pub_behaviorMode_topic_\xe2\x80\x99?\n'}
+[23.387314] (semnav) StderrLine: {'line': b'  183 |                         pub_behaviorMode_.publish(commandMode);\n'}
+[23.387476] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~~~~~~\n'}
+[23.387639] (semnav) StderrLine: {'line': b'      |                         pub_behaviorMode_topic_\n'}
+[23.395312] (-) TimerEvent: {}
+[23.441662] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[23.441975] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:722:9: error: \xe2\x80\x98ros\xe2\x80\x99 has not been declared\n'}
+[23.442166] (semnav) StderrLine: {'line': b'  722 |         ros::init(argc, argv, "human_following");\n'}
+[23.442319] (semnav) StderrLine: {'line': b'      |         ^~~\n'}
+[23.442453] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:725:9: error: \xe2\x80\x98ros\xe2\x80\x99 has not been declared\n'}
+[23.442607] (semnav) StderrLine: {'line': b'  725 |         ros::NodeHandle nh("~");\n'}
+[23.442732] (semnav) StderrLine: {'line': b'      |         ^~~\n'}
+[23.465360] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:728:48: error: \xe2\x80\x98nh\xe2\x80\x99 was not declared in this scope\n'}
+[23.465642] (semnav) StderrLine: {'line': b'  728 |         HumanFollowingNode humanFollowingNode(&nh);\n'}
+[23.465794] (semnav) StderrLine: {'line': b'      |                                                ^~\n'}
+[23.496196] (-) TimerEvent: {}
+[23.596411] (-) TimerEvent: {}
+[23.698200] (-) TimerEvent: {}
+[23.798417] (-) TimerEvent: {}
+[23.898637] (-) TimerEvent: {}
+[23.998860] (-) TimerEvent: {}
+[24.099082] (-) TimerEvent: {}
+[24.199312] (-) TimerEvent: {}
+[24.299534] (-) TimerEvent: {}
+[24.399747] (-) TimerEvent: {}
+[24.499964] (-) TimerEvent: {}
+[24.601199] (-) TimerEvent: {}
+[24.701415] (-) TimerEvent: {}
+[24.801635] (-) TimerEvent: {}
+[24.901857] (-) TimerEvent: {}
+[25.002108] (-) TimerEvent: {}
+[25.102339] (-) TimerEvent: {}
+[25.204201] (-) TimerEvent: {}
+[25.304423] (-) TimerEvent: {}
+[25.404642] (-) TimerEvent: {}
+[25.504856] (-) TimerEvent: {}
+[25.605076] (-) TimerEvent: {}
+[25.705337] (-) TimerEvent: {}
+[25.805556] (-) TimerEvent: {}
+[25.905814] (-) TimerEvent: {}
+[26.006034] (-) TimerEvent: {}
+[26.107200] (-) TimerEvent: {}
+[26.155180] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/subscription_base.hpp:32,\n'}
+[26.155487] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:29:\n'}
+[26.155654] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp: In instantiation of \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99:\n'}
+[26.155849] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.156036] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.156246] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.156436] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.156612] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:168:106:   required from here\n'}
+[26.156754] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:23: error: no match for \xe2\x80\x98operator=\xe2\x80\x99 (operand types are \xe2\x80\x98rclcpp::detail::AnySubscriptionCallbackHelper<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void>, false, false>::variant_type\xe2\x80\x99 {aka \xe2\x80\x98std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >\xe2\x80\x99} and \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>\xe2\x80\x99})\n'}
+[26.156992] (semnav) StderrLine: {'line': b'  396 |     callback_variant_ = static_cast<typename scbth::callback_type>(callback);\n'}
+[26.159193] (semnav) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[26.159880] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:29:\n'}
+[26.160172] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1494:9: note: candidate: \xe2\x80\x98template<class _Tp> std::enable_if_t<((__exactly_once<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<_Types>&> std::variant<_Types>::operator=(_Tp&&) [with _Types = {std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[26.160417] (semnav) StderrLine: {'line': b' 1494 |         operator=(_Tp&& __rhs)\n'}
+[26.160559] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[26.160691] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1494:9: note:   template argument deduction/substitution failed:\n'}
+[26.160821] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant: In substitution of \xe2\x80\x98template<class ... _Types> template<class _Tp, class> using std::variant<_Types>::__accepted_type = std::variant<_Types>::__to_type<__accepted_index<_Tp> > [with _Tp = std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>&&; <template-parameter-2-2> = void; _Types = {std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99:\n'}
+[26.161030] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1490:14:   required by substitution of \xe2\x80\x98template<class _Tp> std::enable_if_t<((__exactly_once<std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&> std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::operator=(_Tp&&) [with _Tp = std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>]\xe2\x80\x99\n'}
+[26.161452] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:23:   required from \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99\n'}
+[26.161630] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.161798] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.161951] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.162109] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.164738] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:168:106:   required from here\n'}
+[26.164903] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1407:15: error: no type named \xe2\x80\x98type\xe2\x80\x99 in \xe2\x80\x98struct std::enable_if<false, void>\xe2\x80\x99\n'}
+[26.165070] (semnav) StderrLine: {'line': b' 1407 |         using __accepted_type = __to_type<__accepted_index<_Tp>>;\n'}
+[26.165229] (semnav) StderrLine: {'line': b'      |               ^~~~~~~~~~~~~~~\n'}
+[26.165361] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp: In instantiation of \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99:\n'}
+[26.165505] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.165659] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.165839] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.165991] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[26.168245] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:168:106:   required from here\n'}
+[26.168505] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1430:16: note: candidate: \xe2\x80\x98std::variant<_Types>& std::variant<_Types>::operator=(const std::variant<_Types>&) [with _Types = {std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[26.168750] (semnav) StderrLine: {'line': b' 1430 |       variant& operator=(const variant&) = default;\n'}
+[26.168900] (semnav) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[26.169036] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1430:26: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>\xe2\x80\x99} to \xe2\x80\x98const std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&\xe2\x80\x99\n'}
+[26.169275] (semnav) StderrLine: {'line': b' 1430 |       variant& operator=(const variant&) = default;\n'}
+[26.169416] (semnav) StderrLine: {'line': b'      |                          ^~~~~~~~~~~~~~\n'}
+[26.169548] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1431:16: note: candidate: \xe2\x80\x98std::variant<_Types>& std::variant<_Types>::operator=(std::variant<_Types>&&) [with _Types = {std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[26.169716] (semnav) StderrLine: {'line': b' 1431 |       variant& operator=(variant&&) = default;\n'}
+[26.169847] (semnav) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[26.169978] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1431:26: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::_Bind<void (NavigationHumansNode::*(NavigationHumansNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> > >&)>\xe2\x80\x99} to \xe2\x80\x98std::variant<std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&)>, std::function<void(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::default_delete<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&&\xe2\x80\x99\n'}
+[26.172368] (semnav) StderrLine: {'line': b' 1431 |       variant& operator=(variant&&) = default;\n'}
+[26.172564] (semnav) StderrLine: {'line': b'      |                          ^~~~~~~~~\n'}
+[26.207319] (-) TimerEvent: {}
+[26.307526] (-) TimerEvent: {}
+[26.409201] (-) TimerEvent: {}
+[26.509418] (-) TimerEvent: {}
+[26.609638] (-) TimerEvent: {}
+[26.709860] (-) TimerEvent: {}
+[26.810133] (-) TimerEvent: {}
+[26.910348] (-) TimerEvent: {}
+[27.010558] (-) TimerEvent: {}
+[27.110769] (-) TimerEvent: {}
+[27.212330] (-) TimerEvent: {}
+[27.312525] (-) TimerEvent: {}
+[27.412734] (-) TimerEvent: {}
+[27.512955] (-) TimerEvent: {}
+[27.613182] (-) TimerEvent: {}
+[27.713412] (-) TimerEvent: {}
+[27.813622] (-) TimerEvent: {}
+[27.896648] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1\n'}
+[27.897308] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2\n'}
+[27.897800] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[27.913788] (-) TimerEvent: {}
+[28.014045] (-) TimerEvent: {}
+[28.114244] (-) TimerEvent: {}
+[28.214496] (-) TimerEvent: {}
+[28.314786] (-) TimerEvent: {}
+[28.415045] (-) TimerEvent: {}
+[28.515311] (-) TimerEvent: {}
+[28.615553] (-) TimerEvent: {}
+[28.715813] (-) TimerEvent: {}
+[28.816075] (-) TimerEvent: {}
+[28.916297] (-) TimerEvent: {}
+[29.016543] (-) TimerEvent: {}
+[29.116827] (-) TimerEvent: {}
+[29.217089] (-) TimerEvent: {}
+[29.317308] (-) TimerEvent: {}
+[29.417563] (-) TimerEvent: {}
+[29.517823] (-) TimerEvent: {}
+[29.618090] (-) TimerEvent: {}
+[29.718317] (-) TimerEvent: {}
+[29.818595] (-) TimerEvent: {}
+[29.918859] (-) TimerEvent: {}
+[30.019134] (-) TimerEvent: {}
+[30.119343] (-) TimerEvent: {}
+[30.219600] (-) TimerEvent: {}
+[30.319836] (-) TimerEvent: {}
+[30.420096] (-) TimerEvent: {}
+[30.520315] (-) TimerEvent: {}
+[30.620575] (-) TimerEvent: {}
+[30.720830] (-) TimerEvent: {}
+[30.821088] (-) TimerEvent: {}
+[30.921309] (-) TimerEvent: {}
+[31.021589] (-) TimerEvent: {}
+[31.121857] (-) TimerEvent: {}
+[31.222128] (-) TimerEvent: {}
+[31.322394] (-) TimerEvent: {}
+[31.422645] (-) TimerEvent: {}
+[31.522904] (-) TimerEvent: {}
+[31.623169] (-) TimerEvent: {}
+[31.723465] (-) TimerEvent: {}
+[31.823724] (-) TimerEvent: {}
+[31.923933] (-) TimerEvent: {}
+[32.024193] (-) TimerEvent: {}
+[32.124392] (-) TimerEvent: {}
+[32.224640] (-) TimerEvent: {}
+[32.325048] (-) TimerEvent: {}
+[32.425240] (-) TimerEvent: {}
+[32.525501] (-) TimerEvent: {}
+[32.625746] (-) TimerEvent: {}
+[32.725990] (-) TimerEvent: {}
+[32.826236] (-) TimerEvent: {}
+[32.926476] (-) TimerEvent: {}
+[33.026737] (-) TimerEvent: {}
+[33.126997] (-) TimerEvent: {}
+[33.227250] (-) TimerEvent: {}
+[33.327501] (-) TimerEvent: {}
+[33.427762] (-) TimerEvent: {}
+[33.528022] (-) TimerEvent: {}
+[33.628247] (-) TimerEvent: {}
+[33.728494] (-) TimerEvent: {}
+[33.828753] (-) TimerEvent: {}
+[33.929014] (-) TimerEvent: {}
+[34.029247] (-) TimerEvent: {}
+[34.129498] (-) TimerEvent: {}
+[34.229760] (-) TimerEvent: {}
+[34.330021] (-) TimerEvent: {}
+[34.430246] (-) TimerEvent: {}
+[34.531191] (-) TimerEvent: {}
+[34.631402] (-) TimerEvent: {}
+[34.731664] (-) TimerEvent: {}
+[34.831926] (-) TimerEvent: {}
+[34.932197] (-) TimerEvent: {}
+[35.032405] (-) TimerEvent: {}
+[35.132666] (-) TimerEvent: {}
+[35.232932] (-) TimerEvent: {}
+[35.333159] (-) TimerEvent: {}
+[35.433358] (-) TimerEvent: {}
+[35.533616] (-) TimerEvent: {}
+[35.633880] (-) TimerEvent: {}
+[35.734154] (-) TimerEvent: {}
+[35.834365] (-) TimerEvent: {}
+[35.934631] (-) TimerEvent: {}
+[36.034895] (-) TimerEvent: {}
+[36.135167] (-) TimerEvent: {}
+[36.235405] (-) TimerEvent: {}
+[36.335663] (-) TimerEvent: {}
+[36.435922] (-) TimerEvent: {}
+[36.536187] (-) TimerEvent: {}
+[36.636390] (-) TimerEvent: {}
+[36.736647] (-) TimerEvent: {}
+[36.836908] (-) TimerEvent: {}
+[36.937183] (-) TimerEvent: {}
+[37.037397] (-) TimerEvent: {}
+[37.137658] (-) TimerEvent: {}
+[37.237923] (-) TimerEvent: {}
+[37.338218] (-) TimerEvent: {}
+[37.438486] (-) TimerEvent: {}
+[37.538747] (-) TimerEvent: {}
+[37.639007] (-) TimerEvent: {}
+[37.739241] (-) TimerEvent: {}
+[37.839486] (-) TimerEvent: {}
+[37.939735] (-) TimerEvent: {}
+[38.039988] (-) TimerEvent: {}
+[38.140249] (-) TimerEvent: {}
+[38.240494] (-) TimerEvent: {}
+[38.340746] (-) TimerEvent: {}
+[38.441002] (-) TimerEvent: {}
+[38.541242] (-) TimerEvent: {}
+[38.641488] (-) TimerEvent: {}
+[38.741748] (-) TimerEvent: {}
+[38.842014] (-) TimerEvent: {}
+[38.942282] (-) TimerEvent: {}
+[39.042533] (-) TimerEvent: {}
+[39.142828] (-) TimerEvent: {}
+[39.243095] (-) TimerEvent: {}
+[39.343375] (-) TimerEvent: {}
+[39.443631] (-) TimerEvent: {}
+[39.543891] (-) TimerEvent: {}
+[39.644178] (-) TimerEvent: {}
+[39.744388] (-) TimerEvent: {}
+[39.770378] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1\n'}
+[39.770922] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2\n'}
+[39.771368] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[39.774109] (semnav) CommandEnded: {'returncode': 2}
+[39.844557] (-) TimerEvent: {}
+[39.880074] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[39.890796] (-) EventReactorShutdown: {}

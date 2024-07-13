@@ -1,0 +1,129 @@
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:397:58:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type
+  397 |                 void control_callback(const sensor_msgs::[01;31m[KLaserScan[m[K::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+      |                                                          [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:397:77:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  397 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+      |                                                                             [01;31m[K^[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:397:77:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+  397 |                 void control_callback[34m[K([m[Kconst sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+      |                                      [34m[K~[m[K                                      [01;31m[K^[m[K
+      |                                                                             [32m[K)[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:397:77:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  397 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+      |                                                                             [01;31m[K^[m[K
+      |                                                                              [32m[K;[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:397:79:[m[K [01;31m[Kerror: [m[K‘[01m[Klidar_data[m[K’ does not name a type
+  397 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& [01;31m[Klidar_data[m[K, const nav_msgs::Odometry::ConstPtr& robot_data) {
+      |                                                                               [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:713:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+  713 |                 [01;31m[Kros[m[K::Time Goal_camera_stamp_;
+      |                 [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:733:17:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+  733 |                 [01;31m[Ktf[m[K::TransformListener listener_;
+      |                 [01;31m[K^~[m[K
+      |                 [32m[Ktm[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In constructor ‘[01m[KHumanFollowingNode::[01;32m[KHumanFollowingNode[m[K()[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:135:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kexample_interaces[m[K’ was not declared in this scope; did you mean ‘[01m[Kexample_interfaces[m[K’?
+  135 |             pub_behaviorID_ = this->create_publisher<[01;31m[Kexample_interaces[m[K::msg::UInt32>("pub_behaviorID_topic_", 1);
+      |                                                      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                                      [32m[Kexample_interfaces[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:135:37:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+  135 |             pub_behaviorID_ = this->[01;31m[Kcreate_publisher<example_interaces::msg::UInt32>[m[K("pub_behaviorID_topic_", 1);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:135:85:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KHumanFollowingNode::create_publisher<<expression error> >(const char [22], int)[m[K’
+  135 |             pub_behaviorID_ = [01;31m[Kthis->create_publisher<example_interaces::msg::UInt32>("pub_behaviorID_topic_", 1)[m[K;
+      |                               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:25[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:135:85:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  135 |             pub_behaviorID_ = [01;31m[Kthis->create_publisher<example_interaces::msg::UInt32>("pub_behaviorID_topic_", 1)[m[K;
+      |                               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:178:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  178 |                         [01;31m[Kros[m[K::Duration(5.0).sleep();
+      |                         [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  183 |                         [01;31m[Kros[m[K::MultiThreadedSpinner spinner(4);
+      |                         [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:184:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kspinner[m[K’ was not declared in this scope
+  184 |                         [01;31m[Kspinner[m[K.spin();
+      |                         [01;31m[K^~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kpublish_twist[m[K(double, double)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:191:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist_<std::allocator<void> > > >[m[K’} has no member named ‘[01m[Kpublish[m[K’
+  191 |                         pub_twist_.[01;31m[Kpublish[m[K(commandTwist);
+      |                                    [01;31m[K^~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kpublish_behavior_id[m[K(uint16_t)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:196:35:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+  196 |                         std_msgs::[01;31m[KUInt32[m[K commandId;
+      |                                   [01;31m[K^~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/u_int32.hpp:7[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52[m[K:
+[01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+  125 | using [01;36m[KUInt32[m[K =
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:197:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandId[m[K’ was not declared in this scope
+  197 |                         [01;31m[KcommandId[m[K.data = BehaviorIdCmd;
+      |                         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:198:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >[m[K’} has no member named ‘[01m[Kpublish[m[K’
+  198 |                         pub_behaviorID_.[01;31m[Kpublish[m[K(commandId);
+      |                                         [01;31m[K^~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kpublish_behavior_mode[m[K(uint16_t)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:203:35:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+  203 |                         std_msgs::[01;31m[KUInt32[m[K commandMode;
+      |                                   [01;31m[K^~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+  125 | using [01;36m[KUInt32[m[K =
+      |       [01;36m[K^~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:204:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandMode[m[K’ was not declared in this scope
+  204 |                         [01;31m[KcommandMode[m[K.data = BehaviorModeCmd;
+      |                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:205:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >[m[K’} has no member named ‘[01m[Kpublish[m[K’
+  205 |                         pub_behaviorMode_.[01;31m[Kpublish[m[K(commandMode);
+      |                                           [01;31m[K^~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Khuman_update[m[K(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:302:41:[m[K [01;31m[Kerror: [m[K‘[01m[KGoal_camera_stamp_[m[K’ was not declared in this scope; did you mean ‘[01m[KGoal_camera_x[m[K’?
+  302 |                                         [01;31m[KGoal_camera_stamp_[m[K = human_data->header.stamp;
+      |                                         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                         [32m[KGoal_camera_x[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kdiffeo_tree_update[m[K(const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:321:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  321 |                         if ([01;31m[Kros[m[K::Time::now().toSec() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
+      |                             [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:325:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  325 |                                 double start_time = [01;31m[Kros[m[K::Time::now().toSec();
+      |                                                     [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:389:85:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  389 |                                 ROS_WARN_STREAM("[Navigation] Updated trees in " << [01;31m[Kros[m[K::Time::now().toSec()-start_time << " seconds.");
+      |                                                                                     [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:389:33:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_WARN_STREAM[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_WARN_STREAM[m[K’?
+  389 |                                 [01;31m[KROS_WARN_STREAM[m[K("[Navigation] Updated trees in " << ros::Time::now().toSec()-start_time << " seconds.");
+      |                                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                 [32m[KRCLCPP_WARN_STREAM[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:392:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  392 |                                 DiffeoTreeUpdateTime_ = [01;31m[Kros[m[K::Time::now().toSec();
+      |                                                         [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Khuman_update[m[K(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:301:83:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KfromMsg(const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type&)[m[K’
+  301 |                                             camera_optical_frame_id_, [01;31m[Ktf2::fromMsg(human_data->header.stamp)[m[K,
+      |                                                                       [01;31m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:39[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25[m[K:
+[01m[K/opt/ros/jazzy/include/tf2/tf2/convert.h:138:6:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class A, class B> void tf2::[01;32m[KfromMsg[m[K(const A&, B&)[m[K’
+  138 | void [01;36m[KfromMsg[m[K(const A & a, B & b);
+      |      [01;36m[K^~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/tf2/tf2/convert.h:138:6:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:301:83:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+  301 |                                             camera_optical_frame_id_, [01;36m[Ktf2::fromMsg(human_data->header.stamp)[m[K,
+      |                                                                       [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

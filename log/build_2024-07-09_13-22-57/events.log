@@ -1,0 +1,732 @@
+[0.000000] (-) TimerEvent: {}
+[0.000518] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.002139] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.017375] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.025904] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.030365] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src/semnav_migration/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1992', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1958,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1958', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9cf301d5_d6eb_4725_bda1_1cffc2fc2c7b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WILDQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099952] (-) TimerEvent: {}
+[0.200160] (-) TimerEvent: {}
+[0.205988] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.302303] (-) TimerEvent: {}
+[0.368491] (semnav) StdoutLine: {'line': b'[ 19%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o\n'}
+[0.390620] (semnav) StdoutLine: {'line': b'[ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o\n'}
+[0.402405] (-) TimerEvent: {}
+[0.502751] (-) TimerEvent: {}
+[0.602955] (-) TimerEvent: {}
+[0.703209] (-) TimerEvent: {}
+[0.803399] (-) TimerEvent: {}
+[0.904392] (-) TimerEvent: {}
+[1.004822] (-) TimerEvent: {}
+[1.106398] (-) TimerEvent: {}
+[1.206627] (-) TimerEvent: {}
+[1.307385] (-) TimerEvent: {}
+[1.408334] (-) TimerEvent: {}
+[1.508555] (-) TimerEvent: {}
+[1.609431] (-) TimerEvent: {}
+[1.711450] (-) TimerEvent: {}
+[1.811651] (-) TimerEvent: {}
+[1.911856] (-) TimerEvent: {}
+[2.012061] (-) TimerEvent: {}
+[2.113420] (-) TimerEvent: {}
+[2.214395] (-) TimerEvent: {}
+[2.315019] (-) TimerEvent: {}
+[2.415537] (-) TimerEvent: {}
+[2.515837] (-) TimerEvent: {}
+[2.617353] (-) TimerEvent: {}
+[2.721417] (-) TimerEvent: {}
+[2.821755] (-) TimerEvent: {}
+[2.922094] (-) TimerEvent: {}
+[3.023661] (-) TimerEvent: {}
+[3.124388] (-) TimerEvent: {}
+[3.225960] (-) TimerEvent: {}
+[3.329412] (-) TimerEvent: {}
+[3.429645] (-) TimerEvent: {}
+[3.529852] (-) TimerEvent: {}
+[3.631033] (-) TimerEvent: {}
+[3.732777] (-) TimerEvent: {}
+[3.833067] (-) TimerEvent: {}
+[3.933279] (-) TimerEvent: {}
+[4.034404] (-) TimerEvent: {}
+[4.135593] (-) TimerEvent: {}
+[4.236477] (-) TimerEvent: {}
+[4.338032] (-) TimerEvent: {}
+[4.438372] (-) TimerEvent: {}
+[4.538570] (-) TimerEvent: {}
+[4.639492] (-) TimerEvent: {}
+[4.741392] (-) TimerEvent: {}
+[4.841587] (-) TimerEvent: {}
+[4.941783] (-) TimerEvent: {}
+[5.043432] (-) TimerEvent: {}
+[5.143628] (-) TimerEvent: {}
+[5.245281] (-) TimerEvent: {}
+[5.345502] (-) TimerEvent: {}
+[5.446397] (-) TimerEvent: {}
+[5.546606] (-) TimerEvent: {}
+[5.648389] (-) TimerEvent: {}
+[5.748586] (-) TimerEvent: {}
+[5.849400] (-) TimerEvent: {}
+[5.951231] (-) TimerEvent: {}
+[6.051478] (-) TimerEvent: {}
+[6.151681] (-) TimerEvent: {}
+[6.253409] (-) TimerEvent: {}
+[6.359310] (-) TimerEvent: {}
+[6.461874] (-) TimerEvent: {}
+[6.567398] (-) TimerEvent: {}
+[6.667608] (-) TimerEvent: {}
+[6.769387] (-) TimerEvent: {}
+[6.871859] (-) TimerEvent: {}
+[6.972082] (-) TimerEvent: {}
+[7.072302] (-) TimerEvent: {}
+[7.173938] (-) TimerEvent: {}
+[7.274143] (-) TimerEvent: {}
+[7.374376] (-) TimerEvent: {}
+[7.476590] (-) TimerEvent: {}
+[7.577331] (-) TimerEvent: {}
+[7.680167] (-) TimerEvent: {}
+[7.783058] (-) TimerEvent: {}
+[7.883690] (-) TimerEvent: {}
+[7.985925] (-) TimerEvent: {}
+[8.086456] (-) TimerEvent: {}
+[8.187057] (-) TimerEvent: {}
+[8.287293] (-) TimerEvent: {}
+[8.388529] (-) TimerEvent: {}
+[8.488722] (-) TimerEvent: {}
+[8.588918] (-) TimerEvent: {}
+[8.689118] (-) TimerEvent: {}
+[8.789336] (-) TimerEvent: {}
+[8.891957] (-) TimerEvent: {}
+[8.993263] (-) TimerEvent: {}
+[9.096829] (-) TimerEvent: {}
+[9.197039] (-) TimerEvent: {}
+[9.297268] (-) TimerEvent: {}
+[9.397514] (-) TimerEvent: {}
+[9.497746] (-) TimerEvent: {}
+[9.597950] (-) TimerEvent: {}
+[9.698158] (-) TimerEvent: {}
+[9.798362] (-) TimerEvent: {}
+[9.898566] (-) TimerEvent: {}
+[9.998769] (-) TimerEvent: {}
+[10.098981] (-) TimerEvent: {}
+[10.199194] (-) TimerEvent: {}
+[10.300375] (-) TimerEvent: {}
+[10.400655] (-) TimerEvent: {}
+[10.500973] (-) TimerEvent: {}
+[10.601182] (-) TimerEvent: {}
+[10.703381] (-) TimerEvent: {}
+[10.803576] (-) TimerEvent: {}
+[10.903777] (-) TimerEvent: {}
+[11.004062] (-) TimerEvent: {}
+[11.104289] (-) TimerEvent: {}
+[11.204512] (-) TimerEvent: {}
+[11.304707] (-) TimerEvent: {}
+[11.404971] (-) TimerEvent: {}
+[11.507407] (-) TimerEvent: {}
+[11.607604] (-) TimerEvent: {}
+[11.707808] (-) TimerEvent: {}
+[11.808009] (-) TimerEvent: {}
+[11.908214] (-) TimerEvent: {}
+[12.008396] (-) TimerEvent: {}
+[12.108605] (-) TimerEvent: {}
+[12.208883] (-) TimerEvent: {}
+[12.309095] (-) TimerEvent: {}
+[12.409311] (-) TimerEvent: {}
+[12.509542] (-) TimerEvent: {}
+[12.611426] (-) TimerEvent: {}
+[12.711646] (-) TimerEvent: {}
+[12.811865] (-) TimerEvent: {}
+[12.912118] (-) TimerEvent: {}
+[13.015392] (-) TimerEvent: {}
+[13.117398] (-) TimerEvent: {}
+[13.219403] (-) TimerEvent: {}
+[13.322396] (-) TimerEvent: {}
+[13.422613] (-) TimerEvent: {}
+[13.522830] (-) TimerEvent: {}
+[13.623045] (-) TimerEvent: {}
+[13.723257] (-) TimerEvent: {}
+[13.823484] (-) TimerEvent: {}
+[13.923704] (-) TimerEvent: {}
+[14.023920] (-) TimerEvent: {}
+[14.124149] (-) TimerEvent: {}
+[14.224378] (-) TimerEvent: {}
+[14.324591] (-) TimerEvent: {}
+[14.424927] (-) TimerEvent: {}
+[14.526401] (-) TimerEvent: {}
+[14.626629] (-) TimerEvent: {}
+[14.726857] (-) TimerEvent: {}
+[14.827071] (-) TimerEvent: {}
+[14.927294] (-) TimerEvent: {}
+[15.027557] (-) TimerEvent: {}
+[15.127777] (-) TimerEvent: {}
+[15.229401] (-) TimerEvent: {}
+[15.329615] (-) TimerEvent: {}
+[15.429835] (-) TimerEvent: {}
+[15.530042] (-) TimerEvent: {}
+[15.630258] (-) TimerEvent: {}
+[15.730482] (-) TimerEvent: {}
+[15.830712] (-) TimerEvent: {}
+[15.930945] (-) TimerEvent: {}
+[16.031163] (-) TimerEvent: {}
+[16.132423] (-) TimerEvent: {}
+[16.232636] (-) TimerEvent: {}
+[16.332853] (-) TimerEvent: {}
+[16.434366] (-) TimerEvent: {}
+[16.534589] (-) TimerEvent: {}
+[16.634807] (-) TimerEvent: {}
+[16.737404] (-) TimerEvent: {}
+[16.837621] (-) TimerEvent: {}
+[16.937837] (-) TimerEvent: {}
+[17.038059] (-) TimerEvent: {}
+[17.138283] (-) TimerEvent: {}
+[17.238511] (-) TimerEvent: {}
+[17.340413] (-) TimerEvent: {}
+[17.440786] (-) TimerEvent: {}
+[17.541020] (-) TimerEvent: {}
+[17.641244] (-) TimerEvent: {}
+[17.741475] (-) TimerEvent: {}
+[17.841696] (-) TimerEvent: {}
+[17.942262] (-) TimerEvent: {}
+[18.042492] (-) TimerEvent: {}
+[18.142706] (-) TimerEvent: {}
+[18.242925] (-) TimerEvent: {}
+[18.344402] (-) TimerEvent: {}
+[18.444614] (-) TimerEvent: {}
+[18.544827] (-) TimerEvent: {}
+[18.646434] (-) TimerEvent: {}
+[18.746646] (-) TimerEvent: {}
+[18.846862] (-) TimerEvent: {}
+[18.947083] (-) TimerEvent: {}
+[19.047330] (-) TimerEvent: {}
+[19.147539] (-) TimerEvent: {}
+[19.247757] (-) TimerEvent: {}
+[19.347985] (-) TimerEvent: {}
+[19.448207] (-) TimerEvent: {}
+[19.548532] (-) TimerEvent: {}
+[19.650398] (-) TimerEvent: {}
+[19.750636] (-) TimerEvent: {}
+[19.850850] (-) TimerEvent: {}
+[19.951060] (-) TimerEvent: {}
+[20.051292] (-) TimerEvent: {}
+[20.151534] (-) TimerEvent: {}
+[20.251836] (-) TimerEvent: {}
+[20.352044] (-) TimerEvent: {}
+[20.452279] (-) TimerEvent: {}
+[20.553394] (-) TimerEvent: {}
+[20.653600] (-) TimerEvent: {}
+[20.753829] (-) TimerEvent: {}
+[20.854068] (-) TimerEvent: {}
+[20.954310] (-) TimerEvent: {}
+[21.056395] (-) TimerEvent: {}
+[21.156606] (-) TimerEvent: {}
+[21.256823] (-) TimerEvent: {}
+[21.357073] (-) TimerEvent: {}
+[21.458407] (-) TimerEvent: {}
+[21.558664] (-) TimerEvent: {}
+[21.659296] (-) TimerEvent: {}
+[21.759526] (-) TimerEvent: {}
+[21.859744] (-) TimerEvent: {}
+[21.962404] (-) TimerEvent: {}
+[22.062614] (-) TimerEvent: {}
+[22.162826] (-) TimerEvent: {}
+[22.263036] (-) TimerEvent: {}
+[22.363252] (-) TimerEvent: {}
+[22.466404] (-) TimerEvent: {}
+[22.566613] (-) TimerEvent: {}
+[22.669412] (-) TimerEvent: {}
+[22.769627] (-) TimerEvent: {}
+[22.869840] (-) TimerEvent: {}
+[22.970055] (-) TimerEvent: {}
+[23.070297] (-) TimerEvent: {}
+[23.170529] (-) TimerEvent: {}
+[23.272404] (-) TimerEvent: {}
+[23.372623] (-) TimerEvent: {}
+[23.472844] (-) TimerEvent: {}
+[23.573076] (-) TimerEvent: {}
+[23.673306] (-) TimerEvent: {}
+[23.773537] (-) TimerEvent: {}
+[23.873751] (-) TimerEvent: {}
+[23.973965] (-) TimerEvent: {}
+[24.074184] (-) TimerEvent: {}
+[24.174407] (-) TimerEvent: {}
+[24.276402] (-) TimerEvent: {}
+[24.376617] (-) TimerEvent: {}
+[24.476828] (-) TimerEvent: {}
+[24.577188] (-) TimerEvent: {}
+[24.677405] (-) TimerEvent: {}
+[24.777619] (-) TimerEvent: {}
+[24.877839] (-) TimerEvent: {}
+[24.978255] (-) TimerEvent: {}
+[25.078474] (-) TimerEvent: {}
+[25.178690] (-) TimerEvent: {}
+[25.281394] (-) TimerEvent: {}
+[25.381603] (-) TimerEvent: {}
+[25.481810] (-) TimerEvent: {}
+[25.582023] (-) TimerEvent: {}
+[25.682252] (-) TimerEvent: {}
+[25.782493] (-) TimerEvent: {}
+[25.882710] (-) TimerEvent: {}
+[25.982920] (-) TimerEvent: {}
+[26.084780] (-) TimerEvent: {}
+[26.185011] (-) TimerEvent: {}
+[26.285222] (-) TimerEvent: {}
+[26.385406] (-) TimerEvent: {}
+[26.485618] (-) TimerEvent: {}
+[26.585836] (-) TimerEvent: {}
+[26.686620] (-) TimerEvent: {}
+[26.786860] (-) TimerEvent: {}
+[26.887075] (-) TimerEvent: {}
+[26.988412] (-) TimerEvent: {}
+[27.088629] (-) TimerEvent: {}
+[27.188846] (-) TimerEvent: {}
+[27.289054] (-) TimerEvent: {}
+[27.389269] (-) TimerEvent: {}
+[27.489495] (-) TimerEvent: {}
+[27.589706] (-) TimerEvent: {}
+[27.691397] (-) TimerEvent: {}
+[27.791630] (-) TimerEvent: {}
+[27.891858] (-) TimerEvent: {}
+[27.992981] (-) TimerEvent: {}
+[28.093196] (-) TimerEvent: {}
+[28.193408] (-) TimerEvent: {}
+[28.293621] (-) TimerEvent: {}
+[28.394400] (-) TimerEvent: {}
+[28.494634] (-) TimerEvent: {}
+[28.594946] (-) TimerEvent: {}
+[28.695164] (-) TimerEvent: {}
+[28.795395] (-) TimerEvent: {}
+[28.866180] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:13: error: extra qualification \xe2\x80\x98NavigationNode::\xe2\x80\x99 on member \xe2\x80\x98NavigationNode\xe2\x80\x99 [-fpermissive]\n'}
+[28.866524] (semnav) StderrLine: {'line': b'   46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {\n'}
+[28.866700] (semnav) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~\n'}
+[28.896392] (-) TimerEvent: {}
+[28.914639] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In constructor \xe2\x80\x98NavigationNode::NavigationNode()\xe2\x80\x99:\n'}
+[28.914924] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:91: error: no matching function for call to \xe2\x80\x98rclcpp::Node::Node()\xe2\x80\x99\n'}
+[28.915083] (semnav) StderrLine: {'line': b'   46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {\n'}
+[28.915240] (semnav) StderrLine: {'line': b'      |                                                                                           ^\n'}
+[28.915404] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[28.915542] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[28.915671] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[28.915797] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,\n'}
+[28.915926] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25:\n'}
+[28.916076] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const rclcpp::Node&, const std::string&)\xe2\x80\x99\n'}
+[28.916207] (semnav) StderrLine: {'line': b' 1629 |   Node(\n'}
+[28.918451] (semnav) StderrLine: {'line': b'      |   ^~~~\n'}
+[28.918739] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided\n'}
+[28.918894] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[28.919031] (semnav) StderrLine: {'line': b'  103 |   explicit Node(\n'}
+[28.919165] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[28.919303] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided\n'}
+[28.919471] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[28.919614] (semnav) StderrLine: {'line': b'   91 |   explicit Node(\n'}
+[28.919751] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[28.919889] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided\n'}
+[28.998402] (-) TimerEvent: {}
+[29.021227] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:116: error: no matching function for call to \xe2\x80\x98message_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)\xe2\x80\x99\n'}
+[29.021532] (semnav) StderrLine: {'line': b'  143 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);\n'}
+[29.021694] (semnav) StderrLine: {'line': b'      |                                                                                                                    ^\n'}
+[29.023387] (semnav) StderrLine: {'line': b'In file included from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:44:\n'}
+[29.023680] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber() [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node]\xe2\x80\x99\n'}
+[29.023853] (semnav) StderrLine: {'line': b'  224 |   Subscriber() = default;\n'}
+[29.023997] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.026388] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note:   candidate expects 0 arguments, 3 provided\n'}
+[29.026796] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\xe2\x80\x99\n'}
+[29.026993] (semnav) StderrLine: {'line': b'  212 |   Subscriber(\n'}
+[29.027138] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.027273] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note:   candidate expects 4 arguments, 3 provided\n'}
+[29.027441] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\xe2\x80\x99\n'}
+[29.027630] (semnav) StderrLine: {'line': b'  203 |   Subscriber(\n'}
+[29.027760] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.027894] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note:   candidate expects 4 arguments, 3 provided\n'}
+[29.028135] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\xe2\x80\x99\n'}
+[29.028280] (semnav) StderrLine: {'line': b'  188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.030610] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.030790] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::Node\xe2\x80\x99 to \xe2\x80\x98rclcpp::Node*\xe2\x80\x99\n'}
+[29.030935] (semnav) StderrLine: {'line': b'  188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.031073] (semnav) StderrLine: {'line': b'      |              ~~~~~~~~~~~^~~~\n'}
+[29.031206] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t) [with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\xe2\x80\x99\n'}
+[29.031378] (semnav) StderrLine: {'line': b'  183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.031526] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.031660] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::Node\xe2\x80\x99 to \xe2\x80\x98message_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr\xe2\x80\x99 {aka \xe2\x80\x98std::shared_ptr<rclcpp::Node>\xe2\x80\x99}\n'}
+[29.031805] (semnav) StderrLine: {'line': b'  183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.031936] (semnav) StderrLine: {'line': b'      |              ~~~~~~~~^~~~\n'}
+[29.094691] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:144:112: error: no matching function for call to \xe2\x80\x98message_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)\xe2\x80\x99\n'}
+[29.094980] (semnav) StderrLine: {'line': b'  144 |                         message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(nh_, sub_robot_topic_, 1);\n'}
+[29.095137] (semnav) StderrLine: {'line': b'      |                                                                                                                ^\n'}
+[29.095894] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber() [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node]\xe2\x80\x99\n'}
+[29.096151] (semnav) StderrLine: {'line': b'  224 |   Subscriber() = default;\n'}
+[29.096300] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.096463] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3: note:   candidate expects 0 arguments, 3 provided\n'}
+[29.096608] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\xe2\x80\x99\n'}
+[29.096759] (semnav) StderrLine: {'line': b'  212 |   Subscriber(\n'}
+[29.096896] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.097027] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3: note:   candidate expects 4 arguments, 3 provided\n'}
+[29.099381] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\xe2\x80\x99\n'}
+[29.099688] (-) TimerEvent: {}
+[29.099725] (semnav) StderrLine: {'line': b'  203 |   Subscriber(\n'}
+[29.099878] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.100018] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3: note:   candidate expects 4 arguments, 3 provided\n'}
+[29.100153] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodeType*, const std::string&, rmw_qos_profile_t) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\xe2\x80\x99\n'}
+[29.100291] (semnav) StderrLine: {'line': b'  188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.100455] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.100594] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::Node\xe2\x80\x99 to \xe2\x80\x98rclcpp::Node*\xe2\x80\x99\n'}
+[29.100727] (semnav) StderrLine: {'line': b'  188 |   Subscriber(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.100858] (semnav) StderrLine: {'line': b'      |              ~~~~~~~~~~~^~~~\n'}
+[29.100989] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3: note: candidate: \xe2\x80\x98message_filters::Subscriber<M, NodeType>::Subscriber(NodePtr, const std::string&, rmw_qos_profile_t) [with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\xe2\x80\x99\n'}
+[29.101132] (semnav) StderrLine: {'line': b'  183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.101268] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~\n'}
+[29.103656] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::Node\xe2\x80\x99 to \xe2\x80\x98message_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr\xe2\x80\x99 {aka \xe2\x80\x98std::shared_ptr<rclcpp::Node>\xe2\x80\x99}\n'}
+[29.103837] (semnav) StderrLine: {'line': b'  183 |   Subscriber(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[29.103977] (semnav) StderrLine: {'line': b'      |              ~~~~~~~~^~~~\n'}
+[29.200396] (-) TimerEvent: {}
+[29.264058] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:55: error: \xe2\x80\x98bind\xe2\x80\x99 is not a member of \xe2\x80\x98boost\xe2\x80\x99; did you mean \xe2\x80\x98find\xe2\x80\x99?\n'}
+[29.264373] (semnav) StderrLine: {'line': b'  150 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));\n'}
+[29.264561] (semnav) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[29.264721] (semnav) StderrLine: {'line': b'      |                                                       find\n'}
+[29.270940] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:101: error: \xe2\x80\x98_1\xe2\x80\x99 was not declared in this scope\n'}
+[29.271262] (semnav) StderrLine: {'line': b'  150 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));\n'}
+[29.271489] (semnav) StderrLine: {'line': b'      |                                                                                                     ^~\n'}
+[29.271667] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:101: note: suggested alternatives:\n'}
+[29.273620] (semnav) StderrLine: {'line': b'In file included from /usr/include/boost/mpl/aux_/include_preprocessed.hpp:37,\n'}
+[29.273934] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/mpl/placeholders.hpp:43,\n'}
+[29.274105] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/iterator/iterator_categories.hpp:16,\n'}
+[29.274263] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/iterator/iterator_facade.hpp:13,\n'}
+[29.276595] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/range/iterator_range_core.hpp:27,\n'}
+[29.276774] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/lexical_cast.hpp:48,\n'}
+[29.276939] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/detail/number_base.hpp:29,\n'}
+[29.277093] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9,\n'}
+[29.277243] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/detail/precision.hpp:9,\n'}
+[29.277425] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/number.hpp:11,\n'}
+[29.277585] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/cpp_int.hpp:19,\n'}
+[29.277736] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/multiprecision/cpp_bin_float.hpp:15,\n'}
+[29.279817] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/core/coordinate_promotion.hpp:16,\n'}
+[29.280062] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/core/radian_access.hpp:30,\n'}
+[29.280218] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/geometry.hpp:50,\n'}
+[29.280408] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry.hpp:17,\n'}
+[29.280556] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26:\n'}
+[29.280710] (semnav) StderrLine: {'line': b'/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   \xe2\x80\x98mpl_::_1\xe2\x80\x99\n'}
+[29.282670] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> _1;\n'}
+[29.282911] (semnav) StderrLine: {'line': b'      |                ^~\n'}
+[29.283075] (semnav) StderrLine: {'line': b'In file included from /usr/include/boost/numeric/conversion/converter_policies.hpp:13,\n'}
+[29.283230] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/numeric/conversion/converter.hpp:14,\n'}
+[29.283425] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/numeric/conversion/cast.hpp:33,\n'}
+[29.283581] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/geometry/core/radian_access.hpp:26:\n'}
+[29.283727] (semnav) StderrLine: {'line': b'/usr/include/c++/13/functional:294:48: note:   \xe2\x80\x98std::placeholders::_1\xe2\x80\x99\n'}
+[29.283876] (semnav) StderrLine: {'line': b'  294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> _1;\n'}
+[29.284029] (semnav) StderrLine: {'line': b'      |                                                ^~\n'}
+[29.284177] (semnav) StderrLine: {'line': b'/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   \xe2\x80\x98mpl_::_1\xe2\x80\x99\n'}
+[29.284343] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> _1;\n'}
+[29.284508] (semnav) StderrLine: {'line': b'      |                ^~\n'}
+[29.284654] (semnav) StderrLine: {'line': b'In file included from /usr/include/boost/describe/members.hpp:20,\n'}
+[29.284801] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/container_hash/is_described_class.hpp:11,\n'}
+[29.284949] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/container_hash/hash.hpp:18,\n'}
+[29.285097] (semnav) StderrLine: {'line': b'                 from /usr/include/boost/functional/hash.hpp:6,\n'}
+[29.285243] (semnav) StderrLine: {'line': b'                 from /usr/include/CGAL/Kernel/hash_functions.h:16,\n'}
+[29.288941] (semnav) StderrLine: {'line': b'                 from /usr/include/CGAL/Kernel/global_functions.h:25,\n'}
+[29.289165] (semnav) StderrLine: {'line': b'                 from /usr/include/CGAL/Cartesian/Cartesian_base.h:22,\n'}
+[29.289354] (semnav) StderrLine: {'line': b'                 from /usr/include/CGAL/Simple_cartesian.h:20,\n'}
+[29.289534] (semnav) StderrLine: {'line': b'                 from /usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20,\n'}
+[29.289688] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32,\n'}
+[29.289832] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52:\n'}
+[29.289980] (semnav) StderrLine: {'line': b'/usr/include/boost/mp11/bind.hpp:45:7: note:   \xe2\x80\x98boost::mp11::_1\xe2\x80\x99\n'}
+[29.290125] (semnav) StderrLine: {'line': b'   45 | using _1 = mp_arg<0>;\n'}
+[29.290269] (semnav) StderrLine: {'line': b'      |       ^~\n'}
+[29.292595] (semnav) StderrLine: {'line': b'/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   \xe2\x80\x98mpl_::_1\xe2\x80\x99\n'}
+[29.292955] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> _1;\n'}
+[29.293874] (semnav) StderrLine: {'line': b'      |                ^~\n'}
+[29.294062] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:105: error: \xe2\x80\x98_2\xe2\x80\x99 was not declared in this scope\n'}
+[29.294220] (semnav) StderrLine: {'line': b'  150 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));\n'}
+[29.294416] (semnav) StderrLine: {'line': b'      |                                                                                                         ^~\n'}
+[29.296520] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:150:105: note: suggested alternatives:\n'}
+[29.296730] (semnav) StderrLine: {'line': b'/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   \xe2\x80\x98mpl_::_2\xe2\x80\x99\n'}
+[29.296904] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> _2;\n'}
+[29.297042] (semnav) StderrLine: {'line': b'      |                ^~\n'}
+[29.297174] (semnav) StderrLine: {'line': b'/usr/include/c++/13/functional:295:48: note:   \xe2\x80\x98std::placeholders::_2\xe2\x80\x99\n'}
+[29.297309] (semnav) StderrLine: {'line': b'  295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> _2;\n'}
+[29.297473] (semnav) StderrLine: {'line': b'      |                                                ^~\n'}
+[29.297604] (semnav) StderrLine: {'line': b'/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   \xe2\x80\x98mpl_::_2\xe2\x80\x99\n'}
+[29.297735] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> _2;\n'}
+[29.297866] (semnav) StderrLine: {'line': b'      |                ^~\n'}
+[29.297994] (semnav) StderrLine: {'line': b'/usr/include/boost/mp11/bind.hpp:46:7: note:   \xe2\x80\x98boost::mp11::_2\xe2\x80\x99\n'}
+[29.298129] (semnav) StderrLine: {'line': b'   46 | using _2 = mp_arg<1>;\n'}
+[29.298263] (semnav) StderrLine: {'line': b'      |       ^~\n'}
+[29.300001] (semnav) StderrLine: {'line': b'/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   \xe2\x80\x98mpl_::_2\xe2\x80\x99\n'}
+[29.304650] (-) TimerEvent: {}
+[29.304698] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> _2;\n'}
+[29.304965] (semnav) StderrLine: {'line': b'      |                ^~\n'}
+[29.305111] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:74: error: no matching function for call to \xe2\x80\x98NavigationNode::create_subscription(const char [20], int)\xe2\x80\x99\n'}
+[29.305252] (semnav) StderrLine: {'line': b'  153 |             rclcpp::Subscription sub_semantic = this->create_subscription("sub_semantic_topic_", 1);\n'}
+[29.305450] (semnav) StderrLine: {'line': b'      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[29.305628] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3: note: candidate: \xe2\x80\x98template<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\xe2\x80\x99\n'}
+[29.305797] (semnav) StderrLine: {'line': b'  221 |   create_subscription(\n'}
+[29.305943] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~\n'}
+[29.306079] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3: note:   template argument deduction/substitution failed:\n'}
+[29.306217] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:74: note:   candidate expects 5 arguments, 2 provided\n'}
+[29.306392] (semnav) StderrLine: {'line': b'  153 |             rclcpp::Subscription sub_semantic = this->create_subscription("sub_semantic_topic_", 1);\n'}
+[29.306671] (semnav) StderrLine: {'line': b'      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[29.405198] (-) TimerEvent: {}
+[29.416685] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function \xe2\x80\x98void NavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[29.416994] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:405:42: error: could not convert \xe2\x80\x98lidar_data\xe2\x80\x99 from \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99 to \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99\n'}
+[29.417145] (semnav) StderrLine: {'line': b'  405 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[29.417393] (semnav) StderrLine: {'line': b'      |                                          ^~~~~~~~~~\n'}
+[29.417685] (semnav) StderrLine: {'line': b'      |                                          |\n'}
+[29.420905] (semnav) StderrLine: {'line': b'      |                                          shared_ptr<LaserScan_<[...]>>\n'}
+[29.505332] (-) TimerEvent: {}
+[29.530546] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:13: error: extra qualification \xe2\x80\x98SemanticNavigationNode::\xe2\x80\x99 on member \xe2\x80\x98SemanticNavigationNode\xe2\x80\x99 [-fpermissive]\n'}
+[29.530832] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[29.530991] (semnav) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~~~~~~~~~\n'}
+[29.555384] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:45: error: \xe2\x80\x98String\xe2\x80\x99 is not a member of \xe2\x80\x98std_msgs::msg\xe2\x80\x99\n'}
+[29.555677] (semnav) StderrLine: {'line': b'  684 |         rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_semantic;\n'}
+[29.555972] (semnav) StderrLine: {'line': b'      |                                             ^~~~~~\n'}
+[29.558390] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:51: error: template argument 1 is invalid\n'}
+[29.558676] (semnav) StderrLine: {'line': b'  684 |         rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_semantic;\n'}
+[29.558820] (semnav) StderrLine: {'line': b'      |                                                   ^\n'}
+[29.558950] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:51: error: template argument 3 is invalid\n'}
+[29.559277] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:51: error: template argument 4 is invalid\n'}
+[29.559457] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:51: error: template argument 5 is invalid\n'}
+[29.559590] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:54: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[29.559715] (semnav) StderrLine: {'line': b'  684 |         rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_semantic;\n'}
+[29.559839] (semnav) StderrLine: {'line': b'      |                                                      ^~~~~~~~~\n'}
+[29.559962] (semnav) StderrLine: {'line': b'      |                                                               ;\n'}
+[29.583309] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:684:64: error: \xe2\x80\x98sub_semantic\xe2\x80\x99 does not name a type\n'}
+[29.607741] (-) TimerEvent: {}
+[29.607792] (semnav) StderrLine: {'line': b'  684 |         rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_semantic;\n'}
+[29.607989] (semnav) StderrLine: {'line': b'      |                                                                ^~~~~~~~~~~~\n'}
+[29.614682] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In constructor \xe2\x80\x98SemanticNavigationNode::SemanticNavigationNode()\xe2\x80\x99:\n'}
+[29.614963] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95: error: no matching function for call to \xe2\x80\x98rclcpp::Node::Node()\xe2\x80\x99\n'}
+[29.615119] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[29.615263] (semnav) StderrLine: {'line': b'      |                                                                                               ^\n'}
+[29.615454] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[29.615597] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[29.615732] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[29.615862] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,\n'}
+[29.616008] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:\n'}
+[29.616136] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const rclcpp::Node&, const std::string&)\xe2\x80\x99\n'}
+[29.616271] (semnav) StderrLine: {'line': b' 1629 |   Node(\n'}
+[29.619046] (semnav) StderrLine: {'line': b'      |   ^~~~\n'}
+[29.619277] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided\n'}
+[29.619460] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[29.619612] (semnav) StderrLine: {'line': b'  103 |   explicit Node(\n'}
+[29.619748] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[29.619882] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided\n'}
+[29.620019] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[29.620152] (semnav) StderrLine: {'line': b'   91 |   explicit Node(\n'}
+[29.620278] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[29.623609] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided\n'}
+[29.707868] (-) TimerEvent: {}
+[29.808082] (-) TimerEvent: {}
+[29.908325] (-) TimerEvent: {}
+[30.008553] (-) TimerEvent: {}
+[30.018700] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:25: error: \xe2\x80\x98sub_semantic\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98pub_semantic_map_\xe2\x80\x99?\n'}
+[30.018986] (semnav) StderrLine: {'line': b'  173 |                         sub_semantic = this->create_subscription<std_msgs::msg::String>("sub_semantic_topic_", 1);\n'}
+[30.019140] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~\n'}
+[30.019273] (semnav) StderrLine: {'line': b'      |                         pub_semantic_map_\n'}
+[30.022749] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:81: error: \xe2\x80\x98String\xe2\x80\x99 is not a member of \xe2\x80\x98std_msgs::msg\xe2\x80\x99\n'}
+[30.023033] (semnav) StderrLine: {'line': b'  173 |                         sub_semantic = this->create_subscription<std_msgs::msg::String>("sub_semantic_topic_", 1);\n'}
+[30.023218] (semnav) StderrLine: {'line': b'      |                                                                                 ^~~~~~\n'}
+[30.023395] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:88: error: no matching function for call to \xe2\x80\x98SemanticNavigationNode::create_subscription<<expression error> >(const char [20], int)\xe2\x80\x99\n'}
+[30.023561] (semnav) StderrLine: {'line': b'  173 |                         sub_semantic = this->create_subscription<std_msgs::msg::String>("sub_semantic_topic_", 1);\n'}
+[30.023702] (semnav) StderrLine: {'line': b'      |                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[30.023854] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3: note: candidate: \xe2\x80\x98template<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\xe2\x80\x99\n'}
+[30.023997] (semnav) StderrLine: {'line': b'  221 |   create_subscription(\n'}
+[30.024121] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~\n'}
+[30.024242] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3: note:   candidate expects 3 arguments, 2 provided\n'}
+[30.108676] (-) TimerEvent: {}
+[30.129216] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function \xe2\x80\x98void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[30.129542] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:471:42: error: could not convert \xe2\x80\x98lidar_data\xe2\x80\x99 from \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99 to \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99\n'}
+[30.129718] (semnav) StderrLine: {'line': b'  471 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[30.129862] (semnav) StderrLine: {'line': b'      |                                          ^~~~~~~~~~\n'}
+[30.130005] (semnav) StderrLine: {'line': b'      |                                          |\n'}
+[30.130158] (semnav) StderrLine: {'line': b'      |                                          shared_ptr<LaserScan_<[...]>>\n'}
+[30.208806] (-) TimerEvent: {}
+[30.309027] (-) TimerEvent: {}
+[30.409255] (-) TimerEvent: {}
+[30.510402] (-) TimerEvent: {}
+[30.610622] (-) TimerEvent: {}
+[30.710845] (-) TimerEvent: {}
+[30.811064] (-) TimerEvent: {}
+[30.911300] (-) TimerEvent: {}
+[31.012463] (-) TimerEvent: {}
+[31.112686] (-) TimerEvent: {}
+[31.212913] (-) TimerEvent: {}
+[31.313620] (-) TimerEvent: {}
+[31.413843] (-) TimerEvent: {}
+[31.516863] (-) TimerEvent: {}
+[31.617077] (-) TimerEvent: {}
+[31.717383] (-) TimerEvent: {}
+[31.817812] (-) TimerEvent: {}
+[31.918029] (-) TimerEvent: {}
+[32.018378] (-) TimerEvent: {}
+[32.120394] (-) TimerEvent: {}
+[32.220601] (-) TimerEvent: {}
+[32.320844] (-) TimerEvent: {}
+[32.421210] (-) TimerEvent: {}
+[32.522400] (-) TimerEvent: {}
+[32.622617] (-) TimerEvent: {}
+[32.724398] (-) TimerEvent: {}
+[32.824610] (-) TimerEvent: {}
+[32.924825] (-) TimerEvent: {}
+[33.025041] (-) TimerEvent: {}
+[33.125262] (-) TimerEvent: {}
+[33.225498] (-) TimerEvent: {}
+[33.325720] (-) TimerEvent: {}
+[33.425955] (-) TimerEvent: {}
+[33.526183] (-) TimerEvent: {}
+[33.626462] (-) TimerEvent: {}
+[33.728398] (-) TimerEvent: {}
+[33.828615] (-) TimerEvent: {}
+[33.928834] (-) TimerEvent: {}
+[34.029053] (-) TimerEvent: {}
+[34.129268] (-) TimerEvent: {}
+[34.229492] (-) TimerEvent: {}
+[34.329706] (-) TimerEvent: {}
+[34.429970] (-) TimerEvent: {}
+[34.530194] (-) TimerEvent: {}
+[34.632401] (-) TimerEvent: {}
+[34.732626] (-) TimerEvent: {}
+[34.832844] (-) TimerEvent: {}
+[34.933063] (-) TimerEvent: {}
+[35.033302] (-) TimerEvent: {}
+[35.133525] (-) TimerEvent: {}
+[35.233743] (-) TimerEvent: {}
+[35.333958] (-) TimerEvent: {}
+[35.434174] (-) TimerEvent: {}
+[35.534408] (-) TimerEvent: {}
+[35.634645] (-) TimerEvent: {}
+[35.735395] (-) TimerEvent: {}
+[35.835606] (-) TimerEvent: {}
+[35.935821] (-) TimerEvent: {}
+[36.038404] (-) TimerEvent: {}
+[36.138621] (-) TimerEvent: {}
+[36.239022] (-) TimerEvent: {}
+[36.339240] (-) TimerEvent: {}
+[36.439712] (-) TimerEvent: {}
+[36.540104] (-) TimerEvent: {}
+[36.640520] (-) TimerEvent: {}
+[36.740730] (-) TimerEvent: {}
+[36.840947] (-) TimerEvent: {}
+[36.941165] (-) TimerEvent: {}
+[37.041411] (-) TimerEvent: {}
+[37.142396] (-) TimerEvent: {}
+[37.242635] (-) TimerEvent: {}
+[37.342849] (-) TimerEvent: {}
+[37.443633] (-) TimerEvent: {}
+[37.543843] (-) TimerEvent: {}
+[37.646404] (-) TimerEvent: {}
+[37.746636] (-) TimerEvent: {}
+[37.846841] (-) TimerEvent: {}
+[37.947056] (-) TimerEvent: {}
+[38.047267] (-) TimerEvent: {}
+[38.147489] (-) TimerEvent: {}
+[38.247703] (-) TimerEvent: {}
+[38.347926] (-) TimerEvent: {}
+[38.448141] (-) TimerEvent: {}
+[38.548372] (-) TimerEvent: {}
+[38.648591] (-) TimerEvent: {}
+[38.756358] (-) TimerEvent: {}
+[38.858929] (-) TimerEvent: {}
+[38.959180] (-) TimerEvent: {}
+[39.059635] (-) TimerEvent: {}
+[39.161927] (-) TimerEvent: {}
+[39.262137] (-) TimerEvent: {}
+[39.362410] (-) TimerEvent: {}
+[39.462686] (-) TimerEvent: {}
+[39.564400] (-) TimerEvent: {}
+[39.665445] (-) TimerEvent: {}
+[39.765710] (-) TimerEvent: {}
+[39.866036] (-) TimerEvent: {}
+[39.966289] (-) TimerEvent: {}
+[40.068398] (-) TimerEvent: {}
+[40.168608] (-) TimerEvent: {}
+[40.268820] (-) TimerEvent: {}
+[40.369040] (-) TimerEvent: {}
+[40.469258] (-) TimerEvent: {}
+[40.569490] (-) TimerEvent: {}
+[40.669701] (-) TimerEvent: {}
+[40.769920] (-) TimerEvent: {}
+[40.870136] (-) TimerEvent: {}
+[40.970350] (-) TimerEvent: {}
+[41.070552] (-) TimerEvent: {}
+[41.175396] (-) TimerEvent: {}
+[41.275600] (-) TimerEvent: {}
+[41.375808] (-) TimerEvent: {}
+[41.476031] (-) TimerEvent: {}
+[41.576234] (-) TimerEvent: {}
+[41.676400] (-) TimerEvent: {}
+[41.776617] (-) TimerEvent: {}
+[41.876834] (-) TimerEvent: {}
+[41.977448] (-) TimerEvent: {}
+[42.078432] (-) TimerEvent: {}
+[42.178724] (-) TimerEvent: {}
+[42.279022] (-) TimerEvent: {}
+[42.380417] (-) TimerEvent: {}
+[42.480686] (-) TimerEvent: {}
+[42.580971] (-) TimerEvent: {}
+[42.681228] (-) TimerEvent: {}
+[42.781413] (-) TimerEvent: {}
+[42.881631] (-) TimerEvent: {}
+[42.983399] (-) TimerEvent: {}
+[43.083606] (-) TimerEvent: {}
+[43.183827] (-) TimerEvent: {}
+[43.284053] (-) TimerEvent: {}
+[43.384279] (-) TimerEvent: {}
+[43.484509] (-) TimerEvent: {}
+[43.584727] (-) TimerEvent: {}
+[43.684956] (-) TimerEvent: {}
+[43.785177] (-) TimerEvent: {}
+[43.886399] (-) TimerEvent: {}
+[43.986629] (-) TimerEvent: {}
+[44.086840] (-) TimerEvent: {}
+[44.187050] (-) TimerEvent: {}
+[44.287262] (-) TimerEvent: {}
+[44.387480] (-) TimerEvent: {}
+[44.488399] (-) TimerEvent: {}
+[44.588609] (-) TimerEvent: {}
+[44.688823] (-) TimerEvent: {}
+[44.789047] (-) TimerEvent: {}
+[44.890404] (-) TimerEvent: {}
+[44.990726] (-) TimerEvent: {}
+[45.090944] (-) TimerEvent: {}
+[45.191165] (-) TimerEvent: {}
+[45.291393] (-) TimerEvent: {}
+[45.391636] (-) TimerEvent: {}
+[45.491853] (-) TimerEvent: {}
+[45.594401] (-) TimerEvent: {}
+[45.694619] (-) TimerEvent: {}
+[45.794840] (-) TimerEvent: {}
+[45.895060] (-) TimerEvent: {}
+[45.995282] (-) TimerEvent: {}
+[46.095514] (-) TimerEvent: {}
+[46.195738] (-) TimerEvent: {}
+[46.295964] (-) TimerEvent: {}
+[46.396219] (-) TimerEvent: {}
+[46.496407] (-) TimerEvent: {}
+[46.596619] (-) TimerEvent: {}
+[46.697592] (-) TimerEvent: {}
+[46.797799] (-) TimerEvent: {}
+[46.898007] (-) TimerEvent: {}
+[47.000391] (-) TimerEvent: {}
+[47.100601] (-) TimerEvent: {}
+[47.200808] (-) TimerEvent: {}
+[47.301029] (-) TimerEvent: {}
+[47.401239] (-) TimerEvent: {}
+[47.501450] (-) TimerEvent: {}
+[47.601659] (-) TimerEvent: {}
+[47.701874] (-) TimerEvent: {}
+[47.802092] (-) TimerEvent: {}
+[47.902303] (-) TimerEvent: {}
+[48.002528] (-) TimerEvent: {}
+[48.102786] (-) TimerEvent: {}
+[48.197985] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1\n'}
+[48.199356] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2\n'}
+[48.199619] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[48.202939] (-) TimerEvent: {}
+[48.303194] (-) TimerEvent: {}
+[48.403447] (-) TimerEvent: {}
+[48.503688] (-) TimerEvent: {}
+[48.603942] (-) TimerEvent: {}
+[48.704248] (-) TimerEvent: {}
+[48.744396] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1\n'}
+[48.744685] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2\n'}
+[48.744838] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[48.747004] (semnav) CommandEnded: {'returncode': 2}
+[48.804406] (-) TimerEvent: {}
+[48.855785] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[48.866582] (-) EventReactorShutdown: {}

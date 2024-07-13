@@ -1,0 +1,599 @@
+[0.033s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.205s] [ 14%] Built target reactive_planner
+[0.344s] [ 19%] [32mBuilding CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o[0m
+[21.679s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kobject_pose_interface_msgs[m[K’ does not name a type
+[21.680s]   240 |                 void diffeo_tree_update(const [01;31m[Kobject_pose_interface_msgs[m[K::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.680s]       |                                               [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[21.680s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:97:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[21.680s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray[01;31m[K::[m[KConstPtr& semantic_map_data) {
+[21.680s]       |                                                                                                 [01;31m[K^~[m[K
+[21.681s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:97:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[21.681s]   240 |                 void diffeo_tree_update[34m[K([m[Kconst object_pose_interface_msgs::SemanticMapObjectArray[01;31m[K:[m[K[32m[K:[m[KConstPtr& semantic_map_data) {
+[21.681s]       |                                        [34m[K~[m[K                                                        [01;31m[K^[m[K[32m[K~[m[K
+[21.681s]       |                                                                                                 [32m[K)[m[K
+[21.681s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:75:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[21.681s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::[01;31m[KSemanticMapObjectArray[m[K::ConstPtr& semantic_map_data) {
+[21.682s]       |                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[21.682s]       |                                                                                                 [32m[K;[m[K
+[21.693s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:99:[m[K [01;31m[Kerror: [m[K‘[01m[KConstPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+[21.694s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::[01;31m[KConstPtr[m[K& semantic_map_data) {
+[21.694s]       |                                                                                                   [01;31m[K^~~~~~~~[m[K
+[21.694s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:58:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ in namespace ‘[01m[Ksensor_msgs[m[K’ does not name a type
+[21.694s]   332 |                 void control_callback(const sensor_msgs::[01;31m[KLaserScan[m[K::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.694s]       |                                                          [01;31m[K^~~~~~~~~[m[K
+[21.694s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:77:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+[21.695s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.695s]       |                                                                             [01;31m[K^[m[K
+[21.695s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:77:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[21.695s]   332 |                 void control_callback[34m[K([m[Kconst sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.695s]       |                                      [34m[K~[m[K                                      [01;31m[K^[m[K
+[21.695s]       |                                                                             [32m[K)[m[K
+[21.695s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:77:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[21.696s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr[01;31m[K&[m[K lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.696s]       |                                                                             [01;31m[K^[m[K
+[21.696s]       |                                                                              [32m[K;[m[K
+[21.708s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:79:[m[K [01;31m[Kerror: [m[K‘[01m[Klidar_data[m[K’ does not name a type
+[21.708s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& [01;31m[Klidar_data[m[K, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.708s]       |                                                                               [01;31m[K^~~~~~~~~~[m[K
+[21.708s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:613:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[21.708s]   613 |                 [01;31m[Krclcpp[m[K::Publisher pub_behaviorID_;
+[21.709s]       |                 [01;31m[K^~~~~~[m[K
+[21.709s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:614:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[21.709s]   614 |                 [01;31m[Krclcpp[m[K::Publisher pub_behaviorMode_;
+[21.709s]       |                 [01;31m[K^~~~~~[m[K
+[21.709s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:615:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[21.709s]   615 |                 [01;31m[Krclcpp[m[K::Publisher pub_twist_;
+[21.709s]       |                 [01;31m[K^~~~~~[m[K
+[21.710s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:617:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[21.710s]   617 |                 [01;31m[Krclcpp[m[K::Publisher pub_semantic_map_;
+[21.710s]       |                 [01;31m[K^~~~~~[m[K
+[21.717s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:661:22:[m[K [01;31m[Kerror: [m[K‘[01m[KTransformListener[m[K’ in namespace ‘[01m[Ktf2[m[K’ does not name a type
+[21.718s]   661 |                 tf2::[01;31m[KTransformListener[m[K listener_;
+[21.718s]       |                      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.719s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:[m[K In constructor ‘[01m[KNavigationNode::[01;32m[KNavigationNode[m[K(rclcpp::Node*)[m[K’:
+[21.719s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:44:60:[m[K [01;31m[Kerror: [m[Kuse of deleted function ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const rclcpp::Node&)[m[K’
+[21.719s]    44 |                 NavigationNode(rclcpp::Node* nodehandle) : [01;31m[Knh_(*nodehandle)[m[K {
+[21.719s]       |                                                            [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[21.719s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/context.hpp:35[m[K,
+[21.720s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:24[m[K,
+[21.720s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25[m[K,
+[21.720s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[21.720s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[21.720s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+[21.720s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25[m[K:
+[21.720s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1634:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[21.721s]  1634 |   [01;36m[KRCLCPP_DISABLE_COPY[m[K(Node)
+[21.721s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[21.722s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.722s]    46 |                         this->[01;31m[Kdeclare_parameter[m[K("pub_twist_topic", "/cmd_vel");
+[21.722s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.723s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:47:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.723s]    47 |                         this->[01;31m[Kdeclare_parameter[m[K("pub_behaviorID_topic", "/behavior_id");
+[21.723s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.724s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:48:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.724s]    48 |                         this->[01;31m[Kdeclare_parameter[m[K("pub_behaviorMode_topic", "/behavior_mode");
+[21.724s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.724s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:49:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.724s]    49 |                         this->[01;31m[Kdeclare_parameter[m[K("sub_laser_topic", "/laser_scan");
+[21.725s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.725s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:50:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.725s]    50 |                         this->[01;31m[Kdeclare_parameter[m[K("sub_robot_topic", "/robot_pose");
+[21.726s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.726s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:51:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.726s]    51 |                         this->[01;31m[Kdeclare_parameter[m[K("sub_semantic_topic", "/semantic_map");
+[21.726s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.726s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:52:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.726s]    52 |                         this->[01;31m[Kdeclare_parameter[m[K("world_frame_id", "world");
+[21.726s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.727s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:53:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.727s]    53 |                         this->[01;31m[Kdeclare_parameter[m[K("odom_frame_id", "odom");
+[21.727s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.727s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:54:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.728s]    54 |                         this->[01;31m[Kdeclare_parameter[m[K("laser_frame_id", "laser_frame");
+[21.728s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.728s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:56:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.728s]    56 |                         this->[01;31m[Kdeclare_parameter[m[K("target_object", "");
+[21.729s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.729s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:57:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.729s]    57 |                         this->[01;31m[Kdeclare_parameter[m[K("target_object_length", 0.0);
+[21.729s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.730s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:58:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.730s]    58 |                         this->[01;31m[Kdeclare_parameter[m[K("target_object_width", 0.0);
+[21.730s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.730s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:60:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.730s]    60 |                         this->[01;31m[Kdeclare_parameter[m[K("RobotRadius", 0.0);
+[21.730s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.731s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:61:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.731s]    61 |                         this->[01;31m[Kdeclare_parameter[m[K("ObstacleDilation", 0.0);
+[21.731s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.731s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:62:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.731s]    62 |                         this->[01;31m[Kdeclare_parameter[m[K("WalkHeight", 0.0);
+[21.731s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.731s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:64:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.732s]    64 |                         this->[01;31m[Kdeclare_parameter[m[K("AllowableRange", 0.0);
+[21.732s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.732s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:65:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.732s]    65 |                         this->[01;31m[Kdeclare_parameter[m[K("CutoffRange", 0.0);
+[21.732s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.732s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:67:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.732s]    67 |                         this->[01;31m[Kdeclare_parameter[m[K("ForwardLinCmdLimit", 0.0);
+[21.732s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.733s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:68:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.733s]    68 |                         this->[01;31m[Kdeclare_parameter[m[K("BackwardLinCmdLimit", 0.0);
+[21.733s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.733s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:69:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.733s]    69 |                         this->[01;31m[Kdeclare_parameter[m[K("AngCmdLimit", 0.0);
+[21.733s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.733s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:70:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.733s]    70 |                         this->[01;31m[Kdeclare_parameter[m[K("RFunctionExponent", 0.0);
+[21.734s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.734s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:71:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.734s]    71 |                         this->[01;31m[Kdeclare_parameter[m[K("Epsilon", 0.0);
+[21.734s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.734s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:72:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.734s]    72 |                         this->[01;31m[Kdeclare_parameter[m[K("VarEpsilon", 0.0);
+[21.734s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.735s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:73:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.735s]    73 |                         this->[01;31m[Kdeclare_parameter[m[K("Mu1", 0.0);
+[21.735s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.735s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:74:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.735s]    74 |                         this->[01;31m[Kdeclare_parameter[m[K("Mu2", 0.0);
+[21.735s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.735s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:75:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.735s]    75 |                         this->[01;31m[Kdeclare_parameter[m[K("SemanticMapUpdateRate", 0.0);
+[21.736s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.736s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:78:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.736s]    78 |                         this->[01;31m[Kdeclare_parameter[m[K("LinearGain", 0.0);
+[21.736s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.736s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:79:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.736s]    79 |                         this->[01;31m[Kdeclare_parameter[m[K("AngularGain", 0.0);
+[21.736s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.737s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:81:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.737s]    81 |                         this->[01;31m[Kdeclare_parameter[m[K("Goal_x", 0.0);
+[21.737s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.737s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:82:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.737s]    82 |                         this->[01;31m[Kdeclare_parameter[m[K("Goal_y", 0.0);
+[21.737s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.737s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:85:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Node[m[K’ has no member named ‘[01m[KgetParam[m[K’
+[21.737s]    85 |                         nh_.[01;31m[KgetParam[m[K("Tolerance", Tolerance_);
+[21.738s]       |                             [01;31m[K^~~~~~~~[m[K
+[21.738s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:87:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.738s]    87 |                         this->[01;31m[Kdeclare_parameter[m[K("LowpassCutOff", 0.0);
+[21.738s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.738s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:88:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.738s]    88 |                         this->[01;31m[Kdeclare_parameter[m[K("LowpassSampling", 0.0);
+[21.738s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.738s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:89:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.739s]    89 |                         this->[01;31m[Kdeclare_parameter[m[K("LowpassOrder", 0.0);
+[21.739s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.739s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:90:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.739s]    90 |                         this->[01;31m[Kdeclare_parameter[m[K("LowpassSamples", 0.0);
+[21.739s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.739s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:92:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kdeclare_parameter[m[K’
+[21.739s]    92 |                         this->[01;31m[Kdeclare_parameter[m[K("DebugFlag", false);
+[21.740s]       |                               [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[21.740s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:94:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.740s]    94 |                         pub_twist_topic_ = this->[01;31m[Kget_parameter[m[K("pub_twist_topic").as_string();
+[21.740s]       |                                                  [01;31m[K^~~~~~~~~~~~~[m[K
+[21.740s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:95:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.740s]    95 |                         pub_behaviorID_topic_ = this->[01;31m[Kget_parameter[m[K("pub_behaviorID_topic").as_string();
+[21.740s]       |                                                       [01;31m[K^~~~~~~~~~~~~[m[K
+[21.740s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:96:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.741s]    96 |                         pub_behaviorMode_topic_ = this->[01;31m[Kget_parameter[m[K("pub_behaviorMode_topic").as_string();
+[21.741s]       |                                                         [01;31m[K^~~~~~~~~~~~~[m[K
+[21.741s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:97:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.741s]    97 |                         sub_laser_topic_ = this->[01;31m[Kget_parameter[m[K("sub_laser_topic").as_string();
+[21.741s]       |                                                  [01;31m[K^~~~~~~~~~~~~[m[K
+[21.741s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:98:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.741s]    98 |                         sub_robot_topic_ = this->[01;31m[Kget_parameter[m[K("sub_robot_topic").as_string();
+[21.741s]       |                                                  [01;31m[K^~~~~~~~~~~~~[m[K
+[21.742s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:99:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.742s]    99 |                         sub_semantic_topic_ = this->[01;31m[Kget_parameter[m[K("sub_semantic_topic").as_string();
+[21.742s]       |                                                     [01;31m[K^~~~~~~~~~~~~[m[K
+[21.742s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:100:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.742s]   100 |                         world_frame_id_ = this->[01;31m[Kget_parameter[m[K("world_frame_id").as_string();
+[21.742s]       |                                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[21.745s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:101:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.745s]   101 |                         odom_frame_id_ = this->[01;31m[Kget_parameter[m[K("odom_frame_id").as_string();
+[21.745s]       |                                                [01;31m[K^~~~~~~~~~~~~[m[K
+[21.745s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:102:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.746s]   102 |                         laser_frame_id_ = this->[01;31m[Kget_parameter[m[K("laser_frame_id").as_string();
+[21.746s]       |                                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[21.818s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:103:25:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_object_[m[K’ was not declared in this scope
+[21.818s]   103 |                         [01;31m[Ktarget_object_[m[K = this->get_parameter("target_object").as_string();
+[21.818s]       |                         [01;31m[K^~~~~~~~~~~~~~[m[K
+[21.819s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:103:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.819s]   103 |                         target_object_ = this->[01;31m[Kget_parameter[m[K("target_object").as_string();
+[21.819s]       |                                                [01;31m[K^~~~~~~~~~~~~[m[K
+[21.959s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:104:25:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_object_length_[m[K’ was not declared in this scope
+[21.959s]   104 |                         [01;31m[Ktarget_object_length_[m[K = this->get_parameter("target_object_length").as_double();
+[21.959s]       |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[21.959s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:104:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[21.960s]   104 |                         target_object_length_ = this->[01;31m[Kget_parameter[m[K("target_object_length").as_double();
+[21.962s]       |                                                       [01;31m[K^~~~~~~~~~~~~[m[K
+[22.110s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:105:25:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_object_width_[m[K’ was not declared in this scope
+[22.110s]   105 |                         [01;31m[Ktarget_object_width_[m[K = this->get_parameter("target_object_width").as_double();
+[22.110s]       |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[22.111s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:105:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.112s]   105 |                         target_object_width_ = this->[01;31m[Kget_parameter[m[K("target_object_width").as_double();
+[22.114s]       |                                                      [01;31m[K^~~~~~~~~~~~~[m[K
+[22.114s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:107:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.114s]   107 |                         RobotRadius_ = this->[01;31m[Kget_parameter[m[K("RobotRadius").as_double();
+[22.114s]       |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+[22.114s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:108:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.114s]   108 |                         ObstacleDilation_ = this->[01;31m[Kget_parameter[m[K("ObstacleDilation").as_double();
+[22.115s]       |                                                   [01;31m[K^~~~~~~~~~~~~[m[K
+[22.120s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:109:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.120s]   109 |                         WalkHeight_ = this->[01;31m[Kget_parameter[m[K("WalkHeight").as_double();
+[22.121s]       |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[22.127s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:110:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.127s]   110 |                         AllowableRange_ = this->[01;31m[Kget_parameter[m[K("AllowableRange").as_double();
+[22.127s]       |                                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[22.127s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:111:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.128s]   111 |                         CutoffRange_ = this->[01;31m[Kget_parameter[m[K("CutoffRange").as_double();
+[22.128s]       |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+[22.128s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:112:53:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.128s]   112 |                         ForwardLinCmdLimit_ = this->[01;31m[Kget_parameter[m[K("ForwardLinCmdLimit").as_double();
+[22.128s]       |                                                     [01;31m[K^~~~~~~~~~~~~[m[K
+[22.128s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:113:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.136s]   113 |                         BackwardLinCmdLimit_ = this->[01;31m[Kget_parameter[m[K("BackwardLinCmdLimit").as_double();
+[22.136s]       |                                                      [01;31m[K^~~~~~~~~~~~~[m[K
+[22.136s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:114:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.137s]   114 |                         AngCmdLimit_ = this->[01;31m[Kget_parameter[m[K("AngCmdLimit").as_double();
+[22.140s]       |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+[22.140s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:115:52:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.140s]   115 |                         RFunctionExponent_ = this->[01;31m[Kget_parameter[m[K("RFunctionExponent").as_double();
+[22.141s]       |                                                    [01;31m[K^~~~~~~~~~~~~[m[K
+[22.143s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:116:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.143s]   116 |                         Epsilon_ = this->[01;31m[Kget_parameter[m[K("Epsilon").as_double();
+[22.144s]       |                                          [01;31m[K^~~~~~~~~~~~~[m[K
+[22.144s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:117:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.145s]   117 |                         VarEpsilon_ = this->[01;31m[Kget_parameter[m[K("VarEpsilon").as_double();
+[22.145s]       |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[22.146s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:118:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.147s]   118 |                         Mu1_ = this->[01;31m[Kget_parameter[m[K("Mu1").as_double();
+[22.147s]       |                                      [01;31m[K^~~~~~~~~~~~~[m[K
+[22.148s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:119:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.148s]   119 |                         Mu2_ = this->[01;31m[Kget_parameter[m[K("Mu2").as_double();
+[22.148s]       |                                      [01;31m[K^~~~~~~~~~~~~[m[K
+[22.154s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:120:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.155s]   120 |                         DiffeoTreeUpdateRate_ = this->[01;31m[Kget_parameter[m[K("SemanticMapUpdateRate").as_double();
+[22.158s]       |                                                       [01;31m[K^~~~~~~~~~~~~[m[K
+[22.159s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:122:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.159s]   122 |                         LinearGain_ = this->[01;31m[Kget_parameter[m[K("LinearGain").as_double();
+[22.159s]       |                                             [01;31m[K^~~~~~~~~~~~~[m[K
+[22.159s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:123:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.159s]   123 |                         AngularGain_ = this->[01;31m[Kget_parameter[m[K("AngularGain").as_double();
+[22.160s]       |                                              [01;31m[K^~~~~~~~~~~~~[m[K
+[22.164s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:124:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.165s]   124 |                         Goal_x_ = this->[01;31m[Kget_parameter[m[K("Goal_x").as_double();
+[22.165s]       |                                         [01;31m[K^~~~~~~~~~~~~[m[K
+[22.165s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:125:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.165s]   125 |                         Goal_y_ = this->[01;31m[Kget_parameter[m[K("Goal_y").as_double();
+[22.165s]       |                                         [01;31m[K^~~~~~~~~~~~~[m[K
+[22.166s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:126:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.168s]   126 |                         Tolerance_ = this->[01;31m[Kget_parameter[m[K("Tolerance").as_double();
+[22.169s]       |                                            [01;31m[K^~~~~~~~~~~~~[m[K
+[22.169s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:128:25:[m[K [01;31m[Kerror: [m[K‘[01m[KLowpassCutOff_[m[K’ was not declared in this scope; did you mean ‘[01m[KLowpassCutoff_[m[K’?
+[22.169s]   128 |                         [01;31m[KLowpassCutOff_[m[K = this->get_parameter("LowpassCutOff").as_double();
+[22.169s]       |                         [01;31m[K^~~~~~~~~~~~~~[m[K
+[22.169s]       |                         [32m[KLowpassCutoff_[m[K
+[22.170s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:128:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.175s]   128 |                         LowpassCutOff_ = this->[01;31m[Kget_parameter[m[K("LowpassCutOff").as_double();
+[22.175s]       |                                                [01;31m[K^~~~~~~~~~~~~[m[K
+[22.175s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:129:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.176s]   129 |                         LowpassSampling_ = this->[01;31m[Kget_parameter[m[K("LowpassSampling").as_double();
+[22.177s]       |                                                  [01;31m[K^~~~~~~~~~~~~[m[K
+[22.177s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:130:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.177s]   130 |                         LowpassOrder_ = this->[01;31m[Kget_parameter[m[K("LowpassOrder").as_double();
+[22.180s]       |                                               [01;31m[K^~~~~~~~~~~~~[m[K
+[22.180s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:131:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.180s]   131 |                         LowpassSamples_ = this->[01;31m[Kget_parameter[m[K("LowpassSamples").as_double();
+[22.181s]       |                                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[22.181s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:133:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationNode[m[K’ has no member named ‘[01m[Kget_parameter[m[K’
+[22.181s]   133 |                         DebugFlag_ = this->[01;31m[Kget_parameter[m[K("DebugFlag").as_bool();
+[22.181s]       |                                            [01;31m[K^~~~~~~~~~~~~[m[K
+[22.181s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:136:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Node[m[K’ has no member named ‘[01m[Kadvertise[m[K’
+[22.182s]   136 |                         pub_behaviorID_ = nh_.[01;31m[Kadvertise[m[K<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[22.184s]       |                                               [01;31m[K^~~~~~~~~[m[K
+[22.184s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:136:67:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’
+[22.184s]   136 |                         pub_behaviorID_ = nh_.advertise<std_msgs::[01;31m[KUInt32[m[K>(pub_behaviorID_topic_, 1, true);
+[22.185s]       |                                                                   [01;31m[K^~~~~~[m[K
+[22.185s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:137:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Node[m[K’ has no member named ‘[01m[Kadvertise[m[K’
+[22.185s]   137 |                         pub_behaviorMode_ = nh_.[01;31m[Kadvertise[m[K<std_msgs::UInt32>(pub_behaviorMode_topic_, 1, true);
+[22.185s]       |                                                 [01;31m[K^~~~~~~~~[m[K
+[22.185s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:137:69:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’
+[22.186s]   137 |                         pub_behaviorMode_ = nh_.advertise<std_msgs::[01;31m[KUInt32[m[K>(pub_behaviorMode_topic_, 1, true);
+[22.189s]       |                                                                     [01;31m[K^~~~~~[m[K
+[22.192s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:138:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Node[m[K’ has no member named ‘[01m[Kadvertise[m[K’
+[22.192s]   138 |                         pub_twist_ = nh_.[01;31m[Kadvertise[m[K<geometry_msgs::Twist>(pub_twist_topic_, 1, true);
+[22.192s]       |                                          [01;31m[K^~~~~~~~~[m[K
+[22.193s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:138:67:[m[K [01;31m[Kerror: [m[K‘[01m[KTwist[m[K’ is not a member of ‘[01m[Kgeometry_msgs[m[K’; did you mean ‘[01m[Kgeometry_msgs::msg::Twist[m[K’?
+[22.193s]   138 |                         pub_twist_ = nh_.advertise<geometry_msgs::[01;31m[KTwist[m[K>(pub_twist_topic_, 1, true);
+[22.193s]       |                                                                   [01;31m[K^~~~~[m[K
+[22.193s] In file included from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:25[m[K,
+[22.194s]                  from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:7[m[K,
+[22.194s]                  from [01m[K/opt/ros/jazzy/include/tf2/tf2/buffer_core.h:49[m[K,
+[22.194s]                  from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39[m[K,
+[22.194s]                  from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42[m[K,
+[22.195s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:38[m[K:
+[22.195s] [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:137:7:[m[K [01;36m[Knote: [m[K‘[01m[Kgeometry_msgs::msg::Twist[m[K’ declared here
+[22.196s]   137 | using [01;36m[KTwist[m[K =
+[22.196s]       |       [01;36m[K^~~~~[m[K
+[22.196s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:66:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::LaserScan[m[K’?
+[22.196s]   141 |                         message_filters::Subscriber<sensor_msgs::[01;31m[KLaserScan[m[K> sub_laser(nh_, sub_laser_topic_, 1);
+[22.197s]       |                                                                  [01;31m[K^~~~~~~~~[m[K
+[22.197s] In file included from [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/laser_scan.hpp:7[m[K,
+[22.197s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:48[m[K:
+[22.197s] [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::LaserScan[m[K’ declared here
+[22.198s]   250 | using [01;36m[KLaserScan[m[K =
+[22.198s]       |       [01;36m[K^~~~~~~~~[m[K
+[22.198s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:75:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[22.198s]   141 |                         message_filters::Subscriber<sensor_msgs::LaserScan[01;31m[K>[m[K sub_laser(nh_, sub_laser_topic_, 1);
+[22.202s]       |                                                                           [01;31m[K^[m[K
+[22.202s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:111:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[22.202s]   141 |                         message_filters::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1[01;31m[K)[m[K;
+[22.202s]       |                                                                                                               [01;31m[K^[m[K
+[22.203s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:142:63:[m[K [01;31m[Kerror: [m[K‘[01m[KOdometry[m[K’ is not a member of ‘[01m[Knav_msgs[m[K’; did you mean ‘[01m[Knav_msgs::msg::Odometry[m[K’?
+[22.205s]   142 |                         message_filters::Subscriber<nav_msgs::[01;31m[KOdometry[m[K> sub_robot(nh_, sub_robot_topic_, 1);
+[22.205s]       |                                                               [01;31m[K^~~~~~~~[m[K
+[22.205s] In file included from [01m[K/opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/odometry.hpp:7[m[K,
+[22.208s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:49[m[K:
+[22.208s] [01m[K/opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:175:7:[m[K [01;36m[Knote: [m[K‘[01m[Knav_msgs::msg::Odometry[m[K’ declared here
+[22.209s]   175 | using [01;36m[KOdometry[m[K =
+[22.209s]       |       [01;36m[K^~~~~~~~[m[K
+[22.209s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:142:71:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[22.210s]   142 |                         message_filters::Subscriber<nav_msgs::Odometry[01;31m[K>[m[K sub_robot(nh_, sub_robot_topic_, 1);
+[22.211s]       |                                                                       [01;31m[K^[m[K
+[22.211s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:142:107:[m[K [01;31m[Kerror: [m[Kexpression list treated as compound expression in initializer [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[22.212s]   142 |                         message_filters::Subscriber<nav_msgs::Odometry> sub_robot(nh_, sub_robot_topic_, 1[01;31m[K)[m[K;
+[22.212s]       |                                                                                                           [01;31m[K^[m[K
+[22.212s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:94:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ is not a member of ‘[01m[Ksensor_msgs[m[K’; did you mean ‘[01m[Ksensor_msgs::msg::LaserScan[m[K’?
+[22.213s]   143 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::[01;31m[KLaserScan[m[K,nav_msgs::Odometry> SyncPolicy;
+[22.213s]       |                                                                                              [01;31m[K^~~~~~~~~[m[K
+[22.213s] [01m[K/opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::LaserScan[m[K’ declared here
+[22.213s]   250 | using [01;36m[KLaserScan[m[K =
+[22.214s]       |       [01;36m[K^~~~~~~~~[m[K
+[22.214s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:114:[m[K [01;31m[Kerror: [m[K‘[01m[KOdometry[m[K’ is not a member of ‘[01m[Knav_msgs[m[K’; did you mean ‘[01m[Knav_msgs::msg::Odometry[m[K’?
+[22.214s]   143 |                    typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::[01;31m[KOdometry[m[K> SyncPolicy;
+[22.215s]       |                                                                                                             [01;31m[K^~~~~~~~[m[K
+[22.215s] 
+[22.215s] [01m[K/opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:175:7:[m[K [01;36m[Knote: [m[K‘[01m[Knav_msgs::msg::Odometry[m[K’ declared here
+[22.215s]   175 | using [01;36m[KOdometry[m[K =
+[22.215s]       |       [01;36m[K^~~~~~~~[m[K
+[22.216s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:122:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[22.216s]   143 |            typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::Odometry[01;31m[K>[m[K SyncPolicy;
+[22.216s]       |                                                                                                             [01;31m[K^[m[K
+[22.216s] 
+[22.216s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:122:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[22.217s] In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:46[m[K:
+[22.222s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h: In instantiation of ‘[01m[Kclass message_filters::Synchronizer<int>[m[K’:
+[22.222s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:146:64:[m[K   required from here
+[22.223s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:53:7:[m[K [01;31m[Kerror: [m[Kbase type ‘[01m[Kint[m[K’ fails to be a struct or class type
+[22.224s]    53 | class [01;31m[KSynchronizer[m[K : public noncopyable, public Policy
+[22.225s]       |       [01;31m[K^~~~~~~~~~~~[m[K
+[22.225s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:56:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.225s]    56 |   typedef typename Policy::Messages [01;31m[KMessages[m[K;
+[22.225s]       |                                     [01;31m[K^~~~~~~~[m[K
+[22.226s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:57:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.226s]    57 |   typedef typename Policy::Events [01;31m[KEvents[m[K;
+[22.226s]       |                                   [01;31m[K^~~~~~[m[K
+[22.227s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:58:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.227s]    58 |   typedef typename Policy::Signal [01;31m[KSignal[m[K;
+[22.227s]       |                                   [01;31m[K^~~~~~[m[K
+[22.227s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:60:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.227s]    60 |   typedef typename std::tuple_element<0, Messages>::type [01;31m[KM0[m[K;
+[22.228s]       |                                                          [01;31m[K^~[m[K
+[22.228s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:61:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.228s]    61 |   typedef typename std::tuple_element<1, Messages>::type [01;31m[KM1[m[K;
+[22.228s]       |                                                          [01;31m[K^~[m[K
+[22.228s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:62:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.229s]    62 |   typedef typename std::tuple_element<2, Messages>::type [01;31m[KM2[m[K;
+[22.229s]       |                                                          [01;31m[K^~[m[K
+[22.229s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:63:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.229s]    63 |   typedef typename std::tuple_element<3, Messages>::type [01;31m[KM3[m[K;
+[22.230s]       |                                                          [01;31m[K^~[m[K
+[22.230s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:64:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.230s]    64 |   typedef typename std::tuple_element<4, Messages>::type [01;31m[KM4[m[K;
+[22.230s]       |                                                          [01;31m[K^~[m[K
+[22.230s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:65:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.231s]    65 |   typedef typename std::tuple_element<5, Messages>::type [01;31m[KM5[m[K;
+[22.231s]       |                                                          [01;31m[K^~[m[K
+[22.231s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:66:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.231s]    66 |   typedef typename std::tuple_element<6, Messages>::type [01;31m[KM6[m[K;
+[22.231s]       |                                                          [01;31m[K^~[m[K
+[22.234s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:67:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.234s]    67 |   typedef typename std::tuple_element<7, Messages>::type [01;31m[KM7[m[K;
+[22.234s]       |                                                          [01;31m[K^~[m[K
+[22.235s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:68:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.235s]    68 |   typedef typename std::tuple_element<8, Messages>::type [01;31m[KM8[m[K;
+[22.235s]       |                                                          [01;31m[K^~[m[K
+[22.235s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:71:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.235s]    71 |   typedef typename std::tuple_element<0, Events>::type [01;31m[KM0Event[m[K;
+[22.236s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.236s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:72:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.236s]    72 |   typedef typename std::tuple_element<1, Events>::type [01;31m[KM1Event[m[K;
+[22.236s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.236s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:73:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.236s]    73 |   typedef typename std::tuple_element<2, Events>::type [01;31m[KM2Event[m[K;
+[22.240s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.240s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:74:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.240s]    74 |   typedef typename std::tuple_element<3, Events>::type [01;31m[KM3Event[m[K;
+[22.241s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.241s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:75:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.241s]    75 |   typedef typename std::tuple_element<4, Events>::type [01;31m[KM4Event[m[K;
+[22.241s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.242s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:76:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.242s]    76 |   typedef typename std::tuple_element<5, Events>::type [01;31m[KM5Event[m[K;
+[22.242s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.242s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:77:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.242s]    77 |   typedef typename std::tuple_element<6, Events>::type [01;31m[KM6Event[m[K;
+[22.243s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.243s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:78:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.243s]    78 |   typedef typename std::tuple_element<7, Events>::type [01;31m[KM7Event[m[K;
+[22.243s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.243s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:79:56:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.244s]    79 |   typedef typename std::tuple_element<8, Events>::type [01;31m[KM8Event[m[K;
+[22.244s]       |                                                        [01;31m[K^~~~~~~[m[K
+[22.244s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:325:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, namespace, or enumeration
+[22.244s]   325 |   using Policy::[01;31m[Kadd[m[K;
+[22.244s]       |                 [01;31m[K^~~[m[K
+[22.245s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:328:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.245s]   328 |   void [01;31m[Kadd[m[K(const std::shared_ptr<typename std::tuple_element<i, Messages>::type const>& msg)
+[22.245s]       |        [01;31m[K^~~[m[K
+[22.245s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:344:8:[m[K [01;31m[Kerror: [m[K‘[01m[Kint[m[K’ is not a class, struct, or union type
+[22.245s]   344 |   void [01;31m[Kcb[m[K(const typename std::tuple_element<i, Events>::type& evt)
+[22.245s]       |        [01;31m[K^~[m[K
+[22.246s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbind[m[K’ is not a member of ‘[01m[Kboost[m[K’; did you mean ‘[01m[Kfind[m[K’?
+[22.246s]   147 |                         sync->registerCallback(boost::[01;31m[Kbind[m[K(&NavigationNode::control_callback, this, _1, _2));
+[22.246s]       |                                                       [01;31m[K^~~~[m[K
+[22.246s]       |                                                       [32m[Kfind[m[K
+[22.246s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:101:[m[K [01;31m[Kerror: [m[K‘[01m[K_1[m[K’ was not declared in this scope
+[22.247s]   147 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, [01;31m[K_1[m[K, _2));
+[22.247s]       |                                                                                                     [01;31m[K^~[m[K
+[22.247s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:101:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[22.247s] In file included from [01m[K/usr/include/boost/mpl/aux_/include_preprocessed.hpp:37[m[K,
+[22.247s]                  from [01m[K/usr/include/boost/mpl/placeholders.hpp:43[m[K,
+[22.247s]                  from [01m[K/usr/include/boost/iterator/iterator_categories.hpp:16[m[K,
+[22.248s]                  from [01m[K/usr/include/boost/iterator/iterator_facade.hpp:13[m[K,
+[22.248s]                  from [01m[K/usr/include/boost/range/iterator_range_core.hpp:27[m[K,
+[22.248s]                  from [01m[K/usr/include/boost/lexical_cast.hpp:48[m[K,
+[22.250s]                  from [01m[K/usr/include/boost/multiprecision/detail/number_base.hpp:29[m[K,
+[22.250s]                  from [01m[K/usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9[m[K,
+[22.250s]                  from [01m[K/usr/include/boost/multiprecision/detail/precision.hpp:9[m[K,
+[22.251s]                  from [01m[K/usr/include/boost/multiprecision/number.hpp:11[m[K,
+[22.254s]                  from [01m[K/usr/include/boost/multiprecision/cpp_int.hpp:19[m[K,
+[22.254s]                  from [01m[K/usr/include/boost/multiprecision/cpp_bin_float.hpp:15[m[K,
+[22.254s]                  from [01m[K/usr/include/boost/geometry/core/coordinate_promotion.hpp:16[m[K,
+[22.256s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:30[m[K,
+[22.256s]                  from [01m[K/usr/include/boost/geometry/geometry.hpp:50[m[K,
+[22.256s]                  from [01m[K/usr/include/boost/geometry.hpp:17[m[K,
+[22.258s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26[m[K:
+[22.258s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[22.258s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[22.258s]       |                [01;36m[K^~[m[K
+[22.259s] In file included from [01m[K/usr/include/boost/numeric/conversion/converter_policies.hpp:13[m[K,
+[22.259s]                  from [01m[K/usr/include/boost/numeric/conversion/converter.hpp:14[m[K,
+[22.259s]                  from [01m[K/usr/include/boost/numeric/conversion/cast.hpp:33[m[K,
+[22.259s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:26[m[K:
+[22.259s] [01m[K/usr/include/c++/13/functional:294:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_1[m[K’
+[22.259s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> [01;36m[K_1[m[K;
+[22.260s]       |                                                [01;36m[K^~[m[K
+[22.263s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[22.263s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[22.263s]       |                [01;36m[K^~[m[K
+[22.265s] In file included from [01m[K/usr/include/boost/describe/members.hpp:20[m[K,
+[22.265s]                  from [01m[K/usr/include/boost/container_hash/is_described_class.hpp:11[m[K,
+[22.266s]                  from [01m[K/usr/include/boost/container_hash/hash.hpp:18[m[K,
+[22.268s]                  from [01m[K/usr/include/boost/functional/hash.hpp:6[m[K,
+[22.268s]                  from [01m[K/usr/include/CGAL/Kernel/hash_functions.h:16[m[K,
+[22.269s]                  from [01m[K/usr/include/CGAL/Kernel/global_functions.h:25[m[K,
+[22.269s]                  from [01m[K/usr/include/CGAL/Cartesian/Cartesian_base.h:22[m[K,
+[22.269s]                  from [01m[K/usr/include/CGAL/Simple_cartesian.h:20[m[K,
+[22.269s]                  from [01m[K/usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20[m[K,
+[22.269s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32[m[K,
+[22.269s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:53[m[K:
+[22.270s] [01m[K/usr/include/boost/mp11/bind.hpp:45:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_1[m[K’
+[22.273s]    45 | using [01;36m[K_1[m[K = mp_arg<0>;
+[22.273s]       |       [01;36m[K^~[m[K
+[22.273s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[22.274s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[22.274s]       |                [01;36m[K^~[m[K
+[22.274s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:105:[m[K [01;31m[Kerror: [m[K‘[01m[K_2[m[K’ was not declared in this scope
+[22.275s]   147 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, [01;31m[K_2[m[K));
+[22.275s]       |                                                                                                         [01;31m[K^~[m[K
+[22.275s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:105:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[22.275s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[22.275s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[22.276s]       |                [01;36m[K^~[m[K
+[22.276s] [01m[K/usr/include/c++/13/functional:295:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_2[m[K’
+[22.276s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> [01;36m[K_2[m[K;
+[22.276s]       |                                                [01;36m[K^~[m[K
+[22.276s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[22.277s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[22.277s]       |                [01;36m[K^~[m[K
+[22.277s] [01m[K/usr/include/boost/mp11/bind.hpp:46:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_2[m[K’
+[22.277s]    46 | using [01;36m[K_2[m[K = mp_arg<1>;
+[22.277s]       |       [01;36m[K^~[m[K
+[22.278s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[22.278s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[22.278s]       |                [01;36m[K^~[m[K
+[22.278s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:65:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Node[m[K’ has no member named ‘[01m[Ksubscribe[m[K’
+[22.278s]   149 |                         rclcpp::Subscription sub_semantic = nh_.[01;31m[Ksubscribe[m[K(sub_semantic_topic_, 1, &NavigationNode::diffeo_tree_update, this);
+[22.278s]       |                                                                 [01;31m[K^~~~~~~~~[m[K
+[22.279s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:45:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Duration::Duration(double)[m[K’
+[22.279s]   153 |                         rclcpp::Duration(5.0[01;31m[K)[m[K.sleep();
+[22.279s]       |                                             [01;31m[K^[m[K
+[22.279s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24[m[K,
+[22.279s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24[m[K,
+[22.280s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38[m[K,
+[22.280s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[22.280s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[22.280s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[22.280s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[22.281s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+[22.281s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+[22.281s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[22.281s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[22.281s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K:
+[22.281s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Rep, class Period> rclcpp::Duration::[01;32m[KDuration[m[K(const std::chrono::duration<_Rep1, _Period1>&)[m[K’
+[22.282s]    49 |   [01;36m[KDuration[m[K(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[22.282s]       |   [01;36m[K^~~~~~~~[m[K
+[22.282s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[22.282s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:45:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+[22.282s]   153 |                         rclcpp::Duration(5.0[01;36m[K)[m[K.sleep();
+[22.282s]       |                                             [01;36m[K^[m[K
+[22.282s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K()[m[K’
+[22.283s]   159 |   [01;36m[KDuration[m[K() = default;
+[22.283s]       |   [01;36m[K^~~~~~~~[m[K
+[22.283s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[22.283s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rclcpp::Duration&)[m[K’
+[22.283s]    62 |   [01;36m[KDuration[m[K(const Duration & rhs);
+[22.288s]       |   [01;36m[K^~~~~~~~[m[K
+[22.289s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rclcpp::Duration&[m[K’
+[22.289s]    62 |   Duration([01;36m[Kconst Duration & rhs[m[K);
+[22.289s]       |            [01;36m[K~~~~~~~~~~~~~~~~~^~~[m[K
+[22.289s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rcl_duration_t&)[m[K’
+[22.290s]    60 |   explicit [01;36m[KDuration[m[K(const rcl_duration_t & duration);
+[22.290s]       |            [01;36m[K^~~~~~~~[m[K
+[22.290s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rcl_duration_t&[m[K’ {aka ‘[01m[Kconst rcl_duration_s&[m[K’}
+[22.290s]    60 |   explicit Duration([01;36m[Kconst rcl_duration_t & duration[m[K);
+[22.291s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[22.291s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const builtin_interfaces::msg::Duration&)[m[K’
+[22.291s]    54 |   [01;36m[KDuration[m[K(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.291s]       |   [01;36m[K^~~~~~~~[m[K
+[22.291s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst builtin_interfaces::msg::Duration&[m[K’ {aka ‘[01m[Kconst builtin_interfaces::msg::Duration_<std::allocator<void> >&[m[K’}
+[22.292s]    54 |   Duration([01;36m[Kconst builtin_interfaces::msg::Duration & duration_msg[m[K);  // NOLINT(runtime/explicit)
+[22.292s]       |            [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[22.292s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(std::chrono::nanoseconds)[m[K’
+[22.292s]    43 |   explicit [01;36m[KDuration[m[K(std::chrono::nanoseconds nanoseconds);
+[22.292s]       |            [01;36m[K^~~~~~~~[m[K
+[22.293s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kstd::chrono::nanoseconds[m[K’ {aka ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000000000> >[m[K’}
+[22.293s]    43 |   explicit Duration([01;36m[Kstd::chrono::nanoseconds nanoseconds[m[K);
+[22.293s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[22.293s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(int32_t, uint32_t)[m[K’
+[22.293s]    40 |   [01;36m[KDuration[m[K(int32_t seconds, uint32_t nanoseconds);
+[22.294s]       |   [01;36m[K^~~~~~~~[m[K
+[22.294s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[22.294s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:160:38:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_ptr[m[K’ was not declared in this scope; did you mean ‘[01m[Kmode_t[m[K’?
+[22.294s]   160 |                         rclcpp::spin([01;31m[Knode_ptr[m[K);
+[22.294s]       |                                      [01;31m[K^~~~~~~~[m[K
+[22.294s]       |                                      [32m[Kmode_t[m[K
+[22.295s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:[m[K In member function ‘[01m[Kvoid NavigationNode::[01;32m[Kpublish_behavior_id[m[K(uint16_t)[m[K’:
+[22.295s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:172:28:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[22.295s]   172 |             std_msgs::msg::[01;31m[KUInt32[m[K commandId;
+[22.295s]       |                            [01;31m[K^~~~~~[m[K
+[22.344s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:173:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandId[m[K’ was not declared in this scope
+[22.344s]   173 |                         [01;31m[KcommandId[m[K.data = BehaviorIdCmd;
+[22.344s]       |                         [01;31m[K^~~~~~~~~[m[K
+[22.348s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:[m[K In member function ‘[01m[Kvoid NavigationNode::[01;32m[Kpublish_behavior_mode[m[K(uint16_t)[m[K’:
+[22.348s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:179:40:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[22.348s]   179 |                         std_msgs::msg::[01;31m[KUInt32[m[K commandMode;
+[22.349s]       |                                        [01;31m[K^~~~~~[m[K
+[22.433s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:180:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandMode[m[K’ was not declared in this scope
+[22.433s]   180 |                         [01;31m[KcommandMode[m[K.data = BehaviorModeCmd;
+[22.433s]       |                         [01;31m[K^~~~~~~~~~~[m[K
+[27.283s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+[27.284s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[27.286s] gmake: *** [Makefile:146: all] Error 2
+[27.288s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

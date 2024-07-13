@@ -1,0 +1,23 @@
+[0.028s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.197s] [ 14%] Built target reactive_planner
+[0.340s] [ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[0.340s] [ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+[22.970s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+[22.970s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:457:42: error: could not convert ‘& lidar_data’ from ‘const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr*’ {aka ‘const std::shared_ptr<const sensor_msgs::msg::LaserScan_<std::allocator<void> > >*’} to ‘sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr’ {aka ‘std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >’}
+[22.970s]   457 |                         constructLIDAR2D(&lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[22.971s]       |                                          ^~~~~~~~~~~
+[22.971s]       |                                          |
+[22.971s]       |                                          const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr* {aka const std::shared_ptr<const sensor_msgs::msg::LaserScan_<std::allocator<void> > >*}
+[23.329s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+[23.330s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:421:42: error: could not convert ‘lidar_data’ from ‘shared_ptr<LaserScan_<[...]>>’ to ‘shared_ptr<LaserScan_<[...]>>’
+[23.330s]   421 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[23.330s]       |                                          ^~~~~~~~~~
+[23.330s]       |                                          |
+[23.330s]       |                                          shared_ptr<LaserScan_<[...]>>
+[42.173s] gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+[42.175s] gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+[42.175s] gmake[1]: *** Waiting for unfinished jobs....
+[42.671s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+[42.671s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[42.672s] gmake: *** [Makefile:146: all] Error 2
+[42.675s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

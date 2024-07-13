@@ -1,0 +1,19 @@
+[0.027s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.192s] [ 14%] Built target reactive_planner
+[0.303s] [ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[0.303s] [ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+[6.443s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:27:10: fatal error: std_msgs/msg/UInt32.h: No such file or directory
+[6.443s]    27 | #include <std_msgs/msg/UInt32.h>
+[6.443s]       |          ^~~~~~~~~~~~~~~~~~~~~~~
+[6.443s] compilation terminated.
+[6.476s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:27:10: fatal error: std_msgs/msg/UInt32.h: No such file or directory
+[6.477s]    27 | #include <std_msgs/msg/UInt32.h>
+[6.477s]       |          ^~~~~~~~~~~~~~~~~~~~~~~
+[6.477s] compilation terminated.
+[6.498s] gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+[6.499s] gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+[6.499s] gmake[1]: *** Waiting for unfinished jobs....
+[6.531s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+[6.531s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[6.532s] gmake: *** [Makefile:146: all] Error 2
+[6.535s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

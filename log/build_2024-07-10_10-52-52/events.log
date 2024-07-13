@@ -1,0 +1,497 @@
+[0.000000] (-) TimerEvent: {}
+[0.000412] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.001211] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.017269] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.024342] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.028686] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src/semnav_migration/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1992', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1958,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1958', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9cf301d5_d6eb_4725_bda1_1cffc2fc2c7b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WILDQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099621] (-) TimerEvent: {}
+[0.197699] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.200668] (-) TimerEvent: {}
+[0.300869] (-) TimerEvent: {}
+[0.341537] (semnav) StdoutLine: {'line': b'[ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o\n'}
+[0.342013] (semnav) StdoutLine: {'line': b'[ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o\n'}
+[0.401651] (-) TimerEvent: {}
+[0.501852] (-) TimerEvent: {}
+[0.602059] (-) TimerEvent: {}
+[0.702268] (-) TimerEvent: {}
+[0.803649] (-) TimerEvent: {}
+[0.903863] (-) TimerEvent: {}
+[1.004060] (-) TimerEvent: {}
+[1.104259] (-) TimerEvent: {}
+[1.204463] (-) TimerEvent: {}
+[1.304658] (-) TimerEvent: {}
+[1.404861] (-) TimerEvent: {}
+[1.505647] (-) TimerEvent: {}
+[1.605904] (-) TimerEvent: {}
+[1.706128] (-) TimerEvent: {}
+[1.806336] (-) TimerEvent: {}
+[1.907653] (-) TimerEvent: {}
+[2.007856] (-) TimerEvent: {}
+[2.108062] (-) TimerEvent: {}
+[2.208263] (-) TimerEvent: {}
+[2.308465] (-) TimerEvent: {}
+[2.408655] (-) TimerEvent: {}
+[2.508870] (-) TimerEvent: {}
+[2.609658] (-) TimerEvent: {}
+[2.709866] (-) TimerEvent: {}
+[2.810074] (-) TimerEvent: {}
+[2.910271] (-) TimerEvent: {}
+[3.011659] (-) TimerEvent: {}
+[3.111892] (-) TimerEvent: {}
+[3.212092] (-) TimerEvent: {}
+[3.312301] (-) TimerEvent: {}
+[3.412504] (-) TimerEvent: {}
+[3.512664] (-) TimerEvent: {}
+[3.612866] (-) TimerEvent: {}
+[3.714647] (-) TimerEvent: {}
+[3.814846] (-) TimerEvent: {}
+[3.915051] (-) TimerEvent: {}
+[4.015263] (-) TimerEvent: {}
+[4.115463] (-) TimerEvent: {}
+[4.215657] (-) TimerEvent: {}
+[4.315858] (-) TimerEvent: {}
+[4.416058] (-) TimerEvent: {}
+[4.516264] (-) TimerEvent: {}
+[4.616455] (-) TimerEvent: {}
+[4.717649] (-) TimerEvent: {}
+[4.817843] (-) TimerEvent: {}
+[4.918043] (-) TimerEvent: {}
+[5.018242] (-) TimerEvent: {}
+[5.118458] (-) TimerEvent: {}
+[5.221648] (-) TimerEvent: {}
+[5.321874] (-) TimerEvent: {}
+[5.422077] (-) TimerEvent: {}
+[5.522276] (-) TimerEvent: {}
+[5.622473] (-) TimerEvent: {}
+[5.722654] (-) TimerEvent: {}
+[5.822848] (-) TimerEvent: {}
+[5.923043] (-) TimerEvent: {}
+[6.023239] (-) TimerEvent: {}
+[6.123463] (-) TimerEvent: {}
+[6.223657] (-) TimerEvent: {}
+[6.323854] (-) TimerEvent: {}
+[6.424054] (-) TimerEvent: {}
+[6.524273] (-) TimerEvent: {}
+[6.626691] (-) TimerEvent: {}
+[6.726908] (-) TimerEvent: {}
+[6.827130] (-) TimerEvent: {}
+[6.927351] (-) TimerEvent: {}
+[7.027569] (-) TimerEvent: {}
+[7.127802] (-) TimerEvent: {}
+[7.228017] (-) TimerEvent: {}
+[7.328230] (-) TimerEvent: {}
+[7.428443] (-) TimerEvent: {}
+[7.528662] (-) TimerEvent: {}
+[7.628876] (-) TimerEvent: {}
+[7.729088] (-) TimerEvent: {}
+[7.829309] (-) TimerEvent: {}
+[7.930657] (-) TimerEvent: {}
+[8.030873] (-) TimerEvent: {}
+[8.131105] (-) TimerEvent: {}
+[8.231324] (-) TimerEvent: {}
+[8.331542] (-) TimerEvent: {}
+[8.431793] (-) TimerEvent: {}
+[8.532010] (-) TimerEvent: {}
+[8.634664] (-) TimerEvent: {}
+[8.734888] (-) TimerEvent: {}
+[8.835136] (-) TimerEvent: {}
+[8.935356] (-) TimerEvent: {}
+[9.035591] (-) TimerEvent: {}
+[9.135827] (-) TimerEvent: {}
+[9.236046] (-) TimerEvent: {}
+[9.336258] (-) TimerEvent: {}
+[9.436478] (-) TimerEvent: {}
+[9.536739] (-) TimerEvent: {}
+[9.636960] (-) TimerEvent: {}
+[9.739664] (-) TimerEvent: {}
+[9.839878] (-) TimerEvent: {}
+[9.941664] (-) TimerEvent: {}
+[10.041880] (-) TimerEvent: {}
+[10.142092] (-) TimerEvent: {}
+[10.242306] (-) TimerEvent: {}
+[10.342518] (-) TimerEvent: {}
+[10.442745] (-) TimerEvent: {}
+[10.542963] (-) TimerEvent: {}
+[10.643202] (-) TimerEvent: {}
+[10.743415] (-) TimerEvent: {}
+[10.843643] (-) TimerEvent: {}
+[10.943861] (-) TimerEvent: {}
+[11.044083] (-) TimerEvent: {}
+[11.144302] (-) TimerEvent: {}
+[11.244525] (-) TimerEvent: {}
+[11.344779] (-) TimerEvent: {}
+[11.445662] (-) TimerEvent: {}
+[11.545917] (-) TimerEvent: {}
+[11.646136] (-) TimerEvent: {}
+[11.746359] (-) TimerEvent: {}
+[11.847664] (-) TimerEvent: {}
+[11.947886] (-) TimerEvent: {}
+[12.048139] (-) TimerEvent: {}
+[12.148359] (-) TimerEvent: {}
+[12.248592] (-) TimerEvent: {}
+[12.348809] (-) TimerEvent: {}
+[12.450658] (-) TimerEvent: {}
+[12.550869] (-) TimerEvent: {}
+[12.651093] (-) TimerEvent: {}
+[12.751343] (-) TimerEvent: {}
+[12.851568] (-) TimerEvent: {}
+[12.951800] (-) TimerEvent: {}
+[13.052019] (-) TimerEvent: {}
+[13.152236] (-) TimerEvent: {}
+[13.252458] (-) TimerEvent: {}
+[13.352663] (-) TimerEvent: {}
+[13.454190] (-) TimerEvent: {}
+[13.554408] (-) TimerEvent: {}
+[13.654645] (-) TimerEvent: {}
+[13.754856] (-) TimerEvent: {}
+[13.855072] (-) TimerEvent: {}
+[13.955292] (-) TimerEvent: {}
+[14.055624] (-) TimerEvent: {}
+[14.157667] (-) TimerEvent: {}
+[14.257897] (-) TimerEvent: {}
+[14.358103] (-) TimerEvent: {}
+[14.458315] (-) TimerEvent: {}
+[14.558516] (-) TimerEvent: {}
+[14.658748] (-) TimerEvent: {}
+[14.758960] (-) TimerEvent: {}
+[14.859167] (-) TimerEvent: {}
+[14.959393] (-) TimerEvent: {}
+[15.061154] (-) TimerEvent: {}
+[15.161349] (-) TimerEvent: {}
+[15.261551] (-) TimerEvent: {}
+[15.361770] (-) TimerEvent: {}
+[15.461987] (-) TimerEvent: {}
+[15.562213] (-) TimerEvent: {}
+[15.662459] (-) TimerEvent: {}
+[15.764666] (-) TimerEvent: {}
+[15.864885] (-) TimerEvent: {}
+[15.965103] (-) TimerEvent: {}
+[16.065324] (-) TimerEvent: {}
+[16.165543] (-) TimerEvent: {}
+[16.265775] (-) TimerEvent: {}
+[16.366001] (-) TimerEvent: {}
+[16.466223] (-) TimerEvent: {}
+[16.567653] (-) TimerEvent: {}
+[16.667886] (-) TimerEvent: {}
+[16.768105] (-) TimerEvent: {}
+[16.868323] (-) TimerEvent: {}
+[16.968543] (-) TimerEvent: {}
+[17.068771] (-) TimerEvent: {}
+[17.168984] (-) TimerEvent: {}
+[17.269198] (-) TimerEvent: {}
+[17.369929] (-) TimerEvent: {}
+[17.470656] (-) TimerEvent: {}
+[17.570866] (-) TimerEvent: {}
+[17.671099] (-) TimerEvent: {}
+[17.772658] (-) TimerEvent: {}
+[17.872870] (-) TimerEvent: {}
+[17.973089] (-) TimerEvent: {}
+[18.073309] (-) TimerEvent: {}
+[18.173528] (-) TimerEvent: {}
+[18.273757] (-) TimerEvent: {}
+[18.373977] (-) TimerEvent: {}
+[18.474224] (-) TimerEvent: {}
+[18.576662] (-) TimerEvent: {}
+[18.676875] (-) TimerEvent: {}
+[18.777090] (-) TimerEvent: {}
+[18.877312] (-) TimerEvent: {}
+[18.977543] (-) TimerEvent: {}
+[19.077770] (-) TimerEvent: {}
+[19.178104] (-) TimerEvent: {}
+[19.278318] (-) TimerEvent: {}
+[19.378527] (-) TimerEvent: {}
+[19.478778] (-) TimerEvent: {}
+[19.578992] (-) TimerEvent: {}
+[19.679200] (-) TimerEvent: {}
+[19.779418] (-) TimerEvent: {}
+[19.880659] (-) TimerEvent: {}
+[19.980909] (-) TimerEvent: {}
+[20.082639] (-) TimerEvent: {}
+[20.182854] (-) TimerEvent: {}
+[20.283068] (-) TimerEvent: {}
+[20.383278] (-) TimerEvent: {}
+[20.483569] (-) TimerEvent: {}
+[20.583801] (-) TimerEvent: {}
+[20.685663] (-) TimerEvent: {}
+[20.785903] (-) TimerEvent: {}
+[20.886120] (-) TimerEvent: {}
+[20.986333] (-) TimerEvent: {}
+[21.086546] (-) TimerEvent: {}
+[21.186766] (-) TimerEvent: {}
+[21.286983] (-) TimerEvent: {}
+[21.387198] (-) TimerEvent: {}
+[21.487429] (-) TimerEvent: {}
+[21.588658] (-) TimerEvent: {}
+[21.688867] (-) TimerEvent: {}
+[21.789125] (-) TimerEvent: {}
+[21.889342] (-) TimerEvent: {}
+[21.989555] (-) TimerEvent: {}
+[22.089776] (-) TimerEvent: {}
+[22.148654] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:13: error: extra qualification \xe2\x80\x98NavigationNode::\xe2\x80\x99 on member \xe2\x80\x98NavigationNode\xe2\x80\x99 [-fpermissive]\n'}
+[22.148999] (semnav) StderrLine: {'line': b'   46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {\n'}
+[22.149172] (semnav) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~\n'}
+[22.183848] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:13: error: extra qualification \xe2\x80\x98SemanticNavigationNode::\xe2\x80\x99 on member \xe2\x80\x98SemanticNavigationNode\xe2\x80\x99 [-fpermissive]\n'}
+[22.184160] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[22.184320] (semnav) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~~~~~~~~~\n'}
+[22.190689] (-) TimerEvent: {}
+[22.252714] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In constructor \xe2\x80\x98NavigationNode::NavigationNode()\xe2\x80\x99:\n'}
+[22.253003] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:91: error: no matching function for call to \xe2\x80\x98rclcpp::Node::Node()\xe2\x80\x99\n'}
+[22.253200] (semnav) StderrLine: {'line': b'   46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {\n'}
+[22.253371] (semnav) StderrLine: {'line': b'      |                                                                                           ^\n'}
+[22.255651] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[22.255933] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[22.256095] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[22.256233] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,\n'}
+[22.256381] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25:\n'}
+[22.256517] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const rclcpp::Node&, const std::string&)\xe2\x80\x99\n'}
+[22.256689] (semnav) StderrLine: {'line': b' 1629 |   Node(\n'}
+[22.256829] (semnav) StderrLine: {'line': b'      |   ^~~~\n'}
+[22.256963] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided\n'}
+[22.257092] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[22.257226] (semnav) StderrLine: {'line': b'  103 |   explicit Node(\n'}
+[22.257357] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[22.257481] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided\n'}
+[22.259776] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[22.260005] (semnav) StderrLine: {'line': b'   91 |   explicit Node(\n'}
+[22.260151] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[22.260285] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided\n'}
+[22.290817] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In constructor \xe2\x80\x98SemanticNavigationNode::SemanticNavigationNode()\xe2\x80\x99:\n'}
+[22.291095] (-) TimerEvent: {}
+[22.291131] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95: error: no matching function for call to \xe2\x80\x98rclcpp::Node::Node()\xe2\x80\x99\n'}
+[22.291325] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[22.291462] (semnav) StderrLine: {'line': b'      |                                                                                               ^\n'}
+[22.293649] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[22.293932] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[22.294080] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[22.294212] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,\n'}
+[22.294359] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:\n'}
+[22.294490] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const rclcpp::Node&, const std::string&)\xe2\x80\x99\n'}
+[22.294637] (semnav) StderrLine: {'line': b' 1629 |   Node(\n'}
+[22.294773] (semnav) StderrLine: {'line': b'      |   ^~~~\n'}
+[22.294901] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided\n'}
+[22.295027] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[22.295158] (semnav) StderrLine: {'line': b'  103 |   explicit Node(\n'}
+[22.295292] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[22.295416] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided\n'}
+[22.295561] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[22.297892] (semnav) StderrLine: {'line': b'   91 |   explicit Node(\n'}
+[22.298079] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[22.298215] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided\n'}
+[22.391232] (-) TimerEvent: {}
+[22.491451] (-) TimerEvent: {}
+[22.592658] (-) TimerEvent: {}
+[22.689884] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function \xe2\x80\x98void NavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[22.690197] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:421:42: error: could not convert \xe2\x80\x98lidar_data\xe2\x80\x99 from \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99 to \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99\n'}
+[22.690368] (semnav) StderrLine: {'line': b'  421 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[22.690516] (semnav) StderrLine: {'line': b'      |                                          ^~~~~~~~~~\n'}
+[22.690715] (semnav) StderrLine: {'line': b'      |                                          |\n'}
+[22.690861] (semnav) StderrLine: {'line': b'      |                                          shared_ptr<LaserScan_<[...]>>\n'}
+[22.693657] (-) TimerEvent: {}
+[22.736840] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function \xe2\x80\x98void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[22.737154] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:477:42: error: could not convert \xe2\x80\x98lidar_data\xe2\x80\x99 from \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99 to \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99\n'}
+[22.737325] (semnav) StderrLine: {'line': b'  477 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[22.737473] (semnav) StderrLine: {'line': b'      |                                          ^~~~~~~~~~\n'}
+[22.737638] (semnav) StderrLine: {'line': b'      |                                          |\n'}
+[22.737788] (semnav) StderrLine: {'line': b'      |                                          shared_ptr<LaserScan_<[...]>>\n'}
+[22.796661] (-) TimerEvent: {}
+[22.896877] (-) TimerEvent: {}
+[22.997098] (-) TimerEvent: {}
+[23.097319] (-) TimerEvent: {}
+[23.197570] (-) TimerEvent: {}
+[23.297800] (-) TimerEvent: {}
+[23.398016] (-) TimerEvent: {}
+[23.498235] (-) TimerEvent: {}
+[23.598455] (-) TimerEvent: {}
+[23.698676] (-) TimerEvent: {}
+[23.798895] (-) TimerEvent: {}
+[23.899130] (-) TimerEvent: {}
+[24.000694] (-) TimerEvent: {}
+[24.100913] (-) TimerEvent: {}
+[24.201131] (-) TimerEvent: {}
+[24.301480] (-) TimerEvent: {}
+[24.401674] (-) TimerEvent: {}
+[24.501894] (-) TimerEvent: {}
+[24.602114] (-) TimerEvent: {}
+[24.704663] (-) TimerEvent: {}
+[24.804882] (-) TimerEvent: {}
+[24.905104] (-) TimerEvent: {}
+[25.005325] (-) TimerEvent: {}
+[25.105546] (-) TimerEvent: {}
+[25.205778] (-) TimerEvent: {}
+[25.305997] (-) TimerEvent: {}
+[25.406211] (-) TimerEvent: {}
+[25.506429] (-) TimerEvent: {}
+[25.606659] (-) TimerEvent: {}
+[25.706877] (-) TimerEvent: {}
+[25.807130] (-) TimerEvent: {}
+[25.907357] (-) TimerEvent: {}
+[26.007591] (-) TimerEvent: {}
+[26.109663] (-) TimerEvent: {}
+[26.209881] (-) TimerEvent: {}
+[26.310099] (-) TimerEvent: {}
+[26.410319] (-) TimerEvent: {}
+[26.510561] (-) TimerEvent: {}
+[26.610785] (-) TimerEvent: {}
+[26.711000] (-) TimerEvent: {}
+[26.811209] (-) TimerEvent: {}
+[26.911423] (-) TimerEvent: {}
+[27.011644] (-) TimerEvent: {}
+[27.111851] (-) TimerEvent: {}
+[27.213657] (-) TimerEvent: {}
+[27.313892] (-) TimerEvent: {}
+[27.414109] (-) TimerEvent: {}
+[27.514325] (-) TimerEvent: {}
+[27.614538] (-) TimerEvent: {}
+[27.714764] (-) TimerEvent: {}
+[27.814982] (-) TimerEvent: {}
+[27.915202] (-) TimerEvent: {}
+[28.015454] (-) TimerEvent: {}
+[28.117665] (-) TimerEvent: {}
+[28.217879] (-) TimerEvent: {}
+[28.318089] (-) TimerEvent: {}
+[28.418301] (-) TimerEvent: {}
+[28.518515] (-) TimerEvent: {}
+[28.618751] (-) TimerEvent: {}
+[28.718958] (-) TimerEvent: {}
+[28.819176] (-) TimerEvent: {}
+[28.919396] (-) TimerEvent: {}
+[29.019623] (-) TimerEvent: {}
+[29.119832] (-) TimerEvent: {}
+[29.220043] (-) TimerEvent: {}
+[29.321659] (-) TimerEvent: {}
+[29.421982] (-) TimerEvent: {}
+[29.522205] (-) TimerEvent: {}
+[29.623679] (-) TimerEvent: {}
+[29.723887] (-) TimerEvent: {}
+[29.824099] (-) TimerEvent: {}
+[29.924314] (-) TimerEvent: {}
+[30.024534] (-) TimerEvent: {}
+[30.124766] (-) TimerEvent: {}
+[30.224984] (-) TimerEvent: {}
+[30.325204] (-) TimerEvent: {}
+[30.425419] (-) TimerEvent: {}
+[30.525647] (-) TimerEvent: {}
+[30.626661] (-) TimerEvent: {}
+[30.726881] (-) TimerEvent: {}
+[30.827106] (-) TimerEvent: {}
+[30.927328] (-) TimerEvent: {}
+[31.027553] (-) TimerEvent: {}
+[31.129572] (-) TimerEvent: {}
+[31.229818] (-) TimerEvent: {}
+[31.330014] (-) TimerEvent: {}
+[31.430225] (-) TimerEvent: {}
+[31.530419] (-) TimerEvent: {}
+[31.630627] (-) TimerEvent: {}
+[31.730822] (-) TimerEvent: {}
+[31.831644] (-) TimerEvent: {}
+[31.931855] (-) TimerEvent: {}
+[32.032073] (-) TimerEvent: {}
+[32.132272] (-) TimerEvent: {}
+[32.233644] (-) TimerEvent: {}
+[32.333839] (-) TimerEvent: {}
+[32.435646] (-) TimerEvent: {}
+[32.535845] (-) TimerEvent: {}
+[32.636045] (-) TimerEvent: {}
+[32.736254] (-) TimerEvent: {}
+[32.836456] (-) TimerEvent: {}
+[32.936677] (-) TimerEvent: {}
+[33.036895] (-) TimerEvent: {}
+[33.137113] (-) TimerEvent: {}
+[33.237336] (-) TimerEvent: {}
+[33.337558] (-) TimerEvent: {}
+[33.437787] (-) TimerEvent: {}
+[33.539663] (-) TimerEvent: {}
+[33.639888] (-) TimerEvent: {}
+[33.740102] (-) TimerEvent: {}
+[33.840320] (-) TimerEvent: {}
+[33.940538] (-) TimerEvent: {}
+[34.040769] (-) TimerEvent: {}
+[34.140982] (-) TimerEvent: {}
+[34.243667] (-) TimerEvent: {}
+[34.343886] (-) TimerEvent: {}
+[34.444100] (-) TimerEvent: {}
+[34.544319] (-) TimerEvent: {}
+[34.644554] (-) TimerEvent: {}
+[34.744791] (-) TimerEvent: {}
+[34.845007] (-) TimerEvent: {}
+[34.945229] (-) TimerEvent: {}
+[35.045451] (-) TimerEvent: {}
+[35.145672] (-) TimerEvent: {}
+[35.245891] (-) TimerEvent: {}
+[35.346109] (-) TimerEvent: {}
+[35.446329] (-) TimerEvent: {}
+[35.546544] (-) TimerEvent: {}
+[35.647680] (-) TimerEvent: {}
+[35.747893] (-) TimerEvent: {}
+[35.848107] (-) TimerEvent: {}
+[35.948329] (-) TimerEvent: {}
+[36.048544] (-) TimerEvent: {}
+[36.149661] (-) TimerEvent: {}
+[36.249907] (-) TimerEvent: {}
+[36.350130] (-) TimerEvent: {}
+[36.450350] (-) TimerEvent: {}
+[36.550587] (-) TimerEvent: {}
+[36.651665] (-) TimerEvent: {}
+[36.751886] (-) TimerEvent: {}
+[36.852107] (-) TimerEvent: {}
+[36.952327] (-) TimerEvent: {}
+[37.052551] (-) TimerEvent: {}
+[37.154661] (-) TimerEvent: {}
+[37.254877] (-) TimerEvent: {}
+[37.355079] (-) TimerEvent: {}
+[37.455300] (-) TimerEvent: {}
+[37.555524] (-) TimerEvent: {}
+[37.655754] (-) TimerEvent: {}
+[37.755969] (-) TimerEvent: {}
+[37.856193] (-) TimerEvent: {}
+[37.956441] (-) TimerEvent: {}
+[38.058665] (-) TimerEvent: {}
+[38.158884] (-) TimerEvent: {}
+[38.259107] (-) TimerEvent: {}
+[38.359330] (-) TimerEvent: {}
+[38.459552] (-) TimerEvent: {}
+[38.559802] (-) TimerEvent: {}
+[38.660022] (-) TimerEvent: {}
+[38.760240] (-) TimerEvent: {}
+[38.860463] (-) TimerEvent: {}
+[38.962661] (-) TimerEvent: {}
+[39.062867] (-) TimerEvent: {}
+[39.163067] (-) TimerEvent: {}
+[39.263303] (-) TimerEvent: {}
+[39.363509] (-) TimerEvent: {}
+[39.463732] (-) TimerEvent: {}
+[39.563938] (-) TimerEvent: {}
+[39.664236] (-) TimerEvent: {}
+[39.764447] (-) TimerEvent: {}
+[39.864663] (-) TimerEvent: {}
+[39.964907] (-) TimerEvent: {}
+[40.065124] (-) TimerEvent: {}
+[40.166658] (-) TimerEvent: {}
+[40.266874] (-) TimerEvent: {}
+[40.367085] (-) TimerEvent: {}
+[40.467303] (-) TimerEvent: {}
+[40.567522] (-) TimerEvent: {}
+[40.667748] (-) TimerEvent: {}
+[40.767993] (-) TimerEvent: {}
+[40.868214] (-) TimerEvent: {}
+[40.969664] (-) TimerEvent: {}
+[41.069877] (-) TimerEvent: {}
+[41.170092] (-) TimerEvent: {}
+[41.270306] (-) TimerEvent: {}
+[41.370526] (-) TimerEvent: {}
+[41.470749] (-) TimerEvent: {}
+[41.580655] (-) TimerEvent: {}
+[41.681657] (-) TimerEvent: {}
+[41.781866] (-) TimerEvent: {}
+[41.882096] (-) TimerEvent: {}
+[41.891291] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1\n'}
+[41.892454] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2\n'}
+[41.892887] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[41.965358] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1\n'}
+[41.966082] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2\n'}
+[41.966525] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[41.969350] (semnav) CommandEnded: {'returncode': 2}
+[41.982267] (-) TimerEvent: {}
+[42.073767] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[42.082441] (-) TimerEvent: {}
+[42.084843] (-) EventReactorShutdown: {}

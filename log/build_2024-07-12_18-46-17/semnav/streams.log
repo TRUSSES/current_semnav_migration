@@ -1,0 +1,108 @@
+[0.041s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.232s] [ 14%] Built target reactive_planner
+[0.355s] [ 23%] Built target navigation
+[0.383s] [ 33%] Built target navigation_semantic
+[0.470s] [ 42%] Built target navigation_humans
+[0.647s] [ 52%] Built target human_following
+[0.674s] [ 57%] [32mBuilding CXX object CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o[0m
+[0.785s] [ 61%] [32mBuilding CXX object CMakeFiles/human_following_fallen.dir/src/human_following_fallen.cpp.o[0m
+[27.175s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:355:75:[m[K [01;31m[Kerror: [m[K‘[01m[KSemanticMapObjectArray[m[K’ in namespace ‘[01m[Kobject_pose_interface_msgs[m[K’ does not name a type
+[27.175s]   355 |                 void diffeo_tree_update(const object_pose_interface_msgs::[01;31m[KSemanticMapObjectArray[m[K::ConstPtr& semantic_map_data) {
+[27.176s]       |                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[27.177s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:355:107:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+[27.177s]   355 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr[01;31m[K&[m[K semantic_map_data) {
+[27.177s]       |                                                                                                           [01;31m[K^[m[K
+[27.179s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:355:107:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[27.180s]   355 |                 void diffeo_tree_update[34m[K([m[Kconst object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr[01;31m[K&[m[K semantic_map_data) {
+[27.180s]       |                                        [34m[K~[m[K                                                                  [01;31m[K^[m[K
+[27.180s]       |                                                                                                           [32m[K)[m[K
+[27.181s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:355:107:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[27.181s]   355 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr[01;31m[K&[m[K semantic_map_data) {
+[27.181s]       |                                                                                                           [01;31m[K^[m[K
+[27.182s]       |                                                                                                            [32m[K;[m[K
+[27.230s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:355:109:[m[K [01;31m[Kerror: [m[K‘[01m[Ksemantic_map_data[m[K’ does not name a type
+[27.230s]   355 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& [01;31m[Ksemantic_map_data[m[K) {
+[27.230s]       |                                                                                                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[27.263s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:768:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ does not name a type
+[27.264s]   768 |                 [01;31m[Kros[m[K::Time Goal_camera_stamp_;
+[27.264s]       |                 [01;31m[K^~~[m[K
+[28.134s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingFallenNode::[01;32m[Khuman_update[m[K(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)[m[K’:
+[28.135s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:346:41:[m[K [01;31m[Kerror: [m[K‘[01m[KGoal_camera_stamp_[m[K’ was not declared in this scope; did you mean ‘[01m[KGoal_camera_x_[m[K’?
+[28.135s]   346 |                                         [01;31m[KGoal_camera_stamp_[m[K = human_data->header.stamp;
+[28.135s]       |                                         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[28.136s]       |                                         [32m[KGoal_camera_x_[m[K
+[28.136s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingFallenNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[28.136s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:456:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[28.138s]   456 |                         [01;31m[Kros[m[K::Time localGoalCameraStamp;
+[28.139s]       |                         [01;31m[K^~~[m[K
+[28.283s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:465:33:[m[K [01;31m[Kerror: [m[K‘[01m[KlocalGoalCameraStamp[m[K’ was not declared in this scope; did you mean ‘[01m[KlocalGoalCameraZ[m[K’?
+[28.285s]   465 |                                 [01;31m[KlocalGoalCameraStamp[m[K = Goal_camera_stamp_;
+[28.286s]       |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[28.286s]       |                                 [32m[KlocalGoalCameraZ[m[K
+[28.393s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:465:56:[m[K [01;31m[Kerror: [m[K‘[01m[KGoal_camera_stamp_[m[K’ was not declared in this scope; did you mean ‘[01m[KGoal_camera_x_[m[K’?
+[28.394s]   465 |                                 localGoalCameraStamp = [01;31m[KGoal_camera_stamp_[m[K;
+[28.395s]       |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[28.395s]       |                                                        [32m[KGoal_camera_x_[m[K
+[28.395s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:476:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[28.395s]   476 |                         odomPose.header.stamp = [01;31m[Kros[m[K::Time(0);
+[28.397s]       |                                                 [01;31m[K^~~[m[K
+[28.519s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:510:56:[m[K [01;31m[Kerror: [m[K‘[01m[KlocalGoalCameraStamp[m[K’ was not declared in this scope; did you mean ‘[01m[KlocalGoalCamera[m[K’?
+[28.520s]   510 |                         localGoalCamera.header.stamp = [01;31m[KlocalGoalCameraStamp[m[K;
+[28.520s]       |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[28.521s]       |                                                        [32m[KlocalGoalCamera[m[K
+[32.293s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:42[m[K,
+[32.294s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[32.294s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[32.294s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[32.294s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[32.295s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+[32.296s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+[32.296s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[32.296s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[32.296s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+[32.297s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+[32.297s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:25[m[K:
+[32.297s] /opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp: In instantiation of ‘[01m[Kstruct rclcpp::function_traits::function_traits<std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &> >[m[K’:
+[32.297s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:25:[m[K   recursively required by substitution of ‘[01m[Ktemplate<class MessageT, class CallbackT> struct rclcpp::detail::SubscriptionCallbackTypeHelper<MessageT, CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<_Tp>, const rclcpp::MessageInfo&)> >::value, void>::type> [35m[K[with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &>][m[K[m[K’
+[32.297s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:25:[m[K   required from ‘[01m[Krclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::[01;32m[Kset[m[K(CallbackT) [35m[K[with CallbackT = std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &>; MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K[m[K’
+[32.297s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:[m[K   required from ‘[01m[Krclcpp::SubscriptionFactory rclcpp::[01;32m[Kcreate_subscription_factory[m[K(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [35m[K[with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[32.298s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:[m[K   required from ‘[01m[Kstd::shared_ptr<ROSMessageT> rclcpp::detail::[01;32m[Kcreate_subscription[m[K(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [35m[K[with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[32.298s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:[m[K   required from ‘[01m[Kstd::shared_ptr<ROSMessageT> rclcpp::[01;32m[Kcreate_subscription[m[K(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [35m[K[with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[32.298s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:[m[K   required from ‘[01m[Kstd::shared_ptr<ROSMessageT> rclcpp::Node::[01;32m[Kcreate_subscription[m[K(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [35m[K[with MessageT = object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >; CallbackT = std::_Bind<void (HumanFollowingFallenNode::*(HumanFollowingFallenNode*, std::_Placeholder<1>))(...) &>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[32.298s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_fallen.cpp:168:106:[m[K   required from here
+[32.300s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp:51:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[32.301s]    51 |   using [01;31m[Karguments[m[K = typename tuple_tail<
+[32.301s]       |         [01;31m[K^~~~~~~~~[m[K
+[32.301s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp:57:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[32.301s]    57 |   using [01;31m[Kargument_type[m[K = typename std::tuple_element<N, arguments>::type;
+[32.301s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[32.301s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp:59:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[32.303s]    59 |   using [01;31m[Kreturn_type[m[K = typename function_traits<decltype( &FunctionT::operator())>::return_type;
+[32.304s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[43.080s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingSignalNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[43.081s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:675:24:[m[K [01;31m[Kerror: [m[K‘[01m[Ksleep_for[m[K’ was not declared in this scope
+[43.082s]   675 |                 rclcpp:[01;31m[Ksleep_for[m[K(std::chrono::seconds(5));
+[43.083s]       |                        [01;31m[K^~~~~~~~~[m[K
+[43.083s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:675:24:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[43.083s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25[m[K,
+[43.083s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[43.083s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[43.083s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+[43.084s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:25[m[K:
+[43.084s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:232:1:[m[K [01;36m[Knote: [m[K  ‘[01m[Krclcpp::sleep_for[m[K’
+[43.084s]   232 | [01;36m[Ksleep_for[m[K(
+[43.084s]       | [01;36m[K^~~~~~~~~[m[K
+[43.084s] In file included from [01m[K/usr/include/c++/13/thread:46[m[K,
+[43.086s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:22[m[K,
+[43.086s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[43.086s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K:
+[43.086s] [01m[K/usr/include/c++/13/bits/this_thread_sleep.h:68:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::this_thread::sleep_for[m[K’
+[43.086s]    68 |       [01;36m[Ksleep_for[m[K(const chrono::duration<_Rep, _Period>& __rtime)
+[43.087s]       |       [01;36m[K^~~~~~~~~[m[K
+[51.933s] gmake[2]: *** [CMakeFiles/human_following_fallen.dir/build.make:76: CMakeFiles/human_following_fallen.dir/src/human_following_fallen.cpp.o] Error 1
+[51.934s] gmake[1]: *** [CMakeFiles/Makefile2:311: CMakeFiles/human_following_fallen.dir/all] Error 2
+[51.935s] gmake[1]: *** Waiting for unfinished jobs....
+[70.583s] gmake[2]: *** [CMakeFiles/human_following_signal.dir/build.make:76: CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o] Error 1
+[70.584s] gmake[1]: *** [CMakeFiles/Makefile2:285: CMakeFiles/human_following_signal.dir/all] Error 2
+[70.584s] gmake: *** [Makefile:146: all] Error 2
+[70.586s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

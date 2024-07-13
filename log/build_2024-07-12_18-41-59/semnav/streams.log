@@ -1,0 +1,21 @@
+[0.038s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.235s] [ 14%] Built target reactive_planner
+[0.375s] [ 23%] Built target navigation_semantic
+[0.378s] [ 33%] Built target navigation
+[0.526s] [ 42%] Built target navigation_humans
+[0.587s] [ 47%] [32mBuilding CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o[0m
+[0.732s] [ 52%] [32mBuilding CXX object CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o[0m
+[27.055s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingSignalNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[27.061s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:675:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+[27.061s]   675 |                 rclcpp:sleep_for(std::chrono::seconds(5)[01;31m[K;[m[K
+[27.061s]       |                                                         [01;31m[K^[m[K
+[27.062s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:675:33:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+[27.062s]   675 |                 rclcpp:sleep_for[01;36m[K([m[Kstd::chrono::seconds(5);
+[27.065s]       |                                 [01;36m[K^[m[K
+[57.365s] gmake[2]: *** [CMakeFiles/human_following_signal.dir/build.make:76: CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o] Error 1
+[57.366s] gmake[1]: *** [CMakeFiles/Makefile2:285: CMakeFiles/human_following_signal.dir/all] Error 2
+[57.367s] gmake[1]: *** Waiting for unfinished jobs....
+[118.105s] [ 57%] [32m[1mLinking CXX executable human_following[0m
+[123.712s] [ 57%] Built target human_following
+[123.715s] gmake: *** [Makefile:146: all] Error 2
+[123.718s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

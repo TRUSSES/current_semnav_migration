@@ -1,0 +1,513 @@
+[0.033s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.219s] [  4%] [32mBuilding CXX object CMakeFiles/reactive_planner.dir/src/libraries/reactive_planner_lib.cpp.o[0m
+[66.504s] [  9%] [32m[1mLinking CXX static library libreactive_planner.a[0m
+[67.306s] [ 14%] Built target reactive_planner
+[67.448s] [ 19%] [32mBuilding CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o[0m
+[76.584s] [ 23%] [32m[1mLinking CXX executable navigation_semantic[0m
+[81.679s] [ 28%] Built target navigation_semantic
+[81.750s] [ 33%] [32mBuilding CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o[0m
+[106.724s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:237:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kobject_pose_interface_msgs[m[K’ does not name a type
+[106.724s]   237 |                 void human_update(const [01;31m[Kobject_pose_interface_msgs[m[K::KeypointDetections3D::ConstPtr& human_data) {
+[106.725s]       |                                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.725s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:237:89:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[106.725s]   237 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D[01;31m[K::[m[KConstPtr& human_data) {
+[106.725s]       |                                                                                         [01;31m[K^~[m[K
+[106.725s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:237:89:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[106.725s]   237 |                 void human_update[34m[K([m[Kconst object_pose_interface_msgs::KeypointDetections3D[01;31m[K:[m[K[32m[K:[m[KConstPtr& human_data) {
+[106.725s]       |                                  [34m[K~[m[K                                                      [01;31m[K^[m[K[32m[K~[m[K
+[106.726s]       |                                                                                         [32m[K)[m[K
+[106.726s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:237:69:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[106.730s]   237 |                 void human_update(const object_pose_interface_msgs::[01;31m[KKeypointDetections3D[m[K::ConstPtr& human_data) {
+[106.730s]       |                                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[106.730s]       |                                                                                         [32m[K;[m[K
+[106.744s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:237:91:[m[K [01;31m[Kerror: [m[K‘[01m[KConstPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+[106.744s]   237 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::[01;31m[KConstPtr[m[K& human_data) {
+[106.744s]       |                                                                                           [01;31m[K^~~~~~~~[m[K
+[106.845s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:303:47:[m[K [01;31m[Kerror: [m[K‘[01m[Kobject_pose_interface_msgs[m[K’ does not name a type
+[106.846s]   303 |                 void diffeo_tree_update(const [01;31m[Kobject_pose_interface_msgs[m[K::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[106.846s]       |                                               [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.846s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:303:97:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[106.846s]   303 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray[01;31m[K::[m[KConstPtr& semantic_map_data) {
+[106.846s]       |                                                                                                 [01;31m[K^~[m[K
+[106.846s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:303:97:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[106.846s]   303 |                 void diffeo_tree_update[34m[K([m[Kconst object_pose_interface_msgs::SemanticMapObjectArray[01;31m[K:[m[K[32m[K:[m[KConstPtr& semantic_map_data) {
+[106.847s]       |                                        [34m[K~[m[K                                                        [01;31m[K^[m[K[32m[K~[m[K
+[106.847s]       |                                                                                                 [32m[K)[m[K
+[106.849s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:303:75:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[106.849s]   303 |                 void diffeo_tree_update(const object_pose_interface_msgs::[01;31m[KSemanticMapObjectArray[m[K::ConstPtr& semantic_map_data) {
+[106.850s]       |                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.850s]       |                                                                                                 [32m[K;[m[K
+[106.863s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:303:99:[m[K [01;31m[Kerror: [m[K‘[01m[KConstPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+[106.863s]   303 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::[01;31m[KConstPtr[m[K& semantic_map_data) {
+[106.863s]       |                                                                                                   [01;31m[K^~~~~~~~[m[K
+[106.864s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:664:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[106.864s]   664 |                 [01;31m[Krclcpp[m[K::Publisher pub_behaviorID_;
+[106.864s]       |                 [01;31m[K^~~~~~[m[K
+[106.864s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:665:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[106.864s]   665 |                 [01;31m[Krclcpp[m[K::Publisher pub_behaviorMode_;
+[106.864s]       |                 [01;31m[K^~~~~~[m[K
+[106.865s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:666:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[106.865s]   666 |                 [01;31m[Krclcpp[m[K::Publisher pub_twist_;
+[106.865s]       |                 [01;31m[K^~~~~~[m[K
+[106.865s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:668:17:[m[K [01;31m[Kerror: [m[Kinvalid use of template-name ‘[01m[Krclcpp::Publisher[m[K’ without an argument list
+[106.865s]   668 |                 [01;31m[Krclcpp[m[K::Publisher pub_semantic_map_;
+[106.865s]       |                 [01;31m[K^~~~~~[m[K
+[106.879s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:714:22:[m[K [01;31m[Kerror: [m[K‘[01m[KTransformListener[m[K’ in namespace ‘[01m[Ktf2[m[K’ does not name a type
+[106.879s]   714 |                 tf2::[01;31m[KTransformListener[m[K listener_;
+[106.879s]       |                      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[106.880s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In constructor ‘[01m[KNavigationHumansNode::[01;32m[KNavigationHumansNode[m[K()[m[K’:
+[106.881s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:44:63:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::Node()[m[K’
+[106.881s]    44 |         NavigationHumansNode() : Node("navigation humans node"[01;31m[K)[m[K {
+[106.881s]       |                                                               [01;31m[K^[m[K
+[106.881s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[106.881s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[106.881s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+[106.881s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32[m[K,
+[106.882s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25[m[K:
+[106.882s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const rclcpp::Node&, const std::string&)[m[K’
+[106.884s]  1629 |   [01;36m[KNode[m[K(
+[106.884s]       |   [01;36m[K^~~~[m[K
+[106.884s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[106.885s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const std::string&, const std::string&, const rclcpp::NodeOptions&)[m[K’
+[106.885s]   103 |   explicit [01;36m[KNode[m[K(
+[106.885s]       |            [01;36m[K^~~~[m[K
+[106.885s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[106.885s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Node::[01;32m[KNode[m[K(const std::string&, const rclcpp::NodeOptions&)[m[K’
+[106.885s]    91 |   explicit [01;36m[KNode[m[K(
+[106.885s]       |            [01;36m[K^~~~[m[K
+[106.886s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[106.953s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:123:25:[m[K [01;31m[Kerror: [m[K‘[01m[KLowpassCutOff_[m[K’ was not declared in this scope; did you mean ‘[01m[KLowpassCutoff_[m[K’?
+[106.954s]   123 |                         [01;31m[KLowpassCutOff_[m[K = this->get_parameter("LowpassCutOff").as_double();
+[106.954s]       |                         [01;31m[K^~~~~~~~~~~~~~[m[K
+[106.954s]       |                         [32m[KLowpassCutoff_[m[K
+[106.958s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:132:69:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[106.959s]   132 |             pub_behaviorID_ = this->create_publisher<std_msgs::msg::[01;31m[KUInt32[m[K>("pub_behaviorID_topic_", 1);
+[106.959s]       |                                                                     [01;31m[K^~~~~~[m[K
+[106.959s] In file included from [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/u_int32.hpp:7[m[K,
+[106.959s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:51[m[K:
+[106.959s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[106.959s]   125 | using [01;36m[KUInt32[m[K =
+[106.959s]       |       [01;36m[K^~~~~~[m[K
+[106.960s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:132:76:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNavigationHumansNode::create_publisher<<expression error> >(const char [22], int)[m[K’
+[106.960s]   132 |             pub_behaviorID_ = [01;31m[Kthis->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1)[m[K;
+[106.962s]       |                               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.962s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[106.963s]   197 |   [01;36m[Kcreate_publisher[m[K(
+[106.963s]       |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[106.963s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[106.963s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:132:76:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[106.963s]   132 |             pub_behaviorID_ = [01;31m[Kthis->create_publisher<std_msgs::msg::UInt32>("pub_behaviorID_topic_", 1)[m[K;
+[106.963s]       |                               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.965s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:133:71:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[106.965s]   133 |             pub_behaviorMode_ = this->create_publisher<std_msgs::msg::[01;31m[KUInt32[m[K>("pub_behaviorMode_topic_", 1);
+[106.965s]       |                                                                       [01;31m[K^~~~~~[m[K
+[106.966s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[106.966s]   125 | using [01;36m[KUInt32[m[K =
+[106.966s]       |       [01;36m[K^~~~~~[m[K
+[106.968s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:133:78:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNavigationHumansNode::create_publisher<<expression error> >(const char [24], int)[m[K’
+[106.968s]   133 |             pub_behaviorMode_ = [01;31m[Kthis->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1)[m[K;
+[106.968s]       |                                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.968s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[106.969s]   197 |   [01;36m[Kcreate_publisher[m[K(
+[106.969s]       |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[106.969s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[106.969s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:133:78:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[106.969s]   133 |             pub_behaviorMode_ = [01;31m[Kthis->create_publisher<std_msgs::msg::UInt32>("pub_behaviorMode_topic_", 1)[m[K;
+[106.970s]       |                                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.970s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:134:64:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[106.970s]   134 |             pub_twist_ = this->create_publisher<std_msgs::msg::[01;31m[KUInt32[m[K>("pub_twist_topic", 1);
+[106.970s]       |                                                                [01;31m[K^~~~~~[m[K
+[106.970s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[106.970s]   125 | using [01;36m[KUInt32[m[K =
+[106.970s]       |       [01;36m[K^~~~~~[m[K
+[106.971s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:134:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNavigationHumansNode::create_publisher<<expression error> >(const char [16], int)[m[K’
+[106.971s]   134 |             pub_twist_ = [01;31m[Kthis->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic", 1)[m[K;
+[106.973s]       |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[106.973s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[106.975s]   197 |   [01;36m[Kcreate_publisher[m[K(
+[106.975s]       |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[106.975s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[106.975s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:134:71:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[106.976s]   134 |             pub_twist_ = [01;31m[Kthis->create_publisher<std_msgs::msg::UInt32>("pub_twist_topic", 1)[m[K;
+[106.976s]       |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[107.056s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:137:116:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)[m[K’
+[107.056s]   137 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1[01;31m[K)[m[K;
+[107.056s]       |                                                                                                                    [01;31m[K^[m[K
+[107.056s] In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:45[m[K:
+[107.056s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K() [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node][m[K[m[K’
+[107.057s]   224 |   [01;36m[KSubscriber[m[K() = default;
+[107.057s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.057s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[107.057s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[107.057s]   212 |   [01;36m[KSubscriber[m[K(
+[107.057s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.057s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[107.058s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[107.058s]   203 |   [01;36m[KSubscriber[m[K(
+[107.061s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.061s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[107.061s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[107.061s]   188 |   [01;36m[KSubscriber[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.062s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.062s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Krclcpp::Node*[m[K’
+[107.062s]   188 |   Subscriber([01;36m[KNodeType * node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.062s]       |              [01;36m[K~~~~~~~~~~~^~~~[m[K
+[107.062s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t) [35m[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[107.062s]   183 |   [01;36m[KSubscriber[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.062s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.063s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+[107.063s]   183 |   Subscriber([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.065s]       |              [01;36m[K~~~~~~~~^~~~[m[K
+[107.121s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:138:112:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)[m[K’
+[107.121s]   138 |                         message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(nh_, sub_robot_topic_, 1[01;31m[K)[m[K;
+[107.121s]       |                                                                                                                [01;31m[K^[m[K
+[107.121s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K() [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node][m[K[m[K’
+[107.122s]   224 |   [01;36m[KSubscriber[m[K() = default;
+[107.122s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.122s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+[107.122s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[107.122s]   212 |   [01;36m[KSubscriber[m[K(
+[107.122s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.122s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[107.123s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K[m[K’
+[107.123s]   203 |   [01;36m[KSubscriber[m[K(
+[107.125s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.125s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[107.126s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodeType*, const std::string&, rmw_qos_profile_t) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[107.126s]   188 |   [01;36m[KSubscriber[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.126s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.126s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Krclcpp::Node*[m[K’
+[107.126s]   188 |   Subscriber([01;36m[KNodeType * node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.126s]       |              [01;36m[K~~~~~~~~~~~^~~~[m[K
+[107.126s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kmessage_filters::Subscriber<M, NodeType>::[01;32m[KSubscriber[m[K(NodePtr, const std::string&, rmw_qos_profile_t) [35m[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K[m[K’
+[107.127s]   183 |   [01;36m[KSubscriber[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.127s]       |   [01;36m[K^~~~~~~~~~[m[K
+[107.131s] [01m[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krclcpp::Node[m[K’ to ‘[01m[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+[107.131s]   183 |   Subscriber([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)
+[107.131s]       |              [01;36m[K~~~~~~~~^~~~[m[K
+[107.275s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:143:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kbind[m[K’ is not a member of ‘[01m[Kboost[m[K’; did you mean ‘[01m[Kfind[m[K’?
+[107.276s]   143 |                         sync->registerCallback(boost::[01;31m[Kbind[m[K(&NavigationHumansNode::control_callback, this, _1, _2));
+[107.276s]       |                                                       [01;31m[K^~~~[m[K
+[107.276s]       |                                                       [32m[Kfind[m[K
+[107.279s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:143:107:[m[K [01;31m[Kerror: [m[K‘[01m[K_1[m[K’ was not declared in this scope
+[107.280s]   143 |                         sync->registerCallback(boost::bind(&NavigationHumansNode::control_callback, this, [01;31m[K_1[m[K, _2));
+[107.280s]       |                                                                                                           [01;31m[K^~[m[K
+[107.280s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:143:107:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[107.282s] In file included from [01m[K/usr/include/boost/mpl/aux_/include_preprocessed.hpp:37[m[K,
+[107.282s]                  from [01m[K/usr/include/boost/mpl/placeholders.hpp:43[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/iterator/iterator_categories.hpp:16[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/iterator/iterator_facade.hpp:13[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/range/iterator_range_core.hpp:27[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/lexical_cast.hpp:48[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/multiprecision/detail/number_base.hpp:29[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9[m[K,
+[107.283s]                  from [01m[K/usr/include/boost/multiprecision/detail/precision.hpp:9[m[K,
+[107.284s]                  from [01m[K/usr/include/boost/multiprecision/number.hpp:11[m[K,
+[107.284s]                  from [01m[K/usr/include/boost/multiprecision/cpp_int.hpp:19[m[K,
+[107.285s]                  from [01m[K/usr/include/boost/multiprecision/cpp_bin_float.hpp:15[m[K,
+[107.285s]                  from [01m[K/usr/include/boost/geometry/core/coordinate_promotion.hpp:16[m[K,
+[107.285s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:30[m[K,
+[107.285s]                  from [01m[K/usr/include/boost/geometry/geometry.hpp:50[m[K,
+[107.285s]                  from [01m[K/usr/include/boost/geometry.hpp:17[m[K,
+[107.285s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26[m[K:
+[107.286s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[107.286s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[107.286s]       |                [01;36m[K^~[m[K
+[107.286s] In file included from [01m[K/usr/include/boost/numeric/conversion/converter_policies.hpp:13[m[K,
+[107.286s]                  from [01m[K/usr/include/boost/numeric/conversion/converter.hpp:14[m[K,
+[107.286s]                  from [01m[K/usr/include/boost/numeric/conversion/cast.hpp:33[m[K,
+[107.286s]                  from [01m[K/usr/include/boost/geometry/core/radian_access.hpp:26[m[K:
+[107.286s] [01m[K/usr/include/c++/13/functional:294:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_1[m[K’
+[107.287s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> [01;36m[K_1[m[K;
+[107.287s]       |                                                [01;36m[K^~[m[K
+[107.291s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[107.291s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[107.291s]       |                [01;36m[K^~[m[K
+[107.291s] In file included from [01m[K/usr/include/boost/describe/members.hpp:20[m[K,
+[107.292s]                  from [01m[K/usr/include/boost/container_hash/is_described_class.hpp:11[m[K,
+[107.292s]                  from [01m[K/usr/include/boost/container_hash/hash.hpp:18[m[K,
+[107.292s]                  from [01m[K/usr/include/boost/functional/hash.hpp:6[m[K,
+[107.292s]                  from [01m[K/usr/include/CGAL/Kernel/hash_functions.h:16[m[K,
+[107.292s]                  from [01m[K/usr/include/CGAL/Kernel/global_functions.h:25[m[K,
+[107.292s]                  from [01m[K/usr/include/CGAL/Cartesian/Cartesian_base.h:22[m[K,
+[107.292s]                  from [01m[K/usr/include/CGAL/Simple_cartesian.h:20[m[K,
+[107.293s]                  from [01m[K/usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20[m[K,
+[107.293s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32[m[K,
+[107.295s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:54[m[K:
+[107.296s] [01m[K/usr/include/boost/mp11/bind.hpp:45:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_1[m[K’
+[107.296s]    45 | using [01;36m[K_1[m[K = mp_arg<0>;
+[107.296s]       |       [01;36m[K^~[m[K
+[107.296s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_1[m[K’
+[107.296s]    29 | typedef arg<1> [01;36m[K_1[m[K;
+[107.296s]       |                [01;36m[K^~[m[K
+[107.296s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:143:111:[m[K [01;31m[Kerror: [m[K‘[01m[K_2[m[K’ was not declared in this scope
+[107.296s]   143 |                         sync->registerCallback(boost::bind(&NavigationHumansNode::control_callback, this, _1, [01;31m[K_2[m[K));
+[107.297s]       |                                                                                                               [01;31m[K^~[m[K
+[107.297s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:143:111:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[107.297s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[107.297s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[107.297s]       |                [01;36m[K^~[m[K
+[107.300s] [01m[K/usr/include/c++/13/functional:295:48:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::placeholders::_2[m[K’
+[107.300s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> [01;36m[K_2[m[K;
+[107.300s]       |                                                [01;36m[K^~[m[K
+[107.300s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[107.301s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[107.301s]       |                [01;36m[K^~[m[K
+[107.301s] [01m[K/usr/include/boost/mp11/bind.hpp:46:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kboost::mp11::_2[m[K’
+[107.301s]    46 | using [01;36m[K_2[m[K = mp_arg<1>;
+[107.301s]       |       [01;36m[K^~[m[K
+[107.301s] [01m[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:[m[K [01;36m[Knote: [m[K  ‘[01m[Kmpl_::_2[m[K’
+[107.301s]    42 | typedef arg<2> [01;36m[K_2[m[K;
+[107.302s]       |                [01;36m[K^~[m[K
+[107.302s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:145:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationHumansNode[m[K’ has no member named ‘[01m[Kcreate_subscriber[m[K’; did you mean ‘[01m[Kcreate_subscription[m[K’?
+[107.302s]   145 |             rclcpp::Subscription sub_semantic = this->[01;31m[Kcreate_subscriber[m[K(sub_semantic_topic_, 1);
+[107.302s]       |                                                       [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[107.302s]       |                                                       [32m[Kcreate_subscription[m[K
+[107.302s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:146:52:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass NavigationHumansNode[m[K’ has no member named ‘[01m[Kcreate_subscriber[m[K’; did you mean ‘[01m[Kcreate_subscription[m[K’?
+[107.303s]   146 |             rclcpp::Subscription sub_human = this->[01;31m[Kcreate_subscriber[m[K(sub_human_topic_, 1);
+[107.303s]       |                                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[107.303s]       |                                                    [32m[Kcreate_subscription[m[K
+[107.303s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:151:45:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Duration::Duration(double)[m[K’
+[107.303s]   151 |                         rclcpp::Duration(5.0[01;31m[K)[m[K.sleep();
+[107.303s]       |                                             [01;31m[K^[m[K
+[107.303s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24[m[K,
+[107.303s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24[m[K,
+[107.304s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38[m[K,
+[107.304s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[107.306s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[107.306s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[107.306s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[107.306s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+[107.307s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+[107.307s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[107.307s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K:
+[107.307s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Rep, class Period> rclcpp::Duration::[01;32m[KDuration[m[K(const std::chrono::duration<_Rep1, _Period1>&)[m[K’
+[107.307s]    49 |   [01;36m[KDuration[m[K(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[107.307s]       |   [01;36m[K^~~~~~~~[m[K
+[107.307s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[107.308s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:151:45:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+[107.308s]   151 |                         rclcpp::Duration(5.0[01;36m[K)[m[K.sleep();
+[107.310s]       |                                             [01;36m[K^[m[K
+[107.310s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K()[m[K’
+[107.310s]   159 |   [01;36m[KDuration[m[K() = default;
+[107.310s]       |   [01;36m[K^~~~~~~~[m[K
+[107.311s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[107.311s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rclcpp::Duration&)[m[K’
+[107.311s]    62 |   [01;36m[KDuration[m[K(const Duration & rhs);
+[107.311s]       |   [01;36m[K^~~~~~~~[m[K
+[107.311s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rclcpp::Duration&[m[K’
+[107.311s]    62 |   Duration([01;36m[Kconst Duration & rhs[m[K);
+[107.311s]       |            [01;36m[K~~~~~~~~~~~~~~~~~^~~[m[K
+[107.311s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rcl_duration_t&)[m[K’
+[107.312s]    60 |   explicit [01;36m[KDuration[m[K(const rcl_duration_t & duration);
+[107.312s]       |            [01;36m[K^~~~~~~~[m[K
+[107.314s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rcl_duration_t&[m[K’ {aka ‘[01m[Kconst rcl_duration_s&[m[K’}
+[107.314s]    60 |   explicit Duration([01;36m[Kconst rcl_duration_t & duration[m[K);
+[107.314s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[107.314s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const builtin_interfaces::msg::Duration&)[m[K’
+[107.315s]    54 |   [01;36m[KDuration[m[K(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[107.315s]       |   [01;36m[K^~~~~~~~[m[K
+[107.315s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst builtin_interfaces::msg::Duration&[m[K’ {aka ‘[01m[Kconst builtin_interfaces::msg::Duration_<std::allocator<void> >&[m[K’}
+[107.315s]    54 |   Duration([01;36m[Kconst builtin_interfaces::msg::Duration & duration_msg[m[K);  // NOLINT(runtime/explicit)
+[107.315s]       |            [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[107.315s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(std::chrono::nanoseconds)[m[K’
+[107.315s]    43 |   explicit [01;36m[KDuration[m[K(std::chrono::nanoseconds nanoseconds);
+[107.316s]       |            [01;36m[K^~~~~~~~[m[K
+[107.316s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kstd::chrono::nanoseconds[m[K’ {aka ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000000000> >[m[K’}
+[107.318s]    43 |   explicit Duration([01;36m[Kstd::chrono::nanoseconds nanoseconds[m[K);
+[107.318s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[107.318s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(int32_t, uint32_t)[m[K’
+[107.318s]    40 |   [01;36m[KDuration[m[K(int32_t seconds, uint32_t nanoseconds);
+[107.319s]       |   [01;36m[K^~~~~~~~[m[K
+[107.319s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[107.321s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:156:75:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::executors::MultiThreadedExecutor::MultiThreadedExecutor(int)[m[K’
+[107.321s]   156 |                         rclcpp::executors::MultiThreadedExecutor spinner(4[01;31m[K)[m[K;
+[107.321s]       |                                                                           [01;31m[K^[m[K
+[107.321s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:55:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::executors::MultiThreadedExecutor::[01;32m[KMultiThreadedExecutor[m[K(const rclcpp::ExecutorOptions&, size_t, bool, std::chrono::nanoseconds)[m[K’
+[107.322s]    55 |   explicit [01;36m[KMultiThreadedExecutor[m[K(
+[107.322s]       |            [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[107.322s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:56:37:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kint[m[K’ to ‘[01m[Kconst rclcpp::ExecutorOptions&[m[K’
+[107.322s]    56 |     [01;36m[Kconst rclcpp::ExecutorOptions & options = rclcpp::ExecutorOptions()[m[K,
+[107.322s]       |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[107.322s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Kpublish_twist[m[K(double, double)[m[K’:
+[107.322s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:161:40:[m[K [01;31m[Kerror: [m[K‘[01m[KTwist[m[K’ is not a member of ‘[01m[Kgeometry_msgs[m[K’; did you mean ‘[01m[Kgeometry_msgs::msg::Twist[m[K’?
+[107.323s]   161 |                         geometry_msgs::[01;31m[KTwist[m[K commandTwist;
+[107.323s]       |                                        [01;31m[K^~~~~[m[K
+[107.323s] In file included from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:25[m[K,
+[107.323s]                  from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:7[m[K,
+[107.323s]                  from [01m[K/opt/ros/jazzy/include/tf2/tf2/buffer_core.h:49[m[K,
+[107.323s]                  from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39[m[K,
+[107.323s]                  from [01m[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42[m[K,
+[107.323s]                  from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40[m[K:
+[107.324s] [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:137:7:[m[K [01;36m[Knote: [m[K‘[01m[Kgeometry_msgs::msg::Twist[m[K’ declared here
+[107.324s]   137 | using [01;36m[KTwist[m[K =
+[107.326s]       |       [01;36m[K^~~~~[m[K
+[107.380s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:162:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandTwist[m[K’ was not declared in this scope
+[107.380s]   162 |                         [01;31m[KcommandTwist[m[K.linear.x = LinearCmd;
+[107.380s]       |                         [01;31m[K^~~~~~~~~~~~[m[K
+[107.384s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Kpublish_behavior_id[m[K(uint16_t)[m[K’:
+[107.384s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:169:35:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[107.384s]   169 |                         std_msgs::[01;31m[KUInt32[m[K commandId;
+[107.384s]       |                                   [01;31m[K^~~~~~[m[K
+[107.385s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[107.385s]   125 | using [01;36m[KUInt32[m[K =
+[107.385s]       |       [01;36m[K^~~~~~[m[K
+[107.434s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:170:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandId[m[K’ was not declared in this scope
+[107.434s]   170 |                         [01;31m[KcommandId[m[K.data = BehaviorIdCmd;
+[107.434s]       |                         [01;31m[K^~~~~~~~~[m[K
+[107.442s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Kpublish_behavior_mode[m[K(uint16_t)[m[K’:
+[107.442s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:176:35:[m[K [01;31m[Kerror: [m[K‘[01m[KUInt32[m[K’ is not a member of ‘[01m[Kstd_msgs[m[K’; did you mean ‘[01m[Kexample_interfaces::msg::UInt32[m[K’?
+[107.442s]   176 |                         std_msgs::[01;31m[KUInt32[m[K commandMode;
+[107.442s]       |                                   [01;31m[K^~~~~~[m[K
+[107.443s] [01m[K/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7:[m[K [01;36m[Knote: [m[K‘[01m[Kexample_interfaces::msg::UInt32[m[K’ declared here
+[107.443s]   125 | using [01;36m[KUInt32[m[K =
+[107.443s]       |       [01;36m[K^~~~~~[m[K
+[107.509s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:177:25:[m[K [01;31m[Kerror: [m[K‘[01m[KcommandMode[m[K’ was not declared in this scope
+[107.509s]   177 |                         [01;31m[KcommandMode[m[K.data = BehaviorModeCmd;
+[107.509s]       |                         [01;31m[K^~~~~~~~~~~[m[K
+[107.578s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[107.579s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:433:40:[m[K [01;31m[Kerror: [m[K‘[01m[KPoseStamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs[m[K’
+[107.579s]   433 |                         geometry_msgs::[01;31m[KPoseStamped[m[K odomPose, mapPose;
+[107.579s]       |                                        [01;31m[K^~~~~~~~~~~[m[K
+[107.631s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:434:25:[m[K [01;31m[Kerror: [m[K‘[01m[KodomPose[m[K’ was not declared in this scope
+[107.631s]   434 |                         [01;31m[KodomPose[m[K.header.stamp = rclcpp::Time(0);
+[107.631s]       |                         [01;31m[K^~~~~~~~[m[K
+[107.689s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:438:33:[m[K [01;31m[Kerror: [m[K‘[01m[Klistener_[m[K’ was not declared in this scope
+[107.689s]   438 |                                 [01;31m[Klistener_[m[K.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0));
+[107.689s]       |                                 [01;31m[K^~~~~~~~~[m[K
+[107.690s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:438:130:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Duration::Duration(double)[m[K’
+[107.690s]   438 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0[01;31m[K)[m[K);
+[107.690s]       |                                                                                                                                  [01;31m[K^[m[K
+[107.690s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Rep, class Period> rclcpp::Duration::[01;32m[KDuration[m[K(const std::chrono::duration<_Rep1, _Period1>&)[m[K’
+[107.690s]    49 |   [01;36m[KDuration[m[K(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[107.691s]       |   [01;36m[K^~~~~~~~[m[K
+[107.691s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[107.691s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:438:130:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+[107.691s]   438 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(1.0[01;36m[K)[m[K);
+[107.691s]       |                                                                                                                                  [01;36m[K^[m[K
+[107.691s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K()[m[K’
+[107.691s]   159 |   [01;36m[KDuration[m[K() = default;
+[107.694s]       |   [01;36m[K^~~~~~~~[m[K
+[107.694s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[107.694s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rclcpp::Duration&)[m[K’
+[107.695s]    62 |   [01;36m[KDuration[m[K(const Duration & rhs);
+[107.695s]       |   [01;36m[K^~~~~~~~[m[K
+[107.695s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rclcpp::Duration&[m[K’
+[107.695s]    62 |   Duration([01;36m[Kconst Duration & rhs[m[K);
+[107.695s]       |            [01;36m[K~~~~~~~~~~~~~~~~~^~~[m[K
+[107.695s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rcl_duration_t&)[m[K’
+[107.695s]    60 |   explicit [01;36m[KDuration[m[K(const rcl_duration_t & duration);
+[107.695s]       |            [01;36m[K^~~~~~~~[m[K
+[107.696s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rcl_duration_t&[m[K’ {aka ‘[01m[Kconst rcl_duration_s&[m[K’}
+[107.696s]    60 |   explicit Duration([01;36m[Kconst rcl_duration_t & duration[m[K);
+[107.698s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[107.698s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const builtin_interfaces::msg::Duration&)[m[K’
+[107.698s]    54 |   [01;36m[KDuration[m[K(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[107.698s]       |   [01;36m[K^~~~~~~~[m[K
+[107.699s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst builtin_interfaces::msg::Duration&[m[K’ {aka ‘[01m[Kconst builtin_interfaces::msg::Duration_<std::allocator<void> >&[m[K’}
+[107.699s]    54 |   Duration([01;36m[Kconst builtin_interfaces::msg::Duration & duration_msg[m[K);  // NOLINT(runtime/explicit)
+[107.699s]       |            [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[107.699s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(std::chrono::nanoseconds)[m[K’
+[107.699s]    43 |   explicit [01;36m[KDuration[m[K(std::chrono::nanoseconds nanoseconds);
+[107.699s]       |            [01;36m[K^~~~~~~~[m[K
+[107.699s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kstd::chrono::nanoseconds[m[K’ {aka ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000000000> >[m[K’}
+[107.700s]    43 |   explicit Duration([01;36m[Kstd::chrono::nanoseconds nanoseconds[m[K);
+[107.700s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[107.702s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(int32_t, uint32_t)[m[K’
+[107.702s]    40 |   [01;36m[KDuration[m[K(int32_t seconds, uint32_t nanoseconds);
+[107.702s]       |   [01;36m[K^~~~~~~~[m[K
+[107.702s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[107.729s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:439:84:[m[K [01;31m[Kerror: [m[K‘[01m[KmapPose[m[K’ was not declared in this scope
+[107.730s]   439 |                                 listener_.transformPose(world_frame_id_, odomPose, [01;31m[KmapPose[m[K);
+[107.730s]       |                                                                                    [01;31m[K^~~~~~~[m[K
+[107.826s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:441:33:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_ERROR[m[K’ was not declared in this scope
+[107.826s]   441 |                                 [01;31m[KROS_ERROR[m[K("%s",ex.what());
+[107.826s]       |                                 [01;31m[K^~~~~~~~~[m[K
+[107.907s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:446:68:[m[K [01;31m[Kerror: [m[K‘[01m[KmapPose[m[K’ was not declared in this scope
+[107.907s]   446 |                         tf2::Quaternion rotation = tf2::Quaternion([01;31m[KmapPose[m[K.pose.orientation.x,
+[107.908s]       |                                                                    [01;31m[K^~~~~~~[m[K
+[108.081s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:578:25:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_INFO_STREAM[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_INFO_STREAM[m[K’?
+[108.081s]   578 |                         [01;31m[KROS_INFO_STREAM[m[K("[Navigation] Computed linear local goal.");
+[108.081s]       |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[108.081s]       |                         [32m[KRCLCPP_INFO_STREAM[m[K
+[108.085s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:615:53:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Duration::Duration(double)[m[K’
+[108.085s]   615 |                                 rclcpp::Duration(5.0[01;31m[K)[m[K.sleep();
+[108.085s]       |                                                     [01;31m[K^[m[K
+[108.087s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class Rep, class Period> rclcpp::Duration::[01;32m[KDuration[m[K(const std::chrono::duration<_Rep1, _Period1>&)[m[K’
+[108.087s]    49 |   [01;36m[KDuration[m[K(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[108.087s]       |   [01;36m[K^~~~~~~~[m[K
+[108.088s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[108.088s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:615:53:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+[108.088s]   615 |                                 rclcpp::Duration(5.0[01;36m[K)[m[K.sleep();
+[108.088s]       |                                                     [01;36m[K^[m[K
+[108.088s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K()[m[K’
+[108.088s]   159 |   [01;36m[KDuration[m[K() = default;
+[108.088s]       |   [01;36m[K^~~~~~~~[m[K
+[108.088s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[108.089s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rclcpp::Duration&)[m[K’
+[108.089s]    62 |   [01;36m[KDuration[m[K(const Duration & rhs);
+[108.092s]       |   [01;36m[K^~~~~~~~[m[K
+[108.092s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rclcpp::Duration&[m[K’
+[108.092s]    62 |   Duration([01;36m[Kconst Duration & rhs[m[K);
+[108.093s]       |            [01;36m[K~~~~~~~~~~~~~~~~~^~~[m[K
+[108.093s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const rcl_duration_t&)[m[K’
+[108.093s]    60 |   explicit [01;36m[KDuration[m[K(const rcl_duration_t & duration);
+[108.093s]       |            [01;36m[K^~~~~~~~[m[K
+[108.093s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst rcl_duration_t&[m[K’ {aka ‘[01m[Kconst rcl_duration_s&[m[K’}
+[108.093s]    60 |   explicit Duration([01;36m[Kconst rcl_duration_t & duration[m[K);
+[108.093s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[108.093s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(const builtin_interfaces::msg::Duration&)[m[K’
+[108.094s]    54 |   [01;36m[KDuration[m[K(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[108.094s]       |   [01;36m[K^~~~~~~~[m[K
+[108.096s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst builtin_interfaces::msg::Duration&[m[K’ {aka ‘[01m[Kconst builtin_interfaces::msg::Duration_<std::allocator<void> >&[m[K’}
+[108.096s]    54 |   Duration([01;36m[Kconst builtin_interfaces::msg::Duration & duration_msg[m[K);  // NOLINT(runtime/explicit)
+[108.096s]       |            [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~[m[K
+[108.097s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(std::chrono::nanoseconds)[m[K’
+[108.097s]    43 |   explicit [01;36m[KDuration[m[K(std::chrono::nanoseconds nanoseconds);
+[108.097s]       |            [01;36m[K^~~~~~~~[m[K
+[108.097s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kstd::chrono::nanoseconds[m[K’ {aka ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000000000> >[m[K’}
+[108.097s]    43 |   explicit Duration([01;36m[Kstd::chrono::nanoseconds nanoseconds[m[K);
+[108.097s]       |                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[108.097s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Krclcpp::Duration::[01;32m[KDuration[m[K(int32_t, uint32_t)[m[K’
+[108.097s]    40 |   [01;36m[KDuration[m[K(int32_t seconds, uint32_t nanoseconds);
+[108.098s]       |   [01;36m[K^~~~~~~~[m[K
+[108.098s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[108.185s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:618:33:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_WARN_STREAM[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_WARN_STREAM[m[K’?
+[108.185s]   618 |                                 [01;31m[KROS_WARN_STREAM[m[K("[Navigation] Successfully navigated to goal and stopped...");
+[108.186s]       |                                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+[108.186s]       |                                 [32m[KRCLCPP_WARN_STREAM[m[K
+[108.192s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:641:75:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kconst char [32][m[K’ and ‘[01m[Kdouble[m[K’ to binary ‘[01m[Koperator<<[m[K’
+[108.192s]   641 |                         ROS_WARN_STREAM([32m[K"[Navigation] Linear command is "[m[K [01;31m[K<<[m[K [34m[KLinearCmd[m[K << " and angular command is " << AngularCmd);
+[108.192s]       |                                         [32m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~~[m[K
+[108.192s]       |                                         [32m[K|[m[K                                    [34m[K|[m[K
+[108.193s]       |                                         [32m[Kconst char [32][m[K                      [34m[Kdouble[m[K
+[108.293s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:641:25:[m[K [01;31m[Kerror: [m[K‘[01m[KROS_WARN_STREAM[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_WARN_STREAM[m[K’?
+[108.293s]   641 |                         [01;31m[KROS_WARN_STREAM[m[K("[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
+[108.293s]       |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[108.293s]       |                         [32m[KRCLCPP_WARN_STREAM[m[K
+[108.295s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:642:76:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[Kconst char [33][m[K’ and ‘[01m[Kint[m[K’ to binary ‘[01m[Koperator<<[m[K’
+[108.295s]   642 |                         ROS_WARN_STREAM([32m[K"[Navigation] Command update for "[m[K [01;31m[K<<[m[K [34m[Kint(localDiffeoTreeArray.size())[m[K << " polygons in " << rclcpp::Time::now().toSec()-before_time << " seconds.");
+[108.295s]       |                                         [32m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[108.296s]       |                                         [32m[K|[m[K                                     [34m[K|[m[K
+[108.296s]       |                                         [32m[Kconst char [33][m[K                       [34m[Kint[m[K
+[108.296s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:642:148:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+[108.296s]   642 |                         ROS_WARN_STREAM("[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << rclcpp::Time::[01;31m[Know[m[K().toSec()-before_time << " seconds.");
+[108.296s]       |                                                                                                                                                    [01;31m[K^~~[m[K
+[108.297s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[108.297s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:721:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[108.298s]   721 |         [01;31m[Kros[m[K::init(argc, argv, "navigation_humans");
+[108.298s]       |         [01;31m[K^~~[m[K
+[108.298s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:727:54:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNavigationHumansNode::NavigationHumansNode(rclcpp::Node*)[m[K’
+[108.298s]   727 |         NavigationHumansNode navigationHumansNode(&nh[01;31m[K)[m[K;
+[108.298s]       |                                                      [01;31m[K^[m[K
+[108.298s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:44:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KNavigationHumansNode::[01;32m[KNavigationHumansNode[m[K()[m[K’
+[108.298s]    44 |         [01;36m[KNavigationHumansNode[m[K() : Node("navigation humans node") {
+[108.299s]       |         [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[108.299s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:44:9:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[119.371s] gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1
+[119.371s] gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2
+[119.372s] gmake[1]: *** Waiting for unfinished jobs....
+[147.108s] [ 38%] [32m[1mLinking CXX executable navigation[0m
+[151.485s] [ 38%] Built target navigation
+[151.487s] gmake: *** [Makefile:146: all] Error 2
+[151.493s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

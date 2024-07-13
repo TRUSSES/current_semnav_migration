@@ -1,0 +1,25 @@
+[0.038s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.232s] [  4%] Building CXX object CMakeFiles/reactive_planner.dir/src/libraries/reactive_planner_lib.cpp.o
+[65.300s] [  9%] Linking CXX static library libreactive_planner.a
+[66.036s] [ 14%] Built target reactive_planner
+[66.180s] [ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[66.180s] [ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+[92.671s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+[92.671s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:457:42: error: invalid initialization of reference of type ‘const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&’ {aka ‘const std::shared_ptr<const sensor_msgs::msg::LaserScan_<std::allocator<void> > >&’} from expression of type ‘const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr*’ {aka ‘const std::shared_ptr<const sensor_msgs::msg::LaserScan_<std::allocator<void> > >*’}
+[92.671s]   457 |                         constructLIDAR2D(&lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[92.671s]       |                                          ^~~~~~~~~~~
+[92.672s] In file included from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:
+[92.672s] /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:223:68: note: in passing argument 1 of ‘void constructLIDAR2D(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, double, double, double, LIDARClass*)’
+[92.672s]   223 | void constructLIDAR2D(const sensor_msgs::msg::LaserScan::ConstPtr& DataLIDAR, double CutoffRange, double AllowableRange, double Pitch, LIDARClass* LIDAR);
+[92.672s]       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+[115.518s] gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+[115.519s] gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+[115.520s] gmake[1]: *** Waiting for unfinished jobs....
+[155.160s] [ 28%] Linking CXX executable navigation
+[163.140s] /usr/bin/ld: CMakeFiles/navigation.dir/src/navigation.cpp.o: in function `NavigationNode::control_callback(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void> > const> const&)':
+[163.140s] navigation.cpp:(.text._ZN14NavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE[_ZN14NavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE]+0x4f8): undefined reference to `constructLIDAR2D(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, double, double, double, LIDARClass*)'
+[163.450s] collect2: error: ld returned 1 exit status
+[163.453s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:451: navigation] Error 1
+[163.454s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[163.454s] gmake: *** [Makefile:146: all] Error 2
+[163.460s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

@@ -1,0 +1,17 @@
+[ 14%] Built target reactive_planner
+[ 19%] [32mBuilding CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o[0m
+[ 28%] [32m[1mLinking CXX executable navigation[0m
+[ 33%] [32m[1mLinking CXX executable navigation_semantic[0m
+/usr/bin/ld: CMakeFiles/navigation.dir/src/navigation.cpp.o: in function `NavigationNode::control_callback(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const>, std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void> > const> const&)':
+navigation.cpp:(.text._ZN14NavigationNode16control_callbackESt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE[_ZN14NavigationNode16control_callbackESt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE]+0x4f8): undefined reference to `constructLIDAR2D(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, double, double, double, LIDARClass*)'
+/usr/bin/ld: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o: in function `SemanticNavigationNode::control_callback(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void> > const> const&)':
+navigation_semantic.cpp:(.text._ZN22SemanticNavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE[_ZN22SemanticNavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE]+0x532): undefined reference to `constructLIDAR2D(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, double, double, double, LIDARClass*)'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/navigation.dir/build.make:451: navigation] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:451: navigation_semantic] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

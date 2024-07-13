@@ -1,0 +1,10 @@
+[0.030s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.210s] [ 14%] Built target reactive_planner
+[0.313s] [ 19%] [32m[1mLinking CXX executable navigation[0m
+[5.379s] /usr/bin/ld: CMakeFiles/navigation.dir/src/navigation.cpp.o: in function `NavigationNode::control_callback(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void> > const> const&)':
+[5.379s] navigation.cpp:(.text._ZN14NavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE[_ZN14NavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE]+0x4f8): undefined reference to `constructLIDAR2D(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, double, double, double, LIDARClass*)'
+[5.929s] collect2: error: ld returned 1 exit status
+[5.938s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:451: navigation] Error 1
+[5.938s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[5.938s] gmake: *** [Makefile:146: all] Error 2
+[5.945s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

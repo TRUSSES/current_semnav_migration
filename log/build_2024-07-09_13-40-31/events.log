@@ -1,0 +1,768 @@
+[0.000000] (-) TimerEvent: {}
+[0.000131] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.000980] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.016680] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.024155] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.028546] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src/semnav_migration/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1992', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1958,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1958', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9cf301d5_d6eb_4725_bda1_1cffc2fc2c7b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WILDQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099405] (-) TimerEvent: {}
+[0.199662] (-) TimerEvent: {}
+[0.258256] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.301086] (-) TimerEvent: {}
+[0.400934] (semnav) StdoutLine: {'line': b'[ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o\n'}
+[0.401242] (-) TimerEvent: {}
+[0.401282] (semnav) StdoutLine: {'line': b'[ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o\n'}
+[0.501363] (-) TimerEvent: {}
+[0.601562] (-) TimerEvent: {}
+[0.701811] (-) TimerEvent: {}
+[0.802093] (-) TimerEvent: {}
+[0.904101] (-) TimerEvent: {}
+[1.004378] (-) TimerEvent: {}
+[1.104660] (-) TimerEvent: {}
+[1.204860] (-) TimerEvent: {}
+[1.305625] (-) TimerEvent: {}
+[1.405880] (-) TimerEvent: {}
+[1.507650] (-) TimerEvent: {}
+[1.607849] (-) TimerEvent: {}
+[1.708092] (-) TimerEvent: {}
+[1.810079] (-) TimerEvent: {}
+[1.910274] (-) TimerEvent: {}
+[2.010474] (-) TimerEvent: {}
+[2.110676] (-) TimerEvent: {}
+[2.210872] (-) TimerEvent: {}
+[2.311080] (-) TimerEvent: {}
+[2.413073] (-) TimerEvent: {}
+[2.513270] (-) TimerEvent: {}
+[2.614078] (-) TimerEvent: {}
+[2.714287] (-) TimerEvent: {}
+[2.814522] (-) TimerEvent: {}
+[2.915078] (-) TimerEvent: {}
+[3.015281] (-) TimerEvent: {}
+[3.117429] (-) TimerEvent: {}
+[3.217624] (-) TimerEvent: {}
+[3.317833] (-) TimerEvent: {}
+[3.418043] (-) TimerEvent: {}
+[3.518285] (-) TimerEvent: {}
+[3.618491] (-) TimerEvent: {}
+[3.718726] (-) TimerEvent: {}
+[3.818941] (-) TimerEvent: {}
+[3.919154] (-) TimerEvent: {}
+[4.020567] (-) TimerEvent: {}
+[4.122095] (-) TimerEvent: {}
+[4.223466] (-) TimerEvent: {}
+[4.326382] (-) TimerEvent: {}
+[4.426590] (-) TimerEvent: {}
+[4.526789] (-) TimerEvent: {}
+[4.626995] (-) TimerEvent: {}
+[4.727204] (-) TimerEvent: {}
+[4.829070] (-) TimerEvent: {}
+[4.930201] (-) TimerEvent: {}
+[5.032863] (-) TimerEvent: {}
+[5.133150] (-) TimerEvent: {}
+[5.233359] (-) TimerEvent: {}
+[5.333593] (-) TimerEvent: {}
+[5.433796] (-) TimerEvent: {}
+[5.534742] (-) TimerEvent: {}
+[5.634953] (-) TimerEvent: {}
+[5.735165] (-) TimerEvent: {}
+[5.835635] (-) TimerEvent: {}
+[5.935837] (-) TimerEvent: {}
+[6.036052] (-) TimerEvent: {}
+[6.136269] (-) TimerEvent: {}
+[6.236462] (-) TimerEvent: {}
+[6.339088] (-) TimerEvent: {}
+[6.439289] (-) TimerEvent: {}
+[6.539646] (-) TimerEvent: {}
+[6.639858] (-) TimerEvent: {}
+[6.740078] (-) TimerEvent: {}
+[6.840289] (-) TimerEvent: {}
+[6.940504] (-) TimerEvent: {}
+[7.040721] (-) TimerEvent: {}
+[7.140972] (-) TimerEvent: {}
+[7.241210] (-) TimerEvent: {}
+[7.341436] (-) TimerEvent: {}
+[7.441651] (-) TimerEvent: {}
+[7.541881] (-) TimerEvent: {}
+[7.642110] (-) TimerEvent: {}
+[7.744078] (-) TimerEvent: {}
+[7.844292] (-) TimerEvent: {}
+[7.944504] (-) TimerEvent: {}
+[8.044706] (-) TimerEvent: {}
+[8.144921] (-) TimerEvent: {}
+[8.245099] (-) TimerEvent: {}
+[8.345314] (-) TimerEvent: {}
+[8.445538] (-) TimerEvent: {}
+[8.545765] (-) TimerEvent: {}
+[8.645970] (-) TimerEvent: {}
+[8.746816] (-) TimerEvent: {}
+[8.849215] (-) TimerEvent: {}
+[8.949416] (-) TimerEvent: {}
+[9.049622] (-) TimerEvent: {}
+[9.151093] (-) TimerEvent: {}
+[9.251541] (-) TimerEvent: {}
+[9.352401] (-) TimerEvent: {}
+[9.454112] (-) TimerEvent: {}
+[9.554320] (-) TimerEvent: {}
+[9.654520] (-) TimerEvent: {}
+[9.754725] (-) TimerEvent: {}
+[9.854937] (-) TimerEvent: {}
+[9.955169] (-) TimerEvent: {}
+[10.055378] (-) TimerEvent: {}
+[10.157080] (-) TimerEvent: {}
+[10.257286] (-) TimerEvent: {}
+[10.357524] (-) TimerEvent: {}
+[10.457739] (-) TimerEvent: {}
+[10.557957] (-) TimerEvent: {}
+[10.658784] (-) TimerEvent: {}
+[10.758999] (-) TimerEvent: {}
+[10.859221] (-) TimerEvent: {}
+[10.959432] (-) TimerEvent: {}
+[11.061732] (-) TimerEvent: {}
+[11.161966] (-) TimerEvent: {}
+[11.262203] (-) TimerEvent: {}
+[11.362441] (-) TimerEvent: {}
+[11.462656] (-) TimerEvent: {}
+[11.562872] (-) TimerEvent: {}
+[11.663262] (-) TimerEvent: {}
+[11.763819] (-) TimerEvent: {}
+[11.864109] (-) TimerEvent: {}
+[11.964896] (-) TimerEvent: {}
+[12.065094] (-) TimerEvent: {}
+[12.165304] (-) TimerEvent: {}
+[12.265519] (-) TimerEvent: {}
+[12.365760] (-) TimerEvent: {}
+[12.467091] (-) TimerEvent: {}
+[12.567300] (-) TimerEvent: {}
+[12.667617] (-) TimerEvent: {}
+[12.767859] (-) TimerEvent: {}
+[12.868074] (-) TimerEvent: {}
+[12.969416] (-) TimerEvent: {}
+[13.069630] (-) TimerEvent: {}
+[13.169847] (-) TimerEvent: {}
+[13.270074] (-) TimerEvent: {}
+[13.375103] (-) TimerEvent: {}
+[13.475312] (-) TimerEvent: {}
+[13.575526] (-) TimerEvent: {}
+[13.675790] (-) TimerEvent: {}
+[13.778088] (-) TimerEvent: {}
+[13.878305] (-) TimerEvent: {}
+[13.978515] (-) TimerEvent: {}
+[14.081500] (-) TimerEvent: {}
+[14.181712] (-) TimerEvent: {}
+[14.281932] (-) TimerEvent: {}
+[14.382174] (-) TimerEvent: {}
+[14.482391] (-) TimerEvent: {}
+[14.584084] (-) TimerEvent: {}
+[14.684303] (-) TimerEvent: {}
+[14.784518] (-) TimerEvent: {}
+[14.884980] (-) TimerEvent: {}
+[14.986198] (-) TimerEvent: {}
+[15.086403] (-) TimerEvent: {}
+[15.186607] (-) TimerEvent: {}
+[15.286812] (-) TimerEvent: {}
+[15.387039] (-) TimerEvent: {}
+[15.489475] (-) TimerEvent: {}
+[15.589682] (-) TimerEvent: {}
+[15.689895] (-) TimerEvent: {}
+[15.790098] (-) TimerEvent: {}
+[15.891084] (-) TimerEvent: {}
+[15.991294] (-) TimerEvent: {}
+[16.091504] (-) TimerEvent: {}
+[16.191722] (-) TimerEvent: {}
+[16.291939] (-) TimerEvent: {}
+[16.393086] (-) TimerEvent: {}
+[16.493293] (-) TimerEvent: {}
+[16.593506] (-) TimerEvent: {}
+[16.693715] (-) TimerEvent: {}
+[16.794100] (-) TimerEvent: {}
+[16.896090] (-) TimerEvent: {}
+[16.996299] (-) TimerEvent: {}
+[17.096825] (-) TimerEvent: {}
+[17.197069] (-) TimerEvent: {}
+[17.297280] (-) TimerEvent: {}
+[17.397491] (-) TimerEvent: {}
+[17.497707] (-) TimerEvent: {}
+[17.597917] (-) TimerEvent: {}
+[17.698097] (-) TimerEvent: {}
+[17.798309] (-) TimerEvent: {}
+[17.899087] (-) TimerEvent: {}
+[17.999307] (-) TimerEvent: {}
+[18.101031] (-) TimerEvent: {}
+[18.201234] (-) TimerEvent: {}
+[18.301534] (-) TimerEvent: {}
+[18.401742] (-) TimerEvent: {}
+[18.501955] (-) TimerEvent: {}
+[18.602686] (-) TimerEvent: {}
+[18.702904] (-) TimerEvent: {}
+[18.803096] (-) TimerEvent: {}
+[18.903307] (-) TimerEvent: {}
+[19.003526] (-) TimerEvent: {}
+[19.103741] (-) TimerEvent: {}
+[19.206295] (-) TimerEvent: {}
+[19.306512] (-) TimerEvent: {}
+[19.407314] (-) TimerEvent: {}
+[19.507550] (-) TimerEvent: {}
+[19.607760] (-) TimerEvent: {}
+[19.707994] (-) TimerEvent: {}
+[19.808227] (-) TimerEvent: {}
+[19.909345] (-) TimerEvent: {}
+[20.009566] (-) TimerEvent: {}
+[20.109790] (-) TimerEvent: {}
+[20.210460] (-) TimerEvent: {}
+[20.310685] (-) TimerEvent: {}
+[20.410918] (-) TimerEvent: {}
+[20.511095] (-) TimerEvent: {}
+[20.611326] (-) TimerEvent: {}
+[20.711565] (-) TimerEvent: {}
+[20.811813] (-) TimerEvent: {}
+[20.914106] (-) TimerEvent: {}
+[21.014993] (-) TimerEvent: {}
+[21.115527] (-) TimerEvent: {}
+[21.218089] (-) TimerEvent: {}
+[21.318306] (-) TimerEvent: {}
+[21.418524] (-) TimerEvent: {}
+[21.518780] (-) TimerEvent: {}
+[21.621103] (-) TimerEvent: {}
+[21.721323] (-) TimerEvent: {}
+[21.821546] (-) TimerEvent: {}
+[21.921908] (-) TimerEvent: {}
+[22.022089] (-) TimerEvent: {}
+[22.122304] (-) TimerEvent: {}
+[22.222946] (-) TimerEvent: {}
+[22.323183] (-) TimerEvent: {}
+[22.423396] (-) TimerEvent: {}
+[22.523615] (-) TimerEvent: {}
+[22.623856] (-) TimerEvent: {}
+[22.725195] (-) TimerEvent: {}
+[22.825939] (-) TimerEvent: {}
+[22.926158] (-) TimerEvent: {}
+[23.026363] (-) TimerEvent: {}
+[23.126642] (-) TimerEvent: {}
+[23.228637] (-) TimerEvent: {}
+[23.328846] (-) TimerEvent: {}
+[23.429347] (-) TimerEvent: {}
+[23.529554] (-) TimerEvent: {}
+[23.630591] (-) TimerEvent: {}
+[23.730821] (-) TimerEvent: {}
+[23.831419] (-) TimerEvent: {}
+[23.931640] (-) TimerEvent: {}
+[24.031861] (-) TimerEvent: {}
+[24.133198] (-) TimerEvent: {}
+[24.233404] (-) TimerEvent: {}
+[24.336112] (-) TimerEvent: {}
+[24.436326] (-) TimerEvent: {}
+[24.536538] (-) TimerEvent: {}
+[24.636758] (-) TimerEvent: {}
+[24.736990] (-) TimerEvent: {}
+[24.837203] (-) TimerEvent: {}
+[24.937664] (-) TimerEvent: {}
+[25.040089] (-) TimerEvent: {}
+[25.140315] (-) TimerEvent: {}
+[25.240823] (-) TimerEvent: {}
+[25.341058] (-) TimerEvent: {}
+[25.441270] (-) TimerEvent: {}
+[25.541483] (-) TimerEvent: {}
+[25.641698] (-) TimerEvent: {}
+[25.741918] (-) TimerEvent: {}
+[25.842149] (-) TimerEvent: {}
+[25.942363] (-) TimerEvent: {}
+[26.042574] (-) TimerEvent: {}
+[26.142786] (-) TimerEvent: {}
+[26.244540] (-) TimerEvent: {}
+[26.344777] (-) TimerEvent: {}
+[26.444994] (-) TimerEvent: {}
+[26.545404] (-) TimerEvent: {}
+[26.645761] (-) TimerEvent: {}
+[26.746078] (-) TimerEvent: {}
+[26.849105] (-) TimerEvent: {}
+[26.949316] (-) TimerEvent: {}
+[27.050317] (-) TimerEvent: {}
+[27.150528] (-) TimerEvent: {}
+[27.250790] (-) TimerEvent: {}
+[27.351107] (-) TimerEvent: {}
+[27.451387] (-) TimerEvent: {}
+[27.551739] (-) TimerEvent: {}
+[27.652320] (-) TimerEvent: {}
+[27.753087] (-) TimerEvent: {}
+[27.856272] (-) TimerEvent: {}
+[27.956494] (-) TimerEvent: {}
+[28.056748] (-) TimerEvent: {}
+[28.156973] (-) TimerEvent: {}
+[28.257235] (-) TimerEvent: {}
+[28.357452] (-) TimerEvent: {}
+[28.457668] (-) TimerEvent: {}
+[28.557886] (-) TimerEvent: {}
+[28.658091] (-) TimerEvent: {}
+[28.758304] (-) TimerEvent: {}
+[28.860089] (-) TimerEvent: {}
+[28.960298] (-) TimerEvent: {}
+[29.060507] (-) TimerEvent: {}
+[29.160725] (-) TimerEvent: {}
+[29.260935] (-) TimerEvent: {}
+[29.361153] (-) TimerEvent: {}
+[29.463087] (-) TimerEvent: {}
+[29.563301] (-) TimerEvent: {}
+[29.663513] (-) TimerEvent: {}
+[29.763724] (-) TimerEvent: {}
+[29.863933] (-) TimerEvent: {}
+[29.966095] (-) TimerEvent: {}
+[30.066383] (-) TimerEvent: {}
+[30.166595] (-) TimerEvent: {}
+[30.266809] (-) TimerEvent: {}
+[30.367030] (-) TimerEvent: {}
+[30.467229] (-) TimerEvent: {}
+[30.568589] (-) TimerEvent: {}
+[30.670967] (-) TimerEvent: {}
+[30.771186] (-) TimerEvent: {}
+[30.871403] (-) TimerEvent: {}
+[30.973107] (-) TimerEvent: {}
+[31.073504] (-) TimerEvent: {}
+[31.173720] (-) TimerEvent: {}
+[31.273933] (-) TimerEvent: {}
+[31.374233] (-) TimerEvent: {}
+[31.474815] (-) TimerEvent: {}
+[31.575076] (-) TimerEvent: {}
+[31.675871] (-) TimerEvent: {}
+[31.776090] (-) TimerEvent: {}
+[31.879093] (-) TimerEvent: {}
+[31.979349] (-) TimerEvent: {}
+[32.080847] (-) TimerEvent: {}
+[32.181075] (-) TimerEvent: {}
+[32.281289] (-) TimerEvent: {}
+[32.381515] (-) TimerEvent: {}
+[32.481735] (-) TimerEvent: {}
+[32.581946] (-) TimerEvent: {}
+[32.682204] (-) TimerEvent: {}
+[32.782419] (-) TimerEvent: {}
+[32.882634] (-) TimerEvent: {}
+[32.984102] (-) TimerEvent: {}
+[33.084311] (-) TimerEvent: {}
+[33.186087] (-) TimerEvent: {}
+[33.286301] (-) TimerEvent: {}
+[33.305268] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:13: error: extra qualification \xe2\x80\x98SemanticNavigationNode::\xe2\x80\x99 on member \xe2\x80\x98SemanticNavigationNode\xe2\x80\x99 [-fpermissive]\n'}
+[33.305600] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[33.305788] (semnav) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~~~~~~~~~\n'}
+[33.386416] (-) TimerEvent: {}
+[33.427637] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In constructor \xe2\x80\x98SemanticNavigationNode::SemanticNavigationNode()\xe2\x80\x99:\n'}
+[33.427935] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95: error: no matching function for call to \xe2\x80\x98rclcpp::Node::Node()\xe2\x80\x99\n'}
+[33.428146] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[33.428314] (semnav) StderrLine: {'line': b'      |                                                                                               ^\n'}
+[33.428468] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[33.428622] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[33.428772] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[33.428998] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,\n'}
+[33.429176] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:\n'}
+[33.429317] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const rclcpp::Node&, const std::string&)\xe2\x80\x99\n'}
+[33.429465] (semnav) StderrLine: {'line': b' 1629 |   Node(\n'}
+[33.429609] (semnav) StderrLine: {'line': b'      |   ^~~~\n'}
+[33.429753] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided\n'}
+[33.429895] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[33.432861] (semnav) StderrLine: {'line': b'  103 |   explicit Node(\n'}
+[33.433243] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[33.433415] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided\n'}
+[33.433567] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[33.435447] (semnav) StderrLine: {'line': b'   91 |   explicit Node(\n'}
+[33.435720] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[33.435882] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided\n'}
+[33.486565] (-) TimerEvent: {}
+[33.588079] (-) TimerEvent: {}
+[33.688285] (-) TimerEvent: {}
+[33.788492] (-) TimerEvent: {}
+[33.888762] (-) TimerEvent: {}
+[33.935130] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function \xe2\x80\x98void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[33.935420] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:472:42: error: could not convert \xe2\x80\x98lidar_data\xe2\x80\x99 from \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99 to \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99\n'}
+[33.935588] (semnav) StderrLine: {'line': b'  472 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[33.935742] (semnav) StderrLine: {'line': b'      |                                          ^~~~~~~~~~\n'}
+[33.935908] (semnav) StderrLine: {'line': b'      |                                          |\n'}
+[33.936067] (semnav) StderrLine: {'line': b'      |                                          shared_ptr<LaserScan_<[...]>>\n'}
+[33.991115] (-) TimerEvent: {}
+[34.091324] (-) TimerEvent: {}
+[34.191533] (-) TimerEvent: {}
+[34.291747] (-) TimerEvent: {}
+[34.391962] (-) TimerEvent: {}
+[34.407169] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:13: error: extra qualification \xe2\x80\x98NavigationNode::\xe2\x80\x99 on member \xe2\x80\x98NavigationNode\xe2\x80\x99 [-fpermissive]\n'}
+[34.407456] (semnav) StderrLine: {'line': b'   46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {\n'}
+[34.407620] (semnav) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~\n'}
+[34.455799] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In constructor \xe2\x80\x98NavigationNode::NavigationNode()\xe2\x80\x99:\n'}
+[34.456129] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:91: error: no matching function for call to \xe2\x80\x98rclcpp::Node::Node()\xe2\x80\x99\n'}
+[34.456312] (semnav) StderrLine: {'line': b'   46 |             NavigationNode::NavigationNode() : rclcpp::Node(std::string("navigation_node")) {\n'}
+[34.456457] (semnav) StderrLine: {'line': b'      |                                                                                           ^\n'}
+[34.456827] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28,\n'}
+[34.457029] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22,\n'}
+[34.457189] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172,\n'}
+[34.457360] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,\n'}
+[34.457499] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25:\n'}
+[34.457656] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const rclcpp::Node&, const std::string&)\xe2\x80\x99\n'}
+[34.457795] (semnav) StderrLine: {'line': b' 1629 |   Node(\n'}
+[34.457925] (semnav) StderrLine: {'line': b'      |   ^~~~\n'}
+[34.458084] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3: note:   candidate expects 2 arguments, 0 provided\n'}
+[34.458229] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[34.458366] (semnav) StderrLine: {'line': b'  103 |   explicit Node(\n'}
+[34.458494] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[34.458624] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12: note:   candidate expects 3 arguments, 0 provided\n'}
+[34.458756] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note: candidate: \xe2\x80\x98rclcpp::Node::Node(const std::string&, const rclcpp::NodeOptions&)\xe2\x80\x99\n'}
+[34.458900] (semnav) StderrLine: {'line': b'   91 |   explicit Node(\n'}
+[34.462146] (semnav) StderrLine: {'line': b'      |            ^~~~\n'}
+[34.462412] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12: note:   candidate expects 2 arguments, 0 provided\n'}
+[34.492096] (-) TimerEvent: {}
+[34.592298] (-) TimerEvent: {}
+[34.692514] (-) TimerEvent: {}
+[34.792730] (-) TimerEvent: {}
+[34.892944] (-) TimerEvent: {}
+[34.994170] (-) TimerEvent: {}
+[35.095877] (-) TimerEvent: {}
+[35.196086] (-) TimerEvent: {}
+[35.274771] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:168:104: error: class template argument deduction failed:\n'}
+[35.275081] (semnav) StderrLine: {'line': b'  168 |                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));\n'}
+[35.275256] (semnav) StderrLine: {'line': b'      |                                                                                                        ^\n'}
+[35.275403] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:168:104: error: no matching function for call to \xe2\x80\x98Subscription(std::shared_ptr<rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > > >)\xe2\x80\x99\n'}
+[35.275886] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/context.hpp:35,\n'}
+[35.276126] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:24,\n'}
+[35.276288] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25,\n'}
+[35.276435] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,\n'}
+[35.276562] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171:\n'}
+[35.276687] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:454:3: note: candidate: \xe2\x80\x98template<class MessageT, class AllocatorT, class SubscribedT, class ROSMessageT, class MessageMemoryStrategyT> Subscription(const rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>&)-> rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>\xe2\x80\x99\n'}
+[35.276824] (semnav) StderrLine: {'line': b'  454 |   RCLCPP_DISABLE_COPY(Subscription)\n'}
+[35.276962] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~\n'}
+[35.277117] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:454:3: note:   template argument deduction/substitution failed:\n'}
+[35.277253] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:168:104: note:   \xe2\x80\x98std::shared_ptr<rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > > >\xe2\x80\x99 is not derived from \xe2\x80\x98const rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>\xe2\x80\x99\n'}
+[35.277407] (semnav) StderrLine: {'line': b'  168 |                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));\n'}
+[35.277537] (semnav) StderrLine: {'line': b'      |                                                                                                        ^\n'}
+[35.277662] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25,\n'}
+[35.277785] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[35.277910] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[35.282166] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22,\n'}
+[35.282386] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38,\n'}
+[35.282529] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[35.282694] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21:\n'}
+[35.282828] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:131:3: note: candidate: \xe2\x80\x98template<class MessageT, class AllocatorT, class SubscribedT, class ROSMessageT, class MessageMemoryStrategyT> Subscription(rclcpp::node_interfaces::NodeBaseInterface*, const rosidl_message_type_support_t&, const std::string&, const rclcpp::QoS&, rclcpp::AnySubscriptionCallback<CallbackMessageT, AllocatorT>, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<rclcpp::topic_statistics::SubscriptionTopicStatistics>)-> rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>\xe2\x80\x99\n'}
+[35.282988] (semnav) StderrLine: {'line': b'  131 |   Subscription(\n'}
+[35.283157] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~\n'}
+[35.283300] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:131:3: note:   template argument deduction/substitution failed:\n'}
+[35.283436] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:168:104: note:   candidate expects 8 arguments, 1 provided\n'}
+[35.283569] (semnav) StderrLine: {'line': b'  168 |                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));\n'}
+[35.283701] (semnav) StderrLine: {'line': b'      |                                                                                                        ^\n'}
+[35.283833] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:75:7: note: candidate: \xe2\x80\x98template<class MessageT, class AllocatorT, class SubscribedT, class ROSMessageT, class MessageMemoryStrategyT> Subscription(rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>)-> rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>\xe2\x80\x99\n'}
+[35.283978] (semnav) StderrLine: {'line': b'   75 | class Subscription : public SubscriptionBase\n'}
+[35.286309] (semnav) StderrLine: {'line': b'      |       ^~~~~~~~~~~~\n'}
+[35.286508] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:75:7: note:   template argument deduction/substitution failed:\n'}
+[35.286666] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:168:104: note:   \xe2\x80\x98std::shared_ptr<rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > > >\xe2\x80\x99 is not derived from \xe2\x80\x98rclcpp::Subscription<MessageT, AllocatorT, SubscribedT, ROSMessageT, MessageMemoryStrategyT>\xe2\x80\x99\n'}
+[35.286836] (semnav) StderrLine: {'line': b'  168 |                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));\n'}
+[35.286977] (semnav) StderrLine: {'line': b'      |                                                                                                        ^\n'}
+[35.296205] (-) TimerEvent: {}
+[35.389181] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function \xe2\x80\x98void NavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[35.389503] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:420:42: error: could not convert \xe2\x80\x98lidar_data\xe2\x80\x99 from \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99 to \xe2\x80\x98shared_ptr<LaserScan_<[...]>>\xe2\x80\x99\n'}
+[35.389685] (semnav) StderrLine: {'line': b'  420 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[35.389859] (semnav) StderrLine: {'line': b'      |                                          ^~~~~~~~~~\n'}
+[35.390002] (semnav) StderrLine: {'line': b'      |                                          |\n'}
+[35.390177] (semnav) StderrLine: {'line': b'      |                                          shared_ptr<LaserScan_<[...]>>\n'}
+[35.398082] (-) TimerEvent: {}
+[35.498280] (-) TimerEvent: {}
+[35.598481] (-) TimerEvent: {}
+[35.698691] (-) TimerEvent: {}
+[35.799001] (-) TimerEvent: {}
+[35.899243] (-) TimerEvent: {}
+[35.999454] (-) TimerEvent: {}
+[36.099661] (-) TimerEvent: {}
+[36.202085] (-) TimerEvent: {}
+[36.302369] (-) TimerEvent: {}
+[36.402702] (-) TimerEvent: {}
+[36.502917] (-) TimerEvent: {}
+[36.603111] (-) TimerEvent: {}
+[36.703319] (-) TimerEvent: {}
+[36.803528] (-) TimerEvent: {}
+[36.903736] (-) TimerEvent: {}
+[37.003950] (-) TimerEvent: {}
+[37.104177] (-) TimerEvent: {}
+[37.204393] (-) TimerEvent: {}
+[37.304599] (-) TimerEvent: {}
+[37.407165] (-) TimerEvent: {}
+[37.507452] (-) TimerEvent: {}
+[37.557093] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/subscription_base.hpp:32,\n'}
+[37.557396] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:29,\n'}
+[37.557547] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[37.557705] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[37.557894] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[37.558087] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22,\n'}
+[37.558238] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38,\n'}
+[37.558375] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[37.558532] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21:\n'}
+[37.558666] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp: In instantiation of \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; MessageT = std_msgs::msg::String_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99:\n'}
+[37.558821] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.558989] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.561422] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.561613] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.561806] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:67:   required from here\n'}
+[37.561952] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:23: error: no match for \xe2\x80\x98operator=\xe2\x80\x99 (operand types are \xe2\x80\x98rclcpp::detail::AnySubscriptionCallbackHelper<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, false, false>::variant_type\xe2\x80\x99 {aka \xe2\x80\x98std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >\xe2\x80\x99} and \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<std_msgs::msg::String_<std::allocator<void> >, std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>\xe2\x80\x99})\n'}
+[37.562208] (semnav) StderrLine: {'line': b'  396 |     callback_variant_ = static_cast<typename scbth::callback_type>(callback);\n'}
+[37.562356] (semnav) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[37.565082] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:29,\n'}
+[37.565409] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24:\n'}
+[37.565578] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1494:9: note: candidate: \xe2\x80\x98template<class _Tp> std::enable_if_t<((__exactly_once<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<_Types>&> std::variant<_Types>::operator=(_Tp&&) [with _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[37.565845] (semnav) StderrLine: {'line': b' 1494 |         operator=(_Tp&& __rhs)\n'}
+[37.565994] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[37.566169] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1494:9: note:   template argument deduction/substitution failed:\n'}
+[37.566317] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant: In substitution of \xe2\x80\x98template<class ... _Types> template<class _Tp, class> using std::variant<_Types>::__accepted_type = std::variant<_Types>::__to_type<__accepted_index<_Tp> > [with _Tp = std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>&&; <template-parameter-2-2> = void; _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99:\n'}
+[37.566534] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1490:14:   required by substitution of \xe2\x80\x98template<class _Tp> std::enable_if_t<((__exactly_once<std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&> std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::operator=(_Tp&&) [with _Tp = std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>]\xe2\x80\x99\n'}
+[37.566879] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:23:   required from \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; MessageT = std_msgs::msg::String_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99\n'}
+[37.569192] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.569467] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.569658] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.569843] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.570057] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:67:   required from here\n'}
+[37.570219] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1407:15: error: no type named \xe2\x80\x98type\xe2\x80\x99 in \xe2\x80\x98struct std::enable_if<false, void>\xe2\x80\x99\n'}
+[37.570361] (semnav) StderrLine: {'line': b' 1407 |         using __accepted_type = __to_type<__accepted_index<_Tp>>;\n'}
+[37.570497] (semnav) StderrLine: {'line': b'      |               ^~~~~~~~~~~~~~~\n'}
+[37.570633] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp: In instantiation of \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; MessageT = std_msgs::msg::String_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99:\n'}
+[37.570779] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.570946] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.573339] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.573584] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[37.573751] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:67:   required from here\n'}
+[37.573893] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1430:16: note: candidate: \xe2\x80\x98std::variant<_Types>& std::variant<_Types>::operator=(const std::variant<_Types>&) [with _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[37.574114] (semnav) StderrLine: {'line': b' 1430 |       variant& operator=(const variant&) = default;\n'}
+[37.574268] (semnav) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[37.574405] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1430:26: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<std_msgs::msg::String_<std::allocator<void> >, std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>\xe2\x80\x99} to \xe2\x80\x98const std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&\xe2\x80\x99\n'}
+[37.574587] (semnav) StderrLine: {'line': b' 1430 |       variant& operator=(const variant&) = default;\n'}
+[37.574735] (semnav) StderrLine: {'line': b'      |                          ^~~~~~~~~~~~~~\n'}
+[37.574870] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1431:16: note: candidate: \xe2\x80\x98std::variant<_Types>& std::variant<_Types>::operator=(std::variant<_Types>&&) [with _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[37.575093] (semnav) StderrLine: {'line': b' 1431 |       variant& operator=(variant&&) = default;\n'}
+[37.575244] (semnav) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[37.575382] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1431:26: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<std_msgs::msg::String_<std::allocator<void> >, std::_Bind<void (SemanticNavigationNode::*(SemanticNavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>\xe2\x80\x99} to \xe2\x80\x98std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&&\xe2\x80\x99\n'}
+[37.575576] (semnav) StderrLine: {'line': b' 1431 |       variant& operator=(variant&&) = default;\n'}
+[37.575709] (semnav) StderrLine: {'line': b'      |                          ^~~~~~~~~\n'}
+[37.610093] (-) TimerEvent: {}
+[37.710305] (-) TimerEvent: {}
+[37.810515] (-) TimerEvent: {}
+[37.910789] (-) TimerEvent: {}
+[38.012964] (-) TimerEvent: {}
+[38.113442] (-) TimerEvent: {}
+[38.213664] (-) TimerEvent: {}
+[38.313881] (-) TimerEvent: {}
+[38.414097] (-) TimerEvent: {}
+[38.514317] (-) TimerEvent: {}
+[38.615089] (-) TimerEvent: {}
+[38.715294] (-) TimerEvent: {}
+[38.815510] (-) TimerEvent: {}
+[38.916433] (-) TimerEvent: {}
+[39.018829] (-) TimerEvent: {}
+[39.119081] (-) TimerEvent: {}
+[39.219301] (-) TimerEvent: {}
+[39.319519] (-) TimerEvent: {}
+[39.419735] (-) TimerEvent: {}
+[39.519963] (-) TimerEvent: {}
+[39.620260] (-) TimerEvent: {}
+[39.720615] (-) TimerEvent: {}
+[39.821537] (-) TimerEvent: {}
+[39.921748] (-) TimerEvent: {}
+[39.983332] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/subscription_base.hpp:32,\n'}
+[39.983624] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:29,\n'}
+[39.983806] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20:\n'}
+[39.983947] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp: In instantiation of \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; MessageT = std_msgs::msg::String_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99:\n'}
+[39.985853] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.986123] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.986341] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.986515] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.986664] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:167:97:   required from here\n'}
+[39.986793] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:23: error: no match for \xe2\x80\x98operator=\xe2\x80\x99 (operand types are \xe2\x80\x98rclcpp::detail::AnySubscriptionCallbackHelper<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, false, false>::variant_type\xe2\x80\x99 {aka \xe2\x80\x98std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >\xe2\x80\x99} and \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<std_msgs::msg::String_<std::allocator<void> >, std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>\xe2\x80\x99})\n'}
+[39.988090] (semnav) StderrLine: {'line': b'  396 |     callback_variant_ = static_cast<typename scbth::callback_type>(callback);\n'}
+[39.990360] (semnav) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[39.990522] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:29,\n'}
+[39.990666] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24:\n'}
+[39.990806] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1494:9: note: candidate: \xe2\x80\x98template<class _Tp> std::enable_if_t<((__exactly_once<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<_Types>::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<_Types>&> std::variant<_Types>::operator=(_Tp&&) [with _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[39.991035] (semnav) StderrLine: {'line': b' 1494 |         operator=(_Tp&& __rhs)\n'}
+[39.991204] (semnav) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[39.992143] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1494:9: note:   template argument deduction/substitution failed:\n'}
+[39.995102] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant: In substitution of \xe2\x80\x98template<class ... _Types> template<class _Tp, class> using std::variant<_Types>::__accepted_type = std::variant<_Types>::__to_type<__accepted_index<_Tp> > [with _Tp = std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>&&; <template-parameter-2-2> = void; _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99:\n'}
+[39.995481] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1490:14:   required by substitution of \xe2\x80\x98template<class _Tp> std::enable_if_t<((__exactly_once<std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type> > && is_constructible_v<std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>, _Tp>) && is_assignable_v<std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::__accepted_type<_Tp&&, typename std::enable_if<__not_self<_Tp&&>, void>::type>&, _Tp>), std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&> std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >::operator=(_Tp&&) [with _Tp = std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>]\xe2\x80\x99\n'}
+[39.995915] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:23:   required from \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; MessageT = std_msgs::msg::String_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99\n'}
+[39.996139] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.996338] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.996507] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.996689] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.996851] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:167:97:   required from here\n'}
+[39.996991] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1407:15: error: no type named \xe2\x80\x98type\xe2\x80\x99 in \xe2\x80\x98struct std::enable_if<false, void>\xe2\x80\x99\n'}
+[39.997170] (semnav) StderrLine: {'line': b' 1407 |         using __accepted_type = __to_type<__accepted_index<_Tp>>;\n'}
+[39.997314] (semnav) StderrLine: {'line': b'      |               ^~~~~~~~~~~~~~~\n'}
+[39.997449] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp: In instantiation of \xe2\x80\x98rclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::set(CallbackT) [with CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; MessageT = std_msgs::msg::String_<std::allocator<void> >; AllocatorT = std::allocator<void>]\xe2\x80\x99:\n'}
+[39.997595] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:   required from \xe2\x80\x98rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.997788] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::detail::create_subscription(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.997954] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::create_subscription(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.998158] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:   required from \xe2\x80\x98std::shared_ptr<ROSMessageT> rclcpp::Node::create_subscription(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [with MessageT = std_msgs::msg::String_<std::allocator<void> >; CallbackT = std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void>, std_msgs::msg::String_<std::allocator<void> >, std_msgs::msg::String_<std::allocator<void> >, rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<std_msgs::msg::String_<std::allocator<void> >, std::allocator<void> > >]\xe2\x80\x99\n'}
+[39.998344] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:167:97:   required from here\n'}
+[39.998482] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1430:16: note: candidate: \xe2\x80\x98std::variant<_Types>& std::variant<_Types>::operator=(const std::variant<_Types>&) [with _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[40.001310] (semnav) StderrLine: {'line': b' 1430 |       variant& operator=(const variant&) = default;\n'}
+[40.001513] (semnav) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[40.001663] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1430:26: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<std_msgs::msg::String_<std::allocator<void> >, std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>\xe2\x80\x99} to \xe2\x80\x98const std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&\xe2\x80\x99\n'}
+[40.001868] (semnav) StderrLine: {'line': b' 1430 |       variant& operator=(const variant&) = default;\n'}
+[40.002023] (semnav) StderrLine: {'line': b'      |                          ^~~~~~~~~~~~~~\n'}
+[40.002186] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1431:16: note: candidate: \xe2\x80\x98std::variant<_Types>& std::variant<_Types>::operator=(std::variant<_Types>&&) [with _Types = {std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>}]\xe2\x80\x99\n'}
+[40.002368] (semnav) StderrLine: {'line': b' 1431 |       variant& operator=(variant&&) = default;\n'}
+[40.002510] (semnav) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[40.002649] (semnav) StderrLine: {'line': b'/usr/include/c++/13/variant:1431:26: note:   no known conversion for argument 1 from \xe2\x80\x98rclcpp::detail::SubscriptionCallbackTypeHelper<std_msgs::msg::String_<std::allocator<void> >, std::_Bind<void (NavigationNode::*(NavigationNode*, std::_Placeholder<1>))(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>, void>::callback_type\xe2\x80\x99 {aka \xe2\x80\x98std::function<void(const std::shared_ptr<const object_pose_interface_msgs::msg::SemanticMapObjectArray_<std::allocator<void> > >&)>\xe2\x80\x99} to \xe2\x80\x98std::variant<std::function<void(const std_msgs::msg::String_<std::allocator<void> >&)>, std::function<void(const std_msgs::msg::String_<std::allocator<void> >&, const rclcpp::MessageInfo&)>, std::function<void(const rclcpp::SerializedMessage&)>, std::function<void(const rclcpp::SerializedMessage&, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >)>, std::function<void(std::unique_ptr<std_msgs::msg::String_<std::allocator<void> >, std::default_delete<std_msgs::msg::String_<std::allocator<void> > > >, const rclcpp::MessageInfo&)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >)>, std::function<void(std::unique_ptr<rclcpp::SerializedMessage, std::default_delete<rclcpp::SerializedMessage> >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<const rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&)>, std::function<void(const std::shared_ptr<const std_msgs::msg::String_<std::allocator<void> > >&, const rclcpp::MessageInfo&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&)>, std::function<void(const std::shared_ptr<const rclcpp::SerializedMessage>&, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)>, std::function<void(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >, const rclcpp::MessageInfo&)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>)>, std::function<void(std::shared_ptr<rclcpp::SerializedMessage>, const rclcpp::MessageInfo&)> >&&\xe2\x80\x99\n'}
+[40.002860] (semnav) StderrLine: {'line': b' 1431 |       variant& operator=(variant&&) = default;\n'}
+[40.004826] (semnav) StderrLine: {'line': b'      |                          ^~~~~~~~~\n'}
+[40.021881] (-) TimerEvent: {}
+[40.122352] (-) TimerEvent: {}
+[40.224091] (-) TimerEvent: {}
+[40.324303] (-) TimerEvent: {}
+[40.424535] (-) TimerEvent: {}
+[40.524741] (-) TimerEvent: {}
+[40.624974] (-) TimerEvent: {}
+[40.725214] (-) TimerEvent: {}
+[40.825434] (-) TimerEvent: {}
+[40.927084] (-) TimerEvent: {}
+[41.027301] (-) TimerEvent: {}
+[41.127526] (-) TimerEvent: {}
+[41.227770] (-) TimerEvent: {}
+[41.328083] (-) TimerEvent: {}
+[41.428295] (-) TimerEvent: {}
+[41.528511] (-) TimerEvent: {}
+[41.628725] (-) TimerEvent: {}
+[41.730088] (-) TimerEvent: {}
+[41.830303] (-) TimerEvent: {}
+[41.930514] (-) TimerEvent: {}
+[42.030727] (-) TimerEvent: {}
+[42.130947] (-) TimerEvent: {}
+[42.231186] (-) TimerEvent: {}
+[42.331399] (-) TimerEvent: {}
+[42.433092] (-) TimerEvent: {}
+[42.533308] (-) TimerEvent: {}
+[42.633526] (-) TimerEvent: {}
+[42.733745] (-) TimerEvent: {}
+[42.833957] (-) TimerEvent: {}
+[42.934177] (-) TimerEvent: {}
+[43.034392] (-) TimerEvent: {}
+[43.134607] (-) TimerEvent: {}
+[43.234826] (-) TimerEvent: {}
+[43.336087] (-) TimerEvent: {}
+[43.436310] (-) TimerEvent: {}
+[43.536523] (-) TimerEvent: {}
+[43.636738] (-) TimerEvent: {}
+[43.736948] (-) TimerEvent: {}
+[43.837159] (-) TimerEvent: {}
+[43.939085] (-) TimerEvent: {}
+[44.039296] (-) TimerEvent: {}
+[44.139525] (-) TimerEvent: {}
+[44.239734] (-) TimerEvent: {}
+[44.339942] (-) TimerEvent: {}
+[44.440165] (-) TimerEvent: {}
+[44.540368] (-) TimerEvent: {}
+[44.640571] (-) TimerEvent: {}
+[44.740774] (-) TimerEvent: {}
+[44.840999] (-) TimerEvent: {}
+[44.941216] (-) TimerEvent: {}
+[45.042076] (-) TimerEvent: {}
+[45.142289] (-) TimerEvent: {}
+[45.242506] (-) TimerEvent: {}
+[45.342742] (-) TimerEvent: {}
+[45.445089] (-) TimerEvent: {}
+[45.545302] (-) TimerEvent: {}
+[45.645537] (-) TimerEvent: {}
+[45.745758] (-) TimerEvent: {}
+[45.845994] (-) TimerEvent: {}
+[45.946218] (-) TimerEvent: {}
+[46.046438] (-) TimerEvent: {}
+[46.146656] (-) TimerEvent: {}
+[46.246877] (-) TimerEvent: {}
+[46.347091] (-) TimerEvent: {}
+[46.448223] (-) TimerEvent: {}
+[46.548444] (-) TimerEvent: {}
+[46.651111] (-) TimerEvent: {}
+[46.751326] (-) TimerEvent: {}
+[46.851535] (-) TimerEvent: {}
+[46.951752] (-) TimerEvent: {}
+[47.051973] (-) TimerEvent: {}
+[47.152215] (-) TimerEvent: {}
+[47.252452] (-) TimerEvent: {}
+[47.352702] (-) TimerEvent: {}
+[47.452937] (-) TimerEvent: {}
+[47.553185] (-) TimerEvent: {}
+[47.653418] (-) TimerEvent: {}
+[47.753636] (-) TimerEvent: {}
+[47.853867] (-) TimerEvent: {}
+[47.954096] (-) TimerEvent: {}
+[48.055085] (-) TimerEvent: {}
+[48.155290] (-) TimerEvent: {}
+[48.255506] (-) TimerEvent: {}
+[48.355725] (-) TimerEvent: {}
+[48.455946] (-) TimerEvent: {}
+[48.558091] (-) TimerEvent: {}
+[48.658307] (-) TimerEvent: {}
+[48.758525] (-) TimerEvent: {}
+[48.858748] (-) TimerEvent: {}
+[48.958971] (-) TimerEvent: {}
+[49.059221] (-) TimerEvent: {}
+[49.159443] (-) TimerEvent: {}
+[49.259665] (-) TimerEvent: {}
+[49.359890] (-) TimerEvent: {}
+[49.460098] (-) TimerEvent: {}
+[49.560311] (-) TimerEvent: {}
+[49.661082] (-) TimerEvent: {}
+[49.761297] (-) TimerEvent: {}
+[49.861519] (-) TimerEvent: {}
+[49.964119] (-) TimerEvent: {}
+[50.064337] (-) TimerEvent: {}
+[50.164550] (-) TimerEvent: {}
+[50.264762] (-) TimerEvent: {}
+[50.364979] (-) TimerEvent: {}
+[50.465207] (-) TimerEvent: {}
+[50.565489] (-) TimerEvent: {}
+[50.665766] (-) TimerEvent: {}
+[50.766170] (-) TimerEvent: {}
+[50.866383] (-) TimerEvent: {}
+[50.966601] (-) TimerEvent: {}
+[51.066822] (-) TimerEvent: {}
+[51.167061] (-) TimerEvent: {}
+[51.267281] (-) TimerEvent: {}
+[51.369083] (-) TimerEvent: {}
+[51.469342] (-) TimerEvent: {}
+[51.569555] (-) TimerEvent: {}
+[51.669767] (-) TimerEvent: {}
+[51.769983] (-) TimerEvent: {}
+[51.870210] (-) TimerEvent: {}
+[51.970421] (-) TimerEvent: {}
+[52.070632] (-) TimerEvent: {}
+[52.171600] (-) TimerEvent: {}
+[52.274133] (-) TimerEvent: {}
+[52.374349] (-) TimerEvent: {}
+[52.474564] (-) TimerEvent: {}
+[52.574782] (-) TimerEvent: {}
+[52.675017] (-) TimerEvent: {}
+[52.775237] (-) TimerEvent: {}
+[52.875454] (-) TimerEvent: {}
+[52.975716] (-) TimerEvent: {}
+[53.075940] (-) TimerEvent: {}
+[53.176182] (-) TimerEvent: {}
+[53.276404] (-) TimerEvent: {}
+[53.376622] (-) TimerEvent: {}
+[53.478081] (-) TimerEvent: {}
+[53.578321] (-) TimerEvent: {}
+[53.678616] (-) TimerEvent: {}
+[53.778830] (-) TimerEvent: {}
+[53.879075] (-) TimerEvent: {}
+[53.979283] (-) TimerEvent: {}
+[54.079561] (-) TimerEvent: {}
+[54.180168] (-) TimerEvent: {}
+[54.282110] (-) TimerEvent: {}
+[54.357428] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1\n'}
+[54.358620] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2\n'}
+[54.359076] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[54.382229] (-) TimerEvent: {}
+[54.482486] (-) TimerEvent: {}
+[54.582743] (-) TimerEvent: {}
+[54.683016] (-) TimerEvent: {}
+[54.783225] (-) TimerEvent: {}
+[54.883488] (-) TimerEvent: {}
+[54.983749] (-) TimerEvent: {}
+[55.084049] (-) TimerEvent: {}
+[55.184260] (-) TimerEvent: {}
+[55.284523] (-) TimerEvent: {}
+[55.384779] (-) TimerEvent: {}
+[55.485054] (-) TimerEvent: {}
+[55.558805] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1\n'}
+[55.559287] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2\n'}
+[55.559640] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[55.562342] (semnav) CommandEnded: {'returncode': 2}
+[55.585146] (-) TimerEvent: {}
+[55.667829] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[55.678623] (-) EventReactorShutdown: {}

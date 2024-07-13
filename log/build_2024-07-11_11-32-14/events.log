@@ -1,0 +1,642 @@
+[0.000000] (-) TimerEvent: {}
+[0.000185] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.000247] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.016562] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.022452] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.026254] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1992', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1958,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1958', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9cf301d5_d6eb_4725_bda1_1cffc2fc2c7b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.WILDQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.097234] (-) TimerEvent: {}
+[0.197507] (-) TimerEvent: {}
+[0.238049] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.298349] (-) TimerEvent: {}
+[0.372531] (semnav) StdoutLine: {'line': b'[ 23%] Built target navigation_semantic\n'}
+[0.388985] (semnav) StdoutLine: {'line': b'[ 33%] Built target navigation\n'}
+[0.399342] (-) TimerEvent: {}
+[0.499533] (-) TimerEvent: {}
+[0.520489] (semnav) StdoutLine: {'line': b'[ 38%] Building CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o\n'}
+[0.534434] (semnav) StdoutLine: {'line': b'[ 42%] Building CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o\n'}
+[0.599657] (-) TimerEvent: {}
+[0.699852] (-) TimerEvent: {}
+[0.800052] (-) TimerEvent: {}
+[0.901445] (-) TimerEvent: {}
+[1.001649] (-) TimerEvent: {}
+[1.101830] (-) TimerEvent: {}
+[1.202062] (-) TimerEvent: {}
+[1.302248] (-) TimerEvent: {}
+[1.402454] (-) TimerEvent: {}
+[1.502648] (-) TimerEvent: {}
+[1.602850] (-) TimerEvent: {}
+[1.703037] (-) TimerEvent: {}
+[1.803242] (-) TimerEvent: {}
+[1.905346] (-) TimerEvent: {}
+[2.005547] (-) TimerEvent: {}
+[2.105748] (-) TimerEvent: {}
+[2.205959] (-) TimerEvent: {}
+[2.306162] (-) TimerEvent: {}
+[2.406359] (-) TimerEvent: {}
+[2.506567] (-) TimerEvent: {}
+[2.606781] (-) TimerEvent: {}
+[2.706988] (-) TimerEvent: {}
+[2.807203] (-) TimerEvent: {}
+[2.907557] (-) TimerEvent: {}
+[3.008790] (-) TimerEvent: {}
+[3.110349] (-) TimerEvent: {}
+[3.210544] (-) TimerEvent: {}
+[3.310750] (-) TimerEvent: {}
+[3.410949] (-) TimerEvent: {}
+[3.511154] (-) TimerEvent: {}
+[3.611360] (-) TimerEvent: {}
+[3.711563] (-) TimerEvent: {}
+[3.811773] (-) TimerEvent: {}
+[3.914345] (-) TimerEvent: {}
+[4.014551] (-) TimerEvent: {}
+[4.114761] (-) TimerEvent: {}
+[4.214967] (-) TimerEvent: {}
+[4.315172] (-) TimerEvent: {}
+[4.415360] (-) TimerEvent: {}
+[4.515572] (-) TimerEvent: {}
+[4.615786] (-) TimerEvent: {}
+[4.716011] (-) TimerEvent: {}
+[4.816256] (-) TimerEvent: {}
+[4.916499] (-) TimerEvent: {}
+[5.016691] (-) TimerEvent: {}
+[5.116889] (-) TimerEvent: {}
+[5.217093] (-) TimerEvent: {}
+[5.318352] (-) TimerEvent: {}
+[5.418556] (-) TimerEvent: {}
+[5.518759] (-) TimerEvent: {}
+[5.618959] (-) TimerEvent: {}
+[5.719154] (-) TimerEvent: {}
+[5.819350] (-) TimerEvent: {}
+[5.919556] (-) TimerEvent: {}
+[6.021348] (-) TimerEvent: {}
+[6.121558] (-) TimerEvent: {}
+[6.221770] (-) TimerEvent: {}
+[6.321974] (-) TimerEvent: {}
+[6.422184] (-) TimerEvent: {}
+[6.522349] (-) TimerEvent: {}
+[6.622548] (-) TimerEvent: {}
+[6.722748] (-) TimerEvent: {}
+[6.822952] (-) TimerEvent: {}
+[6.923170] (-) TimerEvent: {}
+[7.025392] (-) TimerEvent: {}
+[7.125611] (-) TimerEvent: {}
+[7.225834] (-) TimerEvent: {}
+[7.326050] (-) TimerEvent: {}
+[7.426314] (-) TimerEvent: {}
+[7.526524] (-) TimerEvent: {}
+[7.626752] (-) TimerEvent: {}
+[7.727106] (-) TimerEvent: {}
+[7.827413] (-) TimerEvent: {}
+[7.927625] (-) TimerEvent: {}
+[8.027837] (-) TimerEvent: {}
+[8.130357] (-) TimerEvent: {}
+[8.230568] (-) TimerEvent: {}
+[8.330785] (-) TimerEvent: {}
+[8.430993] (-) TimerEvent: {}
+[8.531211] (-) TimerEvent: {}
+[8.631437] (-) TimerEvent: {}
+[8.731643] (-) TimerEvent: {}
+[8.831871] (-) TimerEvent: {}
+[8.932089] (-) TimerEvent: {}
+[9.032569] (-) TimerEvent: {}
+[9.132783] (-) TimerEvent: {}
+[9.233004] (-) TimerEvent: {}
+[9.333228] (-) TimerEvent: {}
+[9.434352] (-) TimerEvent: {}
+[9.534567] (-) TimerEvent: {}
+[9.634795] (-) TimerEvent: {}
+[9.735007] (-) TimerEvent: {}
+[9.835225] (-) TimerEvent: {}
+[9.936353] (-) TimerEvent: {}
+[10.036573] (-) TimerEvent: {}
+[10.136818] (-) TimerEvent: {}
+[10.239356] (-) TimerEvent: {}
+[10.339574] (-) TimerEvent: {}
+[10.439794] (-) TimerEvent: {}
+[10.540021] (-) TimerEvent: {}
+[10.640235] (-) TimerEvent: {}
+[10.740457] (-) TimerEvent: {}
+[10.840667] (-) TimerEvent: {}
+[10.940880] (-) TimerEvent: {}
+[11.041099] (-) TimerEvent: {}
+[11.141332] (-) TimerEvent: {}
+[11.241579] (-) TimerEvent: {}
+[11.341799] (-) TimerEvent: {}
+[11.442020] (-) TimerEvent: {}
+[11.542242] (-) TimerEvent: {}
+[11.643361] (-) TimerEvent: {}
+[11.743578] (-) TimerEvent: {}
+[11.843796] (-) TimerEvent: {}
+[11.944019] (-) TimerEvent: {}
+[12.044243] (-) TimerEvent: {}
+[12.146358] (-) TimerEvent: {}
+[12.246570] (-) TimerEvent: {}
+[12.346825] (-) TimerEvent: {}
+[12.447047] (-) TimerEvent: {}
+[12.547267] (-) TimerEvent: {}
+[12.647489] (-) TimerEvent: {}
+[12.749350] (-) TimerEvent: {}
+[12.849673] (-) TimerEvent: {}
+[12.949888] (-) TimerEvent: {}
+[13.051356] (-) TimerEvent: {}
+[13.151565] (-) TimerEvent: {}
+[13.251776] (-) TimerEvent: {}
+[13.351989] (-) TimerEvent: {}
+[13.452210] (-) TimerEvent: {}
+[13.552439] (-) TimerEvent: {}
+[13.652650] (-) TimerEvent: {}
+[13.752863] (-) TimerEvent: {}
+[13.853080] (-) TimerEvent: {}
+[13.953355] (-) TimerEvent: {}
+[14.053569] (-) TimerEvent: {}
+[14.153785] (-) TimerEvent: {}
+[14.255357] (-) TimerEvent: {}
+[14.357358] (-) TimerEvent: {}
+[14.457570] (-) TimerEvent: {}
+[14.557798] (-) TimerEvent: {}
+[14.658034] (-) TimerEvent: {}
+[14.758255] (-) TimerEvent: {}
+[14.858485] (-) TimerEvent: {}
+[14.958695] (-) TimerEvent: {}
+[15.058924] (-) TimerEvent: {}
+[15.159168] (-) TimerEvent: {}
+[15.259427] (-) TimerEvent: {}
+[15.359643] (-) TimerEvent: {}
+[15.459856] (-) TimerEvent: {}
+[15.560062] (-) TimerEvent: {}
+[15.661346] (-) TimerEvent: {}
+[15.761550] (-) TimerEvent: {}
+[15.861748] (-) TimerEvent: {}
+[15.961943] (-) TimerEvent: {}
+[16.062171] (-) TimerEvent: {}
+[16.162367] (-) TimerEvent: {}
+[16.262589] (-) TimerEvent: {}
+[16.363356] (-) TimerEvent: {}
+[16.463571] (-) TimerEvent: {}
+[16.563792] (-) TimerEvent: {}
+[16.664375] (-) TimerEvent: {}
+[16.764598] (-) TimerEvent: {}
+[16.864831] (-) TimerEvent: {}
+[16.967364] (-) TimerEvent: {}
+[17.067584] (-) TimerEvent: {}
+[17.167805] (-) TimerEvent: {}
+[17.268024] (-) TimerEvent: {}
+[17.368238] (-) TimerEvent: {}
+[17.468466] (-) TimerEvent: {}
+[17.568682] (-) TimerEvent: {}
+[17.668898] (-) TimerEvent: {}
+[17.769118] (-) TimerEvent: {}
+[17.869368] (-) TimerEvent: {}
+[17.969798] (-) TimerEvent: {}
+[18.070013] (-) TimerEvent: {}
+[18.170241] (-) TimerEvent: {}
+[18.272358] (-) TimerEvent: {}
+[18.372580] (-) TimerEvent: {}
+[18.472802] (-) TimerEvent: {}
+[18.573024] (-) TimerEvent: {}
+[18.673242] (-) TimerEvent: {}
+[18.773481] (-) TimerEvent: {}
+[18.873712] (-) TimerEvent: {}
+[18.973936] (-) TimerEvent: {}
+[19.074161] (-) TimerEvent: {}
+[19.174371] (-) TimerEvent: {}
+[19.275386] (-) TimerEvent: {}
+[19.375610] (-) TimerEvent: {}
+[19.475829] (-) TimerEvent: {}
+[19.576049] (-) TimerEvent: {}
+[19.676270] (-) TimerEvent: {}
+[19.777358] (-) TimerEvent: {}
+[19.877594] (-) TimerEvent: {}
+[19.977811] (-) TimerEvent: {}
+[20.078056] (-) TimerEvent: {}
+[20.179359] (-) TimerEvent: {}
+[20.279584] (-) TimerEvent: {}
+[20.379795] (-) TimerEvent: {}
+[20.481372] (-) TimerEvent: {}
+[20.581584] (-) TimerEvent: {}
+[20.683350] (-) TimerEvent: {}
+[20.783557] (-) TimerEvent: {}
+[20.884349] (-) TimerEvent: {}
+[20.984574] (-) TimerEvent: {}
+[21.084787] (-) TimerEvent: {}
+[21.186350] (-) TimerEvent: {}
+[21.286557] (-) TimerEvent: {}
+[21.386774] (-) TimerEvent: {}
+[21.486984] (-) TimerEvent: {}
+[21.587203] (-) TimerEvent: {}
+[21.687431] (-) TimerEvent: {}
+[21.787699] (-) TimerEvent: {}
+[21.887913] (-) TimerEvent: {}
+[21.988131] (-) TimerEvent: {}
+[22.088355] (-) TimerEvent: {}
+[22.188569] (-) TimerEvent: {}
+[22.289378] (-) TimerEvent: {}
+[22.389593] (-) TimerEvent: {}
+[22.489850] (-) TimerEvent: {}
+[22.590069] (-) TimerEvent: {}
+[22.691359] (-) TimerEvent: {}
+[22.791572] (-) TimerEvent: {}
+[22.891786] (-) TimerEvent: {}
+[22.991998] (-) TimerEvent: {}
+[23.092372] (-) TimerEvent: {}
+[23.192582] (-) TimerEvent: {}
+[23.293354] (-) TimerEvent: {}
+[23.393564] (-) TimerEvent: {}
+[23.456639] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:44:36: error: \xe2\x80\x98ros\xe2\x80\x99 has not been declared\n'}
+[23.456999] (semnav) StderrLine: {'line': b'   44 |                 HumanFollowingNode(ros::NodeHandle* nodehandle) : nh_(*nodehandle) {\n'}
+[23.457167] (semnav) StderrLine: {'line': b'      |                                    ^~~\n'}
+[23.457331] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:44:51: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98*\xe2\x80\x99 token\n'}
+[23.457479] (semnav) StderrLine: {'line': b'   44 |                 HumanFollowingNode(ros::NodeHandle* nodehandle) : nh_(*nodehandle) {\n'}
+[23.457609] (semnav) StderrLine: {'line': b'      |                                   ~               ^\n'}
+[23.457733] (semnav) StderrLine: {'line': b'      |                                                   )\n'}
+[23.457854] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:69: error: \xe2\x80\x98KeypointDetections3D\xe2\x80\x99 in namespace \xe2\x80\x98object_pose_interface_msgs\xe2\x80\x99 does not name a type\n'}
+[23.457979] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[23.458102] (semnav) StderrLine: {'line': b'      |                                                                     ^~~~~~~~~~~~~~~~~~~~\n'}
+[23.458226] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected unqualified-id before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[23.461544] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[23.461718] (semnav) StderrLine: {'line': b'      |                                                                                                   ^\n'}
+[23.461856] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[23.461990] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[23.462119] (semnav) StderrLine: {'line': b'      |                                  ~                                                                ^\n'}
+[23.462244] (semnav) StderrLine: {'line': b'      |                                                                                                   )\n'}
+[23.462394] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[23.462525] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[23.462649] (semnav) StderrLine: {'line': b'      |                                                                                                   ^\n'}
+[23.462775] (semnav) StderrLine: {'line': b'      |                                                                                                    ;\n'}
+[23.477353] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:101: error: \xe2\x80\x98human_data\xe2\x80\x99 does not name a type\n'}
+[23.477645] (semnav) StderrLine: {'line': b'  242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {\n'}
+[23.477800] (semnav) StderrLine: {'line': b'      |                                                                                                     ^~~~~~~~~~\n'}
+[23.477937] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:75: error: \xe2\x80\x98SemanticMapObjectArray\xe2\x80\x99 in namespace \xe2\x80\x98object_pose_interface_msgs\xe2\x80\x99 does not name a type\n'}
+[23.478071] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[23.478198] (semnav) StderrLine: {'line': b'      |                                                                           ^~~~~~~~~~~~~~~~~~~~~~\n'}
+[23.478344] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected unqualified-id before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[23.478479] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[23.478622] (semnav) StderrLine: {'line': b'      |                                                                                                           ^\n'}
+[23.478749] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[23.478873] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[23.478996] (semnav) StderrLine: {'line': b'      |                                        ~                                                                  ^\n'}
+[23.479121] (semnav) StderrLine: {'line': b'      |                                                                                                           )\n'}
+[23.479262] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[23.481580] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[23.481759] (semnav) StderrLine: {'line': b'      |                                                                                                           ^\n'}
+[23.481894] (semnav) StderrLine: {'line': b'      |                                                                                                            ;\n'}
+[23.493685] (-) TimerEvent: {}
+[23.520455] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:109: error: \xe2\x80\x98semantic_map_data\xe2\x80\x99 does not name a type\n'}
+[23.520747] (semnav) StderrLine: {'line': b'  288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {\n'}
+[23.520916] (semnav) StderrLine: {'line': b'      |                                                                                                             ^~~~~~~~~~~~~~~~~\n'}
+[23.523348] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:58: error: \xe2\x80\x98LaserScan\xe2\x80\x99 in namespace \xe2\x80\x98sensor_msgs\xe2\x80\x99 does not name a type\n'}
+[23.523690] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[23.523862] (semnav) StderrLine: {'line': b'      |                                                          ^~~~~~~~~\n'}
+[23.523996] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected unqualified-id before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[23.524123] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[23.524247] (semnav) StderrLine: {'line': b'      |                                                                             ^\n'}
+[23.524397] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98&\xe2\x80\x99 token\n'}
+[23.524527] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[23.524653] (semnav) StderrLine: {'line': b'      |                                      ~                                      ^\n'}
+[23.524775] (semnav) StderrLine: {'line': b'      |                                                                             )\n'}
+[23.524898] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected \xe2\x80\x98;\xe2\x80\x99 at end of member declaration\n'}
+[23.525023] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[23.525152] (semnav) StderrLine: {'line': b'      |                                                                             ^\n'}
+[23.527306] (semnav) StderrLine: {'line': b'      |                                                                              ;\n'}
+[23.535596] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:79: error: \xe2\x80\x98lidar_data\xe2\x80\x99 does not name a type\n'}
+[23.535876] (semnav) StderrLine: {'line': b'  375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {\n'}
+[23.536031] (semnav) StderrLine: {'line': b'      |                                                                               ^~~~~~~~~~\n'}
+[23.544348] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:643:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[23.544640] (semnav) StderrLine: {'line': b'  643 |                 ros::NodeHandle nh_;\n'}
+[23.544787] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[23.548564] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:662:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[23.548855] (semnav) StderrLine: {'line': b'  662 |                 ros::Publisher pub_behaviorID_;\n'}
+[23.549012] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[23.555411] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:663:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[23.555695] (semnav) StderrLine: {'line': b'  663 |                 ros::Publisher pub_behaviorMode_;\n'}
+[23.555849] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[23.563353] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:664:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[23.563649] (semnav) StderrLine: {'line': b'  664 |                 ros::Publisher pub_twist_;\n'}
+[23.563805] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[23.568233] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:666:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[23.568545] (semnav) StderrLine: {'line': b'  666 |                 ros::Publisher pub_semantic_map_;\n'}
+[23.568700] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[23.574765] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:695:17: error: \xe2\x80\x98ros\xe2\x80\x99 does not name a type\n'}
+[23.575045] (semnav) StderrLine: {'line': b'  695 |                 ros::Time Goal_camera_stamp_;\n'}
+[23.575200] (semnav) StderrLine: {'line': b'      |                 ^~~\n'}
+[23.592347] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:715:17: error: \xe2\x80\x98tf\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98tm\xe2\x80\x99?\n'}
+[23.592651] (semnav) StderrLine: {'line': b'  715 |                 tf::TransformListener listener_;\n'}
+[23.592803] (semnav) StderrLine: {'line': b'      |                 ^~\n'}
+[23.592936] (semnav) StderrLine: {'line': b'      |                 tm\n'}
+[23.593779] (-) TimerEvent: {}
+[23.596576] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function \xe2\x80\x98void HumanFollowingNode::publish_twist(double, double)\xe2\x80\x99:\n'}
+[23.596876] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:166:40: error: \xe2\x80\x98Twist\xe2\x80\x99 is not a member of \xe2\x80\x98geometry_msgs\xe2\x80\x99; did you mean \xe2\x80\x98geometry_msgs::msg::Twist\xe2\x80\x99?\n'}
+[23.597033] (semnav) StderrLine: {'line': b'  166 |                         geometry_msgs::Twist commandTwist;\n'}
+[23.597168] (semnav) StderrLine: {'line': b'      |                                        ^~~~~\n'}
+[23.597319] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:25,\n'}
+[23.597458] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:7,\n'}
+[23.597585] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:49,\n'}
+[23.597711] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39,\n'}
+[23.597840] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42,\n'}
+[23.597964] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40,\n'}
+[23.598088] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:25:\n'}
+[23.598211] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:137:7: note: \xe2\x80\x98geometry_msgs::msg::Twist\xe2\x80\x99 declared here\n'}
+[23.599507] (semnav) StderrLine: {'line': b'  137 | using Twist =\n'}
+[23.599681] (semnav) StderrLine: {'line': b'      |       ^~~~~\n'}
+[23.672350] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:167:25: error: \xe2\x80\x98commandTwist\xe2\x80\x99 was not declared in this scope\n'}
+[23.672642] (semnav) StderrLine: {'line': b'  167 |                         commandTwist.linear.x = LinearCmd;\n'}
+[23.672793] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~\n'}
+[23.693906] (-) TimerEvent: {}
+[23.723405] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:169:25: error: \xe2\x80\x98pub_twist_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98publish_twist\xe2\x80\x99?\n'}
+[23.723734] (semnav) StderrLine: {'line': b'  169 |                         pub_twist_.publish(commandTwist);\n'}
+[23.723888] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~\n'}
+[23.724024] (semnav) StderrLine: {'line': b'      |                         publish_twist\n'}
+[23.728394] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function \xe2\x80\x98void HumanFollowingNode::publish_behavior_id(uint16_t)\xe2\x80\x99:\n'}
+[23.728649] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:174:35: error: \xe2\x80\x98UInt32\xe2\x80\x99 is not a member of \xe2\x80\x98std_msgs\xe2\x80\x99; did you mean \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99?\n'}
+[23.728799] (semnav) StderrLine: {'line': b'  174 |                         std_msgs::UInt32 commandId;\n'}
+[23.728928] (semnav) StderrLine: {'line': b'      |                                   ^~~~~~\n'}
+[23.730332] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/u_int32.hpp:7,\n'}
+[23.730578] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52:\n'}
+[23.730717] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7: note: \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99 declared here\n'}
+[23.730868] (semnav) StderrLine: {'line': b'  125 | using UInt32 =\n'}
+[23.731000] (semnav) StderrLine: {'line': b'      |       ^~~~~~\n'}
+[23.784363] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:175:25: error: \xe2\x80\x98commandId\xe2\x80\x99 was not declared in this scope\n'}
+[23.784646] (semnav) StderrLine: {'line': b'  175 |                         commandId.data = BehaviorIdCmd;\n'}
+[23.784800] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~\n'}
+[23.794024] (-) TimerEvent: {}
+[23.875527] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:176:25: error: \xe2\x80\x98pub_behaviorID_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98pub_behaviorID_topic_\xe2\x80\x99?\n'}
+[23.875824] (semnav) StderrLine: {'line': b'  176 |                         pub_behaviorID_.publish(commandId);\n'}
+[23.875977] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~~~~\n'}
+[23.876115] (semnav) StderrLine: {'line': b'      |                         pub_behaviorID_topic_\n'}
+[23.881457] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function \xe2\x80\x98void HumanFollowingNode::publish_behavior_mode(uint16_t)\xe2\x80\x99:\n'}
+[23.881736] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:181:35: error: \xe2\x80\x98UInt32\xe2\x80\x99 is not a member of \xe2\x80\x98std_msgs\xe2\x80\x99; did you mean \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99?\n'}
+[23.881901] (semnav) StderrLine: {'line': b'  181 |                         std_msgs::UInt32 commandMode;\n'}
+[23.884482] (semnav) StderrLine: {'line': b'      |                                   ^~~~~~\n'}
+[23.884660] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7: note: \xe2\x80\x98example_interfaces::msg::UInt32\xe2\x80\x99 declared here\n'}
+[23.884802] (semnav) StderrLine: {'line': b'  125 | using UInt32 =\n'}
+[23.884934] (semnav) StderrLine: {'line': b'      |       ^~~~~~\n'}
+[23.894138] (-) TimerEvent: {}
+[23.949323] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:182:25: error: \xe2\x80\x98commandMode\xe2\x80\x99 was not declared in this scope\n'}
+[23.949641] (semnav) StderrLine: {'line': b'  182 |                         commandMode.data = BehaviorModeCmd;\n'}
+[23.949803] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~\n'}
+[23.992330] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp: In member function \xe2\x80\x98void NavigationHumansNode::human_update(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)\xe2\x80\x99:\n'}
+[23.992641] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:298:60: error: no matching function for call to \xe2\x80\x98tf2_ros::Buffer::lookupTransform(std::string&, const tf2::TimePoint&, std::string&, const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type&, std::string&, rclcpp::Duration)\xe2\x80\x99\n'}
+[23.992801] (semnav) StderrLine: {'line': b'  298 |                             t = tf_buffer_->lookupTransform(\n'}
+[23.992945] (semnav) StderrLine: {'line': b'      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[23.993086] (semnav) StderrLine: {'line': b'  299 |                                             world_frame_id_, tf2::TimePointZero,\n'}
+[23.993223] (semnav) StderrLine: {'line': b'      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[23.993379] (semnav) StderrLine: {'line': b'  300 |                                             camera_optical_frame_id_, human_data->header.stamp,\n'}
+[23.993508] (semnav) StderrLine: {'line': b'      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[23.993628] (semnav) StderrLine: {'line': b'  301 |                                             world_frame_id_, rclcpp::Duration(std::chrono::nanoseconds(1000000000)));\n'}
+[23.993757] (semnav) StderrLine: {'line': b'      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[23.993891] (semnav) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39,\n'}
+[23.994027] (semnav) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42,\n'}
+[23.994156] (-) TimerEvent: {}
+[23.994185] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40,\n'}
+[23.996418] (semnav) StderrLine: {'line': b'                 from /home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25:\n'}
+[23.996601] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2/tf2/buffer_core.h:156:3: note: candidate: \xe2\x80\x98virtual geometry_msgs::msg::TransformStamped tf2::BufferCore::lookupTransform(const std::string&, const tf2::TimePoint&, const std::string&, const tf2::TimePoint&, const std::string&) const\xe2\x80\x99\n'}
+[23.996741] (semnav) StderrLine: {'line': b'  156 |   lookupTransform(\n'}
+[23.996869] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[23.996994] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2/tf2/buffer_core.h:156:3: note:   candidate expects 5 arguments, 6 provided\n'}
+[23.997122] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2/tf2/buffer_core.h:138:3: note: candidate: \xe2\x80\x98virtual geometry_msgs::msg::TransformStamped tf2::BufferCore::lookupTransform(const std::string&, const std::string&, const tf2::TimePoint&) const\xe2\x80\x99\n'}
+[23.997268] (semnav) StderrLine: {'line': b'  138 |   lookupTransform(\n'}
+[23.997431] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[23.997560] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2/tf2/buffer_core.h:138:3: note:   candidate expects 3 arguments, 6 provided\n'}
+[23.997687] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:127:3: note: candidate: \xe2\x80\x98virtual geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const std::string&, const tf2::TimePoint&, tf2::Duration) const\xe2\x80\x99\n'}
+[23.997824] (semnav) StderrLine: {'line': b'  127 |   lookupTransform(\n'}
+[23.997946] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[23.998067] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:127:3: note:   candidate expects 4 arguments, 6 provided\n'}
+[23.998188] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:137:3: note: candidate: \xe2\x80\x98geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const std::string&, const rclcpp::Time&, rclcpp::Duration) const\xe2\x80\x99\n'}
+[24.000443] (semnav) StderrLine: {'line': b'  137 |   lookupTransform(\n'}
+[24.000609] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[24.000748] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:137:3: note:   candidate expects 4 arguments, 6 provided\n'}
+[24.000889] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:159:3: note: candidate: \xe2\x80\x98virtual geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const tf2::TimePoint&, const std::string&, const tf2::TimePoint&, const std::string&, tf2::Duration) const\xe2\x80\x99\n'}
+[24.001032] (semnav) StderrLine: {'line': b'  159 |   lookupTransform(\n'}
+[24.001161] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[24.001297] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:161:62: note:   no known conversion for argument 4 from \xe2\x80\x98const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type\xe2\x80\x99 {aka \xe2\x80\x98const builtin_interfaces::msg::Time_<std::allocator<void> >\xe2\x80\x99} to \xe2\x80\x98const tf2::TimePoint&\xe2\x80\x99 {aka \xe2\x80\x98const std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1, 1000000000> > >&\xe2\x80\x99}\n'}
+[24.001466] (semnav) StderrLine: {'line': b'  161 |     const std::string & source_frame, const tf2::TimePoint & source_time,\n'}
+[24.001595] (semnav) StderrLine: {'line': b'      |                                       ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[24.001738] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:171:3: note: candidate: \xe2\x80\x98geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const rclcpp::Time&, const std::string&, const rclcpp::Time&, const std::string&, rclcpp::Duration) const\xe2\x80\x99\n'}
+[24.001875] (semnav) StderrLine: {'line': b'  171 |   lookupTransform(\n'}
+[24.001998] (semnav) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~\n'}
+[24.002124] (semnav) StderrLine: {'line': b'/opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:172:60: note:   no known conversion for argument 2 from \xe2\x80\x98const tf2::TimePoint\xe2\x80\x99 {aka \xe2\x80\x98const std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1, 1000000000> > >\xe2\x80\x99} to \xe2\x80\x98const rclcpp::Time&\xe2\x80\x99\n'}
+[24.002264] (semnav) StderrLine: {'line': b'  172 |     const std::string & target_frame, const rclcpp::Time & target_time,\n'}
+[24.004528] (semnav) StderrLine: {'line': b'      |                                       ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~\n'}
+[24.058735] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:25: error: \xe2\x80\x98pub_behaviorMode_\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98pub_behaviorMode_topic_\xe2\x80\x99?\n'}
+[24.059028] (semnav) StderrLine: {'line': b'  183 |                         pub_behaviorMode_.publish(commandMode);\n'}
+[24.059175] (semnav) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~~~~~~\n'}
+[24.059337] (semnav) StderrLine: {'line': b'      |                         pub_behaviorMode_topic_\n'}
+[24.095361] (-) TimerEvent: {}
+[24.115555] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In function \xe2\x80\x98int main(int, char**)\xe2\x80\x99:\n'}
+[24.115849] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:722:9: error: \xe2\x80\x98ros\xe2\x80\x99 has not been declared\n'}
+[24.116008] (semnav) StderrLine: {'line': b'  722 |         ros::init(argc, argv, "human_following");\n'}
+[24.116153] (semnav) StderrLine: {'line': b'      |         ^~~\n'}
+[24.116336] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:725:9: error: \xe2\x80\x98ros\xe2\x80\x99 has not been declared\n'}
+[24.116483] (semnav) StderrLine: {'line': b'  725 |         ros::NodeHandle nh("~");\n'}
+[24.116614] (semnav) StderrLine: {'line': b'      |         ^~~\n'}
+[24.138344] (semnav) StderrLine: {'line': b'/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:728:48: error: \xe2\x80\x98nh\xe2\x80\x99 was not declared in this scope\n'}
+[24.138646] (semnav) StderrLine: {'line': b'  728 |         HumanFollowingNode humanFollowingNode(&nh);\n'}
+[24.138806] (semnav) StderrLine: {'line': b'      |                                                ^~\n'}
+[24.195486] (-) TimerEvent: {}
+[24.295702] (-) TimerEvent: {}
+[24.397360] (-) TimerEvent: {}
+[24.497577] (-) TimerEvent: {}
+[24.597817] (-) TimerEvent: {}
+[24.698037] (-) TimerEvent: {}
+[24.798259] (-) TimerEvent: {}
+[24.898488] (-) TimerEvent: {}
+[24.998705] (-) TimerEvent: {}
+[25.098931] (-) TimerEvent: {}
+[25.201359] (-) TimerEvent: {}
+[25.303354] (-) TimerEvent: {}
+[25.403569] (-) TimerEvent: {}
+[25.503787] (-) TimerEvent: {}
+[25.604008] (-) TimerEvent: {}
+[25.704232] (-) TimerEvent: {}
+[25.804503] (-) TimerEvent: {}
+[25.904719] (-) TimerEvent: {}
+[26.004934] (-) TimerEvent: {}
+[26.105157] (-) TimerEvent: {}
+[26.205368] (-) TimerEvent: {}
+[26.305588] (-) TimerEvent: {}
+[26.405811] (-) TimerEvent: {}
+[26.506070] (-) TimerEvent: {}
+[26.606314] (-) TimerEvent: {}
+[26.706528] (-) TimerEvent: {}
+[26.806733] (-) TimerEvent: {}
+[26.906989] (-) TimerEvent: {}
+[27.007211] (-) TimerEvent: {}
+[27.108361] (-) TimerEvent: {}
+[27.208575] (-) TimerEvent: {}
+[27.308814] (-) TimerEvent: {}
+[27.409030] (-) TimerEvent: {}
+[27.509251] (-) TimerEvent: {}
+[27.609479] (-) TimerEvent: {}
+[27.710358] (-) TimerEvent: {}
+[27.810578] (-) TimerEvent: {}
+[27.910794] (-) TimerEvent: {}
+[28.011040] (-) TimerEvent: {}
+[28.113361] (-) TimerEvent: {}
+[28.213612] (-) TimerEvent: {}
+[28.313848] (-) TimerEvent: {}
+[28.414059] (-) TimerEvent: {}
+[28.514312] (-) TimerEvent: {}
+[28.611481] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1\n'}
+[28.611953] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2\n'}
+[28.612150] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[28.614411] (-) TimerEvent: {}
+[28.714659] (-) TimerEvent: {}
+[28.814915] (-) TimerEvent: {}
+[28.915178] (-) TimerEvent: {}
+[29.015449] (-) TimerEvent: {}
+[29.115702] (-) TimerEvent: {}
+[29.215951] (-) TimerEvent: {}
+[29.316215] (-) TimerEvent: {}
+[29.416473] (-) TimerEvent: {}
+[29.516742] (-) TimerEvent: {}
+[29.617007] (-) TimerEvent: {}
+[29.717298] (-) TimerEvent: {}
+[29.817549] (-) TimerEvent: {}
+[29.917811] (-) TimerEvent: {}
+[30.018078] (-) TimerEvent: {}
+[30.118350] (-) TimerEvent: {}
+[30.218563] (-) TimerEvent: {}
+[30.318822] (-) TimerEvent: {}
+[30.419120] (-) TimerEvent: {}
+[30.519385] (-) TimerEvent: {}
+[30.619638] (-) TimerEvent: {}
+[30.719847] (-) TimerEvent: {}
+[30.820111] (-) TimerEvent: {}
+[30.920380] (-) TimerEvent: {}
+[31.020591] (-) TimerEvent: {}
+[31.120856] (-) TimerEvent: {}
+[31.221118] (-) TimerEvent: {}
+[31.321381] (-) TimerEvent: {}
+[31.421635] (-) TimerEvent: {}
+[31.521896] (-) TimerEvent: {}
+[31.622160] (-) TimerEvent: {}
+[31.722427] (-) TimerEvent: {}
+[31.822677] (-) TimerEvent: {}
+[31.922930] (-) TimerEvent: {}
+[32.023189] (-) TimerEvent: {}
+[32.123419] (-) TimerEvent: {}
+[32.223667] (-) TimerEvent: {}
+[32.323924] (-) TimerEvent: {}
+[32.424205] (-) TimerEvent: {}
+[32.524404] (-) TimerEvent: {}
+[32.624651] (-) TimerEvent: {}
+[32.724906] (-) TimerEvent: {}
+[32.825195] (-) TimerEvent: {}
+[32.925403] (-) TimerEvent: {}
+[33.025647] (-) TimerEvent: {}
+[33.125908] (-) TimerEvent: {}
+[33.226165] (-) TimerEvent: {}
+[33.328705] (-) TimerEvent: {}
+[33.430363] (-) TimerEvent: {}
+[33.530637] (-) TimerEvent: {}
+[33.630917] (-) TimerEvent: {}
+[33.731198] (-) TimerEvent: {}
+[33.831469] (-) TimerEvent: {}
+[33.931729] (-) TimerEvent: {}
+[34.031993] (-) TimerEvent: {}
+[34.132262] (-) TimerEvent: {}
+[34.232574] (-) TimerEvent: {}
+[34.332834] (-) TimerEvent: {}
+[34.433097] (-) TimerEvent: {}
+[34.533364] (-) TimerEvent: {}
+[34.633577] (-) TimerEvent: {}
+[34.733836] (-) TimerEvent: {}
+[34.834131] (-) TimerEvent: {}
+[34.934395] (-) TimerEvent: {}
+[35.034645] (-) TimerEvent: {}
+[35.134907] (-) TimerEvent: {}
+[35.235171] (-) TimerEvent: {}
+[35.335408] (-) TimerEvent: {}
+[35.435660] (-) TimerEvent: {}
+[35.535918] (-) TimerEvent: {}
+[35.636186] (-) TimerEvent: {}
+[35.736484] (-) TimerEvent: {}
+[35.836744] (-) TimerEvent: {}
+[35.937005] (-) TimerEvent: {}
+[36.037267] (-) TimerEvent: {}
+[36.137491] (-) TimerEvent: {}
+[36.237755] (-) TimerEvent: {}
+[36.338022] (-) TimerEvent: {}
+[36.438299] (-) TimerEvent: {}
+[36.538509] (-) TimerEvent: {}
+[36.638809] (-) TimerEvent: {}
+[36.739070] (-) TimerEvent: {}
+[36.839341] (-) TimerEvent: {}
+[36.939549] (-) TimerEvent: {}
+[37.039847] (-) TimerEvent: {}
+[37.140106] (-) TimerEvent: {}
+[37.240371] (-) TimerEvent: {}
+[37.340642] (-) TimerEvent: {}
+[37.440901] (-) TimerEvent: {}
+[37.541161] (-) TimerEvent: {}
+[37.641412] (-) TimerEvent: {}
+[37.741686] (-) TimerEvent: {}
+[37.841943] (-) TimerEvent: {}
+[37.942208] (-) TimerEvent: {}
+[38.042410] (-) TimerEvent: {}
+[38.143353] (-) TimerEvent: {}
+[38.243562] (-) TimerEvent: {}
+[38.343866] (-) TimerEvent: {}
+[38.444135] (-) TimerEvent: {}
+[38.544402] (-) TimerEvent: {}
+[38.644669] (-) TimerEvent: {}
+[38.744929] (-) TimerEvent: {}
+[38.845192] (-) TimerEvent: {}
+[38.945414] (-) TimerEvent: {}
+[39.045692] (-) TimerEvent: {}
+[39.145953] (-) TimerEvent: {}
+[39.246213] (-) TimerEvent: {}
+[39.346405] (-) TimerEvent: {}
+[39.446660] (-) TimerEvent: {}
+[39.546916] (-) TimerEvent: {}
+[39.647180] (-) TimerEvent: {}
+[39.747409] (-) TimerEvent: {}
+[39.847659] (-) TimerEvent: {}
+[39.947915] (-) TimerEvent: {}
+[40.048175] (-) TimerEvent: {}
+[40.148404] (-) TimerEvent: {}
+[40.248656] (-) TimerEvent: {}
+[40.348949] (-) TimerEvent: {}
+[40.449198] (-) TimerEvent: {}
+[40.549403] (-) TimerEvent: {}
+[40.649664] (-) TimerEvent: {}
+[40.749925] (-) TimerEvent: {}
+[40.850192] (-) TimerEvent: {}
+[40.950384] (-) TimerEvent: {}
+[41.050622] (-) TimerEvent: {}
+[41.150878] (-) TimerEvent: {}
+[41.251120] (-) TimerEvent: {}
+[41.351376] (-) TimerEvent: {}
+[41.451580] (-) TimerEvent: {}
+[41.551842] (-) TimerEvent: {}
+[41.652133] (-) TimerEvent: {}
+[41.752356] (-) TimerEvent: {}
+[41.852563] (-) TimerEvent: {}
+[41.953356] (-) TimerEvent: {}
+[42.053608] (-) TimerEvent: {}
+[42.153864] (-) TimerEvent: {}
+[42.254125] (-) TimerEvent: {}
+[42.354386] (-) TimerEvent: {}
+[42.454637] (-) TimerEvent: {}
+[42.554892] (-) TimerEvent: {}
+[42.655152] (-) TimerEvent: {}
+[42.755405] (-) TimerEvent: {}
+[42.855655] (-) TimerEvent: {}
+[42.955908] (-) TimerEvent: {}
+[43.056167] (-) TimerEvent: {}
+[43.156537] (-) TimerEvent: {}
+[43.256821] (-) TimerEvent: {}
+[43.357076] (-) TimerEvent: {}
+[43.457347] (-) TimerEvent: {}
+[43.557552] (-) TimerEvent: {}
+[43.657760] (-) TimerEvent: {}
+[43.758732] (-) TimerEvent: {}
+[43.859068] (-) TimerEvent: {}
+[43.962057] (-) TimerEvent: {}
+[43.962791] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1\n'}
+[43.963328] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2\n'}
+[43.963600] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[43.967384] (semnav) CommandEnded: {'returncode': 2}
+[44.064489] (-) TimerEvent: {}
+[44.081981] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[44.085496] (-) EventReactorShutdown: {}

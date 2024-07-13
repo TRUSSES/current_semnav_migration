@@ -1,0 +1,23 @@
+[  4%] Building CXX object CMakeFiles/reactive_planner.dir/src/libraries/reactive_planner_lib.cpp.o
+[  9%] Linking CXX static library libreactive_planner.a
+[ 14%] Built target reactive_planner
+[ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:457:42: error: invalid initialization of reference of type ‘const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&’ {aka ‘const std::shared_ptr<const sensor_msgs::msg::LaserScan_<std::allocator<void> > >&’} from expression of type ‘const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr*’ {aka ‘const std::shared_ptr<const sensor_msgs::msg::LaserScan_<std::allocator<void> > >*’}
+  457 |                         constructLIDAR2D(&lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+      |                                          ^~~~~~~~~~~
+In file included from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:
+/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:223:68: note: in passing argument 1 of ‘void constructLIDAR2D(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, double, double, double, LIDARClass*)’
+  223 | void constructLIDAR2D(const sensor_msgs::msg::LaserScan::ConstPtr& DataLIDAR, double CutoffRange, double AllowableRange, double Pitch, LIDARClass* LIDAR);
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 28%] Linking CXX executable navigation
+/usr/bin/ld: CMakeFiles/navigation.dir/src/navigation.cpp.o: in function `NavigationNode::control_callback(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, std::shared_ptr<nav_msgs::msg::Odometry_<std::allocator<void> > const> const&)':
+navigation.cpp:(.text._ZN14NavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE[_ZN14NavigationNode16control_callbackERKSt10shared_ptrIKN11sensor_msgs3msg10LaserScan_ISaIvEEEERKS0_IKN8nav_msgs3msg9Odometry_IS4_EEE]+0x4f8): undefined reference to `constructLIDAR2D(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > const> const&, double, double, double, LIDARClass*)'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/navigation.dir/build.make:451: navigation] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

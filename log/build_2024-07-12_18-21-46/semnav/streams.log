@@ -1,0 +1,18 @@
+[0.034s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.228s] [ 14%] Built target reactive_planner
+[0.377s] [ 23%] Built target navigation
+[0.536s] [ 33%] Built target navigation_semantic
+[0.682s] [ 42%] Built target navigation_humans
+[0.841s] [ 47%] [32mBuilding CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o[0m
+[10.016s] [ 52%] [32mBuilding CXX object CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o[0m
+[46.156s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingSignalNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[46.156s] [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following_signal.cpp:675:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[46.156s]   675 |                                 [01;31m[Kros[m[K::Duration(5.0).sleep();
+[46.156s]       |                                 [01;31m[K^~~[m[K
+[82.003s] gmake[2]: *** [CMakeFiles/human_following_signal.dir/build.make:76: CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o] Error 1
+[82.004s] gmake[1]: *** [CMakeFiles/Makefile2:285: CMakeFiles/human_following_signal.dir/all] Error 2
+[82.004s] gmake[1]: *** Waiting for unfinished jobs....
+[114.613s] [ 57%] [32m[1mLinking CXX executable human_following[0m
+[120.351s] [ 57%] Built target human_following
+[120.353s] gmake: *** [Makefile:146: all] Error 2
+[120.357s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

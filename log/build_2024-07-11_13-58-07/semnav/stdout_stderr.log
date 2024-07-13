@@ -1,0 +1,144 @@
+[ 14%] Built target reactive_planner
+[ 23%] Built target navigation
+[ 33%] Built target navigation_semantic
+[ 38%] [32mBuilding CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o[0m
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:[m[K In member function ‘[01m[Kvoid NavigationHumansNode::[01;32m[Khuman_update[m[K(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:301:83:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KfromMsg(const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type&)[m[K’
+  301 |                                             camera_optical_frame_id_, [01;31m[Ktf2::fromMsg(human_data->header.stamp)[m[K,
+      |                                                                       [01;31m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:39[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25[m[K:
+[01m[K/opt/ros/jazzy/include/tf2/tf2/convert.h:138:6:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class A, class B> void tf2::[01;32m[KfromMsg[m[K(const A&, B&)[m[K’
+  138 | void [01;36m[KfromMsg[m[K(const A & a, B & b);
+      |      [01;36m[K^~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/tf2/tf2/convert.h:138:6:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:301:83:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+  301 |                                             camera_optical_frame_id_, [01;36m[Ktf2::fromMsg(human_data->header.stamp)[m[K,
+      |                                                                       [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:404:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  404 |                         [01;31m[Kros[m[K::Time localGoalCameraStamp;
+      |                         [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:413:33:[m[K [01;31m[Kerror: [m[K‘[01m[KlocalGoalCameraStamp[m[K’ was not declared in this scope; did you mean ‘[01m[KlocalGoalCameraZ[m[K’?
+  413 |                                 [01;31m[KlocalGoalCameraStamp[m[K = Goal_camera_stamp_;
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                 [32m[KlocalGoalCameraZ[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:422:40:[m[K [01;31m[Kerror: [m[K‘[01m[KPoseStamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs[m[K’; did you mean ‘[01m[Kgeometry_msgs::msg::PoseStamped[m[K’?
+  422 |                         geometry_msgs::[01;31m[KPoseStamped[m[K odomPose, mapPose;
+      |                                        [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/neha/ros2_ws/src/install/object_pose_interface_msgs/include/object_pose_interface_msgs/object_pose_interface_msgs/msg/detail/semantic_map_object__struct.hpp:28[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/install/object_pose_interface_msgs/include/object_pose_interface_msgs/object_pose_interface_msgs/msg/detail/semantic_map_object_array__struct.hpp:25[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/install/object_pose_interface_msgs/include/object_pose_interface_msgs/object_pose_interface_msgs/msg/semantic_map_object_array.hpp:7[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:54[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:25[m[K:
+[01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:138:7:[m[K [01;36m[Knote: [m[K‘[01m[Kgeometry_msgs::msg::PoseStamped[m[K’ declared here
+  138 | using [01;36m[KPoseStamped[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:423:25:[m[K [01;31m[Kerror: [m[K‘[01m[KodomPose[m[K’ was not declared in this scope
+  423 |                         [01;31m[KodomPose[m[K.header.stamp = ros::Time(0);
+      |                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:423:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  423 |                         odomPose.header.stamp = [01;31m[Kros[m[K::Time(0);
+      |                                                 [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:427:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::TransformListener>[m[K’ has no member named ‘[01m[KwaitForTransform[m[K’
+  427 |                                 listener_.[01;31m[KwaitForTransform[m[K(world_frame_id_, odom_frame_id_, ros::Time(0), ros::Duration(1.0));
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:427:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  427 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, [01;31m[Kros[m[K::Time(0), ros::Duration(1.0));
+      |                                                                                             [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:427:107:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  427 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, ros::Time(0), [01;31m[Kros[m[K::Duration(1.0));
+      |                                                                                                           [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:428:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::TransformListener>[m[K’ has no member named ‘[01m[KtransformPose[m[K’
+  428 |                                 listener_.[01;31m[KtransformPose[m[K(world_frame_id_, odomPose, mapPose);
+      |                                           [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:428:84:[m[K [01;31m[Kerror: [m[K‘[01m[KmapPose[m[K’ was not declared in this scope
+  428 |                                 listener_.transformPose(world_frame_id_, odomPose, [01;31m[KmapPose[m[K);
+      |                                                                                    [01;31m[K^~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:429:34:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+  429 |                         } catch ([01;31m[Ktf[m[K::TransformException &ex) {
+      |                                  [01;31m[K^~[m[K
+      |                                  [32m[Ktm[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:429:57:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  429 |                         } catch (tf::TransformException [01;31m[K&[m[Kex) {
+      |                                                         [01;31m[K^[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:429:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:429:33:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  429 |                         } catch [01;36m[K([m[Ktf::TransformException &ex) {
+      |                                 [01;36m[K^[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:429:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+  429 |                         } catch (tf::TransformException [01;31m[K&[m[Kex) {
+      |                                                         [01;31m[K^[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:429:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kex[m[K’ was not declared in this scope; did you mean ‘[01m[Kexp[m[K’?
+  429 |                         } catch (tf::TransformException &[01;31m[Kex[m[K) {
+      |                                                          [01;31m[K^~[m[K
+      |                                                          [32m[Kexp[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:435:25:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ has not been declared
+  435 |                         [01;31m[Ktf[m[K::Quaternion rotation = tf::Quaternion(mapPose.pose.orientation.x,
+      |                         [01;31m[K^~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:439:25:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ has not been declared
+  439 |                         [01;31m[Ktf[m[K::Matrix3x3 m(rotation);
+      |                         [01;31m[K^~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:441:25:[m[K [01;31m[Kerror: [m[K‘[01m[Km[m[K’ was not declared in this scope; did you mean ‘[01m[Ktm[m[K’?
+  441 |                         [01;31m[Km[m[K.getRPY(roll, pitch, yaw);
+      |                         [01;31m[K^[m[K
+      |                         [32m[Ktm[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:442:51:[m[K [01;31m[Kerror: [m[K‘[01m[KmapPose[m[K’ was not declared in this scope
+  442 |                         double x_robot_position = [01;31m[KmapPose[m[K.pose.position.x;
+      |                                                   [01;31m[K^~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:454:40:[m[K [01;31m[Kerror: [m[K‘[01m[KPointStamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs[m[K’; did you mean ‘[01m[Kgeometry_msgs::msg::PointStamped[m[K’?
+  454 |                         geometry_msgs::[01;31m[KPointStamped[m[K localGoalCamera, localGoalMap;
+      |                                        [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp:7[m[K,
+                 from [01m[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:55[m[K:
+[01m[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__struct.hpp:138:7:[m[K [01;36m[Knote: [m[K‘[01m[Kgeometry_msgs::msg::PointStamped[m[K’ declared here
+  138 | using [01;36m[KPointStamped[m[K =
+      |       [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:455:25:[m[K [01;31m[Kerror: [m[K‘[01m[KlocalGoalCamera[m[K’ was not declared in this scope; did you mean ‘[01m[KlocalGoalCameraZ[m[K’?
+  455 |                         [01;31m[KlocalGoalCamera[m[K.header.stamp = localGoalCameraStamp;
+      |                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                         [32m[KlocalGoalCameraZ[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:455:56:[m[K [01;31m[Kerror: [m[K‘[01m[KlocalGoalCameraStamp[m[K’ was not declared in this scope; did you mean ‘[01m[KlocalGoalCameraZ[m[K’?
+  455 |                         localGoalCamera.header.stamp = [01;31m[KlocalGoalCameraStamp[m[K;
+      |                                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                        [32m[KlocalGoalCameraZ[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:461:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::TransformListener>[m[K’ has no member named ‘[01m[KwaitForTransform[m[K’
+  461 |                                 listener_.[01;31m[KwaitForTransform[m[K(world_frame_id_, ros::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, ros::Duration(1.0));
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:461:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  461 |                                 listener_.waitForTransform(world_frame_id_, [01;31m[Kros[m[K::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, ros::Duration(1.0));
+      |                                                                             [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:461:156:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  461 |                                 listener_.waitForTransform(world_frame_id_, ros::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, [01;31m[Kros[m[K::Duration(1.0));
+      |                                                                                                                                                            [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:462:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::TransformListener>[m[K’ has no member named ‘[01m[KtransformPoint[m[K’
+  462 |                                 listener_.[01;31m[KtransformPoint[m[K(world_frame_id_, ros::Time(0), localGoalCamera, world_frame_id_, localGoalMap);
+      |                                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:462:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  462 |                                 listener_.transformPoint(world_frame_id_, [01;31m[Kros[m[K::Time(0), localGoalCamera, world_frame_id_, localGoalMap);
+      |                                                                           [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:462:123:[m[K [01;31m[Kerror: [m[K‘[01m[KlocalGoalMap[m[K’ was not declared in this scope; did you mean ‘[01m[KlocalGoalCameraZ[m[K’?
+  462 |                                 listener_.transformPoint(world_frame_id_, ros::Time(0), localGoalCamera, world_frame_id_, [01;31m[KlocalGoalMap[m[K);
+      |                                                                                                                           [01;31m[K^~~~~~~~~~~~[m[K
+      |                                                                                                                           [32m[KlocalGoalCameraZ[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:465:34:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf[m[K’ does not name a type; did you mean ‘[01m[Ktm[m[K’?
+  465 |                         } catch ([01;31m[Ktf[m[K::TransformException &ex) {
+      |                                  [01;31m[K^~[m[K
+      |                                  [32m[Ktm[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:465:57:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K&[m[K’ token
+  465 |                         } catch (tf::TransformException [01;31m[K&[m[Kex) {
+      |                                                         [01;31m[K^[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:465:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K&[m[K’ token
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:465:33:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  465 |                         } catch [01;36m[K([m[Ktf::TransformException &ex) {
+      |                                 [01;36m[K^[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:465:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K&[m[K’ token
+  465 |                         } catch (tf::TransformException [01;31m[K&[m[Kex) {
+      |                                                         [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

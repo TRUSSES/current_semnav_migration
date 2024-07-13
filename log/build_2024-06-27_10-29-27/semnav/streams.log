@@ -1,0 +1,970 @@
+[0.027s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.197s] [ 14%] Built target reactive_planner
+[0.337s] [ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+[0.338s] [ 23%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[21.616s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:47: error: ‘object_pose_interface_msgs’ does not name a type
+[21.616s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.617s]       |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.617s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:97: error: expected unqualified-id before ‘::’ token
+[21.617s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.618s]       |                                                                                                 ^~
+[21.618s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:97: error: expected ‘)’ before ‘::’ token
+[21.618s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.618s]       |                                        ~                                                        ^~
+[21.618s]       |                                                                                                 )
+[21.621s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:75: error: expected ‘;’ at end of member declaration
+[21.621s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.621s]       |                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+[21.622s]       |                                                                                                 ;
+[21.633s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:240:99: error: ‘ConstPtr’ in namespace ‘::’ does not name a type
+[21.634s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.634s]       |                                                                                                   ^~~~~~~~
+[21.634s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:58: error: ‘LaserScan’ in namespace ‘sensor_msgs’ does not name a type
+[21.634s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.634s]       |                                                          ^~~~~~~~~
+[21.635s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:77: error: expected unqualified-id before ‘&’ token
+[21.635s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.635s]       |                                                                             ^
+[21.636s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:77: error: expected ‘)’ before ‘&’ token
+[21.636s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.637s]       |                                      ~                                      ^
+[21.637s]       |                                                                             )
+[21.637s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:77: error: expected ‘;’ at end of member declaration
+[21.637s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.637s]       |                                                                             ^
+[21.637s]       |                                                                              ;
+[21.653s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:332:79: error: ‘lidar_data’ does not name a type
+[21.654s]   332 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[21.654s]       |                                                                               ^~~~~~~~~~
+[21.654s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:613:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.654s]   613 |                 rclcpp::Publisher pub_behaviorID_;
+[21.654s]       |                 ^~~~~~
+[21.654s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:614:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.654s]   614 |                 rclcpp::Publisher pub_behaviorMode_;
+[21.654s]       |                 ^~~~~~
+[21.655s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:615:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.655s]   615 |                 rclcpp::Publisher pub_twist_;
+[21.655s]       |                 ^~~~~~
+[21.657s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:617:17: error: invalid use of template-name ‘rclcpp::Publisher’ without an argument list
+[21.657s]   617 |                 rclcpp::Publisher pub_semantic_map_;
+[21.657s]       |                 ^~~~~~
+[21.664s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:661:22: error: ‘TransformListener’ in namespace ‘tf2’ does not name a type
+[21.664s]   661 |                 tf2::TransformListener listener_;
+[21.664s]       |                      ^~~~~~~~~~~~~~~~~
+[21.666s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In constructor ‘NavigationNode::NavigationNode(rclcpp::Node*)’:
+[21.666s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:44:60: error: use of deleted function ‘rclcpp::Node::Node(const rclcpp::Node&)’
+[21.666s]    44 |                 NavigationNode(rclcpp::Node* nodehandle) : nh_(*nodehandle) {
+[21.666s]       |                                                            ^~~~~~~~~~~~~~~~
+[21.669s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/context.hpp:35,
+[21.669s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:24,
+[21.670s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25,
+[21.670s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27,
+[21.670s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171,
+[21.670s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32,
+[21.670s]                  from /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25:
+[21.670s] /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1634:3: note: declared here
+[21.670s]  1634 |   RCLCPP_DISABLE_COPY(Node)
+[21.670s]       |   ^~~~~~~~~~~~~~~~~~~
+[21.672s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.672s]    46 |                         this->declare_parameter("pub_twist_topic", "/cmd_vel");
+[21.672s]       |                               ^~~~~~~~~~~~~~~~~
+[21.673s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:47:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.673s]    47 |                         this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
+[21.673s]       |                               ^~~~~~~~~~~~~~~~~
+[21.674s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:48:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.674s]    48 |                         this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
+[21.674s]       |                               ^~~~~~~~~~~~~~~~~
+[21.675s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:49:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.675s]    49 |                         this->declare_parameter("sub_laser_topic", "/laser_scan");
+[21.675s]       |                               ^~~~~~~~~~~~~~~~~
+[21.675s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:50:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.675s]    50 |                         this->declare_parameter("sub_robot_topic", "/robot_pose");
+[21.676s]       |                               ^~~~~~~~~~~~~~~~~
+[21.676s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:51:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.676s]    51 |                         this->declare_parameter("sub_semantic_topic", "/semantic_map");
+[21.676s]       |                               ^~~~~~~~~~~~~~~~~
+[21.677s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:52:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.677s]    52 |                         this->declare_parameter("world_frame_id", "world");
+[21.677s]       |                               ^~~~~~~~~~~~~~~~~
+[21.679s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:53:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.679s]    53 |                         this->declare_parameter("odom_frame_id", "odom");
+[21.680s]       |                               ^~~~~~~~~~~~~~~~~
+[21.680s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:54:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.680s]    54 |                         this->declare_parameter("laser_frame_id", "laser_frame");
+[21.680s]       |                               ^~~~~~~~~~~~~~~~~
+[21.680s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:56:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.680s]    56 |                         this->declare_parameter("target_object", "");
+[21.680s]       |                               ^~~~~~~~~~~~~~~~~
+[21.680s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:57:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.681s]    57 |                         this->declare_parameter("target_object_length", 0.0);
+[21.681s]       |                               ^~~~~~~~~~~~~~~~~
+[21.681s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:58:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.683s]    58 |                         this->declare_parameter("target_object_width", 0.0);
+[21.683s]       |                               ^~~~~~~~~~~~~~~~~
+[21.683s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:60:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.684s]    60 |                         this->declare_parameter("RobotRadius", 0.0);
+[21.684s]       |                               ^~~~~~~~~~~~~~~~~
+[21.684s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:61:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.684s]    61 |                         this->declare_parameter("ObstacleDilation", 0.0);
+[21.684s]       |                               ^~~~~~~~~~~~~~~~~
+[21.684s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:62:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.684s]    62 |                         this->declare_parameter("WalkHeight", 0.0);
+[21.684s]       |                               ^~~~~~~~~~~~~~~~~
+[21.685s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:64:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.685s]    64 |                         this->declare_parameter("AllowableRange", 0.0);
+[21.685s]       |                               ^~~~~~~~~~~~~~~~~
+[21.688s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:65:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.688s]    65 |                         this->declare_parameter("CutoffRange", 0.0);
+[21.688s]       |                               ^~~~~~~~~~~~~~~~~
+[21.688s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:67:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.688s]    67 |                         this->declare_parameter("ForwardLinCmdLimit", 0.0);
+[21.688s]       |                               ^~~~~~~~~~~~~~~~~
+[21.688s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:68:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.688s]    68 |                         this->declare_parameter("BackwardLinCmdLimit", 0.0);
+[21.689s]       |                               ^~~~~~~~~~~~~~~~~
+[21.689s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:69:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.689s]    69 |                         this->declare_parameter("AngCmdLimit", 0.0);
+[21.691s]       |                               ^~~~~~~~~~~~~~~~~
+[21.691s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:70:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.691s]    70 |                         this->declare_parameter("RFunctionExponent", 0.0);
+[21.692s]       |                               ^~~~~~~~~~~~~~~~~
+[21.692s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:71:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.692s]    71 |                         this->declare_parameter("Epsilon", 0.0);
+[21.692s]       |                               ^~~~~~~~~~~~~~~~~
+[21.692s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:72:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.692s]    72 |                         this->declare_parameter("VarEpsilon", 0.0);
+[21.692s]       |                               ^~~~~~~~~~~~~~~~~
+[21.692s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:73:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.693s]    73 |                         this->declare_parameter("Mu1", 0.0);
+[21.693s]       |                               ^~~~~~~~~~~~~~~~~
+[21.693s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:74:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.696s]    74 |                         this->declare_parameter("Mu2", 0.0);
+[21.696s]       |                               ^~~~~~~~~~~~~~~~~
+[21.696s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:75:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.696s]    75 |                         this->declare_parameter("SemanticMapUpdateRate", 0.0);
+[21.696s]       |                               ^~~~~~~~~~~~~~~~~
+[21.696s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:78:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.696s]    78 |                         this->declare_parameter("LinearGain", 0.0);
+[21.697s]       |                               ^~~~~~~~~~~~~~~~~
+[21.697s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:79:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.697s]    79 |                         this->declare_parameter("AngularGain", 0.0);
+[21.697s]       |                               ^~~~~~~~~~~~~~~~~
+[21.697s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:81:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.697s]    81 |                         this->declare_parameter("Goal_x", 0.0);
+[21.697s]       |                               ^~~~~~~~~~~~~~~~~
+[21.698s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:82:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.698s]    82 |                         this->declare_parameter("Goal_y", 0.0);
+[21.698s]       |                               ^~~~~~~~~~~~~~~~~
+[21.698s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:85:29: error: ‘class rclcpp::Node’ has no member named ‘getParam’
+[21.698s]    85 |                         nh_.getParam("Tolerance", Tolerance_);
+[21.698s]       |                             ^~~~~~~~
+[21.698s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:87:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.698s]    87 |                         this->declare_parameter("LowpassCutOff", 0.0);
+[21.699s]       |                               ^~~~~~~~~~~~~~~~~
+[21.699s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:88:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.699s]    88 |                         this->declare_parameter("LowpassSampling", 0.0);
+[21.701s]       |                               ^~~~~~~~~~~~~~~~~
+[21.701s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:89:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.701s]    89 |                         this->declare_parameter("LowpassOrder", 0.0);
+[21.701s]       |                               ^~~~~~~~~~~~~~~~~
+[21.702s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:90:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.702s]    90 |                         this->declare_parameter("LowpassSamples", 0.0);
+[21.702s]       |                               ^~~~~~~~~~~~~~~~~
+[21.702s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:92:31: error: ‘class NavigationNode’ has no member named ‘declare_parameter’
+[21.702s]    92 |                         this->declare_parameter("DebugFlag", false);
+[21.702s]       |                               ^~~~~~~~~~~~~~~~~
+[21.702s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:94:50: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.702s]    94 |                         pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
+[21.703s]       |                                                  ^~~~~~~~~~~~~
+[21.703s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:95:55: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.703s]    95 |                         pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
+[21.705s]       |                                                       ^~~~~~~~~~~~~
+[21.705s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:96:57: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.705s]    96 |                         pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();
+[21.706s]       |                                                         ^~~~~~~~~~~~~
+[21.706s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:97:50: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.706s]    97 |                         sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
+[21.706s]       |                                                  ^~~~~~~~~~~~~
+[21.706s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:98:50: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.706s]    98 |                         sub_robot_topic_ = this->get_parameter("sub_robot_topic").as_string();
+[21.706s]       |                                                  ^~~~~~~~~~~~~
+[21.706s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:99:53: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.707s]    99 |                         sub_semantic_topic_ = this->get_parameter("sub_semantic_topic").as_string();
+[21.707s]       |                                                     ^~~~~~~~~~~~~
+[21.707s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:100:49: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.709s]   100 |                         world_frame_id_ = this->get_parameter("world_frame_id").as_string();
+[21.709s]       |                                                 ^~~~~~~~~~~~~
+[21.709s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:101:48: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.709s]   101 |                         odom_frame_id_ = this->get_parameter("odom_frame_id").as_string();
+[21.710s]       |                                                ^~~~~~~~~~~~~
+[21.710s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:102:49: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.710s]   102 |                         laser_frame_id_ = this->get_parameter("laser_frame_id").as_string();
+[21.710s]       |                                                 ^~~~~~~~~~~~~
+[21.710s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:240:47: error: ‘object_pose_interface_msgs’ does not name a type
+[21.710s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.710s]       |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[21.710s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:240:78: error: expected unqualified-id before ‘::’ token
+[21.711s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.711s]       |                                                                              ^~
+[21.711s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:240:78: error: expected ‘)’ before ‘::’ token
+[21.715s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.715s]       |                                        ~                                     ^~
+[21.715s]       |                                                                              )
+[21.715s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:240:75: error: expected ‘;’ at end of member declaration
+[21.716s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.716s]       |                                                                           ^~~
+[21.716s]       |                                                                              ;
+[21.734s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:240:80: error: ‘SemanticMapObjectArray’ in namespace ‘::’ does not name a type
+[21.734s]   240 |                 void diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[21.734s]       |                                                                                ^~~~~~~~~~~~~~~~~~~~~~
+[21.741s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:623:17: error: ‘ros’ does not name a type
+[21.741s]   623 |                 ros::NodeHandle nh_;
+[21.741s]       |                 ^~~
+[21.749s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:640:17: error: ‘ros’ does not name a type
+[21.749s]   640 |                 ros::Publisher pub_behaviorID_;
+[21.749s]       |                 ^~~
+[21.753s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:641:17: error: ‘ros’ does not name a type
+[21.753s]   641 |                 ros::Publisher pub_behaviorMode_;
+[21.753s]       |                 ^~~
+[21.759s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:642:17: error: ‘ros’ does not name a type
+[21.759s]   642 |                 ros::Publisher pub_twist_;
+[21.760s]       |                 ^~~
+[21.765s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:644:17: error: ‘ros’ does not name a type
+[21.765s]   644 |                 ros::Publisher pub_semantic_map_;
+[21.766s]       |                 ^~~
+[21.782s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:690:17: error: ‘tf’ does not name a type; did you mean ‘tm’?
+[21.782s]   690 |                 tf::TransformListener listener_;
+[21.782s]       |                 ^~
+[21.783s]       |                 tm
+[21.799s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:103:25: error: ‘target_object_’ was not declared in this scope
+[21.799s]   103 |                         target_object_ = this->get_parameter("target_object").as_string();
+[21.799s]       |                         ^~~~~~~~~~~~~~
+[21.800s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:103:48: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.800s]   103 |                         target_object_ = this->get_parameter("target_object").as_string();
+[21.800s]       |                                                ^~~~~~~~~~~~~
+[21.892s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In constructor ‘SemanticNavigationNode::SemanticNavigationNode()’:
+[21.893s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:136:25: error: ‘pub_behaviorID_’ was not declared in this scope; did you mean ‘pub_behaviorID_topic_’?
+[21.893s]   136 |                         pub_behaviorID_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[21.893s]       |                         ^~~~~~~~~~~~~~~
+[21.893s]       |                         pub_behaviorID_topic_
+[21.923s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:136:43: error: ‘nh_’ was not declared in this scope
+[21.923s]   136 |                         pub_behaviorID_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[21.923s]       |                                           ^~~
+[21.927s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:136:67: error: ‘UInt32’ is not a member of ‘std_msgs’
+[21.928s]   136 |                         pub_behaviorID_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[21.928s]       |                                                                   ^~~~~~
+[21.942s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:104:25: error: ‘target_object_length_’ was not declared in this scope
+[21.942s]   104 |                         target_object_length_ = this->get_parameter("target_object_length").as_double();
+[21.942s]       |                         ^~~~~~~~~~~~~~~~~~~~~
+[21.943s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:104:55: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[21.943s]   104 |                         target_object_length_ = this->get_parameter("target_object_length").as_double();
+[21.943s]       |                                                       ^~~~~~~~~~~~~
+[22.022s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:137:25: error: ‘pub_behaviorMode_’ was not declared in this scope; did you mean ‘pub_behaviorMode_topic_’?
+[22.023s]   137 |                         pub_behaviorMode_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorMode_topic_, 1, true);
+[22.023s]       |                         ^~~~~~~~~~~~~~~~~
+[22.023s]       |                         pub_behaviorMode_topic_
+[22.027s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:137:69: error: ‘UInt32’ is not a member of ‘std_msgs’
+[22.027s]   137 |                         pub_behaviorMode_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorMode_topic_, 1, true);
+[22.027s]       |                                                                     ^~~~~~
+[22.074s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:105:25: error: ‘target_object_width_’ was not declared in this scope
+[22.074s]   105 |                         target_object_width_ = this->get_parameter("target_object_width").as_double();
+[22.074s]       |                         ^~~~~~~~~~~~~~~~~~~~
+[22.074s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:105:54: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.074s]   105 |                         target_object_width_ = this->get_parameter("target_object_width").as_double();
+[22.074s]       |                                                      ^~~~~~~~~~~~~
+[22.074s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:107:46: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.075s]   107 |                         RobotRadius_ = this->get_parameter("RobotRadius").as_double();
+[22.075s]       |                                              ^~~~~~~~~~~~~
+[22.075s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:108:51: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.075s]   108 |                         ObstacleDilation_ = this->get_parameter("ObstacleDilation").as_double();
+[22.077s]       |                                                   ^~~~~~~~~~~~~
+[22.077s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:109:45: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.077s]   109 |                         WalkHeight_ = this->get_parameter("WalkHeight").as_double();
+[22.078s]       |                                             ^~~~~~~~~~~~~
+[22.078s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:110:49: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.078s]   110 |                         AllowableRange_ = this->get_parameter("AllowableRange").as_double();
+[22.078s]       |                                                 ^~~~~~~~~~~~~
+[22.078s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:111:46: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.078s]   111 |                         CutoffRange_ = this->get_parameter("CutoffRange").as_double();
+[22.078s]       |                                              ^~~~~~~~~~~~~
+[22.078s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:112:53: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.079s]   112 |                         ForwardLinCmdLimit_ = this->get_parameter("ForwardLinCmdLimit").as_double();
+[22.079s]       |                                                     ^~~~~~~~~~~~~
+[22.079s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:113:54: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.081s]   113 |                         BackwardLinCmdLimit_ = this->get_parameter("BackwardLinCmdLimit").as_double();
+[22.081s]       |                                                      ^~~~~~~~~~~~~
+[22.081s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:114:46: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.082s]   114 |                         AngCmdLimit_ = this->get_parameter("AngCmdLimit").as_double();
+[22.082s]       |                                              ^~~~~~~~~~~~~
+[22.082s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:115:52: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.082s]   115 |                         RFunctionExponent_ = this->get_parameter("RFunctionExponent").as_double();
+[22.082s]       |                                                    ^~~~~~~~~~~~~
+[22.082s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:116:42: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.082s]   116 |                         Epsilon_ = this->get_parameter("Epsilon").as_double();
+[22.083s]       |                                          ^~~~~~~~~~~~~
+[22.083s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:117:45: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.083s]   117 |                         VarEpsilon_ = this->get_parameter("VarEpsilon").as_double();
+[22.085s]       |                                             ^~~~~~~~~~~~~
+[22.085s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:118:38: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.086s]   118 |                         Mu1_ = this->get_parameter("Mu1").as_double();
+[22.086s]       |                                      ^~~~~~~~~~~~~
+[22.086s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:119:38: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.086s]   119 |                         Mu2_ = this->get_parameter("Mu2").as_double();
+[22.086s]       |                                      ^~~~~~~~~~~~~
+[22.086s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:120:55: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.086s]   120 |                         DiffeoTreeUpdateRate_ = this->get_parameter("SemanticMapUpdateRate").as_double();
+[22.086s]       |                                                       ^~~~~~~~~~~~~
+[22.087s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:122:45: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.087s]   122 |                         LinearGain_ = this->get_parameter("LinearGain").as_double();
+[22.087s]       |                                             ^~~~~~~~~~~~~
+[22.088s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:123:46: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.088s]   123 |                         AngularGain_ = this->get_parameter("AngularGain").as_double();
+[22.088s]       |                                              ^~~~~~~~~~~~~
+[22.088s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:124:41: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.089s]   124 |                         Goal_x_ = this->get_parameter("Goal_x").as_double();
+[22.089s]       |                                         ^~~~~~~~~~~~~
+[22.089s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:125:41: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.089s]   125 |                         Goal_y_ = this->get_parameter("Goal_y").as_double();
+[22.089s]       |                                         ^~~~~~~~~~~~~
+[22.089s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:126:44: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.089s]   126 |                         Tolerance_ = this->get_parameter("Tolerance").as_double();
+[22.090s]       |                                            ^~~~~~~~~~~~~
+[22.090s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:138:25: error: ‘pub_twist_’ was not declared in this scope; did you mean ‘publish_twist’?
+[22.090s]   138 |                         pub_twist_ = nh_.advertise<geometry_msgs::msg::Twist>(pub_twist_topic_, 1, true);
+[22.090s]       |                         ^~~~~~~~~~
+[22.093s]       |                         publish_twist
+[22.094s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:138:77: error: expected primary-expression before ‘>’ token
+[22.094s]   138 |                         pub_twist_ = nh_.advertise<geometry_msgs::msg::Twist>(pub_twist_topic_, 1, true);
+[22.094s]       |                                                                             ^
+[22.094s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:141:42: error: ‘message_filters::msg’ has not been declared
+[22.094s]   141 |                         message_filters::msg::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.094s]       |                                          ^~~
+[22.094s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:141:71: error: ‘LaserScan’ is not a member of ‘sensor_msgs’; did you mean ‘sensor_msgs::msg::LaserScan’?
+[22.094s]   141 |                         message_filters::msg::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.095s]       |                                                                       ^~~~~~~~~
+[22.095s] In file included from /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/laser_scan.hpp:7,
+[22.095s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:48,
+[22.097s]                  from /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25:
+[22.097s] /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7: note: ‘sensor_msgs::msg::LaserScan’ declared here
+[22.097s]   250 | using LaserScan =
+[22.097s]       |       ^~~~~~~~~
+[22.108s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:128:25: error: ‘LowpassCutOff_’ was not declared in this scope; did you mean ‘LowpassCutoff_’?
+[22.108s]   128 |                         LowpassCutOff_ = this->get_parameter("LowpassCutOff").as_double();
+[22.108s]       |                         ^~~~~~~~~~~~~~
+[22.108s]       |                         LowpassCutoff_
+[22.109s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:128:48: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.109s]   128 |                         LowpassCutOff_ = this->get_parameter("LowpassCutOff").as_double();
+[22.109s]       |                                                ^~~~~~~~~~~~~
+[22.109s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:129:50: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.109s]   129 |                         LowpassSampling_ = this->get_parameter("LowpassSampling").as_double();
+[22.109s]       |                                                  ^~~~~~~~~~~~~
+[22.110s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:130:47: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.110s]   130 |                         LowpassOrder_ = this->get_parameter("LowpassOrder").as_double();
+[22.110s]       |                                               ^~~~~~~~~~~~~
+[22.110s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:131:49: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.110s]   131 |                         LowpassSamples_ = this->get_parameter("LowpassSamples").as_double();
+[22.110s]       |                                                 ^~~~~~~~~~~~~
+[22.110s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:133:44: error: ‘class NavigationNode’ has no member named ‘get_parameter’
+[22.110s]   133 |                         DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
+[22.111s]       |                                            ^~~~~~~~~~~~~
+[22.111s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:136:47: error: ‘class rclcpp::Node’ has no member named ‘advertise’
+[22.111s]   136 |                         pub_behaviorID_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[22.112s]       |                                               ^~~~~~~~~
+[22.113s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:136:67: error: ‘UInt32’ is not a member of ‘std_msgs’
+[22.113s]   136 |                         pub_behaviorID_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorID_topic_, 1, true);
+[22.113s]       |                                                                   ^~~~~~
+[22.113s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:137:49: error: ‘class rclcpp::Node’ has no member named ‘advertise’
+[22.113s]   137 |                         pub_behaviorMode_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorMode_topic_, 1, true);
+[22.113s]       |                                                 ^~~~~~~~~
+[22.116s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:137:69: error: ‘UInt32’ is not a member of ‘std_msgs’
+[22.117s]   137 |                         pub_behaviorMode_ = nh_.advertise<std_msgs::UInt32>(pub_behaviorMode_topic_, 1, true);
+[22.117s]       |                                                                     ^~~~~~
+[22.117s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:138:42: error: ‘class rclcpp::Node’ has no member named ‘advertise’
+[22.117s]   138 |                         pub_twist_ = nh_.advertise<geometry_msgs::Twist>(pub_twist_topic_, 1, true);
+[22.117s]       |                                          ^~~~~~~~~
+[22.120s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:138:67: error: ‘Twist’ is not a member of ‘geometry_msgs’; did you mean ‘geometry_msgs::msg::Twist’?
+[22.120s]   138 |                         pub_twist_ = nh_.advertise<geometry_msgs::Twist>(pub_twist_topic_, 1, true);
+[22.121s]       |                                                                   ^~~~~
+[22.121s] In file included from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:25,
+[22.121s]                  from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:7,
+[22.121s]                  from /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:49,
+[22.121s]                  from /opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39,
+[22.121s]                  from /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42,
+[22.121s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:38:
+[22.121s] /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:137:7: note: ‘geometry_msgs::msg::Twist’ declared here
+[22.122s]   137 | using Twist =
+[22.122s]       |       ^~~~~
+[22.124s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:66: error: ‘LaserScan’ is not a member of ‘sensor_msgs’; did you mean ‘sensor_msgs::msg::LaserScan’?
+[22.124s]   141 |                         message_filters::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.124s]       |                                                                  ^~~~~~~~~
+[22.125s] In file included from /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/laser_scan.hpp:7,
+[22.125s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:48:
+[22.125s] /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7: note: ‘sensor_msgs::msg::LaserScan’ declared here
+[22.125s]   250 | using LaserScan =
+[22.125s]       |       ^~~~~~~~~
+[22.125s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:75: error: template argument 1 is invalid
+[22.125s]   141 |                         message_filters::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.125s]       |                                                                           ^
+[22.126s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:141:111: error: expression list treated as compound expression in initializer [-fpermissive]
+[22.126s]   141 |                         message_filters::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.126s]       |                                                                                                               ^
+[22.129s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:142:63: error: ‘Odometry’ is not a member of ‘nav_msgs’; did you mean ‘nav_msgs::msg::Odometry’?
+[22.129s]   142 |                         message_filters::Subscriber<nav_msgs::Odometry> sub_robot(nh_, sub_robot_topic_, 1);
+[22.129s]       |                                                               ^~~~~~~~
+[22.130s] In file included from /opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/odometry.hpp:7,
+[22.130s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:49:
+[22.130s] /opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:175:7: note: ‘nav_msgs::msg::Odometry’ declared here
+[22.130s]   175 | using Odometry =
+[22.130s]       |       ^~~~~~~~
+[22.130s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:142:71: error: template argument 1 is invalid
+[22.130s]   142 |                         message_filters::Subscriber<nav_msgs::Odometry> sub_robot(nh_, sub_robot_topic_, 1);
+[22.131s]       |                                                                       ^
+[22.131s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:142:107: error: expression list treated as compound expression in initializer [-fpermissive]
+[22.131s]   142 |                         message_filters::Subscriber<nav_msgs::Odometry> sub_robot(nh_, sub_robot_topic_, 1);
+[22.133s]       |                                                                                                           ^
+[22.133s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:94: error: ‘LaserScan’ is not a member of ‘sensor_msgs’; did you mean ‘sensor_msgs::msg::LaserScan’?
+[22.134s]   143 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::Odometry> SyncPolicy;
+[22.134s]       |                                                                                              ^~~~~~~~~
+[22.134s] /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7: note: ‘sensor_msgs::msg::LaserScan’ declared here
+[22.134s]   250 | using LaserScan =
+[22.134s]       |       ^~~~~~~~~
+[22.136s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:114: error: ‘Odometry’ is not a member of ‘nav_msgs’; did you mean ‘nav_msgs::msg::Odometry’?
+[22.136s]   143 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::Odometry> SyncPolicy;
+[22.137s]       |                                                                                                                  ^~~~~~~~
+[22.137s] /opt/ros/jazzy/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:175:7: note: ‘nav_msgs::msg::Odometry’ declared here
+[22.137s]   175 | using Odometry =
+[22.137s]       |       ^~~~~~~~
+[22.137s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:122: error: template argument 1 is invalid
+[22.137s]   143 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::Odometry> SyncPolicy;
+[22.137s]       |                                                                                                                          ^
+[22.138s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:122: error: template argument 2 is invalid
+[22.139s] In file included from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:46:
+[22.139s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h: In instantiation of ‘class message_filters::Synchronizer<int>’:
+[22.139s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:146:64:   required from here
+[22.139s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:53:7: error: base type ‘int’ fails to be a struct or class type
+[22.140s]    53 | class Synchronizer : public noncopyable, public Policy
+[22.140s]       |       ^~~~~~~~~~~~
+[22.141s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:56:37: error: ‘int’ is not a class, struct, or union type
+[22.142s]    56 |   typedef typename Policy::Messages Messages;
+[22.142s]       |                                     ^~~~~~~~
+[22.142s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:57:35: error: ‘int’ is not a class, struct, or union type
+[22.144s]    57 |   typedef typename Policy::Events Events;
+[22.144s]       |                                   ^~~~~~
+[22.144s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:58:35: error: ‘int’ is not a class, struct, or union type
+[22.145s]    58 |   typedef typename Policy::Signal Signal;
+[22.145s]       |                                   ^~~~~~
+[22.145s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:60:58: error: ‘int’ is not a class, struct, or union type
+[22.145s]    60 |   typedef typename std::tuple_element<0, Messages>::type M0;
+[22.146s]       |                                                          ^~
+[22.146s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:61:58: error: ‘int’ is not a class, struct, or union type
+[22.146s]    61 |   typedef typename std::tuple_element<1, Messages>::type M1;
+[22.146s]       |                                                          ^~
+[22.147s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:62:58: error: ‘int’ is not a class, struct, or union type
+[22.147s]    62 |   typedef typename std::tuple_element<2, Messages>::type M2;
+[22.147s]       |                                                          ^~
+[22.149s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:63:58: error: ‘int’ is not a class, struct, or union type
+[22.149s]    63 |   typedef typename std::tuple_element<3, Messages>::type M3;
+[22.149s]       |                                                          ^~
+[22.150s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:64:58: error: ‘int’ is not a class, struct, or union type
+[22.150s]    64 |   typedef typename std::tuple_element<4, Messages>::type M4;
+[22.150s]       |                                                          ^~
+[22.150s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:65:58: error: ‘int’ is not a class, struct, or union type
+[22.150s]    65 |   typedef typename std::tuple_element<5, Messages>::type M5;
+[22.150s]       |                                                          ^~
+[22.150s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:66:58: error: ‘int’ is not a class, struct, or union type
+[22.150s]    66 |   typedef typename std::tuple_element<6, Messages>::type M6;
+[22.151s]       |                                                          ^~
+[22.151s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:67:58: error: ‘int’ is not a class, struct, or union type
+[22.151s]    67 |   typedef typename std::tuple_element<7, Messages>::type M7;
+[22.153s]       |                                                          ^~
+[22.153s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:68:58: error: ‘int’ is not a class, struct, or union type
+[22.153s]    68 |   typedef typename std::tuple_element<8, Messages>::type M8;
+[22.154s]       |                                                          ^~
+[22.154s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:71:56: error: ‘int’ is not a class, struct, or union type
+[22.154s]    71 |   typedef typename std::tuple_element<0, Events>::type M0Event;
+[22.154s]       |                                                        ^~~~~~~
+[22.154s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:72:56: error: ‘int’ is not a class, struct, or union type
+[22.154s]    72 |   typedef typename std::tuple_element<1, Events>::type M1Event;
+[22.154s]       |                                                        ^~~~~~~
+[22.154s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:73:56: error: ‘int’ is not a class, struct, or union type
+[22.155s]    73 |   typedef typename std::tuple_element<2, Events>::type M2Event;
+[22.155s]       |                                                        ^~~~~~~
+[22.155s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:74:56: error: ‘int’ is not a class, struct, or union type
+[22.157s]    74 |   typedef typename std::tuple_element<3, Events>::type M3Event;
+[22.157s]       |                                                        ^~~~~~~
+[22.157s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:75:56: error: ‘int’ is not a class, struct, or union type
+[22.157s]    75 |   typedef typename std::tuple_element<4, Events>::type M4Event;
+[22.157s]       |                                                        ^~~~~~~
+[22.157s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:76:56: error: ‘int’ is not a class, struct, or union type
+[22.158s]    76 |   typedef typename std::tuple_element<5, Events>::type M5Event;
+[22.158s]       |                                                        ^~~~~~~
+[22.158s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:77:56: error: ‘int’ is not a class, struct, or union type
+[22.158s]    77 |   typedef typename std::tuple_element<6, Events>::type M6Event;
+[22.158s]       |                                                        ^~~~~~~
+[22.158s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:78:56: error: ‘int’ is not a class, struct, or union type
+[22.158s]    78 |   typedef typename std::tuple_element<7, Events>::type M7Event;
+[22.158s]       |                                                        ^~~~~~~
+[22.159s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:79:56: error: ‘int’ is not a class, struct, or union type
+[22.159s]    79 |   typedef typename std::tuple_element<8, Events>::type M8Event;
+[22.162s]       |                                                        ^~~~~~~
+[22.162s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:325:17: error: ‘int’ is not a class, namespace, or enumeration
+[22.162s]   325 |   using Policy::add;
+[22.162s]       |                 ^~~
+[22.163s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:328:8: error: ‘int’ is not a class, struct, or union type
+[22.163s]   328 |   void add(const std::shared_ptr<typename std::tuple_element<i, Messages>::type const>& msg)
+[22.163s]       |        ^~~
+[22.163s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:344:8: error: ‘int’ is not a class, struct, or union type
+[22.163s]   344 |   void cb(const typename std::tuple_element<i, Events>::type& evt)
+[22.163s]       |        ^~
+[22.163s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:55: error: ‘bind’ is not a member of ‘boost’; did you mean ‘find’?
+[22.163s]   147 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
+[22.164s]       |                                                       ^~~~
+[22.164s]       |                                                       find
+[22.164s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:101: error: ‘_1’ was not declared in this scope
+[22.166s]   147 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
+[22.166s]       |                                                                                                     ^~
+[22.166s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:101: note: suggested alternatives:
+[22.166s] In file included from /usr/include/boost/mpl/aux_/include_preprocessed.hpp:37,
+[22.167s]                  from /usr/include/boost/mpl/placeholders.hpp:43,
+[22.167s]                  from /usr/include/boost/iterator/iterator_categories.hpp:16,
+[22.167s]                  from /usr/include/boost/iterator/iterator_facade.hpp:13,
+[22.167s]                  from /usr/include/boost/range/iterator_range_core.hpp:27,
+[22.167s]                  from /usr/include/boost/lexical_cast.hpp:48,
+[22.167s]                  from /usr/include/boost/multiprecision/detail/number_base.hpp:29,
+[22.167s]                  from /usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9,
+[22.167s]                  from /usr/include/boost/multiprecision/detail/precision.hpp:9,
+[22.168s]                  from /usr/include/boost/multiprecision/number.hpp:11,
+[22.168s]                  from /usr/include/boost/multiprecision/cpp_int.hpp:19,
+[22.168s]                  from /usr/include/boost/multiprecision/cpp_bin_float.hpp:15,
+[22.170s]                  from /usr/include/boost/geometry/core/coordinate_promotion.hpp:16,
+[22.170s]                  from /usr/include/boost/geometry/core/radian_access.hpp:30,
+[22.170s]                  from /usr/include/boost/geometry/geometry.hpp:50,
+[22.170s]                  from /usr/include/boost/geometry.hpp:17,
+[22.171s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26:
+[22.171s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.171s]    29 | typedef arg<1> _1;
+[22.171s]       |                ^~
+[22.171s] In file included from /usr/include/boost/numeric/conversion/converter_policies.hpp:13,
+[22.171s]                  from /usr/include/boost/numeric/conversion/converter.hpp:14,
+[22.171s]                  from /usr/include/boost/numeric/conversion/cast.hpp:33,
+[22.172s]                  from /usr/include/boost/geometry/core/radian_access.hpp:26:
+[22.172s] /usr/include/c++/13/functional:294:48: note:   ‘std::placeholders::_1’
+[22.172s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> _1;
+[22.174s]       |                                                ^~
+[22.174s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.174s]    29 | typedef arg<1> _1;
+[22.174s]       |                ^~
+[22.175s] In file included from /usr/include/boost/describe/members.hpp:20,
+[22.175s]                  from /usr/include/boost/container_hash/is_described_class.hpp:11,
+[22.175s]                  from /usr/include/boost/container_hash/hash.hpp:18,
+[22.175s]                  from /usr/include/boost/functional/hash.hpp:6,
+[22.175s]                  from /usr/include/CGAL/Kernel/hash_functions.h:16,
+[22.175s]                  from /usr/include/CGAL/Kernel/global_functions.h:25,
+[22.175s]                  from /usr/include/CGAL/Cartesian/Cartesian_base.h:22,
+[22.175s]                  from /usr/include/CGAL/Simple_cartesian.h:20,
+[22.176s]                  from /usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20,
+[22.176s]                  from /home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32,
+[22.176s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:53:
+[22.178s] /usr/include/boost/mp11/bind.hpp:45:7: note:   ‘boost::mp11::_1’
+[22.178s]    45 | using _1 = mp_arg<0>;
+[22.178s]       |       ^~
+[22.178s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.179s]    29 | typedef arg<1> _1;
+[22.179s]       |                ^~
+[22.179s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:105: error: ‘_2’ was not declared in this scope
+[22.179s]   147 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
+[22.179s]       |                                                                                                         ^~
+[22.179s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:147:105: note: suggested alternatives:
+[22.179s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.179s]    42 | typedef arg<2> _2;
+[22.180s]       |                ^~
+[22.180s] /usr/include/c++/13/functional:295:48: note:   ‘std::placeholders::_2’
+[22.180s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> _2;
+[22.182s]       |                                                ^~
+[22.182s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.182s]    42 | typedef arg<2> _2;
+[22.182s]       |                ^~
+[22.183s] /usr/include/boost/mp11/bind.hpp:46:7: note:   ‘boost::mp11::_2’
+[22.183s]    46 | using _2 = mp_arg<1>;
+[22.183s]       |       ^~
+[22.183s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.183s]    42 | typedef arg<2> _2;
+[22.183s]       |                ^~
+[22.183s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:65: error: ‘class rclcpp::Node’ has no member named ‘subscribe’
+[22.183s]   149 |                         rclcpp::Subscription sub_semantic = nh_.subscribe(sub_semantic_topic_, 1, &NavigationNode::diffeo_tree_update, this);
+[22.184s]       |                                                                 ^~~~~~~~~
+[22.184s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:45: error: no matching function for call to ‘rclcpp::Duration::Duration(double)’
+[22.184s]   153 |                         rclcpp::Duration(5.0).sleep();
+[22.186s]       |                                             ^
+[22.186s] In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24,
+[22.186s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38,
+[22.187s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[22.188s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21,
+[22.188s]                  from /opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172:
+[22.188s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note: candidate: ‘template<class Rep, class Period> rclcpp::Duration::Duration(const std::chrono::duration<_Rep1, _Period1>&)’
+[22.190s]    49 |   Duration(const std::chrono::duration<Rep, Period> & duration)  // NOLINT(runtime/explicit)
+[22.190s]       |   ^~~~~~~~
+[22.191s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:49:3: note:   template argument deduction/substitution failed:
+[22.191s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:153:45: note:   mismatched types ‘const std::chrono::duration<_Rep1, _Period1>’ and ‘double’
+[22.191s]   153 |                         rclcpp::Duration(5.0).sleep();
+[22.191s]       |                                             ^
+[22.191s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note: candidate: ‘rclcpp::Duration::Duration()’
+[22.191s]   159 |   Duration() = default;
+[22.191s]       |   ^~~~~~~~
+[22.192s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:159:3: note:   candidate expects 0 arguments, 1 provided
+[22.192s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:3: note: candidate: ‘rclcpp::Duration::Duration(const rclcpp::Duration&)’
+[22.192s]    62 |   Duration(const Duration & rhs);
+[22.194s]       |   ^~~~~~~~
+[22.194s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:62:29: note:   no known conversion for argument 1 from ‘double’ to ‘const rclcpp::Duration&’
+[22.194s]    62 |   Duration(const Duration & rhs);
+[22.195s]       |            ~~~~~~~~~~~~~~~~~^~~
+[22.195s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:12: note: candidate: ‘rclcpp::Duration::Duration(const rcl_duration_t&)’
+[22.195s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.195s]       |            ^~~~~~~~
+[22.195s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:60:44: note:   no known conversion for argument 1 from ‘double’ to ‘const rcl_duration_t&’ {aka ‘const rcl_duration_s&’}
+[22.195s]    60 |   explicit Duration(const rcl_duration_t & duration);
+[22.195s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+[22.195s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:3: note: candidate: ‘rclcpp::Duration::Duration(const builtin_interfaces::msg::Duration&)’
+[22.196s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.196s]       |   ^~~~~~~~
+[22.196s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:54:54: note:   no known conversion for argument 1 from ‘double’ to ‘const builtin_interfaces::msg::Duration&’ {aka ‘const builtin_interfaces::msg::Duration_<std::allocator<void> >&’}
+[22.196s]    54 |   Duration(const builtin_interfaces::msg::Duration & duration_msg);  // NOLINT(runtime/explicit)
+[22.196s]       |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[22.197s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:12: note: candidate: ‘rclcpp::Duration::Duration(std::chrono::nanoseconds)’
+[22.197s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.197s]       |            ^~~~~~~~
+[22.197s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:43:46: note:   no known conversion for argument 1 from ‘double’ to ‘std::chrono::nanoseconds’ {aka ‘std::chrono::duration<long int, std::ratio<1, 1000000000> >’}
+[22.197s]    43 |   explicit Duration(std::chrono::nanoseconds nanoseconds);
+[22.197s]       |                     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[22.197s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note: candidate: ‘rclcpp::Duration::Duration(int32_t, uint32_t)’
+[22.197s]    40 |   Duration(int32_t seconds, uint32_t nanoseconds);
+[22.198s]       |   ^~~~~~~~
+[22.198s] /opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:40:3: note:   candidate expects 2 arguments, 1 provided
+[22.198s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:160:38: error: ‘node_ptr’ was not declared in this scope; did you mean ‘mode_t’?
+[22.198s]   160 |                         rclcpp::spin(node_ptr);
+[22.198s]       |                                      ^~~~~~~~
+[22.198s]       |                                      mode_t
+[22.198s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:141:82: error: ‘sub_laser’ was not declared in this scope
+[22.198s]   141 |                         message_filters::msg::Subscriber<sensor_msgs::LaserScan> sub_laser(nh_, sub_laser_topic_, 1);
+[22.199s]       |                                                                                  ^~~~~~~~~
+[22.199s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::publish_behavior_id(uint16_t)’:
+[22.199s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:172:28: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.199s]   172 |             std_msgs::msg::UInt32 commandId;
+[22.199s]       |                            ^~~~~~
+[22.246s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:173:25: error: ‘commandId’ was not declared in this scope
+[22.246s]   173 |                         commandId.data = BehaviorIdCmd;
+[22.246s]       |                         ^~~~~~~~~
+[22.250s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp: In member function ‘void NavigationNode::publish_behavior_mode(uint16_t)’:
+[22.250s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:179:28: error: ‘UInt64’ is not a member of ‘std_msgs::msg’
+[22.250s]   179 |             std_msgs::msg::UInt64 commandMode;
+[22.250s]       |                            ^~~~~~
+[22.270s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:143:94: error: ‘LaserScan’ is not a member of ‘sensor_msgs’; did you mean ‘sensor_msgs::msg::LaserScan’?
+[22.271s]   143 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::msg::Odometry> SyncPolicy;
+[22.271s]       |                                                                                              ^~~~~~~~~
+[22.271s] /opt/ros/jazzy/include/sensor_msgs/sensor_msgs/msg/detail/laser_scan__struct.hpp:250:7: note: ‘sensor_msgs::msg::LaserScan’ declared here
+[22.271s]   250 | using LaserScan =
+[22.271s]       |       ^~~~~~~~~
+[22.272s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:143:127: error: template argument 1 is invalid
+[22.272s]   143 |                         typedef message_filters::sync_policies::ApproximateTime<sensor_msgs::LaserScan,nav_msgs::msg::Odometry> SyncPolicy;
+[22.272s]       |                                                                                                                               ^
+[22.275s] In file included from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:46:
+[22.275s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h: In instantiation of ‘class message_filters::Synchronizer<int>’:
+[22.275s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:146:64:   required from here
+[22.275s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:53:7: error: base type ‘int’ fails to be a struct or class type
+[22.275s]    53 | class Synchronizer : public noncopyable, public Policy
+[22.275s]       |       ^~~~~~~~~~~~
+[22.278s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:56:37: error: ‘int’ is not a class, struct, or union type
+[22.278s]    56 |   typedef typename Policy::Messages Messages;
+[22.278s]       |                                     ^~~~~~~~
+[22.278s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:57:35: error: ‘int’ is not a class, struct, or union type
+[22.278s]    57 |   typedef typename Policy::Events Events;
+[22.278s]       |                                   ^~~~~~
+[22.278s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:58:35: error: ‘int’ is not a class, struct, or union type
+[22.279s]    58 |   typedef typename Policy::Signal Signal;
+[22.279s]       |                                   ^~~~~~
+[22.279s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:60:58: error: ‘int’ is not a class, struct, or union type
+[22.281s]    60 |   typedef typename std::tuple_element<0, Messages>::type M0;
+[22.281s]       |                                                          ^~
+[22.281s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:61:58: error: ‘int’ is not a class, struct, or union type
+[22.282s]    61 |   typedef typename std::tuple_element<1, Messages>::type M1;
+[22.282s]       |                                                          ^~
+[22.282s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:62:58: error: ‘int’ is not a class, struct, or union type
+[22.282s]    62 |   typedef typename std::tuple_element<2, Messages>::type M2;
+[22.282s]       |                                                          ^~
+[22.282s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:63:58: error: ‘int’ is not a class, struct, or union type
+[22.282s]    63 |   typedef typename std::tuple_element<3, Messages>::type M3;
+[22.282s]       |                                                          ^~
+[22.283s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:64:58: error: ‘int’ is not a class, struct, or union type
+[22.283s]    64 |   typedef typename std::tuple_element<4, Messages>::type M4;
+[22.283s]       |                                                          ^~
+[22.285s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:65:58: error: ‘int’ is not a class, struct, or union type
+[22.285s]    65 |   typedef typename std::tuple_element<5, Messages>::type M5;
+[22.286s]       |                                                          ^~
+[22.286s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:66:58: error: ‘int’ is not a class, struct, or union type
+[22.286s]    66 |   typedef typename std::tuple_element<6, Messages>::type M6;
+[22.286s]       |                                                          ^~
+[22.286s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:67:58: error: ‘int’ is not a class, struct, or union type
+[22.286s]    67 |   typedef typename std::tuple_element<7, Messages>::type M7;
+[22.286s]       |                                                          ^~
+[22.287s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:68:58: error: ‘int’ is not a class, struct, or union type
+[22.287s]    68 |   typedef typename std::tuple_element<8, Messages>::type M8;
+[22.287s]       |                                                          ^~
+[22.288s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:71:56: error: ‘int’ is not a class, struct, or union type
+[22.289s]    71 |   typedef typename std::tuple_element<0, Events>::type M0Event;
+[22.289s]       |                                                        ^~~~~~~
+[22.289s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:72:56: error: ‘int’ is not a class, struct, or union type
+[22.289s]    72 |   typedef typename std::tuple_element<1, Events>::type M1Event;
+[22.289s]       |                                                        ^~~~~~~
+[22.289s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:73:56: error: ‘int’ is not a class, struct, or union type
+[22.289s]    73 |   typedef typename std::tuple_element<2, Events>::type M2Event;
+[22.290s]       |                                                        ^~~~~~~
+[22.290s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:74:56: error: ‘int’ is not a class, struct, or union type
+[22.290s]    74 |   typedef typename std::tuple_element<3, Events>::type M3Event;
+[22.290s]       |                                                        ^~~~~~~
+[22.293s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:75:56: error: ‘int’ is not a class, struct, or union type
+[22.293s]    75 |   typedef typename std::tuple_element<4, Events>::type M4Event;
+[22.293s]       |                                                        ^~~~~~~
+[22.294s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:76:56: error: ‘int’ is not a class, struct, or union type
+[22.294s]    76 |   typedef typename std::tuple_element<5, Events>::type M5Event;
+[22.294s]       |                                                        ^~~~~~~
+[22.294s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:77:56: error: ‘int’ is not a class, struct, or union type
+[22.294s]    77 |   typedef typename std::tuple_element<6, Events>::type M6Event;
+[22.294s]       |                                                        ^~~~~~~
+[22.294s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:78:56: error: ‘int’ is not a class, struct, or union type
+[22.294s]    78 |   typedef typename std::tuple_element<7, Events>::type M7Event;
+[22.295s]       |                                                        ^~~~~~~
+[22.295s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:79:56: error: ‘int’ is not a class, struct, or union type
+[22.295s]    79 |   typedef typename std::tuple_element<8, Events>::type M8Event;
+[22.298s]       |                                                        ^~~~~~~
+[22.298s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:325:17: error: ‘int’ is not a class, namespace, or enumeration
+[22.298s]   325 |   using Policy::add;
+[22.298s]       |                 ^~~
+[22.298s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:328:8: error: ‘int’ is not a class, struct, or union type
+[22.298s]   328 |   void add(const std::shared_ptr<typename std::tuple_element<i, Messages>::type const>& msg)
+[22.298s]       |        ^~~
+[22.299s] /opt/ros/jazzy/include/message_filters/message_filters/synchronizer.h:344:8: error: ‘int’ is not a class, struct, or union type
+[22.299s]   344 |   void cb(const typename std::tuple_element<i, Events>::type& evt)
+[22.299s]       |        ^~
+[22.299s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:147:55: error: ‘bind’ is not a member of ‘boost’; did you mean ‘find’?
+[22.299s]   147 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, _2));
+[22.299s]       |                                                       ^~~~
+[22.299s]       |                                                       find
+[22.299s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:147:109: error: ‘_1’ was not declared in this scope
+[22.300s]   147 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, _2));
+[22.300s]       |                                                                                                             ^~
+[22.300s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:147:109: note: suggested alternatives:
+[22.300s] In file included from /usr/include/boost/mpl/aux_/include_preprocessed.hpp:37,
+[22.300s]                  from /usr/include/boost/mpl/placeholders.hpp:43,
+[22.300s]                  from /usr/include/boost/iterator/iterator_categories.hpp:16,
+[22.300s]                  from /usr/include/boost/iterator/iterator_facade.hpp:13,
+[22.300s]                  from /usr/include/boost/range/iterator_range_core.hpp:27,
+[22.301s]                  from /usr/include/boost/lexical_cast.hpp:48,
+[22.301s]                  from /usr/include/boost/multiprecision/detail/number_base.hpp:29,
+[22.301s]                  from /usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9,
+[22.303s]                  from /usr/include/boost/multiprecision/detail/precision.hpp:9,
+[22.303s]                  from /usr/include/boost/multiprecision/number.hpp:11,
+[22.303s]                  from /usr/include/boost/multiprecision/cpp_int.hpp:19,
+[22.304s]                  from /usr/include/boost/multiprecision/cpp_bin_float.hpp:15,
+[22.304s]                  from /usr/include/boost/geometry/core/coordinate_promotion.hpp:16,
+[22.304s]                  from /usr/include/boost/geometry/core/radian_access.hpp:30,
+[22.304s]                  from /usr/include/boost/geometry/geometry.hpp:50,
+[22.304s]                  from /usr/include/boost/geometry.hpp:17,
+[22.304s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26:
+[22.304s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.304s]    29 | typedef arg<1> _1;
+[22.305s]       |                ^~
+[22.305s] In file included from /usr/include/boost/numeric/conversion/converter_policies.hpp:13,
+[22.305s]                  from /usr/include/boost/numeric/conversion/converter.hpp:14,
+[22.305s]                  from /usr/include/boost/numeric/conversion/cast.hpp:33,
+[22.307s]                  from /usr/include/boost/geometry/core/radian_access.hpp:26:
+[22.307s] /usr/include/c++/13/functional:294:48: note:   ‘std::placeholders::_1’
+[22.307s]   294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> _1;
+[22.308s]       |                                                ^~
+[22.308s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.308s]    29 | typedef arg<1> _1;
+[22.308s]       |                ^~
+[22.308s] In file included from /usr/include/boost/describe/members.hpp:20,
+[22.308s]                  from /usr/include/boost/container_hash/is_described_class.hpp:11,
+[22.308s]                  from /usr/include/boost/container_hash/hash.hpp:18,
+[22.308s]                  from /usr/include/boost/functional/hash.hpp:6,
+[22.309s]                  from /usr/include/CGAL/Kernel/hash_functions.h:16,
+[22.309s]                  from /usr/include/CGAL/Kernel/global_functions.h:25,
+[22.309s]                  from /usr/include/CGAL/Cartesian/Cartesian_base.h:22,
+[22.311s]                  from /usr/include/CGAL/Simple_cartesian.h:20,
+[22.311s]                  from /usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20,
+[22.311s]                  from /home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32,
+[22.312s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:53:
+[22.312s] /usr/include/boost/mp11/bind.hpp:45:7: note:   ‘boost::mp11::_1’
+[22.312s]    45 | using _1 = mp_arg<0>;
+[22.312s]       |       ^~
+[22.312s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16: note:   ‘mpl_::_1’
+[22.312s]    29 | typedef arg<1> _1;
+[22.312s]       |                ^~
+[22.312s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:147:113: error: ‘_2’ was not declared in this scope
+[22.313s]   147 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, _2));
+[22.313s]       |                                                                                                                 ^~
+[22.313s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:147:113: note: suggested alternatives:
+[22.315s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.315s]    42 | typedef arg<2> _2;
+[22.316s]       |                ^~
+[22.316s] /usr/include/c++/13/functional:295:48: note:   ‘std::placeholders::_2’
+[22.316s]   295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> _2;
+[22.316s]       |                                                ^~
+[22.316s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.316s]    42 | typedef arg<2> _2;
+[22.316s]       |                ^~
+[22.317s] /usr/include/boost/mp11/bind.hpp:46:7: note:   ‘boost::mp11::_2’
+[22.317s]    46 | using _2 = mp_arg<1>;
+[22.317s]       |       ^~
+[22.319s] /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16: note:   ‘mpl_::_2’
+[22.319s]    42 | typedef arg<2> _2;
+[22.319s]       |                ^~
+[22.319s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:149:25: error: ‘ros’ has not been declared
+[22.320s]   149 |                         ros::Subscriber sub_semantic = nh_.subscribe(sub_semantic_topic_, 1, &SemanticNavigationNode::diffeo_tree_update, this);
+[22.320s]       |                         ^~~
+[22.320s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:153:25: error: ‘ros’ has not been declared
+[22.320s]   153 |                         ros::Duration(5.0).sleep();
+[22.320s]       |                         ^~~
+[22.320s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:160:25: error: ‘ros’ has not been declared
+[22.320s]   160 |                         ros::spin();
+[22.320s]       |                         ^~~
+[22.321s] /home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:180:25: error: ‘commandMode’ was not declared in this scope
+[22.321s]   180 |                         commandMode.data = BehaviorModeCmd;
+[22.321s]       |                         ^~~~~~~~~~~
+[22.371s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::publish_twist(double, double)’:
+[22.371s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:167:25: error: ‘pub_twist_’ was not declared in this scope; did you mean ‘publish_twist’?
+[22.371s]   167 |                         pub_twist_.publish(commandTwist);
+[22.372s]       |                         ^~~~~~~~~~
+[22.372s]       |                         publish_twist
+[22.376s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::publish_behavior_id(uint16_t)’:
+[22.376s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:172:32: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.377s]   172 |                 std_msgs::msg::UInt32 commandId;
+[22.377s]       |                                ^~~~~~
+[22.428s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:173:25: error: ‘commandId’ was not declared in this scope
+[22.428s]   173 |                         commandId.data = BehaviorIdCmd;
+[22.428s]       |                         ^~~~~~~~~
+[22.518s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:174:25: error: ‘pub_behaviorID_’ was not declared in this scope; did you mean ‘pub_behaviorID_topic_’?
+[22.518s]   174 |                         pub_behaviorID_.publish(commandId);
+[22.518s]       |                         ^~~~~~~~~~~~~~~
+[22.518s]       |                         pub_behaviorID_topic_
+[22.523s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::publish_behavior_mode(uint16_t)’:
+[22.523s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:179:28: error: ‘UInt32’ is not a member of ‘std_msgs::msg’
+[22.523s]   179 |             std_msgs::msg::UInt32 commandMode;
+[22.523s]       |                            ^~~~~~
+[22.591s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:180:25: error: ‘commandMode’ was not declared in this scope
+[22.591s]   180 |                         commandMode.data = BehaviorModeCmd;
+[22.591s]       |                         ^~~~~~~~~~~
+[22.693s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:181:25: error: ‘pub_behaviorMode_’ was not declared in this scope; did you mean ‘pub_behaviorMode_topic_’?
+[22.693s]   181 |                         pub_behaviorMode_.publish(commandMode);
+[22.694s]       |                         ^~~~~~~~~~~~~~~~~
+[22.694s]       |                         pub_behaviorMode_topic_
+[22.750s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In member function ‘void SemanticNavigationNode::control_callback(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)’:
+[22.750s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:395:46: error: ‘ros’ has not been declared
+[22.751s]   395 |                         double before_time = ros::Time::now().toSec();
+[22.751s]       |                                              ^~~
+[22.755s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:398:40: error: ‘PoseStamped’ is not a member of ‘geometry_msgs’
+[22.755s]   398 |                         geometry_msgs::PoseStamped odomPose, mapPose;
+[22.756s]       |                                        ^~~~~~~~~~~
+[22.802s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:399:25: error: ‘odomPose’ was not declared in this scope
+[22.802s]   399 |                         odomPose.header.stamp = ros::Time(0);
+[22.802s]       |                         ^~~~~~~~
+[22.803s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:399:49: error: ‘ros’ has not been declared
+[22.803s]   399 |                         odomPose.header.stamp = ros::Time(0);
+[22.803s]       |                                                 ^~~
+[22.857s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:403:33: error: ‘listener_’ was not declared in this scope
+[22.857s]   403 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, ros::Time(0), ros::Duration(1.0));
+[22.857s]       |                                 ^~~~~~~~~
+[22.858s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:403:93: error: ‘ros’ has not been declared
+[22.858s]   403 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, ros::Time(0), ros::Duration(1.0));
+[22.858s]       |                                                                                             ^~~
+[22.860s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:403:107: error: ‘ros’ has not been declared
+[22.860s]   403 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, ros::Time(0), ros::Duration(1.0));
+[22.860s]       |                                                                                                           ^~~
+[22.899s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:404:84: error: ‘mapPose’ was not declared in this scope
+[22.899s]   404 |                                 listener_.transformPose(world_frame_id_, odomPose, mapPose);
+[22.900s]       |                                                                                    ^~~~~~~
+[22.906s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:405:34: error: ‘tf’ does not name a type; did you mean ‘tm’?
+[22.906s]   405 |                         } catch (tf::TransformException &ex) {
+[22.906s]       |                                  ^~
+[22.907s]       |                                  tm
+[22.909s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:405:57: error: expected unqualified-id before ‘&’ token
+[22.909s]   405 |                         } catch (tf::TransformException &ex) {
+[22.910s]       |                                                         ^
+[22.910s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:405:57: error: expected ‘)’ before ‘&’ token
+[22.910s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:405:33: note: to match this ‘(’
+[22.910s]   405 |                         } catch (tf::TransformException &ex) {
+[22.910s]       |                                 ^
+[22.910s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:405:57: error: expected ‘{’ before ‘&’ token
+[22.910s]   405 |                         } catch (tf::TransformException &ex) {
+[22.911s]       |                                                         ^
+[22.943s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:405:58: error: ‘ex’ was not declared in this scope; did you mean ‘exp’?
+[22.943s]   405 |                         } catch (tf::TransformException &ex) {
+[22.944s]       |                                                          ^~
+[22.944s]       |                                                          exp
+[22.944s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:411:25: error: ‘tf’ has not been declared
+[22.944s]   411 |                         tf::Quaternion rotation = tf::Quaternion(mapPose.pose.orientation.x,
+[22.944s]       |                         ^~
+[22.945s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:415:25: error: ‘tf’ has not been declared
+[22.945s]   415 |                         tf::Matrix3x3 m(rotation);
+[22.945s]       |                         ^~
+[22.981s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:417:25: error: ‘m’ was not declared in this scope; did you mean ‘tm’?
+[22.981s]   417 |                         m.getRPY(roll, pitch, yaw);
+[22.982s]       |                         ^
+[22.982s]       |                         tm
+[23.021s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:418:51: error: ‘mapPose’ was not declared in this scope
+[23.021s]   418 |                         double x_robot_position = mapPose.pose.position.x;
+[23.021s]       |                                                   ^~~~~~~
+[23.031s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:431:42: error: could not convert ‘lidar_data’ from ‘shared_ptr<LaserScan_<[...]>>’ to ‘shared_ptr<LaserScan_<[...]>>’
+[23.031s]   431 |                         constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
+[23.032s]       |                                          ^~~~~~~~~~
+[23.032s]       |                                          |
+[23.032s]       |                                          shared_ptr<LaserScan_<[...]>>
+[23.049s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:561:96: error: invalid operands of types ‘const char [53]’ and ‘double’ to binary ‘operator<<’
+[23.049s]   561 |                         ROS_WARN_STREAM("[Navigation] Diffeomorphism jacobian determinant is " << MatrixDeterminant(RobotPositionTransformedD) << ", robot position is " << bg::dsv(RobotPosition_) << " and robot positon in model space is " << bg::dsv(RobotPositionTransformedPoint));
+[23.049s]       |                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[23.049s]       |                                         |                                                                          |
+[23.050s]       |                                         const char [53]                                                            double
+[23.147s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:561:25: error: ‘ROS_WARN_STREAM’ was not declared in this scope; did you mean ‘RCLCPP_WARN_STREAM’?
+[23.147s]   561 |                         ROS_WARN_STREAM("[Navigation] Diffeomorphism jacobian determinant is " << MatrixDeterminant(RobotPositionTransformedD) << ", robot position is " << bg::dsv(RobotPosition_) << " and robot positon in model space is " << bg::dsv(RobotPositionTransformedPoint));
+[23.147s]       |                         ^~~~~~~~~~~~~~~
+[23.147s]       |                         RCLCPP_WARN_STREAM
+[23.150s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:590:41: error: ‘ros’ has not been declared
+[23.150s]   590 |                                         ros::Duration(5.0).sleep();
+[23.151s]       |                                         ^~~
+[23.159s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:615:75: error: invalid operands of types ‘const char [32]’ and ‘double’ to binary ‘operator<<’
+[23.159s]   615 |                         ROS_WARN_STREAM("[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
+[23.160s]       |                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~~~~~~
+[23.160s]       |                                         |                                    |
+[23.160s]       |                                         const char [32]                      double
+[23.162s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:616:76: error: invalid operands of types ‘const char [33]’ and ‘int’ to binary ‘operator<<’
+[23.162s]   616 |                         ROS_WARN_STREAM("[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << ros::Time::now().toSec()-before_time << " seconds.");
+[23.163s]       |                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[23.163s]       |                                         |                                     |
+[23.163s]       |                                         const char [33]                       int
+[23.163s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:616:134: error: ‘ros’ has not been declared
+[23.163s]   616 |                         ROS_WARN_STREAM("[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << ros::Time::now().toSec()-before_time << " seconds.");
+[23.163s]       |                                                                                                                                      ^~~
+[23.164s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp: In function ‘int main(int, char**)’:
+[23.165s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:697:9: error: ‘ros’ has not been declared
+[23.165s]   697 |         ros::init(argc, argv, "navigation_semantic");
+[23.165s]       |         ^~~
+[23.166s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:700:9: error: ‘ros’ has not been declared
+[23.166s]   700 |         ros::NodeHandle nh("~");
+[23.166s]       |         ^~~
+[23.190s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:703:56: error: ‘nh’ was not declared in this scope
+[23.190s]   703 |         SemanticNavigationNode semanticNavigationNode(&nh);
+[23.190s]       |                                                        ^~
+[26.838s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+[26.839s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[26.839s] gmake[1]: *** Waiting for unfinished jobs....
+[29.998s] gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1
+[29.998s] gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2
+[29.999s] gmake: *** [Makefile:146: all] Error 2
+[30.001s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

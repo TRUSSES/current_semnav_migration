@@ -1,0 +1,968 @@
+[0.000000] (-) TimerEvent: {}
+[0.000763] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.000854] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.022013] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.028821] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.032640] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src/semnav_migration/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2446', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/2411,unix/neha-Inspiron-3580:/tmp/.ICE-unix/2411', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/011c78fc_b6bb_493d_adaa_6bba4dcc35dd', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.YDEKP2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.179', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.098745] (-) TimerEvent: {}
+[0.199125] (-) TimerEvent: {}
+[0.207793] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.299249] (-) TimerEvent: {}
+[0.351827] (semnav) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o\x1b[0m\n'}
+[0.358951] (semnav) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o\x1b[0m\n'}
+[0.399364] (-) TimerEvent: {}
+[0.499768] (-) TimerEvent: {}
+[0.602899] (-) TimerEvent: {}
+[0.703283] (-) TimerEvent: {}
+[0.803650] (-) TimerEvent: {}
+[0.904943] (-) TimerEvent: {}
+[1.007842] (-) TimerEvent: {}
+[1.108223] (-) TimerEvent: {}
+[1.208557] (-) TimerEvent: {}
+[1.310740] (-) TimerEvent: {}
+[1.411071] (-) TimerEvent: {}
+[1.511450] (-) TimerEvent: {}
+[1.611813] (-) TimerEvent: {}
+[1.712210] (-) TimerEvent: {}
+[1.812573] (-) TimerEvent: {}
+[1.912963] (-) TimerEvent: {}
+[2.014741] (-) TimerEvent: {}
+[2.115072] (-) TimerEvent: {}
+[2.215439] (-) TimerEvent: {}
+[2.315746] (-) TimerEvent: {}
+[2.416067] (-) TimerEvent: {}
+[2.516941] (-) TimerEvent: {}
+[2.618919] (-) TimerEvent: {}
+[2.719275] (-) TimerEvent: {}
+[2.819662] (-) TimerEvent: {}
+[2.920091] (-) TimerEvent: {}
+[3.020479] (-) TimerEvent: {}
+[3.120888] (-) TimerEvent: {}
+[3.221602] (-) TimerEvent: {}
+[3.322898] (-) TimerEvent: {}
+[3.426961] (-) TimerEvent: {}
+[3.527284] (-) TimerEvent: {}
+[3.627622] (-) TimerEvent: {}
+[3.729055] (-) TimerEvent: {}
+[3.832911] (-) TimerEvent: {}
+[3.933305] (-) TimerEvent: {}
+[4.033685] (-) TimerEvent: {}
+[4.135902] (-) TimerEvent: {}
+[4.236402] (-) TimerEvent: {}
+[4.336915] (-) TimerEvent: {}
+[4.438909] (-) TimerEvent: {}
+[4.540766] (-) TimerEvent: {}
+[4.641243] (-) TimerEvent: {}
+[4.742910] (-) TimerEvent: {}
+[4.843340] (-) TimerEvent: {}
+[4.943968] (-) TimerEvent: {}
+[5.045986] (-) TimerEvent: {}
+[5.146420] (-) TimerEvent: {}
+[5.246770] (-) TimerEvent: {}
+[5.347199] (-) TimerEvent: {}
+[5.448931] (-) TimerEvent: {}
+[5.550941] (-) TimerEvent: {}
+[5.652955] (-) TimerEvent: {}
+[5.753363] (-) TimerEvent: {}
+[5.853764] (-) TimerEvent: {}
+[5.955928] (-) TimerEvent: {}
+[6.056339] (-) TimerEvent: {}
+[6.156737] (-) TimerEvent: {}
+[6.257077] (-) TimerEvent: {}
+[6.357427] (-) TimerEvent: {}
+[6.459949] (-) TimerEvent: {}
+[6.560336] (-) TimerEvent: {}
+[6.660748] (-) TimerEvent: {}
+[6.761117] (-) TimerEvent: {}
+[6.861512] (-) TimerEvent: {}
+[6.961953] (-) TimerEvent: {}
+[7.063940] (-) TimerEvent: {}
+[7.164356] (-) TimerEvent: {}
+[7.264748] (-) TimerEvent: {}
+[7.365345] (-) TimerEvent: {}
+[7.466951] (-) TimerEvent: {}
+[7.567315] (-) TimerEvent: {}
+[7.667685] (-) TimerEvent: {}
+[7.768745] (-) TimerEvent: {}
+[7.869097] (-) TimerEvent: {}
+[7.970757] (-) TimerEvent: {}
+[8.071149] (-) TimerEvent: {}
+[8.171548] (-) TimerEvent: {}
+[8.271946] (-) TimerEvent: {}
+[8.375922] (-) TimerEvent: {}
+[8.476276] (-) TimerEvent: {}
+[8.576649] (-) TimerEvent: {}
+[8.679920] (-) TimerEvent: {}
+[8.780274] (-) TimerEvent: {}
+[8.880659] (-) TimerEvent: {}
+[8.981133] (-) TimerEvent: {}
+[9.082927] (-) TimerEvent: {}
+[9.183331] (-) TimerEvent: {}
+[9.284557] (-) TimerEvent: {}
+[9.387870] (-) TimerEvent: {}
+[9.488278] (-) TimerEvent: {}
+[9.588653] (-) TimerEvent: {}
+[9.689034] (-) TimerEvent: {}
+[9.792927] (-) TimerEvent: {}
+[9.893318] (-) TimerEvent: {}
+[9.993709] (-) TimerEvent: {}
+[10.096915] (-) TimerEvent: {}
+[10.197300] (-) TimerEvent: {}
+[10.297718] (-) TimerEvent: {}
+[10.399944] (-) TimerEvent: {}
+[10.500327] (-) TimerEvent: {}
+[10.600931] (-) TimerEvent: {}
+[10.701323] (-) TimerEvent: {}
+[10.801724] (-) TimerEvent: {}
+[10.903949] (-) TimerEvent: {}
+[11.004337] (-) TimerEvent: {}
+[11.104755] (-) TimerEvent: {}
+[11.205138] (-) TimerEvent: {}
+[11.305504] (-) TimerEvent: {}
+[11.406961] (-) TimerEvent: {}
+[11.507333] (-) TimerEvent: {}
+[11.607732] (-) TimerEvent: {}
+[11.709926] (-) TimerEvent: {}
+[11.810304] (-) TimerEvent: {}
+[11.910694] (-) TimerEvent: {}
+[12.011077] (-) TimerEvent: {}
+[12.111489] (-) TimerEvent: {}
+[12.213916] (-) TimerEvent: {}
+[12.315930] (-) TimerEvent: {}
+[12.417943] (-) TimerEvent: {}
+[12.518289] (-) TimerEvent: {}
+[12.619753] (-) TimerEvent: {}
+[12.720101] (-) TimerEvent: {}
+[12.823849] (-) TimerEvent: {}
+[12.924186] (-) TimerEvent: {}
+[13.024568] (-) TimerEvent: {}
+[13.124962] (-) TimerEvent: {}
+[13.225351] (-) TimerEvent: {}
+[13.327922] (-) TimerEvent: {}
+[13.428271] (-) TimerEvent: {}
+[13.529752] (-) TimerEvent: {}
+[13.630101] (-) TimerEvent: {}
+[13.732752] (-) TimerEvent: {}
+[13.833176] (-) TimerEvent: {}
+[13.933578] (-) TimerEvent: {}
+[14.033958] (-) TimerEvent: {}
+[14.135923] (-) TimerEvent: {}
+[14.238919] (-) TimerEvent: {}
+[14.339296] (-) TimerEvent: {}
+[14.439714] (-) TimerEvent: {}
+[14.540090] (-) TimerEvent: {}
+[14.641970] (-) TimerEvent: {}
+[14.742360] (-) TimerEvent: {}
+[14.842760] (-) TimerEvent: {}
+[14.943162] (-) TimerEvent: {}
+[15.044962] (-) TimerEvent: {}
+[15.145455] (-) TimerEvent: {}
+[15.245849] (-) TimerEvent: {}
+[15.346269] (-) TimerEvent: {}
+[15.447987] (-) TimerEvent: {}
+[15.548378] (-) TimerEvent: {}
+[15.648766] (-) TimerEvent: {}
+[15.749151] (-) TimerEvent: {}
+[15.849895] (-) TimerEvent: {}
+[15.951953] (-) TimerEvent: {}
+[16.052374] (-) TimerEvent: {}
+[16.152902] (-) TimerEvent: {}
+[16.253391] (-) TimerEvent: {}
+[16.355948] (-) TimerEvent: {}
+[16.456347] (-) TimerEvent: {}
+[16.556748] (-) TimerEvent: {}
+[16.657103] (-) TimerEvent: {}
+[16.757453] (-) TimerEvent: {}
+[16.857988] (-) TimerEvent: {}
+[16.959825] (-) TimerEvent: {}
+[17.060212] (-) TimerEvent: {}
+[17.163939] (-) TimerEvent: {}
+[17.265959] (-) TimerEvent: {}
+[17.366443] (-) TimerEvent: {}
+[17.466922] (-) TimerEvent: {}
+[17.569971] (-) TimerEvent: {}
+[17.670352] (-) TimerEvent: {}
+[17.770707] (-) TimerEvent: {}
+[17.873743] (-) TimerEvent: {}
+[17.974112] (-) TimerEvent: {}
+[18.074505] (-) TimerEvent: {}
+[18.174955] (-) TimerEvent: {}
+[18.275376] (-) TimerEvent: {}
+[18.375764] (-) TimerEvent: {}
+[18.476990] (-) TimerEvent: {}
+[18.577386] (-) TimerEvent: {}
+[18.679933] (-) TimerEvent: {}
+[18.780308] (-) TimerEvent: {}
+[18.880740] (-) TimerEvent: {}
+[18.981148] (-) TimerEvent: {}
+[19.081608] (-) TimerEvent: {}
+[19.182017] (-) TimerEvent: {}
+[19.282989] (-) TimerEvent: {}
+[19.383923] (-) TimerEvent: {}
+[19.484960] (-) TimerEvent: {}
+[19.587951] (-) TimerEvent: {}
+[19.688337] (-) TimerEvent: {}
+[19.791077] (-) TimerEvent: {}
+[19.894074] (-) TimerEvent: {}
+[19.994490] (-) TimerEvent: {}
+[20.097383] (-) TimerEvent: {}
+[20.200113] (-) TimerEvent: {}
+[20.300493] (-) TimerEvent: {}
+[20.403927] (-) TimerEvent: {}
+[20.504309] (-) TimerEvent: {}
+[20.604714] (-) TimerEvent: {}
+[20.706900] (-) TimerEvent: {}
+[20.809755] (-) TimerEvent: {}
+[20.910148] (-) TimerEvent: {}
+[21.010536] (-) TimerEvent: {}
+[21.110949] (-) TimerEvent: {}
+[21.211355] (-) TimerEvent: {}
+[21.311744] (-) TimerEvent: {}
+[21.412744] (-) TimerEvent: {}
+[21.513080] (-) TimerEvent: {}
+[21.613427] (-) TimerEvent: {}
+[21.714982] (-) TimerEvent: {}
+[21.815353] (-) TimerEvent: {}
+[21.915731] (-) TimerEvent: {}
+[22.017054] (-) TimerEvent: {}
+[22.117430] (-) TimerEvent: {}
+[22.219930] (-) TimerEvent: {}
+[22.320276] (-) TimerEvent: {}
+[22.422934] (-) TimerEvent: {}
+[22.524864] (-) TimerEvent: {}
+[22.625235] (-) TimerEvent: {}
+[22.725621] (-) TimerEvent: {}
+[22.826752] (-) TimerEvent: {}
+[22.927140] (-) TimerEvent: {}
+[23.027512] (-) TimerEvent: {}
+[23.128965] (-) TimerEvent: {}
+[23.230870] (-) TimerEvent: {}
+[23.332941] (-) TimerEvent: {}
+[23.433305] (-) TimerEvent: {}
+[23.533692] (-) TimerEvent: {}
+[23.634969] (-) TimerEvent: {}
+[23.735368] (-) TimerEvent: {}
+[23.836550] (-) TimerEvent: {}
+[23.937147] (-) TimerEvent: {}
+[24.038959] (-) TimerEvent: {}
+[24.139375] (-) TimerEvent: {}
+[24.242932] (-) TimerEvent: {}
+[24.343309] (-) TimerEvent: {}
+[24.412867] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:621:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[24.413201] (semnav) StderrLine: {'line': b'  621 |         rclcpp::Publisher<example_interfaces/msg/UInt32\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr pub_behaviorID_;\n'}
+[24.413374] (semnav) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.413517] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:621:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[24.413659] (semnav) StderrLine: {'line': b'  621 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K pub_behaviorID_;\n'}
+[24.413839] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[24.413976] (semnav) StderrLine: {'line': b'      |                                                                    \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[24.444754] (-) TimerEvent: {}
+[24.452529] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:621:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorID_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[24.452858] (semnav) StderrLine: {'line': b'  621 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::SharedPtr \x1b[01;31m\x1b[Kpub_behaviorID_\x1b[m\x1b[K;\n'}
+[24.453027] (semnav) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.453169] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:622:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[24.453305] (semnav) StderrLine: {'line': b'  622 |         rclcpp::Publisher<example_interfaces/msg/UInt32\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr pub_behaviorMode_;\n'}
+[24.453438] (semnav) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.453567] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:622:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[24.453714] (semnav) StderrLine: {'line': b'  622 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K pub_behaviorMode_;\n'}
+[24.453851] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[24.453978] (semnav) StderrLine: {'line': b'      |                                                                    \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[24.454103] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:622:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredeclaration of \xe2\x80\x98\x1b[01m\x1b[Kint NavigationNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.454230] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:621:59:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kint NavigationNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.454376] (semnav) StderrLine: {'line': b'  621 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::\x1b[01;36m\x1b[KSharedPtr\x1b[m\x1b[K pub_behaviorID_;\n'}
+[24.454501] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[24.503748] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:622:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorMode_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[24.504055] (semnav) StderrLine: {'line': b'  622 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::SharedPtr \x1b[01;31m\x1b[Kpub_behaviorMode_\x1b[m\x1b[K;\n'}
+[24.504208] (semnav) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.504346] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:623:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[24.504478] (semnav) StderrLine: {'line': b'  623 |         rclcpp::Publisher<example_interfaces/msg/UInt32\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr pub_twist_;\n'}
+[24.504607] (semnav) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.504757] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:623:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[24.504925] (semnav) StderrLine: {'line': b'  623 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K pub_twist_;\n'}
+[24.505060] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[24.505191] (semnav) StderrLine: {'line': b'      |                                                                    \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[24.505320] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:623:59:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredeclaration of \xe2\x80\x98\x1b[01m\x1b[Kint NavigationNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.505452] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:621:59:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kint NavigationNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.505599] (semnav) StderrLine: {'line': b'  621 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::\x1b[01;36m\x1b[KSharedPtr\x1b[m\x1b[K pub_behaviorID_;\n'}
+[24.507922] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[24.522456] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:623:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_twist_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[24.522778] (semnav) StderrLine: {'line': b'  623 |         rclcpp::Publisher<example_interfaces/msg/UInt32>::SharedPtr \x1b[01;31m\x1b[Kpub_twist_\x1b[m\x1b[K;\n'}
+[24.522945] (semnav) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.534325] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KNavigationNode::\x1b[01;32m\x1b[KNavigationNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[24.534640] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.535010] (semnav) StderrLine: {'line': b'   46 |         NavigationNode() : rclcpp::Node(std::string("navigation_node")\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[24.535168] (semnav) StderrLine: {'line': b'      |                                                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.535312] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[24.535452] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[24.535588] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172\x1b[m\x1b[K,\n'}
+[24.535752] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32\x1b[m\x1b[K,\n'}
+[24.536467] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:25\x1b[m\x1b[K:\n'}
+[24.536633] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::\x1b[01;32m\x1b[KNode\x1b[m\x1b[K(const rclcpp::Node&, const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.538101] (semnav) StderrLine: {'line': b' 1629 |   \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[24.538493] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[24.538640] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[24.538811] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::\x1b[01;32m\x1b[KNode\x1b[m\x1b[K(const std::string&, const std::string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.538958] (semnav) StderrLine: {'line': b'  103 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[24.539095] (semnav) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[24.539231] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 0 provided\n'}
+[24.539361] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::\x1b[01;32m\x1b[KNode\x1b[m\x1b[K(const std::string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.539494] (semnav) StderrLine: {'line': b'   91 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[24.539624] (semnav) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[24.541945] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[24.542137] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ktf2_ros::TransformListener::TransformListener()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.542302] (semnav) StderrLine: {'line': b'   46 |         NavigationNode() : rclcpp::Node(std::string("navigation_node")\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[24.542452] (semnav) StderrLine: {'line': b'      |                                                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.542600] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40\x1b[m\x1b[K:\n'}
+[24.542767] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:121:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class AllocatorT> tf2_ros::TransformListener::\x1b[01;32m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore&, rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeParametersInterface::SharedPtr, rclcpp::node_interfaces::NodeTopicsInterface::SharedPtr, bool, const rclcpp::QoS&, const rclcpp::QoS&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.542949] (semnav) StderrLine: {'line': b'  121 |   \x1b[01;36m\x1b[KTransformListener\x1b[m\x1b[K(\n'}
+[24.543089] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.543229] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:121:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[24.543372] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:71:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 10 arguments, 0 provided\n'}
+[24.543502] (semnav) StderrLine: {'line': b'   46 |         NavigationNode() : rclcpp::Node(std::string("navigation_node")\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[24.543634] (semnav) StderrLine: {'line': b'      |                                                                       \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[24.545938] (-) TimerEvent: {}
+[24.547807] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:96:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class NodeT, class AllocatorT> tf2_ros::TransformListener::\x1b[01;32m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore&, NodeT&&, bool, const rclcpp::QoS&, const rclcpp::QoS&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.548073] (semnav) StderrLine: {'line': b'   96 |   \x1b[01;36m\x1b[KTransformListener\x1b[m\x1b[K(\n'}
+[24.548230] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.548376] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:96:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[24.548514] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:46:71:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 7 arguments, 0 provided\n'}
+[24.548653] (semnav) StderrLine: {'line': b'   46 |         NavigationNode() : rclcpp::Node(std::string("navigation_node")\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[24.548819] (semnav) StderrLine: {'line': b'      |                                                                       \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[24.548954] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:92:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktf2_ros::TransformListener::\x1b[01;32m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore&, bool)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.549094] (semnav) StderrLine: {'line': b'   92 |   explicit \x1b[01;36m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore & buffer, bool spin_thread = true);\n'}
+[24.549231] (semnav) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.549386] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:92:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[24.648759] (-) TimerEvent: {}
+[24.664361] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:138:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorID_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorID_topic_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[24.664654] (semnav) StderrLine: {'line': b'  138 |             \x1b[01;31m\x1b[Kpub_behaviorID_\x1b[m\x1b[K = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);\n'}
+[24.664893] (semnav) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.665046] (semnav) StderrLine: {'line': b'      |             \x1b[32m\x1b[Kpub_behaviorID_topic_\x1b[m\x1b[K\n'}
+[24.748879] (-) TimerEvent: {}
+[24.782188] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:139:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorMode_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorMode_topic_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[24.782471] (semnav) StderrLine: {'line': b'  139 |             \x1b[01;31m\x1b[Kpub_behaviorMode_\x1b[m\x1b[K = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);\n'}
+[24.782652] (semnav) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.782819] (semnav) StderrLine: {'line': b'      |             \x1b[32m\x1b[Kpub_behaviorMode_topic_\x1b[m\x1b[K\n'}
+[24.838788] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:140:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_twist_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpublish_twist\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[24.839082] (semnav) StderrLine: {'line': b'  140 |             \x1b[01;31m\x1b[Kpub_twist_\x1b[m\x1b[K = this->create_publisher<example_interfaces::msg::UInt32>("pub_twist_topic_", 1);\n'}
+[24.839259] (semnav) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.839406] (semnav) StderrLine: {'line': b'      |             \x1b[32m\x1b[Kpublish_twist\x1b[m\x1b[K\n'}
+[24.850743] (-) TimerEvent: {}
+[24.907335] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:143:116:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.907735] (semnav) StderrLine: {'line': b'  143 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[24.907925] (semnav) StderrLine: {'line': b'      |                                                                                                                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.908933] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:44\x1b[m\x1b[K:\n'}
+[24.909216] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K() \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.909410] (semnav) StderrLine: {'line': b'  224 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K() = default;\n'}
+[24.909557] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.909768] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 3 provided\n'}
+[24.909919] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.910063] (semnav) StderrLine: {'line': b'  212 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[24.910192] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.910319] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[24.910447] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.910597] (semnav) StderrLine: {'line': b'  203 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[24.912894] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.913087] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[24.913238] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.913400] (semnav) StderrLine: {'line': b'  188 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.913539] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.913702] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node*\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.913862] (semnav) StderrLine: {'line': b'  188 |   Subscriber(\x1b[01;36m\x1b[KNodeType * node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.914008] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[24.914140] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.914293] (semnav) StderrLine: {'line': b'  183 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.914435] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.914561] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[24.916843] (semnav) StderrLine: {'line': b'  183 |   Subscriber(\x1b[01;36m\x1b[KNodePtr node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.917068] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[24.951752] (-) TimerEvent: {}
+[24.979370] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:144:112:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.979643] (semnav) StderrLine: {'line': b'  144 |                         message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(nh_, sub_robot_topic_, 1\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[24.979828] (semnav) StderrLine: {'line': b'      |                                                                                                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[24.979968] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K() \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.980105] (semnav) StderrLine: {'line': b'  224 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K() = default;\n'}
+[24.980235] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.981315] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 3 provided\n'}
+[24.981602] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.982977] (semnav) StderrLine: {'line': b'  212 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[24.983139] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.983272] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[24.983427] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.983575] (semnav) StderrLine: {'line': b'  203 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[24.983737] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.983877] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[24.984008] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.984163] (semnav) StderrLine: {'line': b'  188 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.984299] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.984430] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node*\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.984580] (semnav) StderrLine: {'line': b'  188 |   Subscriber(\x1b[01;36m\x1b[KNodeType * node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.987854] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[24.988032] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[24.988176] (semnav) StderrLine: {'line': b'  183 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.988324] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[24.988454] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[24.988590] (semnav) StderrLine: {'line': b'  183 |   Subscriber(\x1b[01;36m\x1b[KNodePtr node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[24.988744] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[25.051875] (-) TimerEvent: {}
+[25.115789] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbind\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kboost\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kfind\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[25.116080] (semnav) StderrLine: {'line': b'  149 |                         sync->registerCallback(boost::\x1b[01;31m\x1b[Kbind\x1b[m\x1b[K(&NavigationNode::control_callback, this, _1, _2));\n'}
+[25.116235] (semnav) StderrLine: {'line': b'      |                                                       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[25.116370] (semnav) StderrLine: {'line': b'      |                                                       \x1b[32m\x1b[Kfind\x1b[m\x1b[K\n'}
+[25.121724] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:101:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K_1\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[25.122170] (semnav) StderrLine: {'line': b'  149 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, \x1b[01;31m\x1b[K_1\x1b[m\x1b[K, _2));\n'}
+[25.122374] (semnav) StderrLine: {'line': b'      |                                                                                                     \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.122525] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:101:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[25.122659] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/boost/mpl/aux_/include_preprocessed.hpp:37\x1b[m\x1b[K,\n'}
+[25.122882] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/mpl/placeholders.hpp:43\x1b[m\x1b[K,\n'}
+[25.123014] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/iterator/iterator_categories.hpp:16\x1b[m\x1b[K,\n'}
+[25.123143] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/iterator/iterator_facade.hpp:13\x1b[m\x1b[K,\n'}
+[25.123270] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/range/iterator_range_core.hpp:27\x1b[m\x1b[K,\n'}
+[25.123394] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/lexical_cast.hpp:48\x1b[m\x1b[K,\n'}
+[25.123519] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/detail/number_base.hpp:29\x1b[m\x1b[K,\n'}
+[25.123644] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9\x1b[m\x1b[K,\n'}
+[25.123793] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/detail/precision.hpp:9\x1b[m\x1b[K,\n'}
+[25.123920] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/number.hpp:11\x1b[m\x1b[K,\n'}
+[25.124059] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/cpp_int.hpp:19\x1b[m\x1b[K,\n'}
+[25.124185] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/cpp_bin_float.hpp:15\x1b[m\x1b[K,\n'}
+[25.124310] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/core/coordinate_promotion.hpp:16\x1b[m\x1b[K,\n'}
+[25.124434] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/core/radian_access.hpp:30\x1b[m\x1b[K,\n'}
+[25.124559] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/geometry.hpp:50\x1b[m\x1b[K,\n'}
+[25.126750] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry.hpp:17\x1b[m\x1b[K,\n'}
+[25.127317] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26\x1b[m\x1b[K:\n'}
+[25.127509] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.127696] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[25.127855] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.127991] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/boost/numeric/conversion/converter_policies.hpp:13\x1b[m\x1b[K,\n'}
+[25.128138] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/numeric/conversion/converter.hpp:14\x1b[m\x1b[K,\n'}
+[25.128273] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/numeric/conversion/cast.hpp:33\x1b[m\x1b[K,\n'}
+[25.128409] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/core/radian_access.hpp:26\x1b[m\x1b[K:\n'}
+[25.128544] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/functional:294:48:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::placeholders::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.130744] (semnav) StderrLine: {'line': b'  294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[25.131032] (semnav) StderrLine: {'line': b'      |                                                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.131187] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.131329] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[25.131468] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.131611] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/boost/describe/members.hpp:20\x1b[m\x1b[K,\n'}
+[25.131759] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/container_hash/is_described_class.hpp:11\x1b[m\x1b[K,\n'}
+[25.131892] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/container_hash/hash.hpp:18\x1b[m\x1b[K,\n'}
+[25.132015] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/functional/hash.hpp:6\x1b[m\x1b[K,\n'}
+[25.132141] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Kernel/hash_functions.h:16\x1b[m\x1b[K,\n'}
+[25.132264] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Kernel/global_functions.h:25\x1b[m\x1b[K,\n'}
+[25.132387] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Cartesian/Cartesian_base.h:22\x1b[m\x1b[K,\n'}
+[25.132527] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Simple_cartesian.h:20\x1b[m\x1b[K,\n'}
+[25.132656] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20\x1b[m\x1b[K,\n'}
+[25.135494] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32\x1b[m\x1b[K,\n'}
+[25.135663] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52\x1b[m\x1b[K:\n'}
+[25.135830] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mp11/bind.hpp:45:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kboost::mp11::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.135969] (semnav) StderrLine: {'line': b'   45 | using \x1b[01;36m\x1b[K_1\x1b[m\x1b[K = mp_arg<0>;\n'}
+[25.136099] (semnav) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.136227] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.136356] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[25.136478] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.136620] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:105:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K_2\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[25.138955] (semnav) StderrLine: {'line': b'  149 |                         sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, \x1b[01;31m\x1b[K_2\x1b[m\x1b[K));\n'}
+[25.139147] (semnav) StderrLine: {'line': b'      |                                                                                                         \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.139293] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:149:105:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[25.139433] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.139569] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[25.139723] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.139866] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/functional:295:48:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::placeholders::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.140002] (semnav) StderrLine: {'line': b'  295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[25.140136] (semnav) StderrLine: {'line': b'      |                                                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.140269] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.140404] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[25.140533] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.140662] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mp11/bind.hpp:46:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kboost::mp11::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.143002] (semnav) StderrLine: {'line': b'   46 | using \x1b[01;36m\x1b[K_2\x1b[m\x1b[K = mp_arg<1>;\n'}
+[25.143187] (semnav) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.143332] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.143476] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[25.143627] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[25.143789] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:152:74:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KNavigationNode::create_subscription(std::string&, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.143944] (semnav) StderrLine: {'line': b'  152 |             rclcpp::Subscription sub_semantic = \x1b[01;31m\x1b[Kthis->create_subscription(sub_semantic_topic_, 1)\x1b[m\x1b[K;\n'}
+[25.144085] (semnav) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.144220] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::\x1b[01;32m\x1b[Kcreate_subscription\x1b[m\x1b[K(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.144378] (semnav) StderrLine: {'line': b'  221 |   \x1b[01;36m\x1b[Kcreate_subscription\x1b[m\x1b[K(\n'}
+[25.144511] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.144642] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[25.146975] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:152:74:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 5 arguments, 2 provided\n'}
+[25.147168] (semnav) StderrLine: {'line': b'  152 |             rclcpp::Subscription sub_semantic = \x1b[01;36m\x1b[Kthis->create_subscription(sub_semantic_topic_, 1)\x1b[m\x1b[K;\n'}
+[25.147332] (semnav) StderrLine: {'line': b'      |                                                 \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.151997] (-) TimerEvent: {}
+[25.192262] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid NavigationNode::\x1b[01;32m\x1b[Kpublish_twist\x1b[m\x1b[K(double, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[25.192588] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:169:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_twist_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpublish_twist\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[25.192793] (semnav) StderrLine: {'line': b'  169 |                         \x1b[01;31m\x1b[Kpub_twist_\x1b[m\x1b[K.publish(commandTwist);\n'}
+[25.192939] (semnav) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.193071] (semnav) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Kpublish_twist\x1b[m\x1b[K\n'}
+[25.252120] (-) TimerEvent: {}
+[25.284851] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid NavigationNode::\x1b[01;32m\x1b[Kpublish_behavior_id\x1b[m\x1b[K(uint16_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[25.285168] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:176:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorID_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorID_topic_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[25.285337] (semnav) StderrLine: {'line': b'  176 |                         \x1b[01;31m\x1b[Kpub_behaviorID_\x1b[m\x1b[K.publish(commandId);\n'}
+[25.285476] (semnav) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.285606] (semnav) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Kpub_behaviorID_topic_\x1b[m\x1b[K\n'}
+[25.352245] (-) TimerEvent: {}
+[25.392855] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid NavigationNode::\x1b[01;32m\x1b[Kpublish_behavior_mode\x1b[m\x1b[K(uint16_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[25.393153] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:183:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorMode_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpub_behaviorMode_topic_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[25.393332] (semnav) StderrLine: {'line': b'  183 |                         \x1b[01;31m\x1b[Kpub_behaviorMode_\x1b[m\x1b[K.publish(commandMode);\n'}
+[25.393476] (semnav) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.393611] (semnav) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Kpub_behaviorMode_topic_\x1b[m\x1b[K\n'}
+[25.452374] (-) TimerEvent: {}
+[25.492999] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid NavigationNode::\x1b[01;32m\x1b[Kcontrol_callback\x1b[m\x1b[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[25.493358] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:366:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass tf2_ros::TransformListener\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KwaitForTransform\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.493547] (semnav) StderrLine: {'line': b'  366 |                                 listener_.\x1b[01;31m\x1b[KwaitForTransform\x1b[m\x1b[K(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));\n'}
+[25.493757] (semnav) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.494742] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:366:164:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[25.495039] (semnav) StderrLine: {'line': b'  366 | tForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000))\x1b[01;31m\x1b[K;\x1b[m\x1b[K\n'}
+[25.495207] (semnav) StderrLine: {'line': b'      |                                                                                                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[25.495355] (semnav) StderrLine: {'line': b'\n'}
+[25.495506] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:366:59:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K(\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.495692] (semnav) StderrLine: {'line': b'  366 |                                 listener_.waitForTransform\x1b[01;36m\x1b[K(\x1b[m\x1b[Kworld_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));\n'}
+[25.495860] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[25.496007] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:367:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass tf2_ros::TransformListener\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KtransformPose\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.496164] (semnav) StderrLine: {'line': b'  367 |                                 listener_.\x1b[01;31m\x1b[KtransformPose\x1b[m\x1b[K(world_frame_id_, odomPose, mapPose);\n'}
+[25.496307] (semnav) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.498746] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation.cpp:396:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcould not convert \xe2\x80\x98\x1b[01m\x1b[Klidar_data\x1b[m\x1b[K\xe2\x80\x99 from \xe2\x80\x98\x1b[01m\x1b[Kshared_ptr<LaserScan_<[...]>>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kshared_ptr<LaserScan_<[...]>>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[25.499046] (semnav) StderrLine: {'line': b'  396 |                         constructLIDAR2D(\x1b[01;31m\x1b[Klidar_data\x1b[m\x1b[K, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[25.499219] (semnav) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[25.499368] (semnav) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[25.499514] (semnav) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[Kshared_ptr<LaserScan_<[...]>>\x1b[m\x1b[K\n'}
+[25.553748] (-) TimerEvent: {}
+[25.654155] (-) TimerEvent: {}
+[25.754545] (-) TimerEvent: {}
+[25.854939] (-) TimerEvent: {}
+[25.958756] (-) TimerEvent: {}
+[26.059158] (-) TimerEvent: {}
+[26.159529] (-) TimerEvent: {}
+[26.216852] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kextra qualification \xe2\x80\x98\x1b[01m\x1b[KSemanticNavigationNode::\x1b[m\x1b[K\xe2\x80\x99 on member \xe2\x80\x98\x1b[01m\x1b[KSemanticNavigationNode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[26.217152] (semnav) StderrLine: {'line': b'   46 |             \x1b[01;31m\x1b[KSemanticNavigationNode\x1b[m\x1b[K::SemanticNavigationNode() : Node("semantic_navigation_node") {\n'}
+[26.217311] (semnav) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.238104] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KSemanticNavigationNode::\x1b[01;32m\x1b[KSemanticNavigationNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.238509] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.238816] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node"\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[26.239097] (semnav) StderrLine: {'line': b'      |                                                                                               \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[26.239909] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[26.240261] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[26.240529] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172\x1b[m\x1b[K,\n'}
+[26.240798] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:32\x1b[m\x1b[K,\n'}
+[26.241291] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:25\x1b[m\x1b[K:\n'}
+[26.241501] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::\x1b[01;32m\x1b[KNode\x1b[m\x1b[K(const rclcpp::Node&, const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.241652] (semnav) StderrLine: {'line': b' 1629 |   \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[26.241821] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[26.241958] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1629:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[26.243826] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::\x1b[01;32m\x1b[KNode\x1b[m\x1b[K(const std::string&, const std::string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.244147] (semnav) StderrLine: {'line': b'  103 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[26.244308] (semnav) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[26.244454] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:103:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 0 provided\n'}
+[26.244598] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::\x1b[01;32m\x1b[KNode\x1b[m\x1b[K(const std::string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.244771] (semnav) StderrLine: {'line': b'   91 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[26.244914] (semnav) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[26.245048] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:91:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[26.247078] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Ktf2_ros::TransformListener::TransformListener()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.247467] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node"\x1b[01;31m\x1b[K)\x1b[m\x1b[K {\n'}
+[26.247746] (semnav) StderrLine: {'line': b'      |                                                                                               \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[26.248297] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40\x1b[m\x1b[K:\n'}
+[26.248609] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:121:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class AllocatorT> tf2_ros::TransformListener::\x1b[01;32m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore&, rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeParametersInterface::SharedPtr, rclcpp::node_interfaces::NodeTopicsInterface::SharedPtr, bool, const rclcpp::QoS&, const rclcpp::QoS&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.248954] (semnav) StderrLine: {'line': b'  121 |   \x1b[01;36m\x1b[KTransformListener\x1b[m\x1b[K(\n'}
+[26.249249] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.249555] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:121:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[26.250097] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 10 arguments, 0 provided\n'}
+[26.250301] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node"\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[26.250449] (semnav) StderrLine: {'line': b'      |                                                                                               \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[26.252835] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:96:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class NodeT, class AllocatorT> tf2_ros::TransformListener::\x1b[01;32m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore&, NodeT&&, bool, const rclcpp::QoS&, const rclcpp::QoS&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.253120] (semnav) StderrLine: {'line': b'   96 |   \x1b[01;36m\x1b[KTransformListener\x1b[m\x1b[K(\n'}
+[26.253275] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.253413] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:96:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[26.253554] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:46:95:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 7 arguments, 0 provided\n'}
+[26.253705] (semnav) StderrLine: {'line': b'   46 |             SemanticNavigationNode::SemanticNavigationNode() : Node("semantic_navigation_node"\x1b[01;36m\x1b[K)\x1b[m\x1b[K {\n'}
+[26.253859] (semnav) StderrLine: {'line': b'      |                                                                                               \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[26.253995] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:92:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktf2_ros::TransformListener::\x1b[01;32m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore&, bool)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.254162] (semnav) StderrLine: {'line': b'   92 |   explicit \x1b[01;36m\x1b[KTransformListener\x1b[m\x1b[K(tf2::BufferCore & buffer, bool spin_thread = true);\n'}
+[26.254301] (semnav) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.254435] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/tf2_ros/tf2_ros/transform_listener.h:92:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[26.260745] (-) TimerEvent: {}
+[26.355952] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:143:116:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.356370] (semnav) StderrLine: {'line': b'  143 |                         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser(nh_, sub_laser_topic_, 1\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[26.356661] (semnav) StderrLine: {'line': b'      |                                                                                                                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[26.357317] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:44\x1b[m\x1b[K:\n'}
+[26.357927] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K() \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.358176] (semnav) StderrLine: {'line': b'  224 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K() = default;\n'}
+[26.358322] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.360744] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 3 provided\n'}
+[26.361023] (-) TimerEvent: {}
+[26.361216] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.361416] (semnav) StderrLine: {'line': b'  212 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[26.361561] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.361741] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[26.361904] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.362055] (semnav) StderrLine: {'line': b'  203 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[26.362198] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.362346] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[26.362480] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.364700] (semnav) StderrLine: {'line': b'  188 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.365011] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.365182] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node*\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.365353] (semnav) StderrLine: {'line': b'  188 |   Subscriber(\x1b[01;36m\x1b[KNodeType * node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.365495] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[26.365630] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = sensor_msgs::msg::LaserScan_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.365844] (semnav) StderrLine: {'line': b'  183 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.365988] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.366121] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<sensor_msgs::msg::LaserScan_<std::allocator<void> > >::NodePtr\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[26.366277] (semnav) StderrLine: {'line': b'  183 |   Subscriber(\x1b[01;36m\x1b[KNodePtr node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.366414] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[26.435428] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:144:100:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::Subscriber(rclcpp::Node&, std::string&, int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.435780] (semnav) StderrLine: {'line': b'  144 |             message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot(nh_, sub_robot_topic_, 1\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[26.435963] (semnav) StderrLine: {'line': b'      |                                                                                                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[26.436110] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K() \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.436285] (semnav) StderrLine: {'line': b'  224 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K() = default;\n'}
+[26.436428] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.436567] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:224:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 0 arguments, 3 provided\n'}
+[26.436726] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.436881] (semnav) StderrLine: {'line': b'  212 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[26.437009] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.437136] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:212:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[26.437265] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.437429] (semnav) StderrLine: {'line': b'  203 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(\n'}
+[26.437566] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.442005] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:203:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 4 arguments, 3 provided\n'}
+[26.442289] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodeType*, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.442518] (semnav) StderrLine: {'line': b'  188 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.442687] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.442845] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:188:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node*\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.443007] (semnav) StderrLine: {'line': b'  188 |   Subscriber(\x1b[01;36m\x1b[KNodeType * node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.443150] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[26.443284] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<M, NodeType>::\x1b[01;32m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr, const std::string&, rmw_qos_profile_t) \x1b[35m\x1b[K[with M = nav_msgs::msg::Odometry_<std::allocator<void> >; NodeType = rclcpp::Node; NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s]\x1b[m\x1b[K\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.443431] (semnav) StderrLine: {'line': b'  183 |   \x1b[01;36m\x1b[KSubscriber\x1b[m\x1b[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.443572] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.445853] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/message_filters/message_filters/subscriber.h:183:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  no known conversion for argument 1 from \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kmessage_filters::Subscriber<nav_msgs::msg::Odometry_<std::allocator<void> > >::NodePtr\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99}\n'}
+[26.446104] (semnav) StderrLine: {'line': b'  183 |   Subscriber(\x1b[01;36m\x1b[KNodePtr node\x1b[m\x1b[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default)\n'}
+[26.446260] (semnav) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[26.461152] (-) TimerEvent: {}
+[26.561525] (-) TimerEvent: {}
+[26.608041] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:149:55:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbind\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kboost\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kfind\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[26.608438] (semnav) StderrLine: {'line': b'  149 |                         sync->registerCallback(boost::\x1b[01;31m\x1b[Kbind\x1b[m\x1b[K(&SemanticNavigationNode::control_callback, this, _1, _2));\n'}
+[26.608781] (semnav) StderrLine: {'line': b'      |                                                       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[26.609110] (semnav) StderrLine: {'line': b'      |                                                       \x1b[32m\x1b[Kfind\x1b[m\x1b[K\n'}
+[26.614122] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:149:109:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K_1\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[26.614629] (semnav) StderrLine: {'line': b'  149 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, \x1b[01;31m\x1b[K_1\x1b[m\x1b[K, _2));\n'}
+[26.614859] (semnav) StderrLine: {'line': b'      |                                                                                                             \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.615589] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:149:109:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[26.616880] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/boost/mpl/aux_/include_preprocessed.hpp:37\x1b[m\x1b[K,\n'}
+[26.617160] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/mpl/placeholders.hpp:43\x1b[m\x1b[K,\n'}
+[26.617320] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/iterator/iterator_categories.hpp:16\x1b[m\x1b[K,\n'}
+[26.617470] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/iterator/iterator_facade.hpp:13\x1b[m\x1b[K,\n'}
+[26.617617] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/range/iterator_range_core.hpp:27\x1b[m\x1b[K,\n'}
+[26.617795] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/lexical_cast.hpp:48\x1b[m\x1b[K,\n'}
+[26.617947] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/detail/number_base.hpp:29\x1b[m\x1b[K,\n'}
+[26.618090] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/traits/is_variable_precision.hpp:9\x1b[m\x1b[K,\n'}
+[26.618254] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/detail/precision.hpp:9\x1b[m\x1b[K,\n'}
+[26.618403] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/number.hpp:11\x1b[m\x1b[K,\n'}
+[26.618546] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/cpp_int.hpp:19\x1b[m\x1b[K,\n'}
+[26.621016] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/multiprecision/cpp_bin_float.hpp:15\x1b[m\x1b[K,\n'}
+[26.621261] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/core/coordinate_promotion.hpp:16\x1b[m\x1b[K,\n'}
+[26.621422] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/core/radian_access.hpp:30\x1b[m\x1b[K,\n'}
+[26.621569] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/geometry.hpp:50\x1b[m\x1b[K,\n'}
+[26.621739] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry.hpp:17\x1b[m\x1b[K,\n'}
+[26.621895] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:26\x1b[m\x1b[K:\n'}
+[26.622043] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.622189] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[26.622336] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.622477] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/boost/numeric/conversion/converter_policies.hpp:13\x1b[m\x1b[K,\n'}
+[26.622614] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/numeric/conversion/converter.hpp:14\x1b[m\x1b[K,\n'}
+[26.624885] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/numeric/conversion/cast.hpp:33\x1b[m\x1b[K,\n'}
+[26.625052] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/geometry/core/radian_access.hpp:26\x1b[m\x1b[K:\n'}
+[26.625195] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/functional:294:48:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::placeholders::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.625346] (semnav) StderrLine: {'line': b'  294 |     _GLIBCXX_PLACEHOLDER const _Placeholder<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[26.625490] (semnav) StderrLine: {'line': b'      |                                                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.625643] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.625847] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[26.625999] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.626143] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/boost/describe/members.hpp:20\x1b[m\x1b[K,\n'}
+[26.626288] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/container_hash/is_described_class.hpp:11\x1b[m\x1b[K,\n'}
+[26.626442] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/container_hash/hash.hpp:18\x1b[m\x1b[K,\n'}
+[26.626588] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/boost/functional/hash.hpp:6\x1b[m\x1b[K,\n'}
+[26.629166] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Kernel/hash_functions.h:16\x1b[m\x1b[K,\n'}
+[26.629380] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Kernel/global_functions.h:25\x1b[m\x1b[K,\n'}
+[26.629537] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Cartesian/Cartesian_base.h:22\x1b[m\x1b[K,\n'}
+[26.629700] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Simple_cartesian.h:20\x1b[m\x1b[K,\n'}
+[26.629863] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/CGAL/Exact_predicates_inexact_constructions_kernel.h:20\x1b[m\x1b[K,\n'}
+[26.630012] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/polygeom_lib.h:32\x1b[m\x1b[K,\n'}
+[26.630159] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52\x1b[m\x1b[K:\n'}
+[26.630319] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mp11/bind.hpp:45:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kboost::mp11::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.630466] (semnav) StderrLine: {'line': b'   45 | using \x1b[01;36m\x1b[K_1\x1b[m\x1b[K = mp_arg<0>;\n'}
+[26.630606] (semnav) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.632916] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:29:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.633138] (semnav) StderrLine: {'line': b'   29 | typedef arg<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[26.633298] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.633442] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:149:113:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K_2\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[26.633591] (semnav) StderrLine: {'line': b'  149 |                         sync->registerCallback(boost::bind(&SemanticNavigationNode::control_callback, this, _1, \x1b[01;31m\x1b[K_2\x1b[m\x1b[K));\n'}
+[26.633765] (semnav) StderrLine: {'line': b'      |                                                                                                                 \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.633939] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:149:113:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[26.634094] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.634235] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[26.634390] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.634536] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/functional:295:48:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd::placeholders::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.639712] (semnav) StderrLine: {'line': b'  295 |     _GLIBCXX_PLACEHOLDER const _Placeholder<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[26.640031] (semnav) StderrLine: {'line': b'      |                                                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.640199] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.640346] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[26.640487] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.640628] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mp11/bind.hpp:46:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kboost::mp11::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.640794] (semnav) StderrLine: {'line': b'   46 | using \x1b[01;36m\x1b[K_2\x1b[m\x1b[K = mp_arg<1>;\n'}
+[26.640935] (semnav) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.641074] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:42:16:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kmpl_::_2\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.641210] (semnav) StderrLine: {'line': b'   42 | typedef arg<2> \x1b[01;36m\x1b[K_2\x1b[m\x1b[K;\n'}
+[26.641346] (semnav) StderrLine: {'line': b'      |                \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[26.641479] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:151:86:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KSemanticNavigationNode::create_subscription(const char [20], int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.641613] (semnav) StderrLine: {'line': b'  151 |                         rclcpp::Subscription sub_semantic = \x1b[01;31m\x1b[Kthis->create_subscription("sub_semantic_topic_", 1)\x1b[m\x1b[K;\n'}
+[26.641777] (semnav) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.641913] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<ROSMessageT> rclcpp::Node::\x1b[01;32m\x1b[Kcreate_subscription\x1b[m\x1b[K(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.642058] (semnav) StderrLine: {'line': b'  221 |   \x1b[01;36m\x1b[Kcreate_subscription\x1b[m\x1b[K(\n'}
+[26.642199] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.642346] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:221:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[26.642481] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:151:86:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 5 arguments, 2 provided\n'}
+[26.642615] (semnav) StderrLine: {'line': b'  151 |                         rclcpp::Subscription sub_semantic = \x1b[01;36m\x1b[Kthis->create_subscription("sub_semantic_topic_", 1)\x1b[m\x1b[K;\n'}
+[26.642794] (semnav) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.644805] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SemanticNavigationNode::\x1b[01;32m\x1b[Kpublish_twist\x1b[m\x1b[K(double, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.645083] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:168:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kpublish\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.645255] (semnav) StderrLine: {'line': b'  168 |                         pub_twist_.\x1b[01;31m\x1b[Kpublish\x1b[m\x1b[K(commandTwist);\n'}
+[26.645420] (semnav) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[26.645570] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SemanticNavigationNode::\x1b[01;32m\x1b[Kpublish_behavior_id\x1b[m\x1b[K(uint16_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.645739] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:175:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kpublish\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.645926] (semnav) StderrLine: {'line': b'  175 |                         pub_behaviorID_.\x1b[01;31m\x1b[Kpublish\x1b[m\x1b[K(commandId);\n'}
+[26.646063] (semnav) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[26.648742] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SemanticNavigationNode::\x1b[01;32m\x1b[Kpublish_behavior_mode\x1b[m\x1b[K(uint16_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.649039] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:182:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > >::SharedPtr = class std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Publisher<example_interfaces::msg::UInt32_<std::allocator<void> > > >\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kpublish\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.649216] (semnav) StderrLine: {'line': b'  182 |                         pub_behaviorMode_.\x1b[01;31m\x1b[Kpublish\x1b[m\x1b[K(commandMode);\n'}
+[26.649357] (semnav) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[26.661655] (-) TimerEvent: {}
+[26.751297] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid SemanticNavigationNode::\x1b[01;32m\x1b[Kcontrol_callback\x1b[m\x1b[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.751756] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:406:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass tf2_ros::TransformListener\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KwaitForTransform\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.752060] (semnav) StderrLine: {'line': b'  406 |                                 listener_.\x1b[01;31m\x1b[KwaitForTransform\x1b[m\x1b[K(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));\n'}
+[26.752316] (semnav) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.753112] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:406:164:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[26.753556] (semnav) StderrLine: {'line': b'  406 |                                 listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000))\x1b[01;31m\x1b[K;\x1b[m\x1b[K\n'}
+[26.753795] (semnav) StderrLine: {'line': b'      |                                                                                                                                                                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[26.754806] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:406:59:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K(\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.755085] (semnav) StderrLine: {'line': b'  406 |                                 listener_.waitForTransform\x1b[01;36m\x1b[K(\x1b[m\x1b[Kworld_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));\n'}
+[26.755245] (semnav) StderrLine: {'line': b'      |                                                           \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[26.755387] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:407:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclass tf2_ros::TransformListener\x1b[m\x1b[K\xe2\x80\x99 has no member named \xe2\x80\x98\x1b[01m\x1b[KtransformPose\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.755530] (semnav) StderrLine: {'line': b'  407 |                                 listener_.\x1b[01;31m\x1b[KtransformPose\x1b[m\x1b[K(world_frame_id_, odomPose, mapPose);\n'}
+[26.755731] (semnav) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.757054] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27\x1b[m\x1b[K,\n'}
+[26.757375] (semnav) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K:\n'}
+[26.757542] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:409:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kstatic assertion failed: First argument to logging macros must be an rclcpp::Logger\n'}
+[26.757712] (semnav) StderrLine: {'line': b'  409 |                                 \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K("%s",ex.what());\n'}
+[26.757870] (semnav) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.758576] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K:\n'}
+[26.758843] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:409:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kget_name\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[K("%s")\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kconst char [3]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.759036] (semnav) StderrLine: {'line': b'  409 |                                 \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K("%s",ex.what());\n'}
+[26.759178] (semnav) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.759326] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:409:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Krequest for member \xe2\x80\x98\x1b[01m\x1b[Kget_name\x1b[m\x1b[K\xe2\x80\x99 in \xe2\x80\x98\x1b[01m\x1b[K("%s")\x1b[m\x1b[K\xe2\x80\x99, which is of non-class type \xe2\x80\x98\x1b[01m\x1b[Kconst char [3]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.759467] (semnav) StderrLine: {'line': b'  409 |                                 \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K("%s",ex.what());\n'}
+[26.760744] (semnav) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.761748] (-) TimerEvent: {}
+[26.764695] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:434:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcould not convert \xe2\x80\x98\x1b[01m\x1b[Klidar_data\x1b[m\x1b[K\xe2\x80\x99 from \xe2\x80\x98\x1b[01m\x1b[Kshared_ptr<LaserScan_<[...]>>\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kshared_ptr<LaserScan_<[...]>>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.765001] (semnav) StderrLine: {'line': b'  434 |                         constructLIDAR2D(\x1b[01;31m\x1b[Klidar_data\x1b[m\x1b[K, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);\n'}
+[26.765166] (semnav) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.765311] (semnav) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[26.765452] (semnav) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[Kshared_ptr<LaserScan_<[...]>>\x1b[m\x1b[K\n'}
+[26.822538] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[01;32m\x1b[K main\x1b[m\x1b[K(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[26.822971] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/semnav_migration/src/navigation_semantic.cpp:700:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid initialization of reference of type \xe2\x80\x98\x1b[01m\x1b[Kconst rclcpp::InitOptions&\x1b[m\x1b[K\xe2\x80\x99 from expression of type \xe2\x80\x98\x1b[01m\x1b[Kconst char [20]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.823153] (semnav) StderrLine: {'line': b'  700 |         rclcpp::init(argc, argv, \x1b[01;31m\x1b[K"navigation_semantic"\x1b[m\x1b[K);\n'}
+[26.823295] (semnav) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.823429] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25\x1b[m\x1b[K:\n'}
+[26.823561] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:78:23:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kin passing argument 3 of \xe2\x80\x98\x1b[01m\x1b[Kvoid rclcpp::\x1b[01;32m\x1b[Kinit\x1b[m\x1b[K(int, const char* const*, const InitOptions&, SignalHandlerOptions)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[26.823718] (semnav) StderrLine: {'line': b'   78 |   \x1b[01;36m\x1b[Kconst InitOptions & init_options = InitOptions()\x1b[m\x1b[K,\n'}
+[26.823886] (semnav) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[26.863752] (-) TimerEvent: {}
+[26.964144] (-) TimerEvent: {}
+[27.064535] (-) TimerEvent: {}
+[27.165842] (-) TimerEvent: {}
+[27.267757] (-) TimerEvent: {}
+[27.368143] (-) TimerEvent: {}
+[27.468529] (-) TimerEvent: {}
+[27.568930] (-) TimerEvent: {}
+[27.669955] (-) TimerEvent: {}
+[27.771021] (-) TimerEvent: {}
+[27.871409] (-) TimerEvent: {}
+[27.973422] (-) TimerEvent: {}
+[28.073824] (-) TimerEvent: {}
+[28.174208] (-) TimerEvent: {}
+[28.274553] (-) TimerEvent: {}
+[28.375891] (-) TimerEvent: {}
+[28.476917] (-) TimerEvent: {}
+[28.577301] (-) TimerEvent: {}
+[28.679080] (-) TimerEvent: {}
+[28.779454] (-) TimerEvent: {}
+[28.879867] (-) TimerEvent: {}
+[28.981986] (-) TimerEvent: {}
+[29.082396] (-) TimerEvent: {}
+[29.182761] (-) TimerEvent: {}
+[29.283149] (-) TimerEvent: {}
+[29.383547] (-) TimerEvent: {}
+[29.484985] (-) TimerEvent: {}
+[29.585371] (-) TimerEvent: {}
+[29.687926] (-) TimerEvent: {}
+[29.788300] (-) TimerEvent: {}
+[29.888872] (-) TimerEvent: {}
+[29.989265] (-) TimerEvent: {}
+[30.089642] (-) TimerEvent: {}
+[30.191889] (-) TimerEvent: {}
+[30.292316] (-) TimerEvent: {}
+[30.392873] (-) TimerEvent: {}
+[30.493470] (-) TimerEvent: {}
+[30.594981] (-) TimerEvent: {}
+[30.695386] (-) TimerEvent: {}
+[30.797749] (-) TimerEvent: {}
+[30.898130] (-) TimerEvent: {}
+[30.998480] (-) TimerEvent: {}
+[31.101309] (-) TimerEvent: {}
+[31.201713] (-) TimerEvent: {}
+[31.302097] (-) TimerEvent: {}
+[31.402506] (-) TimerEvent: {}
+[31.503969] (-) TimerEvent: {}
+[31.604368] (-) TimerEvent: {}
+[31.707921] (-) TimerEvent: {}
+[31.809933] (-) TimerEvent: {}
+[31.910348] (-) TimerEvent: {}
+[32.012986] (-) TimerEvent: {}
+[32.113490] (-) TimerEvent: {}
+[32.213951] (-) TimerEvent: {}
+[32.317757] (-) TimerEvent: {}
+[32.418154] (-) TimerEvent: {}
+[32.518583] (-) TimerEvent: {}
+[32.619118] (-) TimerEvent: {}
+[32.720998] (-) TimerEvent: {}
+[32.821385] (-) TimerEvent: {}
+[32.921771] (-) TimerEvent: {}
+[33.022154] (-) TimerEvent: {}
+[33.123546] (-) TimerEvent: {}
+[33.223926] (-) TimerEvent: {}
+[33.324311] (-) TimerEvent: {}
+[33.426923] (-) TimerEvent: {}
+[33.527272] (-) TimerEvent: {}
+[33.627656] (-) TimerEvent: {}
+[33.728037] (-) TimerEvent: {}
+[33.828429] (-) TimerEvent: {}
+[33.928841] (-) TimerEvent: {}
+[34.029219] (-) TimerEvent: {}
+[34.130976] (-) TimerEvent: {}
+[34.231437] (-) TimerEvent: {}
+[34.331962] (-) TimerEvent: {}
+[34.433924] (-) TimerEvent: {}
+[34.534270] (-) TimerEvent: {}
+[34.634662] (-) TimerEvent: {}
+[34.735056] (-) TimerEvent: {}
+[34.836781] (-) TimerEvent: {}
+[34.937133] (-) TimerEvent: {}
+[35.037529] (-) TimerEvent: {}
+[35.139883] (-) TimerEvent: {}
+[35.241927] (-) TimerEvent: {}
+[35.342296] (-) TimerEvent: {}
+[35.445924] (-) TimerEvent: {}
+[35.546332] (-) TimerEvent: {}
+[35.646695] (-) TimerEvent: {}
+[35.747760] (-) TimerEvent: {}
+[35.848127] (-) TimerEvent: {}
+[35.949754] (-) TimerEvent: {}
+[36.050184] (-) TimerEvent: {}
+[36.152931] (-) TimerEvent: {}
+[36.253339] (-) TimerEvent: {}
+[36.353731] (-) TimerEvent: {}
+[36.454103] (-) TimerEvent: {}
+[36.555912] (-) TimerEvent: {}
+[36.656277] (-) TimerEvent: {}
+[36.756639] (-) TimerEvent: {}
+[36.857020] (-) TimerEvent: {}
+[36.957395] (-) TimerEvent: {}
+[37.058907] (-) TimerEvent: {}
+[37.159278] (-) TimerEvent: {}
+[37.259688] (-) TimerEvent: {}
+[37.362963] (-) TimerEvent: {}
+[37.465316] (-) TimerEvent: {}
+[37.567960] (-) TimerEvent: {}
+[37.668505] (-) TimerEvent: {}
+[37.769052] (-) TimerEvent: {}
+[37.869563] (-) TimerEvent: {}
+[37.973007] (-) TimerEvent: {}
+[38.073524] (-) TimerEvent: {}
+[38.175917] (-) TimerEvent: {}
+[38.276297] (-) TimerEvent: {}
+[38.376653] (-) TimerEvent: {}
+[38.477058] (-) TimerEvent: {}
+[38.580931] (-) TimerEvent: {}
+[38.681292] (-) TimerEvent: {}
+[38.781718] (-) TimerEvent: {}
+[38.882097] (-) TimerEvent: {}
+[38.982912] (-) TimerEvent: {}
+[39.084951] (-) TimerEvent: {}
+[39.185344] (-) TimerEvent: {}
+[39.285741] (-) TimerEvent: {}
+[39.386122] (-) TimerEvent: {}
+[39.487942] (-) TimerEvent: {}
+[39.590753] (-) TimerEvent: {}
+[39.691745] (-) TimerEvent: {}
+[39.792140] (-) TimerEvent: {}
+[39.892542] (-) TimerEvent: {}
+[39.996084] (-) TimerEvent: {}
+[40.096511] (-) TimerEvent: {}
+[40.197004] (-) TimerEvent: {}
+[40.301780] (-) TimerEvent: {}
+[40.403755] (-) TimerEvent: {}
+[40.505770] (-) TimerEvent: {}
+[40.606210] (-) TimerEvent: {}
+[40.706708] (-) TimerEvent: {}
+[40.808999] (-) TimerEvent: {}
+[40.909429] (-) TimerEvent: {}
+[41.011946] (-) TimerEvent: {}
+[41.112351] (-) TimerEvent: {}
+[41.212744] (-) TimerEvent: {}
+[41.314201] (-) TimerEvent: {}
+[41.415687] (-) TimerEvent: {}
+[41.516749] (-) TimerEvent: {}
+[41.618942] (-) TimerEvent: {}
+[41.720953] (-) TimerEvent: {}
+[41.821527] (-) TimerEvent: {}
+[41.922988] (-) TimerEvent: {}
+[42.025920] (-) TimerEvent: {}
+[42.126337] (-) TimerEvent: {}
+[42.226719] (-) TimerEvent: {}
+[42.327103] (-) TimerEvent: {}
+[42.427491] (-) TimerEvent: {}
+[42.528991] (-) TimerEvent: {}
+[42.631750] (-) TimerEvent: {}
+[42.732145] (-) TimerEvent: {}
+[42.832508] (-) TimerEvent: {}
+[42.932871] (-) TimerEvent: {}
+[43.033252] (-) TimerEvent: {}
+[43.133646] (-) TimerEvent: {}
+[43.236108] (-) TimerEvent: {}
+[43.293262] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1\n'}
+[43.294478] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2\n'}
+[43.294925] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[43.336273] (-) TimerEvent: {}
+[43.436765] (-) TimerEvent: {}
+[43.540114] (-) TimerEvent: {}
+[43.640625] (-) TimerEvent: {}
+[43.740989] (-) TimerEvent: {}
+[43.844396] (-) TimerEvent: {}
+[43.944762] (-) TimerEvent: {}
+[44.046907] (-) TimerEvent: {}
+[44.148867] (-) TimerEvent: {}
+[44.249242] (-) TimerEvent: {}
+[44.349685] (-) TimerEvent: {}
+[44.452910] (-) TimerEvent: {}
+[44.554958] (-) TimerEvent: {}
+[44.655345] (-) TimerEvent: {}
+[44.755743] (-) TimerEvent: {}
+[44.856155] (-) TimerEvent: {}
+[44.956535] (-) TimerEvent: {}
+[45.056878] (-) TimerEvent: {}
+[45.157268] (-) TimerEvent: {}
+[45.257703] (-) TimerEvent: {}
+[45.288158] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/navigation_semantic.dir/build.make:76: CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o] Error 1\n'}
+[45.288664] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:207: CMakeFiles/navigation_semantic.dir/all] Error 2\n'}
+[45.289033] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[45.292336] (semnav) CommandEnded: {'returncode': 2}
+[45.357858] (-) TimerEvent: {}
+[45.400611] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[45.417267] (-) EventReactorShutdown: {}

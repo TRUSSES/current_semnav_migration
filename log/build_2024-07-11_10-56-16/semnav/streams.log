@@ -1,0 +1,202 @@
+[0.029s] Invoking command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2
+[0.206s] [  4%] Building CXX object CMakeFiles/reactive_planner.dir/src/libraries/reactive_planner_lib.cpp.o
+[58.839s] [  9%] Linking CXX static library libreactive_planner.a
+[59.732s] [ 14%] Built target reactive_planner
+[59.956s] [ 19%] Building CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o
+[59.974s] [ 23%] Building CXX object CMakeFiles/navigation_semantic.dir/src/navigation_semantic.cpp.o
+[139.270s] [ 33%] Linking CXX executable navigation_semantic
+[139.270s] [ 33%] Linking CXX executable navigation
+[145.881s] [ 33%] Built target navigation
+[145.889s] [ 33%] Built target navigation_semantic
+[146.029s] [ 38%] Building CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o
+[156.125s] [ 42%] Building CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o
+[167.949s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp: In member function ‘void NavigationHumansNode::human_update(const object_pose_interface_msgs::msg::KeypointDetections3D_<std::allocator<void> >::ConstPtr&)’:
+[167.949s] /home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:298:60: error: no matching function for call to ‘tf2_ros::Buffer::lookupTransform(std::string&, const tf2::TimePoint&, std::string&, const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type&, std::string&, rclcpp::Duration)’
+[167.949s]   298 |                             t = tf_buffer_->lookupTransform(
+[167.950s]       |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[167.950s]   299 |                                             world_frame_id_, tf2::TimePointZero,
+[167.950s]       |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[167.950s]   300 |                                             camera_optical_frame_id_, human_data->header.stamp,
+[167.950s]       |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[167.950s]   301 |                                             world_frame_id_, rclcpp::Duration(std::chrono::nanoseconds(1000000000)));
+[167.950s]       |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[167.951s] In file included from /opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39,
+[167.951s]                  from /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42,
+[167.951s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40,
+[167.952s]                  from /home/neha/ros2_ws/src/semnav_migration/src/navigation_humans.cpp:25:
+[167.952s] /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:156:3: note: candidate: ‘virtual geometry_msgs::msg::TransformStamped tf2::BufferCore::lookupTransform(const std::string&, const tf2::TimePoint&, const std::string&, const tf2::TimePoint&, const std::string&) const’
+[167.953s]   156 |   lookupTransform(
+[167.955s]       |   ^~~~~~~~~~~~~~~
+[167.955s] /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:156:3: note:   candidate expects 5 arguments, 6 provided
+[167.956s] /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:138:3: note: candidate: ‘virtual geometry_msgs::msg::TransformStamped tf2::BufferCore::lookupTransform(const std::string&, const std::string&, const tf2::TimePoint&) const’
+[167.956s]   138 |   lookupTransform(
+[167.956s]       |   ^~~~~~~~~~~~~~~
+[167.956s] /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:138:3: note:   candidate expects 3 arguments, 6 provided
+[167.956s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:127:3: note: candidate: ‘virtual geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const std::string&, const tf2::TimePoint&, tf2::Duration) const’
+[167.956s]   127 |   lookupTransform(
+[167.957s]       |   ^~~~~~~~~~~~~~~
+[167.957s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:127:3: note:   candidate expects 4 arguments, 6 provided
+[167.957s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:137:3: note: candidate: ‘geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const std::string&, const rclcpp::Time&, rclcpp::Duration) const’
+[167.957s]   137 |   lookupTransform(
+[167.957s]       |   ^~~~~~~~~~~~~~~
+[167.957s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:137:3: note:   candidate expects 4 arguments, 6 provided
+[167.957s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:159:3: note: candidate: ‘virtual geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const tf2::TimePoint&, const std::string&, const tf2::TimePoint&, const std::string&, tf2::Duration) const’
+[167.958s]   159 |   lookupTransform(
+[167.958s]       |   ^~~~~~~~~~~~~~~
+[167.958s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:161:62: note:   no known conversion for argument 4 from ‘const std_msgs::msg::Header_<std::allocator<void> >::_stamp_type’ {aka ‘const builtin_interfaces::msg::Time_<std::allocator<void> >’} to ‘const tf2::TimePoint&’ {aka ‘const std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1, 1000000000> > >&’}
+[167.958s]   161 |     const std::string & source_frame, const tf2::TimePoint & source_time,
+[167.960s]       |                                       ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[167.960s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:171:3: note: candidate: ‘geometry_msgs::msg::TransformStamped tf2_ros::Buffer::lookupTransform(const std::string&, const rclcpp::Time&, const std::string&, const rclcpp::Time&, const std::string&, rclcpp::Duration) const’
+[167.961s]   171 |   lookupTransform(
+[167.961s]       |   ^~~~~~~~~~~~~~~
+[167.961s] /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:172:60: note:   no known conversion for argument 2 from ‘const tf2::TimePoint’ {aka ‘const std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long int, std::ratio<1, 1000000000> > >’} to ‘const rclcpp::Time&’
+[167.961s]   172 |     const std::string & target_frame, const rclcpp::Time & target_time,
+[167.961s]       |                                       ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[179.722s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:44:36: error: ‘ros’ has not been declared
+[179.722s]    44 |                 HumanFollowingNode(ros::NodeHandle* nodehandle) : nh_(*nodehandle) {
+[179.722s]       |                                    ^~~
+[179.723s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:44:51: error: expected ‘)’ before ‘*’ token
+[179.723s]    44 |                 HumanFollowingNode(ros::NodeHandle* nodehandle) : nh_(*nodehandle) {
+[179.723s]       |                                   ~               ^
+[179.723s]       |                                                   )
+[179.725s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:69: error: ‘KeypointDetections3D’ in namespace ‘object_pose_interface_msgs’ does not name a type
+[179.726s]   242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {
+[179.726s]       |                                                                     ^~~~~~~~~~~~~~~~~~~~
+[179.726s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected unqualified-id before ‘&’ token
+[179.726s]   242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {
+[179.726s]       |                                                                                                   ^
+[179.726s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected ‘)’ before ‘&’ token
+[179.727s]   242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {
+[179.727s]       |                                  ~                                                                ^
+[179.727s]       |                                                                                                   )
+[179.727s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:99: error: expected ‘;’ at end of member declaration
+[179.729s]   242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {
+[179.729s]       |                                                                                                   ^
+[179.730s]       |                                                                                                    ;
+[179.747s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:242:101: error: ‘human_data’ does not name a type
+[179.748s]   242 |                 void human_update(const object_pose_interface_msgs::KeypointDetections3D::ConstPtr& human_data) {
+[179.748s]       |                                                                                                     ^~~~~~~~~~
+[179.749s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:75: error: ‘SemanticMapObjectArray’ in namespace ‘object_pose_interface_msgs’ does not name a type
+[179.749s]   288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[179.749s]       |                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+[179.749s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected unqualified-id before ‘&’ token
+[179.749s]   288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[179.750s]       |                                                                                                           ^
+[179.750s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected ‘)’ before ‘&’ token
+[179.750s]   288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[179.750s]       |                                        ~                                                                  ^
+[179.750s]       |                                                                                                           )
+[179.750s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:107: error: expected ‘;’ at end of member declaration
+[179.750s]   288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[179.751s]       |                                                                                                           ^
+[179.751s]       |                                                                                                            ;
+[179.814s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:288:109: error: ‘semantic_map_data’ does not name a type
+[179.814s]   288 |                 void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+[179.814s]       |                                                                                                             ^~~~~~~~~~~~~~~~~
+[179.814s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:58: error: ‘LaserScan’ in namespace ‘sensor_msgs’ does not name a type
+[179.814s]   375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[179.814s]       |                                                          ^~~~~~~~~
+[179.815s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected unqualified-id before ‘&’ token
+[179.815s]   375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[179.815s]       |                                                                             ^
+[179.815s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected ‘)’ before ‘&’ token
+[179.818s]   375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[179.818s]       |                                      ~                                      ^
+[179.818s]       |                                                                             )
+[179.818s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:77: error: expected ‘;’ at end of member declaration
+[179.818s]   375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[179.818s]       |                                                                             ^
+[179.819s]       |                                                                              ;
+[179.832s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:375:79: error: ‘lidar_data’ does not name a type
+[179.833s]   375 |                 void control_callback(const sensor_msgs::LaserScan::ConstPtr& lidar_data, const nav_msgs::Odometry::ConstPtr& robot_data) {
+[179.833s]       |                                                                               ^~~~~~~~~~
+[179.837s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:643:17: error: ‘ros’ does not name a type
+[179.837s]   643 |                 ros::NodeHandle nh_;
+[179.837s]       |                 ^~~
+[179.843s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:662:17: error: ‘ros’ does not name a type
+[179.843s]   662 |                 ros::Publisher pub_behaviorID_;
+[179.844s]       |                 ^~~
+[179.852s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:663:17: error: ‘ros’ does not name a type
+[179.853s]   663 |                 ros::Publisher pub_behaviorMode_;
+[179.853s]       |                 ^~~
+[179.856s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:664:17: error: ‘ros’ does not name a type
+[179.856s]   664 |                 ros::Publisher pub_twist_;
+[179.857s]       |                 ^~~
+[179.863s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:666:17: error: ‘ros’ does not name a type
+[179.863s]   666 |                 ros::Publisher pub_semantic_map_;
+[179.863s]       |                 ^~~
+[179.871s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:695:17: error: ‘ros’ does not name a type
+[179.872s]   695 |                 ros::Time Goal_camera_stamp_;
+[179.872s]       |                 ^~~
+[179.885s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:715:17: error: ‘tf’ does not name a type; did you mean ‘tm’?
+[179.885s]   715 |                 tf::TransformListener listener_;
+[179.886s]       |                 ^~
+[179.886s]       |                 tm
+[179.890s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function ‘void HumanFollowingNode::publish_twist(double, double)’:
+[179.890s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:166:40: error: ‘Twist’ is not a member of ‘geometry_msgs’; did you mean ‘geometry_msgs::msg::Twist’?
+[179.890s]   166 |                         geometry_msgs::Twist commandTwist;
+[179.890s]       |                                        ^~~~~
+[179.894s] In file included from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:25,
+[179.895s]                  from /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:7,
+[179.895s]                  from /opt/ros/jazzy/include/tf2/tf2/buffer_core.h:49,
+[179.895s]                  from /opt/ros/jazzy/include/tf2_ros/tf2_ros/async_buffer_interface.h:39,
+[179.895s]                  from /opt/ros/jazzy/include/tf2_ros/tf2_ros/buffer.h:42,
+[179.895s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:40,
+[179.895s]                  from /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:25:
+[179.895s] /opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:137:7: note: ‘geometry_msgs::msg::Twist’ declared here
+[179.895s]   137 | using Twist =
+[179.896s]       |       ^~~~~
+[179.969s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:167:25: error: ‘commandTwist’ was not declared in this scope
+[179.969s]   167 |                         commandTwist.linear.x = LinearCmd;
+[179.970s]       |                         ^~~~~~~~~~~~
+[180.024s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:169:25: error: ‘pub_twist_’ was not declared in this scope; did you mean ‘publish_twist’?
+[180.025s]   169 |                         pub_twist_.publish(commandTwist);
+[180.025s]       |                         ^~~~~~~~~~
+[180.025s]       |                         publish_twist
+[180.029s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function ‘void HumanFollowingNode::publish_behavior_id(uint16_t)’:
+[180.030s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:174:35: error: ‘UInt32’ is not a member of ‘std_msgs’; did you mean ‘example_interfaces::msg::UInt32’?
+[180.030s]   174 |                         std_msgs::UInt32 commandId;
+[180.030s]       |                                   ^~~~~~
+[180.030s] In file included from /opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/u_int32.hpp:7,
+[180.030s]                  from /home/neha/ros2_ws/src/semnav_migration/include/reactive_planner_lib.h:52:
+[180.030s] /opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7: note: ‘example_interfaces::msg::UInt32’ declared here
+[180.030s]   125 | using UInt32 =
+[180.031s]       |       ^~~~~~
+[180.086s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:175:25: error: ‘commandId’ was not declared in this scope
+[180.086s]   175 |                         commandId.data = BehaviorIdCmd;
+[180.086s]       |                         ^~~~~~~~~
+[180.196s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:176:25: error: ‘pub_behaviorID_’ was not declared in this scope; did you mean ‘pub_behaviorID_topic_’?
+[180.196s]   176 |                         pub_behaviorID_.publish(commandId);
+[180.197s]       |                         ^~~~~~~~~~~~~~~
+[180.197s]       |                         pub_behaviorID_topic_
+[180.204s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In member function ‘void HumanFollowingNode::publish_behavior_mode(uint16_t)’:
+[180.205s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:181:35: error: ‘UInt32’ is not a member of ‘std_msgs’; did you mean ‘example_interfaces::msg::UInt32’?
+[180.205s]   181 |                         std_msgs::UInt32 commandMode;
+[180.205s]       |                                   ^~~~~~
+[180.205s] /opt/ros/jazzy/include/example_interfaces/example_interfaces/msg/detail/u_int32__struct.hpp:125:7: note: ‘example_interfaces::msg::UInt32’ declared here
+[180.205s]   125 | using UInt32 =
+[180.205s]       |       ^~~~~~
+[180.286s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:182:25: error: ‘commandMode’ was not declared in this scope
+[180.286s]   182 |                         commandMode.data = BehaviorModeCmd;
+[180.286s]       |                         ^~~~~~~~~~~
+[180.412s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:183:25: error: ‘pub_behaviorMode_’ was not declared in this scope; did you mean ‘pub_behaviorMode_topic_’?
+[180.412s]   183 |                         pub_behaviorMode_.publish(commandMode);
+[180.412s]       |                         ^~~~~~~~~~~~~~~~~
+[180.412s]       |                         pub_behaviorMode_topic_
+[180.469s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp: In function ‘int main(int, char**)’:
+[180.469s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:722:9: error: ‘ros’ has not been declared
+[180.470s]   722 |         ros::init(argc, argv, "human_following");
+[180.470s]       |         ^~~
+[180.470s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:725:9: error: ‘ros’ has not been declared
+[180.470s]   725 |         ros::NodeHandle nh("~");
+[180.471s]       |         ^~~
+[180.494s] /home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:728:48: error: ‘nh’ was not declared in this scope
+[180.495s]   728 |         HumanFollowingNode humanFollowingNode(&nh);
+[180.495s]       |                                                ^~
+[185.285s] gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1
+[185.286s] gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2
+[185.286s] gmake[1]: *** Waiting for unfinished jobs....
+[190.585s] gmake[2]: *** [CMakeFiles/navigation_humans.dir/build.make:76: CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o] Error 1
+[190.586s] gmake[1]: *** [CMakeFiles/Makefile2:233: CMakeFiles/navigation_humans.dir/all] Error 2
+[190.586s] gmake: *** [Makefile:146: all] Error 2
+[190.589s] Invoked command in '/home/neha/ros2_ws/src/semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/semnav_migration/build/semnav -- -j2 -l2

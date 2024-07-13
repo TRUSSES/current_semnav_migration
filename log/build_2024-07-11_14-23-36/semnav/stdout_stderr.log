@@ -1,0 +1,27 @@
+[ 14%] Built target reactive_planner
+[ 23%] Built target navigation
+[ 33%] Built target navigation_semantic
+[ 38%] [32mBuilding CXX object CMakeFiles/navigation_humans.dir/src/navigation_humans.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/human_following.dir/src/human_following.cpp.o[0m
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:[m[K In member function ‘[01m[Kvoid HumanFollowingNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:466:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::TransformListener>[m[K’ has no member named ‘[01m[KwaitForTransform[m[K’
+  466 |                                 listener_.[01;31m[KwaitForTransform[m[K(world_frame_id_, ros::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, ros::Duration(1.0));
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:466:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  466 |                                 listener_.waitForTransform(world_frame_id_, [01;31m[Kros[m[K::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, ros::Duration(1.0));
+      |                                                                             [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:466:156:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  466 |                                 listener_.waitForTransform(world_frame_id_, ros::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, [01;31m[Kros[m[K::Duration(1.0));
+      |                                                                                                                                                            [01;31m[K^~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:467:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::TransformListener>[m[K’ has no member named ‘[01m[KtransformPoint[m[K’
+  467 |                                 listener_.[01;31m[KtransformPoint[m[K(world_frame_id_, ros::Time(0), localGoalCamera, world_frame_id_, localGoalMap);
+      |                                           [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/semnav_migration/src/human_following.cpp:467:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  467 |                                 listener_.transformPoint(world_frame_id_, [01;31m[Kros[m[K::Time(0), localGoalCamera, world_frame_id_, localGoalMap);
+      |                                                                           [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/human_following.dir/build.make:76: CMakeFiles/human_following.dir/src/human_following.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/human_following.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 47%] [32m[1mLinking CXX executable navigation_humans[0m
+[ 47%] Built target navigation_humans
+gmake: *** [Makefile:146: all] Error 2
