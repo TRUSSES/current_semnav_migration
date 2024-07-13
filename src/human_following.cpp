@@ -23,7 +23,7 @@
 // SOFTWARE.
 
 #include <reactive_planner_lib.h>
-#include <object_pose_interface_msgs/msg/semantic_map_object_array.hpp>
+#include <object_pose_interface_msgs/msg/semantic_map_object_array.hpp> 
 
 #define BEHAVIOR_SIT 0
 #define BEHAVIOR_STAND 1
