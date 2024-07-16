@@ -1,0 +1,151 @@
+[0.000000] (-) TimerEvent: {}
+[0.000218] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.001159] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.021485] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.028343] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.032274] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/home/neha/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2002', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/install:/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/current_semnav_migration/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1976,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1976', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4fd9789f_ac4a_4cb4_82ed_6a1148c02857', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.MQJZQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.95', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.100083] (-) TimerEvent: {}
+[0.200465] (-) TimerEvent: {}
+[0.207077] (semnav) StdoutLine: {'line': b'[ 14%] Built target reactive_planner\n'}
+[0.301035] (-) TimerEvent: {}
+[0.312779] (semnav) StdoutLine: {'line': b'[ 23%] Built target navigation\n'}
+[0.320934] (semnav) StdoutLine: {'line': b'[ 33%] Built target navigation_semantic\n'}
+[0.401151] (-) TimerEvent: {}
+[0.417114] (semnav) StdoutLine: {'line': b'[ 42%] Built target navigation_humans\n'}
+[0.438723] (semnav) StdoutLine: {'line': b'[ 52%] Built target human_following\n'}
+[0.501273] (-) TimerEvent: {}
+[0.553202] (semnav) StdoutLine: {'line': b'[ 61%] Built target human_following_signal\n'}
+[0.586710] (semnav) StdoutLine: {'line': b'[ 71%] Built target human_following_fallen\n'}
+[0.603034] (-) TimerEvent: {}
+[0.605104] (semnav) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/map_debug.dir/src/map_debug.cpp.o\x1b[0m\n'}
+[0.632532] (semnav) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/fake_lidar_publisher.dir/src/fake_lidar_publisher.cpp.o\x1b[0m\n'}
+[0.703150] (-) TimerEvent: {}
+[0.806181] (-) TimerEvent: {}
+[0.906523] (-) TimerEvent: {}
+[1.006885] (-) TimerEvent: {}
+[1.107232] (-) TimerEvent: {}
+[1.208158] (-) TimerEvent: {}
+[1.310242] (-) TimerEvent: {}
+[1.410627] (-) TimerEvent: {}
+[1.511015] (-) TimerEvent: {}
+[1.611356] (-) TimerEvent: {}
+[1.711733] (-) TimerEvent: {}
+[1.814026] (-) TimerEvent: {}
+[1.914376] (-) TimerEvent: {}
+[2.014741] (-) TimerEvent: {}
+[2.115108] (-) TimerEvent: {}
+[2.215469] (-) TimerEvent: {}
+[2.315824] (-) TimerEvent: {}
+[2.416178] (-) TimerEvent: {}
+[2.517024] (-) TimerEvent: {}
+[2.619023] (-) TimerEvent: {}
+[2.719374] (-) TimerEvent: {}
+[2.819726] (-) TimerEvent: {}
+[2.920040] (-) TimerEvent: {}
+[3.020434] (-) TimerEvent: {}
+[3.120812] (-) TimerEvent: {}
+[3.222186] (-) TimerEvent: {}
+[3.322569] (-) TimerEvent: {}
+[3.422984] (-) TimerEvent: {}
+[3.524193] (-) TimerEvent: {}
+[3.624580] (-) TimerEvent: {}
+[3.727217] (-) TimerEvent: {}
+[3.827609] (-) TimerEvent: {}
+[3.928011] (-) TimerEvent: {}
+[4.028408] (-) TimerEvent: {}
+[4.128799] (-) TimerEvent: {}
+[4.229203] (-) TimerEvent: {}
+[4.332031] (-) TimerEvent: {}
+[4.432419] (-) TimerEvent: {}
+[4.532805] (-) TimerEvent: {}
+[4.633192] (-) TimerEvent: {}
+[4.733540] (-) TimerEvent: {}
+[4.833902] (-) TimerEvent: {}
+[4.934278] (-) TimerEvent: {}
+[5.034638] (-) TimerEvent: {}
+[5.137029] (-) TimerEvent: {}
+[5.237370] (-) TimerEvent: {}
+[5.337702] (-) TimerEvent: {}
+[5.438074] (-) TimerEvent: {}
+[5.538434] (-) TimerEvent: {}
+[5.638811] (-) TimerEvent: {}
+[5.739196] (-) TimerEvent: {}
+[5.842023] (-) TimerEvent: {}
+[5.942364] (-) TimerEvent: {}
+[6.042709] (-) TimerEvent: {}
+[6.143090] (-) TimerEvent: {}
+[6.243476] (-) TimerEvent: {}
+[6.312133] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KMapDebugNode::\x1b[01;32m\x1b[KMapDebugNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.312482] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:93:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.312668] (semnav) StderrLine: {'line': b'   18 |     rclcpp::QoS qos = rclcpp::QoS::QoS(rclcpp::QoSInitialization::from_rmw(rmw_qos_profile_t\x1b[01;31m\x1b[K)\x1b[m\x1b[K, rmw_qos_profile_t);\n'}
+[6.312822] (semnav) StderrLine: {'line': b'      |                                                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.315165] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:113:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.315447] (semnav) StderrLine: {'line': b'   18 |     rclcpp::QoS qos = rclcpp::QoS::QoS(rclcpp::QoSInitialization::from_rmw(rmw_qos_profile_t), rmw_qos_profile_t\x1b[01;31m\x1b[K)\x1b[m\x1b[K;\n'}
+[6.315608] (semnav) StderrLine: {'line': b'      |                                                                                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.315746] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:113:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot call constructor \xe2\x80\x98\x1b[01m\x1b[Krclcpp::QoS::QoS\x1b[m\x1b[K\xe2\x80\x99 directly [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.315892] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:113:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kfor a function-style cast, remove the redundant \xe2\x80\x98\x1b[01m\x1b[K::QoS\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.343606] (-) TimerEvent: {}
+[6.443980] (-) TimerEvent: {}
+[6.544339] (-) TimerEvent: {}
+[6.646027] (-) TimerEvent: {}
+[6.746392] (-) TimerEvent: {}
+[6.846774] (-) TimerEvent: {}
+[6.947147] (-) TimerEvent: {}
+[7.048028] (-) TimerEvent: {}
+[7.148385] (-) TimerEvent: {}
+[7.250061] (-) TimerEvent: {}
+[7.350416] (-) TimerEvent: {}
+[7.450775] (-) TimerEvent: {}
+[7.551153] (-) TimerEvent: {}
+[7.653030] (-) TimerEvent: {}
+[7.753388] (-) TimerEvent: {}
+[7.853740] (-) TimerEvent: {}
+[7.954099] (-) TimerEvent: {}
+[8.054444] (-) TimerEvent: {}
+[8.156028] (-) TimerEvent: {}
+[8.256384] (-) TimerEvent: {}
+[8.356771] (-) TimerEvent: {}
+[8.457136] (-) TimerEvent: {}
+[8.559023] (-) TimerEvent: {}
+[8.659369] (-) TimerEvent: {}
+[8.759717] (-) TimerEvent: {}
+[8.860102] (-) TimerEvent: {}
+[8.891603] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/map_debug.dir/build.make:76: CMakeFiles/map_debug.dir/src/map_debug.cpp.o] Error 1\n'}
+[8.891879] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:337: CMakeFiles/map_debug.dir/all] Error 2\n'}
+[8.892051] (semnav) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[8.960277] (-) TimerEvent: {}
+[9.062895] (-) TimerEvent: {}
+[9.163313] (-) TimerEvent: {}
+[9.266155] (-) TimerEvent: {}
+[9.366556] (-) TimerEvent: {}
+[9.467001] (-) TimerEvent: {}
+[9.567376] (-) TimerEvent: {}
+[9.667758] (-) TimerEvent: {}
+[9.768074] (-) TimerEvent: {}
+[9.868494] (-) TimerEvent: {}
+[9.968841] (-) TimerEvent: {}
+[10.069262] (-) TimerEvent: {}
+[10.169603] (-) TimerEvent: {}
+[10.270006] (-) TimerEvent: {}
+[10.370397] (-) TimerEvent: {}
+[10.472179] (-) TimerEvent: {}
+[10.572582] (-) TimerEvent: {}
+[10.672995] (-) TimerEvent: {}
+[10.773419] (-) TimerEvent: {}
+[10.873825] (-) TimerEvent: {}
+[10.974165] (-) TimerEvent: {}
+[11.074541] (-) TimerEvent: {}
+[11.117162] (semnav) StdoutLine: {'line': b'[ 85%] \x1b[32m\x1b[1mLinking CXX executable fake_lidar_publisher\x1b[0m\n'}
+[11.174722] (-) TimerEvent: {}
+[11.275076] (-) TimerEvent: {}
+[11.375482] (-) TimerEvent: {}
+[11.475868] (-) TimerEvent: {}
+[11.576252] (-) TimerEvent: {}
+[11.676668] (-) TimerEvent: {}
+[11.777048] (-) TimerEvent: {}
+[11.812883] (semnav) StdoutLine: {'line': b'[ 85%] Built target fake_lidar_publisher\n'}
+[11.815011] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[11.818144] (semnav) CommandEnded: {'returncode': 2}
+[11.877152] (-) TimerEvent: {}
+[11.927095] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[11.937907] (-) EventReactorShutdown: {}

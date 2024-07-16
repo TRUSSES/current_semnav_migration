@@ -306,10 +306,11 @@ class NavigationHumansNode : public rclcpp::Node {
                                             world_frame_id_, tf2::TimePointZero, 
                                             camera_optical_frame_id_, time_point, 
                                             world_frame_id_, tf2::Duration(std::chrono::seconds(1))); 
+                            tf2::doTransform(pointCamera, pointMap, t);
                             /*
-                            tf_buffer_->transform<geometry_msgs::msg::PointStamped, geometry_msgs::msg::PointStamped>(
+                            tf_buffer_->transform<geometry_msgs::msg::PointStamped>(
                                             pointCamera, pointMap,
-                                            "world_frame_id_", rclcpp::Time(0),
+                                            "world_frame_id_", tf2::TimePointZero, 
                                             "world_frame_id_", tf2::Duration(std::chrono::seconds(1))); 
                             */
 						} catch (tf2::TransformException &ex) {

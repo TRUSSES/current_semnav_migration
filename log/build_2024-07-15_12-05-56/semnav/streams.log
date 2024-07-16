@@ -1,0 +1,31 @@
+[0.033s] Invoking command in '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/current_semnav_migration/build/semnav -- -j2 -l2
+[0.222s] [ 14%] Built target reactive_planner
+[0.332s] [ 33%] Built target navigation_semantic
+[0.332s] [ 33%] Built target navigation
+[0.440s] [ 42%] Built target human_following
+[0.440s] [ 52%] Built target navigation_humans
+[0.562s] [ 57%] [32mBuilding CXX object CMakeFiles/human_following_signal.dir/src/human_following_signal.cpp.o[0m
+[0.565s] [ 61%] [32mBuilding CXX object CMakeFiles/human_following_fallen.dir/src/human_following_fallen.cpp.o[0m
+[87.257s] [ 66%] [32m[1mLinking CXX executable human_following_signal[0m
+[91.409s] [ 71%] [32m[1mLinking CXX executable human_following_fallen[0m
+[92.617s] [ 71%] Built target human_following_signal
+[96.360s] [ 71%] Built target human_following_fallen
+[96.397s] [ 76%] [32mBuilding CXX object CMakeFiles/map_debug.dir/src/map_debug.cpp.o[0m
+[101.509s] [01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:[m[K In constructor ‘[01m[KMapDebugNode::[01;32m[KMapDebugNode[m[K()[m[K’:
+[101.509s] [01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::QoS::__ct [m[K’ names the constructor, not the type
+[101.509s]    18 |     [01;31m[Krclcpp[m[K::QoS::QoS qos = rclcpp::QoS::QoS(rclcpp::QoSInitialization::from_rmw(rmw_qos_profile_t), rmw_qos_profile_t);
+[101.509s]       |     [01;31m[K^~~~~~[m[K
+[101.509s] [01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:22:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kqos[m[K’
+[101.509s]    18 |     rclcpp::QoS::QoS [01;31m[Kqos[m[K = rclcpp::QoS::QoS(rclcpp::QoSInitialization::from_rmw(rmw_qos_profile_t), rmw_qos_profile_t);
+[101.510s]       |                      [01;31m[K^~~[m[K
+[101.510s] [01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:18:119:[m[K [01;31m[Kerror: [m[Kstatement cannot resolve address of overloaded function
+[101.510s]    18 |     rclcpp::QoS::QoS qos = rclcpp::QoS::QoS(rclcpp::QoSInitialization::from_rmw(rmw_qos_profile_t), rmw_qos_profile_t)[01;31m[K;[m[K
+[101.510s]       |                                                                                                                       [01;31m[K^[m[K
+[101.519s] [01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/map_debug.cpp:20:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kqos[m[K’ was not declared in this scope; did you mean ‘[01m[Kcos[m[K’?
+[101.519s]    20 |         pub_semantic_topic_, [01;31m[Kqos[m[K);
+[101.519s]       |                              [01;31m[K^~~[m[K
+[101.519s]       |                              [32m[Kcos[m[K
+[103.312s] gmake[2]: *** [CMakeFiles/map_debug.dir/build.make:76: CMakeFiles/map_debug.dir/src/map_debug.cpp.o] Error 1
+[103.312s] gmake[1]: *** [CMakeFiles/Makefile2:337: CMakeFiles/map_debug.dir/all] Error 2
+[103.312s] gmake: *** [Makefile:146: all] Error 2
+[103.317s] Invoked command in '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/current_semnav_migration/build/semnav -- -j2 -l2

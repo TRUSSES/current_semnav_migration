@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neha/ros2_ws/src/semnav_migration
+CMAKE_SOURCE_DIR = /home/neha/ros2_ws/src/current_semnav_migration
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neha/ros2_ws/src/semnav_migration/build/semnav
+CMAKE_BINARY_DIR = /home/neha/ros2_ws/src/current_semnav_migration/build/semnav
 
 # Utility rule file for semnav_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/semnav_uninstall.dir/compiler_depend.make
 include CMakeFiles/semnav_uninstall.dir/progress.make
 
 CMakeFiles/semnav_uninstall:
-	/usr/bin/cmake -P /home/neha/ros2_ws/src/semnav_migration/build/semnav/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/neha/ros2_ws/src/current_semnav_migration/build/semnav/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 semnav_uninstall: CMakeFiles/semnav_uninstall
 semnav_uninstall: CMakeFiles/semnav_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/semnav_uninstall.dir/clean:
 .PHONY : CMakeFiles/semnav_uninstall.dir/clean
 
 CMakeFiles/semnav_uninstall.dir/depend:
-	cd /home/neha/ros2_ws/src/semnav_migration/build/semnav && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neha/ros2_ws/src/semnav_migration /home/neha/ros2_ws/src/semnav_migration /home/neha/ros2_ws/src/semnav_migration/build/semnav /home/neha/ros2_ws/src/semnav_migration/build/semnav /home/neha/ros2_ws/src/semnav_migration/build/semnav/CMakeFiles/semnav_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/neha/ros2_ws/src/current_semnav_migration/build/semnav && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neha/ros2_ws/src/current_semnav_migration /home/neha/ros2_ws/src/current_semnav_migration /home/neha/ros2_ws/src/current_semnav_migration/build/semnav /home/neha/ros2_ws/src/current_semnav_migration/build/semnav /home/neha/ros2_ws/src/current_semnav_migration/build/semnav/CMakeFiles/semnav_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/semnav_uninstall.dir/depend
 

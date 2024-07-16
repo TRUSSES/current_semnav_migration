@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 # Add message files
 set(msg_files
@@ -32,6 +33,7 @@ ament_export_dependencies(
   rosidl_default_runtime
   std_msgs
   geometry_msgs
+  tf2_geometry_msgs
 )
 
 

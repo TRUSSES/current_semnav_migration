@@ -1,0 +1,175 @@
+[0.000000] (-) TimerEvent: {}
+[0.002090] (semnav) JobQueued: {'identifier': 'semnav', 'dependencies': OrderedDict()}
+[0.002228] (semnav) JobStarted: {'identifier': 'semnav'}
+[0.022315] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'cmake'}
+[0.029478] (semnav) JobProgress: {'identifier': 'semnav', 'progress': 'build'}
+[0.033601] (semnav) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav', '--', '-j2', '-l2'], 'cwd': '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'neha', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/neha', 'OLDPWD': '/opt/ros/jazzy/include/tf2_geometry_msgs/tf2_geometry_msgs', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2002', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/neha/ros2_ws/src/install:/home/neha/ros2_ws/src/semnav_migration/install:/home/neha/ros2_ws/src/current_semnav_migration/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'neha', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'neha', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/neha-Inspiron-3580:@/tmp/.ICE-unix/1976,unix/neha-Inspiron-3580:/tmp/.ICE-unix/1976', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4fd9789f_ac4a_4cb4_82ed_6a1148c02857', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.MQJZQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.95', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/neha/ros2_ws/src/install/object_pose_interface_msgs/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/neha/ros2_ws/src/install/test_pkg:/home/neha/ros2_ws/src/install/object_pose_interface_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.089786] (semnav) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.0 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099953] (-) TimerEvent: {}
+[0.200333] (-) TimerEvent: {}
+[0.300700] (-) TimerEvent: {}
+[0.401099] (-) TimerEvent: {}
+[0.501496] (-) TimerEvent: {}
+[0.530532] (semnav) StdoutLine: {'line': b'-- Found rclcpp: 28.1.2 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.583067] (semnav) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.2 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.601666] (-) TimerEvent: {}
+[0.605978] (semnav) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.2 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.631015] (semnav) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.667423] (semnav) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.701794] (-) TimerEvent: {}
+[0.803791] (-) TimerEvent: {}
+[0.844153] (semnav) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.848929] (semnav) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.0 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.912771] (-) TimerEvent: {}
+[1.013420] (semnav) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.013706] (-) TimerEvent: {}
+[1.115055] (-) TimerEvent: {}
+[1.164961] (semnav) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[1.215174] (-) TimerEvent: {}
+[1.304342] (semnav) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.5 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[1.316687] (-) TimerEvent: {}
+[1.367242] (semnav) StdoutLine: {'line': b'-- Found tf2: 0.36.4 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[1.379135] (semnav) StdoutLine: {'line': b'-- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)\n'}
+[1.416807] (-) TimerEvent: {}
+[1.509024] (semnav) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.4 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[1.515946] (semnav) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[1.516912] (-) TimerEvent: {}
+[1.517658] (semnav) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.617030] (-) TimerEvent: {}
+[1.718144] (-) TimerEvent: {}
+[1.762019] (semnav) StdoutLine: {'line': b'-- Found object_pose_interface_msgs: 0.0.0 (/home/neha/ros2_ws/src/install/object_pose_interface_msgs/share/object_pose_interface_msgs/cmake)\n'}
+[1.819322] (-) TimerEvent: {}
+[1.860979] (semnav) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system \n'}
+[1.876496] (semnav) StdoutLine: {'line': b'-- Using header-only CGAL\n'}
+[1.876785] (semnav) StdoutLine: {'line': b'-- Targeting Unix Makefiles\n'}
+[1.876967] (semnav) StdoutLine: {'line': b'-- Using /usr/bin/c++ compiler.\n'}
+[1.887934] (semnav) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found suitable version "1.83.0", minimum required is "1.66")  \n'}
+[1.888227] (semnav) StdoutLine: {'line': b'-- Boost include dirs: /usr/include\n'}
+[1.888382] (semnav) StdoutLine: {'line': b'-- Boost libraries:    \n'}
+[1.892667] (semnav) StdoutLine: {'line': b'-- Using gcc version 4 or later. Adding -frounding-math\n'}
+[1.919440] (-) TimerEvent: {}
+[2.021089] (-) TimerEvent: {}
+[2.123935] (-) TimerEvent: {}
+[2.224468] (-) TimerEvent: {}
+[2.325432] (-) TimerEvent: {}
+[2.425971] (-) TimerEvent: {}
+[2.527165] (-) TimerEvent: {}
+[2.629071] (-) TimerEvent: {}
+[2.731602] (-) TimerEvent: {}
+[2.832933] (-) TimerEvent: {}
+[2.933488] (-) TimerEvent: {}
+[3.033947] (-) TimerEvent: {}
+[3.135072] (-) TimerEvent: {}
+[3.236271] (-) TimerEvent: {}
+[3.336660] (-) TimerEvent: {}
+[3.437959] (-) TimerEvent: {}
+[3.538427] (-) TimerEvent: {}
+[3.640067] (-) TimerEvent: {}
+[3.711557] (semnav) StdoutLine: {'line': b'-- Configuring done (3.6s)\n'}
+[3.712046] (semnav) StderrLine: {'line': b'\x1b[33mCMake Warning at /usr/lib/x86_64-linux-gnu/cmake/CGAL/CGAL_enable_end_of_configuration_hook.cmake:93 (message):\n'}
+[3.712283] (semnav) StderrLine: {'line': b'  =======================================================================\n'}
+[3.712427] (semnav) StderrLine: {'line': b'\n'}
+[3.712560] (semnav) StderrLine: {'line': b'  CGAL performance notice:\n'}
+[3.712692] (semnav) StderrLine: {'line': b'\n'}
+[3.712820] (semnav) StderrLine: {'line': b'  The variable CMAKE_BUILD_TYPE is set to "".  For performance reasons, you\n'}
+[3.712974] (semnav) StderrLine: {'line': b'  should set CMAKE_BUILD_TYPE to "Release".\n'}
+[3.713105] (semnav) StderrLine: {'line': b'\n'}
+[3.713263] (semnav) StderrLine: {'line': b'  Set CGAL_DO_NOT_WARN_ABOUT_CMAKE_BUILD_TYPE to TRUE if you want to disable\n'}
+[3.713390] (semnav) StderrLine: {'line': b'  this warning.\n'}
+[3.716237] (semnav) StderrLine: {'line': b'\n'}
+[3.716436] (semnav) StderrLine: {'line': b'  =======================================================================\n'}
+[3.716578] (semnav) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[3.716710] (semnav) StderrLine: {'line': b'  /usr/lib/x86_64-linux-gnu/cmake/CGAL/CGAL_enable_end_of_configuration_hook.cmake:163 (CGAL_hook_check_CMAKE_BUILD_TYPE)\n'}
+[3.716841] (semnav) StderrLine: {'line': b'  CMakeLists.txt:DEFERRED\n'}
+[3.721414] (semnav) StderrLine: {'line': b'\n'}
+[3.721574] (semnav) StderrLine: {'line': b'\x1b[0m\n'}
+[3.740167] (-) TimerEvent: {}
+[3.840920] (-) TimerEvent: {}
+[3.941558] (-) TimerEvent: {}
+[4.042815] (-) TimerEvent: {}
+[4.143211] (-) TimerEvent: {}
+[4.245015] (-) TimerEvent: {}
+[4.345369] (-) TimerEvent: {}
+[4.445713] (-) TimerEvent: {}
+[4.547564] (-) TimerEvent: {}
+[4.648126] (-) TimerEvent: {}
+[4.750053] (-) TimerEvent: {}
+[4.850401] (-) TimerEvent: {}
+[4.950763] (-) TimerEvent: {}
+[5.051167] (-) TimerEvent: {}
+[5.151510] (-) TimerEvent: {}
+[5.253185] (-) TimerEvent: {}
+[5.353518] (-) TimerEvent: {}
+[5.455923] (-) TimerEvent: {}
+[5.556260] (-) TimerEvent: {}
+[5.656607] (-) TimerEvent: {}
+[5.756996] (-) TimerEvent: {}
+[5.857362] (-) TimerEvent: {}
+[5.922276] (semnav) StdoutLine: {'line': b'-- Generating done (1.7s)\n'}
+[5.930648] (semnav) StdoutLine: {'line': b'-- Build files have been written to: /home/neha/ros2_ws/src/current_semnav_migration/build/semnav\n'}
+[5.958951] (-) TimerEvent: {}
+[6.059315] (-) TimerEvent: {}
+[6.160489] (-) TimerEvent: {}
+[6.265946] (-) TimerEvent: {}
+[6.270715] (semnav) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object CMakeFiles/reactive_planner.dir/src/libraries/reactive_planner_lib.cpp.o\x1b[0m\n'}
+[6.366923] (-) TimerEvent: {}
+[6.468926] (-) TimerEvent: {}
+[6.573112] (-) TimerEvent: {}
+[6.676376] (-) TimerEvent: {}
+[6.778286] (-) TimerEvent: {}
+[6.879004] (-) TimerEvent: {}
+[6.980166] (-) TimerEvent: {}
+[7.081322] (-) TimerEvent: {}
+[7.182065] (-) TimerEvent: {}
+[7.282929] (-) TimerEvent: {}
+[7.386002] (-) TimerEvent: {}
+[7.486386] (-) TimerEvent: {}
+[7.586713] (-) TimerEvent: {}
+[7.687102] (-) TimerEvent: {}
+[7.787703] (-) TimerEvent: {}
+[7.888048] (-) TimerEvent: {}
+[7.989291] (-) TimerEvent: {}
+[8.089780] (-) TimerEvent: {}
+[8.192075] (-) TimerEvent: {}
+[8.292405] (-) TimerEvent: {}
+[8.392783] (-) TimerEvent: {}
+[8.493110] (-) TimerEvent: {}
+[8.593439] (-) TimerEvent: {}
+[8.693758] (-) TimerEvent: {}
+[8.794094] (-) TimerEvent: {}
+[8.895925] (-) TimerEvent: {}
+[8.996295] (-) TimerEvent: {}
+[9.096633] (-) TimerEvent: {}
+[9.196993] (-) TimerEvent: {}
+[9.297340] (-) TimerEvent: {}
+[9.399117] (-) TimerEvent: {}
+[9.499471] (-) TimerEvent: {}
+[9.599823] (-) TimerEvent: {}
+[9.701089] (-) TimerEvent: {}
+[9.801442] (-) TimerEvent: {}
+[9.903048] (-) TimerEvent: {}
+[10.003390] (-) TimerEvent: {}
+[10.103822] (-) TimerEvent: {}
+[10.204159] (-) TimerEvent: {}
+[10.305918] (-) TimerEvent: {}
+[10.406273] (-) TimerEvent: {}
+[10.507013] (-) TimerEvent: {}
+[10.607361] (-) TimerEvent: {}
+[10.707683] (-) TimerEvent: {}
+[10.809056] (-) TimerEvent: {}
+[10.909594] (-) TimerEvent: {}
+[11.013065] (-) TimerEvent: {}
+[11.081237] (semnav) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/src/libraries/reactive_planner_lib.cpp:25\x1b[m\x1b[K:\n'}
+[11.081519] (semnav) StderrLine: {'line': b'\x1b[01m\x1b[K/home/neha/ros2_ws/src/current_semnav_migration/include/reactive_planner_lib.h:43:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Ktf2_geometry_msgs/tf2_geometry_msgs.hpp: No such file or directory\n'}
+[11.081677] (semnav) StderrLine: {'line': b'   43 | #include \x1b[01;31m\x1b[K<tf2_geometry_msgs/tf2_geometry_msgs.hpp>\x1b[m\x1b[K\n'}
+[11.081815] (semnav) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.083436] (semnav) StderrLine: {'line': b'compilation terminated.\n'}
+[11.113610] (-) TimerEvent: {}
+[11.158035] (semnav) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/reactive_planner.dir/build.make:90: CMakeFiles/reactive_planner.dir/src/libraries/reactive_planner_lib.cpp.o] Error 1\n'}
+[11.158338] (semnav) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:155: CMakeFiles/reactive_planner.dir/all] Error 2\n'}
+[11.158886] (semnav) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[11.161990] (semnav) CommandEnded: {'returncode': 2}
+[11.215531] (-) TimerEvent: {}
+[11.316970] (-) TimerEvent: {}
+[11.357639] (semnav) JobEnded: {'identifier': 'semnav', 'rc': 2}
+[11.368627] (-) EventReactorShutdown: {}

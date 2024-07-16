@@ -5,11 +5,9 @@
 #include <geometry_msgs/msg/point32.hpp>
 #include <vector>
 
-using namespace std::chrono::milliseconds;
-
 class MapDebugNode : public rclcpp::Node {
 public:
-  MapDebugNode() : Node("map_debug") {
+  MapDebugNode() : rclcpp::Node(std::string("map_debug")) {
     this->declare_parameter("pub_semantic_topic", "semantic_map");
 
     pub_semantic_topic_ = this->get_parameter("pub_semantic_topic").as_string();
@@ -17,10 +15,11 @@ public:
     rmw_qos_profile_t qos_profile = rmw_qos_profile_default;
     qos_profile.depth = 1; 
     qos_profile.durability = RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL;
+    auto qos = rclcpp::QoS(rclcpp::QoSInitialization::from_rmw(qos_profile), qos_profile);
     pub_semantic_map_ = this->create_publisher<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
-        pub_semantic_topic_, qos_profile);
+        pub_semantic_topic_, qos);
 
-    timer_ = this->create_wall_timer(100ms, std::bind(&MapDebugNode::publish_map, this));
+    timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_map, this));
   }
 
 private:

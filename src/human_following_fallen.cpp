@@ -166,11 +166,11 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 
             rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic 
                      = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
-                                     "sub_semantic_topic", 1,
+                                     "sub_semantic_topic_", 1,
                                      std::bind(&HumanFollowingFallenNode::diffeo_tree_update, this, std::placeholders::_1));
             rclcpp::Subscription<object_pose_interface_msgs::msg::KeypointDetections3D>::SharedPtr sub_human
                      = this->create_subscription<object_pose_interface_msgs::msg::KeypointDetections3D>(
-                                     "sub_human_topic", 1,
+                                     "sub_human_topic_", 1,
                                      std::bind(&HumanFollowingFallenNode::human_update, this, std::placeholders::_1));
 
 
@@ -318,10 +318,27 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 					pointCamera.point.x = human_data->detections[min_dist_element].x[j];
 					pointCamera.point.y = human_data->detections[min_dist_element].y[j];
 					pointCamera.point.z = human_data->detections[min_dist_element].z[j];
+
+                    // convert time stamp from builtin_interfaces/Time to tf2/TimePoint
+                    builtin_interfaces::msg::Time time_stamped = human_data->header.stamp;
+                    tf2::TimePoint time_point = tf2::TimePoint(
+                                std::chrono::seconds(time_stamped.sec) +
+                                std::chrono::nanoseconds(time_stamped.nanosec));
+
 					try {
                         /*
-						listener_.waitForTransform(world_frame_id_, ros::Time(0), camera_optical_frame_id_, human_data->header.stamp, world_frame_id_, ros::Duration(1.0));
-						listener_.transformPoint(world_frame_id_, ros::Time(0), pointCamera, world_frame_id_, pointMap);
+						listener_.waitForTransform(world_frame_id_, rclcpp::Time(0), camera_optical_frame_id_, human_data->header.stamp, world_frame_id_, ros::Duration(1.0));
+						listener_.transformPoint(world_frame_id_, rclcpp::Time(0), pointCamera, world_frame_id_, pointMap);
+                        */
+                        geometry_msgs::msg::TransformStamped t;
+                        t = tf_buffer_->lookupTransform(
+                                        world_frame_id_, tf2::TimePointZero,
+                                        camera_optical_frame_id_, time_point,
+                                        world_frame_id_, tf2::Duration(std::chrono::seconds(1))); 
+                        tf2::doTransform(pointCamera, pointMap, t);
+                        /*
+                        tf_buffer_->transform<geometry_msgs::msg::PointStamped>( 
+                                pointCamera, pointMap, "world_frame_id_"); 
                         */
 					} catch (tf2::TransformException &ex) {
 						RCLCPP_ERROR(this->get_logger(), "%s",ex.what());
@@ -352,7 +369,7 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 			}
 		}
 
-		void diffeo_tree_update(const object_pose_interface_msgs::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
+		void diffeo_tree_update(const object_pose_interface_msgs::msg::SemanticMapObjectArray::ConstPtr& semantic_map_data) {
 			/**
 			 * Function that updates the semantic map polygons to be used by the control callback
 			 * 
@@ -453,7 +470,7 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 			std::vector<polygon> localPolygonList;
 			std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
 			double localGoalCameraX, localGoalCameraY, localGoalCameraZ;
-			ros::Time localGoalCameraStamp;
+			rclcpp::Time localGoalCameraStamp;
 			bool localStartSignal, human_seen;
 			{
 				std::lock_guard<std::mutex> lock(mutex_);
@@ -473,12 +490,12 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 
 			// Assuming the incoming odometry message is in the odom frame, transform to map frame
             geometry_msgs::msg::PoseStamped odomPose, mapPose;
-			odomPose.header.stamp = ros::Time(0);
+			odomPose.header.stamp = rclcpp::Time(0);
 			odomPose.header.frame_id = odom_frame_id_;
 			odomPose.pose = robot_data->pose.pose;
 			try {
                 /*
-				listener_.waitForTransform(world_frame_id_, odom_frame_id_, ros::Time(0), ros::Duration(1.0));
+				listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), ros::Duration(1.0));
 				listener_.transformPose(world_frame_id_, odomPose, mapPose);
                 */
 			} catch (tf2::TransformException &ex) {
@@ -514,8 +531,8 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 			localGoalCamera.point.z = localGoalCameraZ;
 			try {
                 /*
-				listener_.waitForTransform(world_frame_id_, ros::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, ros::Duration(1.0));
-				listener_.transformPoint(world_frame_id_, ros::Time(0), localGoalCamera, world_frame_id_, localGoalMap);
+				listener_.waitForTransform(world_frame_id_, rclcpp::Time(0), camera_optical_frame_id_, localGoalCameraStamp, world_frame_id_, ros::Duration(1.0));
+				listener_.transformPoint(world_frame_id_, rclcpp::Time(0), localGoalCamera, world_frame_id_, localGoalMap);
                 */
 				Goal_x_ = localGoalMap.point.x - 0.1*cos(atan2(localGoalMap.point.y-RobotPositionY,localGoalMap.point.x-RobotPositionX));
 				Goal_y_ = localGoalMap.point.y - 0.1*sin(atan2(localGoalMap.point.y-RobotPositionY,localGoalMap.point.x-RobotPositionX));
@@ -765,7 +782,7 @@ class HumanFollowingFallenNode : public rclcpp::Node {
 		double Goal_camera_x_ = 0.0;
 		double Goal_camera_y_ = 0.0;
 		double Goal_camera_z_ = 0.0;
-		ros::Time Goal_camera_stamp_;
+		rclcpp::Time Goal_camera_stamp_;
 		double Tolerance_;
 
 		double LowpassCutoff_;

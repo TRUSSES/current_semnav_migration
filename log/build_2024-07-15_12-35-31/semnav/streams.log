@@ -1,0 +1,21 @@
+[0.035s] Invoking command in '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/current_semnav_migration/build/semnav -- -j2 -l2
+[0.208s] [ 14%] Built target reactive_planner
+[0.316s] [ 23%] Built target navigation_semantic
+[0.326s] [ 28%] [32mBuilding CXX object CMakeFiles/navigation.dir/src/navigation.cpp.o[0m
+[0.423s] [ 38%] Built target navigation_humans
+[0.530s] [ 47%] Built target human_following
+[0.651s] [ 57%] Built target human_following_signal
+[0.763s] [ 66%] Built target human_following_fallen
+[0.827s] [ 76%] Built target map_debug
+[0.872s] [ 85%] Built target fake_lidar_publisher
+[0.946s] [ 95%] Built target fake_odometry_publisher
+[74.006s] [100%] [32m[1mLinking CXX executable navigation[0m
+[78.088s] /usr/bin/ld: CMakeFiles/navigation.dir/src/navigation.cpp.o: in function `geometry_msgs::msg::PoseStamped_<std::allocator<void> >& tf2_ros::BufferInterface::transform<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >(geometry_msgs::msg::PoseStamped_<std::allocator<void> > const&, geometry_msgs::msg::PoseStamped_<std::allocator<void> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::chrono::duration<long, std::ratio<1l, 1000000000l> >) const':
+[78.088s] navigation.cpp:(.text._ZNK7tf2_ros15BufferInterface9transformIN13geometry_msgs3msg12PoseStamped_ISaIvEEEEERT_RKS7_S8_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEE[_ZNK7tf2_ros15BufferInterface9transformIN13geometry_msgs3msg12PoseStamped_ISaIvEEEEERT_RKS7_S8_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEE]+0x5a): undefined reference to `std::chrono::time_point<std::chrono::_V2::system_clock, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > tf2::getTimestamp<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >(geometry_msgs::msg::PoseStamped_<std::allocator<void> > const&)'
+[78.090s] /usr/bin/ld: navigation.cpp:(.text._ZNK7tf2_ros15BufferInterface9transformIN13geometry_msgs3msg12PoseStamped_ISaIvEEEEERT_RKS7_S8_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEE[_ZNK7tf2_ros15BufferInterface9transformIN13geometry_msgs3msg12PoseStamped_ISaIvEEEEERT_RKS7_S8_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEE]+0x7a): undefined reference to `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > tf2::getFrameId<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >(geometry_msgs::msg::PoseStamped_<std::allocator<void> > const&)'
+[78.093s] /usr/bin/ld: navigation.cpp:(.text._ZNK7tf2_ros15BufferInterface9transformIN13geometry_msgs3msg12PoseStamped_ISaIvEEEEERT_RKS7_S8_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEE[_ZNK7tf2_ros15BufferInterface9transformIN13geometry_msgs3msg12PoseStamped_ISaIvEEEEERT_RKS7_S8_RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENSt6chrono8durationIlSt5ratioILl1ELl1000000000EEEE]+0xcf): undefined reference to `void tf2::doTransform<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >(geometry_msgs::msg::PoseStamped_<std::allocator<void> > const&, geometry_msgs::msg::PoseStamped_<std::allocator<void> >&, geometry_msgs::msg::TransformStamped_<std::allocator<void> > const&)'
+[78.402s] collect2: error: ld returned 1 exit status
+[78.406s] gmake[2]: *** [CMakeFiles/navigation.dir/build.make:451: navigation] Error 1
+[78.407s] gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+[78.407s] gmake: *** [Makefile:146: all] Error 2
+[78.411s] Invoked command in '/home/neha/ros2_ws/src/current_semnav_migration/build/semnav' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/neha/ros2_ws/src/current_semnav_migration/build/semnav -- -j2 -l2

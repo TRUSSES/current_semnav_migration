@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neha/ros2_ws/src/semnav_migration
+CMAKE_SOURCE_DIR = /home/neha/ros2_ws/src/current_semnav_migration
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neha/ros2_ws/src/semnav_migration/build/semnav
+CMAKE_BINARY_DIR = /home/neha/ros2_ws/src/current_semnav_migration/build/semnav
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/neha/ros2_ws/src/semnav_migration/build/semnav && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neha/ros2_ws/src/semnav_migration /home/neha/ros2_ws/src/semnav_migration /home/neha/ros2_ws/src/semnav_migration/build/semnav /home/neha/ros2_ws/src/semnav_migration/build/semnav /home/neha/ros2_ws/src/semnav_migration/build/semnav/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/neha/ros2_ws/src/current_semnav_migration/build/semnav && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neha/ros2_ws/src/current_semnav_migration /home/neha/ros2_ws/src/current_semnav_migration /home/neha/ros2_ws/src/current_semnav_migration/build/semnav /home/neha/ros2_ws/src/current_semnav_migration/build/semnav /home/neha/ros2_ws/src/current_semnav_migration/build/semnav/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/uninstall.dir/depend
 

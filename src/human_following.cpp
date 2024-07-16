@@ -432,8 +432,9 @@ class HumanFollowingNode : public rclcpp::Node {
 
                 geometry_msgs::msg::TransformStamped t;
                 t = tf_buffer_->lookupTransform(world_frame_id_, odom_frame_id_, tf2::TimePointZero);
+                tf2::doTransform(odomPose, mapPose, t);
                 /*
-                tf_buffer_->transform<geometry_msgs::msg::PoseStamped, geometry_msgs::msg::PoseStamped>(
+                tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
                                 odomPose, mapPose, "world_frame_id_"); 
                 */
 			} catch (tf2::TransformException &ex) {

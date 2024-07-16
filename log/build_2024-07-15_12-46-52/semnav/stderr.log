@@ -1,0 +1,11 @@
+[01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/navigation.cpp:[m[K In member function ‘[01m[Kvoid NavigationNode::[01;32m[Kcontrol_callback[m[K(const sensor_msgs::msg::LaserScan_<std::allocator<void> >::ConstPtr&, const nav_msgs::msg::Odometry_<std::allocator<void> >::ConstPtr&)[m[K’:
+[01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/navigation.cpp:395:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::unique_ptr<tf2_ros::Buffer>[m[K’ has no member named ‘[01m[Ktransform[m[K’
+  395 |                 tf_buffer_.[01;31m[Ktransform[m[K<geometry_msgs::msg::PoseStamped>(
+      |                            [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/neha/ros2_ws/src/current_semnav_migration/src/navigation.cpp:395:69:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  395 |                 tf_buffer_.transform<geometry_msgs::msg::PoseStamped[01;31m[K>[m[K(
+      |                                                                     [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/navigation.dir/build.make:76: CMakeFiles/navigation.dir/src/navigation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:181: CMakeFiles/navigation.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

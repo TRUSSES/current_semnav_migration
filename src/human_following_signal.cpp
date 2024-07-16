@@ -292,7 +292,8 @@ class HumanFollowingSignalNode : public rclcpp::Node {
 				std::vector<double> global_x(human_data->detections[min_dist_element].x.size());
 				std::vector<double> global_y(human_data->detections[min_dist_element].y.size());
 				std::vector<double> global_z(human_data->detections[min_dist_element].z.size());
-				//listener_.waitForTransform(world_frame_id_, camera_optical_frame_id_, human_data->header.stamp, tf2::Duration(std::chrono::nanoseconds(2000000000));
+                // Possibly needs to be implemented differently, but might be the same as transform in try/catch
+				// listener_.waitForTransform(world_frame_id_, camera_optical_frame_id_, human_data->header.stamp, tf2::Duration(std::chrono::nanoseconds(2000000000));
 				for (size_t j = 0; j < human_data->detections[min_dist_element].x.size(); j++) {
                     geometry_msgs::msg::PointStamped pointCamera, pointMap;
 					pointCamera.header.stamp = human_data->header.stamp;
@@ -300,10 +301,25 @@ class HumanFollowingSignalNode : public rclcpp::Node {
 					pointCamera.point.x = human_data->detections[min_dist_element].x[j];
 					pointCamera.point.y = human_data->detections[min_dist_element].y[j];
 					pointCamera.point.z = human_data->detections[min_dist_element].z[j];
+
+                    builtin_interfaces::msg::Time time_stamped = human_data->header.stamp;
+                    tf2::TimePoint time_point = tf2::TimePoint(
+                                std::chrono::seconds(time_stamped.sec) +
+                                std::chrono::nanoseconds(time_stamped.nanosec));
 					try {
-                        /* NOT WORKING
+                        /* 
 						listener_.waitForTransform(world_frame_id_, ros::Time(0), camera_optical_frame_id_, human_data->header.stamp, world_frame_id_, tf2::Duration(std::chrono::nanosecond(1000000000)));
 						listener_.transformPoint(world_frame_id_, ros::Time(0), pointCamera, world_frame_id_, pointMap);
+                        */
+                        geometry_msgs::msg::TransformStamped t;
+                        t = tf_buffer_->lookupTransform(
+                                        world_frame_id_, tf2::TimePointZero,
+                                        camera_optical_frame_id_, time_point,
+                                        world_frame_id_, tf2::Duration(std::chrono::seconds(1))); 
+                        tf2::doTransform(pointCamera, pointMap, t);
+                        /*
+                        tf_buffer_->transform<geometry_msgs::msg::PointStamped>( 
+                                pointCamera, pointMap, "world_frame_id_"); 
                         */
 					} catch (tf2::TransformException &ex) {
 						RCLCPP_ERROR(this->get_logger(), "%s",ex.what());
@@ -672,7 +688,7 @@ class HumanFollowingSignalNode : public rclcpp::Node {
 				LinearCmd = 0.0;
 				AngularCmd = 0.0;
 				publish_behavior_id(BEHAVIOR_STAND);
-                rclcpp:sleep_for(std::chrono::seconds(5));
+                rclcpp::sleep_for(std::chrono::seconds(5));
 				publish_behavior_id(BEHAVIOR_SIT);
 
 				RCLCPP_WARN_STREAM(this->get_logger(),
