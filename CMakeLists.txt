@@ -193,3 +193,6 @@ add_definitions("-DBOOST_BIND_GLOBAL_PLACEHOLDERS")
 #Silence Deprecation Warnings
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations -DBOOST_DISABLE_DEPRECATED_HEADERS")
 add_definitions(-w)
+
+ament_package()
+
