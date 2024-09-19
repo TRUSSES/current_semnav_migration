@@ -186,6 +186,9 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
+
 ## Declare Silence Boost Errors
 add_definitions("-DBOOST_ALLOW_DEPRECATED_HEADERS")
 add_definitions("-DBOOST_BIND_GLOBAL_PLACEHOLDERS")
