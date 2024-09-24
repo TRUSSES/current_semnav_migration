@@ -137,15 +137,17 @@ class NavigationNode : public rclcpp::Node {
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
 
 			// Initialize publishers
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Setting Up Publishers");
             pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
             pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
-            pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>("pub_twist_topic_", 1);
+            pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
 
 			// Register callbacks
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
 			message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
 			message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
-            sub_laser.subscribe(this, "sub_laser_topic_");
-            sub_robot.subscribe(this, "sub_robot_topic_");
+            sub_laser.subscribe(this, sub_laser_topic_);
+            sub_robot.subscribe(this, sub_robot_topic_);
             std::shared_ptr<message_filters::Synchronizer<message_filters::sync_policies::
                     ApproximateTime<sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
             sync = std::make_shared<message_filters::Synchronizer<
@@ -167,10 +169,12 @@ class NavigationNode : public rclcpp::Node {
 
 			//rclcpp::Subscription sub_semantic = nh_.subscribe(sub_semantic_topic_, 1, &NavigationNode::diffeo_tree_update, this);
             sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
-                            "sub_semantic_topic_", 1,
+                            sub_semantic_topic_, 1,
                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
 
 			// Publish zero commands
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Pubslishing 0 command");
+
 			publish_behavior_id(BEHAVIOR_STAND);
             rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
 			publish_behavior_id(BEHAVIOR_WALK);
@@ -186,6 +190,7 @@ class NavigationNode : public rclcpp::Node {
 		}
 
 		void publish_twist(double LinearCmd, double AngularCmd) {
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Twist Cmd Published");
 			geometry_msgs::msg::Twist commandTwist;
 			commandTwist.linear.x = LinearCmd;
 			commandTwist.angular.z = AngularCmd;
@@ -269,6 +274,7 @@ class NavigationNode : public rclcpp::Node {
 			 * Input:
 			 * 	1) semantic_map_data: A SemanticMapObjectArray object
 			 */
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Updating Diffeo Trees");
 
 			// Check if update is needed
 			// std::cout << DiffeoTreeUpdateRate_ << std::endl;
