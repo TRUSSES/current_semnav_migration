@@ -44,8 +44,8 @@ SOFTWARE.
     
     <!-- Launch tracking file to start odometry, LIDAR and object tracking and disable teleop mode for Kobuki -->
     <!-- <include file = "$(find semnav)/launch/tracking_turtlebot_semslam.launch">
-		<arg name="teleop"							    value="true"/>
-	</include> -->
+        <arg name="teleop"                              value="true"/>
+    </include> -->
 
     <!-- Launch main node and assign appropriate parameters -->
     <node name="navigation_node" pkg="semnav" type="navigation" ns="reactive_planner" output="screen" launch-prefix="">
@@ -55,15 +55,15 @@ SOFTWARE.
         <param name="pub_behaviorMode_topic"            value="$(arg pub_behaviorMode_topic)"/>
         <param name="sub_laser_topic"                   value="$(arg sub_laser_topic)"/>
         <param name="sub_robot_topic"                   value="$(arg sub_robot_topic)"/>
-	    <param name="sub_semantic_topic"                value="$(arg sub_semantic_topic)"/>
+        <param name="sub_semantic_topic"                value="$(arg sub_semantic_topic)"/>
         <param name="world_frame_id"                    value="$(arg world_frame_id)"/>
         <param name="odom_frame_id"                     value="$(arg odom_frame_id)"/>
         <param name="laser_frame_id"                    value="$(arg laser_frame_id)"/>
 
         <!-- NUMERICAL PARAMETERS -->
         <!-- Platform-specific parameters -->
-		<param name="RobotRadius"						value="0.1"/>		<!-- Radius of the robot, i.e, distance from the camera to the center of the LIDAR (m) -->
-        <param name="ObstacleDilation"					value="0.2"/>		<!-- Desired obstacle dilation - for safety, it needs to be greater than or equal to the robot radius (m) -->
+        <param name="RobotRadius"                       value="0.1"/>       <!-- Radius of the robot, i.e, distance from the camera to the center of the LIDAR (m) -->
+        <param name="ObstacleDilation"                  value="0.2"/>       <!-- Desired obstacle dilation - for safety, it needs to be greater than or equal to the robot radius (m) -->
         <param name="WalkHeight"                        value="0.5"/>       <!-- Nominal walking height to be used during walk (m) -->
 
         <!-- LIDAR parameters -->
@@ -84,12 +84,12 @@ SOFTWARE.
         <param name="AngCmdLimit"                       value="0.7"/>       <!-- Angular command limit for Move and MoveTo -->
         
         <!-- Linear and angular gains -->
-        <param name="LinearGain"                      	value="0.2"/>       <!-- Linear gain-->
-        <param name="AngularGain"                     	value="0.4"/>       <!-- Angular gain-->
+        <param name="LinearGain"                        value="0.2"/>       <!-- Linear gain-->
+        <param name="AngularGain"                       value="0.4"/>       <!-- Angular gain-->
 
         <!-- Goal and tolerance for successful placement -->
-		<param name="Goal_x"                         	value="7.231"/> 	<!-- Goal Position in x -->
-        <param name="Goal_y"                         	value="2.803"/> 	<!-- Goal Position in y-->
+        <param name="Goal_x"                            value="7.231"/>     <!-- Goal Position in x -->
+        <param name="Goal_y"                            value="2.803"/>     <!-- Goal Position in y-->
         <param name="Tolerance"                         value="0.1"/>       <!-- Tolerance for successful placement -->
 
         <!-- Lowpass filtering parameters -->

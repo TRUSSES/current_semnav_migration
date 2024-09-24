@@ -44,8 +44,6 @@ class NavigationNode : public rclcpp::Node {
 	public:
 		// Constructor
         NavigationNode() : rclcpp::Node(std::string("navigation_node")) {
-        	RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Navigation Node Initialized");
-
 			// Find parameters
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
@@ -86,7 +84,7 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("Goal_y", 0.0);
 			Goal_.set<0>(Goal_x_);
 			Goal_.set<1>(Goal_y_);
-			this->declare_parameter("Tolerance", 0.0);
+			this->get_parameter("Tolerance").as_double();
 
 			this->declare_parameter("LowpassCutOff", 0.0);
 			this->declare_parameter("LowpassSampling", 0.0);
@@ -364,7 +362,7 @@ class NavigationNode : public rclcpp::Node {
 			 * 	2) robot_data: Data received from the robot odometry topic
 			 */
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Entering control callback");
+			// ROS_INFO_STREAM("[Navigation] Entering control callback");
 
 			// Make local copies
 			std::vector<polygon> localPolygonList;

@@ -24,6 +24,7 @@ public:
 
 private:
   void publish_map() {
+    // RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Semantic Map Published");
     std::vector<std::vector<double>> polygon1 = {{0.0, 0.0}, {0.5, 0.0}, {0.5, -1.0}, {1.5, -1.0}, {1.5, 1.0}, 
                                                 {-1.0, 1.0}, {-1.0, -3.0}, {3.0, -3.0}, {3.0, 1.0}, {2.0, 1.0}, 
                                                 {2.0, -2.0}, {0.0, -2.0}, {0.0, 0.0}};
