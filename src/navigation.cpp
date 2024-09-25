@@ -154,13 +154,11 @@ class NavigationNode : public rclcpp::Node {
 			
             sub_laser.subscribe(this, sub_laser_topic_);
             sub_robot.subscribe(this, sub_robot_topic_);
-            std::shared_ptr<message_filters::Synchronizer<message_filters::sync_policies::
-                    ApproximateTime<sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
             sync = std::make_shared<message_filters::Synchronizer<
                     message_filters::sync_policies::ApproximateTime<
                     sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
                                     message_filters::sync_policies::ApproximateTime<
-                                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(100000000000000),
+                                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
                                     sub_laser, sub_robot);
 
             sync->registerCallback(std::bind(&NavigationNode::control_callback, 
@@ -403,13 +401,14 @@ class NavigationNode : public rclcpp::Node {
 				//listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));
 				//listener_.transformPose(world_frame_id_, odomPose, mapPose);
                 geometry_msgs::msg::TransformStamped t;
-                t = tf_buffer_->lookupTransform("world_frame_id_", "odom_frame_id_", tf2::TimePointZero);
+                t = tf_buffer_->lookupTransform(world_frame_id_, odom_frame_id_, tf2::TimePointZero);
                 tf2::doTransform(odomPose, mapPose, t);
                 /*
                 tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
                                 odomPose, mapPose, "world_frame_id_", std::chrono::seconds(1)); 
                 */
 			} catch (tf2::TransformException &ex) {
+				RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "UH OH");
 				RCLCPP_ERROR(this->get_logger(), "%s", ex.what());
 				return;
 			}
@@ -561,26 +560,26 @@ class NavigationNode : public rclcpp::Node {
 			// ROS_INFO_STREAM("[Navigation] Computed model space projections." << bg::dsv(LGA_model));
 
 			// Plot debugging
-			if (DebugFlag_) {
-				std::ofstream svg("/home/kodlab-xavier/freespace.svg");
-				bg::svg_mapper<point> mapper(svg, 1000, 1000);
-				mapper.add(LF_model);
-				mapper.add(LGL_model);
-				mapper.add(LGA_model);
-				mapper.add(RobotPosition_);
-				mapper.add(RobotPositionTransformedPoint);
-				for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
-					mapper.add(KnownObstaclesModel[i]);
-				}
-				mapper.map(LF_model, "fill-opacity:0.3;fill:rgb(51,51,153);stroke:rgb(51,51,153);stroke-width:5", 5);
-				mapper.map(LGL_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
-				mapper.map(LGA_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
-				mapper.map(RobotPosition_, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
-				mapper.map(RobotPositionTransformedPoint, "fill-opacity:0.3;fill:rgb(153,204,153);stroke:rgb(153,204,0);stroke-width:5", 5);
-				for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
-					mapper.map(KnownObstaclesModel[i], "fill-opacity:0.3;fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:3", 3);
-				}
-			}
+			// if (DebugFlag_) {
+			// 	std::ofstream svg("/home/kodlab-xavier/freespace.svg");
+			// 	bg::svg_mapper<point> mapper(svg, 1000, 1000);
+			// 	mapper.add(LF_model);
+			// 	mapper.add(LGL_model);
+			// 	mapper.add(LGA_model);
+			// 	mapper.add(RobotPosition_);
+			// 	mapper.add(RobotPositionTransformedPoint);
+			// 	for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
+			// 		mapper.add(KnownObstaclesModel[i]);
+			// 	}
+			// 	mapper.map(LF_model, "fill-opacity:0.3;fill:rgb(51,51,153);stroke:rgb(51,51,153);stroke-width:5", 5);
+			// 	mapper.map(LGL_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
+			// 	mapper.map(LGA_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
+			// 	mapper.map(RobotPosition_, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
+			// 	mapper.map(RobotPositionTransformedPoint, "fill-opacity:0.3;fill:rgb(153,204,153);stroke:rgb(153,204,0);stroke-width:5", 5);
+			// 	for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
+			// 		mapper.map(KnownObstaclesModel[i], "fill-opacity:0.3;fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:3", 3);
+			// 	}
+			// }
 
 			// Compute the basis for the virtual control inputs
 			double tV = (LGL_model.get<0>()-RobotPositionTransformed[0])*cos(RobotOrientationTransformed) + (LGL_model.get<1>()-RobotPositionTransformed[1])*sin(RobotOrientationTransformed);

@@ -26,8 +26,8 @@ def generate_launch_description():
         DeclareLaunchArgument('pub_behaviorID_topic', default_value='/minitaur/command/behaviorId'),
         DeclareLaunchArgument('pub_behaviorMode_topic', default_value='/minitaur/command/behaviorMode'),
 
-        DeclareLaunchArgument('sub_robot_topic', default_value='/odom'),
-        DeclareLaunchArgument('sub_laser_topic', default_value='/scan'),
+        DeclareLaunchArgument('sub_robot_topic', default_value='/fake_odom'),
+        DeclareLaunchArgument('sub_laser_topic', default_value='/fake_scan'),
         DeclareLaunchArgument('sub_semantic_topic', default_value='/pose_tracking/semantic_map'),
 
         DeclareLaunchArgument('world_frame_id', default_value='map'),
@@ -83,7 +83,7 @@ def generate_launch_description():
                 'LowpassOrder': 6.0,
                 'LowpassSamples': 10.0,
 
-                'DebugFlag': False,
+                'DebugFlag': True,
             }]
         ),
 
