@@ -108,6 +108,9 @@ class NavigationNode : public rclcpp::Node {
 			target_object_length_ = this->get_parameter("target_object_length").as_double();
 			target_object_width_ = this->get_parameter("target_object_width").as_double();
 
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_robot_topic_);
+
 			RobotRadius_ = this->get_parameter("RobotRadius").as_double();
 			ObstacleDilation_ = this->get_parameter("ObstacleDilation").as_double();
 			WalkHeight_ = this->get_parameter("WalkHeight").as_double();
@@ -122,6 +125,10 @@ class NavigationNode : public rclcpp::Node {
 			Mu1_ = this->get_parameter("Mu1").as_double();
 			Mu2_ = this->get_parameter("Mu2").as_double();
 			DiffeoTreeUpdateRate_ = this->get_parameter("SemanticMapUpdateRate").as_double();
+
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
+
 
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
             AngularGain_ = this->get_parameter("AngularGain").as_double();
@@ -144,8 +151,7 @@ class NavigationNode : public rclcpp::Node {
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
-			message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
-			message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
+			
             sub_laser.subscribe(this, sub_laser_topic_);
             sub_robot.subscribe(this, sub_robot_topic_);
             std::shared_ptr<message_filters::Synchronizer<message_filters::sync_policies::
@@ -154,10 +160,12 @@ class NavigationNode : public rclcpp::Node {
                     message_filters::sync_policies::ApproximateTime<
                     sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
                                     message_filters::sync_policies::ApproximateTime<
-                                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
+                                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(100000000000000),
                                     sub_laser, sub_robot);
+
             sync->registerCallback(std::bind(&NavigationNode::control_callback, 
                                     this, std::placeholders::_1 , std::placeholders::_2));
+
             /*
 			typedef message_filters::sync_policies
                     ::ApproximateTime<sensor_msgs::msg::LaserScan,nav_msgs::msg::Odometry> SyncPolicy;
@@ -173,7 +181,7 @@ class NavigationNode : public rclcpp::Node {
                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
 
 			// Publish zero commands
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Pubslishing 0 command");
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Publishing 0 command");
 
 			publish_behavior_id(BEHAVIOR_STAND);
             rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
@@ -274,7 +282,7 @@ class NavigationNode : public rclcpp::Node {
 			 * Input:
 			 * 	1) semantic_map_data: A SemanticMapObjectArray object
 			 */
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Updating Diffeo Trees");
+			// RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Updating Diffeo Trees");
 
 			// Check if update is needed
 			// std::cout << DiffeoTreeUpdateRate_ << std::endl;
@@ -361,7 +369,7 @@ class NavigationNode : public rclcpp::Node {
 			return;
 		}
 
-		void control_callback(const sensor_msgs::msg::LaserScan::ConstPtr& lidar_data, const nav_msgs::msg::Odometry::ConstPtr& robot_data) {
+		void control_callback(const sensor_msgs::msg::LaserScan::ConstSharedPtr& lidar_data, const nav_msgs::msg::Odometry::ConstSharedPtr& robot_data) {
 			/**
 			 * Callback function that implements the main part of the reactive controller
 			 * 
@@ -655,6 +663,12 @@ class NavigationNode : public rclcpp::Node {
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
         rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
+        std::shared_ptr<message_filters::Synchronizer<
+                    message_filters::sync_policies::ApproximateTime<
+                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
+        message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
+		message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
+
 
 		double RobotRadius_;
 		double ObstacleDilation_;
