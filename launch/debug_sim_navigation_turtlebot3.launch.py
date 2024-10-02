@@ -120,4 +120,12 @@ def generate_launch_description():
                 'pub_odom_topic': '/fake_odom',  
             }]
         ),
+
+         # Node(
+        #     package='semnav',  
+        #     executable='turtlebot3_map_publisher', 
+        #     namespace='reactive_planner',
+        #     name='turtlebot3_map_publisher',
+        #     output='screen',
+        # ),
     ])
