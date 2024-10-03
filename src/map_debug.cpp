@@ -69,7 +69,7 @@ private:
                                                 {2.0, -2.0}, {0.0, -2.0}, {0.0, 0.0}};
 
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
-    polygon_list_msg.objects.push_back(populate_polygon_msg(polygon1));
+    // polygon_list_msg.objects.push_back(populate_polygon_msg(polygon1));
     pub_semantic_map_->publish(polygon_list_msg);
   }
 

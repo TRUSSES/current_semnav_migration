@@ -623,6 +623,8 @@ class NavigationNode : public rclcpp::Node {
 			if (AngularCmd < -AngCmdLimit_) AngularCmd = -AngCmdLimit_;
 			if (AngularCmd > AngCmdLimit_) AngularCmd = AngCmdLimit_;
 
+			RCLCPP_WARN_STREAM(this -> get_logger(),  "[Navigation] Current robot position = " << bg::dsv(RobotPosition_) << std::endl);
+
 			// Publish twist
 			publish_twist(LinearCmd, AngularCmd);
 
@@ -690,8 +692,8 @@ class NavigationNode : public rclcpp::Node {
 		double LinearGain_;
 		double AngularGain_;
 
-		double Goal_x_ = 0.0;
-		double Goal_y_ = 0.0;
+		double Goal_x_;
+		double Goal_y_;
 		point Goal_;
 		double Tolerance_;
 
