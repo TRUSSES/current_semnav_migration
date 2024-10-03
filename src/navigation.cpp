@@ -84,8 +84,7 @@ class NavigationNode : public rclcpp::Node {
 
 			this->declare_parameter("Goal_x", 0.0);
 			this->declare_parameter("Goal_y", 0.0);
-			Goal_.set<0>(Goal_x_);
-			Goal_.set<1>(Goal_y_);
+			
 			this->declare_parameter("Tolerance", 0.0);
 
 			this->declare_parameter("LowpassCutOff", 0.0);
@@ -144,6 +143,8 @@ class NavigationNode : public rclcpp::Node {
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
 
 			// Initialize publishers
+			Goal_.set<0>(Goal_x_);
+			Goal_.set<1>(Goal_y_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Setting Up Publishers");
             pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
             pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
@@ -702,14 +703,14 @@ class NavigationNode : public rclcpp::Node {
 		double LowpassOrder_;
 		double LowpassSamples_;
 
-		point RobotPosition_ = point(0.0, 0.0);
-		double RobotOrientation_ = 0.0;
-		double RobotPitch_ = 0.0;
+		point RobotPosition_;
+		double RobotOrientation_;
+		double RobotPitch_ ;
 
 		std::vector<polygon> PolygonList_;
 		std::vector<std::vector<PolygonClass>> DiffeoTreeArray_;
 
-		double DiffeoTreeUpdateTime_ = 0.0;
+		double DiffeoTreeUpdateTime_ ;
 
 		bool DebugFlag_ = false;
 
