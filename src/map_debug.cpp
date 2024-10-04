@@ -64,18 +64,35 @@ private:
 
   void publish_map() {
     // RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Semantic Map Published");
-    std::vector<std::vector<double>> polygon1 = {{0.0, 0.0}, {0.5, 0.0}, {0.5, -1.0}, {1.5, -1.0}, {1.5, 1.0}, 
-                                                {-1.0, 1.0}, {-1.0, -3.0}, {3.0, -3.0}, {3.0, 1.0}, {2.0, 1.0}, 
-                                                {2.0, -2.0}, {0.0, -2.0}, {0.0, 0.0}};
+    std::vector<std::vector<double>> polygon1 = {
+      {0.0, 0.0},   
+      {0.5, 0.0},  
+      {0.5, 0.5},   
+      {0.0, 0.5},  
+      {0.0, 0.0}    
+  };
+
+    std::vector<std::vector<double>> polygon2 = {
+      {0.0, 0.0},   
+      {2, 0.0},  
+      {2, 2},   
+      {0.0, 2},  
+      {0.0, 0.0}    
+  };
 
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
-    // polygon_list_msg.objects.push_back(populate_polygon_msg(polygon1));
+    // polygon_list_msg.objects.push_back(populate_polygon_msg(polygon1, -0.5, -0.5, 0.0));
+    // polygon_list_msg.objects.push_back(populate_polygon_msg(polygon2, -2, -2, 0.0));
     pub_semantic_map_->publish(polygon_list_msg);
   }
 
-  object_pose_interface_msgs::msg::SemanticMapObject populate_polygon_msg(const std::vector<std::vector<double>>& polygon_in) {
+  object_pose_interface_msgs::msg::SemanticMapObject populate_polygon_msg(
+    const std::vector<std::vector<double>>& polygon_in,
+    double x, double y, double z) {
+  
     object_pose_interface_msgs::msg::SemanticMapObject polygon_out;
 
+    // Populate the polygon points
     for (const auto& point : polygon_in) {
       geometry_msgs::msg::Point32 point_new;
       point_new.x = point[0];
@@ -86,8 +103,20 @@ private:
     // Set the frame_id of the polygon object to "map"
     polygon_out.pose.header.frame_id = "map";
     
+    // Set the pose using the provided x, y, z coordinates
+    polygon_out.pose.pose.position.x = x;
+    polygon_out.pose.pose.position.y = y;
+    polygon_out.pose.pose.position.z = z;
+    
+    // Optionally set the orientation to default (no rotation)
+    polygon_out.pose.pose.orientation.x = 0.0;
+    polygon_out.pose.pose.orientation.y = 0.0;
+    polygon_out.pose.pose.orientation.z = 0.0;
+    polygon_out.pose.pose.orientation.w = 1.0; // Identity quaternion
+
     return polygon_out;
   }
+
 
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::TimerBase::SharedPtr transform_timer_;  // Timer for publishing the world frame transform

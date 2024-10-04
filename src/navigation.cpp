@@ -640,8 +640,8 @@ class NavigationNode : public rclcpp::Node {
 			}
 
 			// Print time
-			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
-			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
+			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
+			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
 
 			return;
 		}
