@@ -134,6 +134,10 @@ add_executable(fake_odometry_publisher
   ${MAIN_DIR}/src/fake_odometry_publisher.cpp
 )
 
+add_executable(turtlebot3_map_publisher 
+  ${MAIN_DIR}/src/turtlebot3_map_publisher.cpp
+)
+
 # Link
 target_link_libraries(navigation
   reactive_planner
@@ -171,6 +175,10 @@ target_link_libraries(fake_odometry_publisher
   reactive_planner
 )
 
+target_link_libraries(turtlebot3_map_publisher
+  reactive_planner
+)
+
 ## Mark executables and/or libraries for installation
 install(TARGETS
   reactive_planner
@@ -183,8 +191,12 @@ install(TARGETS
   map_debug
   fake_lidar_publisher
   fake_odometry_publisher
+  turtlebot3_map_publisher
   DESTINATION lib/${PROJECT_NAME}
 )
+
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
 
 ## Declare Silence Boost Errors
 add_definitions("-DBOOST_ALLOW_DEPRECATED_HEADERS")

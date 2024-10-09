@@ -44,8 +44,6 @@ class NavigationNode : public rclcpp::Node {
 	public:
 		// Constructor
         NavigationNode() : rclcpp::Node(std::string("navigation_node")) {
-        	RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Navigation Node Initialized");
-
 			// Find parameters
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
@@ -84,8 +82,9 @@ class NavigationNode : public rclcpp::Node {
 
 			this->declare_parameter("Goal_x", 0.0);
 			this->declare_parameter("Goal_y", 0.0);
-			
-			this->declare_parameter("Tolerance", 0.0);
+			Goal_.set<0>(Goal_x_);
+			Goal_.set<1>(Goal_y_);
+			this->get_parameter("Tolerance").as_double();
 
 			this->declare_parameter("LowpassCutOff", 0.0);
 			this->declare_parameter("LowpassSampling", 0.0);
@@ -107,9 +106,6 @@ class NavigationNode : public rclcpp::Node {
 			target_object_length_ = this->get_parameter("target_object_length").as_double();
 			target_object_width_ = this->get_parameter("target_object_width").as_double();
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_robot_topic_);
-
 			RobotRadius_ = this->get_parameter("RobotRadius").as_double();
 			ObstacleDilation_ = this->get_parameter("ObstacleDilation").as_double();
 			WalkHeight_ = this->get_parameter("WalkHeight").as_double();
@@ -125,10 +121,6 @@ class NavigationNode : public rclcpp::Node {
 			Mu2_ = this->get_parameter("Mu2").as_double();
 			DiffeoTreeUpdateRate_ = this->get_parameter("SemanticMapUpdateRate").as_double();
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
-
-
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
             AngularGain_ = this->get_parameter("AngularGain").as_double();
 			Goal_x_ = this->get_parameter("Goal_x").as_double();
@@ -143,28 +135,25 @@ class NavigationNode : public rclcpp::Node {
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
 
 			// Initialize publishers
-			Goal_.set<0>(Goal_x_);
-			Goal_.set<1>(Goal_y_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Setting Up Publishers");
             pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
             pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
-            pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
+            pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>("pub_twist_topic_", 1);
 
 			// Register callbacks
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
-			
-            sub_laser.subscribe(this, sub_laser_topic_);
-            sub_robot.subscribe(this, sub_robot_topic_);
+			message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
+			message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
+            sub_laser.subscribe(this, "sub_laser_topic_");
+            sub_robot.subscribe(this, "sub_robot_topic_");
+            std::shared_ptr<message_filters::Synchronizer<message_filters::sync_policies::
+                    ApproximateTime<sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
             sync = std::make_shared<message_filters::Synchronizer<
                     message_filters::sync_policies::ApproximateTime<
                     sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
                                     message_filters::sync_policies::ApproximateTime<
                                     sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
                                     sub_laser, sub_robot);
-
             sync->registerCallback(std::bind(&NavigationNode::control_callback, 
                                     this, std::placeholders::_1 , std::placeholders::_2));
-
             /*
 			typedef message_filters::sync_policies
                     ::ApproximateTime<sensor_msgs::msg::LaserScan,nav_msgs::msg::Odometry> SyncPolicy;
@@ -176,12 +165,10 @@ class NavigationNode : public rclcpp::Node {
 
 			//rclcpp::Subscription sub_semantic = nh_.subscribe(sub_semantic_topic_, 1, &NavigationNode::diffeo_tree_update, this);
             sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
-                            sub_semantic_topic_, 1,
+                            "sub_semantic_topic_", 1,
                             std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
 
 			// Publish zero commands
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Publishing 0 command");
-
 			publish_behavior_id(BEHAVIOR_STAND);
             rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
 			publish_behavior_id(BEHAVIOR_WALK);
@@ -197,7 +184,6 @@ class NavigationNode : public rclcpp::Node {
 		}
 
 		void publish_twist(double LinearCmd, double AngularCmd) {
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Twist Cmd Published");
 			geometry_msgs::msg::Twist commandTwist;
 			commandTwist.linear.x = LinearCmd;
 			commandTwist.angular.z = AngularCmd;
@@ -281,7 +267,6 @@ class NavigationNode : public rclcpp::Node {
 			 * Input:
 			 * 	1) semantic_map_data: A SemanticMapObjectArray object
 			 */
-			// RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Updating Diffeo Trees");
 
 			// Check if update is needed
 			// std::cout << DiffeoTreeUpdateRate_ << std::endl;
@@ -368,7 +353,7 @@ class NavigationNode : public rclcpp::Node {
 			return;
 		}
 
-		void control_callback(const sensor_msgs::msg::LaserScan::ConstSharedPtr& lidar_data, const nav_msgs::msg::Odometry::ConstSharedPtr& robot_data) {
+		void control_callback(const sensor_msgs::msg::LaserScan::ConstPtr& lidar_data, const nav_msgs::msg::Odometry::ConstPtr& robot_data) {
 			/**
 			 * Callback function that implements the main part of the reactive controller
 			 * 
@@ -377,7 +362,7 @@ class NavigationNode : public rclcpp::Node {
 			 * 	2) robot_data: Data received from the robot odometry topic
 			 */
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Entering control callback");
+			// ROS_INFO_STREAM("[Navigation] Entering control callback");
 
 			// Make local copies
 			std::vector<polygon> localPolygonList;
@@ -402,14 +387,13 @@ class NavigationNode : public rclcpp::Node {
 				//listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));
 				//listener_.transformPose(world_frame_id_, odomPose, mapPose);
                 geometry_msgs::msg::TransformStamped t;
-                t = tf_buffer_->lookupTransform(world_frame_id_, odom_frame_id_, tf2::TimePointZero);
+                t = tf_buffer_->lookupTransform("world_frame_id_", "odom_frame_id_", tf2::TimePointZero);
                 tf2::doTransform(odomPose, mapPose, t);
                 /*
                 tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
                                 odomPose, mapPose, "world_frame_id_", std::chrono::seconds(1)); 
                 */
 			} catch (tf2::TransformException &ex) {
-				RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "UH OH");
 				RCLCPP_ERROR(this->get_logger(), "%s", ex.what());
 				return;
 			}
@@ -561,26 +545,26 @@ class NavigationNode : public rclcpp::Node {
 			// ROS_INFO_STREAM("[Navigation] Computed model space projections." << bg::dsv(LGA_model));
 
 			// Plot debugging
-			// if (DebugFlag_) {
-			// 	std::ofstream svg("/home/kodlab-xavier/freespace.svg");
-			// 	bg::svg_mapper<point> mapper(svg, 1000, 1000);
-			// 	mapper.add(LF_model);
-			// 	mapper.add(LGL_model);
-			// 	mapper.add(LGA_model);
-			// 	mapper.add(RobotPosition_);
-			// 	mapper.add(RobotPositionTransformedPoint);
-			// 	for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
-			// 		mapper.add(KnownObstaclesModel[i]);
-			// 	}
-			// 	mapper.map(LF_model, "fill-opacity:0.3;fill:rgb(51,51,153);stroke:rgb(51,51,153);stroke-width:5", 5);
-			// 	mapper.map(LGL_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
-			// 	mapper.map(LGA_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
-			// 	mapper.map(RobotPosition_, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
-			// 	mapper.map(RobotPositionTransformedPoint, "fill-opacity:0.3;fill:rgb(153,204,153);stroke:rgb(153,204,0);stroke-width:5", 5);
-			// 	for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
-			// 		mapper.map(KnownObstaclesModel[i], "fill-opacity:0.3;fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:3", 3);
-			// 	}
-			// }
+			if (DebugFlag_) {
+				std::ofstream svg("/home/kodlab-xavier/freespace.svg");
+				bg::svg_mapper<point> mapper(svg, 1000, 1000);
+				mapper.add(LF_model);
+				mapper.add(LGL_model);
+				mapper.add(LGA_model);
+				mapper.add(RobotPosition_);
+				mapper.add(RobotPositionTransformedPoint);
+				for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
+					mapper.add(KnownObstaclesModel[i]);
+				}
+				mapper.map(LF_model, "fill-opacity:0.3;fill:rgb(51,51,153);stroke:rgb(51,51,153);stroke-width:5", 5);
+				mapper.map(LGL_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
+				mapper.map(LGA_model, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
+				mapper.map(RobotPosition_, "fill-opacity:0.3;fill:rgb(153,204,0);stroke:rgb(153,204,0);stroke-width:5", 5);
+				mapper.map(RobotPositionTransformedPoint, "fill-opacity:0.3;fill:rgb(153,204,153);stroke:rgb(153,204,0);stroke-width:5", 5);
+				for (size_t i = 0; i < KnownObstaclesModel.size(); i++) {
+					mapper.map(KnownObstaclesModel[i], "fill-opacity:0.3;fill:rgb(255,0,0);stroke:rgb(255,0,0);stroke-width:3", 3);
+				}
+			}
 
 			// Compute the basis for the virtual control inputs
 			double tV = (LGL_model.get<0>()-RobotPositionTransformed[0])*cos(RobotOrientationTransformed) + (LGL_model.get<1>()-RobotPositionTransformed[1])*sin(RobotOrientationTransformed);
@@ -624,8 +608,6 @@ class NavigationNode : public rclcpp::Node {
 			if (AngularCmd < -AngCmdLimit_) AngularCmd = -AngCmdLimit_;
 			if (AngularCmd > AngCmdLimit_) AngularCmd = AngCmdLimit_;
 
-			RCLCPP_WARN_STREAM(this -> get_logger(),  "[Navigation] Current robot position = " << bg::dsv(RobotPosition_) << std::endl);
-
 			// Publish twist
 			publish_twist(LinearCmd, AngularCmd);
 
@@ -640,8 +622,8 @@ class NavigationNode : public rclcpp::Node {
 			}
 
 			// Print time
-			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
-			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
+			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
+			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
 
 			return;
 		}
@@ -665,12 +647,6 @@ class NavigationNode : public rclcpp::Node {
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
         rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
-        std::shared_ptr<message_filters::Synchronizer<
-                    message_filters::sync_policies::ApproximateTime<
-                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
-        message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
-		message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
-
 
 		double RobotRadius_;
 		double ObstacleDilation_;
@@ -693,8 +669,8 @@ class NavigationNode : public rclcpp::Node {
 		double LinearGain_;
 		double AngularGain_;
 
-		double Goal_x_;
-		double Goal_y_;
+		double Goal_x_ = 0.0;
+		double Goal_y_ = 0.0;
 		point Goal_;
 		double Tolerance_;
 
@@ -703,14 +679,14 @@ class NavigationNode : public rclcpp::Node {
 		double LowpassOrder_;
 		double LowpassSamples_;
 
-		point RobotPosition_;
-		double RobotOrientation_;
-		double RobotPitch_ ;
+		point RobotPosition_ = point(0.0, 0.0);
+		double RobotOrientation_ = 0.0;
+		double RobotPitch_ = 0.0;
 
 		std::vector<polygon> PolygonList_;
 		std::vector<std::vector<PolygonClass>> DiffeoTreeArray_;
 
-		double DiffeoTreeUpdateTime_ ;
+		double DiffeoTreeUpdateTime_ = 0.0;
 
 		bool DebugFlag_ = false;
 

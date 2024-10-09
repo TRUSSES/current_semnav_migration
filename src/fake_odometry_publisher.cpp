@@ -48,6 +48,7 @@ public:
         {
             nav_msgs::msg::Odometry odom_msg;
             odom_msg.header.stamp = this->now();
+            odom_msg.header.frame_id = "odom";
             odom_msg.child_frame_id = "robot";
             odom_msg.pose.pose.position.x = -1.5;
             odom_msg.pose.pose.position.y = 0.0;
