@@ -287,6 +287,7 @@ class NavigationNode : public rclcpp::Node {
 			// std::cout << DiffeoTreeUpdateRate_ << std::endl;
 			// std::cout << rclcpp::Time::now().toSec() - DiffeoTreeUpdateTime_ << std::endl;
             rclcpp::Time time;
+            // RCLCPP_INFO(this->get_logger(), "Received %zu semantic map objects.", semantic_map_data->objects.size());
 			if (time.seconds() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
 				return;
 			} else {
@@ -313,6 +314,7 @@ class NavigationNode : public rclcpp::Node {
 					bg::buffer(polygon_in, output, distance_strategy, side_strategy_input, join_strategy_input, end_strategy_input, point_strategy_input);
 					polygon_list.push_back(output.front());
 				}
+
 				// ROS_INFO_STREAM("Found polygons");
 
 				// Span all the found polygons to check for intersections between the known polygons and keep only the merged polygons
@@ -640,7 +642,7 @@ class NavigationNode : public rclcpp::Node {
 			}
 
 			// Print time
-			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear command is " << LinearCmd << " and angular command is " << AngularCmd);
+			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear: " << LinearCmd << " Angular: " << AngularCmd);
 			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
 
 			return;
