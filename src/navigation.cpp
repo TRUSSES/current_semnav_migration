@@ -286,11 +286,18 @@ class NavigationNode : public rclcpp::Node {
 			// Check if update is needed
 			// std::cout << DiffeoTreeUpdateRate_ << std::endl;
 			// std::cout << rclcpp::Time::now().toSec() - DiffeoTreeUpdateTime_ << std::endl;
-            rclcpp::Time time;
+            rclcpp::Time time = this->now();
+		    if (DiffeoTreeUpdateRate_ <= 0) {
+		        RCLCPP_WARN(this->get_logger(), "Invalid DiffeoTreeUpdateRate. It should be greater than zero.");
+		        return;
+		    }
+
             // RCLCPP_INFO(this->get_logger(), "Received %zu semantic map objects.", semantic_map_data->objects.size());
+			
 			if (time.seconds() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
 				return;
 			} else {
+				RCLCPP_INFO(this->get_logger(), "Interval check succeed");
 				// ROS_INFO_STREAM("Entering diffeo tree callback");
 				// Count time
 				double start_time = time.seconds();
@@ -318,6 +325,9 @@ class NavigationNode : public rclcpp::Node {
 				// ROS_INFO_STREAM("Found polygons");
 
 				// Span all the found polygons to check for intersections between the known polygons and keep only the merged polygons
+				
+				RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
+
 				multi_polygon output_union;
 				if (polygon_list.size() >= 1) {
 					output_union.push_back(polygon_list.back());

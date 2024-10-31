@@ -78,7 +78,7 @@ private:
       };
 
       polygon_list_msg.objects.push_back(
-          populate_polygon_msg(square_polygon, robot_x_ + x_offset, robot_y_ + y_offset, robot_z_));
+          populate_polygon_msg(square_polygon, 0.0 + x_offset, 0.0 + y_offset, robot_z_));
     }
 
     pub_semantic_map_->publish(polygon_list_msg);
