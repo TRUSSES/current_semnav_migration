@@ -64,7 +64,7 @@ private:
   void publish_map() {
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
 
-    int num_polygons = 8;
+    int num_polygons = 0;
     double radius = 1.5;
     double angle_increment = 2 * M_PI / num_polygons;
 
