@@ -99,27 +99,27 @@ def generate_launch_description():
             }]
         ),
 
-        Node(
-            package='semnav',  
-            executable='fake_lidar_publisher',  
-            namespace='reactive_planner',
-            name='fake_lidar_publisher',
-            output='screen',
-            parameters=[{
-                'pub_lidar_topic': '/fake_scan',  
-            }]
-        ),
+        # Node(
+        #     package='semnav',  
+        #     executable='fake_lidar_publisher',  
+        #     namespace='reactive_planner',
+        #     name='fake_lidar_publisher',
+        #     output='screen',
+        #     parameters=[{
+        #         'pub_lidar_topic': '/fake_scan',  
+        #     }]
+        # ),
 
-        Node(
-            package='semnav',  
-            executable='fake_odometry_publisher',  
-            namespace='reactive_planner',
-            name='fake_odometry_publisher',
-            output='screen',
-            parameters=[{
-                'pub_odom_topic': '/fake_odom',  
-            }]
-        ),
+        # Node(
+        #     package='semnav',  
+        #     executable='fake_odometry_publisher',  
+        #     namespace='reactive_planner',
+        #     name='fake_odometry_publisher',
+        #     output='screen',
+        #     parameters=[{
+        #         'pub_odom_topic': '/fake_odom',  
+        #     }]
+        # ),
 
          # Node(
         #     package='semnav',  

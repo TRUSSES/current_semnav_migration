@@ -315,10 +315,6 @@ class NavigationNode : public rclcpp::Node {
 						end_strategy_input, point_strategy_input);
 					polygon_list.push_back(output.front());
 				}
-
-				// ROS_INFO_STREAM("Found polygons");
-
-				// Span all the found polygons to check for intersections between the known polygons and keep only the merged polygons
 				
 				RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
 
@@ -607,7 +603,7 @@ class NavigationNode : public rclcpp::Node {
 
 			// Find local freespace; the robot radius can be zero because we have already dilated the obstacles
 			polygon LF_model = localfreespaceLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, 0.0, &LIDARmodel);
-			// ROS_INFO_STREAM("[Navigation] Computed local free space" << bg::dsv(LF_model));
+			RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed local free space" << bg::dsv(LF_model));
 
 			// Find projected goal
 			point LGL_model = localgoal_linearLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, LF_model, Goal_);
@@ -704,7 +700,7 @@ class NavigationNode : public rclcpp::Node {
 
 			// Print time
 			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Linear: " << LinearCmd << " Angular: " << AngularCmd);
-			// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
+			RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Command update for " << int(localDiffeoTreeArray.size()) << " polygons in " << time.seconds()-before_time << " seconds.");
 
 			return;
 		}
