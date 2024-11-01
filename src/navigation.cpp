@@ -50,12 +50,10 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
-			this->declare_parameter("sub_laser_topic", "/laser_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 			this->declare_parameter("world_frame_id", "world");
 			this->declare_parameter("odom_frame_id", "odom");
-			this->declare_parameter("laser_frame_id", "laser_frame");
 
 			this->declare_parameter("target_object", "");
 			this->declare_parameter("target_object_length", 0.0);
@@ -77,7 +75,8 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("Mu1", 0.0);
 			this->declare_parameter("Mu2", 0.0);
 			this->declare_parameter("SemanticMapUpdateRate", 0.0);
-			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, {{-100.0, -100.0}, {100.0, -100.0}, {100.0, 100.0}, {-100.0, 100.0}, {-100.0, -100.0}});
+			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
+					{{-100.0, -100.0}, {100.0, -100.0}, {100.0, 100.0}, {-100.0, 100.0}, {-100.0, -100.0}});
 
 			this->declare_parameter("LinearGain", 0.0);
 			this->declare_parameter("AngularGain", 0.0);
@@ -97,17 +96,14 @@ class NavigationNode : public rclcpp::Node {
 			pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
 			pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();
-			sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
 			sub_robot_topic_ = this->get_parameter("sub_robot_topic").as_string();
 			sub_semantic_topic_ = this->get_parameter("sub_semantic_topic").as_string();
 			world_frame_id_ = this->get_parameter("world_frame_id").as_string();
 			odom_frame_id_ = this->get_parameter("odom_frame_id").as_string();
-			laser_frame_id_ = this->get_parameter("laser_frame_id").as_string();
 			target_object_ = this->get_parameter("target_object").as_string();
 			target_object_length_ = this->get_parameter("target_object_length").as_double();
 			target_object_width_ = this->get_parameter("target_object_width").as_double();
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_robot_topic_);
 
 			RobotRadius_ = this->get_parameter("RobotRadius").as_double();
@@ -130,7 +126,7 @@ class NavigationNode : public rclcpp::Node {
 
 
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
-            AngularGain_ = this->get_parameter("AngularGain").as_double();
+            		AngularGain_ = this->get_parameter("AngularGain").as_double();
 			Goal_x_ = this->get_parameter("Goal_x").as_double();
 			Goal_y_ = this->get_parameter("Goal_y").as_double();
 			Tolerance_ = this->get_parameter("Tolerance").as_double();
@@ -146,54 +142,48 @@ class NavigationNode : public rclcpp::Node {
 			Goal_.set<0>(Goal_x_);
 			Goal_.set<1>(Goal_y_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Setting Up Publishers");
-            pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
-            pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
-            pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
+			    pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
+			    pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
+			    pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
 			
-            sub_laser.subscribe(this, sub_laser_topic_);
-            sub_robot.subscribe(this, sub_robot_topic_);
-            sync = std::make_shared<message_filters::Synchronizer<
-                    message_filters::sync_policies::ApproximateTime<
-                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
-                                    message_filters::sync_policies::ApproximateTime<
-                                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
-                                    sub_laser, sub_robot);
+			/*
+		    	sub_laser.subscribe(this, sub_laser_topic_);
+		    	sub_robot.subscribe(this, sub_robot_topic_);
+		   	sync = std::make_shared<message_filters::Synchronizer<
+			    message_filters::sync_policies::ApproximateTime<
+			    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
+			    message_filters::sync_policies::ApproximateTime<
+			    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
+			    sub_laser, sub_robot);
 
-            sync->registerCallback(std::bind(&NavigationNode::control_callback, 
-                                    this, std::placeholders::_1 , std::placeholders::_2));
+			sync->registerCallback(std::bind(&NavigationNode::control_callback, 
+			    this, std::placeholders::_1 , std::placeholders::_2));
+			*/
+			sub_robot = this->create_subscription<nav_msgs::msg::Odometry>(sub_robot_topic_, 1,
+					std::bind(&NavigationNode::control_callback, this, std::placeholders::_1));
 
-            /*
-			typedef message_filters::sync_policies
-                    ::ApproximateTime<sensor_msgs::msg::LaserScan,nav_msgs::msg::Odometry> SyncPolicy;
-			typedef message_filters::Synchronizer<SyncPolicy> Sync;
-			boost::shared_ptr<Sync> sync;
-			sync.reset(new Sync(SyncPolicy(100000), sub_laser, sub_robot));
-			sync->registerCallback(boost::bind(&NavigationNode::control_callback, this, _1, _2));
-            */
-
-			//rclcpp::Subscription sub_semantic = nh_.subscribe(sub_semantic_topic_, 1, &NavigationNode::diffeo_tree_update, this);
-            sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
-                            sub_semantic_topic_, 1,
-                            std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
+           		sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
+					sub_semantic_topic_, 1,
+					std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
 
 			// Publish zero commands
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Publishing 0 command");
 
 			publish_behavior_id(BEHAVIOR_STAND);
-            rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
+            		rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
 			publish_behavior_id(BEHAVIOR_WALK);
 			publish_twist(0.0, 0.0);
 
 			// Spin
 			// rclcpp::executors::MultiThreadedExecutor spinner(2);
 			// spinner.spin();
-            
-            // transform listeners
-            tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
-            listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+		    
+		        // transform listeners
+		        tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
+		        listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 		}
 
 		void publish_twist(double LinearCmd, double AngularCmd) {
@@ -206,14 +196,14 @@ class NavigationNode : public rclcpp::Node {
 		}
 
 		void publish_behavior_id(uint16_t BehaviorIdCmd) {
-            example_interfaces::msg::UInt32 commandId;
+            		example_interfaces::msg::UInt32 commandId;
 			commandId.data = BehaviorIdCmd;
 			this->pub_behaviorID_->publish(commandId);
 			return;
 		}
 
 		void publish_behavior_mode(uint16_t BehaviorModeCmd) {
-            example_interfaces::msg::UInt32 commandMode;
+	                example_interfaces::msg::UInt32 commandMode;
 			commandMode.data = BehaviorModeCmd;
 			this->pub_behaviorMode_->publish(commandMode);
 			return;
@@ -255,7 +245,8 @@ class NavigationNode : public rclcpp::Node {
 					std::cout << "Polygon " << j << " collar: " << bg::dsv(polygon_vertices_tilde_polygon) << std::endl;
 					std::cout << "Polygon " << j << " size of r_tilde_t " << diffeoTreeArray[i][j].get_r_tilde_t().size() << std::endl;
 					std::cout << "Polygon " << j << " size of r_tilde_n " << diffeoTreeArray[i][j].get_r_tilde_n().size() << std::endl;
-					std::cout << "Polygon " << j << " polygons are valid: " << bg::is_valid(polygon_vertices_polygon) << " " << bg::is_valid(polygon_vertices_tilde_polygon) << std::endl;
+					std::cout << "Polygon " << j << " polygons are valid: " << bg::is_valid(polygon_vertices_polygon) << 
+						" " << bg::is_valid(polygon_vertices_tilde_polygon) << std::endl;
 					std::cout << " " << std::endl;
 				}
 			}
@@ -294,6 +285,7 @@ class NavigationNode : public rclcpp::Node {
 
             // RCLCPP_INFO(this->get_logger(), "Received %zu semantic map objects.", semantic_map_data->objects.size());
 			
+
 			if (time.seconds() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
 				return;
 			} else {
@@ -311,14 +303,16 @@ class NavigationNode : public rclcpp::Node {
 					// Extract points of the polygon
 					std::vector<point> polygon_in_points;
 					for (size_t j = 0; j < semantic_map_data->objects[i].polygon2d.polygon.points.size(); j++) {
-						polygon_in_points.push_back(point(semantic_map_data->objects[i].polygon2d.polygon.points[j].x, semantic_map_data->objects[i].polygon2d.polygon.points[j].y));
+						polygon_in_points.push_back(point(semantic_map_data->objects[i].polygon2d.polygon.points[j].x, 
+							semantic_map_data->objects[i].polygon2d.polygon.points[j].y));
 					}
 					polygon polygon_in = BoostPointToBoostPoly(polygon_in_points);
 
 					// Dilate the polygon by the robot radius and append it to the polygon list
 					multi_polygon output;
 					bg::strategy::buffer::distance_symmetric<double> distance_strategy(ObstacleDilation_);
-					bg::buffer(polygon_in, output, distance_strategy, side_strategy_input, join_strategy_input, end_strategy_input, point_strategy_input);
+					bg::buffer(polygon_in, output, distance_strategy, side_strategy_input, join_strategy_input, 
+						end_strategy_input, point_strategy_input);
 					polygon_list.push_back(output.front());
 				}
 
@@ -380,13 +374,12 @@ class NavigationNode : public rclcpp::Node {
 			return;
 		}
 
-		void control_callback(const sensor_msgs::msg::LaserScan::ConstSharedPtr& lidar_data, const nav_msgs::msg::Odometry::ConstSharedPtr& robot_data) {
+		void control_callback (const nav_msgs::msg::Odometry::ConstSharedPtr& robot_data) {
 			/**
 			 * Callback function that implements the main part of the reactive controller
 			 * 
 			 * Input:
-			 * 	1) lidar_data: Data received from the LIDAR sensor
-			 * 	2) robot_data: Data received from the robot odometry topic
+			 * 	robot_data: Data received from the robot odometry topic
 			 */
 
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Entering control callback");
@@ -402,24 +395,24 @@ class NavigationNode : public rclcpp::Node {
 			// ROS_INFO_STREAM("[Navigation] Found diffeomorphism trees for control");
 
 			// Compute before time
-            rclcpp::Time time;
+            		rclcpp::Time time;
 			double before_time = time.seconds();
 
 			// Assuming the incoming odometry message is in the odom frame, transform to map frame
-            geometry_msgs::msg::PoseStamped odomPose, mapPose;
+            		geometry_msgs::msg::PoseStamped odomPose, mapPose;
 			odomPose.header.stamp = rclcpp::Time(0);
 			odomPose.header.frame_id = odom_frame_id_;
 			odomPose.pose = robot_data->pose.pose;
 			try {
 				//listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));
 				//listener_.transformPose(world_frame_id_, odomPose, mapPose);
-                geometry_msgs::msg::TransformStamped t;
-                t = tf_buffer_->lookupTransform(world_frame_id_, odom_frame_id_, tf2::TimePointZero);
-                tf2::doTransform(odomPose, mapPose, t);
-                /*
-                tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
-                                odomPose, mapPose, "world_frame_id_", std::chrono::seconds(1)); 
-                */
+				geometry_msgs::msg::TransformStamped t;
+				t = tf_buffer_->lookupTransform(world_frame_id_, odom_frame_id_, tf2::TimePointZero);
+				tf2::doTransform(odomPose, mapPose, t);
+				/*
+				tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
+						odomPose, mapPose, "world_frame_id_", std::chrono::seconds(1)); 
+				*/
 			} catch (tf2::TransformException &ex) {
 				RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "UH OH");
 				RCLCPP_ERROR(this->get_logger(), "%s", ex.what());
@@ -428,9 +421,9 @@ class NavigationNode : public rclcpp::Node {
 
 			// Get robot position and orientation
 			tf2::Quaternion rotation = tf2::Quaternion(mapPose.pose.orientation.x, 
-													 mapPose.pose.orientation.y,
-													 mapPose.pose.orientation.z,
-													 mapPose.pose.orientation.w);
+				 mapPose.pose.orientation.y,
+				 mapPose.pose.orientation.z,
+				 mapPose.pose.orientation.w);
 			tf2::Matrix3x3 m(rotation);
 			double roll, pitch, yaw;
 			m.getRPY(roll, pitch, yaw);
@@ -445,6 +438,7 @@ class NavigationNode : public rclcpp::Node {
 			RobotPosition_.set<1>(RobotPositionY-RobotRadius_*sin(yaw));
 			RobotOrientation_ = yaw;
 
+			/*
 			// ROS_INFO_STREAM("[Navigation] Found robot state");
 
 			// Construct LIDAR object
@@ -462,6 +456,7 @@ class NavigationNode : public rclcpp::Node {
 				compensateObstacleLIDAR2D(RobotPosition_, RobotOrientation_, localPolygonList[i], &LIDAR);
 			}
 			// ROS_INFO_STREAM("[Navigation] Compensated for known obstacles.");
+			*/
 
 			// Find list of polygon objects in the model layer based on the known obstacles
 			std::vector<polygon> KnownObstaclesModel;
@@ -488,14 +483,53 @@ class NavigationNode : public rclcpp::Node {
 				std::vector<std::vector<double>> TempPositionTransformedD = TempTransformation.Jacobian;
 				std::vector<double> TempPositionTransformedDD = TempTransformation.JacobianD;
 
-				double res1 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[0] + TempPositionTransformedD[0][1]*RobotPositionTransformedDD[4] + RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[1]*RobotPositionTransformedD[1][0]) + RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[3]*RobotPositionTransformedD[1][0]);
-				double res2 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[1] + TempPositionTransformedD[0][1]*RobotPositionTransformedDD[5] + RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[1]*RobotPositionTransformedD[1][1]) + RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[3]*RobotPositionTransformedD[1][1]);
-				double res3 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[2] + TempPositionTransformedD[0][1]*RobotPositionTransformedDD[6] + RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[1]*RobotPositionTransformedD[1][0]) + RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[3]*RobotPositionTransformedD[1][0]);
-				double res4 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[3] + TempPositionTransformedD[0][1]*RobotPositionTransformedDD[7] + RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[1]*RobotPositionTransformedD[1][1]) + RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[3]*RobotPositionTransformedD[1][1]);
-				double res5 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[0] + TempPositionTransformedD[1][1]*RobotPositionTransformedDD[4] + RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[5]*RobotPositionTransformedD[1][0]) + RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[7]*RobotPositionTransformedD[1][0]);
-				double res6 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[1] + TempPositionTransformedD[1][1]*RobotPositionTransformedDD[5] + RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[5]*RobotPositionTransformedD[1][1]) + RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[7]*RobotPositionTransformedD[1][1]);
-				double res7 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[2] + TempPositionTransformedD[1][1]*RobotPositionTransformedDD[6] + RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[5]*RobotPositionTransformedD[1][0]) + RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][0] + TempPositionTransformedDD[7]*RobotPositionTransformedD[1][0]);
-				double res8 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[3] + TempPositionTransformedD[1][1]*RobotPositionTransformedDD[7] + RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[5]*RobotPositionTransformedD[1][1]) + RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][1] + TempPositionTransformedDD[7]*RobotPositionTransformedD[1][1]);
+				double res1 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[0] + TempPositionTransformedD[0][1]*RobotPositionTransformedDD[4] + 
+					RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][0] + 
+					TempPositionTransformedDD[1]*RobotPositionTransformedD[1][0]) + 
+					RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][0] + 
+					TempPositionTransformedDD[3]*RobotPositionTransformedD[1][0]);
+				double res2 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[1] + 
+					TempPositionTransformedD[0][1]*RobotPositionTransformedDD[5] + 
+					RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][1] + 
+					TempPositionTransformedDD[1]*RobotPositionTransformedD[1][1]) + 
+					RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][1] + 
+					TempPositionTransformedDD[3]*RobotPositionTransformedD[1][1]);
+				double res3 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[2] + 
+					TempPositionTransformedD[0][1]*RobotPositionTransformedDD[6] + 
+					RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][0] + 
+					TempPositionTransformedDD[1]*RobotPositionTransformedD[1][0]) + 
+					RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][0] + 
+					TempPositionTransformedDD[3]*RobotPositionTransformedD[1][0]);
+				double res4 = TempPositionTransformedD[0][0]*RobotPositionTransformedDD[3] +
+					TempPositionTransformedD[0][1]*RobotPositionTransformedDD[7] +
+					RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[0]*RobotPositionTransformedD[0][1] +
+					TempPositionTransformedDD[1]*RobotPositionTransformedD[1][1]) +
+					RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[2]*RobotPositionTransformedD[0][1] +
+					TempPositionTransformedDD[3]*RobotPositionTransformedD[1][1]);
+				double res5 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[0] +
+					TempPositionTransformedD[1][1]*RobotPositionTransformedDD[4] +
+					RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][0] +
+					TempPositionTransformedDD[5]*RobotPositionTransformedD[1][0]) +
+					RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][0] +
+					TempPositionTransformedDD[7]*RobotPositionTransformedD[1][0]);
+				double res6 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[1] +
+					TempPositionTransformedD[1][1]*RobotPositionTransformedDD[5] +
+					RobotPositionTransformedD[0][0]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][1] +
+					TempPositionTransformedDD[5]*RobotPositionTransformedD[1][1]) +
+					RobotPositionTransformedD[1][0]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][1] +
+					TempPositionTransformedDD[7]*RobotPositionTransformedD[1][1]);
+				double res7 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[2] +
+					TempPositionTransformedD[1][1]*RobotPositionTransformedDD[6] +
+					RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][0] +
+					TempPositionTransformedDD[5]*RobotPositionTransformedD[1][0]) +
+					RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][0] +
+					TempPositionTransformedDD[7]*RobotPositionTransformedD[1][0]);
+				double res8 = TempPositionTransformedD[1][0]*RobotPositionTransformedDD[3] +
+					TempPositionTransformedD[1][1]*RobotPositionTransformedDD[7] +
+					RobotPositionTransformedD[0][1]*(TempPositionTransformedDD[4]*RobotPositionTransformedD[0][1] +
+					TempPositionTransformedDD[5]*RobotPositionTransformedD[1][1]) +
+					RobotPositionTransformedD[1][1]*(TempPositionTransformedDD[6]*RobotPositionTransformedD[0][1] +
+					TempPositionTransformedDD[7]*RobotPositionTransformedD[1][1]);
 
 				RobotPositionTransformedDD[0] = res1;
 				RobotPositionTransformedDD[1] = res2;
@@ -517,12 +551,20 @@ class NavigationNode : public rclcpp::Node {
 
 			// Find alpha1, alpha2, beta1, beta2
 			double alpha1 = -(RobotPositionTransformedD[1][0]*cos(RobotOrientation_) + RobotPositionTransformedD[1][1]*sin(RobotOrientation_));
-			double beta1 = RobotPositionTransformedDD[0]*pow(cos(RobotOrientation_),2) + (RobotPositionTransformedDD[1]+RobotPositionTransformedDD[2])*sin(RobotOrientation_)*cos(RobotOrientation_) + RobotPositionTransformedDD[3]*pow(sin(RobotOrientation_),2);
+			double beta1 = RobotPositionTransformedDD[0]*pow(cos(RobotOrientation_),2) + 
+				(RobotPositionTransformedDD[1]+RobotPositionTransformedDD[2])*sin(RobotOrientation_)*cos(RobotOrientation_) + 
+				RobotPositionTransformedDD[3]*pow(sin(RobotOrientation_),2);
 			double alpha2 = RobotPositionTransformedD[0][0]*cos(RobotOrientation_) + RobotPositionTransformedD[0][1]*sin(RobotOrientation_);
-			double beta2 = RobotPositionTransformedDD[4]*pow(cos(RobotOrientation_),2) + (RobotPositionTransformedDD[5]+RobotPositionTransformedDD[6])*sin(RobotOrientation_)*cos(RobotOrientation_) + RobotPositionTransformedDD[7]*pow(sin(RobotOrientation_),2);
+			double beta2 = RobotPositionTransformedDD[4]*pow(cos(RobotOrientation_),2) + 
+				(RobotPositionTransformedDD[5]+RobotPositionTransformedDD[6])*sin(RobotOrientation_)*cos(RobotOrientation_) + 
+				RobotPositionTransformedDD[7]*pow(sin(RobotOrientation_),2);
 
 			// Find transformed orientation
-			double RobotOrientationTransformed = atan2(RobotPositionTransformedD[1][0]*cos(RobotOrientation_)+RobotPositionTransformedD[1][1]*sin(RobotOrientation_), RobotPositionTransformedD[0][0]*cos(RobotOrientation_)+RobotPositionTransformedD[0][1]*sin(RobotOrientation_));
+			double RobotOrientationTransformed = atan2(RobotPositionTransformedD[1][0]*cos(RobotOrientation_)+RobotPositionTransformedD[1][1]*sin(RobotOrientation_), 
+				RobotPositionTransformedD[0][0]*cos(RobotOrientation_) +
+				RobotPositionTransformedD[0][1]*sin(RobotOrientation_));
+
+			/* 
 
 			// Read LIDAR data in the model space to account for the known obstacles
 			LIDARClass LIDARmodel_known;
@@ -534,7 +576,8 @@ class NavigationNode : public rclcpp::Node {
 			LIDARmodel_known.MaxAngle = LIDAR.MaxAngle;
 			LIDARmodel_known.Resolution = LIDAR.Resolution;
 			LIDARmodel_known.NumSample = LIDAR.NumSample;
-			readLIDAR2D(point(RobotPositionTransformed[0], RobotPositionTransformed[1]), RobotOrientationTransformed, KnownObstaclesModel, LIDAR.Range, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.NumSample, &LIDARmodel_known);
+			readLIDAR2D(point(RobotPositionTransformed[0], RobotPositionTransformed[1]), 
+					RobotOrientationTransformed, KnownObstaclesModel, LIDAR.Range, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.NumSample, &LIDARmodel_known);
 			// ROS_INFO_STREAM("[Navigation] Constructed known model space LIDAR with " << LIDARmodel_known.RangeMeasurements.size() << " rays and " << LIDARmodel_known.Angle.size() << " angles.");
 
 			// Translate LIDAR data from the unknown obstacles to the transformed robot state
@@ -547,16 +590,20 @@ class NavigationNode : public rclcpp::Node {
 			LIDARmodel_unknown.MaxAngle = LIDAR.MaxAngle;
 			LIDARmodel_unknown.Resolution = LIDAR.Resolution;
 			LIDARmodel_unknown.NumSample = LIDAR.NumSample;
-			translateLIDAR2D(RobotPosition_, RobotOrientation_, point(RobotPositionTransformed[0], RobotPositionTransformed[1]), RobotOrientationTransformed, ObstacleDilation_, &LIDARmodel_unknown);
-			// ROS_INFO_STREAM("[Navigation] Constructed unknown model space LIDAR with " << LIDARmodel_unknown.RangeMeasurements.size() << " rays and " << LIDARmodel_unknown.Angle.size() << " angles.");
+			translateLIDAR2D(RobotPosition_, Robotirientation_, point(RobotPositionTransformed[0], RobotPositionTransformed[1]), RobotOrientationTransformed, 
+				ObstacleDilation_, &LIDARmodel_unknown);
+			// ROS_INFO_STREAM("[Navigation] Constructed unknown model space LIDAR with " << 
+			// 	LIDARmodel_unknown.RangeMeasurements.size() << " rays and " << LIDARmodel_unknown.Angle.size() << " angles.");
 
 			// Build final model LIDAR object
 			std::vector<double> newRangeMeasurements(LIDAR.RangeMeasurements.size(), 0.0);
 			for (size_t i = 0; i < LIDAR.RangeMeasurements.size(); i++) {
 				newRangeMeasurements[i] = std::min(LIDARmodel_known.RangeMeasurements[i], LIDARmodel_unknown.RangeMeasurements[i]);
 			}
-			LIDARClass LIDARmodel(newRangeMeasurements, LIDAR.Range-bg::distance(RobotPositionTransformedPoint, RobotPosition_), LIDAR.Infinity, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.Resolution);
+			LIDARClass LIDARmodel(newRangeMeasurements, LIDAR.Range-bg::distance(RobotPositionTransformedPoint, RobotPosition_), 
+					LIDAR.Infinity, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.Resolution);
 			// ROS_INFO_STREAM("[Navigation] Constructed model space LIDAR with " << LIDARmodel.RangeMeasurements.size() << " rays and " << LIDARmodel.Angle.size() << " angles.");
+			*/
 
 			// Find local freespace; the robot radius can be zero because we have already dilated the obstacles
 			polygon LF_model = localfreespaceLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, 0.0, &LIDARmodel);
@@ -595,12 +642,16 @@ class NavigationNode : public rclcpp::Node {
 			// }
 
 			// Compute the basis for the virtual control inputs
-			double tV = (LGL_model.get<0>()-RobotPositionTransformed[0])*cos(RobotOrientationTransformed) + (LGL_model.get<1>()-RobotPositionTransformed[1])*sin(RobotOrientationTransformed);
-			double tW1 = (LGA_model.get<0>()-RobotPositionTransformed[0])*cos(RobotOrientationTransformed) + (LGA_model.get<1>()-RobotPositionTransformed[1])*sin(RobotOrientationTransformed);
-			double tW2 = -(LGA_model.get<0>()-RobotPositionTransformed[0])*sin(RobotOrientationTransformed) + (LGA_model.get<1>()-RobotPositionTransformed[1])*cos(RobotOrientationTransformed);
+			double tV = (LGL_model.get<0>()-RobotPositionTransformed[0])*cos(RobotOrientationTransformed) + 
+				(LGL_model.get<1>()-RobotPositionTransformed[1])*sin(RobotOrientationTransformed);
+			double tW1 = (LGA_model.get<0>()-RobotPositionTransformed[0])*cos(RobotOrientationTransformed) + 
+				(LGA_model.get<1>()-RobotPositionTransformed[1])*sin(RobotOrientationTransformed);
+			double tW2 = -(LGA_model.get<0>()-RobotPositionTransformed[0])*sin(RobotOrientationTransformed) + 
+				(LGA_model.get<1>()-RobotPositionTransformed[1])*cos(RobotOrientationTransformed);
 
 			// Compute the basis for transforming to actual control inputs
-			double e_norm = sqrt(pow((RobotPositionTransformedD[0][0]*cos(RobotOrientation_)+RobotPositionTransformedD[0][1]*sin(RobotOrientation_)),2) + pow((RobotPositionTransformedD[1][0]*cos(RobotOrientation_)+RobotPositionTransformedD[1][1]*sin(RobotOrientation_)),2));
+			double e_norm = sqrt(pow((RobotPositionTransformedD[0][0]*cos(RobotOrientation_)+RobotPositionTransformedD[0][1]*sin(RobotOrientation_)),2) + 
+				pow((RobotPositionTransformedD[1][0]*cos(RobotOrientation_)+RobotPositionTransformedD[1][1]*sin(RobotOrientation_)),2));
 			double dksi_dpsi = MatrixDeterminant(RobotPositionTransformedD)/pow(e_norm,2);
 			double DksiCosSin = (alpha1*beta1 + alpha2*beta2)/pow(e_norm,2);
 
@@ -623,8 +674,8 @@ class NavigationNode : public rclcpp::Node {
 				LinearCmd = 0.0;
 				AngularCmd = 0.0;
 				publish_behavior_id(BEHAVIOR_STAND);
-                // sleep for 5s
-                rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
+                	// sleep for 5s
+                	rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
 				publish_behavior_id(BEHAVIOR_SIT);
 
 				RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Successfully navigated to goal and stopped...");
@@ -669,18 +720,18 @@ class NavigationNode : public rclcpp::Node {
 		std::string world_frame_id_;
 		std::string odom_frame_id_;
 		std::string laser_frame_id_;
-        std::string target_object_;
-        double target_object_length_;
-        double target_object_width_;
+		std::string target_object_;
+		double target_object_length_;
+		double target_object_width_;
 
-        rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorID_;
-        rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
-        rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
-        rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
-        std::shared_ptr<message_filters::Synchronizer<
-                    message_filters::sync_policies::ApproximateTime<
-                    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
-        message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
+		rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorID_;
+		rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
+		rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
+		rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
+		std::shared_ptr<message_filters::Synchronizer<
+			    message_filters::sync_policies::ApproximateTime<
+			    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>> sync;
+		message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
 		message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
 
 
@@ -726,8 +777,8 @@ class NavigationNode : public rclcpp::Node {
 
 		bool DebugFlag_ = false;
 
-        std::shared_ptr<tf2_ros::TransformListener> listener_;
-        std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
+		std::shared_ptr<tf2_ros::TransformListener> listener_;
+		std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
 
 		std::mutex mutex_;
 };
@@ -735,14 +786,8 @@ class NavigationNode : public rclcpp::Node {
 int main(int argc, char** argv) {
 	// ROS setups
 	rclcpp::init(argc, argv);
-    auto node = std::make_shared<NavigationNode>();
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-	// ROS nodehandle
-	// rclcpp::Node nh("~");
-
-	// Start navigation node
-	// NavigationNode navigationNode(&nh);
-
+	auto node = std::make_shared<NavigationNode>();
+	rclcpp::spin(node);
+	rclcpp::shutdown();
 	return 0;
 }
