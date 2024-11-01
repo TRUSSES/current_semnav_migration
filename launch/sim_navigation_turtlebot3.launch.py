@@ -67,7 +67,7 @@ def generate_launch_description():
                 'Mu2': 0.05,
                 'SemanticMapUpdateRate': 8.0,
 
-                'ForwardLinCmdLimit': 0.1,
+                'ForwardLinCmdLimit': 0.3,
                 'BackwardLinCmdLimit': 0.0,
                 'AngCmdLimit': 0.7,
 
