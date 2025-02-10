@@ -134,6 +134,7 @@ add_executable(fake_odometry_publisher
   ${MAIN_DIR}/src/fake_odometry_publisher.cpp
 )
 
+ament_package()
 add_executable(turtlebot3_map_publisher 
   ${MAIN_DIR}/src/turtlebot3_map_publisher.cpp
 )
@@ -206,5 +207,4 @@ add_definitions("-DBOOST_BIND_GLOBAL_PLACEHOLDERS")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations -DBOOST_DISABLE_DEPRECATED_HEADERS")
 add_definitions(-w)
 
-ament_package()
-
+#ament_package()

@@ -26,15 +26,15 @@ from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
-    launch_file_dir = os.path.join(get_package_share_directory('current_semnav_migration'), 'launch')
+    launch_file_dir = os.path.join(get_package_share_directory('semnav'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='-2.0')
-    y_pose = LaunchConfiguration('y_pose', default='-0.5')
+    x_pose = LaunchConfiguration('x_pose', default='0.0')
+    y_pose = LaunchConfiguration('y_pose', default='-5.0')
 
     world = os.path.join(
-        get_package_share_directory('current_semnav_migration'),
+        get_package_share_directory('semnav'),
         'worlds',
         'turtlebot3_house.world'
     )

@@ -50,10 +50,12 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
+			this->declare_parameter("sub_laser_topic", "/laser_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 			this->declare_parameter("world_frame_id", "world");
 			this->declare_parameter("odom_frame_id", "odom");
+			this->declare_parameter("laser_frame_id", "laser_frame");
 
 			this->declare_parameter("target_object", "");
 			this->declare_parameter("target_object_length", 0.0);
@@ -91,19 +93,22 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("LowpassOrder", 0.0);
 			this->declare_parameter("LowpassSamples", 0.0);
 
-			this->declare_parameter("DebugFlag", false);
+			this->declare_parameter("DebugFlag", true);
 
 			pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
 			pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();
+			sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
 			sub_robot_topic_ = this->get_parameter("sub_robot_topic").as_string();
 			sub_semantic_topic_ = this->get_parameter("sub_semantic_topic").as_string();
 			world_frame_id_ = this->get_parameter("world_frame_id").as_string();
 			odom_frame_id_ = this->get_parameter("odom_frame_id").as_string();
+			laser_frame_id_ = this->get_parameter("laser_frame_id").as_string();
 			target_object_ = this->get_parameter("target_object").as_string();
 			target_object_length_ = this->get_parameter("target_object_length").as_double();
 			target_object_width_ = this->get_parameter("target_object_width").as_double();
 
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_robot_topic_);
 
 			RobotRadius_ = this->get_parameter("RobotRadius").as_double();
@@ -149,28 +154,24 @@ class NavigationNode : public rclcpp::Node {
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
 			
-			/*
-		    	sub_laser.subscribe(this, sub_laser_topic_);
-		    	sub_robot.subscribe(this, sub_robot_topic_);
+			sub_laser.subscribe(this, sub_laser_topic_);
+			sub_robot.subscribe(this, sub_robot_topic_);
 		   	sync = std::make_shared<message_filters::Synchronizer<
-			    message_filters::sync_policies::ApproximateTime<
-			    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
-			    message_filters::sync_policies::ApproximateTime<
-			    sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
-			    sub_laser, sub_robot);
+		    	message_filters::sync_policies::ApproximateTime<
+		    	sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
+		    	message_filters::sync_policies::ApproximateTime<
+		    	sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
+		    	sub_laser, sub_robot);
 
 			sync->registerCallback(std::bind(&NavigationNode::control_callback, 
 			    this, std::placeholders::_1 , std::placeholders::_2));
-			*/
-			sub_robot = this->create_subscription<nav_msgs::msg::Odometry>(sub_robot_topic_, 1,
-					std::bind(&NavigationNode::control_callback, this, std::placeholders::_1));
 
-           		sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
-					sub_semantic_topic_, 1,
-					std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
+        	sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
+				sub_semantic_topic_, 1,
+				std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
 
 			// Publish zero commands
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Publishing 0 command");
+			//RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Publishing 0 command");
 
 			publish_behavior_id(BEHAVIOR_STAND);
             		rclcpp::sleep_for(std::chrono::nanoseconds(5000000000));
@@ -289,8 +290,8 @@ class NavigationNode : public rclcpp::Node {
 			if (time.seconds() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
 				return;
 			} else {
-				RCLCPP_INFO(this->get_logger(), "Interval check succeed");
-				// ROS_INFO_STREAM("Entering diffeo tree callback");
+				// RCLCPP_INFO(this->get_logger(), "Interval check succeed");
+				// RCLCPP_INFO_STREAM(this->get_logger(), "Entering diffeo tree callback");
 				// Count time
 				double start_time = time.seconds();
 
@@ -316,7 +317,7 @@ class NavigationNode : public rclcpp::Node {
 					polygon_list.push_back(output.front());
 				}
 				
-				RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
+				// RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
 
 				multi_polygon output_union;
 				if (polygon_list.size() >= 1) {
@@ -330,7 +331,8 @@ class NavigationNode : public rclcpp::Node {
 						output_union = temp_result;
 					}
 				}
-				// ROS_INFO_STREAM("Found polygon unions");
+				// RCLCPP_INFO_STREAM(this->get_logger(), "Found polygon unions");
+				RCLCPP_INFO_STREAM(this->get_logger(), "output_union.size(): " << output_union.size());
 				for (size_t i = 0; i < output_union.size(); i++) {
 					// polygon ch_component;
 					// bg::convex_hull(output_union[i], ch_component);
@@ -338,7 +340,7 @@ class NavigationNode : public rclcpp::Node {
 					bg::simplify(output_union[i], simplified_component, 0.2);
 					polygon_list_merged.push_back(simplified_component);
 				}
-				// ROS_INFO_STREAM("Found simplified components");
+				// RCLCPP_INFO_STREAM(this->get_logger(), "Found simplified components");
 
 				// Find diffeomorphism trees for all merged polygons
 				std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
@@ -348,7 +350,7 @@ class NavigationNode : public rclcpp::Node {
 					diffeoTreeConvex(BoostPointToStd(BoostPolyToBoostPoint(polygon_list_merged[i])), DiffeoParams_, &tree);
 					localDiffeoTreeArray.push_back(tree);
 				}
-				// ROS_INFO_STREAM("Found trees");
+				// RCLCPP_INFO_STREAM(this->get_logger(), "Found trees");
 				
 				// Update
 				{
@@ -362,7 +364,7 @@ class NavigationNode : public rclcpp::Node {
 				if (DebugFlag_) {
 					diffeoTrees_cout(DiffeoTreeArray_);
 				}
-				RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Updated trees in " << time.seconds() - start_time << " seconds.");
+				// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Updated trees in " << time.seconds() - start_time << " seconds.");
 
 				// Update time
 				DiffeoTreeUpdateTime_ = time.seconds();
@@ -370,15 +372,19 @@ class NavigationNode : public rclcpp::Node {
 			return;
 		}
 
-		void control_callback (const nav_msgs::msg::Odometry::ConstSharedPtr& robot_data) {
+		void control_callback (const sensor_msgs::msg::LaserScan::ConstSharedPtr& lidar_data, const nav_msgs::msg::Odometry::ConstSharedPtr& robot_data) {
 			/**
 			 * Callback function that implements the main part of the reactive controller
 			 * 
 			 * Input:
-			 * 	robot_data: Data received from the robot odometry topic
+				1) lidar_data: Data received from the LIDAR sensor
+			 * 	2) robot_data: Data received from the robot odometry topic
 			 */
 
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Entering control callback");
+			for (float num: lidar_data->ranges) {
+				RCLCPP_INFO_STREAM(this->get_logger(), "lidar val: " << num);
+			}
 
 			// Make local copies
 			std::vector<polygon> localPolygonList;
@@ -388,7 +394,7 @@ class NavigationNode : public rclcpp::Node {
 				localPolygonList.assign(PolygonList_.begin(), PolygonList_.end());
 				localDiffeoTreeArray.assign(DiffeoTreeArray_.begin(), DiffeoTreeArray_.end());
 			}
-			// ROS_INFO_STREAM("[Navigation] Found diffeomorphism trees for control");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Found diffeomorphism trees for control");
 
 			// Compute before time
             		rclcpp::Time time;
@@ -434,25 +440,23 @@ class NavigationNode : public rclcpp::Node {
 			RobotPosition_.set<1>(RobotPositionY-RobotRadius_*sin(yaw));
 			RobotOrientation_ = yaw;
 
-			/*
-			// ROS_INFO_STREAM("[Navigation] Found robot state");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Found robot state");
 
 			// Construct LIDAR object
 			LIDARClass LIDAR;
 			constructLIDAR2D(lidar_data, CutoffRange_, AllowableRange_, RobotPitch_, &LIDAR);
 
-			// ROS_INFO_STREAM("[Navigation] Constructed LIDAR");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Constructed LIDAR");
 
 			// Complete LIDAR readings
 			completeLIDAR2D(&LIDAR);
-			// ROS_INFO_STREAM("[Navigation] Completed LIDAR with " << LIDAR.RangeMeasurements.size() << " rays and " << LIDAR.Angle.size() << " angles.");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Completed LIDAR with " << LIDAR.RangeMeasurements.size() << " rays and " << LIDAR.Angle.size() << " angles.");
 
 			// Set the LIDAR rays that hit known obstacles to the LIDAR range
 			for (size_t i = 0; i < localPolygonList.size(); i++) {
 				compensateObstacleLIDAR2D(RobotPosition_, RobotOrientation_, localPolygonList[i], &LIDAR);
 			}
-			// ROS_INFO_STREAM("[Navigation] Compensated for known obstacles.");
-			*/
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Compensated for known obstacles.");
 
 			// Find list of polygon objects in the model layer based on the known obstacles
 			std::vector<polygon> KnownObstaclesModel;
@@ -466,7 +470,7 @@ class NavigationNode : public rclcpp::Node {
 				}
 				KnownObstaclesModel.push_back(BoostPointToBoostPoly(StdToBoostPoint(model_polygon_coords)));
 			}
-			// ROS_INFO_STREAM("[Navigation] Constructed model space.");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Constructed model space.");
 
 			// Find the diffeomorphism and its jacobian at the robot position, along with the necessary second derivatives
 			std::vector<double> RobotPositionTransformed = {RobotPosition_.get<0>(), RobotPosition_.get<1>()};
@@ -543,7 +547,7 @@ class NavigationNode : public rclcpp::Node {
 
 			// Make a point for the transformed robot position
 			point RobotPositionTransformedPoint = point(RobotPositionTransformed[0],RobotPositionTransformed[1]);
-			// ROS_INFO_STREAM("[Navigation] Found diffeomorphism.");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Found diffeomorphism.");
 
 			// Find alpha1, alpha2, beta1, beta2
 			double alpha1 = -(RobotPositionTransformedD[1][0]*cos(RobotOrientation_) + RobotPositionTransformedD[1][1]*sin(RobotOrientation_));
@@ -560,8 +564,6 @@ class NavigationNode : public rclcpp::Node {
 				RobotPositionTransformedD[0][0]*cos(RobotOrientation_) +
 				RobotPositionTransformedD[0][1]*sin(RobotOrientation_));
 
-			/* 
-
 			// Read LIDAR data in the model space to account for the known obstacles
 			LIDARClass LIDARmodel_known;
 			LIDARmodel_known.RangeMeasurements = LIDAR.RangeMeasurements;
@@ -574,7 +576,7 @@ class NavigationNode : public rclcpp::Node {
 			LIDARmodel_known.NumSample = LIDAR.NumSample;
 			readLIDAR2D(point(RobotPositionTransformed[0], RobotPositionTransformed[1]), 
 					RobotOrientationTransformed, KnownObstaclesModel, LIDAR.Range, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.NumSample, &LIDARmodel_known);
-			// ROS_INFO_STREAM("[Navigation] Constructed known model space LIDAR with " << LIDARmodel_known.RangeMeasurements.size() << " rays and " << LIDARmodel_known.Angle.size() << " angles.");
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Constructed known model space LIDAR with " << LIDARmodel_known.RangeMeasurements.size() << " rays and " << LIDARmodel_known.Angle.size() << " angles.");
 
 			// Translate LIDAR data from the unknown obstacles to the transformed robot state
 			LIDARClass LIDARmodel_unknown;
@@ -586,10 +588,9 @@ class NavigationNode : public rclcpp::Node {
 			LIDARmodel_unknown.MaxAngle = LIDAR.MaxAngle;
 			LIDARmodel_unknown.Resolution = LIDAR.Resolution;
 			LIDARmodel_unknown.NumSample = LIDAR.NumSample;
-			translateLIDAR2D(RobotPosition_, Robotirientation_, point(RobotPositionTransformed[0], RobotPositionTransformed[1]), RobotOrientationTransformed, 
-				ObstacleDilation_, &LIDARmodel_unknown);
-			// ROS_INFO_STREAM("[Navigation] Constructed unknown model space LIDAR with " << 
-			// 	LIDARmodel_unknown.RangeMeasurements.size() << " rays and " << LIDARmodel_unknown.Angle.size() << " angles.");
+			translateLIDAR2D(RobotPosition_, RobotOrientation_, point(RobotPositionTransformed[0], RobotPositionTransformed[1]), RobotOrientationTransformed, ObstacleDilation_, &LIDARmodel_unknown);
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Constructed unknown model space LIDAR with " <<
+				//LIDARmodel_unknown.RangeMeasurements.size() << " rays and " << LIDARmodel_unknown.Angle.size() << " angles.");
 
 			// Build final model LIDAR object
 			std::vector<double> newRangeMeasurements(LIDAR.RangeMeasurements.size(), 0.0);
@@ -598,22 +599,21 @@ class NavigationNode : public rclcpp::Node {
 			}
 			LIDARClass LIDARmodel(newRangeMeasurements, LIDAR.Range-bg::distance(RobotPositionTransformedPoint, RobotPosition_), 
 					LIDAR.Infinity, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.Resolution);
-			// ROS_INFO_STREAM("[Navigation] Constructed model space LIDAR with " << LIDARmodel.RangeMeasurements.size() << " rays and " << LIDARmodel.Angle.size() << " angles.");
-			*/
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Constructed model space LIDAR with " << LIDARmodel.RangeMeasurements.size() << " rays and " << LIDARmodel.Angle.size() << " angles.");
 
 			// Find local freespace; the robot radius can be zero because we have already dilated the obstacles
 			polygon LF_model = localfreespaceLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, 0.0, &LIDARmodel);
-			RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed local free space" << bg::dsv(LF_model));
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed local free space" << bg::dsv(LF_model));
 
 			// Find projected goal
 			point LGL_model = localgoal_linearLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, LF_model, Goal_);
-			// ROS_INFO_STREAM("[Navigation] Computed linear local goal." << bg::dsv(LGL_model));
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed linear local goal." << bg::dsv(LGL_model));
 			point LGA1_model = localgoalLIDAR2D(LF_model, Goal_);
-			// ROS_INFO_STREAM("[Navigation] Computed angular local goal 1." << bg::dsv(LGA1_model));
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed angular local goal 1." << bg::dsv(LGA1_model));
 			point LGA2_model = localgoal_angularLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, LF_model, Goal_);
-			// ROS_INFO_STREAM("[Navigation] Computer angular local goal 2." << bg::dsv(LGA2_model));
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computer angular local goal 2." << bg::dsv(LGA2_model));
 			point LGA_model(LGA1_model.get<0>(), LGA1_model.get<1>()); // avoid division by zero
-			// ROS_INFO_STREAM("[Navigation] Computed model space projections." << bg::dsv(LGA_model));
+			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed model space projections." << bg::dsv(LGA_model));
 
 			// Plot debugging
 			// if (DebugFlag_) {
@@ -666,6 +666,7 @@ class NavigationNode : public rclcpp::Node {
 			double AngularCmd = (dW_virtual-LinearCmd*DksiCosSin)/dksi_dpsi;
 
 			// Stop if the distance from the goal is less than delta
+			RCLCPP_INFO_STREAM(this->get_logger(), "distance to goal: " << bg::distance(RobotPosition_, Goal_));
 			if (bg::distance(RobotPosition_, Goal_) < Tolerance_) {
 				LinearCmd = 0.0;
 				AngularCmd = 0.0;
@@ -691,6 +692,7 @@ class NavigationNode : public rclcpp::Node {
 			// Print debug information
 			if (DebugFlag_) {
 				// std::cout << "Local free space in model space: " << bg::dsv(LF_model) << std::endl;
+				std::cout << "Global goal: " << bg::dsv(Goal_) << std::endl;
 				std::cout << "Local linear goal in model space: " << bg::dsv(LGL_model) << std::endl;
 				std::cout << "Local angular goal 1 in model space: " << bg::dsv(LGA1_model) << std::endl;
 				std::cout << "Local angular goal 2 in model space: " << bg::dsv(LGA2_model) << std::endl;
@@ -771,7 +773,7 @@ class NavigationNode : public rclcpp::Node {
 
 		double DiffeoTreeUpdateTime_ ;
 
-		bool DebugFlag_ = false;
+		bool DebugFlag_ = true;
 
 		std::shared_ptr<tf2_ros::TransformListener> listener_;
 		std::unique_ptr<tf2_ros::Buffer> tf_buffer_;

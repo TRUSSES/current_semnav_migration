@@ -64,7 +64,7 @@ private:
   void publish_map() {
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
 
-    int num_polygons = 8;
+    int num_polygons = 0;
     double radius = 1.5;
     double angle_increment = 2 * M_PI / num_polygons;
 
@@ -80,6 +80,16 @@ private:
       polygon_list_msg.objects.push_back(
           populate_polygon_msg(square_polygon, 0.0 + x_offset, 0.0 + y_offset, robot_z_));
     }
+
+	// draw single square
+	std::vector<std::vector<double>> square = {
+		{-4.0, -3.0}, {0.0, -3.0}, {0.0, -7.0}, {-4.0, -7.0}
+	};
+	
+	double frame_center_x = 0.0;
+	double frame_center_y = 0.0;
+	polygon_list_msg.objects.push_back(
+		populate_polygon_msg(square, frame_center_x, frame_center_y, robot_z_));
 
     pub_semantic_map_->publish(polygon_list_msg);
   }
@@ -101,8 +111,8 @@ private:
     polygon_out.pose.pose.position.x = x;
     polygon_out.pose.pose.position.y = y;
     polygon_out.pose.pose.position.z = z;
-    polygon_out.pose.pose.orientation.x = 0.0;
-    polygon_out.pose.pose.orientation.y = 0.0;
+    polygon_out.pose.pose.orientation.x = 2.0;
+    polygon_out.pose.pose.orientation.y = -2.0;
     polygon_out.pose.pose.orientation.z = 0.0;
     polygon_out.pose.pose.orientation.w = 1.0;
 
