@@ -588,6 +588,8 @@ line localfreespace_linearLIDAR2D(point RobotPosition, double RobotOrientation, 
      *  1) LFL: Linear freespace
      */
 
+	// std::cout << "Local freespace (LF) polygon: " << bg::dsv(LF) << std::endl;
+
     // Initialize line
     line LFL;
     if (bg::area(LF) < 0.01) {
@@ -597,6 +599,7 @@ line localfreespace_linearLIDAR2D(point RobotPosition, double RobotOrientation, 
     } else {
         LFL.push_back(RobotPosition);
         LFL.push_back(polyxray(LF, RobotPosition, point(cos(RobotOrientation), sin(RobotOrientation))));
+		std::cout << "Linear freespace (LFL) line: " << bg::dsv(LFL) << std::endl;
         return LFL;
     }
 }

@@ -93,7 +93,7 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("LowpassOrder", 0.0);
 			this->declare_parameter("LowpassSamples", 0.0);
 
-			this->declare_parameter("DebugFlag", true);
+			this->declare_parameter("DebugFlag", false);
 
 			pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
@@ -362,7 +362,7 @@ class NavigationNode : public rclcpp::Node {
 				}
 
 				if (DebugFlag_) {
-					diffeoTrees_cout(DiffeoTreeArray_);
+					//diffeoTrees_cout(DiffeoTreeArray_);
 				}
 				// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Updated trees in " << time.seconds() - start_time << " seconds.");
 
@@ -380,11 +380,6 @@ class NavigationNode : public rclcpp::Node {
 				1) lidar_data: Data received from the LIDAR sensor
 			 * 	2) robot_data: Data received from the robot odometry topic
 			 */
-
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Entering control callback");
-			for (float num: lidar_data->ranges) {
-				RCLCPP_INFO_STREAM(this->get_logger(), "lidar val: " << num);
-			}
 
 			// Make local copies
 			std::vector<polygon> localPolygonList;
@@ -691,7 +686,6 @@ class NavigationNode : public rclcpp::Node {
 
 			// Print debug information
 			if (DebugFlag_) {
-				// std::cout << "Local free space in model space: " << bg::dsv(LF_model) << std::endl;
 				std::cout << "Global goal: " << bg::dsv(Goal_) << std::endl;
 				std::cout << "Local linear goal in model space: " << bg::dsv(LGL_model) << std::endl;
 				std::cout << "Local angular goal 1 in model space: " << bg::dsv(LGA1_model) << std::endl;
@@ -773,7 +767,7 @@ class NavigationNode : public rclcpp::Node {
 
 		double DiffeoTreeUpdateTime_ ;
 
-		bool DebugFlag_ = true;
+		bool DebugFlag_ = false;
 
 		std::shared_ptr<tf2_ros::TransformListener> listener_;
 		std::unique_ptr<tf2_ros::Buffer> tf_buffer_;

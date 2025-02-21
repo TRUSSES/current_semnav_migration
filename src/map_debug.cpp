@@ -68,6 +68,7 @@ private:
     double radius = 1.5;
     double angle_increment = 2 * M_PI / num_polygons;
 
+    /*
     for (int i = 0; i < num_polygons; ++i) {
       double angle = i * angle_increment;
       double x_offset = radius * cos(angle);
@@ -80,16 +81,43 @@ private:
       polygon_list_msg.objects.push_back(
           populate_polygon_msg(square_polygon, 0.0 + x_offset, 0.0 + y_offset, robot_z_));
     }
+    */
 
-	// draw single square
-	std::vector<std::vector<double>> square = {
-		{-4.0, -3.0}, {0.0, -3.0}, {0.0, -7.0}, {-4.0, -7.0}
-	};
-	
-	double frame_center_x = 0.0;
-	double frame_center_y = 0.0;
-	polygon_list_msg.objects.push_back(
-		populate_polygon_msg(square, frame_center_x, frame_center_y, robot_z_));
+    // draw single square
+    std::vector<std::vector<double>> square1 = {
+      {-4.0, -3.0}, {0.0, -3.0}, {0.0, -7.0}, {-4.0, -7.0}
+    };
+
+    std::vector<std::vector<double>> square2 = {
+      {1.0, -2.0}, {1.0, -6.0}, {-3.0, -6.0}, {-3.0, -2.0}
+    };
+
+    std::vector<std::vector<std::vector<double>>> testA = {
+      {{-5.0, -4.0}, {-5.0, -6.0}, {-7.0, -7.0}, {-7.0, -5.0}},
+      {{0, 3.0}, {0, -6.0}, {-3.0, -6.0}, {-3.0, 3.0}},
+      {{2.0, 4.0}, {3.0, 4.0}, {3.0, -3.0}, {2.0, -3.0}},
+      {{1.0, -4.0}, {5.0, -4.0}, {5.0, -7.0}, {1.0, -7.0}}
+    };
+    
+    std::vector<std::vector<std::vector<double>>> testB = {
+      {{-1.0, -1.0}, {-1.0, 1.0}, {-2.0, 1.0}, {-2.0, -1.0}},
+      {{1.0, 1.0}, {1.0, 3.0}, {2.0, 3.0}, {2.0, 1.0}},
+      {{1.0, 0.5}, {1.0, -3.0}, {2.0, -3.0}, {2.0, 0.5}}
+    };
+
+    std::vector<std::vector<std::vector<double>>> testC = {
+      {{-6.0, 1.0}, {-4.0, 1.0}, {-4.0, -1.0}, {-6.0, -1.0}},
+      {{1.0, 2.0}, {1.0, 4.0}, {-1.0, 4.0}, {-1.0, 2.0}},
+      {{1.0, -2.0}, {1.0, -4.0}, {-1.0, -4.0}, {-1.0, -2.0}}
+    };
+
+    double frame_center_x = 0.0;
+    double frame_center_y = 0.0;
+
+    for (int i = 0; i < testC.size() - 1; i++) {
+      polygon_list_msg.objects.push_back(
+        populate_polygon_msg(testC[i], frame_center_x, frame_center_y, robot_z_));
+    }
 
     pub_semantic_map_->publish(polygon_list_msg);
   }
