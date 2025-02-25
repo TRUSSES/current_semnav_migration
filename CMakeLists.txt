@@ -64,6 +64,10 @@ add_library(reactive_planner
   ${MAIN_DIR}/src/libraries/reactive_planner_lib.cpp
 )
 
+add_library(generate_map
+  ${MAIN_DIR}/data/scripts/generate_map.cpp
+)
+
 target_include_directories(reactive_planner PRIVATE
   ${MAIN_DIR}/include
   ${Boost_INCLUDE_DIRS}
@@ -180,9 +184,14 @@ target_link_libraries(turtlebot3_map_publisher
   reactive_planner
 )
 
+target_link_libraries(map_debug
+  generate_map
+)
+
 ## Mark executables and/or libraries for installation
 install(TARGETS
   reactive_planner
+  generate_map
   navigation
   navigation_semantic
   navigation_humans
@@ -198,6 +207,11 @@ install(TARGETS
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
+
+## Make "data" available
+install(DIRECTORY data
+  DESTINATION share/${PROJECT_NAME})
+
 
 ## Declare Silence Boost Errors
 add_definitions("-DBOOST_ALLOW_DEPRECATED_HEADERS")

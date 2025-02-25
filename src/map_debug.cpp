@@ -5,6 +5,7 @@
 #include <nav_msgs/msg/odometry.hpp>
 #include "tf2_ros/transform_broadcaster.h"
 #include "../data/scripts/generate_map.h" // for "get_polygons(file)"
+#include <ament_index_cpp/get_package_share_directory.hpp>
 
 #include <vector>
 #include <cmath>
@@ -115,9 +116,16 @@ private:
     double frame_center_x = 0.0;
     double frame_center_y = 0.0;
 
-    for (int i = 0; i < testC.size() - 1; i++) {
+    // Get polygon coordinates from CSV data.
+    std::string share_directory = ament_index_cpp::get_package_share_directory("semnav");
+    std::string file_mass5 = share_directory + "/data/poly_riskpercentage_mass_5.0.csv";
+    std::string file_mass10 = share_directory + "/data/poly_riskpercentage_mass_10.0.csv";
+
+    std::vector<std::vector<std::vector<double>>> testPolygons = get_polygons(file_mass10);
+
+    for (int i = 0; i < testPolygons.size() - 1; i++) {
       polygon_list_msg.objects.push_back(
-        populate_polygon_msg(testC[i], frame_center_x, frame_center_y, robot_z_));
+        populate_polygon_msg(testPolygons[i], frame_center_x, frame_center_y, robot_z_));
     }
 
     pub_semantic_map_->publish(polygon_list_msg);

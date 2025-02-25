@@ -35,6 +35,7 @@ std::vector<std::vector<double> > get_coords(const std::string& line) {
 std::vector<std::vector<std::vector<double> > > get_polygons(const std::string& filename) {
     std::vector<std::vector<std::vector<double> > > polygons;
     std::ifstream file(filename);
+    std::cout << "received filed " <<  filename << std::endl;
 
     if (!file.is_open()) {
         std::cout << "Error opening " << filename << std::endl;
@@ -62,10 +63,19 @@ std::vector<std::vector<std::vector<double> > > get_polygons(const std::string& 
         }
     }
 
+    std::cout << "num of polygons: " << polygons.size() << std::endl;
+    // Print the vertices
+    for (std::vector<std::vector<double> > polygon : polygons) {
+        for (std::vector<double> point: polygon)
+            std::cout << "(" << point[0] << ", " << point[1] << ")" << std::endl;
+        std::cout << std::endl;
+    }
+
     file.close();
     return polygons;
 }
 
+/*
 int main() {
     std::string filename = "../poly_riskpercentage_mass_5_frequency_1.6111111111111112.csv";
     std::vector<std::vector<std::vector<double> > > polygons = get_polygons(filename);
@@ -79,3 +89,4 @@ int main() {
 
     return 0;
 }
+*/
