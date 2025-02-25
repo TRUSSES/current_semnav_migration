@@ -4,6 +4,7 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include "tf2_ros/transform_broadcaster.h"
+#include "../data/scripts/generate_map.h" // for "get_polygons(file)"
 
 #include <vector>
 #include <cmath>
