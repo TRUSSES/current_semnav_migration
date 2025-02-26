@@ -16,9 +16,9 @@ find_package(tf2 REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
-
 find_package(std_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(rclpy REQUIRED)
 
 find_package(message_filters REQUIRED)
 # dependency broken
@@ -138,7 +138,7 @@ add_executable(fake_odometry_publisher
   ${MAIN_DIR}/src/fake_odometry_publisher.cpp
 )
 
-ament_package()
+# ament_package()
 add_executable(turtlebot3_map_publisher 
   ${MAIN_DIR}/src/turtlebot3_map_publisher.cpp
 )
@@ -205,11 +205,23 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+## Install Python executables
+install(PROGRAMS
+  src/tracking/trajectory_recorder.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
 
 ## Make "data" available
 install(DIRECTORY data
+  DESTINATION share/${PROJECT_NAME})
+
+install(DIRECTORY models
+  DESTINATION share/${PROJECT_NAME})
+
+install(DIRECTORY worlds
   DESTINATION share/${PROJECT_NAME})
 
 
@@ -221,4 +233,4 @@ add_definitions("-DBOOST_BIND_GLOBAL_PLACEHOLDERS")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations -DBOOST_DISABLE_DEPRECATED_HEADERS")
 add_definitions(-w)
 
-#ament_package()
+ament_package()

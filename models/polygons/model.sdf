@@ -1,148 +1,48 @@
 <sdf version='1.6'>
 	<model name='polygons'>
-		<!--
-		<link name='rect'>
-			<visual name='box visual'>
-				<pose>-2.0 -6.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>4.0 6.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='square1'>
-			<visual name='square1 visual'>
-				<pose>-2.0 -5.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>4.0 4.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='square2'>
-			<visual name='square2 visual'>
-				<pose>-1.0 -4.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>4.0 4.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectA1'>
-			<visual name='rectA1 visual'>
-				<pose>-6.0 -6.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>2.0 2.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectA2'>
-			<visual name='rectA2 visual'>
-				<pose>-1.5 -1.5 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>3.0 9.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectA3'>
-			<visual name='rectA3 visual'>
-				<pose>2.5 0.5 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>1.0 7.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectA4'>
-			<visual name='rectA4 visual'>
-				<pose>3.0 -5.5 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>4.0 3.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectB0'>
-			<visual name='rectB0 visual'>
-				<pose>-1.5 0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>1.0 2.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectB1'>
-			<visual name='rectB1 visual'>
-				<pose>1.5 2.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>1.0 2.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectB2'>
-			<visual name='rectB2 visual'>
-				<pose>1.5 -1.25 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>1.0 3.5 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		-->
-		<link name='rectC0'>
-			<visual name='rectC0 visual'>
-				<pose>-5.0 0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>2.0 2.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectC1'>
-			<visual name='rectC1 visual'>
-				<pose>0 3.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>2.0 2.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<link name='rectC2'>
-			<visual name='rectC2 visual'>
-				<pose>0 -3.0 0 0 0 0</pose>
-				<geometry>
-					<box>
-						<size>2.0 2.0 0.1</size>
-					</box>
-				</geometry>
-			</visual>
-		</link>
-		<!-- Goal -->
-		<link name='goal'>
-			<visual name='goal visual'>
-				<pose>4.0 0 0 0 0 0</pose>
-				<geometry>
-					<cylinder>
-						<radius>0.1</radius>
-						<length>4.0</length>
-					</cylinder>
-				</geometry>
-			</visual>
-		</link>
-	</model>
+<link name='link 0'>
+            <visual name='poly 0'>
+                <geometry>
+                    <polyline>
+                        <height>0.1</height>
+                        <point>8 0</point>
+                        <point>0 0</point>
+                        <point>0 199</point>
+                        <point>119 199</point>
+                        <point>124 154</point>
+                        <point>116 132</point>
+                        <point>98 125</point>
+                        <point>52 132</point>
+                        <point>37 101</point>
+                        <point>5 83</point>
+                        <point>17 54</point>
+                        <point>9 29</point>
+                        <point>21 12</point>
+                    </polyline>
+                </geometry>
+            </visual>
+        </link>
+<link name='link 1'>
+            <visual name='poly 1'>
+                <geometry>
+                    <polyline>
+                        <height>0.1</height>
+                        <point>199 0</point>
+                        <point>47 0</point>
+                        <point>29 11</point>
+                        <point>44 30</point>
+                        <point>41 61</point>
+                        <point>110 69</point>
+                        <point>121 99</point>
+                        <point>150 112</point>
+                        <point>174 139</point>
+                        <point>174 182</point>
+                        <point>159 199</point>
+                        <point>199 199</point>
+                    </polyline>
+                </geometry>
+            </visual>
+        </link>
+
+    </model>
 </sdf>

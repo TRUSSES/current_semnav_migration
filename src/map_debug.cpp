@@ -35,6 +35,15 @@ public:
         "/odom", rclcpp::SensorDataQoS(),
         std::bind(&MapDebugNode::odom_callback, this, std::placeholders::_1));
 
+    // Get polygon coordinates from CSV data and create "model.sdf" to visualize in Gazebo.
+    std::string share_directory = ament_index_cpp::get_package_share_directory("semnav");
+    std::string file_initial = share_directory + "/data/poly_riskpercentage_mass_5_frequency_1.6111111111111112.csv";
+    std::string file_mass5 = share_directory + "/data/poly_riskpercentage_mass_5.0.csv";
+    std::string file_mass10 = share_directory + "/data/poly_riskpercentage_mass_10.0.csv";
+
+    test_polygons = get_polygons(file_mass10);
+    generate_sdf(test_polygons);
+
     timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_map, this));
     transform_timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_world_frame, this));
   }
@@ -66,11 +75,11 @@ private:
   void publish_map() {
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
 
+    /* Draw circle of polygons.
     int num_polygons = 0;
     double radius = 1.5;
     double angle_increment = 2 * M_PI / num_polygons;
 
-    /*
     for (int i = 0; i < num_polygons; ++i) {
       double angle = i * angle_increment;
       double x_offset = radius * cos(angle);
@@ -85,47 +94,12 @@ private:
     }
     */
 
-    // draw single square
-    std::vector<std::vector<double>> square1 = {
-      {-4.0, -3.0}, {0.0, -3.0}, {0.0, -7.0}, {-4.0, -7.0}
-    };
-
-    std::vector<std::vector<double>> square2 = {
-      {1.0, -2.0}, {1.0, -6.0}, {-3.0, -6.0}, {-3.0, -2.0}
-    };
-
-    std::vector<std::vector<std::vector<double>>> testA = {
-      {{-5.0, -4.0}, {-5.0, -6.0}, {-7.0, -7.0}, {-7.0, -5.0}},
-      {{0, 3.0}, {0, -6.0}, {-3.0, -6.0}, {-3.0, 3.0}},
-      {{2.0, 4.0}, {3.0, 4.0}, {3.0, -3.0}, {2.0, -3.0}},
-      {{1.0, -4.0}, {5.0, -4.0}, {5.0, -7.0}, {1.0, -7.0}}
-    };
-    
-    std::vector<std::vector<std::vector<double>>> testB = {
-      {{-1.0, -1.0}, {-1.0, 1.0}, {-2.0, 1.0}, {-2.0, -1.0}},
-      {{1.0, 1.0}, {1.0, 3.0}, {2.0, 3.0}, {2.0, 1.0}},
-      {{1.0, 0.5}, {1.0, -3.0}, {2.0, -3.0}, {2.0, 0.5}}
-    };
-
-    std::vector<std::vector<std::vector<double>>> testC = {
-      {{-6.0, 1.0}, {-4.0, 1.0}, {-4.0, -1.0}, {-6.0, -1.0}},
-      {{1.0, 2.0}, {1.0, 4.0}, {-1.0, 4.0}, {-1.0, 2.0}},
-      {{1.0, -2.0}, {1.0, -4.0}, {-1.0, -4.0}, {-1.0, -2.0}}
-    };
-
     double frame_center_x = 0.0;
     double frame_center_y = 0.0;
 
-    // Get polygon coordinates from CSV data.
-    std::string share_directory = ament_index_cpp::get_package_share_directory("semnav");
-    std::string file_mass5 = share_directory + "/data/poly_riskpercentage_mass_5.0.csv";
-    std::string file_mass10 = share_directory + "/data/poly_riskpercentage_mass_10.0.csv";
-
-    std::vector<std::vector<std::vector<double>>> testPolygons = get_polygons(file_mass10);
-
-    for (int i = 0; i < testPolygons.size() - 1; i++) {
+    for (int i = 0; i < test_polygons.size(); i++) {
       polygon_list_msg.objects.push_back(
-        populate_polygon_msg(testPolygons[i], frame_center_x, frame_center_y, robot_z_));
+        populate_polygon_msg(test_polygons[i], frame_center_x, frame_center_y, robot_z_));
     }
 
     pub_semantic_map_->publish(polygon_list_msg);
@@ -165,6 +139,7 @@ private:
   std::string pub_semantic_topic_;
   std::string pub_transform_topic_;  
   std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
+  std::vector<std::vector<std::vector<double>>> test_polygons;
 
   double robot_x_ = 0.0, robot_y_ = 0.0, robot_z_ = 0.0;
 };

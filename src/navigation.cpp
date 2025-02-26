@@ -331,7 +331,7 @@ class NavigationNode : public rclcpp::Node {
 						output_union = temp_result;
 					}
 				}
-				// RCLCPP_INFO_STREAM(this->get_logger(), "Found polygon unions");
+				RCLCPP_INFO_STREAM(this->get_logger(), "Found polygon unions");
 				RCLCPP_INFO_STREAM(this->get_logger(), "output_union.size(): " << output_union.size());
 				for (size_t i = 0; i < output_union.size(); i++) {
 					// polygon ch_component;
@@ -340,7 +340,7 @@ class NavigationNode : public rclcpp::Node {
 					bg::simplify(output_union[i], simplified_component, 0.2);
 					polygon_list_merged.push_back(simplified_component);
 				}
-				// RCLCPP_INFO_STREAM(this->get_logger(), "Found simplified components");
+				RCLCPP_INFO_STREAM(this->get_logger(), "Found simplified components");
 
 				// Find diffeomorphism trees for all merged polygons
 				std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
@@ -362,7 +362,7 @@ class NavigationNode : public rclcpp::Node {
 				}
 
 				if (DebugFlag_) {
-					//diffeoTrees_cout(DiffeoTreeArray_);
+					diffeoTrees_cout(DiffeoTreeArray_);
 				}
 				// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Updated trees in " << time.seconds() - start_time << " seconds.");
 
