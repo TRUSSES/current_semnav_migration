@@ -105,7 +105,8 @@ void generate_sdf(std::vector<std::vector<std::vector<double> > > polygons) {
 )";
     
     for (size_t i = 0; i < polygons.size(); i++) {
-        sdf_file << R"(<link name='link )" << i << "'>" << R"(
+        sdf_file << R"(
+        <link name='link )" << i << "'>" << R"(
             <visual name='poly )" << i << "'>" << R"(
                 <geometry>
                     <polyline>
@@ -118,8 +119,7 @@ void generate_sdf(std::vector<std::vector<std::vector<double> > > polygons) {
                     </polyline>
                 </geometry>
             </visual>
-        </link>
-)";
+        </link>)";
     }
 
     sdf_file << R"(

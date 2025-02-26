@@ -40,8 +40,10 @@ public:
     std::string file_initial = share_directory + "/data/poly_riskpercentage_mass_5_frequency_1.6111111111111112.csv";
     std::string file_mass5 = share_directory + "/data/poly_riskpercentage_mass_5.0.csv";
     std::string file_mass10 = share_directory + "/data/poly_riskpercentage_mass_10.0.csv";
+    // spawn at (-6, -6), goal is (1, -5)
+    std::string file_goal_on_obstacle_boundary = share_directory + "/data/rect.csv";
 
-    test_polygons = get_polygons(file_mass10);
+    test_polygons = get_polygons(file_goal_on_obstacle_boundary);
     generate_sdf(test_polygons);
 
     timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_map, this));
