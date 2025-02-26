@@ -17,8 +17,9 @@ class TrajectoryRecorder(Node):
         self.subscription  # Prevent unused variable warning
 
         # Store trajectory in "/data/trajectory.csv"
-        share_package_directory = get_package_share_directory("semnav")
-        self.trajectory_csv = open(share_package_directory + '/data/trajectory.csv', 'w')
+        file_name = get_package_share_directory("semnav") + '/data/trajectory.csv'
+        print('recording in ' + file_name)
+        self.trajectory_csv = open(file_name, 'w')
         self.writer = csv.writer(self.trajectory_csv)
         self.writer.writerow(['timestamp (sec)', 'x', 'y'])
 
