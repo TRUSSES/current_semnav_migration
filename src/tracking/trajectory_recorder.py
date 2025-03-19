@@ -9,6 +9,9 @@ import csv
 class TrajectoryRecorder(Node):
     def __init__(self):
         super().__init__('trajectory_recorder')
+
+        self.declare_parameter('output_file', 'trajectory0.csv')
+
         self.subscription = self.create_subscription(
             Odometry,
             '/odom',
@@ -17,7 +20,9 @@ class TrajectoryRecorder(Node):
         self.subscription  # Prevent unused variable warning
 
         # Store trajectory in "/data/trajectory.csv"
-        file_name = get_package_share_directory("semnav") + '/data/trajectory.csv'
+        output_file = self.get_parameter('output_file').get_parameter_value().string_value
+
+        file_name = get_package_share_directory("semnav") + '/data/' + output_file
         print('recording in ' + file_name)
         self.trajectory_csv = open(file_name, 'w')
         self.writer = csv.writer(self.trajectory_csv)
