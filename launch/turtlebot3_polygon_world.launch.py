@@ -26,8 +26,7 @@ from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
-    # launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
-    launch_file_dir = os.path.join(get_package_share_directory('holonomic'), 'launch')
+    launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -60,19 +59,9 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
-    # spawn_turtlebot_cmd = IncludeLaunchDescription(
-    #    PythonLaunchDescriptionSource(
-    #       os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
-    #    ),
-    #    launch_arguments={
-    #        'x_pose': x_pose,
-    #        'y_pose': y_pose
-    #    }.items()
-    # )
-
-    spawn_holonomic_cmd = IncludeLaunchDescription(
+    spawn_turtlebot_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'launch_sim.launch.py')
+            os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
         ),
         launch_arguments={
             'x_pose': x_pose,
@@ -86,7 +75,6 @@ def generate_launch_description():
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
     ld.add_action(robot_state_publisher_cmd)
-    # ld.add_action(spawn_turtlebot_cmd)
-    ld.add_action(spawn_holonomic_cmd)
+    ld.add_action(spawn_turtlebot_cmd)
 
     return ld

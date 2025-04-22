@@ -26,8 +26,6 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    print('in robot_state_publisher.launch.py in semnav/launch')
-
     TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
