@@ -26,18 +26,19 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    print('in robot_state_publisher.launch.py in semnav/launch')
-
-    TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
+    # TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    urdf_file_name = 'turtlebot3_' + TURTLEBOT3_MODEL + '.urdf'
+    # urdf_file_name = 'turtlebot3_' + TURTLEBOT3_MODEL + '.urdf'
+    urdf_file_name = 'holonomic_robot3.urdf'
 
     print('urdf_file_name : {}'.format(urdf_file_name))
 
     urdf_path = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
-        'urdf',
+        # get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('holonomic'),
+        # 'urdf',
+        'description',
         urdf_file_name)
 
     with open(urdf_path, 'r') as infp:
