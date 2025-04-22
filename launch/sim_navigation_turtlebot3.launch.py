@@ -75,8 +75,8 @@ def generate_launch_description():
 			 'LinearGain': 0.2,
 			 'AngularGain': 0.4,
 
-			 'Goal_x': 3.0,
-			 'Goal_y': -4.0,
+			 'Goal_x': 1.0,
+			 'Goal_y': -5.0,
 			 'Tolerance': 0.4,
 
 			 'LowpassCutoff': 4.0,
