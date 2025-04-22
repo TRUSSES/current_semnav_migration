@@ -15,7 +15,7 @@ ax.add_patch(obstacle)
 share_directory = '/home/neha/ros2_ws/src/install/semnav/share/semnav'
 data_directory = share_directory + '/data'
 for filename in os.listdir(data_directory):
-    if 'trajectory' in filename and 'csv' in filename:
+    if 'trajectoryA' in filename and 'csv' in filename:
         filename = os.path.join(data_directory, filename)
         cols = ["x", "y"]
         df = pd.read_csv(filename, usecols=cols)
@@ -25,5 +25,5 @@ plt.grid(True)
 plt.xticks(np.arange(-10, 10))
 plt.yticks(np.arange(-10, 10))
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes
-plt.title("Goal: (1, -5)")
+plt.title("Goal: (3, -4)")
 plt.show()
