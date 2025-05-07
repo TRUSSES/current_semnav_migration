@@ -110,6 +110,7 @@ class NavigationNode : public rclcpp::Node {
 
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_robot_topic_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_semantic_topic_);
 
 			RobotRadius_ = this->get_parameter("RobotRadius").as_double();
 			ObstacleDilation_ = this->get_parameter("ObstacleDilation").as_double();
@@ -131,7 +132,7 @@ class NavigationNode : public rclcpp::Node {
 
 
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
-            		AngularGain_ = this->get_parameter("AngularGain").as_double();
+            	AngularGain_ = this->get_parameter("AngularGain").as_double();
 			Goal_x_ = this->get_parameter("Goal_x").as_double();
 			Goal_y_ = this->get_parameter("Goal_y").as_double();
 			Tolerance_ = this->get_parameter("Tolerance").as_double();
@@ -153,7 +154,6 @@ class NavigationNode : public rclcpp::Node {
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
-			
 			sub_laser.subscribe(this, sub_laser_topic_);
 			sub_robot.subscribe(this, sub_robot_topic_);
 		   	sync = std::make_shared<message_filters::Synchronizer<
@@ -182,9 +182,9 @@ class NavigationNode : public rclcpp::Node {
 			// rclcpp::executors::MultiThreadedExecutor spinner(2);
 			// spinner.spin();
 		    
-		        // transform listeners
-		        tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
-		        listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+			// transform listeners
+			tf_buffer_ = std::make_unique<tf2_ros::Buffer>(this->get_clock());
+			listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 		}
 
 		void publish_twist(double LinearCmd, double AngularCmd) {
@@ -212,7 +212,7 @@ class NavigationNode : public rclcpp::Node {
 
 		void diffeoTrees_cout(std::vector<std::vector<PolygonClass>> diffeoTreeArray) {
 			// Mapper
-			std::ofstream svg("/home/kodlab-xavier/tree.svg");
+			std::ofstream svg("/home/neha/Desktop/tree.svg");
 			bg::svg_mapper<point> mapper(svg, 1000, 1000);
 			std::vector<polygon> polygon_vector, polygon_tilde_vector;
 			std::vector<point> point_vector;
@@ -389,7 +389,7 @@ class NavigationNode : public rclcpp::Node {
 				localPolygonList.assign(PolygonList_.begin(), PolygonList_.end());
 				localDiffeoTreeArray.assign(DiffeoTreeArray_.begin(), DiffeoTreeArray_.end());
 			}
-			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Found diffeomorphism trees for control");
+			RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Found diffeomorphism trees for control");
 
 			// Compute before time
             		rclcpp::Time time;
@@ -767,7 +767,7 @@ class NavigationNode : public rclcpp::Node {
 
 		double DiffeoTreeUpdateTime_ ;
 
-		bool DebugFlag_ = false;
+		bool DebugFlag_ = true;
 
 		std::shared_ptr<tf2_ros::TransformListener> listener_;
 		std::unique_ptr<tf2_ros::Buffer> tf_buffer_;

@@ -28,7 +28,7 @@ def generate_launch_description():
 
 		DeclareLaunchArgument('sub_robot_topic', default_value='/odom'),
 		DeclareLaunchArgument('sub_laser_topic', default_value='/scan'),
-		#DeclareLaunchArgument('sub_laser_topic', default_value='/fake_lidar_scan'),
+		# DeclareLaunchArgument('sub_laser_topic', default_value='/fake_lidar_scan'),
 		DeclareLaunchArgument('sub_semantic_topic', default_value='/pose_tracking/semantic_map'),
 
 		DeclareLaunchArgument('world_frame_id', default_value='map'),
