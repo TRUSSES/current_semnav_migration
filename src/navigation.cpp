@@ -77,8 +77,6 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("Mu1", 0.0);
 			this->declare_parameter("Mu2", 0.0);
 			this->declare_parameter("SemanticMapUpdateRate", 0.0);
-			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
-					{{-100.0, -100.0}, {100.0, -100.0}, {100.0, 100.0}, {-100.0, 100.0}, {-100.0, -100.0}});
 
 			this->declare_parameter("LinearGain", 0.0);
 			this->declare_parameter("AngularGain", 0.0);
@@ -129,10 +127,10 @@ class NavigationNode : public rclcpp::Node {
 
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
-
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), VarEpsilon_);
 
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
-            	AngularGain_ = this->get_parameter("AngularGain").as_double();
+            AngularGain_ = this->get_parameter("AngularGain").as_double();
 			Goal_x_ = this->get_parameter("Goal_x").as_double();
 			Goal_y_ = this->get_parameter("Goal_y").as_double();
 			Tolerance_ = this->get_parameter("Tolerance").as_double();
@@ -144,13 +142,16 @@ class NavigationNode : public rclcpp::Node {
 
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
 
+			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
+				{{-100.0, -100.0}, {100.0, -100.0}, {100.0, 100.0}, {-100.0, 100.0}, {-100.0, -100.0}});
+
 			// Initialize publishers
 			Goal_.set<0>(Goal_x_);
 			Goal_.set<1>(Goal_y_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Setting Up Publishers");
-			    pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
-			    pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
-			    pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
+			pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
+		    pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
+		    pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");

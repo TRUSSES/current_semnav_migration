@@ -46,7 +46,7 @@ public:
     std::string file_pentagon = share_directory + "/data/pentagon.csv";
     std::string file_multirect = share_directory + "/data/multi_rect.csv";
 
-    test_polygons = get_polygons(file_multirect);
+    test_polygons = get_polygons(file_rect);
     generate_sdf(test_polygons);
 
     timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_map, this));
