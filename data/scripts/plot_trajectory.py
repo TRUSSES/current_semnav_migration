@@ -42,7 +42,7 @@ ax.add_collection(patches)
 
 # Trajectories
 for filename in os.listdir(data_directory):
-    if 'trajectory' in filename and 'csv' in filename:
+    if 'trajectory1' in filename and 'csv' in filename:
         filename = os.path.join(data_directory, filename)
         cols = ["x", "y"]
         df = pd.read_csv(filename, usecols=cols)
@@ -50,8 +50,6 @@ for filename in os.listdir(data_directory):
         plt.plot(df.x.to_numpy(), df.y.to_numpy())
 
 plt.grid(True)
-#plt.xticks(np.arange(-10, 10))
-#plt.yticks(np.arange(-10, 10))
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes
 plt.title(''.join([plot_title]))
 plt.show()

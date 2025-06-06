@@ -51,12 +51,10 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
 			this->declare_parameter("sub_laser_topic", "/laser_scan");
-			this->declare_parameter("sub_laser_topic", "/laser_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 			this->declare_parameter("world_frame_id", "world");
 			this->declare_parameter("odom_frame_id", "odom");
-			this->declare_parameter("laser_frame_id", "laser_frame");
 			this->declare_parameter("laser_frame_id", "laser_frame");
 
 			this->declare_parameter("target_object", "");
@@ -130,10 +128,6 @@ class NavigationNode : public rclcpp::Node {
 			Mu2_ = this->get_parameter("Mu2").as_double();
 			DiffeoTreeUpdateRate_ = this->get_parameter("SemanticMapUpdateRate").as_double();
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), VarEpsilon_);
-
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
             AngularGain_ = this->get_parameter("AngularGain").as_double();
             AngularGain_ = this->get_parameter("AngularGain").as_double();
@@ -148,8 +142,14 @@ class NavigationNode : public rclcpp::Node {
 
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
 
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), VarEpsilon_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), Epsilon_);
+			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), AngularGain_);
+
 			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
-				{{-100.0, -100.0}, {100.0, -100.0}, {100.0, 100.0}, {-100.0, 100.0}, {-100.0, -100.0}});
+				{{-100.0, -100.0}, {300.0, -100.0}, {300.0, 300.0}, {-100.0, 300.0}, {-100.0, -100.0}});
 
 			// Initialize publishers
 			Goal_.set<0>(Goal_x_);
@@ -562,7 +562,7 @@ class NavigationNode : public rclcpp::Node {
 
 			// Find projected goal
 			point LGL_model = localgoal_linearLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, LF_model, Goal_);
-			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed linear local goal." << bg::dsv(LGL_model));
+			RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed linear local goal." << bg::dsv(LGL_model));
 			point LGA1_model = localgoalLIDAR2D(LF_model, Goal_);
 			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed angular local goal 1." << bg::dsv(LGA1_model));
 			point LGA2_model = localgoal_angularLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, LF_model, Goal_);

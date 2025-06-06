@@ -62,7 +62,7 @@ def generate_launch_description():
 			 'CutoffRange': 0.15,
 
 			 'RFunctionExponent': 20.0,
-			 'Epsilon': 1.0,
+			 'Epsilon': 10.0,
 			 'VarEpsilon': 1.5,
 			 'Mu1': 0.8,
 			 'Mu2': 0.05,
@@ -73,10 +73,10 @@ def generate_launch_description():
 			 'AngCmdLimit': 0.7,
 
 			 'LinearGain': 0.2,
-			 'AngularGain': 0.4,
+			 'AngularGain': 1.0,
 
-			 'Goal_x': 3.0,
-			 'Goal_y': -4.0,
+			 'Goal_x': 150.0,
+			 'Goal_y': 175.0,
 			 'Tolerance': 0.4,
 
 			 'LowpassCutoff': 4.0,
