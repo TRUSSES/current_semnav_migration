@@ -52,7 +52,7 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
-			this->declare_parameter("sub_laser_topic", "/fake_lidar_scan");
+			this->declare_parameter("sub_laser_topic", "/laser_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 			this->declare_parameter("world_frame_id", "world");

@@ -21,7 +21,6 @@ data_directory = share_directory + '/data'
 # Obstacle map
 map_file = data_directory + '/' + map_csv
 df = pd.read_csv(map_file, header=None)
-
 x_row = df.iloc[0].values
 y_row = df.iloc[1].values
 
@@ -42,14 +41,36 @@ ax.add_collection(patches)
 
 # Trajectories
 for filename in os.listdir(data_directory):
-    if 'trajectory1' in filename and 'csv' in filename:
+    if 'trajectory' in filename and 'csv' in filename:
         filename = os.path.join(data_directory, filename)
-        cols = ["x", "y"]
-        df = pd.read_csv(filename, usecols=cols)
-        print(df.x)
-        plt.plot(df.x.to_numpy(), df.y.to_numpy())
+        df = pd.read_csv(filename)
+
+        x = df['x'].to_numpy()
+        y = df['y'].to_numpy()
+        linear_x = df['linear_x'].to_numpy()
+        linear_y = np.zeros_like(linear_x) # assume all zero
+
+        # approximate angle as sum of all past angles (this might not work)
+        theta = df['angular_z'].to_numpy()
+
+        # Rotate
+        x_rot = linear_x * np.cos(theta)
+        y_rot = linear_x * np.sin(theta)
+
+        # trajectory
+        ax.plot(x, y)
+
+        # twist cmds at every nth point
+        n = 20
+        ax.quiver(
+        x[::n], y[::n],
+        x_rot[::n], y_rot[::n],
+        angles='xy', scale_units='xy', scale=0.8, color='red', width=0.0025
+    )
+
 
 plt.grid(True)
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes
 plt.title(''.join([plot_title]))
+plt.axis('equal')
 plt.show()

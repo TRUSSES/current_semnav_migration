@@ -23,6 +23,7 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+from launch.conditions import IfCondition
 
 
 def generate_launch_description():
@@ -32,6 +33,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     x_pose = LaunchConfiguration('x_pose', default='0.0')
     y_pose = LaunchConfiguration('y_pose', default='0.0')
+    gui = LaunchConfiguration('gui', default='false')
 
     world = os.path.join(
         get_package_share_directory('semnav'),
@@ -45,11 +47,12 @@ def generate_launch_description():
         ),
         launch_arguments={'world': world}.items()
     )
-
+    
     gzclient_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
-        )
+        ),
+        condition=IfCondition(gui)
     )
 
     robot_state_publisher_cmd = IncludeLaunchDescription(

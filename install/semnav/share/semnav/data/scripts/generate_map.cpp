@@ -29,6 +29,7 @@ std::vector<std::vector<double> > get_coords(const std::string& line) {
         coords.back().push_back(y);
     }
 
+    // std::cout << "read coords size " << coords.size() << std::endl;
     return coords;
 }
 

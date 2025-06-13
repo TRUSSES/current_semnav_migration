@@ -54,29 +54,29 @@ def generate_launch_description():
 			 'laser_frame_id': laser_frame_id,
 
 			 # NUMERICAL PARAMETERS
-			 'RobotRadius': 0.1,
-			 'ObstacleDilation': 0.2,
+			 'RobotRadius': 0.3,
+			 'ObstacleDilation': 0.3,
 			 'WalkHeight': 0.5,
 
 			 'AllowableRange': 4.0,
 			 'CutoffRange': 0.15,
 
 			 'RFunctionExponent': 20.0,
-			 'Epsilon': 0.4,
-			 'VarEpsilon': 0.4,
+			 'Epsilon': 2.0,
+			 'VarEpsilon': 2.0,
 			 'Mu1': 0.8,
 			 'Mu2': 0.05,
 			 'SemanticMapUpdateRate': 8.0,
 
 			 'ForwardLinCmdLimit': 0.3,
 			 'BackwardLinCmdLimit': 0.0,
-			 'AngCmdLimit': 0.7,
+			 'AngCmdLimit': 2.0,
 
 			 'LinearGain': 0.2,
-			 'AngularGain': 0.4,
+			 'AngularGain': 20.0,
 
-			 'Goal_x': 1.0,
-			 'Goal_y': -5.0,
+			 'Goal_x': 4.0,
+			 'Goal_y': 0.0,
 			 'Tolerance': 0.4,
 
 			 'LowpassCutoff': 4.0,
@@ -112,7 +112,7 @@ def generate_launch_description():
 		 ),
 
 		# Node(
-		#	package='semnav',  
+		#	package='semnav',
 		#	executable='fake_odometry_publisher',  
 		#	namespace='reactive_planner',
 		#	name='fake_odometry_publisher',
