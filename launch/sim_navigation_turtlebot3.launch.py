@@ -27,8 +27,8 @@ def generate_launch_description():
 		DeclareLaunchArgument('pub_behaviorMode_topic', default_value='/minitaur/command/behaviorMode'),
 
 		DeclareLaunchArgument('sub_robot_topic', default_value='/odom'),
-		DeclareLaunchArgument('sub_laser_topic', default_value='/scan'),
-		# DeclareLaunchArgument('sub_laser_topic', default_value='/fake_lidar_scan'),
+		#DeclareLaunchArgument('sub_laser_topic', default_value='/scan'),
+		DeclareLaunchArgument('sub_laser_topic', default_value='/fake_lidar_scan'),
 		DeclareLaunchArgument('sub_semantic_topic', default_value='/pose_tracking/semantic_map'),
 
 		DeclareLaunchArgument('world_frame_id', default_value='map'),
@@ -62,8 +62,8 @@ def generate_launch_description():
 			 'CutoffRange': 0.15,
 
 			 'RFunctionExponent': 20.0,
-			 'Epsilon': 10.0,
-			 'VarEpsilon': 1.5,
+			 'Epsilon': 3.0,
+			 'VarEpsilon': 3.0,
 			 'Mu1': 0.8,
 			 'Mu2': 0.05,
 			 'SemanticMapUpdateRate': 8.0,
@@ -73,10 +73,10 @@ def generate_launch_description():
 			 'AngCmdLimit': 0.7,
 
 			 'LinearGain': 0.2,
-			 'AngularGain': 1.0,
+			 'AngularGain': 3.0,
 
-			 'Goal_x': 150.0,
-			 'Goal_y': 175.0,
+			 'Goal_x': 5.0,
+			 'Goal_y': 0.0,
 			 'Tolerance': 0.4,
 
 			 'LowpassCutoff': 4.0,

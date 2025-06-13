@@ -12,6 +12,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
@@ -47,6 +48,7 @@ include_directories(
   ${rclcpp_INCLUDE_DIRS}
   ${sensor_msgs_INCLUDE_DIRS}
   ${nav_msgs_INCLUDE_DIRS}
+  ${visualization_msgs_INCLUDE_DIRS}
   ${geometry_msgs_INCLUDE_DIRS}
   ${tf2_INCLUDE_DIRS}
   ${tf2_ros_INCLUDE_DIRS}
@@ -75,6 +77,7 @@ target_include_directories(reactive_planner PRIVATE
   ${sensor_msgs_INCLUDE_DIRS}
   ${nav_msgs_INCLUDE_DIRS}
   ${geometry_msgs_INCLUDE_DIRS}
+  ${visualization_msgs_INCLUDE_DIRS}
   ${tf2_INCLUDE_DIRS}
   ${tf2_ros_INCLUDE_DIRS}
   ${tf2_geometry_msgs_INCLUDE_DIRS}
@@ -90,6 +93,7 @@ target_link_libraries(reactive_planner
   ${sensor_msgs_LIBRARIES}
   ${nav_msgs_LIBRARIES}
   ${geometry_msgs_LIBRARIES}
+  ${visualization_msgs_LIBRARIES}
   ${tf2_LIBRARIES}
   ${tf2_ros_LIBRARIES}
   ${tf2_geometry_msgs_LIBRARIES}
@@ -106,26 +110,6 @@ add_executable(navigation
   ${MAIN_DIR}/src/navigation.cpp
 )
 
-add_executable(navigation_semantic 
-  ${MAIN_DIR}/src/navigation_semantic.cpp
-)
-
-add_executable(navigation_humans 
-  ${MAIN_DIR}/src/navigation_humans.cpp
-)
-
-add_executable(human_following 
-  ${MAIN_DIR}/src/human_following.cpp
-)
-
-add_executable(human_following_signal 
-  ${MAIN_DIR}/src/human_following_signal.cpp
-)
-
-add_executable(human_following_fallen
-  ${MAIN_DIR}/src/human_following_fallen.cpp
-)
-
 add_executable(map_debug 
   ${MAIN_DIR}/src/map_debug.cpp
 )
@@ -138,6 +122,10 @@ add_executable(fake_odometry_publisher
   ${MAIN_DIR}/src/fake_odometry_publisher.cpp
 )
 
+add_executable(velocity_visualizer
+  ${MAIN_DIR}/src/velocity_visualization_node.cpp
+)
+
 # ament_package()
 add_executable(turtlebot3_map_publisher 
   ${MAIN_DIR}/src/turtlebot3_map_publisher.cpp
@@ -145,26 +133,6 @@ add_executable(turtlebot3_map_publisher
 
 # Link
 target_link_libraries(navigation
-  reactive_planner
-)
-
-target_link_libraries(navigation_semantic
-  reactive_planner
-)
-
-target_link_libraries(navigation_humans
-  reactive_planner
-)
-
-target_link_libraries(human_following
-  reactive_planner
-)
-
-target_link_libraries(human_following_signal
-  reactive_planner
-)
-
-target_link_libraries(human_following_fallen
   reactive_planner
 )
 
@@ -184,6 +152,10 @@ target_link_libraries(turtlebot3_map_publisher
   reactive_planner
 )
 
+target_link_libraries(velocity_visualizer
+  reactive_planner
+)
+
 target_link_libraries(map_debug
   generate_map
 )
@@ -193,15 +165,12 @@ install(TARGETS
   reactive_planner
   generate_map
   navigation
-  navigation_semantic
-  navigation_humans
-  human_following
-  human_following_signal
-  human_following_fallen
   map_debug
+  velocity_visualizer
   fake_lidar_publisher
   fake_odometry_publisher
   turtlebot3_map_publisher
+  velocity_visualizer
   DESTINATION lib/${PROJECT_NAME}
 )
 

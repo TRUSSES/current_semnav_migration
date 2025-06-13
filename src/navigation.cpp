@@ -23,6 +23,8 @@
 // SOFTWARE.
 
 #include <reactive_planner_lib.h>
+#include <rclcpp/qos.hpp>
+#include <rmw/types.h>
 #include <object_pose_interface_msgs/msg/semantic_map_object_array.hpp>
 #include <example_interfaces/msg/u_int32.hpp>
 
@@ -50,7 +52,7 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
-			this->declare_parameter("sub_laser_topic", "/laser_scan");
+			this->declare_parameter("sub_laser_topic", "/fake_lidar_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 			this->declare_parameter("world_frame_id", "world");
@@ -109,7 +111,6 @@ class NavigationNode : public rclcpp::Node {
 			target_object_width_ = this->get_parameter("target_object_width").as_double();
 
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_laser_topic_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_robot_topic_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), sub_semantic_topic_);
 
@@ -161,17 +162,60 @@ class NavigationNode : public rclcpp::Node {
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
-			sub_laser.subscribe(this, sub_laser_topic_);
-			sub_robot.subscribe(this, sub_robot_topic_);
-		   	sync = std::make_shared<message_filters::Synchronizer<
-		    	message_filters::sync_policies::ApproximateTime<
-		    	sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>>>(
-		    	message_filters::sync_policies::ApproximateTime<
-		    	sensor_msgs::msg::LaserScan, nav_msgs::msg::Odometry>(10),
-		    	sub_laser, sub_robot);
 
-			sync->registerCallback(std::bind(&NavigationNode::control_callback, 
-			    this, std::placeholders::_1 , std::placeholders::_2));
+			// Custom QoS to work with visualization node /*
+			rclcpp::QoS qos_profile(rclcpp::KeepLast(10));
+			qos_profile.reliability(RMW_QOS_POLICY_RELIABILITY_RELIABLE);
+			qos_profile.durability(RMW_QOS_POLICY_DURABILITY_VOLATILE);
+			rmw_qos_profile_t qos_profile_rmw = qos_profile.get_rmw_qos_profile();
+
+			sub_laser.subscribe(this, sub_laser_topic_, qos_profile_rmw);
+			sub_robot.subscribe(this, sub_robot_topic_, qos_profile_rmw);
+/*
+			// Define sync policy
+			using ApproxPolicy = message_filters::sync_policies::ApproximateTime<
+				sensor_msgs::msg::LaserScan,
+				nav_msgs::msg::Odometry
+			>;
+
+			// 2. Create and configure the policy
+			ApproxPolicy policy(10);  // queue_size = 10
+			policy.setMaxIntervalDuration(rclcpp::Duration(0, 500000000));  // 0.5s tolerance
+
+			// 3. Create the synchronizer (simplified template syntax)
+			sync = std::make_shared<message_filters::Synchronizer<ApproxPolicy>>(
+				policy,     
+				sub_laser, 
+				sub_robot
+			);*/
+
+			sync = std::make_shared<message_filters::Synchronizer<
+				message_filters::sync_policies::ApproximateTime<
+					sensor_msgs::msg::LaserScan,
+					nav_msgs::msg::Odometry
+				>>>(
+				message_filters::sync_policies::ApproximateTime<
+					sensor_msgs::msg::LaserScan,
+					nav_msgs::msg::Odometry
+				>(10), sub_laser, sub_robot);
+
+			sync->registerCallback(
+				std::bind(
+					&NavigationNode::control_callback, 
+			    	this,
+					std::placeholders::_1, 
+					std::placeholders::_2
+				)
+			);
+
+			// Test
+			auto test_sub = this->create_subscription<nav_msgs::msg::Odometry>(
+				sub_robot_topic_,
+				qos_profile,
+				[](const nav_msgs::msg::Odometry::SharedPtr msg) {
+					RCLCPP_INFO(rclcpp::get_logger("test"), "Received odometry");
+				}
+			);
 
         	sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
 				sub_semantic_topic_, 1,
@@ -195,11 +239,11 @@ class NavigationNode : public rclcpp::Node {
 		}
 
 		void publish_twist(double LinearCmd, double AngularCmd) {
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Twist Cmd Published");
 			geometry_msgs::msg::Twist commandTwist;
 			commandTwist.linear.x = LinearCmd;
 			commandTwist.angular.z = AngularCmd;
 			this->pub_twist_->publish(commandTwist);
+			RCLCPP_INFO(this->get_logger(), "[Navigation] Twist Cmd Published: (%f, %f)", LinearCmd, AngularCmd);
 			return;
 		}
 
@@ -383,6 +427,8 @@ class NavigationNode : public rclcpp::Node {
 				1) lidar_data: Data received from the LIDAR sensor
 			 * 	2) robot_data: Data received from the robot odometry topic
 			 */
+
+			RCLCPP_INFO(this->get_logger(), "[Navigation] In control callback");
 
 			// Make local copies
 			std::vector<polygon> localPolygonList;
@@ -723,7 +769,7 @@ class NavigationNode : public rclcpp::Node {
 
 		double DiffeoTreeUpdateTime_ ;
 
-		bool DebugFlag_ = true;
+		bool DebugFlag_ = false;
 
         std::shared_ptr<tf2_ros::TransformListener> listener_;
         std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
@@ -737,11 +783,6 @@ int main(int argc, char** argv) {
     auto node = std::make_shared<NavigationNode>();
     rclcpp::spin(node);
     rclcpp::shutdown();
-	// ROS nodehandle
-	// rclcpp::Node nh("~");
-
-	// Start navigation node
-	// NavigationNode navigationNode(&nh);
 
 	return 0;
 }
