@@ -9,6 +9,8 @@ import csv
 
 class TrajectoryRecorder(Node):
     def __init__(self):
+        print('initializing trajectory recorder node')
+
         super().__init__('trajectory_recorder')
 
         self.declare_parameter('output_file', 'trajectory0.csv')
@@ -38,7 +40,6 @@ class TrajectoryRecorder(Node):
         self.trajectory_csv = open(filename, 'w')
         self.writer = csv.writer(self.trajectory_csv)
         self.writer.writerow(['timestamp (sec)', 'x', 'y', 'linear_x', 'angular_z'])
-        print('lin_x')
 
         self.latest_cmd_vel = Twist()  # store latest twist msg
 
@@ -47,6 +48,7 @@ class TrajectoryRecorder(Node):
         position = msg.pose.pose.position
         linear_x = self.latest_cmd_vel.linear.x
         angular_z = self.latest_cmd_vel.angular.z
+        print(linear_x)
 
         self.writer.writerow([timestamp, position.x, position.y, linear_x, angular_z])
     

@@ -53,6 +53,7 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
 			this->declare_parameter("sub_laser_topic", "/laser_scan");
+			//this->declare_parameter("pub_laser_topic", "/fake_lidar_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 			this->declare_parameter("world_frame_id", "world");
@@ -163,7 +164,8 @@ class NavigationNode : public rclcpp::Node {
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
 
-			// Custom QoS to work with visualization node /*
+			/*
+			// Custom QoS to work with visualization node 
 			rclcpp::QoS qos_profile(rclcpp::KeepLast(10));
 			qos_profile.reliability(RMW_QOS_POLICY_RELIABILITY_RELIABLE);
 			qos_profile.durability(RMW_QOS_POLICY_DURABILITY_VOLATILE);
@@ -171,7 +173,7 @@ class NavigationNode : public rclcpp::Node {
 
 			sub_laser.subscribe(this, sub_laser_topic_, qos_profile_rmw);
 			sub_robot.subscribe(this, sub_robot_topic_, qos_profile_rmw);
-/*
+
 			// Define sync policy
 			using ApproxPolicy = message_filters::sync_policies::ApproximateTime<
 				sensor_msgs::msg::LaserScan,
@@ -188,6 +190,9 @@ class NavigationNode : public rclcpp::Node {
 				sub_laser, 
 				sub_robot
 			);*/
+
+			sub_laser.subscribe(this, sub_laser_topic_);
+			sub_robot.subscribe(this, sub_robot_topic_);
 
 			sync = std::make_shared<message_filters::Synchronizer<
 				message_filters::sync_policies::ApproximateTime<
@@ -208,16 +213,16 @@ class NavigationNode : public rclcpp::Node {
 				)
 			);
 
-			// Test
+			/* Test
 			auto test_sub = this->create_subscription<nav_msgs::msg::Odometry>(
 				sub_robot_topic_,
 				qos_profile,
 				[](const nav_msgs::msg::Odometry::SharedPtr msg) {
 					RCLCPP_INFO(rclcpp::get_logger("test"), "Received odometry");
 				}
-			);
+			);*/
 
-        	sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
+			sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
 				sub_semantic_topic_, 1,
 				std::bind(&NavigationNode::diffeo_tree_update, this, std::placeholders::_1));
 

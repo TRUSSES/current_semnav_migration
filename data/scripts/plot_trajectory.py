@@ -7,18 +7,23 @@ from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
 import sys
 
-if len(sys.argv) != 3:
+if len(sys.argv) != 5:
     print("need plot title and map file args")
 
+"""
+shell cmd: python3 plot_trajectory.py [title] [csv file with obstacle data] [goal_x] [goal_y]
+"""
 plot_title = sys.argv[1]
 map_csv = sys.argv[2]
+goal_x = float(sys.argv[3])
+goal_y = float(sys.argv[4])
 
 fig, ax = plt.subplots()
 
 share_directory = '/home/neha/ros2_ws/src/install/semnav/share/semnav'
 data_directory = share_directory + '/data'
 
-# Obstacle map
+# Plot obstacle map
 map_file = data_directory + '/' + map_csv
 df = pd.read_csv(map_file, header=None)
 x_row = df.iloc[0].values
@@ -39,9 +44,13 @@ for i in range(len(split_indices) - 1):
 patches = PatchCollection(polygons, facecolor='lightblue')
 ax.add_collection(patches)
 
-# Trajectories
+""" Plot trajectories.
+Hardcode input files with trajectory data for now. Should be in [share dir]/data/
+2x2trajectory...csv -> 1x1 obstacle lol
+1x1trajectory.csv -> 2x2 obstacle
+"""
 for filename in os.listdir(data_directory):
-    if 'trajectory' in filename and 'csv' in filename:
+    if 'originaltrajectory' in filename and 'csv' in filename:
         filename = os.path.join(data_directory, filename)
         df = pd.read_csv(filename)
 
@@ -61,13 +70,17 @@ for filename in os.listdir(data_directory):
         ax.plot(x, y)
 
         # twist cmds at every nth point
+        """ Plot twist cmd vectors
         n = 20
         ax.quiver(
-        x[::n], y[::n],
-        x_rot[::n], y_rot[::n],
-        angles='xy', scale_units='xy', scale=0.8, color='red', width=0.0025
-    )
+            x[::n], y[::n],
+            x_rot[::n], y_rot[::n],
+            angles='xy', scale_units='xy', scale=0.8, color='red', width=0.0025
+        )
+        """
 
+# Plot goal point
+ax.plot(goal_x, goal_y, 'o')
 
 plt.grid(True)
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes

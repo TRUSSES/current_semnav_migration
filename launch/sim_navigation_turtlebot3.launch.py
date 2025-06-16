@@ -62,21 +62,21 @@ def generate_launch_description():
 			 'CutoffRange': 0.15,
 
 			 'RFunctionExponent': 20.0,
-			 'Epsilon': 2.0,
-			 'VarEpsilon': 2.0,
+			 'Epsilon': 1.0,
+			 'VarEpsilon': 1.0,
 			 'Mu1': 0.8,
 			 'Mu2': 0.05,
 			 'SemanticMapUpdateRate': 8.0,
 
 			 'ForwardLinCmdLimit': 0.3,
 			 'BackwardLinCmdLimit': 0.0,
-			 'AngCmdLimit': 2.0,
+			 'AngCmdLimit': 0.7,
 
-			 'LinearGain': 0.2,
-			 'AngularGain': 30.0,
+			 'LinearGain': 0.5,
+			 'AngularGain': 2.0,
 
-			 'Goal_x': 4.0,
-			 'Goal_y': 0.0,
+			 'Goal_x': 3.0,
+			 'Goal_y': -4.0,
 			 'Tolerance': 0.4,
 
 			 'LowpassCutoff': 4.0,
