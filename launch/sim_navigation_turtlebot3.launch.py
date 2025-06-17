@@ -19,6 +19,8 @@ def generate_launch_description():
 	odom_frame_id = LaunchConfiguration('odom_frame_id')
 	laser_frame_id = LaunchConfiguration('laser_frame_id')
 
+	obstacle_file = LaunchConfiguration('obstacle_file')
+
 	# Declare launch arguments
 	return LaunchDescription([
 
@@ -34,6 +36,8 @@ def generate_launch_description():
 		DeclareLaunchArgument('world_frame_id', default_value='map'),
 		DeclareLaunchArgument('odom_frame_id', default_value='odom'),
 		DeclareLaunchArgument('laser_frame_id', default_value='laser'),
+
+		DeclareLaunchArgument('obstacle_file', default_value='1x1rect.csv'),
 
 		# Launch the main node with the necessary parameters
 		Node(
@@ -96,7 +100,8 @@ def generate_launch_description():
 		  output='screen',
 		  parameters=[{
 			 'pub_semantic_topic': '/pose_tracking/semantic_map',  
-			 'pub_transform_topic': '/pose_tracking/world_frame',  
+			 'pub_transform_topic': '/pose_tracking/world_frame', 
+			 'obstacle_file': obstacle_file, 
 		  }]
 		),
 

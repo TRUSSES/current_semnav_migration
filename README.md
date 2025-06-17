@@ -30,60 +30,87 @@ colcon build --packages-select object_pose_interface_msgs semnav
 
 - Install Gazebo 11, possibly from source since this is not the default version.
 - Install [TurtleBot3 (ROS2 Humble)](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)
-- Add environment variables (to each terminal):
-```
-export TURTLEBOT3_MODEL=waffle_pi
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-export PATH=/usr/local/bin:$PATH
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
-```
-Some warnings/errors are fine, as long as TURTLEBOT3_MODEL is set correctly.
+- Add environment variable: `export TURTLEBOT3_MODEL=waffle`
 
 ## Simulation Instructions
 
 ### 1. Polygon Map Setup
-- Store your obstacle CSV file in `~/ros2_ws/src/current_semnav_migration/data/`
-    - First row: X coordinates
-    - Second row: Y coordinates
+- Store your obstacle CSV file in `~/ros2_ws/src/current_semnav_migration/data/` with the following format:
+    - First row: X coordinates of each polygon.
+    - Second row: Y coordinates of each polygon.
     - Polygons separated by `NaN`
-    - First polygon is ignored (used as boundary)
-- Add CSV file path in `map.debug.cpp` constructor (TODO: pass as parameter instead), and rebuild package.
+    - First polygon represents the workspace boundary, and is ignored when generating the map.
+
 - Functions used in `map.debug.cpp`:
     - `get_polygons()`: Parses polygons from CSV
     - `generate_sdf()`: Generates the SDF model, where obstacles are visual only (no collision properties)
  
 ### 2. Launch semnav
+#### Arguments
+- `obstacle_file`: CSV filename that was stored in `/data`.
+
+Change goal x and y coordinates in launch file directly (for now).
+
+Example usage:
 ```
-ros2 launch semnav sim_navigation_turtlebot3.launch.py
+ros2 launch semnav sim_navigation_turtlebot3.launch.py \
+    obstacle_file:="1x1rect.csv"
 ```
-This will:
+#### Launch file functions
 - Read and parse polygon CSV.
 - Publish semantic map of polygons.
 - Publish fake LIDAR data.
 - Set parameters for the planning algorithm and run the navigation node.
 
 ### 3. Launch TurtleBot3 Simulation
+#### Arguments
+- `x_pose`: X coordinate of TurtleBot starting position.
+- `y_pose`: Y coordinate of TurtleBot starting position.
+- `gui`: false to turn GUI off (run Gazebo headless), true to turn GUI on.
+
+Example usage:
 ```
 ros2 launch semnav turtlebot3_polygon_world.launch.py \
-    x_pose:=[start_x] y_pose:=[start_y]
+    x_pose:=[start_x] y_pose:=[start_y] gui:=0
 ```
 
 ### 4. Record Trajectories
-```
-ros2 runs semnav trajectory_recorder.py \
-    --ros-args -p output_file:=[trajectory_file_name].csv
-```
-- Output saved in share directory: `~/ros2_ws/src/install/semnav/share/semnav/data/`
-- Records real-time poses.
-- Stop with `CTRL+C`
 
-### 5. Plot Trajectories
-- Edit `data/scripts/plot_trajectory.py` to hardcode the correct share directory path (for now) and pick which trajectory files to use. Default is to select any files named `trajectory*.csv`.
-- Run:
+#### Arguments
+- `output_file`: CSV file that is created/rewritten in the share directory to store robot poses.
+
+Example usage:
 ```
-python3 plot_trajectory.py "Plot Title" "map_file.csv"
+ros2 run semnav trajectory_recorder.py \
+    --ros-args -p output_file:="1x1trajectory0.csv"
 ```
-where `map_file.csv` is the name of the file in `/data` that contains your obstacles.
+#### Functions
+- Records poses in real time, after the navigation node and Gazebo nodes have been launched.
+- Saves trajectory (pose) data in share directory, `ex. /home/[user]/ros2_ws/src/install/semnav/share/semnav/data/`
+- Stopped with `CTRL-C`.
+
+### 5. Trajectory and Obstacle Map Visualization.
+
+Required Python packages: `matplotlib, pandas, numpy`.
+
+Edit `/data/scripts/plot_trajectory.py` to hardcode the absolute path of your share directory (example above).
+
+#### Arguments
+- `--title`: Title of plot. (string)
+- `--obstacle_file`: CSV file in `/data` that contains polygonal obstacle data. (string)
+- `--goal_x`: X coordinate of goal. (float)
+- `--goal_y`: Y coordinate of goal. (float)
+- `--pattern`: Unix shell-style wildcards to specify which trajectory files to visualize. Should correspond to the output file specified in the trajectory recorder node. Default is to select any files named `trajectory*.csv`. (string)
+
+Example usage:
+```
+python3 plot_trajectory.py \
+    --title="2x2 obstacle trajectories" \
+    --obstacle_file="rect.csv" \
+    --goal_x=4.0 \
+    --goal_y=-1.0 \
+    --pattern="2x2trajectory*csv"
+```
 
 ### Debugging Tips
 - Use `ros2 topic list` to confirm semnav topics are running.

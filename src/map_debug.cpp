@@ -13,12 +13,15 @@
 class MapDebugNode : public rclcpp::Node {
 public:
   MapDebugNode() : rclcpp::Node("map_debug") {
-    RCLCPP_INFO(this->get_logger(), "in map debug");
     this->declare_parameter("pub_semantic_topic", "semantic_map");
     this->declare_parameter("pub_transform_topic", "world_transform");
+    this->declare_parameter("obstacle_file", "4x4rect.csv");
 
     pub_semantic_topic_ = this->get_parameter("pub_semantic_topic").as_string();
     pub_transform_topic_ = this->get_parameter("pub_transform_topic").as_string();
+    obstacle_file_ = this->get_parameter("obstacle_file").as_string();
+
+    std::cout << "obstacle_file: " << obstacle_file_ << std::endl;
 
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
@@ -41,11 +44,14 @@ public:
     std::string file_initial = share_directory + "/data/poly_riskpercentage_mass_5_frequency_1.6111111111111112.csv";
     std::string file_mass5 = share_directory + "/data/poly_riskpercentage_mass_5.0.csv";
     std::string file_mass10 = share_directory + "/data/poly_riskpercentage_mass_10.0.csv";
-    std::string file_rect = share_directory + "/data/rect.csv";
     std::string file_pentagon = share_directory + "/data/pentagon.csv";
     std::string file_multirect = share_directory + "/data/multi_rect.csv";
+    std::string file_1x1rect = share_directory + "/data/1x1rect.csv";
+    std::string file_2x2rect = share_directory + "/data/2x2rect.csv";
+    std::string file_4x4rect = share_directory + "/data/4x4rect.csv";
+    std::string filename = share_directory + "/data/" + obstacle_file_;
 
-    test_polygons = get_polygons(file_rect);
+    test_polygons = get_polygons(filename);
     generate_sdf(test_polygons);
 
     timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_map, this));
@@ -142,6 +148,7 @@ private:
 
   std::string pub_semantic_topic_;
   std::string pub_transform_topic_;  
+  std::string obstacle_file_;
   std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
   std::vector<std::vector<std::vector<double>>> test_polygons;
 

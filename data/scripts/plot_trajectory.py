@@ -1,22 +1,28 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from ament_index_python.packages import get_package_share_directory
 import os
+import argparse
 import numpy as np
+import fnmatch
 from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
 import sys
 
-if len(sys.argv) != 5:
-    print("need plot title and map file args")
+# Argument parsing
+parser = argparse.ArgumentParser(description="Plot trajectories with obstacle map.")
+parser.add_argument("--title", type=str, default="Trajectory plot", help="Plot title")
+parser.add_argument("--obstacle_file", type=str, required=True, help="CSV file with obstacle data")
+parser.add_argument("--goal_x", type=float, required=True, help="Goal X coordinate")
+parser.add_argument("--goal_y", type=float, required=True, help="Goal Y coordinate")
+parser.add_argument("--pattern", type=str, default="*originaltrajectory*.csv",
+    help="Pattern to match trajectory files (e.g., 'trajectory*.csv')")
 
-"""
-shell cmd: python3 plot_trajectory.py [title] [csv file with obstacle data] [goal_x] [goal_y]
-"""
-plot_title = sys.argv[1]
-map_csv = sys.argv[2]
-goal_x = float(sys.argv[3])
-goal_y = float(sys.argv[4])
+args = parser.parse_args()
+
+plot_title = args.title
+map_csv = args.obstacle_file
+goal_x = args.goal_x
+goal_y = args.goal_y
 
 fig, ax = plt.subplots()
 
@@ -45,12 +51,11 @@ patches = PatchCollection(polygons, facecolor='lightblue')
 ax.add_collection(patches)
 
 """ Plot trajectories.
-Hardcode input files with trajectory data for now. Should be in [share dir]/data/
-2x2trajectory...csv -> 1x1 obstacle lol
+2x2trajectory...csv -> 1x1 obstacle (my bad))
 1x1trajectory.csv -> 2x2 obstacle
 """
 for filename in os.listdir(data_directory):
-    if 'originaltrajectory' in filename and 'csv' in filename:
+    if fnmatch.fnmatch(filename, args.pattern):
         filename = os.path.join(data_directory, filename)
         df = pd.read_csv(filename)
 
@@ -69,7 +74,7 @@ for filename in os.listdir(data_directory):
         # trajectory
         ax.plot(x, y)
 
-        # twist cmds at every nth point
+        # Plot twist cmds at every nth point
         """ Plot twist cmd vectors
         n = 20
         ax.quiver(
