@@ -14,7 +14,7 @@ parser.add_argument("--title", type=str, default="Trajectory plot", help="Plot t
 parser.add_argument("--obstacle_file", type=str, required=True, help="CSV file with obstacle data")
 parser.add_argument("--goal_x", type=float, required=True, help="Goal X coordinate")
 parser.add_argument("--goal_y", type=float, required=True, help="Goal Y coordinate")
-parser.add_argument("--pattern", type=str, default="*originaltrajectory*.csv",
+parser.add_argument("--pattern", type=str, default="trajectory*.csv",
     help="Pattern to match trajectory files (e.g., 'trajectory*.csv')")
 
 args = parser.parse_args()

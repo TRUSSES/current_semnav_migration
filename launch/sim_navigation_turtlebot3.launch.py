@@ -44,7 +44,7 @@ def generate_launch_description():
 		  package='semnav',
 		  executable='navigation',
 		  namespace='reactive_planner',
-		  name='navigation_node',
+		  nand='navigation_node',
 		  output='screen',
 		  parameters=[{
 			 'pub_twist_topic': pub_twist_topic,
