@@ -1,12 +1,59 @@
 import os
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
 from launch_ros.substitutions import FindPackageShare
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.conditions import IfCondition
+
+
+""" Launch file functions
+	- Run navigation node with parameters.
+	- Run fake lidar node.
+	- Spawn turtlebot in Gazebo with initial pose arguments.
+"""
 
 def generate_launch_description():
-	# Launch configuration variables
+	# Gazebo requirements
+	turtlebot_launch_file = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
+	pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
+ 
+	# Gazebo launch arguments
+	use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+	x_pose = LaunchConfiguration('x_pose', default='0.0')
+    y_pose = LaunchConfiguration('y_pose', default='0.0')
+
+	# Secondary launch files for Gazebo
+	gzserver_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+        ),
+        launch_arguments={'world': world}.items()
+    )
+
+	robot_state_publisher_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(launch_file_dir, 'ro
+                /*
+                
+                */bot_state_publisher.launch.py')
+        ),
+        launch_arguments={'use_sim_time': use_sim_time}.items()
+    )
+
+    spawn_turtlebot_cmd = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(launch_file_dir, 'spawn_turtlebot3.launch.py')
+        ),
+        launch_arguments={
+            'x_pose': x_pose,
+            'y_pose': y_pose
+        }.items()
+    )
+
+	# Launch configuration variables for planner
 	pub_twist_topic = LaunchConfiguration('pub_twist_topic')
 	pub_behaviorID_topic = LaunchConfiguration('pub_behaviorID_topic')
 	pub_behaviorMode_topic = LaunchConfiguration('pub_behaviorMode_topic')
@@ -19,18 +66,19 @@ def generate_launch_description():
 	odom_frame_id = LaunchConfiguration('odom_frame_id')
 	laser_frame_id = LaunchConfiguration('laser_frame_id')
 
-	obstacle_file = LaunchConfiguration('obstacle_file')
+	# Fake map publisher requirements
+	fake_map = LaunchConfiguration('fake_map', default='true')
+	obstacle_file = LaunchConfiguration('obstacle_file', default='1x1rect.csv')
 
-	# Declare launch arguments
 	return LaunchDescription([
-
+		# Declare planner arguments
 		DeclareLaunchArgument('pub_twist_topic', default_value='/cmd_vel'),
 		DeclareLaunchArgument('pub_behaviorID_topic', default_value='/minitaur/command/behaviorId'),
 		DeclareLaunchArgument('pub_behaviorMode_topic', default_value='/minitaur/command/behaviorMode'),
 
 		DeclareLaunchArgument('sub_robot_topic', default_value='/odom'),
-		DeclareLaunchArgument('sub_laser_topic', default_value='/scan'),
-		#DeclareLaunchArgument('sub_laser_topic', default_value='/fake_lidar_scan'),
+		#DeclareLaunchArgument('sub_laser_topic', default_value='/scan'),
+		DeclareLaunchArgument('sub_laser_topic', default_value='/fake_lidar_scan'),
 		DeclareLaunchArgument('sub_semantic_topic', default_value='/pose_tracking/semantic_map'),
 
 		DeclareLaunchArgument('world_frame_id', default_value='map'),
@@ -39,7 +87,12 @@ def generate_launch_description():
 
 		DeclareLaunchArgument('obstacle_file', default_value='1x1rect.csv'),
 
-		# Launch the main node with the necessary parameters
+		# Gazebo and TurtleBot3 commands
+		gzserver_cmd,
+		robot_state_publisher_cmd,
+		spawn_turtlebot_cmd,
+
+		# Launch the main planner node with the necessary parameters
 		Node(
 		  package='semnav',
 		  executable='navigation',
@@ -92,12 +145,14 @@ def generate_launch_description():
 		  }]
 		),
 
+		# Optional
 		Node(
 		  package='semnav',  
-		  executable='map_debug',  
+		  executable='fake_map_publisher',  
 		  namespace='reactive_planner',
-		  name='fake_slam_publisher',
+		  name='fake_map_publisher',
 		  output='screen',
+		  condition=IfCondition(fake_map),
 		  parameters=[{
 			 'pub_semantic_topic': '/pose_tracking/semantic_map',  
 			 'pub_transform_topic': '/pose_tracking/world_frame', 
@@ -114,24 +169,5 @@ def generate_launch_description():
 			parameters=[{
 				'pub_lidar_topic': '/fake_lidar_scan',  
 			}]
-		 ),
-
-		# Node(
-		#	package='semnav',
-		#	executable='fake_odometry_publisher',  
-		#	namespace='reactive_planner',
-		#	name='fake_odometry_publisher',
-		#	output='screen',
-		#	parameters=[{
-		#		'pub_odom_topic': '/fake_odom',  
-		#	}]
-		# ),
-
-		# Node(
-		#	package='semnav',  
-		#	executable='turtlebot3_map_publisher', 
-		#	namespace='reactive_planner',
-		#	name='turtlebot3_map_publisher',
-		#	output='screen',
-		# ),
+		 )
 	])

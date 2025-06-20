@@ -110,8 +110,8 @@ add_executable(navigation
   ${MAIN_DIR}/src/navigation.cpp
 )
 
-add_executable(map_debug 
-  ${MAIN_DIR}/src/map_debug.cpp
+add_executable(fake_map_publisher 
+  ${MAIN_DIR}/src/fake_map_publisher.cpp
 )
 
 add_executable(fake_lidar_publisher 
@@ -136,8 +136,9 @@ target_link_libraries(navigation
   reactive_planner
 )
 
-target_link_libraries(map_debug
+target_link_libraries(fake_map_publisher
   reactive_planner
+  generate_map
 )
 
 target_link_libraries(fake_lidar_publisher
@@ -156,16 +157,13 @@ target_link_libraries(velocity_visualizer
   reactive_planner
 )
 
-target_link_libraries(map_debug
-  generate_map
-)
 
 ## Mark executables and/or libraries for installation
 install(TARGETS
   reactive_planner
   generate_map
   navigation
-  map_debug
+  fake_map_publisher
   velocity_visualizer
   fake_lidar_publisher
   fake_odometry_publisher

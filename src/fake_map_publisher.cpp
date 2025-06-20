@@ -10,9 +10,9 @@
 #include <vector>
 #include <cmath>
 
-class MapDebugNode : public rclcpp::Node {
+class FakeMapPublisherNode : public rclcpp::Node {
 public:
-  MapDebugNode() : rclcpp::Node("map_debug") {
+  FakeMapPublisherNode() : rclcpp::Node("fake_map_publisher") {
     this->declare_parameter("pub_semantic_topic", "semantic_map");
     this->declare_parameter("pub_transform_topic", "world_transform");
     this->declare_parameter("obstacle_file", "4x4rect.csv");
@@ -37,7 +37,7 @@ public:
 
     odom_subscriber_ = this->create_subscription<nav_msgs::msg::Odometry>(
         "/odom", rclcpp::SensorDataQoS(),
-        std::bind(&MapDebugNode::odom_callback, this, std::placeholders::_1));
+        std::bind(&FakeMapPublisherNode::odom_callback, this, std::placeholders::_1));
 
     // Get polygon coordinates from CSV data and create "model.sdf" to visualize in Gazebo.
     std::string share_directory = ament_index_cpp::get_package_share_directory("semnav");
@@ -54,8 +54,8 @@ public:
     test_polygons = get_polygons(filename);
     generate_sdf(test_polygons);
 
-    timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_map, this));
-    transform_timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&MapDebugNode::publish_world_frame, this));
+    timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&FakeMapPublisherNode::publish_map, this));
+    transform_timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&FakeMapPublisherNode::publish_world_frame, this));
   }
 
 private:
@@ -84,25 +84,6 @@ private:
 
   void publish_map() {
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
-
-    /* Draw circle of polygons.
-    int num_polygons = 0;
-    double radius = 1.5;
-    double angle_increment = 2 * M_PI / num_polygons;
-
-    for (int i = 0; i < num_polygons; ++i) {
-      double angle = i * angle_increment;
-      double x_offset = radius * cos(angle);
-      double y_offset = radius * sin(angle);
-
-      std::vector<std::vector<double>> square_polygon = {
-        {0.0, 0.0}, {0.3, 0.0}, {0.3, 0.3}, {0.0, 0.3}, {0.0, 0.0}
-      };
-
-      polygon_list_msg.objects.push_back(
-          populate_polygon_msg(square_polygon, 0.0 + x_offset, 0.0 + y_offset, robot_z_));
-    }
-    */
 
     double frame_center_x = 0.0;
     double frame_center_y = 0.0;
@@ -157,7 +138,7 @@ private:
 
 int main(int argc, char** argv) {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<MapDebugNode>();
+  auto node = std::make_shared<FakeMapPublisherNode>();
   rclcpp::spin(node);
   rclcpp::shutdown();
   return 0;

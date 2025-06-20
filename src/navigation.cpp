@@ -455,15 +455,15 @@ class NavigationNode : public rclcpp::Node {
 			odomPose.header.frame_id = odom_frame_id_;
 			odomPose.pose = robot_data->pose.pose;
 			try {
-				//listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));
-				//listener_.transformPose(world_frame_id_, odomPose, mapPose);
+				/* ROS1 version for comparison.
+				listener_.waitForTransform(world_frame_id_, odom_frame_id_, rclcpp::Time(0), rclcpp::Duration(std::chrono::nanoseconds(1000000000));
+				listener_.transformPose(world_frame_id_, odomPose, mapPose);
+				tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
+					odomPose, mapPose, "world_frame_id_", std::chrono::seconds(1)); 
+				*/
                 geometry_msgs::msg::TransformStamped t;
                 t = tf_buffer_->lookupTransform(world_frame_id_, odom_frame_id_, tf2::TimePointZero);
                 tf2::doTransform(odomPose, mapPose, t);
-                /*
-                tf_buffer_->transform<geometry_msgs::msg::PoseStamped>(
-                                odomPose, mapPose, "world_frame_id_", std::chrono::seconds(1)); 
-                */
 			} catch (tf2::TransformException &ex) {
 				RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "UH OH");
 				RCLCPP_ERROR(this->get_logger(), "%s", ex.what());
