@@ -175,5 +175,15 @@ def generate_launch_description():
             executable='foxglove_bridge',
             name='foxglove_bridge',
             output='screen'
-        )
+        ),
+ 
+		# Record into bag file
+		ExecuteProcess(
+			cmd=[
+				'ros2', 'bag', 'record',
+				'/geojson_map',
+				'--output', 'bag_files'
+			],
+			output='screen'
+		)
     ])
