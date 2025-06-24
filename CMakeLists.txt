@@ -20,11 +20,9 @@ find_package(tf2_ros REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(rclpy REQUIRED)
-
 find_package(message_filters REQUIRED)
-# dependency broken
-# find_package(message_generation REQUIRED)
 find_package(object_pose_interface_msgs REQUIRED)
+find_package(foxglove_msgs REQUIRED) # For simulation
 
 # Find other libraries
 find_package(Boost REQUIRED COMPONENTS system)
@@ -57,7 +55,7 @@ include_directories(
   ${message_filters_INCLUDE_DIRS}
   ${object_pose_interface_msgs_INCLUDE_DIRS}
   ${example_interfaces_INCLUDE_DIRS}
-
+  ${foxglove_msgs_INCLUDE_DIRS}
 )
 
 ## Declare C++ libraries
@@ -85,6 +83,7 @@ target_include_directories(reactive_planner PRIVATE
   ${message_filters_INCLUDE_DIRS}
   ${object_pose_interface_msgs_INCLUDE_DIRS}
   ${example_interfaces_INCLUDE_DIRS}
+  ${foxglove_msgs_INCLUDE_DIRS}
 )
 
 target_link_libraries(reactive_planner
@@ -101,6 +100,7 @@ target_link_libraries(reactive_planner
   ${message_filters_LIBRARIES}
   ${object_pose_interface_msgs_LIBRARIES}
   ${example_interfaces_LIBRARIES}
+  ${foxglove_msgs_LIBRARIES}
   CGAL::CGAL
   CGAL::CGAL_Core
 )

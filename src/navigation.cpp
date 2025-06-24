@@ -27,6 +27,8 @@
 #include <rmw/types.h>
 #include <object_pose_interface_msgs/msg/semantic_map_object_array.hpp>
 #include <example_interfaces/msg/u_int32.hpp>
+#include <foxglove_msgs/msg/geo_json.hpp>
+#include <sstream>
 
 #define BEHAVIOR_SIT 0
 #define BEHAVIOR_STAND 1
@@ -52,10 +54,13 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
+			this->declare_parameter("pub_geojson_topic", "/geojson_map");
+
 			this->declare_parameter("sub_laser_topic", "/laser_scan");
-			//this->declare_parameter("pub_laser_topic", "/fake_lidar_scan");
+			//this->declare_parameter("sub_laser_topic", "/fake_lidar_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
+
 			this->declare_parameter("world_frame_id", "world");
 			this->declare_parameter("odom_frame_id", "odom");
 			this->declare_parameter("laser_frame_id", "laser_frame");
@@ -88,25 +93,29 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("Goal_y", 0.0);
 			
 			this->declare_parameter("Tolerance", 0.0);
-
 			this->declare_parameter("LowpassCutOff", 0.0);
 			this->declare_parameter("LowpassSampling", 0.0);
 			this->declare_parameter("LowpassOrder", 0.0);
 			this->declare_parameter("LowpassSamples", 0.0);
 
 			this->declare_parameter("DebugFlag", false);
+			this->declare_parameter("SimulationFlag", true);
 
 			pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
 			pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();
+			pub_geojson_topic_ = this->get_parameter("pub_geojson_topic").as_string();
+			
 			sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
 			sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
 			sub_robot_topic_ = this->get_parameter("sub_robot_topic").as_string();
 			sub_semantic_topic_ = this->get_parameter("sub_semantic_topic").as_string();
+
 			world_frame_id_ = this->get_parameter("world_frame_id").as_string();
 			odom_frame_id_ = this->get_parameter("odom_frame_id").as_string();
 			laser_frame_id_ = this->get_parameter("laser_frame_id").as_string();
 			laser_frame_id_ = this->get_parameter("laser_frame_id").as_string();
+
 			target_object_ = this->get_parameter("target_object").as_string();
 			target_object_length_ = this->get_parameter("target_object_length").as_double();
 			target_object_width_ = this->get_parameter("target_object_width").as_double();
@@ -143,6 +152,7 @@ class NavigationNode : public rclcpp::Node {
 			LowpassSamples_ = this->get_parameter("LowpassSamples").as_double();
 
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
+			SimulationFlag_ = this->get_parameter("SimulationFlag").as_bool();
 
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
@@ -160,36 +170,10 @@ class NavigationNode : public rclcpp::Node {
 			pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
 		    pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
 		    pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
+			pub_geojson_ = this->create_publisher<foxglove_msgs::msg::GeoJSON>("pub_geojson_topic_", 1);
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
-
-			/*
-			// Custom QoS to work with visualization node 
-			rclcpp::QoS qos_profile(rclcpp::KeepLast(10));
-			qos_profile.reliability(RMW_QOS_POLICY_RELIABILITY_RELIABLE);
-			qos_profile.durability(RMW_QOS_POLICY_DURABILITY_VOLATILE);
-			rmw_qos_profile_t qos_profile_rmw = qos_profile.get_rmw_qos_profile();
-
-			sub_laser.subscribe(this, sub_laser_topic_, qos_profile_rmw);
-			sub_robot.subscribe(this, sub_robot_topic_, qos_profile_rmw);
-
-			// Define sync policy
-			using ApproxPolicy = message_filters::sync_policies::ApproximateTime<
-				sensor_msgs::msg::LaserScan,
-				nav_msgs::msg::Odometry
-			>;
-
-			// 2. Create and configure the policy
-			ApproxPolicy policy(10);  // queue_size = 10
-			policy.setMaxIntervalDuration(rclcpp::Duration(0, 500000000));  // 0.5s tolerance
-
-			// 3. Create the synchronizer (simplified template syntax)
-			sync = std::make_shared<message_filters::Synchronizer<ApproxPolicy>>(
-				policy,     
-				sub_laser, 
-				sub_robot
-			);*/
 
 			sub_laser.subscribe(this, sub_laser_topic_);
 			sub_robot.subscribe(this, sub_robot_topic_);
@@ -212,15 +196,6 @@ class NavigationNode : public rclcpp::Node {
 					std::placeholders::_2
 				)
 			);
-
-			/* Test
-			auto test_sub = this->create_subscription<nav_msgs::msg::Odometry>(
-				sub_robot_topic_,
-				qos_profile,
-				[](const nav_msgs::msg::Odometry::SharedPtr msg) {
-					RCLCPP_INFO(rclcpp::get_logger("test"), "Received odometry");
-				}
-			);*/
 
 			sub_semantic = this->create_subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>(
 				sub_semantic_topic_, 1,
@@ -333,6 +308,12 @@ class NavigationNode : public rclcpp::Node {
 			// Check if update is needed
 			// std::cout << DiffeoTreeUpdateRate_ << std::endl;
 			// std::cout << rclcpp::Time::now().toSec() - DiffeoTreeUpdateTime_ << std::endl;
+
+			// Update for Foxglove visualization
+			if (SimulationFlag_) {
+				latest_map = *semantic_map_data;
+			}
+
             rclcpp::Time time = this->now();
 		    if (DiffeoTreeUpdateRate_ <= 0) {
 		        RCLCPP_WARN(this->get_logger(), "Invalid DiffeoTreeUpdateRate. It should be greater than zero.");
@@ -434,6 +415,15 @@ class NavigationNode : public rclcpp::Node {
 			 */
 
 			RCLCPP_INFO(this->get_logger(), "[Navigation] In control callback");
+
+			// For Foxglove visualization
+			if (SimulationFlag_) {
+				double x = robot_data->pose.pose.position.x;
+				double y = robot_data->pose.pose.position.y;
+				std::array<double, 2> coord = {x, y};
+				trajectory_.push_back(coord);
+				publish_geojson();
+			}
 
 			// Make local copies
 			std::vector<polygon> localPolygonList;
@@ -707,18 +697,98 @@ class NavigationNode : public rclcpp::Node {
 
 			return;
 		}
+
+		void publish_geojson() {
+			// Build FeatureCollection message
+			std::string s =  R"({
+				"type":"FeatureCollection",
+				"features":[
+			)";
+
+			// Add obstacle features
+			for (const auto &poly: latest_map.objects) {
+				s += poly_to_geojson(poly);
+				s += ",";
+			}
+
+			// Add trajectory feature.
+			if(!trajectory_.empty()) {
+				s += trajectory_to_geojson(trajectory_);
+			} else {
+				s.pop_back(); // Remove last comma
+			}
+
+			s += "]}";
+
+			foxglove_msgs::msg::GeoJSON msg;
+			msg.geojson = s;
+			pub_geojson_->publish(msg);
+		}
+ 
+		std::string poly_to_geojson(const object_pose_interface_msgs::msg::SemanticMapObject &poly) {
+			// Return polygon as a GeoJSON feature string
+			std::string s = R"({
+				"type":"Feature",
+				"geometry":{
+					"type":"Polygon",
+					"coordinates":[[
+			)";
+			for (size_t i = 0; i < poly.polygon2d.polygon.points.size(); i++) {
+				s += "[" + std::to_string(poly.polygon2d.polygon.points[i].x) + "," + 
+					std::to_string(poly.polygon2d.polygon.points[i].y) + "]";
+				if (i != poly.polygon2d.polygon.points.size() - 1) s += ",";
+			}
+			s += R"(
+				]]},
+				"properties":{
+					"style":{
+						"color":"#f00",
+						"opacity":0.7
+					}
+				}
+			})";
+			return s;
+		  }
+
+		std::string trajectory_to_geojson(const std::vector<std::array<double,2>>& traj) {
+			// Return LineString feature for FeatureCollection
+			std::string s = R"({
+				"type":"Feature",
+				"geometry":{
+					"type":"LineString",
+					"coordinates":[
+			)";
+			for (size_t i = 0; i < traj.size(); i++) {
+				s += "[" + std::to_string(traj[i][0]) + "," + 
+					std::to_string(traj[i][1]) + "]";
+				if (i != traj.size() - 1) s += ",";
+			}
+			s += R"(]},
+				"properties":{
+					"style":{
+						"color":"#00f",
+						"weight":3
+					}
+				}
+			})";
+			return s;
+		}
 	
 	private:
 		// Parameters
 		std::string pub_twist_topic_;
 		std::string pub_behaviorID_topic_;
 		std::string pub_behaviorMode_topic_;
+		std::string pub_geojson_topic_;
+
 		std::string sub_laser_topic_;
 		std::string sub_robot_topic_;
 		std::string sub_semantic_topic_;
+
 		std::string world_frame_id_;
 		std::string odom_frame_id_;
 		std::string laser_frame_id_;
+
         std::string target_object_;
         double target_object_length_;
         double target_object_width_;
@@ -726,6 +796,8 @@ class NavigationNode : public rclcpp::Node {
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorID_;
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
+		rclcpp::Publisher<foxglove_msgs::msg::GeoJSON>::SharedPtr pub_geojson_;
+
         rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
         std::shared_ptr<message_filters::Synchronizer<
                     message_filters::sync_policies::ApproximateTime<
@@ -733,6 +805,9 @@ class NavigationNode : public rclcpp::Node {
         message_filters::Subscriber<sensor_msgs::msg::LaserScan> sub_laser;
 		message_filters::Subscriber<nav_msgs::msg::Odometry> sub_robot;
 
+		// For Foxglove simulation
+		object_pose_interface_msgs::msg::SemanticMapObjectArray latest_map;
+		std::vector<std::array<double, 2>> trajectory_;
 
 		double RobotRadius_;
 		double ObstacleDilation_;
@@ -775,6 +850,7 @@ class NavigationNode : public rclcpp::Node {
 		double DiffeoTreeUpdateTime_ ;
 
 		bool DebugFlag_ = false;
+		bool SimulationFlag_ = false;
 
         std::shared_ptr<tf2_ros::TransformListener> listener_;
         std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
