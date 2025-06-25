@@ -34,6 +34,13 @@ colcon build --packages-select object_pose_interface_msgs semnav
 - Install [TurtleBot3 for ROS2 Humble](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/).
 - Add model config: ```export TURTLEBOT3_MODEL=waffle```
 
+### 3. Foxglove Setup
+Run:
+```
+sudo apt upgrade
+sudo apt install ros-humble-foxglove-bridge ros-humble-foxglove-msgs
+```
+
 ## Launch full simulation
 The main launch file handles:
 - Loading a polygonal obstacle map
