@@ -29,7 +29,8 @@ def generate_launch_description():
     gzserver_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
-        )
+        ),
+		launch_arguments={'world': 'worlds/slow_empty.sdf'}.items()  # world with different physics from default
     )
 
     robot_state_publisher_cmd = IncludeLaunchDescription(
@@ -119,7 +120,7 @@ def generate_launch_description():
                 'VarEpsilon': 1.0,
                 'Mu1': 0.8,
                 'Mu2': 0.05,
-                'SemanticMapUpdateRate': 8.0,
+                'SemanticMapUpdateRate': 50.0,
 
                 'ForwardLinCmdLimit': 0.3,
                 'BackwardLinCmdLimit': 0.0,
@@ -175,15 +176,6 @@ def generate_launch_description():
             executable='foxglove_bridge',
             name='foxglove_bridge',
             output='screen'
-        ),
+        )
  
-		# Record into bag file
-		ExecuteProcess(
-			cmd=[
-				'ros2', 'bag', 'record',
-				'/geojson_map',
-				'--output', 'bag_files'
-			],
-			output='screen'
-		)
     ])

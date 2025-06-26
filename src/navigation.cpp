@@ -101,6 +101,10 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("DebugFlag", false);
 			this->declare_parameter("SimulationFlag", true);
 
+			this->set_parameter(rclcpp::Parameter("use_sim_time", true));
+			bool use_sim_time = this->get_parameter("use_sim_time").as_bool();
+			RCLCPP_INFO(this->get_logger(), "use_sim_time is: %s", use_sim_time ? "true" : "false");
+
 			pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
 			pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();

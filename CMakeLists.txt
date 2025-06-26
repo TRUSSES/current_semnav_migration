@@ -122,10 +122,6 @@ add_executable(fake_odometry_publisher
   ${MAIN_DIR}/src/fake_odometry_publisher.cpp
 )
 
-add_executable(velocity_visualizer
-  ${MAIN_DIR}/src/velocity_visualization_node.cpp
-)
-
 # ament_package()
 add_executable(turtlebot3_map_publisher 
   ${MAIN_DIR}/src/turtlebot3_map_publisher.cpp
@@ -153,10 +149,6 @@ target_link_libraries(turtlebot3_map_publisher
   reactive_planner
 )
 
-target_link_libraries(velocity_visualizer
-  reactive_planner
-)
-
 
 ## Mark executables and/or libraries for installation
 install(TARGETS
@@ -164,17 +156,9 @@ install(TARGETS
   generate_map
   navigation
   fake_map_publisher
-  velocity_visualizer
   fake_lidar_publisher
   fake_odometry_publisher
   turtlebot3_map_publisher
-  velocity_visualizer
-  DESTINATION lib/${PROJECT_NAME}
-)
-
-## Install Python executables
-install(PROGRAMS
-  src/tracking/trajectory_recorder.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
