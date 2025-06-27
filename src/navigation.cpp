@@ -727,6 +727,7 @@ class NavigationNode : public rclcpp::Node {
 			foxglove_msgs::msg::GeoJSON msg;
 			msg.geojson = s;
 			pub_geojson_->publish(msg);
+			RCLCPP_INFO(this->get_logger(), "published geojson msg");
 		}
  
 		std::string poly_to_geojson(const object_pose_interface_msgs::msg::SemanticMapObject &poly) {
@@ -852,6 +853,7 @@ class NavigationNode : public rclcpp::Node {
 		std::vector<std::vector<PolygonClass>> DiffeoTreeArray_;
 
 		double DiffeoTreeUpdateTime_ ;
+		double last_control_callback_time_;
 
 		bool DebugFlag_ = false;
 		bool SimulationFlag_ = false;
