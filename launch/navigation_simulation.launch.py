@@ -30,7 +30,10 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
         ),
-		launch_arguments={'world': 'worlds/slow_empty.sdf'}.items()  # world with different physics from default
+		launch_arguments={
+            'world': '/home/trusses/ros2_ws/src/current_semnav_migration/worlds/slow_empty.sdf',
+            'verbose': 'true'
+        }.items()  # world with different physics from default
     )
 
     robot_state_publisher_cmd = IncludeLaunchDescription(
@@ -120,7 +123,7 @@ def generate_launch_description():
                 'VarEpsilon': 1.0,
                 'Mu1': 0.8,
                 'Mu2': 0.05,
-                'SemanticMapUpdateRate': 1.0,
+                'SemanticMapUpdateRate': 10.0,
 
                 'ForwardLinCmdLimit': 0.3,
                 'BackwardLinCmdLimit': 0.0,
@@ -130,7 +133,7 @@ def generate_launch_description():
                 'AngularGain': 0.4,
 
                 'Goal_x': 4.0,
-                'Goal_y': 0.0,
+                'Goal_y': 6.0,
                 'Tolerance': 0.4,
 
                 'LowpassCutoff': 4.0,
