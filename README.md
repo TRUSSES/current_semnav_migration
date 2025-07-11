@@ -71,7 +71,30 @@ Obstacle files are stored in `data/` with the following format:
 ws://localhost:8765
 ```
 
-> Foxglove will automatically detect the `/geojson_map` topic, which contains the trajectory line and the obstacle polygons, and visualize them in a Map panel in realtime.
+Foxglove will automatically detect the `/geojson_map` topic, which contains the trajectory line and the obstacle polygons, and visualize them in a Map panel in realtime.
+1. Open the Map panel.
+2. Select `General > Tile Layer > Custom` to visualize with an empty background.
+
+## Generating vector field plots (debugging)
+Each vector points from the robot's initial pose to final pose at each grid point, given a fixed initial robot orientation, by following the planner's twist command for some time step *t*.
+
+### Parameters
+- `goal_x`, `goal_y`: coordinates of goal point (plotted in red).
+- `min_x`, `max_x`, `min_y`, `max_y`: range of grid points to plot.
+- `grid_n`: number of points to plot per row and per column.
+- `target_x`, `target_y`: point for which local freespace (yellow), local linear goal (magenta star), and local angular goal (cyan star) will be plotted for debugging purposes.
+
+To plot grid of vectors only:
+```
+ros2 run semnav vector_field_plot \
+-- [goal x] [goal y] [min x] [max x] [min y] [max y] [grid n] [target x] [target y]
+```
+
+To plot single vector and planner parameters (LF, LGL, LGA) for target point:
+```
+ros2 run semnav vector_field_plot \
+-- [goal x] [goal y] [target x] [target y]
+```
 
 ### Debugging Tips
 - Use `ros2 topic list` to confirm that semnav `/reactive_planner/...` topics are running.

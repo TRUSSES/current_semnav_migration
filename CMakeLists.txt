@@ -27,6 +27,7 @@ find_package(foxglove_msgs REQUIRED) # For simulation
 # Find other libraries
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(CGAL REQUIRED COMPONENTS Core)
+find_package(Python3 COMPONENTS Development REQUIRED) # For vector_field_plot
 
 ###################################
 ## catkin specific configuration ##
@@ -127,6 +128,14 @@ add_executable(turtlebot3_map_publisher
   ${MAIN_DIR}/src/turtlebot3_map_publisher.cpp
 )
 
+add_executable(vector_field_plot 
+  ${MAIN_DIR}/src/vector_field_plot.cpp
+)
+
+target_include_directories(vector_field_plot PRIVATE
+  ${Python3_INCLUDE_DIRS}
+)
+
 # Link
 target_link_libraries(navigation
   reactive_planner
@@ -149,6 +158,10 @@ target_link_libraries(turtlebot3_map_publisher
   reactive_planner
 )
 
+target_link_libraries(vector_field_plot
+  reactive_planner
+  ${Python3_LIBRARIES}
+)
 
 ## Mark executables and/or libraries for installation
 install(TARGETS
@@ -175,6 +188,10 @@ install(DIRECTORY models
 install(DIRECTORY worlds
   DESTINATION share/${PROJECT_NAME})
 
+install(TARGETS
+  vector_field_plot
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ## Declare Silence Boost Errors
 add_definitions("-DBOOST_ALLOW_DEPRECATED_HEADERS")

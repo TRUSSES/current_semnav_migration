@@ -420,13 +420,18 @@ class NavigationNode : public rclcpp::Node {
 
 			RCLCPP_INFO(this->get_logger(), "[Navigation] In control callback");
 
-			// For Foxglove visualization
-			if (SimulationFlag_) {
+			// For Foxglove visualization, at a set update rate.
+			rclcpp::Time update_time = this->now();
+			if (SimulationFlag_ &&
+				(update_time.seconds() - TrajectoryUpdateTime_ > (1.0/TrajectoryUpdateRate_))) {
 				double x = robot_data->pose.pose.position.x;
 				double y = robot_data->pose.pose.position.y;
 				std::array<double, 2> coord = {x, y};
 				trajectory_.push_back(coord);
+				
 				publish_geojson();
+
+				TrajectoryUpdateTime_ = update_time.seconds();
 			}
 
 			// Make local copies
@@ -857,6 +862,8 @@ class NavigationNode : public rclcpp::Node {
 
 		bool DebugFlag_ = false;
 		bool SimulationFlag_ = false;
+		double TrajectoryUpdateRate_ = 1.0; // For visualization
+		double TrajectoryUpdateTime_;
 
         std::shared_ptr<tf2_ros::TransformListener> listener_;
         std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
