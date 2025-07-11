@@ -26,6 +26,7 @@
 #include <rclcpp/qos.hpp>
 #include <rmw/types.h>
 #include <object_pose_interface_msgs/msg/semantic_map_object_array.hpp>
+#include <geometry_msgs/msg/twist_stamped.hpp>
 #include <example_interfaces/msg/u_int32.hpp>
 #include <foxglove_msgs/msg/geo_json.hpp>
 #include <sstream>
@@ -52,12 +53,14 @@ class NavigationNode : public rclcpp::Node {
 
 			// Find parameters
 			this->declare_parameter("pub_twist_topic", "/cmd_vel");
+			this->declare_parameter("pub_twist_stamped_topic", "/cmd_vel_stamped");
+		
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
 			this->declare_parameter("pub_geojson_topic", "/geojson_map");
 
-			this->declare_parameter("sub_laser_topic", "/laser_scan");
-			//this->declare_parameter("sub_laser_topic", "/fake_lidar_scan");
+			//this->declare_parameter("sub_laser_topic", "/laser_scan");
+			this->declare_parameter("sub_laser_topic", "/fake_lidar_scan");
 			this->declare_parameter("sub_robot_topic", "/robot_pose");
 			this->declare_parameter("sub_semantic_topic", "/semantic_map");
 
@@ -102,10 +105,14 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("SimulationFlag", true);
 
 			this->set_parameter(rclcpp::Parameter("use_sim_time", true));
+
+			// Confirm value of use_sim_time
 			bool use_sim_time = this->get_parameter("use_sim_time").as_bool();
 			RCLCPP_INFO(this->get_logger(), "use_sim_time is: %s", use_sim_time ? "true" : "false");
 
 			pub_twist_topic_ = this->get_parameter("pub_twist_topic").as_string();
+			pub_twist_stamped_topic_ = this->get_parameter("pub_twist_stamped_topic").as_string();
+
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
 			pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();
 			pub_geojson_topic_ = this->get_parameter("pub_geojson_topic").as_string();
@@ -174,6 +181,7 @@ class NavigationNode : public rclcpp::Node {
 			pub_behaviorID_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorID_topic_", 1);
 		    pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
 		    pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
+			pub_twist_stamped_ = this->create_publisher<geometry_msgs::msg::TwistStamped>(pub_twist_stamped_topic_, 1);
 			pub_geojson_ = this->create_publisher<foxglove_msgs::msg::GeoJSON>("pub_geojson_topic_", 1);
 
 			// Register callbacks
@@ -227,6 +235,14 @@ class NavigationNode : public rclcpp::Node {
 			commandTwist.linear.x = LinearCmd;
 			commandTwist.angular.z = AngularCmd;
 			this->pub_twist_->publish(commandTwist);
+
+			// Stamped message for debugging
+			geometry_msgs::msg::TwistStamped commandTwistStamped;
+			commandTwistStamped.twist = commandTwist;
+			commandTwistStamped.header.stamp = this->now();
+			commandTwistStamped.header.frame_id = world_frame_id_;
+			this->pub_twist_stamped_->publish(commandTwistStamped);
+
 			RCLCPP_INFO(this->get_logger(), "[Navigation] Twist Cmd Published: (%f, %f)", LinearCmd, AngularCmd);
 			return;
 		}
@@ -787,6 +803,8 @@ class NavigationNode : public rclcpp::Node {
 	private:
 		// Parameters
 		std::string pub_twist_topic_;
+		std::string pub_twist_stamped_topic_;
+
 		std::string pub_behaviorID_topic_;
 		std::string pub_behaviorMode_topic_;
 		std::string pub_geojson_topic_;
@@ -806,6 +824,7 @@ class NavigationNode : public rclcpp::Node {
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorID_;
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
+		rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr pub_twist_stamped_;
 		rclcpp::Publisher<foxglove_msgs::msg::GeoJSON>::SharedPtr pub_geojson_;
 
         rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
