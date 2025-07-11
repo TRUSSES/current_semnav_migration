@@ -49,10 +49,10 @@ point Goal_;
 double Tolerance_ = 0.4;
 
 // For plots
-std::vector<double> nan_x, nan_y;
+std::vector<double> nan_x_, nan_y_;
 double target_x, target_y;
-polygon target_LF;
-point target_LGL, target_LGA;
+polygon target_LF_;
+point target_LGL_, target_LGA_;
 
 void set_goal() {
     // Set goal point based on coordinates.
@@ -313,9 +313,9 @@ std::vector<double> get_cmd(double robot_pose_x, double robot_pose_y, const sens
     point LGA_model(LGA1_model.get<0>(), LGA1_model.get<1>()); // avoid division by zero
     //std::cout << "Computed model space projections. " << bg::dsv(LGA_model) << std::endl;
     if ((robot_pose_x == target_x) && (robot_pose_y == target_y)) {
-        target_LF = LF_model;
-        target_LGL = LGL_model;
-        target_LGA = LGA_model;
+        target_LF_ = LF_model;
+        target_LGL_ = LGL_model;
+        target_LGA_ = LGA_model;
     }
 
     // Compute the basis for the virtual control inputs
@@ -391,90 +391,123 @@ void plot_point(double x, double y, std::string format) {
     std::cout << "Plotted point (" << x << "," << y << ")" << std::endl;
 }
 
-int main(int argc, char** argv) {
-    // Get command arguments
-    if (argc < 10) {
-        std::cerr << "Usage: ros2 run semnav vector_field_plot -- "
-         << "[goal x] [goal y] [min x] [max x] [min y] [max y] [grid n] [target x] [target y]" << std::endl;
-        return 1;
-    }
+std::vector<double> get_vector(double xi, double yi, double vel_linear, double vel_angular) {
+    std::vector<double> vec;
 
-    // (target x, target y) is the point whose local freespace calculations will be plotted
-    target_x = std::atof(argv[8]);
-    target_y = std::atof(argv[9]);
-
-    Goal_x_ = std::atof(argv[1]);
-    Goal_y_ = std::atof(argv[2]);
-
-    set_goal();
-    const std::vector<polygon> polygon_list = create_polygon_list();
-    diffeo_tree_update(polygon_list);
-    auto lidar_data = create_fake_laserscan();
-
-    const double min_x = std::atof(argv[3]);
-    const double max_x = std::atof(argv[4]);
-    const double min_y = std::atof(argv[5]);
-    const double max_y = std::atof(argv[6]);
-    const double grid_n = std::atof(argv[7]);
-
-    std::vector<double> x, y, u, v;
-
-    double robot_orientation_x = std::cos(RobotOrientation_);
-    double robot_orientation_y = std::sin(RobotOrientation_);
-
-    // Timestep based on update frequency, used for differential drive kinematics.
+    std::cout << "Generating for (" << xi << ", " << yi << ")" << std::endl;
+    std::cout << "Cmd: " << vel_linear << ", " << vel_angular << "\n" << std::endl;
+    
+    // Time step required for diff drive calcs
     double update_frequency = 10; // Hz
     double t = 1 / update_frequency; // s
 
-    for (int i = 0; i < grid_n; i++) {
-        double xi = min_x + (max_x - min_x) * i / grid_n;
-        for (int j = 0; j < grid_n; j++) {
-            double yi = min_y + (max_y - min_y) * j / grid_n;
-            x.push_back(xi);
-            y.push_back(yi);
+    // Calculate robot pose in next time step
+    double next_x = compute_next_x(vel_linear, vel_angular, t);
+    double next_y = compute_next_y(vel_linear, vel_angular, t);
 
-            //std::cout << "Generating for (" << xi << ", " << yi << ")" << std::endl;
+    // Vector shows pose difference, normalized
+    double mag = sqrt(pow(next_x - xi, 2) + pow(next_y - yi, 2));
+    vec.push_back((next_x - xi) / (2*mag));
+    vec.push_back((next_y - yi) / (2*mag));
 
-            std::vector<double> cmd = get_cmd(xi, yi, lidar_data);
-            double vel_linear = cmd[0];
-            double vel_angular = cmd[1];
-            if (isnan(vel_linear) || isinf(vel_linear) || isnan(vel_angular) || isinf(vel_angular)) {
-                std::cout << "No cmd for (" << xi << ", " << yi << ")" << std::endl;
-                nan_x.push_back(xi);
-                nan_y.push_back(yi);
-            }
-            //std::cout << "Received cmd: " << vel_linear << ", " << vel_angular << "\n" << std::endl;
+    return vec;
+}
 
-            // Calculate robot pose in next time step
-            double next_x = compute_next_x(vel_linear, vel_angular, t);
-            double next_y = compute_next_y(vel_linear, vel_angular, t);
-
-            // Vector shows pose difference, normalized
-            double mag = sqrt(pow(next_x - xi, 2) + pow(next_y - yi, 2));
-            u.push_back((next_x - xi) / (2*mag));
-            v.push_back((next_y - yi) / (2*mag));
-        }
+int main(int argc, char** argv) {
+    // Get command arguments
+    if ((argc != 8) && (argc != 5)) {
+        std::cerr << "Usage: ros2 run semnav vector_field_plot -- "
+         << "[goal x] [goal y] [min x] [max x] [min y] [max y] [grid n]\n" 
+         << "or -- [goal x] [goal y] [target x] [target y]" << std::endl;
+        return 1;
     }
 
-    // Plot the vector field
-    plt::figure();
-    plt::quiver(x, y, u, v);
+    // Initialize environment and robot state
+    Goal_x_ = std::atof(argv[1]);
+    Goal_y_ = std::atof(argv[2]);
+    set_goal();
 
-    // Plot obstacles
+    const std::vector<polygon> polygon_list = create_polygon_list();
+    diffeo_tree_update(polygon_list);
+
+    auto lidar_data = create_fake_laserscan();
+
+    std::vector<double> x, y, u, v;
+
+    // Common plots: obstacles, goal
+    plt::figure();
+
     for (const auto& poly: polygon_list) {
         plot_polygon(poly, "b");
     }
 
-    // Plot goal
     plot_point(Goal_x_, Goal_y_, "ro");
 
-    // Plot points with NaN/inf cmds
-    plt::plot(nan_x, nan_y, "y");
+    if ((argc == 5)) { // single grid point with intermediate planner calcs
 
-    // Plot local freespace and local goals at the target point
-    plot_polygon(target_LF, "y");
-    plot_point(target_LGL.get<0>(), target_LGL.get<1>(), "m*");
-    plot_point(target_LGA.get<0>(), target_LGA.get<1>(), "c*");
+        target_x = std::atof(argv[3]);
+        target_y = std::atof(argv[4]);
+
+        x.push_back(target_x);
+        y.push_back(target_y);
+
+        // Twist command
+        std::vector<double> cmd = get_cmd(target_x, target_y, lidar_data);
+        double vel_linear = cmd[0];
+        double vel_angular = cmd[1];
+
+        // Vector from twist command
+        std::vector<double> vec = get_vector(target_x, target_y, vel_linear, vel_angular); 
+        u.push_back(vec[0]);
+        v.push_back(vec[1]);
+
+        // Plot local freespace and local goals
+        plot_polygon(target_LF_, "y");
+        plot_point(target_LGL_.get<0>(), target_LGL_.get<1>(), "m*");
+        plot_point(target_LGA_.get<0>(), target_LGA_.get<1>(), "c*");
+
+    } else { // all grid points
+
+        const double min_x = std::atof(argv[3]);
+        const double max_x = std::atof(argv[4]);
+        const double min_y = std::atof(argv[5]);
+        const double max_y = std::atof(argv[6]);
+        const double grid_n = std::atof(argv[7]);
+
+        for (int i = 0; i < grid_n; i++) {
+            double xi = min_x + (max_x - min_x) * i / grid_n;
+            for (int j = 0; j < grid_n; j++) {
+                double yi = min_y + (max_y - min_y) * j / grid_n;
+                x.push_back(xi);
+                y.push_back(yi);
+
+                // Twist command
+                std::vector<double> cmd = get_cmd(xi, yi, lidar_data);
+                double vel_linear = cmd[0];
+                double vel_angular = cmd[1];
+
+                // Points with invalid commands
+                if (isnan(vel_linear) || isinf(vel_linear)
+                    || isnan(vel_angular) || isinf(vel_angular)) {
+                    std::cout << "No cmd for (" << xi 
+                        << ", " << yi << ")" << std::endl;
+                    nan_x_.push_back(xi);
+                    nan_y_.push_back(yi);
+                }
+
+                // Vector from twist command
+                std::vector<double> vec = get_vector(xi, yi, vel_linear, vel_angular); 
+                u.push_back(vec[0]);
+                v.push_back(vec[1]);
+            }
+        }
+
+        // Plot points with NaN/inf cmds
+        plt::plot(nan_x_, nan_y_, "y");
+    }
+
+    // Plot the vector field
+    plt::quiver(x, y, u, v);
 
     plt::xlabel("X");
     plt::ylabel("Y");

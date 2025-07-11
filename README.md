@@ -84,6 +84,10 @@ Each vector points from the robot's initial pose to final pose at each grid poin
 - `grid_n`: number of points to plot per row and per column.
 - `target_x`, `target_y`: point for which local freespace (yellow), local linear goal (magenta star), and local angular goal (cyan star) will be plotted for debugging purposes.
 
+> The local linear goal is the projection of the global goal onto the linear local freespace, which is the line segment from the robot's position, along its orientation vector, to the local freespace boundary. It is used to compute linear velocity.
+>
+> The local angular goal is the projection of the global onto the local freespace polygon. It is used to compute angular velocity.
+
 To plot grid of vectors only:
 ```
 ros2 run semnav vector_field_plot \
