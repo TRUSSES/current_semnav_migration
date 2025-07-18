@@ -172,7 +172,7 @@ class NavigationNode : public rclcpp::Node {
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), AngularGain_);
 
 			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
-				{{-100.0, -100.0}, {300.0, -100.0}, {300.0, 300.0}, {-100.0, 300.0}, {-100.0, -100.0}});
+				{{-100.0, -100.0}, {1000.0, -100.0}, {1000.0, 1000.0}, {-100.0, 1000.0}, {-100.0, -100.0}});
 
 			// Initialize publishers
 			Goal_.set<0>(Goal_x_);
@@ -334,6 +334,11 @@ class NavigationNode : public rclcpp::Node {
 				latest_map = *semantic_map_data;
 			}
 
+			// Assume map is static; do not recalculate once map is set.
+			if (DiffeoTreeArray_.size() > 0) {
+				return;
+			}
+
             rclcpp::Time time = this->now();
 		    if (DiffeoTreeUpdateRate_ <= 0) {
 		        RCLCPP_WARN(this->get_logger(), "Invalid DiffeoTreeUpdateRate. It should be greater than zero.");
@@ -435,6 +440,7 @@ class NavigationNode : public rclcpp::Node {
 			 */
 
 			RCLCPP_INFO(this->get_logger(), "[Navigation] In control callback");
+			diffeoTrees_cout(DiffeoTreeArray_);
 
 			// For Foxglove visualization, at a set update rate.
 			rclcpp::Time update_time = this->now();

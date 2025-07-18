@@ -24,6 +24,8 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     x_pose = LaunchConfiguration('x_pose', default='0.0')
     y_pose = LaunchConfiguration('y_pose', default='0.0')
+    goal_x = LaunchConfiguration('goal_x', default='1.0')
+    goal_y = LaunchConfiguration('goal_y', default='1.0')
 
     # Secondary launch files for Gazebo
     gzserver_cmd = IncludeLaunchDescription(
@@ -112,7 +114,7 @@ def generate_launch_description():
 
                 # NUMERICAL PARAMETERS
                 'RobotRadius': 0.3,
-                'ObstacleDilation': 0.3,
+                'ObstacleDilation': 1.0,
                 'WalkHeight': 0.5,
 
                 'AllowableRange': 4.0,
@@ -132,8 +134,8 @@ def generate_launch_description():
                 'LinearGain': 0.2,
                 'AngularGain': 0.4,
 
-                'Goal_x': 4.0,
-                'Goal_y': 6.0,
+                'Goal_x': goal_x,
+                'Goal_y': goal_y,
                 'Tolerance': 0.4,
 
                 'LowpassCutoff': 4.0,
@@ -146,7 +148,6 @@ def generate_launch_description():
             }]
         ),
 
-        # Optional: Launch node that replaces publisher in mapping package.
         Node(
             package='semnav',  
             executable='fake_map_publisher',  
@@ -158,6 +159,8 @@ def generate_launch_description():
                 'pub_semantic_topic': '/pose_tracking/semantic_map',  
                 'pub_transform_topic': '/pose_tracking/world_frame', 
                 'obstacle_file': obstacle_file, 
+                'x_pose': x_pose,
+                'y_pose': y_pose
             }]
         ),
 

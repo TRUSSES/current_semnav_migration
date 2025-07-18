@@ -23,6 +23,7 @@ std::vector<std::vector<PolygonClass>> DiffeoTreeArray_;
 // Global variables for robot state.
 point RobotPosition_;
 double RobotOrientation_ = 0;
+double FlippedRobotOrientation_ = M_PI;
 
 // Numerical parameters.
 double AllowableRange_ = 4.0;
@@ -55,7 +56,7 @@ polygon target_LF_;
 point target_LGL_, target_LGA_;
 
 void set_goal() {
-    // Set goal point based on coordinates.
+    // Set goal point based on coordinates, in robot frame.
     Goal_.set<0>(Goal_x_);
     Goal_.set<1>(Goal_y_);
 }
@@ -186,6 +187,15 @@ std::shared_ptr<sensor_msgs::msg::LaserScan> create_fake_laserscan() {
 }
 
 std::vector<double> get_cmd(double robot_pose_x, double robot_pose_y, const sensor_msgs::msg::LaserScan::ConstPtr& lidar_data) {
+    // Transform goal to body frame: rotate, then translate
+    double goal_x_rot = cos(-RobotOrientation_)*Goal_x_
+        - sin(-RobotOrientation_)*Goal_y_;
+    double goal_y_rot = sin(-RobotOrientation_)*Goal_x_
+        + cos(-RobotOrientation_)*Goal_y_;
+    
+    //Goal_.set<0>(goal_x_rot + Goal_x_);
+    //Goal_.set<1>(goal_y_rot + Goal_y_); 
+
     // Make local copies
     std::vector<polygon> localPolygonList;
     std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
@@ -279,6 +289,10 @@ std::vector<double> get_cmd(double robot_pose_x, double robot_pose_y, const sens
     LIDARmodel_known.MaxAngle = LIDAR.MaxAngle;
     LIDARmodel_known.Resolution = LIDAR.Resolution;
     LIDARmodel_known.NumSample = LIDAR.NumSample;
+
+    std::cout << "RobotPositionTransformed: ("
+        << RobotPositionTransformed[0] << ","
+        << RobotPositionTransformed[1] << ")" << std::endl;
     readLIDAR2D(point(RobotPositionTransformed[0], RobotPositionTransformed[1]), 
             RobotOrientationTransformed, KnownObstaclesModel, LIDAR.Range, LIDAR.MinAngle, LIDAR.MaxAngle, LIDAR.NumSample, &LIDARmodel_known);
 
@@ -305,6 +319,31 @@ std::vector<double> get_cmd(double robot_pose_x, double robot_pose_y, const sens
 
     // Find local freespace; the robot radius can be zero because we have already dilated the obstacles
     polygon LF_model = localfreespaceLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, 0.0, &LIDARmodel);
+
+    // Transform local freespace to body frame by translating by robot pose
+    polygon transformed_LF_model;
+    for (const auto& pt: LF_model.outer()) {
+        double x = pt.get<0>();
+        double y = pt.get<1>();
+
+        double x_rot = cos(-RobotOrientation_)*x
+            - sin(-RobotOrientation_)*y;
+        double y_rot = sin(-RobotOrientation_)*x
+            + cos(-RobotOrientation_)*y;
+
+        double x_new = x_rot + robot_pose_x;
+        double y_new = y_rot + robot_pose_y;
+
+        // Just translate, don't rotate
+        x_new = x + robot_pose_x;
+        y_new = y + robot_pose_y;
+
+        //std::cout << "old LF point: (" << x << ", " << y << ")\t new LF point: ("
+        //<< x_new << ", " << y_new << ")" << std::endl;
+
+        transformed_LF_model.outer().push_back(point(x_new, y_new));
+    }
+    LF_model = transformed_LF_model;
 
     // Find projected goal
     point LGL_model = localgoal_linearLIDAR2D(RobotPositionTransformedPoint, RobotOrientationTransformed, LF_model, Goal_);
@@ -342,37 +381,55 @@ std::vector<double> get_cmd(double robot_pose_x, double robot_pose_y, const sens
     double dW_virtual = AngularCtrlGain*atan2(tW2,tW1);
     double AngularCmd = (dW_virtual-LinearCmd*DksiCosSin)/dksi_dpsi;
 
+    // Reset goal
+    Goal_.set<0>(Goal_x_);
+    Goal_.set<1>(Goal_y_);
+
     std::vector<double> cmd = {LinearCmd, AngularCmd};
     return cmd;
 }
 
-double compute_next_x(double v, double w, double t) {
+double compute_next_x(double v, double w, double t, double orientation) {
+    // x component of displacement vector
     // v = linear velocity, w = angular velocity, t = time step
+
+    // straight line if zero angular velocity
+    if (w <= 0.001) {
+        return v * t * cos(orientation);
+    }
+
     double r = v / w;
 
-    double res1 = 4*pow(r, 3)*cos(RobotOrientation_)*sin(t*(2*r*w+v)/(2*r)) / (2*r*w + v);
-    double res2 = 4*pow(r, 3)*sin(RobotOrientation_)*cos(t*(2*r*w+v)/(2*r)) / (2*r*w + v);
-    double res3 = 4*pow(r, 3)*sin(RobotOrientation_) / (2*r*w + v);
+    double res1 = 4*pow(r, 3)*cos(orientation)*sin(t*(2*r*w+v)/(2*r)) / (2*r*w + v);
+    double res2 = 4*pow(r, 3)*sin(orientation)*cos(t*(2*r*w+v)/(2*r)) / (2*r*w + v);
+    double res3 = 4*pow(r, 3)*sin(orientation) / (2*r*w + v);
 
     double res = res1 + res2 - res3;
 
     return res;
 }
 
-double compute_next_y(double v, double w, double t) {
+double compute_next_y(double v, double w, double t, double orientation) {
+    // y component of displacement vector
     // v = linear velocity, w = angular velocity, t = time step
+
+    // straight line if zero angular velocity
+    if (w <= 0.001) {
+        return v * t * sin(orientation);
+    }
+
     double r = v / w;
 
-    double res1 = -cos(-RobotOrientation_ + v*t/(2*r) - t*w) / (v - 2*r*w);
-    double res2 = -2*cos(RobotOrientation_ + v*t/(2*r) + t*w) / (2*r*w + v);
-    double res3 = cos(RobotOrientation_ + 3*v/(2*r) + t*w) / (2*r*w + 3*v);
-    double res4 = -cos(-RobotOrientation_) / (v - 2*r*w);
-    double res5 = -2*cos(RobotOrientation_) / (2*r*w + v);
-    double res6 = cos(RobotOrientation_) / (2*r*w + 3*v);
+    double res1 = -cos(-orientation + v*t/(2*r) - t*w) / (v - 2*r*w);
+    double res2 = -2*cos(orientation + v*t/(2*r) + t*w) / (2*r*w + v);
+    double res3 = cos(orientation + 3*v/(2*r) + t*w) / (2*r*w + 3*v);
+    double res4 = -cos(-orientation) / (v - 2*r*w);
+    double res5 = -2*cos(orientation) / (2*r*w + v);
+    double res6 = cos(orientation) / (2*r*w + 3*v);
 
     double res = 2*pow(r, 3)*(res1 + res2 + res3 - res4 - res5 - res6);
 
-    return res;
+    return -res;
 }
 
 void plot_polygon(polygon poly, std::string format) {
@@ -391,24 +448,26 @@ void plot_point(double x, double y, std::string format) {
     std::cout << "Plotted point (" << x << "," << y << ")" << std::endl;
 }
 
-std::vector<double> get_vector(double xi, double yi, double vel_linear, double vel_angular) {
+std::vector<double> get_vector(double xi, double yi, double vel_linear, double vel_angular, double orientation) {
     std::vector<double> vec;
 
-    std::cout << "Generating for (" << xi << ", " << yi << ")" << std::endl;
-    std::cout << "Cmd: " << vel_linear << ", " << vel_angular << "\n" << std::endl;
+    std::cout << "\nGenerating vector at (" << xi << ", " << yi << "), orientation: " << orientation << std::endl;
+    std::cout << "Cmd: " << vel_linear << ", " << vel_angular << std::endl;
     
     // Time step required for diff drive calcs
     double update_frequency = 10; // Hz
     double t = 1 / update_frequency; // s
 
     // Calculate robot pose in next time step
-    double next_x = compute_next_x(vel_linear, vel_angular, t);
-    double next_y = compute_next_y(vel_linear, vel_angular, t);
+    double next_x = compute_next_x(vel_linear, vel_angular, t, orientation);
+    double next_y = compute_next_y(vel_linear, vel_angular, t, orientation);
+
+    std::cout << "displacement vector: " << next_x << ", " << next_y << std::endl;
 
     // Vector shows pose difference, normalized
-    double mag = sqrt(pow(next_x - xi, 2) + pow(next_y - yi, 2));
-    vec.push_back((next_x - xi) / (2*mag));
-    vec.push_back((next_y - yi) / (2*mag));
+    double mag = sqrt(pow(next_x, 2) + pow(next_y, 2));
+    vec.push_back((next_x) / (2*mag));
+    vec.push_back((next_y) / (2*mag));
 
     return vec;
 }
@@ -447,6 +506,7 @@ int main(int argc, char** argv) {
 
         target_x = std::atof(argv[3]);
         target_y = std::atof(argv[4]);
+        plot_point(target_x, target_y, "b");
 
         x.push_back(target_x);
         y.push_back(target_y);
@@ -457,9 +517,22 @@ int main(int argc, char** argv) {
         double vel_angular = cmd[1];
 
         // Vector from twist command
-        std::vector<double> vec = get_vector(target_x, target_y, vel_linear, vel_angular); 
+        std::vector<double> vec = get_vector(target_x, target_y, vel_linear, vel_angular, RobotOrientation_);
+        
+        // Flip orientation if robot is facing away from the goal
+        if (isnan(vec[0]) || isnan(vec[1])) {
+            double temp = RobotOrientation_;
+            RobotOrientation_ = FlippedRobotOrientation_;
+            std::cout << "flipping orientation to " << RobotOrientation_ << std::endl;
+            cmd = get_cmd(target_x, target_y, lidar_data);
+            vel_linear = cmd[0];
+            vel_angular = cmd[1];
+            vec = get_vector(target_x, target_y, vel_linear, vel_angular, RobotOrientation_);
+            RobotOrientation_ = temp;
+        }
         u.push_back(vec[0]);
         v.push_back(vec[1]);
+        std::cout << "quiver vector: (" << vec[0] << ", " << vec[1] << ")" << std::endl;
 
         // Plot local freespace and local goals
         plot_polygon(target_LF_, "y");
@@ -486,19 +559,25 @@ int main(int argc, char** argv) {
                 double vel_linear = cmd[0];
                 double vel_angular = cmd[1];
 
-                // Points with invalid commands
-                if (isnan(vel_linear) || isinf(vel_linear)
-                    || isnan(vel_angular) || isinf(vel_angular)) {
-                    std::cout << "No cmd for (" << xi 
-                        << ", " << yi << ")" << std::endl;
-                    nan_x_.push_back(xi);
-                    nan_y_.push_back(yi);
-                }
-
                 // Vector from twist command
-                std::vector<double> vec = get_vector(xi, yi, vel_linear, vel_angular); 
+                std::vector<double> vec = get_vector(xi, yi, vel_linear, vel_angular, RobotOrientation_); 
+
+                // Flip orientation if robot is facing away from the goal
+                /*
+                if (isnan(vec[0]) || isnan(vec[1])) {
+                    double temp = RobotOrientation_;
+                    RobotOrientation_ = FlippedRobotOrientation_;
+                    std::cout << "flipping orientation to " << RobotOrientation_ << std::endl;
+                    cmd = get_cmd(xi, yi, lidar_data);
+                    vel_linear = cmd[0];
+                    vel_angular = cmd[1];
+                    vec = get_vector(xi, yi, vel_linear, vel_angular, RobotOrientation_);
+                    RobotOrientation_ = temp;
+                } 
+                */
                 u.push_back(vec[0]);
                 v.push_back(vec[1]);
+                std::cout << "quiver vector: (" << vec[0] << ", " << vec[1] << ")" << std::endl;
             }
         }
 

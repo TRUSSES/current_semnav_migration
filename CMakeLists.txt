@@ -23,6 +23,7 @@ find_package(rclpy REQUIRED)
 find_package(message_filters REQUIRED)
 find_package(object_pose_interface_msgs REQUIRED)
 find_package(foxglove_msgs REQUIRED) # For simulation
+find_package(trusses_custom_interfaces REQUIRED)
 
 # Find other libraries
 find_package(Boost REQUIRED COMPONENTS system)

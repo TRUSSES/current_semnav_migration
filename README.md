@@ -54,7 +54,9 @@ Example usage:
 ros2 launch semnav navigation_simulation.launch.py \
     x_pose:=2.0 \
     y_pose:=-6.0 \
-    obstacle_file:="4x4rect.csv"
+    obstacle_file:="4x4rect.csv" \
+    goal_x:=1.0 \
+    goal_y:=2.0
 ```
 Obstacle files are stored in `data/` with the following format:
 - First row: X coordinates of each polygon.
@@ -62,6 +64,7 @@ Obstacle files are stored in `data/` with the following format:
 - Polygons separated by `NaN`
 - First polygon represents the workspace boundary, and is ignored when generating the map.
 
+`(x_pose, y_pose)` is the spawn point of the robot in Gazebo.
  
 ## Visualizing in Foxglove
 1. Start the launch file--it includes `foxglove_bridge`.
@@ -91,7 +94,7 @@ Each vector points from the robot's initial pose to final pose at each grid poin
 To plot grid of vectors only:
 ```
 ros2 run semnav vector_field_plot \
--- [goal x] [goal y] [min x] [max x] [min y] [max y] [grid n] [target x] [target y]
+-- [goal x] [goal y] [min x] [max x] [min y] [max y] [grid n]
 ```
 
 To plot single vector and planner parameters (LF, LGL, LGA) for target point:

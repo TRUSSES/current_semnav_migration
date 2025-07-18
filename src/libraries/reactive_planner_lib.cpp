@@ -686,7 +686,18 @@ point localgoal_linearLIDAR2D(point RobotPosition, double RobotOrientation, poly
     if (bg::is_empty(LFL)) {
         return RobotPosition;
     } else {
+        /*
+        std::cout << "LGL line points: " << std::endl;
+        for(auto &p: LFL) {
+            std::cout << p.get<0>() << ", " << p.get<1>() << std::endl;
+        }
+        std::cout << "Global goal: " << Goal.get<0>() << ", " << Goal.get<1>() << std::endl;
+        */
         ProjectionResultStruct projection = linedist(LFL, Goal);
+        /*
+        std::cout << "Projected point: " << projection.projected_point.get<0>()
+            << ", " << projection.projected_point.get<1>() << std::endl;
+        */
         return projection.projected_point;
     }
 

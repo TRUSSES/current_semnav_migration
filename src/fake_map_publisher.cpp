@@ -16,10 +16,14 @@ public:
     this->declare_parameter("pub_semantic_topic", "semantic_map");
     this->declare_parameter("pub_transform_topic", "world_transform");
     this->declare_parameter("obstacle_file", "4x4rect.csv");
+    this->declare_parameter("spawn_x", 0.0);
+    this->declare_parameter("spawn_y", 0.0);
 
     pub_semantic_topic_ = this->get_parameter("pub_semantic_topic").as_string();
     pub_transform_topic_ = this->get_parameter("pub_transform_topic").as_string();
     obstacle_file_ = this->get_parameter("obstacle_file").as_string();
+    spawn_x = this->get_parameter("spawn_x").as_double();
+    spawn_y = this->get_parameter("spawn_y").as_double();
 
     std::cout << "obstacle_file: " << obstacle_file_ << std::endl;
 
@@ -66,12 +70,15 @@ private:
   }
 
   void publish_world_frame() {
+    // world frame must be translated by spawn point to align with odom frame
     geometry_msgs::msg::TransformStamped transformStamped;
     transformStamped.header.stamp = this->now();
     transformStamped.header.frame_id = "map";
     transformStamped.child_frame_id = "odom";
-    transformStamped.transform.translation.x = 0.0;
-    transformStamped.transform.translation.y = 0.0;
+    //transformStamped.transform.translation.x = 0.0;
+    //transformStamped.transform.translation.y = 0.0;
+    transformStamped.transform.translation.x = spawn_x;
+    transformStamped.transform.translation.y = spawn_y;
     transformStamped.transform.translation.z = 0.0;
     transformStamped.transform.rotation.x = 0.0;
     transformStamped.transform.rotation.y = 0.0;
@@ -83,6 +90,14 @@ private:
   }
 
   void publish_map() {
+    /* Limit map publish count if it is static
+    if (msg_count >= msg_limit) {
+      return;
+    } else {
+      msg_count++;
+    }
+    */
+
     object_pose_interface_msgs::msg::SemanticMapObjectArray polygon_list_msg;
 
     double frame_center_x = 0.0;
@@ -130,10 +145,13 @@ private:
   std::string pub_semantic_topic_;
   std::string pub_transform_topic_;  
   std::string obstacle_file_;
+  double spawn_x;
+  double spawn_y;
   std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
   std::vector<std::vector<std::vector<double>>> test_polygons;
 
   double robot_x_ = 0.0, robot_y_ = 0.0, robot_z_ = 0.0;
+  int msg_limit = 10, msg_count = 0;
 };
 
 int main(int argc, char** argv) {

@@ -437,6 +437,8 @@ ProjectionResultStruct polydist(polygon xy, point p) {
     std::vector<double> projected_point = ctemp[dist_argmin];
 
     // Populate and return the output
+    std::cout << "min dist to LF: " << dist 
+        << ", LGA: " << projected_point[0] << ", " << projected_point[1] << std::endl;
     output.dist = dist;
     output.projected_point = point(projected_point[0], projected_point[1]);
     return output;
