@@ -26,6 +26,7 @@ def generate_launch_description():
     y_pose = LaunchConfiguration('y_pose', default='0.0')
     goal_x = LaunchConfiguration('goal_x', default='1.0')
     goal_y = LaunchConfiguration('goal_y', default='1.0')
+    yaw = LaunchConfiguration('yaw', default='0.0')
 
     # Secondary launch files for Gazebo
     gzserver_cmd = IncludeLaunchDescription(
@@ -51,7 +52,8 @@ def generate_launch_description():
         ),
         launch_arguments={
             'x_pose': x_pose,
-            'y_pose': y_pose
+            'y_pose': y_pose,
+            'yaw': yaw
         }.items()
     )
 
@@ -121,10 +123,14 @@ def generate_launch_description():
                 'CutoffRange': 0.15,
 
                 'RFunctionExponent': 20.0,
-                'Epsilon': 1.0,
-                'VarEpsilon': 1.0,
+                'Epsilon': 10.0,
+                'VarEpsilon': 10.0,
                 'Mu1': 0.8,
                 'Mu2': 0.05,
+                'WorkspaceMinX': -50.0,
+                'WorkspaceMinY': -50.0,
+                'WorkspaceMaxX': 200.0,
+                'WorkspaceMaxY': 150.0,
                 'SemanticMapUpdateRate': 10.0,
 
                 'ForwardLinCmdLimit': 0.3,
@@ -175,6 +181,14 @@ def generate_launch_description():
                 'pub_lidar_topic': '/fake_lidar_scan',  
             }]
         ),
+ 
+		# Launch trajectory recording node
+        Node(
+            package='semnav',
+            executable='trajectory_recorder.py',
+            name='trajectory_recorder',
+            output='screen'
+		), 
 
         # Launch Foxglove Bridge as a ROS2 node.
         Node(
@@ -183,5 +197,4 @@ def generate_launch_description():
             name='foxglove_bridge',
             output='screen'
         )
- 
     ])

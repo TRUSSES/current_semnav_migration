@@ -103,6 +103,46 @@ ros2 run semnav vector_field_plot \
 -- [goal x] [goal y] [target x] [target y]
 ```
 
+## Generating path CSVs (mapping paper)
+### 1. Record the path
+- Launch `navigation_simulation.launch.py`.
+- This will generate a `trajectory.csv` file in the **share** directory.
+- Format of each line in `trajectory.csv`:
+> index,x,y,orientation
+### 2. Configure the scaling script (optional)
+- Open `/data/scripts/scale_path_csv.py`.
+- Update:
+    - The input filename (default is `trajectory.csv`).
+    - The output filename.
+    - The **share** directory path (if different).
+    - The scale factor *k* (default is 2.0).
+### 3. Scale the path
+- Run `scale_path_csv.py` to scale all *x* and *y* coordinates in the trajectory by *k*.
+- The output will be written in the same CSV format.
+- By default, the input and output files are assumed to be in the **share** directory.
+- Tip: After scaling, you can move the output file to the data directory of the main repo for safekeeping.
+### 4. Visualize the trajectory (optional)
+- Use the `/data/scripts/plot_trajectory.py` script.
+- Flags:
+    - `--title`: plot title
+    - `--obstacle_file`: CSV with obstacle data (assumed to be in data directory)
+    - `--goal_x`, `--goal_y`: coordinates of goal
+    - `--pattern`: CSV with trajectory data
+    - `--in_share_dir`: if the trajectory CSV is in the **share** directory
+    - `--in_data_dir`: if the trajectory CSV is in the **data** directory of the main repo.
+
+## Obstacle data pre-processing
+### 1. Convert velocity map to obstacle CSV
+- TODO: Script for converting a velocity map into obstacle CSV (outside the ROS2 node).
+### 2. Scale the obstacle data (optional)
+- Open `/data/scripts/scale_obstacle_csv.py`. 
+- Update:
+    - Scaling factors *kx* and *ky*.
+    - Input and output filenames.
+- This script:
+    - Assumes that the obstacle CSV is in the **data** directory of the main repo.
+    - Writes the scaled version to the same directory.
+
 ### Debugging Tips
 - Use `ros2 topic list` to confirm that semnav `/reactive_planner/...` topics are running.
 - Rebuild after code changes, source correctly in every terminal.

@@ -16,6 +16,17 @@ parser.add_argument("--goal_x", type=float, required=True, help="Goal X coordina
 parser.add_argument("--goal_y", type=float, required=True, help="Goal Y coordinate")
 parser.add_argument("--pattern", type=str, default="trajectory*.csv",
     help="Pattern to match trajectory files (e.g., 'trajectory*.csv')")
+parser.add_argument("--in_share_dir",
+    action="store_true",
+    help="Enable if path CSV is in share directory"
+)
+parser.add_argument("--in_data_dir",
+    dest="in_share_dir",
+    action="store_false",
+    help="Enable if path CSV is in parent directory"
+)
+
+parser.set_defaults(in_share_dir=True)
 
 args = parser.parse_args()
 
@@ -26,11 +37,11 @@ goal_y = args.goal_y
 
 fig, ax = plt.subplots()
 
-share_directory = '/home/neha/ros2_ws/src/install/semnav/share/semnav'
+share_directory = '/home/neha/ros2_ws/install/semnav/share/semnav'
 data_directory = share_directory + '/data'
 
 # Plot obstacle map
-map_file = data_directory + '/' + map_csv
+map_file = '../' + map_csv
 df = pd.read_csv(map_file, header=None)
 x_row = df.iloc[0].values
 y_row = df.iloc[1].values
@@ -54,35 +65,26 @@ ax.add_collection(patches)
 2x2trajectory...csv -> 1x1 obstacle (my bad))
 1x1trajectory.csv -> 2x2 obstacle
 """
-for filename in os.listdir(data_directory):
-    if fnmatch.fnmatch(filename, args.pattern):
-        filename = os.path.join(data_directory, filename)
-        df = pd.read_csv(filename)
+if (args.in_share_dir):
+    for filename in os.listdir(data_directory):
+        if fnmatch.fnmatch(filename, args.pattern):
+            filename = os.path.join(data_directory, filename)
+            df = pd.read_csv(filename)
 
-        x = df['x'].to_numpy()
-        y = df['y'].to_numpy()
-        linear_x = df['linear_x'].to_numpy()
-        linear_y = np.zeros_like(linear_x) # assume all zero
+            x = df['x'].to_numpy()
+            y = df['y'].to_numpy()
 
-        # approximate angle as sum of all past angles (this might not work)
-        theta = df['angular_z'].to_numpy()
+            # trajectory
+            ax.plot(x, y)
+else:
+    filename = '../' + args.pattern
+    df = pd.read_csv(filename)
 
-        # Rotate
-        x_rot = linear_x * np.cos(theta)
-        y_rot = linear_x * np.sin(theta)
+    x = df['x'].to_numpy()
+    y = df['y'].to_numpy()
 
-        # trajectory
-        ax.plot(x, y)
-
-        # Plot twist cmds at every nth point
-        """ Plot twist cmd vectors
-        n = 20
-        ax.quiver(
-            x[::n], y[::n],
-            x_rot[::n], y_rot[::n],
-            angles='xy', scale_units='xy', scale=0.8, color='red', width=0.0025
-        )
-        """
+    # trajectory
+    ax.plot(x, y)
 
 # Plot goal point
 ax.plot(goal_x, goal_y, 'o')
@@ -91,4 +93,6 @@ plt.grid(True)
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes
 plt.title(''.join([plot_title]))
 plt.axis('equal')
+plt.xlabel('x-position (cm)')
+plt.ylabel('y-position (cm)')
 plt.show()

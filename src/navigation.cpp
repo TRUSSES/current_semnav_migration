@@ -29,6 +29,8 @@
 #include <geometry_msgs/msg/twist_stamped.hpp>
 #include <example_interfaces/msg/u_int32.hpp>
 #include <foxglove_msgs/msg/geo_json.hpp>
+#include <visualization_msgs/msg/marker_array.hpp>
+#include <geometry_msgs/msg/point.hpp>
 #include <sstream>
 
 #define BEHAVIOR_SIT 0
@@ -57,7 +59,7 @@ class NavigationNode : public rclcpp::Node {
 		
 			this->declare_parameter("pub_behaviorID_topic", "/behavior_id");
 			this->declare_parameter("pub_behaviorMode_topic", "/behavior_mode");
-			this->declare_parameter("pub_geojson_topic", "/geojson_map");
+			this->declare_parameter("pub_marker_topic", "/marker");
 
 			//this->declare_parameter("sub_laser_topic", "/laser_scan");
 			this->declare_parameter("sub_laser_topic", "/fake_lidar_scan");
@@ -87,6 +89,10 @@ class NavigationNode : public rclcpp::Node {
 			this->declare_parameter("VarEpsilon", 0.0);
 			this->declare_parameter("Mu1", 0.0);
 			this->declare_parameter("Mu2", 0.0);
+			this->declare_parameter("WorkspaceMinX", -100.0);
+			this->declare_parameter("WorkspaceMinY", -100.0);
+			this->declare_parameter("WorkspaceMaxX", 100.0);
+			this->declare_parameter("WorkspaceMaxY", 100.0);
 			this->declare_parameter("SemanticMapUpdateRate", 0.0);
 
 			this->declare_parameter("LinearGain", 0.0);
@@ -115,7 +121,7 @@ class NavigationNode : public rclcpp::Node {
 
 			pub_behaviorID_topic_ = this->get_parameter("pub_behaviorID_topic").as_string();
 			pub_behaviorMode_topic_ = this->get_parameter("pub_behaviorMode_topic").as_string();
-			pub_geojson_topic_ = this->get_parameter("pub_geojson_topic").as_string();
+			pub_marker_topic_ = this->get_parameter("pub_marker_topic").as_string();
 			
 			sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
 			sub_laser_topic_ = this->get_parameter("sub_laser_topic").as_string();
@@ -148,6 +154,10 @@ class NavigationNode : public rclcpp::Node {
 			VarEpsilon_ = this->get_parameter("VarEpsilon").as_double();
 			Mu1_ = this->get_parameter("Mu1").as_double();
 			Mu2_ = this->get_parameter("Mu2").as_double();
+			WorkspaceMinX_ = this->get_parameter("WorkspaceMinX").as_double();
+			WorkspaceMinY_ = this->get_parameter("WorkspaceMinY").as_double();
+			WorkspaceMaxX_ = this->get_parameter("WorkspaceMaxX").as_double();
+			WorkspaceMaxY_ = this->get_parameter("WorkspaceMaxY").as_double();
 			DiffeoTreeUpdateRate_ = this->get_parameter("SemanticMapUpdateRate").as_double();
 
 			LinearGain_ = this->get_parameter("LinearGain").as_double();
@@ -172,7 +182,12 @@ class NavigationNode : public rclcpp::Node {
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), AngularGain_);
 
 			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
-				{{-100.0, -100.0}, {1000.0, -100.0}, {1000.0, 1000.0}, {-100.0, 1000.0}, {-100.0, -100.0}});
+				{	{WorkspaceMinX_, WorkspaceMinY_},
+					{WorkspaceMaxX_, WorkspaceMinY_},
+					{WorkspaceMaxX_, WorkspaceMaxY_},
+					{WorkspaceMinX_, WorkspaceMaxY_}, 
+					{WorkspaceMinX_, WorkspaceMinY_}
+				});
 
 			// Initialize publishers
 			Goal_.set<0>(Goal_x_);
@@ -182,7 +197,7 @@ class NavigationNode : public rclcpp::Node {
 		    pub_behaviorMode_ = this->create_publisher<example_interfaces::msg::UInt32>("pub_behaviorMode_topic_", 1);
 		    pub_twist_ = this->create_publisher<geometry_msgs::msg::Twist>(pub_twist_topic_, 1);
 			pub_twist_stamped_ = this->create_publisher<geometry_msgs::msg::TwistStamped>(pub_twist_stamped_topic_, 1);
-			pub_geojson_ = this->create_publisher<foxglove_msgs::msg::GeoJSON>("pub_geojson_topic_", 1);
+			pub_marker_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("pub_marker_topic_", 1);
 
 			// Register callbacks
 			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), "[Navigation] Registering Callback");
@@ -451,7 +466,7 @@ class NavigationNode : public rclcpp::Node {
 				std::array<double, 2> coord = {x, y};
 				trajectory_.push_back(coord);
 				
-				publish_geojson();
+				publish_marker_array();
 
 				TrajectoryUpdateTime_ = update_time.seconds();
 			}
@@ -642,6 +657,11 @@ class NavigationNode : public rclcpp::Node {
 			point LGA_model(LGA1_model.get<0>(), LGA1_model.get<1>()); // avoid division by zero
 			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed model space projections." << bg::dsv(LGA_model));
 
+			if (SimulationFlag_) {
+				marker_add_point(LGL_model.get<0>(), LGL_model.get<1>(), 1.0, 1.0, 0.0); // yellow
+				marker_add_point(LGA_model.get<0>(), LGA_model.get<1>(), 1.0, 0.5, 0.8); // pink
+			}
+
 			// Plot debugging
 			// if (DebugFlag_) {
 			// 	std::ofstream svg("/home/kodlab-xavier/freespace.svg");
@@ -729,81 +749,89 @@ class NavigationNode : public rclcpp::Node {
 			return;
 		}
 
-		void publish_geojson() {
-			// Build FeatureCollection message
-			std::string s =  R"({
-				"type":"FeatureCollection",
-				"features":[
-			)";
-
-			// Add obstacle features
+		void publish_marker_array() {
+			/// Add obstacle markers
 			for (const auto &poly: latest_map.objects) {
-				s += poly_to_geojson(poly);
-				s += ",";
+				marker_add_poly(poly, 1.0, 0.0, 0.0);
 			}
 
-			// Add trajectory feature.
-			if(!trajectory_.empty()) {
-				s += trajectory_to_geojson(trajectory_);
-			} else {
-				s.pop_back(); // Remove last comma
-			}
+			// Add goal
+			marker_add_point(Goal_x_, Goal_y_, 0.0, 1.0, 0.0);
 
-			s += "]}";
+			// Add trajectory
+			marker_add_path(trajectory_, 0.0, 0.0, 1.0);
 
-			foxglove_msgs::msg::GeoJSON msg;
-			msg.geojson = s;
-			pub_geojson_->publish(msg);
-			RCLCPP_INFO(this->get_logger(), "published geojson msg");
+			pub_marker_->publish(marker_array_);
+			RCLCPP_INFO(this->get_logger(), "published marker array");
+
+			// Reset
+			marker_array_.markers.clear();
+			marker_id_counter_ = 0;
 		}
- 
-		std::string poly_to_geojson(const object_pose_interface_msgs::msg::SemanticMapObject &poly) {
-			// Return polygon as a GeoJSON feature string
-			std::string s = R"({
-				"type":"Feature",
-				"geometry":{
-					"type":"Polygon",
-					"coordinates":[[
-			)";
-			for (size_t i = 0; i < poly.polygon2d.polygon.points.size(); i++) {
-				s += "[" + std::to_string(poly.polygon2d.polygon.points[i].x) + "," + 
-					std::to_string(poly.polygon2d.polygon.points[i].y) + "]";
-				if (i != poly.polygon2d.polygon.points.size() - 1) s += ",";
-			}
-			s += R"(
-				]]},
-				"properties":{
-					"style":{
-						"color":"#f00",
-						"opacity":0.7
-					}
-				}
-			})";
-			return s;
-		  }
 
-		std::string trajectory_to_geojson(const std::vector<std::array<double,2>>& traj) {
-			// Return LineString feature for FeatureCollection
-			std::string s = R"({
-				"type":"Feature",
-				"geometry":{
-					"type":"LineString",
-					"coordinates":[
-			)";
-			for (size_t i = 0; i < traj.size(); i++) {
-				s += "[" + std::to_string(traj[i][0]) + "," + 
-					std::to_string(traj[i][1]) + "]";
-				if (i != traj.size() - 1) s += ",";
+		void marker_add_poly(const object_pose_interface_msgs::msg::SemanticMapObject &poly,
+			float r, float g, float b) {
+
+			visualization_msgs::msg::Marker marker;
+			marker.header.frame_id = world_frame_id_;
+			marker.header.stamp = this->now();
+			marker.ns = "obstacles";
+			marker.id = marker_id_counter_++;
+			marker.type = visualization_msgs::msg::Marker::LINE_STRIP;
+			marker.action = visualization_msgs::msg::Marker::ADD;
+			marker.scale.x = 1.0;
+		
+			marker.color.r = r;
+			marker.color.g = g;
+			marker.color.b = b;
+			marker.color.a = 1.0;
+
+			auto& poly_points = poly.polygon2d.polygon.points;
+			for (size_t i = 0; i < poly_points.size(); i++) {
+				geometry_msgs::msg::Point p;
+				p.x = poly_points[i].x;
+				p.y = poly_points[i].y;
+				p.z = 0.0;
+				marker.points.push_back(p);
 			}
-			s += R"(]},
-				"properties":{
-					"style":{
-						"color":"#00f",
-						"weight":3
-					}
-				}
-			})";
-			return s;
+			marker.points.push_back(marker.points.front()); // close polygon
+
+			marker_array_.markers.push_back(marker);
+		}
+
+		void marker_add_path(std::vector<std::array<double, 2>> path,
+			float r, float g, float b) {
+			visualization_msgs::msg::Marker marker;
+			marker.header.frame_id = world_frame_id_;
+			marker.header.stamp = this->now();
+			marker.ns = "path";
+			marker.id = marker_id_counter_++;
+			marker.type = visualization_msgs::msg::Marker::LINE_STRIP;
+			marker.action = visualization_msgs::msg::Marker::ADD;
+			marker.scale.x = 1.0;
+		
+			marker.color.r = r;
+			marker.color.g = g;
+			marker.color.b = b;
+			marker.color.a = 1.0;
+
+			for (auto& path_pt: path) {
+				geometry_msgs::msg::Point p;
+				p.x = path_pt[0];
+				p.y = path_pt[1];
+				p.z = 0.0;
+				marker.points.push_back(p);
+			}
+
+			marker_array_.markers.push_back(marker);
+		}
+
+		void marker_add_point(double x, double y, float r, float g, float b) {
+			// treat point as short line segment
+			std::array<double, 2> start = {x, y};
+			std::array<double, 2> end = {x + 0.01, y + 0.01};
+			std::vector<std::array<double, 2>> seg = {start, end};
+			marker_add_path(seg, r, g, b);
 		}
 	
 	private:
@@ -813,7 +841,7 @@ class NavigationNode : public rclcpp::Node {
 
 		std::string pub_behaviorID_topic_;
 		std::string pub_behaviorMode_topic_;
-		std::string pub_geojson_topic_;
+		std::string pub_marker_topic_;
 
 		std::string sub_laser_topic_;
 		std::string sub_robot_topic_;
@@ -831,7 +859,7 @@ class NavigationNode : public rclcpp::Node {
         rclcpp::Publisher<example_interfaces::msg::UInt32>::SharedPtr pub_behaviorMode_;
         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_twist_;
 		rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr pub_twist_stamped_;
-		rclcpp::Publisher<foxglove_msgs::msg::GeoJSON>::SharedPtr pub_geojson_;
+		rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr pub_marker_;
 
         rclcpp::Subscription<object_pose_interface_msgs::msg::SemanticMapObjectArray>::SharedPtr sub_semantic;
         std::shared_ptr<message_filters::Synchronizer<
@@ -843,6 +871,8 @@ class NavigationNode : public rclcpp::Node {
 		// For Foxglove simulation
 		object_pose_interface_msgs::msg::SemanticMapObjectArray latest_map;
 		std::vector<std::array<double, 2>> trajectory_;
+		visualization_msgs::msg::MarkerArray marker_array_;
+		int marker_id_counter_;
 
 		double RobotRadius_;
 		double ObstacleDilation_;
@@ -859,6 +889,10 @@ class NavigationNode : public rclcpp::Node {
 		double VarEpsilon_;
 		double Mu1_;
 		double Mu2_;
+		double WorkspaceMinX_;
+		double WorkspaceMinY_;
+		double WorkspaceMaxX_;
+		double WorkspaceMaxY_;
 		double DiffeoTreeUpdateRate_;
 		DiffeoParamsClass DiffeoParams_;
 

@@ -21,7 +21,7 @@ std::vector<std::vector<double> > get_coords(const std::string& line) {
     char* end;
 
     while (getline(ss, x, ',')) {
-        if(x == "NaN") {
+        if(x == "NaN" || x.empty()) {
             coords.push_back(std::vector<double>());
             continue;
         }
