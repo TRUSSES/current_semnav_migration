@@ -7,12 +7,12 @@ share_directory = '/home/neha/ros2_ws/install/semnav/share/semnav'
 data_directory = share_directory + '/data'
 
 input_filename = data_directory + '/' + 'trajectory.csv'
-output_filename = data_directory + '/' + 'robot2_success.csv'
-k = 2.0  # Scale factor
+output_filename = data_directory + '/' + 'robot1_success_region3_1.csv'
+k = 4.0  # Scale factor
 
 df = pd.read_csv(input_filename)
 
-df["x"] = df["x"] * 2
-df["y"] = df["y"] * 2
+df["x"] = df["x"] * k
+df["y"] = df["y"] * k
 
 df.to_csv(output_filename, index=False)

@@ -19,6 +19,7 @@ def generate_launch_description():
     # Gazebo requirements
     tb_launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
+    semnav_world_dir = os.path.join(get_package_share_directory('semnav'), 'worlds')
  
     # Gazebo launch arguments
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -34,7 +35,7 @@ def generate_launch_description():
             os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
         ),
 		launch_arguments={
-            'world': '/home/trusses/ros2_ws/src/current_semnav_migration/worlds/slow_empty.sdf',
+            'world': os.path.join(semnav_world_dir, 'slow_empty.sdf'),
             'verbose': 'true'
         }.items()  # world with different physics from default
     )
@@ -115,8 +116,8 @@ def generate_launch_description():
                 'laser_frame_id': laser_frame_id,
 
                 # NUMERICAL PARAMETERS
-                'RobotRadius': 0.3,
-                'ObstacleDilation': 1.0,
+                'RobotRadius': 0.08,
+                'ObstacleDilation': 2.0,
                 'WalkHeight': 0.5,
 
                 'AllowableRange': 4.0,
@@ -127,10 +128,10 @@ def generate_launch_description():
                 'VarEpsilon': 10.0,
                 'Mu1': 0.8,
                 'Mu2': 0.05,
-                'WorkspaceMinX': -50.0,
-                'WorkspaceMinY': -50.0,
-                'WorkspaceMaxX': 200.0,
-                'WorkspaceMaxY': 150.0,
+                'WorkspaceMinX': -10.0,
+                'WorkspaceMinY': -10.0,
+                'WorkspaceMaxX': 150.0,
+                'WorkspaceMaxY': 100.0,
                 'SemanticMapUpdateRate': 10.0,
 
                 'ForwardLinCmdLimit': 0.3,
@@ -151,7 +152,8 @@ def generate_launch_description():
 
                 'DebugFlag': False,
 				'SimulationFlag': True, # Publish msgs for Foxglove visualization
-            }]
+            }],
+            prefix=['xterm -e gdb -ex run --args']
         ),
 
         Node(

@@ -2,8 +2,8 @@
 import csv
 import pandas as pd
 
-input_filename = '../mass_5.0_6x4m.csv'
-output_filename = '../mass_5.0_1.5x1m.csv'
+input_filename = '../mass_10.0_1.5x1m.csv'
+output_filename = '../mass_10.0_1.5x1m_rounded.csv'
 rotate_clockwise = False
 
 kx = 0.25    # x-axis scale factor

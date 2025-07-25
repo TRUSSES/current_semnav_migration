@@ -658,8 +658,8 @@ class NavigationNode : public rclcpp::Node {
 			// RCLCPP_INFO_STREAM(this->get_logger(), "[Navigation] Computed model space projections." << bg::dsv(LGA_model));
 
 			if (SimulationFlag_) {
-				marker_add_point(LGL_model.get<0>(), LGL_model.get<1>(), 1.0, 1.0, 0.0); // yellow
-				marker_add_point(LGA_model.get<0>(), LGA_model.get<1>(), 1.0, 0.5, 0.8); // pink
+				marker_add_point(LGL_model.get<0>(), LGL_model.get<1>(), 1.0, 1.0, 0.0, 0.5); // yellow
+				marker_add_point(LGA_model.get<0>(), LGA_model.get<1>(), 1.0, 0.5, 0.8, 0.5); // pink
 			}
 
 			// Plot debugging
@@ -756,10 +756,10 @@ class NavigationNode : public rclcpp::Node {
 			}
 
 			// Add goal
-			marker_add_point(Goal_x_, Goal_y_, 0.0, 1.0, 0.0);
+			marker_add_point(Goal_x_, Goal_y_, 0.0, 1.0, 0.0, 1.0);
 
 			// Add trajectory
-			marker_add_path(trajectory_, 0.0, 0.0, 1.0);
+			marker_add_path(trajectory_, 0.0, 0.0, 1.0, 1.0);
 
 			pub_marker_->publish(marker_array_);
 			RCLCPP_INFO(this->get_logger(), "published marker array");
@@ -800,7 +800,7 @@ class NavigationNode : public rclcpp::Node {
 		}
 
 		void marker_add_path(std::vector<std::array<double, 2>> path,
-			float r, float g, float b) {
+			float r, float g, float b, float scale) {
 			visualization_msgs::msg::Marker marker;
 			marker.header.frame_id = world_frame_id_;
 			marker.header.stamp = this->now();
@@ -826,12 +826,12 @@ class NavigationNode : public rclcpp::Node {
 			marker_array_.markers.push_back(marker);
 		}
 
-		void marker_add_point(double x, double y, float r, float g, float b) {
+		void marker_add_point(double x, double y, float r, float g, float b, float scale) {
 			// treat point as short line segment
 			std::array<double, 2> start = {x, y};
 			std::array<double, 2> end = {x + 0.01, y + 0.01};
 			std::vector<std::array<double, 2>> seg = {start, end};
-			marker_add_path(seg, r, g, b);
+			marker_add_path(seg, r, g, b, scale);
 		}
 	
 	private:

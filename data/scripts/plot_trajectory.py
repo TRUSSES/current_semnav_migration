@@ -76,6 +76,9 @@ if (args.in_share_dir):
 
             # trajectory
             ax.plot(x, y)
+
+            # plot start point
+            ax.plot(x[0], y[0], 'o', color='red', label=f"{round(x[0])}, {round(y[0])})")
 else:
     filename = '../' + args.pattern
     df = pd.read_csv(filename)
@@ -86,8 +89,11 @@ else:
     # trajectory
     ax.plot(x, y)
 
+    # plot start point
+    ax.plot(x[0], y[0], 'o', color='red', label=f"({round(x[0])}, {round(y[0])})")
+
 # Plot goal point
-ax.plot(goal_x, goal_y, 'o')
+ax.plot(goal_x, goal_y, 'o', label=f"({round(goal_x)}, {round(goal_y)})")
 
 plt.grid(True)
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes
@@ -95,4 +101,5 @@ plt.title(''.join([plot_title]))
 plt.axis('equal')
 plt.xlabel('x-position (cm)')
 plt.ylabel('y-position (cm)')
+plt.legend(bbox_to_anchor=(1, 0.5))
 plt.show()

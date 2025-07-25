@@ -49,6 +49,8 @@ The main launch file handles:
 - Launching a fake lidar sensor
 - Starting Foxglove Bridge for visualization
 
+**Note:** The `world` parameter used by `gzserver` should be updated to the absolute path of your repo.
+
 Example usage:
 ```
 ros2 launch semnav navigation_simulation.launch.py \
