@@ -12,8 +12,8 @@ import sys
 parser = argparse.ArgumentParser(description="Plot trajectories with obstacle map.")
 parser.add_argument("--title", type=str, default="Trajectory plot", help="Plot title")
 parser.add_argument("--obstacle_file", type=str, required=True, help="CSV file with obstacle data")
-parser.add_argument("--goal_x", type=float, required=True, help="Goal X coordinate")
-parser.add_argument("--goal_y", type=float, required=True, help="Goal Y coordinate")
+parser.add_argument("--goal_x", type=float, required=False, help="Goal X coordinate")
+parser.add_argument("--goal_y", type=float, required=False, help="Goal Y coordinate")
 parser.add_argument("--pattern", type=str, default="trajectory*.csv",
     help="Pattern to match trajectory files (e.g., 'trajectory*.csv')")
 parser.add_argument("--in_share_dir",
@@ -93,7 +93,10 @@ else:
     ax.plot(x[0], y[0], 'o', color='red', label=f"({round(x[0])}, {round(y[0])})")
 
 # Plot goal point
-ax.plot(goal_x, goal_y, 'o', label=f"({round(goal_x)}, {round(goal_y)})")
+if args.goal_x is None and args.goal_y is None:
+    ax.plot(x[-1], y[-1], 'o', label=f"({round(x[-1])}, {round(y[-1])})")
+else:
+    ax.plot(goal_x, goal_y, 'o', label=f"({round(goal_x)}, {round(goal_y)})")
 
 plt.grid(True)
 plt.gca().set_aspect('equal') # Set aspect ratio of x and y axes

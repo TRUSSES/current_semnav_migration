@@ -132,6 +132,10 @@ ros2 run semnav vector_field_plot \
     - `--pattern`: CSV with trajectory data
     - `--in_share_dir`: if the trajectory CSV is in the **share** directory
     - `--in_data_dir`: if the trajectory CSV is in the **data** directory of the main repo.
+- Assumes:
+    - Start point of path is the first point in the CSV
+    - If `--goal_x` and `--goal_y` arguments are passed: `(goal_x, goal_y)` is the goal point.
+    - If `--goal_x` or `--goal_y` arguments are not passed: the last point in the CSV is the goal.
 
 ## Obstacle data pre-processing
 ### 1. Convert velocity map to obstacle CSV

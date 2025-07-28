@@ -116,8 +116,8 @@ def generate_launch_description():
                 'laser_frame_id': laser_frame_id,
 
                 # NUMERICAL PARAMETERS
-                'RobotRadius': 0.08,
-                'ObstacleDilation': 2.0,
+                'RobotRadius': 0.3,
+                'ObstacleDilation': 1.0,
                 'WalkHeight': 0.5,
 
                 'AllowableRange': 4.0,
@@ -130,8 +130,8 @@ def generate_launch_description():
                 'Mu2': 0.05,
                 'WorkspaceMinX': -10.0,
                 'WorkspaceMinY': -10.0,
-                'WorkspaceMaxX': 150.0,
-                'WorkspaceMaxY': 100.0,
+                'WorkspaceMaxX': 200.0,
+                'WorkspaceMaxY': 200.0,
                 'SemanticMapUpdateRate': 10.0,
 
                 'ForwardLinCmdLimit': 0.3,
@@ -152,8 +152,7 @@ def generate_launch_description():
 
                 'DebugFlag': False,
 				'SimulationFlag': True, # Publish msgs for Foxglove visualization
-            }],
-            prefix=['xterm -e gdb -ex run --args']
+            }]
         ),
 
         Node(

@@ -4,13 +4,13 @@ import pandas as pd
 import numpy as np
 
 # Assume path is in data directory
-input_filename = '../' + 'robot1_success_region3_1.csv'
-output_filename = '../' + 'robot1_success_region3_1_trimmed.csv'
+input_filename = '../' + 'robot2_success_region2_1.csv'
+output_filename = '../' + 'robot2_success_region2_1_trimmed.csv'
 
 df = pd.read_csv(input_filename)
 
 # Keep valid indices; include the first element
-dist_threshold = 5
+dist_threshold = 8
 kept_indices = [0]
 last_kept_x = df.loc[0, 'x']
 last_kept_y = df.loc[0, 'y']
