@@ -4,7 +4,7 @@ This package has been adapted from [vvasilo/semnav](https://github.com/vvasilo/s
 
 This has been tested with Ubuntu 22.04 and ROS2 Humble, using a Turtlebot3 Waffle (differential drive) model in Gazebo 11.
 
->**Active branch**: `risk_map_integration` (for simulation and testing)
+>**Active branch**: `main` (includes simulation and testing infrastructure)
 
 ## Components
 1. Navigation node (`navigation.cpp`): Computes and publishes `Twist` commands using semantic map inputs.
