@@ -124,8 +124,8 @@ def generate_launch_description():
                 'CutoffRange': 0.15,
 
                 'RFunctionExponent': 20.0,
-                'Epsilon': 10.0,
-                'VarEpsilon': 10.0,
+                'Epsilon': 5.0,
+                'VarEpsilon': 5.0,
                 'Mu1': 0.8,
                 'Mu2': 0.05,
                 'WorkspaceMinX': -10.0,
