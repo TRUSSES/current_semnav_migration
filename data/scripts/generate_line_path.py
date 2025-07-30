@@ -1,4 +1,6 @@
-# Creates CSV with line path from start to goal point
+# generate_line_path.py
+# Generates CSV of waypoints on a straight line from start point to goal point.
+
 import pandas as pd
 import numpy as np
 import math
@@ -22,7 +24,7 @@ goal_y = args.goal_y
 out_filename = args.output_file
 num_points = args.num_points
 
-out_file = '../' + out_filename
+out_file = '../paths/' + out_filename
 
 # Coordinates on path
 x = np.linspace(start_x, goal_x, num_points)

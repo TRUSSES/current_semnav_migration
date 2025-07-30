@@ -42,14 +42,14 @@ sudo apt install ros-humble-foxglove-bridge ros-humble-foxglove-msgs
 ```
 
 ## Launch full simulation
-The main launch file handles:
-- Loading a polygonal obstacle map
-- Starting Gazebo with the TurtleBot
-- Launching the planner with parameters
-- Launching a fake lidar sensor
-- Starting Foxglove Bridge for visualization
+The main launch file:
+- Processes a static polygonal obstacle map and passes it to a fake map publisher node.
+- Starts Gazebo with the TurtleBot using initial pose parameters.
+- Launches the planner with changeable algorithm parameters.
+- Launches a fake lidar publisher node.
+- Starts Foxglove Bridge for real-time visualization.
 
-**Note:** The `world` parameter used by `gzserver` should be updated to the absolute path of your repo.
+Robot parameters, planner parameters, and input/output filenames can be configured in `/config/launch_args.yaml`.
 
 Example usage:
 ```
@@ -60,18 +60,18 @@ ros2 launch semnav navigation_simulation.launch.py \
     goal_x:=1.0 \
     goal_y:=2.0
 ```
-Obstacle files are stored in `data/` with the following format:
-- First row: X coordinates of each polygon.
-- Second row: Y coordinates of each polygon.
-- Polygons separated by `NaN`
-- First polygon represents the workspace boundary, and is ignored when generating the map.
+
+**Important:**
+- Reference `/data/README.md` for all file formats and the directories in which they should be stored.
+- Absolute paths to data directories can be changed in `/data/scripts/process_csv.py`.
 
 `(x_pose, y_pose)` is the spawn point of the robot in Gazebo.
  
 ## Visualizing in Foxglove
-1. Start the launch file--it includes `foxglove_bridge`.
-2. Open the [Foxglove Web app](https://app.foxglove.dev) or the [Foxglove Studio desktop](https://foxglove.dev/download).
-3. Connect to the bridge via WebSocket.
+1. Set `SimulationFlag` to `true` in `/config/launch_args.yaml`. 
+2. Start the launch file--it includes `foxglove_bridge`.
+3. Open the [Foxglove Web app](https://app.foxglove.dev) or the [Foxglove Studio desktop](https://foxglove.dev/download).
+4. Connect to the bridge via WebSocket.
 ``` WebSocket URL
 ws://localhost:8765
 ```
@@ -80,74 +80,44 @@ Foxglove will automatically detect the `/geojson_map` topic, which contains the 
 1. Open the Map panel.
 2. Select `General > Tile Layer > Custom` to visualize with an empty background.
 
-## Generating vector field plots (debugging)
-Each vector points from the robot's initial pose to final pose at each grid point, given a fixed initial robot orientation, by following the planner's twist command for some time step *t*.
-
-### Parameters
-- `goal_x`, `goal_y`: coordinates of goal point (plotted in red).
-- `min_x`, `max_x`, `min_y`, `max_y`: range of grid points to plot.
-- `grid_n`: number of points to plot per row and per column.
-- `target_x`, `target_y`: point for which local freespace (yellow), local linear goal (magenta star), and local angular goal (cyan star) will be plotted for debugging purposes.
-
-> The local linear goal is the projection of the global goal onto the linear local freespace, which is the line segment from the robot's position, along its orientation vector, to the local freespace boundary. It is used to compute linear velocity.
->
-> The local angular goal is the projection of the global onto the local freespace polygon. It is used to compute angular velocity.
-
-To plot grid of vectors only:
-```
-ros2 run semnav vector_field_plot \
--- [goal x] [goal y] [min x] [max x] [min y] [max y] [grid n]
-```
-
-To plot single vector and planner parameters (LF, LGL, LGA) for target point:
-```
-ros2 run semnav vector_field_plot \
--- [goal x] [goal y] [target x] [target y]
-```
-
-## Generating path CSVs (mapping paper)
+## Recording path CSVs (for visualization and mapping paper)
 ### 1. Record the path
 - Launch `navigation_simulation.launch.py`.
-- This will generate a `trajectory.csv` file in the **share** directory.
-- Format of each line in `trajectory.csv`:
-> index,x,y,orientation
-### 2. Configure the scaling script (optional)
-- Open `/data/scripts/scale_path_csv.py`.
+- This will generate a `trajectory.csv` file in `/data/paths`.
+- See `/data/README.md` for output CSV format details.
+
+### 2. Scale or rotate the path data (optional)
+- Open `/data/scripts/scale_path.py` or `/data/scripts/rotate_path.py`.
 - Update:
-    - The input filename (default is `trajectory.csv`).
+    - The input filename.
     - The output filename.
-    - The **share** directory path (if different).
-    - The scale factor *k* (default is 2.0).
-### 3. Scale the path
-- Run `scale_path_csv.py` to scale all *x* and *y* coordinates in the trajectory by *k*.
-- The output will be written in the same CSV format.
-- By default, the input and output files are assumed to be in the **share** directory.
-- Tip: After scaling, you can move the output file to the data directory of the main repo for safekeeping.
-### 4. Visualize the trajectory (optional)
+    - The scale factor *k*.
+
+### 3. Visualize the trajectory (optional)
 - Use the `/data/scripts/plot_trajectory.py` script.
 - Flags:
     - `--title`: plot title
-    - `--obstacle_file`: CSV with obstacle data (assumed to be in data directory)
+    - `--obstacle_file`: CSV with obstacle data, assumed to be in `/data/obstacle_maps`.
+    - `--path_file`: CSV with trajectory data, assumed to be in `/data/paths`.
     - `--goal_x`, `--goal_y`: coordinates of goal
-    - `--pattern`: CSV with trajectory data
-    - `--in_share_dir`: if the trajectory CSV is in the **share** directory
-    - `--in_data_dir`: if the trajectory CSV is in the **data** directory of the main repo.
-- Assumes:
+    - `--in_share_dir`: (optional) True if the trajectory CSV is in the **share** directory.
+- Assumptions:
     - Start point of path is the first point in the CSV
-    - If `--goal_x` and `--goal_y` arguments are passed: `(goal_x, goal_y)` is the goal point.
-    - If `--goal_x` or `--goal_y` arguments are not passed: the last point in the CSV is the goal.
+    - If goal point is specified (`--goal_x`, `--goal_y`), then `(goal_x, goal_y)` is the goal point.
+    - If no goal point specified, then the last point in the CSV is the goal.
 
 ## Obstacle data pre-processing
-### 1. Convert velocity map to obstacle CSV
-- TODO: Script for converting a velocity map into obstacle CSV (outside the ROS2 node).
-### 2. Scale the obstacle data (optional)
-- Open `/data/scripts/scale_obstacle_csv.py`. 
+### 1. Convert risk map to obstacle CSV
+- In `/config/launch_args.yaml`, change `risk_in_file` and `obstacle_out_file` to the desired filenames.
+- Run `/data/scripts/risk_to_obstacle_map.py` to visualize the extracted obstacles over the risk map, and generate an obstacle file in `/data/obstacle_maps`.
+
+### 2. Transform the obstacle data (optional)
+- Open `/data/scripts/transform_obstacle_csv.py`. 
 - Update:
-    - Scaling factors *kx* and *ky*.
     - Input and output filenames.
-- This script:
-    - Assumes that the obstacle CSV is in the **data** directory of the main repo.
-    - Writes the scaled version to the same directory.
+    - Modify `main()` to execute the desired transformations.
+    - Scaling factors *kx* and *ky* (optional).
+- Run the script to generate transformed obstacle data and write it to a CSV.
 
 ### Debugging Tips
 - Use `ros2 topic list` to confirm that semnav `/reactive_planner/...` topics are running.

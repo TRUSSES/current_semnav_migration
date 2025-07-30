@@ -1,7 +1,9 @@
 import pandas as pd
+import os
+from process_csv import path_dir
 
-input_filename = '../robot2_success_region2_1_trimmed.csv'
-output_filename = '../robot2_success_region2_1_chrono.csv'
+input_filename = os.path.join(path_dir(), 'robot2_success_region2_1_chrono.csv')
+output_filename = os.path.join(path_dir(), 'robot2_success_region2_1_chrono_rot.csv')
 
 df = pd.read_csv(input_filename)
 x, y = df['x'], df['y']

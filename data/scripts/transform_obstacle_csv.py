@@ -1,9 +1,10 @@
 # Generate new CSV with x, y points of polygons scaled up by kx and ky
 import csv
 import pandas as pd
+from process_csv import obstacle_map_dir
 
-input_filename = '../mass_5.0_6x4m.csv'
-output_filename = '../mass_5.0_4x6m.csv'
+input_filename = os.path.join(obstacle_map_dir(), 'mass_5.0_6x4m.csv')
+output_filename = os.path.join(obstacle_map_dir(), 'mass_5.0_4x6m.csv')
 
 df = pd.read_csv(input_filename, header=None, dtype=float)
 
@@ -40,8 +41,12 @@ def center():
     x = x - center_x
     y = y - center_y
 
-rotate_ccw()
-center()
-new_df = pd.DataFrame([x, y])
+def main():
+    rotate_ccw()
+    center()
 
-new_df.to_csv(output_filename, index=False, header=False)
+    new_df = pd.DataFrame([x, y])
+    new_df.to_csv(output_filename, index=False, header=False)
+
+if __name__ == '__main__':
+    main()

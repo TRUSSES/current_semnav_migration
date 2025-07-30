@@ -18,7 +18,7 @@ class TrajectoryRecorder(Node):
 
         super().__init__('trajectory_recorder')
 
-        self.declare_parameter('output_file', 'trajectory.csv')
+        self.declare_parameter('path_output_file', 'trajectory.csv')
 
         self.sub_odom = self.create_subscription(
             Odometry,
@@ -28,9 +28,9 @@ class TrajectoryRecorder(Node):
         )
 
         # Store trajectory in "/data/trajectory*.csv"
-        output_file = self.get_parameter('output_file').get_parameter_value().string_value
+        output_file = self.get_parameter('path_output_file').get_parameter_value().string_value
 
-        filename = get_package_share_directory("semnav") + '/data/' + output_file
+        filename = '/home/neha/ros2_ws/src/reactive_planner/data/paths/' + output_file
         print('recording in ' + filename)
 
         self.trajectory_csv = open(filename, 'w')

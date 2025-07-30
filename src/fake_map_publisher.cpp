@@ -45,15 +45,7 @@ public:
 
     // Get polygon coordinates from CSV data and create "model.sdf" to visualize in Gazebo.
     std::string share_directory = ament_index_cpp::get_package_share_directory("semnav");
-    std::string file_initial = share_directory + "/data/poly_riskpercentage_mass_5_frequency_1.6111111111111112.csv";
-    std::string file_mass5 = share_directory + "/data/poly_riskpercentage_mass_5.0.csv";
-    std::string file_mass10 = share_directory + "/data/poly_riskpercentage_mass_10.0.csv";
-    std::string file_pentagon = share_directory + "/data/pentagon.csv";
-    std::string file_multirect = share_directory + "/data/multi_rect.csv";
-    std::string file_1x1rect = share_directory + "/data/1x1rect.csv";
-    std::string file_2x2rect = share_directory + "/data/2x2rect.csv";
-    std::string file_4x4rect = share_directory + "/data/4x4rect.csv";
-    std::string filename = share_directory + "/data/" + obstacle_file_;
+    std::string filename = share_directory + "/data/obstacle_maps/" + obstacle_file_;
 
     test_polygons = get_polygons(filename);
     generate_sdf(test_polygons);

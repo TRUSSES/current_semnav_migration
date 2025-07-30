@@ -1,3 +1,6 @@
+// generate_map.cpp
+// Functions to extract obstacles from a CSV in vector format, and optionally write them to an SDF world file.
+
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -130,19 +133,3 @@ void generate_sdf(std::vector<std::vector<std::vector<double> > > polygons) {
     sdf_file.close();
     std::cout << "sdf file complete" << std::endl;
 }
-
-/*
-int main() {
-    std::string filename = "../poly_riskpercentage_mass_5_frequency_1.6111111111111112.csv";
-    std::vector<std::vector<std::vector<double> > > polygons = get_polygons(filename);
-    std::cout << "num of polygons: " << polygons.size() << std::endl;
-    // Print the vertices
-    for (std::vector<std::vector<double> > polygon : polygons) {
-        for (std::vector<double> point: polygon)
-            std::cout << "(" << point[0] << ", " << point[1] << ")" << std::endl;
-        std::cout << std::endl;
-    }
-
-    return 0;
-}
-*/

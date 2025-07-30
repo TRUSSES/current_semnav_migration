@@ -7,6 +7,7 @@ import fnmatch
 from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
 import sys
+from process_csv import obstacle_map_dir, path_dir
 
 # Argument parsing
 parser = argparse.ArgumentParser(description="Plot trajectories with obstacle map.")
@@ -14,19 +15,12 @@ parser.add_argument("--title", type=str, default="Trajectory plot", help="Plot t
 parser.add_argument("--obstacle_file", type=str, required=True, help="CSV file with obstacle data")
 parser.add_argument("--goal_x", type=float, required=False, help="Goal X coordinate")
 parser.add_argument("--goal_y", type=float, required=False, help="Goal Y coordinate")
-parser.add_argument("--pattern", type=str, default="trajectory*.csv",
+parser.add_argument("--path_file", type=str, default="trajectory*.csv",
     help="Pattern to match trajectory files (e.g., 'trajectory*.csv')")
 parser.add_argument("--in_share_dir",
     action="store_true",
     help="Enable if path CSV is in share directory"
 )
-parser.add_argument("--in_data_dir",
-    dest="in_share_dir",
-    action="store_false",
-    help="Enable if path CSV is in parent directory"
-)
-
-parser.set_defaults(in_share_dir=True)
 
 args = parser.parse_args()
 
@@ -37,11 +31,8 @@ goal_y = args.goal_y
 
 fig, ax = plt.subplots()
 
-share_directory = '/home/neha/ros2_ws/install/semnav/share/semnav'
-data_directory = share_directory + '/data'
-
 # Plot obstacle map
-map_file = '../' + map_csv
+map_file = os.path.join(obstacle_map_dir(), map_csv)
 df = pd.read_csv(map_file, header=None)
 x_row = df.iloc[0].values
 y_row = df.iloc[1].values
@@ -61,36 +52,33 @@ for i in range(len(split_indices) - 1):
 patches = PatchCollection(polygons, facecolor='lightblue')
 ax.add_collection(patches)
 
-""" Plot trajectories.
-2x2trajectory...csv -> 1x1 obstacle (my bad))
-1x1trajectory.csv -> 2x2 obstacle
-"""
+# Find trajectory file.
+data_directory = None
+
 if (args.in_share_dir):
-    for filename in os.listdir(data_directory):
-        if fnmatch.fnmatch(filename, args.pattern):
-            filename = os.path.join(data_directory, filename)
-            df = pd.read_csv(filename)
-
-            x = df['x'].to_numpy()
-            y = df['y'].to_numpy()
-
-            # trajectory
-            ax.plot(x, y)
-
-            # plot start point
-            ax.plot(x[0], y[0], 'o', color='red', label=f"{round(x[0])}, {round(y[0])})")
+    share_directory = '/home/neha/ros2_ws/install/semnav/share/semnav'
+    data_directory = os.path.join(share_directory, 'data')
 else:
-    filename = '../' + args.pattern
-    df = pd.read_csv(filename)
+    data_directory = path_dir()
 
-    x = df['x'].to_numpy()
-    y = df['y'].to_numpy()
+print('data dir: ', data_directory)
 
-    # trajectory
-    ax.plot(x, y)
+# Plot trajectories.
+x, y = None, None
 
-    # plot start point
-    ax.plot(x[0], y[0], 'o', color='red', label=f"({round(x[0])}, {round(y[0])})")
+for filename in os.listdir(data_directory):
+    if fnmatch.fnmatch(filename, args.path_file):
+        filename = os.path.join(data_directory, filename)
+        df = pd.read_csv(filename)
+
+        x = df['x'].to_numpy()
+        y = df['y'].to_numpy()
+
+        # trajectory
+        ax.plot(x, y)
+
+        # plot start point
+        ax.plot(x[0], y[0], 'o', color='red', label=f"{round(x[0])}, {round(y[0])})")
 
 # Plot goal point
 if args.goal_x is None and args.goal_y is None:

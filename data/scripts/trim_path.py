@@ -1,11 +1,12 @@
-# Generate new CSV with x, y points scaled up by k
 import csv
 import pandas as pd
 import numpy as np
+from process_csv import path_dir
 
-# Assume path is in data directory
-input_filename = '../' + 'robot2_success_region2_1.csv'
-output_filename = '../' + 'robot2_success_region2_1_trimmed.csv'
+# Assume path is in /data/paths directory
+
+input_filename = os.path.join(path_dir(), 'robot2_success_region2_1.csv')
+output_filename = os.path.join(path_dir(), 'robot2_success_region2_1_trimmed')
 
 df = pd.read_csv(input_filename)
 

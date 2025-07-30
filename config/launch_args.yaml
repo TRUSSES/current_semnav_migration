@@ -1,0 +1,27 @@
+robot_config:
+  use_sim_time: true
+  x_pose: 100.0  # Initial x-coordinate (m)
+  y_pose: 200.0  # Initial y-coordinate (m)
+  yaw: 3.14     # Initial orientation (rad)
+
+planner_config:
+  obstacle_file: 'mass_5.0_4x6m.csv'  # Obstacle map stored in data/obstacle_maps/
+  Goal_x: -140.0  # Goal x-coordinate (m)
+  Goal_y: 220.0  # Goal y-coordinate (m)
+  RobotRadius: 0.3 # Radius of circle containing robot (m)
+  ObstacleDilation: 1.0  # Collar by which obstacles are extended for safety (m)
+  Epsilon: 5.0  # Collar used in switching function to change behavior near dilated obstacle boundary (m)
+  VarEpsilon: 5.0
+  WorkspaceMinX: -200.0    # X-coord of bottom-left corner of bounding box
+  WorkspaceMinY: -300.0    # Y-coord of bottom-left corner of bounding box
+  WorkspaceMaxX: 200.0  # X-coord of top-right corner of bounding box
+  WorkspaceMaxY: 300.0  # Y-coord of top-right corner of bounding box
+  SimulationFlag: true # Visualize trajectory in real-time with Foxglove while running sim.
+
+recording_config:
+  path_output_file: 'trajectory.csv' # Output file in which trajectory data will be stored.
+
+risk_map_config:
+  risk_in_file: 'terrain_map_test.csv' # Risk map stored in /data/risk_maps
+  obstacle_out_file: 'obstacle_map_test.csv' # File in /data/obstacle_maps to store extracted obstacles
+  threshold: 60.0 # Risk threshold below which region is considered unsafe; used for obstacle extraction.

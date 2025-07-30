@@ -175,11 +175,14 @@ class NavigationNode : public rclcpp::Node {
 			DebugFlag_ = this->get_parameter("DebugFlag").as_bool();
 			SimulationFlag_ = this->get_parameter("SimulationFlag").as_bool();
 
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), RobotRadius_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), WalkHeight_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), VarEpsilon_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), Epsilon_);
-			RCLCPP_INFO_STREAM(rclcpp::get_logger("rclcpp"), AngularGain_);
+			RCLCPP_INFO(this->get_logger(), "robot radius: %f", RobotRadius_);
+			RCLCPP_INFO(this->get_logger(), "walk height: %f", WalkHeight_);
+			RCLCPP_INFO(this->get_logger(), "varepsilon: %f", VarEpsilon_);
+			RCLCPP_INFO(this->get_logger(), "epsilon: %f", Epsilon_);
+			RCLCPP_INFO(this->get_logger(), "angular gain: %f", AngularGain_);
+			RCLCPP_INFO(this->get_logger(), "linear gain: %f", LinearGain_);
+			RCLCPP_INFO(this->get_logger(), "workspace: (%f, %f) to (%f, %f)",
+				WorkspaceMinX_, WorkspaceMinY_, WorkspaceMaxX_, WorkspaceMaxY_);
 
 			DiffeoParams_ = DiffeoParamsClass(RFunctionExponent_, Epsilon_, VarEpsilon_, Mu1_, Mu2_, 
 				{	{WorkspaceMinX_, WorkspaceMinY_},

@@ -195,6 +195,10 @@ install(DIRECTORY models
 install(DIRECTORY worlds
   DESTINATION share/${PROJECT_NAME})
 
+install(DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}
+)
+
 install(TARGETS
   vector_field_plot
   DESTINATION lib/${PROJECT_NAME}

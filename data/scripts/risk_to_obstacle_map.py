@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
 import math
+import yaml
+import os
 
 from scipy.spatial import ConvexHull
 import shapely as sp
@@ -11,6 +13,7 @@ from shapely.ops import unary_union
 from concave_hull import concave_hull
 
 from disjoint import build_disjoint_sets # in data/scripts
+from process_csv import obstacle_map_dir
 
 def generate_test_data(output_filename):
     width, height = 20, 20
@@ -105,64 +108,86 @@ def get_obstacles(Y, x_coords, y_coords, threshold):
                 
             polygon_list.append(poly)
     
-    return polygon_list, disjoint_sets
+    return polygon_list
 
-# read terrain map and extract obstacles
-input_filename = "../terrain_map_test.csv"
-generate_test_data(input_filename)
-df = pd.read_csv(input_filename)
-threshold = 60.0
+def load_yaml(file_path):
+    with open(file_path, 'r') as f:
+        return yaml.safe_load(f)
 
-polygon_list, disjoint_sets = get_obstacles(
-    df['k'], df['x'], df['y'], threshold
-)
-print('polygon list: ', polygon_list)
+def plot_heatmap(df, polygon_list):
+    # terrain map to 2D array
+    data = df_to_grid(df)
 
-# terrain map to 2D array
-data = df_to_grid(df)
+    # plot obstacles over heatmap
+    fig, ax = plt.subplots()
+    heatmap = ax.imshow(data, cmap='viridis')
 
-# plot obstacles over heatmap
-fig, ax = plt.subplots()
-heatmap = ax.imshow(data, cmap='viridis')
+    for poly in polygon_list:
+        x, y = poly.exterior.xy
+        patch = patches.Polygon(np.column_stack((x, y)),
+            facecolor='none',
+            edgecolor='red',
+            linewidth=2
+        )
+        ax.add_patch(patch)
 
-for poly in polygon_list:
-    x, y = poly.exterior.xy
-    patch = patches.Polygon(np.column_stack((x, y)),
-        facecolor='none',
-        edgecolor='red',
-        linewidth=2
-    )
-    ax.add_patch(patch)
+    plt.title("Stiffness map with extracted obstacles")
+    plt.colorbar(heatmap)
+    plt.show()
 
-plt.title("Stiffness map with extracted obstacles")
-plt.colorbar(heatmap)
-plt.show()
+def save_obstacle_csv(df, polygon_list, out_filename):
+    # obstacle map bounding box (workspace)
+    min_x = df['x'].min()
+    min_y = df['y'].min()
+    max_x = df['x'].max()
+    max_y = df['y'].max()
 
-"""
-Obstacle map CSV format:
-row 0: x coords, with polygons separated by NaN.
-row 1: y coords, with polygons separated by NaN.
-First polygon is a bounding box (workspace).
-"""
+    workspace = Polygon([
+        (min_x, min_y),
+        (max_x, min_y),
+        (max_x, max_y),
+        (min_x, max_y)
+    ])
+    polygon_list.insert(0, workspace)
 
-workspace_width, workspace_height = 100, 100
-x_coords, y_coords = [], []
+    # convert shapely polygons to obstacle map CSV format
+    x_coords, y_coords = [], []
+    for poly in polygon_list:
+        x, y = poly.exterior.xy
+        x_coords.extend(x)
+        y_coords.extend(y)
+        x_coords.append("NaN")
+        y_coords.append("NaN")
 
-workspace_poly = Polygon([
-    (0, 0),
-    (workspace_width, 0),
-    (workspace_width, workspace_height),
-    (0, workspace_height)
-])
-polygon_list.insert(0, workspace_poly)
+    poly_filename = os.path.join(obstacle_map_dir(), out_filename)
+    poly_df = pd.DataFrame([x_coords, y_coords])
+    poly_df.to_csv(poly_df, index=False, header=False)
 
-for poly in polygon_list:
-    x, y = poly.exterior.xy
-    x_coords.extend(x)
-    y_coords.extend(y)
-    x_coords.append("NaN")
-    y_coords.append("NaN")
 
-map_filename = '../test_semantic_map.csv'
-map_df = pd.DataFrame([x_coords, y_coords])
-map_df.to_csv(map_filename, index=False, header=False)
+def main():
+    # read parameters from YAML file
+    config = load_yaml("../../config/launch_args.yaml")
+    risk_map_config = config.get('risk_map_config', {})
+
+    risk_filename = risk_map_config.get('risk_in_file')
+    obstacle_filename = risk_map_config.get('obstacle_out_file')
+    threshold = risk_map_config.get('threshold')
+
+    # (optional) generate fake risk map data
+    # generate_test_data(obstacle_filename)
+
+    # read terrain map (optionally generate it first) and extract obstacles
+    input_filename = os.path.join("../risk_maps", risk_filename)
+    df = pd.read_csv(input_filename)
+    print(df)
+    polygon_list = get_obstacles(df.iloc[:,2], df['x'], df['y'], threshold)
+    print(polygon_list)
+
+    # plot polygons over colorized risk map
+    plot_heatmap(df, polygon_list)
+
+    save_obstacle_csv(df, polygon_list, obstacle_filename)
+    
+
+if __name__ == "__main__":
+    main()
