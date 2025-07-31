@@ -363,13 +363,13 @@ class NavigationNode : public rclcpp::Node {
 		        return;
 		    }
 
-            // RCLCPP_INFO(this->get_logger(), "Received %zu semantic map objects.", semantic_map_data->objects.size());
+            RCLCPP_INFO(this->get_logger(), "Received %zu semantic map objects.", semantic_map_data->objects.size());
 			
 			if (time.seconds() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
 				return;
 			} else {
-				// RCLCPP_INFO(this->get_logger(), "Interval check succeed");
-				// RCLCPP_INFO_STREAM(this->get_logger(), "Entering diffeo tree callback");
+				RCLCPP_INFO(this->get_logger(), "Interval check succeed");
+				RCLCPP_INFO_STREAM(this->get_logger(), "Entering diffeo tree callback");
 				// Count time
 				double start_time = time.seconds();
 
@@ -393,7 +393,7 @@ class NavigationNode : public rclcpp::Node {
 					polygon_list.push_back(output.front());
 				}
 				
-				// RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
+				RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
 
 				multi_polygon output_union;
 				if (polygon_list.size() >= 1) {
@@ -421,12 +421,12 @@ class NavigationNode : public rclcpp::Node {
 				// Find diffeomorphism trees for all merged polygons
 				std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
 				for (size_t i = 0; i < polygon_list_merged.size(); i++) {
-					// std::cout << bg::dsv(polygon_list_merged[i]) << std::endl;
+					std::cout << bg::dsv(polygon_list_merged[i]) << std::endl;
 					std::vector<PolygonClass> tree;
 					diffeoTreeConvex(BoostPointToStd(BoostPolyToBoostPoint(polygon_list_merged[i])), DiffeoParams_, &tree);
 					localDiffeoTreeArray.push_back(tree);
 				}
-				// RCLCPP_INFO_STREAM(this->get_logger(), "Found trees");
+				RCLCPP_INFO_STREAM(this->get_logger(), "Found trees");
 				
 				// Update
 				{

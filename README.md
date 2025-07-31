@@ -49,7 +49,7 @@ The main launch file:
 - Launches a fake lidar publisher node.
 - Starts Foxglove Bridge for real-time visualization.
 
-Robot parameters, planner parameters, and input/output filenames can be configured in `/config/launch_args.yaml`.
+Robot parameters, planner parameters, and input/output filenames can be configured in `/config/launch_args.yaml`. Rebuild and source after changing the YAML file.
 
 Example usage:
 ```
@@ -106,7 +106,7 @@ Foxglove will automatically detect the `/geojson_map` topic, which contains the 
     - If goal point is specified (`--goal_x`, `--goal_y`), then `(goal_x, goal_y)` is the goal point.
     - If no goal point specified, then the last point in the CSV is the goal.
 
-## Obstacle data pre-processing
+## Obstacle data processing
 ### 1. Convert risk map to obstacle CSV
 - In `/config/launch_args.yaml`, change `risk_in_file` and `obstacle_out_file` to the desired filenames.
 - Run `/data/scripts/risk_to_obstacle_map.py` to visualize the extracted obstacles over the risk map, and generate an obstacle file in `/data/obstacle_maps`.

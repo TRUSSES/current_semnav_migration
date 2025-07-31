@@ -27,15 +27,34 @@ def generate_test_data(output_filename):
 
 # load data into 2d array, assuming terrain map format is x,y,k
 def df_to_grid(df):
-    width = df['x'].max() + 1
-    height = df['y'].max() + 1
+    # Get sorted unique x and y coordinates
+    x_unique = np.sort(df['x'].unique())
+    y_unique = np.sort(df['y'].unique())
 
-    arr = np.zeros((height, width))
+    grid = np.empty((len(y_unique), len(x_unique)))
+    grid[:] = np.nan  # initialize with NaN for missing data
 
+    # Create a mapping from coordinate to index
+    x_idx_map = {v: i for i, v in enumerate(x_unique)}
+    y_idx_map = {v: i for i, v in enumerate(y_unique)}
+
+    # Fill grid with stiffness values
     for _, row in df.iterrows():
-        arr[int(row['y'])][int(row['x'])] = row['k']
-    
-    return arr
+        xi = x_idx_map[row['x']]
+        yi = y_idx_map[row['y']]
+        grid[yi, xi] = row[2]
+
+    return grid, y_unique, x_unique
+
+def select_evenly_spaced_ticks(coords, num_ticks=10):
+    n = len(coords)
+    if n < num_ticks:
+        # If fewer points than desired ticks, just use all
+        return coords, coords
+    else:
+        indices = np.linspace(0, n - 1, num_ticks, dtype=int)
+        tick_values = coords[indices]
+        return indices, tick_values
 
 """
 Obstacle extraction functions from mapping_package/utils
@@ -75,6 +94,10 @@ def get_obstacles(Y, x_coords, y_coords, threshold):
     """
 
     position_set_filtered = get_unsafe_points_from_map(Y, x_coords, y_coords, threshold)
+
+    if not position_set_filtered:
+        print("[WARNING] No unsafe points found below the threshold.")
+        return []  # Return an empty list of polygons
 
     # Build disjoint sets from the position set
     disjoint_sets = build_disjoint_sets(position_set_filtered, threshold=1)
@@ -116,18 +139,33 @@ def load_yaml(file_path):
 
 def plot_heatmap(df, polygon_list):
     # terrain map to 2D array
-    data = df_to_grid(df)
+    data, x_coords, y_coords = df_to_grid(df)
+    print(f'heatmap dimensions: {len(data)} x {len(data[0])}')
+
+    fig, ax = plt.subplots()
 
     # plot obstacles over heatmap
-    fig, ax = plt.subplots()
-    heatmap = ax.imshow(data, cmap='viridis')
+    heatmap = ax.imshow(data, cmap='viridis', origin='lower',
+        extent=[x_coords.min(), x_coords.max(), y_coords.min(), y_coords.max()])
+
+    # get n ticks for x and y axes
+    x_tick_indices, x_tick_positions = select_evenly_spaced_ticks(x_coords, 10)
+    y_tick_indices, y_tick_positions = select_evenly_spaced_ticks(y_coords, 10)
+
+    # label ticks on axes using coord values
+    ax.set_xticks(x_tick_positions)
+    ax.set_yticks(y_tick_positions)
+
+    # format labels
+    ax.set_xticklabels([f"{pos:.1f}" for pos in y_tick_positions])
+    ax.set_yticklabels([f"{pos:.1f}" for pos in x_tick_positions])
 
     for poly in polygon_list:
         x, y = poly.exterior.xy
         patch = patches.Polygon(np.column_stack((x, y)),
             facecolor='none',
             edgecolor='red',
-            linewidth=2
+            linewidth=4
         )
         ax.add_patch(patch)
 
@@ -160,9 +198,8 @@ def save_obstacle_csv(df, polygon_list, out_filename):
         y_coords.append("NaN")
 
     poly_filename = os.path.join(obstacle_map_dir(), out_filename)
-    poly_df = pd.DataFrame([x_coords, y_coords])
-    poly_df.to_csv(poly_df, index=False, header=False)
-
+    poly_df = pd.DataFrame([y_coords, x_coords])
+    poly_df.to_csv(poly_filename, index=False, header=False)
 
 def main():
     # read parameters from YAML file
@@ -171,17 +208,20 @@ def main():
 
     risk_filename = risk_map_config.get('risk_in_file')
     obstacle_filename = risk_map_config.get('obstacle_out_file')
-    threshold = risk_map_config.get('threshold')
 
     # (optional) generate fake risk map data
     # generate_test_data(obstacle_filename)
 
-    # read terrain map (optionally generate it first) and extract obstacles
+    # read risk map and extract obstacles
     input_filename = os.path.join("../risk_maps", risk_filename)
     df = pd.read_csv(input_filename)
-    print(df)
+    
+    # Find mean stiffness
+    threshold = (df.iloc[:,2].mean() + df.iloc[:,2].min()) / 2
+
     polygon_list = get_obstacles(df.iloc[:,2], df['x'], df['y'], threshold)
-    print(polygon_list)
+    print(polygon_list)        print(x_coords)
+
 
     # plot polygons over colorized risk map
     plot_heatmap(df, polygon_list)

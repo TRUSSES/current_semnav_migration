@@ -113,6 +113,8 @@ def generate_launch_description():
             namespace='reactive_planner',
             name='navigation_node',
             output='screen',
+            respawn=True,
+            respawn_delay=2.0, # Delay before restarting (seconds)
             parameters=[
                 planner_config,
                 {
@@ -204,7 +206,7 @@ def generate_launch_description():
             executable='trajectory_recorder.py',
             name='trajectory_recorder',
             output='screen',
-            parameters=recording_config,
+            parameters=[recording_config],
 		), 
 
         # Launch Foxglove Bridge as a ROS2 node.

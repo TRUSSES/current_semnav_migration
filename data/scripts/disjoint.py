@@ -14,6 +14,15 @@ def build_disjoint_sets(points, threshold):
     Returns:
     - disjoint_sets (dict): A dictionary where keys are component labels and values are lists of points in each set.
     """
+    if not points:
+        raise ValueError("No points provided for disjoint set construction.")
+
+    points_array = np.array(points)
+
+    if points_array.ndim != 2 or points_array.shape[1] != 2:
+        raise ValueError(f"Points array must be 2D with shape (N, 2), got shape {points_array.shape}")
+
+
     # Initialize DisjointSet
     ds = DisjointSet(range(len(points)))
     

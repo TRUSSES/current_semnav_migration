@@ -6,8 +6,16 @@ from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
 import csv
-
 import numpy as np
+import os
+import sys
+
+# import custom scripts
+scripts_path = os.path.join(get_package_share_directory('semnav'), 'data', 'scripts')
+if scripts_path not in sys.path:
+    sys.path.insert(0, scripts_path)
+from process_csv import make_unique_filename, path_dir
+
 if not hasattr(np, 'float'):
     np.float = float # resolve tf_transformations np.float issue
 from tf_transformations import euler_from_quaternion
@@ -30,7 +38,9 @@ class TrajectoryRecorder(Node):
         # Store trajectory in "/data/trajectory*.csv"
         output_file = self.get_parameter('path_output_file').get_parameter_value().string_value
 
-        filename = '/home/neha/ros2_ws/src/reactive_planner/data/paths/' + output_file
+        filename = os.path.join(path_dir(), output_file)
+        filename = make_unique_filename(filename)
+        
         print('recording in ' + filename)
 
         self.trajectory_csv = open(filename, 'w')

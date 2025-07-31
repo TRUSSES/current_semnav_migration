@@ -15,12 +15,12 @@ Each file contains two rows:
 1. First row: x-coordinates
 2. Second row: y-coordinates  
 `NaN` separates individual polygons.
-The first obstacle must be the bounding box (workspace) rectangle, which contains all obstacles.
+The first value in each row must be NaN.
 
 Example:
 ``` mass_5.0_1.5x1m.csv
-x: 0.0,150.0,150.0,0.0,NaN,0.375, ...
-y: 0.0,0.0,100.0,100.0,NaN,95.89965, ...
+x: NaN,0.0,150.0,150.0,0.0,NaN,0.3,18.2,13.0,NaN, ...
+y: NaN,0.0,0.0,100.0,100.0,NaN,115.0,120.0,180.1,NaN, ...
 ```
 
 ## CSV Format: *risk_maps/*
