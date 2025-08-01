@@ -50,8 +50,8 @@ public:
     test_polygons = get_polygons(filename);
     generate_sdf(test_polygons);
 
-    timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&FakeMapPublisherNode::publish_map, this));
-    transform_timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000), std::bind(&FakeMapPublisherNode::publish_world_frame, this));
+    timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000000), std::bind(&FakeMapPublisherNode::publish_map, this));
+    transform_timer_ = this->create_wall_timer(std::chrono::nanoseconds(100000000), std::bind(&FakeMapPublisherNode::publish_world_frame, this));
   }
 
 private:

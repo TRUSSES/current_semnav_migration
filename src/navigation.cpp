@@ -32,6 +32,7 @@
 #include <visualization_msgs/msg/marker_array.hpp>
 #include <geometry_msgs/msg/point.hpp>
 #include <sstream>
+#include <exception>
 
 #define BEHAVIOR_SIT 0
 #define BEHAVIOR_STAND 1
@@ -368,7 +369,6 @@ class NavigationNode : public rclcpp::Node {
 			if (time.seconds() - DiffeoTreeUpdateTime_ < (1.0/DiffeoTreeUpdateRate_)) {
 				return;
 			} else {
-				RCLCPP_INFO(this->get_logger(), "Interval check succeed");
 				RCLCPP_INFO_STREAM(this->get_logger(), "Entering diffeo tree callback");
 				// Count time
 				double start_time = time.seconds();
@@ -381,25 +381,67 @@ class NavigationNode : public rclcpp::Node {
 				for (size_t i = 0; i < semantic_map_data->objects.size(); i++) {
 					// Extract points of the polygon
 					std::vector<point> polygon_in_points;
-					for (size_t j = 0; j < semantic_map_data->objects[i].polygon2d.polygon.points.size(); j++) {
-						polygon_in_points.push_back(point(semantic_map_data->objects[i].polygon2d.polygon.points[j].x, semantic_map_data->objects[i].polygon2d.polygon.points[j].y));
+
+					const auto& obj = semantic_map_data->objects[i];
+        			const auto& vertices = obj.polygon2d.polygon.points;
+
+					if (vertices.size() < 3) {
+						RCLCPP_WARN(this->get_logger(), "Object %zu has fewer than 3 points. Skipping.", i);
+						continue;
+					}
+
+					for (size_t j = 0; j < vertices.size(); j++) {
+						polygon_in_points.push_back(point(vertices[j].x, vertices[j].y));
 					}
 					polygon polygon_in = BoostPointToBoostPoly(polygon_in_points);
+
+					if (!bg::is_valid(polygon_in)) {
+						RCLCPP_ERROR(this->get_logger(), "Invalid polygon in object %zu. Skipping.", i);
+						continue;
+					}
+
+					RCLCPP_INFO(this->get_logger(), "Extracted valid polygon %zu.", i);
 
 					// Dilate the polygon by the robot radius and append it to the polygon list
 					multi_polygon output;
 					bg::strategy::buffer::distance_symmetric<double> distance_strategy(ObstacleDilation_);
-					bg::buffer(polygon_in, output, distance_strategy, side_strategy_input, join_strategy_input, end_strategy_input, point_strategy_input);
+					bg::buffer(
+						polygon_in,
+						output,
+						distance_strategy,
+						side_strategy_input,
+						join_strategy_input,
+						end_strategy_input,
+						point_strategy_input
+					);
+
+					if (output.empty()) {
+						RCLCPP_WARN(this->get_logger(), "Buffer output is empty for object %zu. Skipping.", i);
+						continue;
+					}
+					
 					polygon_list.push_back(output.front());
+					RCLCPP_INFO(this->get_logger(), "Dilated and added polygon %zu.", i);
 				}
 				
-				RCLCPP_INFO(this->get_logger(), "Received %zu polygons.", polygon_list.size());
+				RCLCPP_INFO(this->get_logger(), "Added %zu polygons.", polygon_list.size());
 
 				multi_polygon output_union;
+
 				if (polygon_list.size() >= 1) {
 					output_union.push_back(polygon_list.back());
 					polygon_list.pop_back();
+					
 					while (!polygon_list.empty()) {
+						// Find diffeomorphism trees for all merged polygons
+						std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
+						for (size_t i = 0; i < polygon_list_merged.size(); i++) {
+							std::cout << bg::dsv(polygon_list_merged[i]) << std::endl;
+							std::vector<PolygonClass> tree;
+							diffeoTreeConvex(BoostPointToStd(BoostPolyToBoostPoint(polygon_list_merged[i])), DiffeoParams_, &tree);
+							localDiffeoTreeArray.push_back(tree);
+						}
+						RCLCPP_INFO_STREAM(this->get_logger(), "Found trees");
 						polygon next_polygon = polygon_list.back();
 						polygon_list.pop_back();
 						multi_polygon temp_result;
@@ -421,9 +463,42 @@ class NavigationNode : public rclcpp::Node {
 				// Find diffeomorphism trees for all merged polygons
 				std::vector<std::vector<PolygonClass>> localDiffeoTreeArray;
 				for (size_t i = 0; i < polygon_list_merged.size(); i++) {
+					std::cout << "Merging polygon " << i << std::endl;
 					std::cout << bg::dsv(polygon_list_merged[i]) << std::endl;
+
 					std::vector<PolygonClass> tree;
-					diffeoTreeConvex(BoostPointToStd(BoostPolyToBoostPoint(polygon_list_merged[i])), DiffeoParams_, &tree);
+					std::vector<std::vector<double>> merged_poly_points;
+					try {
+						std::cout << "Getting merged polygon points." << std::endl;
+						merged_poly_points = BoostPointToStd(BoostPolyToBoostPoint(polygon_list_merged[i]));
+						std::cout << "Converted merged polygon points." << std::endl;
+					} catch (const std::exception& e) {
+						RCLCPP_ERROR(this->get_logger(), "Exception caught: %s", e.what());
+					}
+
+					if (merged_poly_points.empty()) {
+						RCLCPP_WARN(this->get_logger(), "Converted point list is empty at index %zu. Skipping.", i);
+						continue;
+					}
+/*
+					if (bg::is_valid(BoostPointToBoostPoly(StdToBoostPoint(merged_poly_points)))) {
+						std::cout << "Polygon is valid (no self-intersections)\n";
+					} else {
+						std::cout << "Polygon is NOT valid (may have self-intersections)\n";
+					}*/
+
+					try {
+						std::cout << "Before diffeoTreeConvex()" << std::endl;
+						diffeoTreeConvex(merged_poly_points, DiffeoParams_, &tree);
+						std::cout << "After diffeoTreeConvex()" << std::endl;
+					} catch (const std::exception& e) {
+						RCLCPP_ERROR(this->get_logger(), "Exception caught in diffeoTreeConvex: %s", e.what());
+					}
+
+					if (tree.empty()) {
+						RCLCPP_WARN(this->get_logger(), "Diffeomorphism tree is empty for polygon %zu.", i);
+					}
+
 					localDiffeoTreeArray.push_back(tree);
 				}
 				RCLCPP_INFO_STREAM(this->get_logger(), "Found trees");
@@ -440,7 +515,7 @@ class NavigationNode : public rclcpp::Node {
 				if (DebugFlag_) {
 					diffeoTrees_cout(DiffeoTreeArray_);
 				}
-				// RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Updated trees in " << time.seconds() - start_time << " seconds.");
+				RCLCPP_WARN_STREAM(this->get_logger(), "[Navigation] Updated trees in " << time.seconds() - start_time << " seconds.");
 
 				// Update time
 				DiffeoTreeUpdateTime_ = time.seconds();

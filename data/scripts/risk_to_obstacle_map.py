@@ -48,12 +48,13 @@ def df_to_grid(df):
 
 def select_evenly_spaced_ticks(coords, num_ticks=10):
     n = len(coords)
-    if n < num_ticks:
+    if n <= num_ticks:
+        indices = np.arange(n)
         # If fewer points than desired ticks, just use all
         return coords, coords
     else:
         indices = np.linspace(0, n - 1, num_ticks, dtype=int)
-        tick_values = coords[indices]
+        tick_values = np.array(coords)[indices]
         return indices, tick_values
 
 """
@@ -113,7 +114,6 @@ def get_obstacles(Y, x_coords, y_coords, threshold):
             if np.all(points[:, 0] == points[0, 0]):
                 print('points are collinear')
                 continue
-            print('points: ', points)
             
             # Create concave hull for larger groups
             if len(group) > 3:
@@ -128,7 +128,11 @@ def get_obstacles(Y, x_coords, y_coords, threshold):
                     poly = Polygon(hull)
             else:
                 poly = Polygon(points) 
-                
+            
+            # default is CW points, so reverse to get CCW points
+            #reversed_coords = (list(poly.exterior.coords))[::-1]
+
+            poly = Polygon(list(poly.exterior.coords))
             polygon_list.append(poly)
     
     return polygon_list
@@ -136,6 +140,35 @@ def get_obstacles(Y, x_coords, y_coords, threshold):
 def load_yaml(file_path):
     with open(file_path, 'r') as f:
         return yaml.safe_load(f)
+
+def remove_collinear_points(poly):
+    # Convert [x1,...], [y1,...] format to [(x1,y1), ...]
+    coords = list(poly.exterior.coords)
+    new_coords = []
+
+    for i in range(0, len(coords)):
+        # keep first and last coord.
+        if i == 0 or i == (len(coords) - 1):
+            new_coords.append(coords[i])
+            continue
+
+        prev = coords[i - 1]
+        curr = coords[i]
+        next = coords[(i + 1) % len(coords)] # loop around
+
+        # Compute area of triangle formed by prev, curr, next
+        # If area is near zero, the point is collinear
+        area = abs(
+            (prev[0] * (curr[1] - next[1]) +
+             curr[0] * (-prev[1] + next[1]) +
+             next[0] * (prev[1] - curr[1])) / 2.0
+        )
+
+        tolerance = 0.01
+        if area > tolerance:
+            new_coords.append(curr)
+
+    return Polygon(new_coords)
 
 def plot_heatmap(df, polygon_list):
     # terrain map to 2D array
@@ -161,16 +194,26 @@ def plot_heatmap(df, polygon_list):
     ax.set_yticklabels([f"{pos:.1f}" for pos in x_tick_positions])
 
     for poly in polygon_list:
+        print('old count: ', len(poly.exterior.xy[0]))
+        poly = remove_collinear_points(poly)
+        print('new count: ', len(poly.exterior.xy[0]))
+
+        # Simplify obstacle shapes
         x, y = poly.exterior.xy
+
         patch = patches.Polygon(np.column_stack((x, y)),
             facecolor='none',
             edgecolor='red',
             linewidth=4
         )
+
         ax.add_patch(patch)
 
-    plt.title("Stiffness map with extracted obstacles")
-    plt.colorbar(heatmap)
+    plt.title("Stiffness Map with Extracted Obstacles")
+    ax.set_xlabel('x-coordinate (m)')
+    ax.set_ylabel('y-coordinate (m)')
+    cbar = plt.colorbar(heatmap)
+    cbar.set_label('Terrain Stiffness Value')
     plt.show()
 
 def save_obstacle_csv(df, polygon_list, out_filename):
@@ -191,14 +234,29 @@ def save_obstacle_csv(df, polygon_list, out_filename):
     # convert shapely polygons to obstacle map CSV format
     x_coords, y_coords = [], []
     for poly in polygon_list:
-        x, y = poly.exterior.xy
-        x_coords.extend(x)
-        y_coords.extend(y)
+        # Simplify obstacle shapes to remove collinear points
+        poly = remove_collinear_points(poly)
+        coords = list(poly.exterior.coords)
+        print('saving obstacle CSV with vertex count: ', len(coords))
+        for coord in coords:
+            print(coord)
+
+        # first and last points are duplicates, so remove last one.
+        coords = coords[:-1]
+
+        # select n evenly spaced coords.
+        print('old length of obstacle CSV polygon coords: ', len(coords))
+        _, coords = select_evenly_spaced_ticks(coords, 50)
+        print('new length of obstacle CSV polygon coords: ', len(coords))
+
+        for coord in coords:
+            x_coords.append(coord[0])
+            y_coords.append(coord[1])
         x_coords.append("NaN")
         y_coords.append("NaN")
 
     poly_filename = os.path.join(obstacle_map_dir(), out_filename)
-    poly_df = pd.DataFrame([y_coords, x_coords])
+    poly_df = pd.DataFrame([x_coords, y_coords])
     poly_df.to_csv(poly_filename, index=False, header=False)
 
 def main():
@@ -220,13 +278,11 @@ def main():
     threshold = (df.iloc[:,2].mean() + df.iloc[:,2].min()) / 2
 
     polygon_list = get_obstacles(df.iloc[:,2], df['x'], df['y'], threshold)
-    print(polygon_list)        print(x_coords)
 
+    save_obstacle_csv(df, polygon_list, obstacle_filename)
 
     # plot polygons over colorized risk map
     plot_heatmap(df, polygon_list)
-
-    save_obstacle_csv(df, polygon_list, obstacle_filename)
     
 
 if __name__ == "__main__":
