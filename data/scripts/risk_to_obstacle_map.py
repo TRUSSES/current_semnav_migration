@@ -255,6 +255,10 @@ def save_obstacle_csv(df, polygon_list, out_filename):
         x_coords.append("NaN")
         y_coords.append("NaN")
 
+    # remove last NaN
+    x_coords = x_coords[:-1]
+    y_coords = y_coords[:-1]
+
     poly_filename = os.path.join(obstacle_map_dir(), out_filename)
     poly_df = pd.DataFrame([x_coords, y_coords])
     poly_df.to_csv(poly_filename, index=False, header=False)
@@ -273,6 +277,7 @@ def main():
     # read risk map and extract obstacles
     input_filename = os.path.join("../risk_maps", risk_filename)
     df = pd.read_csv(input_filename)
+    df = df.round(0).astype(int)
     
     # Find mean stiffness
     threshold = (df.iloc[:,2].mean() + df.iloc[:,2].min()) / 2

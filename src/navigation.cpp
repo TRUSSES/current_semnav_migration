@@ -397,6 +397,7 @@ class NavigationNode : public rclcpp::Node {
 
 					if (!bg::is_valid(polygon_in)) {
 						RCLCPP_ERROR(this->get_logger(), "Invalid polygon in object %zu. Skipping.", i);
+						std::cout << bg::dsv(polygon_in) << std::endl;
 						continue;
 					}
 
